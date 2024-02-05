@@ -47,3 +47,6 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+# add the raw_data subdirectory to gitignore file
+raw_data/

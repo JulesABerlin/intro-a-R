@@ -1,0 +1,46 @@
+---
+title: "Exercice Méthodes II"
+author: "Julian Maitra"
+date: "2024-02-05"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Session 1
+
+Bienvenue à la première session du cours **Exercices Méthode II**. Sur ce site web, je vous guiderai dans vos premiers pas avec R. R est un langage de programmation open-source qui vous permet d'analyser et de visualiser des données sur des phénomènes de communication intéressants. 
+
+Pour utiliser R sur votre ordinateur portable, vous devez installer les deux logiciels suivants :
+
+1. le langage de programmation [R](https://cran.r-project.org)
+2. l'interface [RStudio](https://posit.co/download/rstudio-desktop/) 
+
+Notez que nous n'écrirons le code R que dans RStudio, l'interface. Le langage de programmation R doit d'abord être installé, mais il fonctionnera ensuite en arrière-plan. Il n'est donc pas nécessaire d'ouvrir R directement par la suite.
+
+### Commandes de base
+```{r}
+# Avec un hashtag (ou mot-dièse/croisillon) vous pouvez ajouter des commentaires à votre code
+
+# P. ex. comme ceci, pour décrire ce qui suit. Ici, on va voir quelques calculs très basique : 
+1+2
+99-98
+2*10
+100/2
+
+2^2
+
+```
+
+ bnbv
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+

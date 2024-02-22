@@ -47,7 +47,7 @@ d'ouvrir R directement par la suite.
 
 ## L'interface RStudio
 
-![](docs/rstudio-panes-labeled.jpeg)
+![Volets RStudio](docs/rstudio-panes-labeled.jpeg)
 
 Dans RStudio, il existe quatre volets différents :
 

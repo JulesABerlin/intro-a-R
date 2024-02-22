@@ -15,6 +15,7 @@ copyright:
 format: html
 editor: visual
 ---
+
 # Session 1
 
 ```{r}
@@ -46,8 +47,7 @@ d'ouvrir R directement par la suite.
 
 ## L'interface RStudio
 
-[![Capture d'écran de RStudio Desktop (source :
-posit.co)](images/rstudio-panes-labeled.jpeg)](https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html)
+![](docs/rstudio-panes-labeled.jpeg)
 
 Dans RStudio, il existe quatre volets différents :
 
@@ -101,6 +101,7 @@ Voici quelques autres calculs simples, suivi de leurs résultats :
 
 2^10
 ```
+
 ::: {.callout-tip title="Astuce"}
 Pour exécuter le code R plus rapidement, vous pouvez placer votre
 curseur sur une ligne de code à exécuter et utiliser les raccourcis
@@ -110,6 +111,7 @@ clavier suivants :
 
 -   Sur **MacOS** : <kbd>Command</kbd> + <kbd>Enter</kbd>
 :::
+
 ## Commenter votre code avec un `#`
 
 C'est une bonne pratique de **commenter** son code R. Les commentaires

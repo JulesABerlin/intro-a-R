@@ -57,7 +57,7 @@ Dans RStudio, il existe quatre volets différents :
 3.  Le volet **environnement**
 4.  Le volet **output**
 
-## Executer un script R
+## Exécuter un script R
 
 Nous travaillons principalement dans le volet **source**, c'est là que
 nous écrivons notre code.

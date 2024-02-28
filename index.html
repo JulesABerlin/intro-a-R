@@ -556,6 +556,12 @@ Astuce
 <section id="données-en-forme-de-tableau" class="level2">
 <h2 class="anchored" data-anchor-id="données-en-forme-de-tableau">Données en forme de tableau</h2>
 <p>Les données sous forme de tableaux, avec des lignes et des colonnes, sont au cœur des méthodes quantitatives dans les sciences de la communication.</p>
+<p>Dans R, il existe plusieurs structures de données en format de tableau, notamment :</p>
+<ul>
+<li><p>Les <strong>matrices</strong></p></li>
+<li><p>Les <strong>data frames</strong></p></li>
+<li><p>D’autres types, tels que les <strong>tibbles</strong>, qui sont en fait des data frames adaptés à des paquets R spécifiques (nous traiterons ce sujet plus tard dans le cours).</p></li>
+</ul>
 <div class="callout callout-style-default callout-important callout-titled" title="Important">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -567,17 +573,11 @@ Important
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Il est de convention qu’un tableau de données présente les <strong>observations</strong> (ou les cas) <strong>par ligne</strong> (angl. <em>row</em>).</li>
-<li>Les <strong>variables</strong> ou caractéristiques de ces observations sont indiquées en conséquence <strong>par colonnes</strong> (angl. <em>column</em>).</li>
+<li>Il est de convention qu’un tableau de données présente les <strong>unités statistiques</strong> par <strong>ligne</strong> (angl. <em>row</em>).</li>
+<li>Les <strong>variables</strong> ou caractéristiques de ces unités statistiques sont indiquées en conséquence par <strong>colonnes</strong> (angl. <em>column</em>).</li>
 </ul>
 </div>
 </div>
-<p>Dans R, il existe plusieurs structures de données en format de tableau, notamment :</p>
-<ul>
-<li><p>Les <strong>matrices</strong></p></li>
-<li><p>Les <strong>data frames</strong></p></li>
-<li><p>D’autres types, tels que les <strong>tibbles</strong>, qui sont en fait des data frames adaptés à des paquets R spécifiques (nous traiterons ce sujet plus tard dans le cours).</p></li>
-</ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -588,15 +588,32 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Les types de données suivants en sciences de la communication se présentent généralement sous forme de tableaux :</p>
+<p>Selon le type de données, surtout en recherche empirique en sciences sociales dont font partie les sciences de la communication, les unités statistiques peuvent être :</p>
 <ul>
-<li><p>les <strong>réponses à des questionnaires</strong> (où chaque ligne correspond à un répondant)</p></li>
-<li><p>les <strong>données relatives au contenu des médias</strong> (où chaque ligne correspond à un document, par exemple un article de presse)</p></li>
-<li><p>les <strong>données relatives aux médias sociaux</strong> (où chaque ligne correspond à un profil ou à un post sur les médias sociaux)</p></li>
+<li><p>des <strong>participants</strong> à un questionnaire ou à une expérimentation</p></li>
+<li><p>des <strong>documents</strong> (p.&nbsp;ex. articles de presse, posts sur réseaux sociaux)</p></li>
+<li><p>des <strong>observations/ cas</strong> (p.&nbsp;ex. des profils sur réseaux sociaux, des entreprises médiatiques)</p></li>
+</ul>
+<p>Dans ces jeux de données, par convention, chaque ligne représente une unité statistique (ou un participant, un document, une observation), tandis que chaque colonne représente les variables qui ont été collectées pour chaque unité statistique.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+À noter
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La taille d’un jeu de données est indiquée par <strong>le nombre d’unités statistiques n</strong>.</p>
+<ul>
+<li>Par exemple, si 49 personnes ont répondu à un questionnaire, nous parlons donc d’un échantillon de n = 49 participants.</li>
 </ul>
 </div>
 </div>
-<p>Voici un modèle de la manière dont on devrait structurer les réponses à un questionnaire avec n répondants et X questions :</p>
+<p>Voici un modèle de la manière dont on devrait structurer les réponses à un questionnaire avec n participants et X questions :</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>          id  question_A  question_B  question_C etc.  question_X
@@ -607,6 +624,7 @@ Important
 5 personne_n réponse_a_A réponse_a_B réponse_a_C  ... réponse_a_X</code></pre>
 </div>
 </div>
+<p>Dans ce modèle, l’unité statistique de ce jeu de données est la personne qui a répondue au questionnaire (un participant). Chaque ligne correspond donc à une personne différente. Les variables, en revanche, sont les différentes questions qui ont été enregistrées pour chaque participant.</p>
 <p>Regardons maintenant quelques objets R sous forme de tableau :</p>
 </section>
 <section id="les-matrices" class="level2">
@@ -633,11 +651,25 @@ Important
 <span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Quelle est la différence entre m1 et m2 au niveau du code</span></span>
 <span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="co"># ?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>A noter : Si vous ne spécifier pas tous les arguments, R va utiliser des arguments par défauts :</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+À noter
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Si vous ne spécifier pas tous les arguments d’une fonction, R va tenter d’utiliser des arguments par défauts.</p>
+</div>
+</div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>m3 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>), <span class="at">nrow =</span> <span class="dv">5</span>)</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(m3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># On peut p. ex. créer une matrice sans spécifier tout les</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co"># arguments de la fonction matrix()</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>m3 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>), <span class="at">nrow =</span> <span class="dv">5</span>)</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(m3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2]
 [1,]    1    6
@@ -699,7 +731,19 @@ Important
 </section>
 <section id="les-data-frames" class="level2">
 <h2 class="anchored" data-anchor-id="les-data-frames">Les data frames</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+À noter
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Les <strong>data frames</strong> (français : <em>cadre de données</em>) sont le type de donnée en forme tableau le plus commun dans R. Cette structure de donnée peut notamment être composé de données de différents types (numérique, textuel, logique).</p>
+</div>
+</div>
 <p>Créons un data frame avec la fonction <code>data.frame()</code> maintenant. Nous appelons ce type d’objets désormais un <strong>jeu de données</strong>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Créons d'abord un vecteur textuel avec les noms de</span></span>
@@ -809,7 +853,19 @@ Important
  Max.   :10000.00  </code></pre>
 </div>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Astuce">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Astuce
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Une autre astuce utile consiste à utiliser le <strong><code>$</code></strong> pour <strong>extraire des colonnes spécifiques</strong> d’un jeu de données.</p>
+</div>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># P. ex. :</span></span>
 <span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>ice_age_df<span class="sc">$</span>name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -860,6 +916,16 @@ Important
 <section id="les-facteurs" class="level2">
 <h2 class="anchored" data-anchor-id="les-facteurs">Les facteurs</h2>
 <p>Un autre type de variable clé dans R est ce que l’on appelle les <strong>facteurs</strong>, qui sont essentiellement des <strong>variables catégorielles</strong>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+À noter
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Les facteurs sont des variables qui prennent un nombre limité de valeurs différentes (appelées <em>levels</em> dans R).</p>
 <p>Il existe deux sous-type de facteurs :</p>
 <ul>
@@ -872,6 +938,8 @@ Important
 <li>Exemples : niveau d’éducation, cohortes d’âge</li>
 </ul></li>
 </ul>
+</div>
+</div>
 <p>Vous pouvez créer un facteur nominal à l’aide de la fonction <code>factor()</code> et vérifier ses catégories avec <code>levels()</code>. Voici un exemple :</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Créer un vecteur de données catégorielles, d'abord de</span></span>

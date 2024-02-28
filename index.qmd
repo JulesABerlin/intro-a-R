@@ -426,13 +426,6 @@ Les données sous forme de tableaux, avec des lignes et des colonnes,
 sont au cœur des méthodes quantitatives dans les sciences de la
 communication.
 
-::: {.callout-important title="Important"}
--   Il est de convention qu'un tableau de données présente les
-    **observations** (ou les cas) **par ligne** (angl. *row*).
--   Les **variables** ou caractéristiques de ces observations sont
-    indiquées en conséquence **par colonnes** (angl. *column*).
-:::
-
 Dans R, il existe plusieurs structures de données en format de tableau,
 notamment :
 
@@ -444,24 +437,40 @@ notamment :
     frames adaptés à des paquets R spécifiques (nous traiterons ce sujet
     plus tard dans le cours).
 
+::: {.callout-important title="Important"}
+-   Il est de convention qu'un tableau de données présente les **unités
+    statistiques** par **ligne** (angl. *row*).
+-   Les **variables** ou caractéristiques de ces unités statistiques
+    sont indiquées en conséquence par **colonnes** (angl. *column*).
+:::
+
 ::: {.callout-note icon="true"}
 ## À noter
 
-Les types de données suivants en sciences de la communication se
-présentent généralement sous forme de tableaux :
+Selon le type de données, surtout en recherche empirique en sciences
+sociales dont font partie les sciences de la communication, les unités
+statistiques peuvent être :
 
--   les **réponses à des questionnaires** (où chaque ligne correspond à
-    un répondant)
+-   des **participants** à un questionnaire ou à une expérimentation
 
--   les **données relatives au contenu des médias** (où chaque ligne
-    correspond à un document, par exemple un article de presse)
+-   des **documents** (p. ex. articles de presse, posts sur réseaux sociaux)
 
--   les **données relatives aux médias sociaux** (où chaque ligne
-    correspond à un profil ou à un post sur les médias sociaux)
+-   des **observations/ cas** (p. ex. des profils sur réseaux sociaux, des
+    entreprises médiatiques)
+    
+Dans ces jeux de données, par convention, chaque ligne représente une unité statistique (ou un participant, un document, une observation), tandis que chaque colonne représente les variables qui ont été collectées pour chaque unité statistique.
+:::
+::: {.callout-note icon="true"}
+## À noter
+La taille d'un jeu de données est indiquée par **le nombre d'unités
+statistiques n**. 
+
+-   Par exemple, si 49 personnes ont répondu à un questionnaire, nous
+    parlons donc d'un échantillon de n = 49 participants.
 :::
 
 Voici un modèle de la manière dont on devrait structurer les réponses à
-un questionnaire avec n répondants et X questions :
+un questionnaire avec n participants et X questions :
 
 ```{r}
 #| echo: false
@@ -476,6 +485,10 @@ question_X <- c("réponse_a_X", "réponse_a_X", "réponse_a_X", "...", "réponse
 questionnaire = data.frame(id, question_A, question_B, question_C, etc., question_X)
 questionnaire
 ```
+
+Dans ce modèle, l'unité statistique de ce jeu de données est la personne
+qui a répondue au questionnaire (un participant). Chaque ligne correspond donc à une
+personne différente. Les variables, en revanche, sont les différentes questions qui ont été enregistrées pour chaque participant.
 
 Regardons maintenant quelques objets R sous forme de tableau :
 
@@ -515,10 +528,15 @@ print(m2)
 
 ```
 
-A noter : Si vous ne spécifier pas tous les arguments, R va utiliser des
-arguments par défauts :
+::: {.callout-note icon="true"}
+## À noter
+
+Si vous ne spécifier pas tous les arguments d'une fonction, R va tenter
+d'utiliser des arguments par défauts.
+:::
 
 ```{r}
+# On peut p. ex. créer une matrice sans spécifier tout les arguments de la fonction matrix()
 m3 <- matrix(c(1:10), nrow = 5)
 
 print(m3)
@@ -554,10 +572,14 @@ m4[c(6:10),]
 
 ## Les data frames
 
+::: {.callout-note icon="true"}
+## À noter
+
 Les **data frames** (français : *cadre de données*) sont le type de
 donnée en forme tableau le plus commun dans R. Cette structure de donnée
 peut notamment être composé de données de différents types (numérique,
 textuel, logique).
+:::
 
 Créons un data frame avec la fonction `data.frame()` maintenant. Nous
 appelons ce type d'objets désormais un **jeu de données**.
@@ -647,8 +669,10 @@ summary(ice_age_df)
 
 ```
 
+::: {.callout-tip title="Astuce"}
 Une autre astuce utile consiste à utiliser le **`$`** pour **extraire
 des colonnes spécifiques** d'un jeu de données.
+:::
 
 ```{r}
 #| echo: true
@@ -672,6 +696,7 @@ Quelques fonctions utiles pour les statistiques descriptives de base :
 -   `sd()` : Calcule l'écart-type (angl. *standard deviation*)
 
 -   `var()` : Calcule la variance
+
 ```{r}
 #| echo: true
 #| output: false
@@ -685,6 +710,7 @@ sd(a1)
 
 var(a1)
 ```
+
 ```{r}
 #| echo: false
 #| output: true
@@ -698,10 +724,14 @@ sd(a1)
 
 var(a1)
 ```
+
 ## Les facteurs
 
 Un autre type de variable clé dans R est ce que l'on appelle les
 **facteurs**, qui sont essentiellement des **variables catégorielles**.
+
+::: {.callout-note icon="true"}
+## À noter
 
 Les facteurs sont des variables qui prennent un nombre limité de valeurs
 différentes (appelées *levels* dans R).
@@ -718,6 +748,7 @@ Il existe deux sous-type de facteurs :
     que *faible*, *moyen*, *élevé*).
 
     -   Exemples : niveau d'éducation, cohortes d'âge
+:::
 
 Vous pouvez créer un facteur nominal à l'aide de la fonction `factor()`
 et vérifier ses catégories avec `levels()`. Voici un exemple :

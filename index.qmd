@@ -7,7 +7,7 @@ author:
     email: julian.maitra@unifr.ch
     affiliation: 
       - name: Université de Fribourg
-        url: https://www.unifr.ch
+        url: https://www.unifr.ch/home/en/
 license: "MIT"
 copyright: 
   holder: Julian Maitra

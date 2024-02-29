@@ -51,11 +51,8 @@ d'ouvrir R directement par la suite.
 
 ## L'interface RStudio
 
-
 ![Volets
-RStudio](https://docs.posit.co/ide/user/ide/guide/ui/images/rstudio-panes-labeled.jpeg)
-
-
+RStudio [Source : posit.co](https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html)](https://docs.posit.co/ide/user/ide/guide/ui/images/rstudio-panes-labeled.jpeg)
 
 Dans RStudio, il existe quatre volets différents :
 

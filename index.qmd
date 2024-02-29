@@ -17,6 +17,7 @@ editor: visual
 toc: true
 toc-depth: 2
 toc-location: left
+toc-title: Table des matières
 ---
 
 # Session 1
@@ -214,7 +215,7 @@ x <- 4
 x
 ```
 
-### Les différents types de variable : numèriques, textuelles et logique
+### Les différents types de variable : numériques, textuelles et logique
 
 Jusqu'à présent, nous avons créé des variables de **type numérique**,
 telles que `x` (valeur = 5).

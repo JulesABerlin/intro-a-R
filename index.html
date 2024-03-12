@@ -102,6 +102,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#le-répértoire-de-travail" id="toc-le-répértoire-de-travail" class="nav-link" data-scroll-target="#le-répértoire-de-travail">Le répértoire de travail</a></li>
   <li><a href="#devoir-pour-session-3-problem-set-1" id="toc-devoir-pour-session-3-problem-set-1" class="nav-link" data-scroll-target="#devoir-pour-session-3-problem-set-1">Devoir pour Session 3 (Problem Set 1)</a></li>
   </ul></li>
+  <li><a href="#session-3-problem-set-1" id="toc-session-3-problem-set-1" class="nav-link" data-scroll-target="#session-3-problem-set-1">Session 3 (Problem Set 1)</a></li>
+  <li><a href="#session-4" id="toc-session-4" class="nav-link" data-scroll-target="#session-4">Session 4</a>
+  <ul class="collapse">
+  <li><a href="#les-paquets-r" id="toc-les-paquets-r" class="nav-link" data-scroll-target="#les-paquets-r">Les paquets R</a></li>
+  <li><a href="#les-jeux-de-données-intégrés" id="toc-les-jeux-de-données-intégrés" class="nav-link" data-scroll-target="#les-jeux-de-données-intégrés">Les jeux de données intégrés</a></li>
+  <li><a href="#introduction-aux-visualisations-avec-ggplot2" id="toc-introduction-aux-visualisations-avec-ggplot2" class="nav-link" data-scroll-target="#introduction-aux-visualisations-avec-ggplot2">Introduction aux visualisations avec <code>ggplot2</code></a></li>
+  <li><a href="#devoir-pour-session-5" id="toc-devoir-pour-session-5" class="nav-link" data-scroll-target="#devoir-pour-session-5">Devoir pour Session 5</a></li>
+  </ul></li>
   </ul>
 </nav>
 </div>
@@ -1051,6 +1059,378 @@ Important
 <li><p>Chaque étudiant.e n’aura accès qu’au Problem Set 1 de son groupe.</p></li>
 <li><p>Les personnes qui ne sont inscrites dans aucun groupe ne peuvent pas valider le Problem Set 1.</p></li>
 </ul></li>
+</ul>
+</section>
+</section>
+<section id="session-3-problem-set-1" class="level1">
+<h1>Session 3 (Problem Set 1)</h1>
+<p>Les résultats du <strong>Problem Set 1</strong> sont accéssibles sur la page Moodle de l’exercices.</p>
+</section>
+<section id="session-4" class="level1">
+<h1>Session 4</h1>
+<p>La session 4 a pour but d’introduire trois éléments fondamentaux en analyse de données avec R :</p>
+<ol type="1">
+<li>Installer et charger des <strong>paquets R</strong> sur son ordinateur</li>
+<li>Utiliser des <strong>jeux de données intégrés en R</strong> pour s’entraîner en analyse de données</li>
+<li>Apprendre à utiliser le paquet <strong>ggplot2</strong> pour créer des visualisations de données</li>
+</ol>
+<section id="les-paquets-r" class="level2">
+<h2 class="anchored" data-anchor-id="les-paquets-r">Les paquets R</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+À noter
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Dans la programmation R, un <strong>paquet</strong> (angl. <em>package</em>) est un ensemble de fonctions, de données et de code compilé dans un format bien défini.</p>
+<p>Les paquets étendent les fonctionnalités de R de base en fournissant des outils supplémentaires pour l’analyse des données, la visualisation, l’apprentissage automatique, la modélisation statistique et beaucoup d’autres applications spécialisées.</p>
+<p>Les paquets R peuvent être développés par n’importe qui et partagés gratuitement avec d’autres (open source). Par conséquent, une grande multitude de paquets R sont disponibles.</p>
+</div>
+</div>
+<p>Notez que la plupart des paquets R doit être installé séparément, normalement depuis le site <a href="http://cran.r-project.org">Comprehensive R Archive Network (CRAN)</a>. Dans ce cours, nous nous concentrerons sur deux paquets célèbres :</p>
+<ul>
+<li><p><code>ggplot2</code> pour créer des <strong>visualisations de données</strong></p></li>
+<li><p><code>dplyr</code> pour <strong>manipuler les jeux de données</strong></p></li>
+</ul>
+<p>Tous deux font partie du <a href="https://www.tidyverse.org">tidyverse</a>, une collection de paquets conçus pour la science des données. Nous utiliserons également le paquet suivant :</p>
+<ul>
+<li><code>ggthemes</code> pour <strong>augmenter le design des graphiques</strong></li>
+</ul>
+<p>Pour utiliser un paquet R sur votre ordinateur, il faut :</p>
+<ol type="1">
+<li>D’abord <strong>installer</strong> le paquet en question avec la fonction <code>install.packages()</code>. Cela peut durer quelques minutes.</li>
+<li>Ensuite <strong>activer</strong> le paquet avec la fonction <code>library()</code>.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Astuce">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Astuce
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Dans RStudio, on peut aussi installer les paquets via l’onglet <strong>Tools</strong> et le menu déroulant : Cliquez sur <em>Install Packages</em>… et cherchez les paquets que vous voulez installer.</p>
+</div>
+</div>
+<p>Utilisez le code suivant pour installer les paquets R requis pour notre cours. Enlevez les croisillons, éxécutez le code avec <code>install.packages()</code> puis réajouter les croisillons pour éviter de réinstaller les paquets chaque fois que vous éxécutez le code dans votre script ! Activer ensuite les paquets avec <code>library()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages('tidyverse')</span></span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages('ggthemes')</span></span>
+<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-4"><a href="#cb76-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb76-5"><a href="#cb76-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>À noter : <code>ggplot2</code> et <code>dplyr</code> sont installés avec le <code>tidyverse</code>, il ne faut donc plus les installer séparément.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Attention
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Notez qu’une fois installé, vous n’avez pas besoin de le réinstaller les paquets à chaque fois avec <code>install.packages()</code>. Cependant, vous devez <strong>activer</strong> tous les paquets R que vous voulez utiliser dans une session avec la commande <code>library()</code>. Sans activation, vous allez recevoir des messages d’erreur.</p>
+</div>
+</div>
+</div>
+<p>Certains paquets ont des documentations auxquelles vous pouvez accéder grâce au point d’interrogation. Ces infos sont affichés dans le volet <em>Output</em> sous l’onglet <em>Help</em>.</p>
+<ul>
+<li><p><code>?ggplot2</code></p></li>
+<li><p><code>?dplyr</code></p></li>
+</ul>
+<p>En ligne, vous pouvez également trouver de nombreuses ressources qui expliquent en détail les fonctionnalités des différents paquets R et vous renvoient vers d’autres livres, tutoriels, cours, etc., p.&nbsp;ex. :</p>
+<ul>
+<li><p><a href="https://ggplot2.tidyverse.org/index.html">Documentation officielle de <code>ggplot2</code></a></p></li>
+<li><p><a href="https://dplyr.tidyverse.org">Documentation officielle de <code>dplyr</code></a></p></li>
+<li><p><a href="https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/">Exemples de graphiques crées avec les différents designs de <code>ggthemes</code></a></p></li>
+</ul>
+<p>Vous pouvez vérifier quels paquets sont <strong>actuellement installés sur votre ordinateur</strong> avec la fonction <code>installed.packages()</code> (vous pouvez laisser vide l’espace entre parenthèses) :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="fu">installed.packages</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="les-jeux-de-données-intégrés" class="level2">
+<h2 class="anchored" data-anchor-id="les-jeux-de-données-intégrés">Les jeux de données intégrés</h2>
+<p>Une excellente façon, et probablement la plus efficace, d’apprendre à utiliser R pour l’analyse de données consiste à travailler avec des <strong>jeux de données intégrés dans R</strong>.</p>
+<p>Ces jeux de données exemplaires présentent deux avantages principaux.</p>
+<ol type="1">
+<li>Il est facile d’y accéder et de les charger dans votre session RStudio, car ils sont intégrés à R et à certains de ses paquets.</li>
+</ol>
+<p>Cela les distingue fortement des données du “monde réel”, comme les données de questionnaires ou de médias sociaux, qu’il faut souvent d’abord nettoyer et formater, puis importer dans RStudio sous forme de fichiers externes. Avec les jeux de données intégrés, vous pouvez immédiatement commencer l’analyse et la visualisation des données.</p>
+<ol start="2" type="1">
+<li>Ces jeux de données ont prouvé leur utilité dans d’innombrables supports d’apprentissage.</li>
+</ol>
+<p>Par conséquent, vous pouvez facilement trouver des ressources supplémentaires et des exemples de code à leur sujet.</p>
+<p>Dans ce qui suit, nous allons explorer quatre jeux de données classiques de ce type :</p>
+<ul>
+<li><p><code>iris</code></p></li>
+<li><p><code>mtcars</code></p></li>
+<li><p><code>diamonds</code></p></li>
+<li><p><code>palmerpenguins</code></p></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Astuce">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Astuce
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Vous pouvez afficher les jeux de données qui sont actuellement accéssible sur votre ordinateur avec la commande <code>data().</code></p>
+</div>
+</div>
+<section id="le-jeu-de-données-iris" class="level3">
+<h3 class="anchored" data-anchor-id="le-jeu-de-données-iris">le jeu de données <code>iris</code></h3>
+<p>Le jeu de données <code>iris</code> est un ensemble de données célèbre qui contient les mesures en centimètres des variables longueur et largeur du sépale, ainsi que longueur et largeur du pétale, pour trois expèces de fleurs d’iris (Setosa, Virginica et Versicolor). Il y a 150 observations en total (50 pour chaque espèce).</p>
+<p>Le jeu de données a été rendu célèbre par le statisticien et biologiste britannique <strong>Ronald Fisher</strong> dans un article scientifique de 1936 qui avait beaucoup d’influence dans le domaine des statistiques. Les données d’iris eux-même ont été récolté par le botaniste Edgar Anderson en 1935 sur la péninsule de Gaspésie au Québéc, Canada.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Plus sur Ronald Fisher
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Ronald Fisher (1890-1962) était un statisticien, généticien et biologiste britannique qui a joué un rôle crucial dans le développement de la science statistique moderne. Il est connu pour son travail dans le développement des fondements des méthodes statistiques, incluant l’analyse de variance (ANOVA), le test exact de Fisher et l’estimation du maximum likelihood. Fisher a également apporté des contributions significatives en génétique, où son travail sur la théorie de la sélection naturelle et la génétique des populations a aidé à combler le fossé entre la génétique mendélienne et l’évolution darwinienne. Il est considéré comme l’un des architectes principaux de la synthèse néo-darwinienne. Son influence s’étend au-delà de la statistique et de la génétique aux domaines plus larges de la biologie et de la recherche agricole, faisant de lui une figure pivotale de la science du 20e siècle.</p>
+</div>
+</div>
+</div>
+<p><a title="Diego Mariano, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Flores_de_%C3%8Dris.png"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flores_de_%C3%8Dris.png/512px-Flores_de_%C3%8Dris.png" alt="Flores de Íris" width="512"></a></p>
+<p>Dans l’apprentissage de R, ce jeu de données est souvent utilisé pour illustrer diverses techniques d’analyse de données, y compris le clustering, la classification et la visualisation.</p>
+<p>Explorons un peu le jeu de données <code>iris</code> avec du code !</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(iris)  <span class="co"># Ceci affiche le nombre de lignes et de colonnes)</span></span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris)  <span class="co"># Affiche les six premières lignes</span></span>
+<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-5"><a href="#cb78-5" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(iris)  <span class="co"># Informations sur la structure du jeu de données</span></span>
+<span id="cb78-6"><a href="#cb78-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-7"><a href="#cb78-7" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(iris)  <span class="co"># Affiche les noms des colonnes</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Regardons ce que ça donne après l’éxécution de chaque ligne de code :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 150   5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+2          4.9         3.0          1.4         0.2  setosa
+3          4.7         3.2          1.3         0.2  setosa
+4          4.6         3.1          1.5         0.2  setosa
+5          5.0         3.6          1.4         0.2  setosa
+6          5.4         3.9          1.7         0.4  setosa</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   150 obs. of  5 variables:
+ $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+ $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
+ $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+ $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
+ $ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Sepal.Length" "Sepal.Width"  "Petal.Length" "Petal.Width"  "Species"     </code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Astuce">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Astuce
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Vous pouvez consulter la documentation pour beaucoup de jeux de données avec un point d’interrogation : <code>?iris()</code>.</p>
+</div>
+</div>
+</section>
+<section id="le-jeu-de-données-mtcars" class="level3">
+<h3 class="anchored" data-anchor-id="le-jeu-de-données-mtcars">le jeu de données <code>mtcars</code></h3>
+<p>Utilisez le script suivant pour analyser <code>mtcars</code>(lisez également la documentation avec <code>?mtcars</code>) !</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Chargez le jeu de données mtcars. Il devrait apparaître</span></span>
+<span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a><span class="co"># dans l'environnement</span></span>
+<span id="cb87-3"><a href="#cb87-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
+<span id="cb87-4"><a href="#cb87-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb87-5"><a href="#cb87-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Affichez mtcars</span></span>
+<span id="cb87-6"><a href="#cb87-6" aria-hidden="true" tabindex="-1"></a>mtcars</span>
+<span id="cb87-7"><a href="#cb87-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb87-8"><a href="#cb87-8" aria-hidden="true" tabindex="-1"></a><span class="co"># vous pouvez explorer mtcars manuellement en double</span></span>
+<span id="cb87-9"><a href="#cb87-9" aria-hidden="true" tabindex="-1"></a><span class="co"># cliquant dessus dans l'environnement</span></span>
+<span id="cb87-10"><a href="#cb87-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb87-11"><a href="#cb87-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Affichez seulement les six premières observations</span></span>
+<span id="cb87-12"><a href="#cb87-12" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mtcars)</span>
+<span id="cb87-13"><a href="#cb87-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb87-14"><a href="#cb87-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Affichez seulement les six dernières observations</span></span>
+<span id="cb87-15"><a href="#cb87-15" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(mtcars)</span>
+<span id="cb87-16"><a href="#cb87-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb87-17"><a href="#cb87-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Appliquez quelques autres commandes pour explorer ce jeu</span></span>
+<span id="cb87-18"><a href="#cb87-18" aria-hidden="true" tabindex="-1"></a><span class="co"># de données</span></span>
+<span id="cb87-19"><a href="#cb87-19" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(mtcars)</span>
+<span id="cb87-20"><a href="#cb87-20" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(mtcars)</span>
+<span id="cb87-21"><a href="#cb87-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb87-22"><a href="#cb87-22" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(mtcars)</span>
+<span id="cb87-23"><a href="#cb87-23" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mtcars)</span>
+<span id="cb87-24"><a href="#cb87-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb87-25"><a href="#cb87-25" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(mtcars)  <span class="co"># cette commande marche seulement si vous avez activé le tidyverse</span></span>
+<span id="cb87-26"><a href="#cb87-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb87-27"><a href="#cb87-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Extraire la colonne mpg ('miles per gallon') avec le</span></span>
+<span id="cb87-28"><a href="#cb87-28" aria-hidden="true" tabindex="-1"></a><span class="co"># signe $ et calculer la moyenne, la médianne, le minimum</span></span>
+<span id="cb87-29"><a href="#cb87-29" aria-hidden="true" tabindex="-1"></a><span class="co"># et le maximum</span></span>
+<span id="cb87-30"><a href="#cb87-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb87-31"><a href="#cb87-31" aria-hidden="true" tabindex="-1"></a>mtcars<span class="sc">$</span>mpg</span>
+<span id="cb87-32"><a href="#cb87-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb87-33"><a href="#cb87-33" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(mtcars<span class="sc">$</span>mpg)</span>
+<span id="cb87-34"><a href="#cb87-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb87-35"><a href="#cb87-35" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(mtcars<span class="sc">$</span>mpg)</span>
+<span id="cb87-36"><a href="#cb87-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb87-37"><a href="#cb87-37" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(mtcars<span class="sc">$</span>mpg)</span>
+<span id="cb87-38"><a href="#cb87-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb87-39"><a href="#cb87-39" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(mtcars<span class="sc">$</span>mpg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><a title="Jeremy from Sydney, Australia, CC BY 2.0 <https://creativecommons.org/licenses/by/2.0>, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:1974_Toyota_Corolla_(KE20)_L_2-door_sedan_(20538771443).jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/1974_Toyota_Corolla_%28KE20%29_L_2-door_sedan_%2820538771443%29.jpg/512px-1974_Toyota_Corolla_%28KE20%29_L_2-door_sedan_%2820538771443%29.jpg" alt="1974 Toyota Corolla (KE20) L 2-door sedan (20538771443)" width="512"></a></p>
+<p>Un des modèles de mtcars : Le Toyota Corolla de 1974. <a href="https://commons.wikimedia.org/wiki/File:1974_Toyota_Corolla_(KE20)_L_2-door_sedan_(20538771443).jpg">Source : wikimedia.org</a></p>
+</section>
+<section id="le-jeu-de-données-diamonds" class="level3">
+<h3 class="anchored" data-anchor-id="le-jeu-de-données-diamonds">le jeu de données <code>diamonds</code></h3>
+<p>C’est maintenant à vous d’explorer ce jeu de données avec du code !</p>
+<p>Utilisez également <code>?diamonds()</code> !</p>
+<p><a title="Jerry Cone, Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Diamond-1128734.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Diamond-1128734.jpg/512px-Diamond-1128734.jpg" alt="Diamond-1128734" width="512"></a></p>
+<p>Qu’est-ce qui définit le prix d’un diamant ? <a href="https://commons.wikimedia.org/wiki/File:Diamond-1128734.jpg">Source : wikimedia.org</a></p>
+</section>
+</section>
+<section id="introduction-aux-visualisations-avec-ggplot2" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-aux-visualisations-avec-ggplot2">Introduction aux visualisations avec <code>ggplot2</code></h2>
+<p><code>ggplot2</code> est un paquet de visualisation de données populaire dans R, conçu pour faciliter la création de graphiques complexes et multicouches avec une syntaxe cohérente et consistante.</p>
+<p>Faisant partie du <code>tidyverse</code>, <code>ggplot2</code> est basé sur la syntaxe <em>Grammar of Graphics</em>, un cadre pour la description et la construction de graphiques.</p>
+<p>Avec <code>ggplot2</code>, les utilisateurs peuvent construire des graphiques de manière incrémentale en ajoutant des couches, ce qui le rend flexible pour une large gamme de besoins graphiques. Cela permet de créer des visualisations hautement personnalisables et esthétiquement attrayantes, allant de simples diagrammes de dispersion à des figures multi-panneaux complexes.</p>
+<p>Le tableau suivant décrit les couches d’un graphique ggplot :</p>
+<table class="table">
+<caption>Les couches d’un graphique ggplot</caption>
+<colgroup>
+<col style="width: 31%">
+<col style="width: 28%">
+<col style="width: 39%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Couche</th>
+<th style="text-align: left;">Déscription/Variables</th>
+<th style="text-align: center;">Obligatoire ?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>data</em></td>
+<td style="text-align: left;">le jeu de données que nous voulons visualiser</td>
+<td style="text-align: center;">oui</td>
+</tr>
+<tr class="even">
+<td><em>aesthetics</em></td>
+<td style="text-align: left;">le <em>mapping</em> de nos variables : axes <em>x</em> et <em>y</em>, <em>color</em>, <em>fill</em>, <em>alpha</em>, <em>line width</em>, etc.</td>
+<td style="text-align: center;">oui</td>
+</tr>
+<tr class="odd">
+<td><em>geometries</em></td>
+<td style="text-align: left;">le type visuel du graphique : <em>point</em>, <em>line</em>, <em>histogram</em>, <em>bar</em>, <em>boxplot</em></td>
+<td style="text-align: center;">oui</td>
+</tr>
+<tr class="even">
+<td><em>themes</em></td>
+<td style="text-align: left;">Le design du graphique</td>
+<td style="text-align: center;">non</td>
+</tr>
+<tr class="odd">
+<td>Autres couches optionelles : <em>facets</em>, <em>statistics</em>, <em>coordinates</em></td>
+<td style="text-align: left;">Pour des visualisations plus complexes</td>
+<td style="text-align: center;">non</td>
+</tr>
+</tbody>
+</table>
+<p>Pour comprendre exactement comment cela fonctionne, voici un exemple de code dans lequel les différentes couches d’un graphique ggplot sont ajoutées étape par étape. (Normalement, nous ne procéderions pas ainsi, mais utiliserions directement le code pour le graphique fini).</p>
+<p>Le but dans cet exemple est de visualiser le jeu de données <code>diamonds</code>pour comprendre la relation entre les variables prix et carat (poids) des diamants !</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="co"># La première couche, data, définit le jeu de données</span></span>
+<span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> diamonds)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-34-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Notre graphique n’est pour l’instant qu’une zone grise ! Catastrophe ? Bien sûr que non 😀. Nous devons maintenant définir les autres couches de ggplot !</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="co"># La deuxième couche, aesthetics, définit le mapping de nos</span></span>
+<span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a><span class="co"># variables sur les axes y et x</span></span>
+<span id="cb89-3"><a href="#cb89-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> diamonds, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-35-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="co"># La troisième couche, geometries, définit le type visuel</span></span>
+<span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a><span class="co"># de notre graphique</span></span>
+<span id="cb90-3"><a href="#cb90-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> diamonds, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price)) <span class="sc">+</span></span>
+<span id="cb90-4"><a href="#cb90-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-36-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="co"># On peut maintenant encore optimiser notre graphique</span></span>
+<span id="cb91-2"><a href="#cb91-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> diamonds, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price, <span class="at">color =</span> clarity)) <span class="sc">+</span></span>
+<span id="cb91-3"><a href="#cb91-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-37-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Vous avez remarqué ce qui a changé dans le code ?</p>
+<p>Maintenant il s’agit d’interpréter le graphique. Que nous dit-il sur la relation entre prix et carats des diamants ? Quel rôle joue la variable <em>clarity</em> ?</p>
+</section>
+<section id="devoir-pour-session-5" class="level2">
+<h2 class="anchored" data-anchor-id="devoir-pour-session-5">Devoir pour Session 5</h2>
+<ul>
+<li><p>Exécutez toutes les sections de code de la session 4 sur votre ordinateur.</p></li>
+<li><p>Entraînez-vous à ouvrir un nouveau script R, à définir un répertoire de travail et à enregistrer le script dans un dossier sur votre ordinateur.</p></li>
+<li><p>Assurez-vous que le paquet R <code>tidyverse</code> est installé correctement sur votre ordinateur.</p></li>
+<li><p>Utilisez le code R de manière autonome pour explorer le jeu de données <code>diamonds</code>. Vous devez être en mesure de comprendre et d’expliquer comment il est structuré (nombre d’observations n, unité statistique, variables, origine des données, etc).</p></li>
 </ul>
 </section>
 </section>

@@ -1341,9 +1341,8 @@ Vous avez remarqué ce qui a changé dans le code ?
 ggplot(data = diamonds,
        mapping = aes(x = carat, y = price, color = clarity)) +
   geom_point() + 
-  ggtitle("")  + 
   labs(title = "La relation entre prix et carat des diamants",
-    subtitle = "n = 53 940 observations",
+    subtitle = "n = 53 940 diamants",
     y = "Prix", 
     x = "Carat", 
     colour = "Pureté")

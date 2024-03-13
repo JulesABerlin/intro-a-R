@@ -1324,16 +1324,28 @@ Astuce
 </section>
 <section id="introduction-aux-visualisations-avec-ggplot2" class="level2">
 <h2 class="anchored" data-anchor-id="introduction-aux-visualisations-avec-ggplot2">Introduction aux visualisations avec <code>ggplot2</code></h2>
-<p><code>ggplot2</code> est un paquet de visualisation de données populaire dans R, conçu pour faciliter la création de graphiques complexes et multicouches avec une syntaxe cohérente et consistante.</p>
-<p>Faisant partie du <code>tidyverse</code>, <code>ggplot2</code> est basé sur la syntaxe <em>Grammar of Graphics</em>, un cadre pour la description et la construction de graphiques.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+À noter
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>ggplot2</code>, qui fait partie du <code>tidyverse</code>, est un paquet de visualisation de données très populaire dans R. Il a été conçu pour faciliter la création de graphiques complexes et multicouches avec une syntaxe cohérente et consistante nommée <em>grammar of graphics</em>.</p>
+<p><em>ggplot2</em> est donc un acronyme formé à partir des mots <em>grammar of graphics plots</em> (français : <em>grammaire des graphiques</em>). Le “2” dans ggplot2 indique simplement la deuxième génération de ce paquet R.</p>
 <p>Avec <code>ggplot2</code>, les utilisateurs peuvent construire des graphiques de manière incrémentale en ajoutant des couches, ce qui le rend flexible pour une large gamme de besoins graphiques. Cela permet de créer des visualisations hautement personnalisables et esthétiquement attrayantes, allant de simples diagrammes de dispersion à des figures multi-panneaux complexes.</p>
+</div>
+</div>
 <p>Le tableau suivant décrit les couches d’un graphique ggplot :</p>
 <table class="table">
 <caption>Les couches d’un graphique ggplot</caption>
 <colgroup>
 <col style="width: 31%">
-<col style="width: 28%">
-<col style="width: 39%">
+<col style="width: 29%">
+<col style="width: 38%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1370,8 +1382,29 @@ Astuce
 </tr>
 </tbody>
 </table>
-<p>Pour comprendre exactement comment cela fonctionne, voici un exemple de code dans lequel les différentes couches d’un graphique ggplot sont ajoutées étape par étape. (Normalement, nous ne procéderions pas ainsi, mais utiliserions directement le code pour le graphique fini).</p>
-<p>Le but dans cet exemple est de visualiser le jeu de données <code>diamonds</code>pour comprendre la relation entre les variables prix et carat (poids) des diamants !</p>
+<p>Pour comprendre comment cela fonctionne, voici un exemple de code dans lequel les différentes couches d’un graphique <em>ggplot</em> sont ajoutées étape par étape dans la fonction <code>ggplot()</code>. (Normalement, nous ne procéderions pas ainsi, mais utiliserions directement le code en entier pour créer le graphique).</p>
+<p>Le but dans cet exemple est de visualiser le jeu de données <code>diamonds</code> pour comprendre la relation entre les variables <code>price</code> (prix) et <code>carat</code> (poids) des diamants dans le jeu de données !</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+À noter
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Important : avant d’analyser un ensemble de données, il faut toujours acquérir des <strong>connaissances contextuelles</strong> sur ce que les données représentent.</p>
+<p>Dans notre exemple, il s’agit de diamants. Dans le monde des diamants, il est important de comprendre qu’il existe <strong>quatre critères de qualité</strong> qui déterminent <strong>la valeur</strong> (donc le prix) d’un diamant. Ce sont les suivants :</p>
+<ul>
+<li><p>La taille (angl. <em>cut</em>)</p></li>
+<li><p>La pureté (<em>clarity</em>)</p></li>
+<li><p>La couleur (<em>color</em>)</p></li>
+<li><p>Le poids en carats (<em>carat</em>)</p></li>
+</ul>
+<p>En anglais, on parle donc aussi des 4C. Le jeu de données <code>diamonds</code> contient précisément ces variables.</p>
+</div>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="co"># La première couche, data, définit le jeu de données</span></span>
 <span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> diamonds)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1383,7 +1416,7 @@ Astuce
 </div>
 </div>
 </div>
-<p>Notre graphique n’est pour l’instant qu’une zone grise ! Catastrophe ? Bien sûr que non 😀. Nous devons maintenant définir les autres couches de ggplot !</p>
+<p>Notre graphique n’est pour l’instant qu’une zone grise ! Catastrophe ? Bien sûr que non 😀. Nous devons maintenant définir les autres paramètres de la fonction <code>ggplot()</code> !</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="co"># La deuxième couche, aesthetics, définit le mapping de nos</span></span>
 <span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a><span class="co"># variables sur les axes y et x</span></span>
@@ -1396,6 +1429,7 @@ Astuce
 </div>
 </div>
 </div>
+<p>La zone grise a maintenant reçu des unités pour ses axes x (<code>carat</code>) et y (<code>price</code>). Mais il n’y a toujours pas de données affichées !</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="co"># La troisième couche, geometries, définit le type visuel</span></span>
 <span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a><span class="co"># de notre graphique</span></span>
@@ -1409,6 +1443,9 @@ Astuce
 </div>
 </div>
 </div>
+<p>Ouf, si vous avez exécuté le dernier code, vous avez maintenant 53 940 points de données affichées dans votre graphique ! Car il y a tant d’observations dans le jeu de données <code>diamonds</code>.</p>
+<p>Bon courage si vous avez un vieil ordinateur, cela peut prendre un certain temps avant que R ne produise le graphique…</p>
+<p>Mais jetons un coup d’œil au graphique. Qu’est-ce qui saute aux yeux, pouvez-vous déjà identifier des tendances ?</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="co"># On peut maintenant encore optimiser notre graphique</span></span>
 <span id="cb91-2"><a href="#cb91-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> diamonds, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price, <span class="at">color =</span> clarity)) <span class="sc">+</span></span>
@@ -1422,7 +1459,24 @@ Astuce
 </div>
 </div>
 <p>Vous avez remarqué ce qui a changé dans le code ?</p>
-<p>Maintenant il s’agit d’interpréter le graphique. Que nous dit-il sur la relation entre prix et carats des diamants ? Quel rôle joue la variable <em>clarity</em> ?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajoutons encore une couche optionnelle mais utile au</span></span>
+<span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a><span class="co"># graphique : labs() nous permet d'ajouter et de</span></span>
+<span id="cb92-3"><a href="#cb92-3" aria-hidden="true" tabindex="-1"></a><span class="co"># personnaliser des titres, sout-titres, titre d'axes,</span></span>
+<span id="cb92-4"><a href="#cb92-4" aria-hidden="true" tabindex="-1"></a><span class="co"># titres de légendes, etc. !</span></span>
+<span id="cb92-5"><a href="#cb92-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> diamonds, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price, <span class="at">color =</span> clarity)) <span class="sc">+</span></span>
+<span id="cb92-6"><a href="#cb92-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">""</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"La relation entre prix et carat des diamants"</span>,</span>
+<span id="cb92-7"><a href="#cb92-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"n = 53 940 observations"</span>, <span class="at">y =</span> <span class="st">"Prix"</span>, <span class="at">x =</span> <span class="st">"Carat"</span>,</span>
+<span id="cb92-8"><a href="#cb92-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">colour =</span> <span class="st">"Pureté"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-38-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Maintenant il s’agit d’interpréter le graphique. Que nous dit-il sur la relation entre prix et carats des diamants ? Quel rôle joue la variable <em>pureté</em> (<code>clarity</code>)?</p>
 </section>
 <section id="devoir-pour-session-5" class="level2">
 <h2 class="anchored" data-anchor-id="devoir-pour-session-5">Devoir pour Session 5</h2>

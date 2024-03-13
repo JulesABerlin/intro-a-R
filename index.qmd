@@ -891,9 +891,11 @@ correctement défini avec la fonction `getwd()`
 
 # Session 3 (Problem Set 1)
 
-Les résultats du **Problem Set 1** sont accéssibles sur la page Moodle de l'exercices.
+Les résultats du **Problem Set 1** sont accéssibles sur la page Moodle
+de l'exercices.
 
 # Session 4
+
 La session 4 a pour but d'introduire trois éléments fondamentaux en
 analyse de données avec R :
 
@@ -1185,13 +1187,17 @@ wikimedia.org](https://commons.wikimedia.org/wiki/File:Diamond-1128734.jpg)
 
 ## Introduction aux visualisations avec `ggplot2`
 
-`ggplot2` est un paquet de visualisation de données populaire dans R,
-conçu pour faciliter la création de graphiques complexes et multicouches
-avec une syntaxe cohérente et consistante.
+::: {.callout-note icon="true"}
+## À noter
 
-Faisant partie du `tidyverse`, `ggplot2` est basé sur la syntaxe
-*Grammar of Graphics*, un cadre pour la description et la construction
-de graphiques.
+`ggplot2`, qui fait partie du `tidyverse`, est un paquet de
+visualisation de données très populaire dans R. Il a été conçu pour
+faciliter la création de graphiques complexes et multicouches avec une
+syntaxe cohérente et consistante nommée *grammar of graphics*.
+
+*ggplot2* est donc un acronyme formé à partir des mots *grammar of
+graphics plots* (français : *grammaire des graphiques*). Le "2" dans
+ggplot2 indique simplement la deuxième génération de ce paquet R.
 
 Avec `ggplot2`, les utilisateurs peuvent construire des graphiques de
 manière incrémentale en ajoutant des couches, ce qui le rend flexible
@@ -1199,33 +1205,71 @@ pour une large gamme de besoins graphiques. Cela permet de créer des
 visualisations hautement personnalisables et esthétiquement attrayantes,
 allant de simples diagrammes de dispersion à des figures multi-panneaux
 complexes.
+:::
 
 Le tableau suivant décrit les couches d'un graphique ggplot :
 
-| Couche     | Déscription/Variables | Obligatoire ? |
-|------------|:----------|:-------------:|
-| *data*       | le jeu de données que nous voulons visualiser       |      oui      |
-| *aesthetics* | le *mapping* de nos variables : axes *x* et *y*, *color*, *fill*, *alpha*, *line width*, etc.    |      oui      |
-| *geometries* |le type visuel du graphique : *point*, *line*, *histogram*, *bar*, *boxplot*         |      oui      |
-| *themes*     | Le design du graphique         |      non      |
-| Autres couches optionelles : *facets*, *statistics*, *coordinates*      | Pour des visualisations plus complexes         |      non      |
+| Couche                                                             | Déscription/Variables                                                                         | Obligatoire ? |
+|-----------------------|:--------------------|:--------------------------:|
+| *data*                                                             | le jeu de données que nous voulons visualiser                                                 |      oui      |
+| *aesthetics*                                                       | le *mapping* de nos variables : axes *x* et *y*, *color*, *fill*, *alpha*, *line width*, etc. |      oui      |
+| *geometries*                                                       | le type visuel du graphique : *point*, *line*, *histogram*, *bar*, *boxplot*                  |      oui      |
+| *themes*                                                           | Le design du graphique                                                                        |      non      |
+| Autres couches optionelles : *facets*, *statistics*, *coordinates* | Pour des visualisations plus complexes                                                        |      non      |
+
 : Les couches d'un graphique ggplot
 
-Pour comprendre exactement comment cela fonctionne, voici un exemple de code dans lequel les différentes couches d'un graphique ggplot sont ajoutées étape par étape. (Normalement, nous ne procéderions pas ainsi, mais utiliserions directement le code pour le graphique fini). 
+Pour comprendre comment cela fonctionne, voici un exemple de code dans
+lequel les différentes couches d'un graphique *ggplot* sont ajoutées
+étape par étape dans la fonction `ggplot()`. (Normalement, nous ne
+procéderions pas ainsi, mais utiliserions directement le code en entier
+pour créer le graphique).
 
-Le but dans cet exemple est de visualiser le jeu de données `diamonds`pour comprendre la relation entre les variables prix et carat (poids) des diamants !
+Le but dans cet exemple est de visualiser le jeu de données `diamonds`
+pour comprendre la relation entre les variables `price` (prix) et
+`carat` (poids) des diamants dans le jeu de données !
+
+::: {.callout-note icon="true"}
+## À noter
+
+Important : avant d'analyser un ensemble de données, il faut toujours
+acquérir des **connaissances contextuelles** sur ce que les données
+représentent.
+
+Dans notre exemple, il s'agit de diamants. Dans le monde des diamants,
+il est important de comprendre qu'il existe **quatre critères de
+qualité** qui déterminent **la valeur** (donc le prix) d'un diamant. Ce
+sont les suivants :
+
+-   La taille (angl. *cut*)
+
+-   La pureté (*clarity*)
+
+-   La couleur (*color*)
+
+-   Le poids en carats (*carat*)
+
+En anglais, on parle donc aussi des 4C. Le jeu de données `diamonds`
+contient précisément ces variables.
+:::
 
 ```{r}
 # La première couche, data, définit le jeu de données
 ggplot(data = diamonds)
 ```
-Notre graphique n'est pour l'instant qu'une zone grise ! Catastrophe ? Bien sûr que non 😀. Nous devons maintenant définir les autres couches de ggplot !
+
+Notre graphique n'est pour l'instant qu'une zone grise ! Catastrophe ?
+Bien sûr que non 😀. Nous devons maintenant définir les autres
+paramètres de la fonction `ggplot()` !
 
 ```{r}
 # La deuxième couche, aesthetics, définit le mapping de nos variables sur les axes y et x
 ggplot(data = diamonds,
        mapping = aes(x = carat, y = price))
 ```
+
+La zone grise a maintenant reçu des unités pour ses axes x (`carat`) et
+y (`price`). Mais il n'y a toujours pas de données affichées !
 
 ```{r}
 # La troisième couche, geometries, définit le type visuel de notre graphique
@@ -1234,15 +1278,41 @@ ggplot(data = diamonds,
   geom_point()
 ```
 
+Ouf, si vous avez exécuté le dernier code, vous avez maintenant 53 940
+points de données affichées dans votre graphique ! Car il y a tant
+d'observations dans le jeu de données `diamonds`.
+
+Bon courage si vous avez un vieil ordinateur, cela peut prendre un
+certain temps avant que R ne produise le graphique...
+
+Mais jetons un coup d'œil au graphique. Qu'est-ce qui saute aux yeux,
+pouvez-vous déjà identifier des tendances ?
+
 ```{r}
 # On peut maintenant encore optimiser notre graphique
 ggplot(data = diamonds,
        mapping = aes(x = carat, y = price, color = clarity)) +
   geom_point()
 ```
-Vous avez remarqué ce qui a changé dans le code ? 
 
-Maintenant il s'agit d'interpréter le graphique. Que nous dit-il sur la relation entre prix et carats des diamants ? Quel rôle joue la variable *clarity* ?
+Vous avez remarqué ce qui a changé dans le code ?
+
+```{r}
+# Ajoutons encore une couche optionnelle mais utile au graphique : labs() nous permet d'ajouter et de personnaliser des titres, sout-titres, titre d'axes, titres de légendes, etc. ! 
+ggplot(data = diamonds,
+       mapping = aes(x = carat, y = price, color = clarity)) +
+  geom_point() + 
+  ggtitle("")  + 
+  labs(title = "La relation entre prix et carat des diamants",
+    subtitle = "n = 53 940 observations",
+    y = "Prix", 
+    x = "Carat", 
+    colour = "Pureté")
+```
+
+Maintenant il s'agit d'interpréter le graphique. Que nous dit-il sur la
+relation entre prix et carats des diamants ? Quel rôle joue la variable
+*pureté* (`clarity`)?
 
 ## Devoir pour Session 5
 

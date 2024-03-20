@@ -1395,8 +1395,8 @@ carats et les prix dans le jeu de données `diamonds`.
 ## À noter
 
 Un **nuage de points** (aussi appelé diagramme de dispersion) est
-utilisé dans `ggplot2` pour représenter les valeurs de *deux variables
-numériques différentes* par des points, avec une variable sur l'axe des
+utilisé dans `ggplot2` pour représenter les valeurs de **deux variables
+numériques différentes** par des points, avec une variable sur l'axe des
 X et l'autre sur l'axe des Y.
 
 Ce type de graphique est idéal pour l'analyse exploratoire de données,
@@ -1428,17 +1428,17 @@ np1 <- ggplot(data = iris,
 print(np1)
 ```
 
-Nous pouvons ajouter des couches à l'objet np1 sans l'écraser, p. ex.
-une ligne de régréssion linéaire avec `geom_smooth(method = lm)` :
+Nous pouvons ajouter des couches à l'objet `np1` sans l'écraser, p. ex.
+une ligne de régression linéaire avec `geom_smooth(method = lm)` :
 
 ```{r}
 #| warning: false
 np1 + geom_smooth(method = lm)
 ```
 
-Que nous indique la ligne de régréssion ? En principe, elle indique une
+Que nous indique la ligne de régression ? En principe, elle indique une
 correlation légèrement négative entre les variables `Sepal.Length`et
-`Sepal.Width`! (la zone grise autour de la ligne bleue indique une marge
+`Sepal.Width` ! (la zone grise autour de la ligne bleue indique une marge
 d'erreur).
 
 Cela signifie que les iris dont les sépales sont plus longs ont tendance
@@ -1495,7 +1495,7 @@ couche géométrique `geom_bar()`.
 
 Par exemple, nous pouvons utiliser le code simple suivant pour comparer
 la fréquence des différentes tailles (angl. `cut`) dans le jeu de
-données `diamonds`. Cette-fois ci, ous sauvegardons et nommons le
+données `diamonds`. Cette-fois ci, nous sauvegardons et nommons le
 graphique `db1`.
 
 ```{r}
@@ -1524,12 +1524,12 @@ db1 <- ggplot(data = diamonds,
 
 print(db1)
 ```
-Que nous dit le graphique ? Il est intéressant de constater que dans le jeu de données `diamonds`, le niveau de qualité le plus élevé de la taille, à savoir `idéal`, est également le plus fréquent.
+Que nous dit le graphique ? Il est intéressant de constater que dans le jeu de données `diamonds`, le niveau de qualité le plus élevé de la taille, à savoir `ideal`, est également le plus fréquent.
 
 ::: {.callout-caution collapse="false"}
 ## Attention
 
-Attention ! Dans la fonction `ggplot()`, il y a une différence si vous
+Dans la fonction `ggplot()`, il y a une différence si vous
 voulez ajouter de la couleur aux points (qui ont mathématiquement zéro
 dimension) ou aux surfaces (qui ont deux dimensions), comme dans les
 diagrammes à barres.
@@ -1560,8 +1560,8 @@ L’histogramme a une apparence semblable au graphique à barres
 verticales, mais il n'y a pas d'écart entre les barres.
 
 En règle générale, l'histogramme possède des barres d'une largeur
-égale." [Statistique
-Canada](https://www150.statcan.gc.ca/n1/edu/power-pouvoir/ch9/histo/5214822-fra.htm)
+égale" (Source : [Statistique
+Canada, 2021).](https://www150.statcan.gc.ca/n1/edu/power-pouvoir/ch9/histo/5214822-fra.htm)
 
 L'histogramme est particulièrement utile pour :
 
@@ -1585,7 +1585,7 @@ fonction `geom_histogram()`, p. ex. `geom_histogram(binwidth = 30)`.
 Avant de créer un histogramme avec le code R, introduisons d'abord une
 nouvelle fonction : `rnorm()`. Elle peut être utilisée pour créer des
 valeurs aléatoires qui suivent une **loi normale** (angl. *normal
-distribution*.
+distribution*).
 
 Les arguments que nous pouvons entrer dans la fonction sont :
 
@@ -1597,11 +1597,13 @@ Les arguments que nous pouvons entrer dans la fonction sont :
 
 Notez que par défaut, la fonction utilise `mean = 0` et `sd = 1`, ce qui
 correspond à une **loi normale centrée réduite** (angl. *standard normal
-distribution*). Utilisez aussi `?rnorm()`pour accéder à plus d'infos.
+distribution*). 
+
+Utilisez aussi `?rnorm()`pour accéder à plus d'infos.
 
 Dans le code R suivant, nous utilisons `rnorm()` pour simuler les distributions des tailles des hommes et des femmes en Suisse. 
 
-Selon un article de [*24heures*](https://www.24heures.ch/calculateur-en-ligne-quelle-taille-faites-vous-par-rapport-aux-autres-191558705635#), les femmes ont une taille moyenne de 164.7 cm tandis que les hommes mesurent 177.4 cm en moyenne. Dans la suite, nous supposons que les écarts-types sont de +- 5.6 cm pour les femmes et de +- 6.1 cm pour les hommes.
+Selon un article de [*24 heures*](https://www.24heures.ch/calculateur-en-ligne-quelle-taille-faites-vous-par-rapport-aux-autres-191558705635#), en Suisse, les femmes ont une taille moyenne de 164.7 cm tandis que les hommes mesurent 177.4 cm en moyenne. Dans la suite, nous supposons que les écarts-types sont de +- 5.6 cm pour les femmes et de +- 6.1 cm pour les hommes.
 
 
 ```{r}

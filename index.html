@@ -1529,7 +1529,7 @@ Astuce
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Un <strong>nuage de points</strong> (aussi appelé diagramme de dispersion) est utilisé dans <code>ggplot2</code> pour représenter les valeurs de <em>deux variables numériques différentes</em> par des points, avec une variable sur l’axe des X et l’autre sur l’axe des Y.</p>
+<p>Un <strong>nuage de points</strong> (aussi appelé diagramme de dispersion) est utilisé dans <code>ggplot2</code> pour représenter les valeurs de <strong>deux variables numériques différentes</strong> par des points, avec une variable sur l’axe des X et l’autre sur l’axe des Y.</p>
 <p>Ce type de graphique est idéal pour l’analyse exploratoire de données, permettant d’observer les relations entre les variables, de détecter des tendances, des regroupements, des valeurs êxtremes (angl. <em>outliers</em>) ou de vérifier des hypothèses de corrélation.</p>
 <p>Dans la fonction <code>ggplot()</code>, un scatter plot est créé avec la couche géométrique <code>geom_point()</code>.</p>
 </div>
@@ -1551,7 +1551,7 @@ Astuce
 </div>
 </div>
 </div>
-<p>Nous pouvons ajouter des couches à l’objet np1 sans l’écraser, p.&nbsp;ex. une ligne de régréssion linéaire avec <code>geom_smooth(method = lm)</code> :</p>
+<p>Nous pouvons ajouter des couches à l’objet <code>np1</code> sans l’écraser, p.&nbsp;ex. une ligne de régression linéaire avec <code>geom_smooth(method = lm)</code> :</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a>np1 <span class="sc">+</span> <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -1562,7 +1562,7 @@ Astuce
 </div>
 </div>
 </div>
-<p>Que nous indique la ligne de régréssion ? En principe, elle indique une correlation légèrement négative entre les variables <code>Sepal.Length</code>et <code>Sepal.Width</code>! (la zone grise autour de la ligne bleue indique une marge d’erreur).</p>
+<p>Que nous indique la ligne de régression ? En principe, elle indique une correlation légèrement négative entre les variables <code>Sepal.Length</code>et <code>Sepal.Width</code> ! (la zone grise autour de la ligne bleue indique une marge d’erreur).</p>
 <p>Cela signifie que les iris dont les sépales sont plus longs ont tendance à avoir des sépales un peu moins larges ! Gardez cette constatation à l’esprit pour les étapes de codage suivantes.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb95"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ecrasons np1 en changeant un peu le code. Découvrez</span></span>
@@ -1611,7 +1611,7 @@ Astuce
 <p>Dans la fonction <code>ggplot()</code>, un diagramme à barres est créé avec la couche géométrique <code>geom_bar()</code>.</p>
 </div>
 </div>
-<p>Par exemple, nous pouvons utiliser le code simple suivant pour comparer la fréquence des différentes tailles (angl. <code>cut</code>) dans le jeu de données <code>diamonds</code>. Cette-fois ci, ous sauvegardons et nommons le graphique <code>db1</code>.</p>
+<p>Par exemple, nous pouvons utiliser le code simple suivant pour comparer la fréquence des différentes tailles (angl. <code>cut</code>) dans le jeu de données <code>diamonds</code>. Cette-fois ci, nous sauvegardons et nommons le graphique <code>db1</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb97"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a>db1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> diamonds, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> cut)) <span class="sc">+</span> <span class="fu">geom_bar</span>()</span>
 <span id="cb97-2"><a href="#cb97-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1642,7 +1642,7 @@ Astuce
 </div>
 </div>
 </div>
-<p>Que nous dit le graphique ? Il est intéressant de constater que dans le jeu de données <code>diamonds</code>, le niveau de qualité le plus élevé de la taille, à savoir <code>idéal</code>, est également le plus fréquent.</p>
+<p>Que nous dit le graphique ? Il est intéressant de constater que dans le jeu de données <code>diamonds</code>, le niveau de qualité le plus élevé de la taille, à savoir <code>ideal</code>, est également le plus fréquent.</p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1655,7 +1655,7 @@ Attention
 </div>
 <div id="callout-28" class="callout-28-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p>Attention ! Dans la fonction <code>ggplot()</code>, il y a une différence si vous voulez ajouter de la couleur aux points (qui ont mathématiquement zéro dimension) ou aux surfaces (qui ont deux dimensions), comme dans les diagrammes à barres.</p>
+<p>Dans la fonction <code>ggplot()</code>, il y a une différence si vous voulez ajouter de la couleur aux points (qui ont mathématiquement zéro dimension) ou aux surfaces (qui ont deux dimensions), comme dans les diagrammes à barres.</p>
 <p>Si vous voulez ajouter de la couleur à une surface, vous devez utiliser l’argument <code>fill = "xyz"</code>. L’argument <code>color = "xyz"</code> que nous avons utilisé pour ajouter de la couleur aux nuages de points ne fera qu’ajouter de la couleur à la ligne autour de la surface !</p>
 </div>
 </div>
@@ -1680,7 +1680,7 @@ Attention
 <p>Un <strong>histogramme</strong> est un type de graphique utilisé pour représenter <strong>la distribution</strong> d’<strong>une variable numérique</strong> à travers des barres.</p>
 <p>Un “histogramme sépare les valeurs possibles des données en classes ou groupes. Pour chaque groupe, on construit un rectangle dont la base correspond aux valeurs de ce groupe et la hauteur correspond au nombre d’observations dans le groupe.</p>
 <p>L’histogramme a une apparence semblable au graphique à barres verticales, mais il n’y a pas d’écart entre les barres.</p>
-<p>En règle générale, l’histogramme possède des barres d’une largeur égale.” <a href="https://www150.statcan.gc.ca/n1/edu/power-pouvoir/ch9/histo/5214822-fra.htm">Statistique Canada</a></p>
+<p>En règle générale, l’histogramme possède des barres d’une largeur égale” (Source : <a href="https://www150.statcan.gc.ca/n1/edu/power-pouvoir/ch9/histo/5214822-fra.htm">Statistique Canada, 2021).</a></p>
 <p>L’histogramme est particulièrement utile pour :</p>
 <ul>
 <li><strong>Analyser la distribution</strong> : Comprendre si les données sont normalement distribuées, asymmétriques (angl. <em>skewness</em>), ou si elles présentent un plateau (kurtosis).</li>
@@ -1690,16 +1690,17 @@ Attention
 <p>Avec <code>ggplot2</code> en R, créer un histogramme se fait avec la couche géometrique <code>geom_histogram()</code>. <code>ggplot2</code> calcule automatiquement la taille des intervalles (angl. <em>bins</em>) par défaut, mais cela peut être ajusté manuellement en spécifiant l’argument <code>binwidth = xyz</code>dans la fonction <code>geom_histogram()</code>, p.&nbsp;ex. <code>geom_histogram(binwidth = 30)</code>.</p>
 </div>
 </div>
-<p>Avant de créer un histogramme avec le code R, introduisons d’abord une nouvelle fonction : <code>rnorm()</code>. Elle peut être utilisée pour créer des valeurs aléatoires qui suivent une <strong>loi normale</strong> (angl. <em>normal distribution</em>.</p>
+<p>Avant de créer un histogramme avec le code R, introduisons d’abord une nouvelle fonction : <code>rnorm()</code>. Elle peut être utilisée pour créer des valeurs aléatoires qui suivent une <strong>loi normale</strong> (angl. <em>normal distribution</em>).</p>
 <p>Les arguments que nous pouvons entrer dans la fonction sont :</p>
 <ul>
 <li><p>le nombre <code>n</code> de valeurs aléatoires que nous voulons créer</p></li>
 <li><p>la moyenne <code>mean</code> de la distribution des valeurs aléatoires</p></li>
 <li><p>l’écart-type <code>sd</code> de la distribution des valeurs aléatoires</p></li>
 </ul>
-<p>Notez que par défaut, la fonction utilise <code>mean = 0</code> et <code>sd = 1</code>, ce qui correspond à une <strong>loi normale centrée réduite</strong> (angl. <em>standard normal distribution</em>). Utilisez aussi <code>?rnorm()</code>pour accéder à plus d’infos.</p>
+<p>Notez que par défaut, la fonction utilise <code>mean = 0</code> et <code>sd = 1</code>, ce qui correspond à une <strong>loi normale centrée réduite</strong> (angl. <em>standard normal distribution</em>).</p>
+<p>Utilisez aussi <code>?rnorm()</code>pour accéder à plus d’infos.</p>
 <p>Dans le code R suivant, nous utilisons <code>rnorm()</code> pour simuler les distributions des tailles des hommes et des femmes en Suisse.</p>
-<p>Selon un article de <a href="https://www.24heures.ch/calculateur-en-ligne-quelle-taille-faites-vous-par-rapport-aux-autres-191558705635#"><em>24heures</em></a>, les femmes ont une taille moyenne de 164.7 cm tandis que les hommes mesurent 177.4 cm en moyenne. Dans la suite, nous supposons que les écarts-types sont de +- 5.6 cm pour les femmes et de +- 6.1 cm pour les hommes.</p>
+<p>Selon un article de <a href="https://www.24heures.ch/calculateur-en-ligne-quelle-taille-faites-vous-par-rapport-aux-autres-191558705635#"><em>24 heures</em></a>, en Suisse, les femmes ont une taille moyenne de 164.7 cm tandis que les hommes mesurent 177.4 cm en moyenne. Dans la suite, nous supposons que les écarts-types sont de +- 5.6 cm pour les femmes et de +- 6.1 cm pour les hommes.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb99"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulation de tailles de femmes en Suisse Créer 500</span></span>
 <span id="cb99-2"><a href="#cb99-2" aria-hidden="true" tabindex="-1"></a><span class="co"># valeurs aléatoires de taille (moyenne = 164.7 et</span></span>
@@ -1708,7 +1709,7 @@ Attention
 <span id="cb99-5"><a href="#cb99-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb99-6"><a href="#cb99-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(taille_f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 161.3119 153.4556 175.2535 165.8702 170.2111 167.3084</code></pre>
+<pre><code>[1] 164.0153 173.1738 163.4386 162.0325 164.8642 169.1685</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb101"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="co"># stocker taille_f comme objet de type 'data.frame'</span></span>
 <span id="cb101-2"><a href="#cb101-2" aria-hidden="true" tabindex="-1"></a>taille_f <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(taille_f)</span>

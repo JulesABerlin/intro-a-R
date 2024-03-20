@@ -10,7 +10,6 @@ library(tidyverse)
 
 library(ggthemes)
 
-
 # répértoire de travail
 
 setwd("/Users/domus_julian/Documents/GitHub/intro-a-R/code")
@@ -19,48 +18,42 @@ setwd("/Users/domus_julian/Documents/GitHub/intro-a-R/code")
 
 data(iris)
 
+?iris
+
 dim(iris)
 
 str(iris)
 
+# mtcars
 
 data(mtcars)
 
 ?mtcars
 
-str(mtcars)
-
 mean(mtcars$mpg)
 
+min(mtcars$mpg)
 
-glimpse(mtcars)
+str(mtcars)
+
+# diamonds
+
+data("diamonds")
+
+head(diamonds)
 
 
-data(diamonds)
-
-?diamonds
-
-dim(diamonds)
-
-names(diamonds)
-
-# ggplot avec l'exemple diamonds
+# ggplot2
 
 library(ggthemes)
 
 ggplot(data = diamonds,
-       mapping = aes(x = carat, 
-                     y = price,
-                     color = clarity)) +
+       mapping = aes(x = carat, y = price, color = clarity)) +
   geom_point() +
   labs(title = "Relation entre carat et prix des diamants",
        subtitle = "n = 53 940 diamants",
-       y = "Prix",
-       x = "Carat") +
-  theme_economist()
-
-
-
-
+       x = "Carat",
+       y = "Prix") +
+  theme_wsj()
 
 

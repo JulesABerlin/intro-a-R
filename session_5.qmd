@@ -18,7 +18,7 @@ graphique suivants :
 
 ```{r}
 #| warning: false
-# N'oubliez pas de charger les paquets tidyverse et ggplot2 !
+# N'oubliez pas de charger les paquets tidyverse et ggthemes !
 # Exécutez le code suivant pour le faire :
 library(tidyverse)
 library(ggthemes)

@@ -1385,6 +1385,15 @@ graphique suivants :
 3.  Les histogrammes (angl. *histograms*)
 4.  Les boîtes à moustaches (angl. *box plots*)
 
+```{r}
+#| warning: false
+# N'oubliez pas de charger les paquets tidyverse et ggplot2 !
+# Exécutez le code suivant pour le faire :
+library(tidyverse)
+library(ggthemes)
+```
+
+
 ## 1. Les nuages de points (angl. *scatter plots*)
 
 Commençons par le **nuage de points**, que nous avons déjà vu lors de la
@@ -1796,7 +1805,7 @@ On voit dans le graphique des boxplots que dans `mtcars`, les voitures avec des 
         d'utilisation des médias** avec R comme autre élément important
         du cours.
 
-    -   Le questionnaire est anonyme (même pour l'enseignant) et peut
+    -   Le questionnaire est **anonyme** (même pour l'enseignant) et peut
         être rempli en ligne via LimeSurvey jusqu'au **vendredi 19 avril
         2024 à 23h59**.
 

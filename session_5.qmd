@@ -408,7 +408,7 @@ carburant entre les voitures avec un différents nombres de cylindres.
 
 ::: {.callout-note icon="true"}
 ## À noter
-A noter : le paramètre `alpha = 0.2` à l'intérieur de `geom_boxplot()` rend les boxplots transparents. En général, `alpha` peut être compris entre 0 (totalement transparent) et 1 (non transparent). C'est un paramètre supplémentaire qui permet de personnaliser votre graphique `ggplot2`.
+le paramètre `alpha = 0.2` à l'intérieur de `geom_boxplot()` rend les boxplots transparents. En général, `alpha` peut être compris entre 0 (totalement transparent) et 1 (non transparent). C'est un paramètre supplémentaire qui permet de personnaliser votre graphique `ggplot2`.
 :::
 
 On voit dans le graphique des boxplots que dans `mtcars`, les voitures avec des moteurs ayant plus de cylindres ont aussi tendance à être moins efficaces en termes de consommation de carburant. Il existe toutefois quelques intersections entre les groupes. C'est-à-dire qu'il y a des voitures à 8 cylindres qui sont relativement efficaces en termes de consommation de carburant, surpassant quelques voitures à 6 cylindres, par exemple. 

@@ -447,5 +447,5 @@ On voit dans le graphique des boxplots que dans `mtcars`, les voitures avec des 
         la date limite).
 
     -   Chaque étudiant(e) qui aura rempli le questionnaire dans les
-        délais recevra un **bonus de 3 points dans le Problem Set 4**
+        délais recevra un **bonus de 2 points dans le Problem Set 4**
         (10% des points).

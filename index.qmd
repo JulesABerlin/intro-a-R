@@ -895,8 +895,14 @@ Les résultats du **Problem Set 1** (bonnes réponses, échelle des notes)
 sont accéssibles sur la page Moodle de l'exercices.
 
 Voici l'histogramme des points obtenus par n = 81 étudiant.es qui ont
-participé au Problem Set 1. Le nombre maximal de points était de 20, il
-fallait 10 pour passer le test.
+participé au Problem Set 1.
+
+-   Le nombre maximal de points était de 20, il fallait 10 pour passer
+    le test.
+
+-   La moyenne des points obtenus était de 14.6 points (note = 4.75).
+
+-   79 étudiant.es ont réussi Problem Set 2 (98%).
 
 ```{r}
 #| echo: false
@@ -927,13 +933,15 @@ hist_ps_1 <-ggplot(points_ps_1,
        subtitle = "n = 81 résultats de test", 
        caption = "Source des données : Moodle") +       
   xlab("Points obtenus") +                             
-  ylab("Fréquence") + 
-  scale_x_continuous(breaks=seq(1, 20, 1)) + # cette couche définit les unité de l'axe x
-  scale_y_continuous(breaks=seq(0, 20, 2)) + # cette couche définit les unité de l'axe x
-  theme_minimal() 
+  ylab("Fréquence") +
+  theme_minimal() +
+  coord_cartesian(xlim = c(0,20), ylim = c(0,14)) +
+  scale_x_continuous(breaks = seq(0,20, by=1)) +
+   scale_y_continuous(breaks = seq(0,14, by=2)) +
+  geom_vline(aes(xintercept=9.5),
+             color="red",  linewidth=1, linetype="dashed")
 hist_ps_1
 ```
-
 # Session 4
 
 La session 4 a pour but d'introduire trois éléments fondamentaux en
@@ -1393,7 +1401,6 @@ library(tidyverse)
 library(ggthemes)
 ```
 
-
 ## 1. Les nuages de points (angl. *scatter plots*)
 
 Commençons par le **nuage de points**, que nous avons déjà vu lors de la
@@ -1447,8 +1454,8 @@ np1 + geom_smooth(method = lm)
 
 Que nous indique la ligne de régression ? En principe, elle indique une
 correlation légèrement négative entre les variables `Sepal.Length`et
-`Sepal.Width` ! (la zone grise autour de la ligne bleue indique une marge
-d'erreur).
+`Sepal.Width` ! (la zone grise autour de la ligne bleue indique une
+marge d'erreur).
 
 Cela signifie que les iris dont les sépales sont plus longs ont tendance
 à avoir des sépales un peu moins larges ! Gardez cette constatation à
@@ -1533,13 +1540,16 @@ db1 <- ggplot(data = diamonds,
 
 print(db1)
 ```
-Que nous dit le graphique ? Il est intéressant de constater que dans le jeu de données `diamonds`, le niveau de qualité le plus élevé de la taille, à savoir `ideal`, est également le plus fréquent.
+
+Que nous dit le graphique ? Il est intéressant de constater que dans le
+jeu de données `diamonds`, le niveau de qualité le plus élevé de la
+taille, à savoir `ideal`, est également le plus fréquent.
 
 ::: {.callout-caution collapse="false"}
 ## Attention
 
-Dans la fonction `ggplot()`, il y a une différence si vous
-voulez ajouter de la couleur aux points (qui ont mathématiquement zéro
+Dans la fonction `ggplot()`, il y a une différence si vous voulez
+ajouter de la couleur aux points (qui ont mathématiquement zéro
 dimension) ou aux surfaces (qui ont deux dimensions), comme dans les
 diagrammes à barres.
 
@@ -1549,8 +1559,12 @@ utilisé pour ajouter de la couleur aux nuages de points ne fera
 qu'ajouter de la couleur à la ligne autour de la surface !
 :::
 
-### C'est maintenant à vous de jouer ! 
-Reprenez le code que nous avons utilisé pour créer `db1` et modifiez-le pour créer un nouvel objet,`db2`, qui visualise la fréquence des types de qualité de couleur (`color`) dans le jeu de données `diamonds` sous la forme d'un diagramme à barres !
+### C'est maintenant à vous de jouer !
+
+Reprenez le code que nous avons utilisé pour créer `db1` et modifiez-le
+pour créer un nouvel objet,`db2`, qui visualise la fréquence des types
+de qualité de couleur (`color`) dans le jeu de données `diamonds` sous
+la forme d'un diagramme à barres !
 
 ## 3. Les histogrammes
 
@@ -1568,9 +1582,9 @@ d'observations dans le groupe.
 L’histogramme a une apparence semblable au graphique à barres
 verticales, mais il n'y a pas d'écart entre les barres.
 
-En règle générale, l'histogramme possède des barres d'une largeur
-égale" (Source : [Statistique
-Canada, 2021).](https://www150.statcan.gc.ca/n1/edu/power-pouvoir/ch9/histo/5214822-fra.htm)
+En règle générale, l'histogramme possède des barres d'une largeur égale"
+(Source : [Statistique Canada,
+2021).](https://www150.statcan.gc.ca/n1/edu/power-pouvoir/ch9/histo/5214822-fra.htm)
 
 L'histogramme est particulièrement utile pour :
 
@@ -1606,14 +1620,19 @@ Les arguments que nous pouvons entrer dans la fonction sont :
 
 Notez que par défaut, la fonction utilise `mean = 0` et `sd = 1`, ce qui
 correspond à une **loi normale centrée réduite** (angl. *standard normal
-distribution*). 
+distribution*).
 
 Utilisez aussi `?rnorm()`pour accéder à plus d'infos.
 
-Dans le code R suivant, nous utilisons `rnorm()` pour simuler les distributions des tailles des hommes et des femmes en Suisse. 
+Dans le code R suivant, nous utilisons `rnorm()` pour simuler les
+distributions des tailles des hommes et des femmes en Suisse.
 
-Selon un article de [*24 heures*](https://www.24heures.ch/calculateur-en-ligne-quelle-taille-faites-vous-par-rapport-aux-autres-191558705635#), en Suisse, les femmes ont une taille moyenne de 164.7 cm tandis que les hommes mesurent 177.4 cm en moyenne. Dans la suite, nous supposons que les écarts-types sont de +- 5.6 cm pour les femmes et de +- 6.1 cm pour les hommes.
-
+Selon un article de [*24
+heures*](https://www.24heures.ch/calculateur-en-ligne-quelle-taille-faites-vous-par-rapport-aux-autres-191558705635#),
+en Suisse, les femmes ont une taille moyenne de 164.7 cm tandis que les
+hommes mesurent 177.4 cm en moyenne. Dans la suite, nous supposons que
+les écarts-types sont de +- 5.6 cm pour les femmes et de +- 6.1 cm pour
+les hommes.
 
 ```{r}
 #| warning: false
@@ -1674,15 +1693,23 @@ ggplot2 !
 -   [Colors in R](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf)
 :::
 
-### C'est maintenant à vous de jouer ! 
-Reprenez le code que nous avons utilisé pour créer `taille_f` et `hist1` et modifiez-le pour créer une nouvelle simulation de taille d'hommes, `taille_h`, et un nouveau histogramme qui montre sa distribution, `hist2`. Jouez avec les paramètres `binwidth`et la couleur de votre visualisation. Pour cette tâche, vous pouvez supposer que les hommes en Suisse ont une taille moyenne (`mean`) de 177,4 cm avec un écart-type (`sd`) de 6,1 cm. 
+### C'est maintenant à vous de jouer !
+
+Reprenez le code que nous avons utilisé pour créer `taille_f` et `hist1`
+et modifiez-le pour créer une nouvelle simulation de taille d'hommes,
+`taille_h`, et un nouveau histogramme qui montre sa distribution,
+`hist2`. Jouez avec les paramètres `binwidth`et la couleur de votre
+visualisation. Pour cette tâche, vous pouvez supposer que les hommes en
+Suisse ont une taille moyenne (`mean`) de 177,4 cm avec un écart-type
+(`sd`) de 6,1 cm.
 
 ## 4. Les boîtes à moustaches (angl. *boxplots*)
 
 ::: {.callout-note icon="true"}
 ## À noter
-Les **boîtes à moustaches**, ou **boxplots**, sont un type de graphique pour
-représenter la distribution d'un ensemble de données à travers cinq
+
+Les **boîtes à moustaches**, ou **boxplots**, sont un type de graphique
+pour représenter la distribution d'un ensemble de données à travers cinq
 mesures clés :
 
 1.  le minimum (début de la "moustache" ou point extrême de minimum)
@@ -1755,9 +1782,12 @@ carburant (`mpg`) des voitures en fonction du nombre de cylindres
 str(mtcars)
 ```
 
-Nous pouvons constater que la colonne `cyl` (cylindre) est stockée au format numérique. 
+Nous pouvons constater que la colonne `cyl` (cylindre) est stockée au
+format numérique.
 
-C'est un problème, car nous voulons comparer la consommation de carburant des voitures à 4, 6 ou 8 cylindres. Nous devons traiter chacune d'entre elles comme un sous-groupe distinct. Comment faire ?
+C'est un problème, car nous voulons comparer la consommation de
+carburant des voitures à 4, 6 ou 8 cylindres. Nous devons traiter
+chacune d'entre elles comme un sous-groupe distinct. Comment faire ?
 
 ```{r}
 # Transformons donc cyl en facteur
@@ -1771,16 +1801,27 @@ box1 <- ggplot(data = mtcars,
 print(box1)
   
 ```
-Ce code génère un boxplot, `box1`, pour chaque groupe de cylindres dans le
-dataset `mtcars`, permettant de comparer facilement la consommation de
-carburant entre les voitures avec un différents nombres de cylindres.
+
+Ce code génère un boxplot, `box1`, pour chaque groupe de cylindres dans
+le dataset `mtcars`, permettant de comparer facilement la consommation
+de carburant entre les voitures avec un différents nombres de cylindres.
 
 ::: {.callout-note icon="true"}
 ## À noter
-Le paramètre `alpha = 0.2` à l'intérieur de `geom_boxplot()` rend les boxplots transparents. En général, `alpha` peut être compris entre 0 (totalement transparent) et 1 (non transparent). C'est un paramètre supplémentaire qui permet de personnaliser votre graphique `ggplot2`.
+
+Le paramètre `alpha = 0.2` à l'intérieur de `geom_boxplot()` rend les
+boxplots transparents. En général, `alpha` peut être compris entre 0
+(totalement transparent) et 1 (non transparent). C'est un paramètre
+supplémentaire qui permet de personnaliser votre graphique `ggplot2`.
 :::
 
-On voit dans le graphique des boxplots que dans `mtcars`, les voitures avec des moteurs ayant plus de cylindres ont aussi tendance à être moins efficaces en termes de consommation de carburant. Il existe toutefois quelques intersections entre les groupes. C'est-à-dire qu'il y a des voitures à 8 cylindres qui sont relativement efficaces en termes de consommation de carburant, surpassant quelques voitures à 6 cylindres, par exemple. 
+On voit dans le graphique des boxplots que dans `mtcars`, les voitures
+avec des moteurs ayant plus de cylindres ont aussi tendance à être moins
+efficaces en termes de consommation de carburant. Il existe toutefois
+quelques intersections entre les groupes. C'est-à-dire qu'il y a des
+voitures à 8 cylindres qui sont relativement efficaces en termes de
+consommation de carburant, surpassant quelques voitures à 6 cylindres,
+par exemple.
 
 ## Devoir pour Session 6 (Problem Set 2)
 
@@ -1800,9 +1841,9 @@ On voit dans le graphique des boxplots que dans `mtcars`, les voitures avec des 
 
     -   Les bases de R qui ont été traitées dans les premières sessions,
         comme par exemple la création et l'écrasement d'objets avec
-        l'opérateur d'affectation `<-`, sont toutefois requises, car
-        la matière se fonde sur ces bases. Veuillez combler vous-même
-        les éventuelles lacunes à ce sujet.
+        l'opérateur d'affectation `<-`, sont toutefois requises, car la
+        matière se fonde sur ces bases. Veuillez combler vous-même les
+        éventuelles lacunes à ce sujet.
 
 -   **Annonce : Questionnaire**
 
@@ -1810,9 +1851,9 @@ On voit dans le graphique des boxplots que dans `mtcars`, les voitures avec des 
         d'utilisation des médias** avec R comme autre élément important
         du cours.
 
-    -   Le questionnaire est **anonyme** (même pour l'enseignant) et peut
-        être rempli en ligne via LimeSurvey jusqu'au **vendredi 19 avril
-        2024 à 23h59**.
+    -   Le questionnaire est **anonyme** (même pour l'enseignant) et
+        peut être rempli en ligne via LimeSurvey jusqu'au **vendredi 19
+        avril 2024 à 23h59**.
 
     -   Tous les étudiant.es recevront prochainement un lien personnel
         d'invitation au questionnaire par e-mail (les réponses seront
@@ -1823,3 +1864,57 @@ On voit dans le graphique des boxplots que dans `mtcars`, les voitures avec des 
     -   Chaque étudiant(e) qui aura rempli le questionnaire dans les
         délais recevra un **bonus de 2 points dans le Problem Set 4**
         (10% des points).
+
+# Session 6 (Problem Set 2)
+
+Les résultats du **Problem Set 2** (bonnes réponses, échelle des notes)
+sont accéssibles sur la page Moodle de l'exercices.
+
+Voici l'histogramme des points obtenus par n = 82 étudiant.es qui ont
+participé au Problem Set 2.
+
+-   Le nombre maximal de points était de 20, il fallait 10 pour passer
+    le test.
+
+-   La moyenne des points obtenus était de 12.5 (note = 4.5).
+
+-   71 étudiant.es (86%) ont réussi Problem Set 2.
+
+```{r}
+#| echo: false
+#| output: true
+#| warning: false
+# script pour faire un histogramme des points obtenus dans le Problem Set 2
+# cours : Exercices Méthodes II
+# date : 27/28 mars 2024
+# auteur : Julian Maitra
+
+library(ggplot2)
+
+# Adaptez le code suivant pour votre répertoire de travail :
+
+setwd("/Users/domus_julian/Documents/GitHub/intro-a-R/code")
+
+# Enregistrez le fichier CSV points_ps_2 dans votre répertoire de travail, 
+# puis importez les données dans R (modifiez le code suivant selon votre ordinateur) :
+
+points_ps_2 <- read.csv("~/Documents/GitHub/intro-a-R/code/points_ps_2.csv", encoding="UTF-8")
+
+#points_ps_2 # il y a 82 observations de trois variables : etudiant.e, groupe et points
+
+hist_ps_2 <-ggplot(points_ps_2, 
+                   aes(x=points_ps_2)) + 
+  geom_histogram(binwidth = 1, color="black", fill="white") +
+  labs(title = "Histogramme des points obtenus dans le PS 2", # labs() permet de définir plusieurs labels en même temps (titre, axes, etc.)
+       subtitle = "n = 82 résultats de test", 
+       caption = "Source des données : Moodle") +       
+  xlab("Points obtenus") +                             
+  ylab("Fréquence") + 
+  theme_minimal() +
+  coord_cartesian(xlim = c(0,20), ylim = c(0,14)) +
+  scale_x_continuous(breaks = seq(0,20, by=1)) +
+   scale_y_continuous(breaks = seq(0,14, by=2)) +
+  geom_vline(aes(xintercept=9.5),
+             color="red",  linewidth=1, linetype="dashed")
+hist_ps_2
+```

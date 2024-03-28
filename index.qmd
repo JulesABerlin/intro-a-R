@@ -892,7 +892,7 @@ correctement défini avec la fonction `getwd()`
 # Session 3 (Problem Set 1)
 
 Les résultats du **Problem Set 1** (bonnes réponses, échelle des notes)
-sont accéssibles sur la page Moodle de l'exercices.
+sont accéssibles sur la page Moodle de l'exercice.
 
 Voici l'histogramme des points obtenus par n = 81 étudiant.es qui ont
 participé au Problem Set 1.
@@ -1868,7 +1868,7 @@ par exemple.
 # Session 6 (Problem Set 2)
 
 Les résultats du **Problem Set 2** (bonnes réponses, échelle des notes)
-sont accéssibles sur la page Moodle de l'exercices.
+sont accéssibles sur la page Moodle de l'exercice.
 
 Voici l'histogramme des points obtenus par n = 82 étudiant.es qui ont
 participé au Problem Set 2.

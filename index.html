@@ -1727,7 +1727,7 @@ Attention
 <span id="cb100-5"><a href="#cb100-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb100-6"><a href="#cb100-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(taille_f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 162.2787 160.7798 177.5195 167.0685 165.2809 174.2147</code></pre>
+<pre><code>[1] 161.3670 164.3414 159.4570 167.8825 161.1205 162.3980</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="co"># stocker taille_f comme objet de type 'data.frame'</span></span>
 <span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a>taille_f <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(taille_f)</span>
@@ -1946,8 +1946,9 @@ Astuce
 <section id="session-7" class="level1">
 <h1>Session 7</h1>
 <p><strong>Sujet : Manipuler les données (partie 1)</strong></p>
-<p>Le premier but de cette session est d’apprendre à importer des données dans RStudio à partir de fichier CSV et de les stocker en forme de data frame (format tabulaire).</p>
+<p>Le premier but de cette session est d’apprendre à importer des données dans RStudio à partir de <strong>fichier CSV</strong> et de les stocker en forme de data frame (format tabulaire).</p>
 <p>Le deuxième but est de se familiariser avec <code>dplyr</code> (prononcé “dee-ply-er” en anglais), un paquet du <code>tidyverse</code> conçu pour manipuler les données en forme de data frame.</p>
+<p>Contrairement aux jeux de données intégrés à R (tels que <code>diamonds</code>, etc.), la plupart des jeux de données du monde réel nécessitent des <strong>transformations</strong> avant de pouvoir être analysés et visualisés. À cette fin, nous examinerons également certaines transformations de types de variables et un nouvel opérateur, le <code>%&gt;%</code> (angl. “pipe”; trad. franç. “tuyau”), qui est très utile pour les manipulations de données.</p>
 <section id="lire-des-données-dans-rstudio" class="level2">
 <h2 class="anchored" data-anchor-id="lire-des-données-dans-rstudio">Lire des données dans RStudio</h2>
 <p>Par la suite, nous alons appliquer ces verbes avec un jeu de données concret, un fichier CSV nommé <code>igposts.csv</code>, qui contient des posts Instagram de célébritées qui ont reçu beaucoup d’interactions d’utilisateurs. Pour y arriver, il faut charger ce jeu de données dans notre session RStudio en cours.</p>

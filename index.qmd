@@ -1925,12 +1925,13 @@ hist_ps_2
 **Sujet : Manipuler les données (partie 1)**
 
 Le premier but de cette session est d'apprendre à importer des données
-dans RStudio à partir de fichier CSV et de les stocker en forme de data
-frame (format tabulaire).
+dans RStudio à partir de **fichier CSV** et de les stocker en forme de data frame (format tabulaire).
 
 Le deuxième but est de se familiariser avec `dplyr` (prononcé
 "dee-ply-er" en anglais), un paquet du `tidyverse` conçu pour manipuler
 les données en forme de data frame.
+
+Contrairement aux jeux de données intégrés à R (tels que `diamonds`, etc.), la plupart des jeux de données du monde réel nécessitent des **transformations** avant de pouvoir être analysés et visualisés. À cette fin, nous examinerons également certaines transformations de types de variables et un nouvel opérateur, le `%>%` (angl. "pipe"; trad. franç. "tuyau"), qui est très utile pour les manipulations de données.
 
 ## Lire des données dans RStudio
 

@@ -1925,13 +1925,19 @@ hist_ps_2
 **Sujet : Manipuler les données (partie 1)**
 
 Le premier but de cette session est d'apprendre à importer des données
-dans RStudio à partir de **fichier CSV** et de les stocker en forme de data frame (format tabulaire).
+dans RStudio à partir de **fichier CSV** et de les stocker en forme de
+data frame (format tabulaire).
 
 Le deuxième but est de se familiariser avec `dplyr` (prononcé
 "dee-ply-er" en anglais), un paquet du `tidyverse` conçu pour manipuler
 les données en forme de data frame.
 
-Contrairement aux jeux de données intégrés à R (tels que `diamonds`, etc.), la plupart des jeux de données du monde réel nécessitent des **transformations** avant de pouvoir être analysés et visualisés. À cette fin, nous examinerons également certaines transformations de types de variables et un nouvel opérateur, le `%>%` (angl. "pipe"; trad. franç. "tuyau"), qui est très utile pour les manipulations de données.
+Contrairement aux jeux de données intégrés à R (tels que `diamonds`,
+etc.), la plupart des jeux de données du monde réel nécessitent des
+**transformations** avant de pouvoir être analysés et visualisés. À
+cette fin, nous examinerons également certaines transformations de types
+de variables et un nouvel opérateur, le `%>%` (angl. "pipe"; trad.
+franç. "tuyau"), qui est très utile pour les manipulations de données.
 
 ## Lire des données dans RStudio
 
@@ -1974,8 +1980,8 @@ désigne les noms des colonnes) :
 Avant l'importation de fichier CSV dans RStudio (et comme déjà vu pleins
 de fois dans le cours 😉), il faut d'abord charger les paquets
 nécessaire avec `library()` et définir son répértoire de travail (vous
-devez adapter les paramètres de `setwd()` pour qu'il marche sur
-votre ordinateur) :
+devez adapter les paramètres de `setwd()` pour qu'il marche sur votre
+ordinateur) :
 
 ```{r}
 library(tidyverse)
@@ -2005,8 +2011,11 @@ suivre le processus suivant :
     -   Explications des paramètres :
 
         -   **Encoding = UTF-8** : Indique à RStudio d'utiliser
-            l'encodage de caractères UTF-8, ce qui est important pour
-            lire correctement toutes les lettres (p. ex. é, ä, ê, etc.).
+            [l'encodage de caractères
+            UTF-8](https://blog.hubspot.fr/website/encodage-utf-8) (qui
+            est un standard très répandu), ce qui est important pour
+            lire correctement toutes les lettres (notamment les
+            caractères avec des accents : é, ä, ê, etc.).
 
         -   **Heading = YES** : Indique à RStudio que la première ligne
             du fichier CSV contient les noms des colonnes.
@@ -2249,19 +2258,32 @@ str(df1)
 ```
 
 ### Manipulation de lignes avec `filter()` et `arrange()`
+
 ```{r}
 #| echo: true
 #| output: false
 # filter() : fonction pour filtrer les lignes selon un ou plusieurs critères
 
+# Pour filtrer pour une valeur spécifique d'une variable, p.ex. les posts de Cristiano Ronaldo : 
+
 df1 %>% filter(Account == "Cristiano Ronaldo")
+
+# Pour plusieurs valeurs spécifique de la même variable, p. ex. les posts de Ronaldo et Messi :
+
+df1 %>% filter(Account %in% c("Cristiano Ronaldo", "Leo Messi"))
+
+# Pour plusieurs valeurs spécifiques de variables différentes, p. ex. les posts de type Photo de Ronaldo :
 
 df1 %>% 
   filter(Account == "Cristiano Ronaldo", 
          Type == "Photo")
 
+# Filtrer à partir de valeurs numériques, p. ex. les posts avec au moins 10 millions d'intéractions :
+
 df1 %>% 
   filter(Total.Interactions >= 10000000)
+
+# Filtrer pour les posts de Selena Gomez avec au moins 10 millions d'intéractions :
 
 df1 %>% 
   filter(Account == "Selena Gomez", 
@@ -2273,11 +2295,17 @@ df1 %>%
 #| output: false
 # arrange() : fonction pour trier les lignes selon un ou plusieurs critères
 
+# Trier des valeurs/facteurs textuelles par ordre alphabétique :
+
 df1 %>% arrange(Account) %>% head(10)
+
+# Trier par le nombre d'intéractions (ordre croissant)
 
 df1 %>% 
   arrange(Total.Interactions) %>% 
   head(10)
+
+# Trier par le nombre d'intéractions par follower (ordre décroissant)
 
 df1 %>% 
   arrange(desc(TI_par_Follower)) %>% 
@@ -2285,13 +2313,18 @@ df1 %>%
 ```
 
 ### Résumer, compter et regrouper avec `summarize()`, `count()` et `group_by()`
+
 ```{r}
 #| echo: true
 #| output: false
 # summarize() : fonction qui réduit une ou plusieurs colonnes en une seule ligne, 
 # notamment pour résumer des données
 
+# Nous pouvons, par exemple, résumer la somme totale de Total.Interactions dans notre ensemble de données. Ce nombre est assez impressionnant et constitue une caractéristique importante de notre ensemble de données.
+
 df1 %>% summarize(sum_TI = sum(Total.Interactions)) 
+
+# Nous pouvons aussi calculer les moyennes des intéractions et de followers de tout les comptes qui ont publié les posts :
 
 df1 %>% 
   summarize(mean_TI = mean(Total.Interactions), 
@@ -2304,11 +2337,17 @@ df1 %>%
 
 # count() : fonction qui compte le nombre d'observations d'une ou plusieurs catégories
 
+# Compter l'occurence des types de posts Instagram (Photo et Album, dans ce cas) dans notre jeu de données :
+
 df1 %>% 
   count(Type)
 
+# Compter l'occurence des différents comptes dans notre jeu de données :
+
 df1 %>% 
   count(Account)
+
+# Compter l'occurence des différents comptes dans notre jeu de données en les triant par cette occurence de manière décroissante (avec le paramètre arrange(-n)) :
 
 df1 %>% 
   count(Account) %>% 
@@ -2322,12 +2361,18 @@ df1 %>%
 
 # group_by() : fonction qui regroupe des données selon une ou plusieurs catégories
 
+# Regroupement par type de post et comparaison du nombre moyen d'interactions par type de post :
+
 df1 %>% group_by(Type) %>% summarize(mean_TI = mean(Total.Interactions)) 
+
+# En utilisant le paramètre n=n() dans la fonction summarize(), nous pouvons également compter le nombre d'observations dans chaque catégorie :
 
 df1 %>% 
   group_by(Type) %>% 
   summarize(n = n(), 
             mean_TI = mean(Total.Interactions)) 
+
+# Utilisons plusieurs verbes dplyr pour trouver les 10 comptes qui apparaissent le plus fréquemment dans nos ensembles de données de posts Instagram. Nous résumons également leur nombre moyen de followers et d'interactions.
 
 df1 %>% 
   group_by(Account) %>% 

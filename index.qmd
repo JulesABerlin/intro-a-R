@@ -1971,10 +1971,10 @@ désigne les noms des colonnes) :
 | Nguyen  | Laetitia | 19  |
 :::
 
-Avant l'imporation de fichier CSV dans RStudio (et comme déjà vu pleins
+Avant l'importation de fichier CSV dans RStudio (et comme déjà vu pleins
 de fois dans le cours 😉), il faut d'abord charger les paquets
 nécessaire avec `library()` et définir son répértoire de travail (vous
-devez effacer le dièze et adapter le code suivant pour qu'il marche sur
+devez adapter les paramètres de `setwd()` pour qu'il marche sur
 votre ordinateur) :
 
 ```{r}
@@ -2348,7 +2348,7 @@ df1 %>%
     données, sera accessible sur ce site à partir du 17 avril.
 
 -   Assurez-vous d'avoir **rempli le questionnaire avant la date
-    limite** (**19 avril 2024 à 23h59**). Tous les étudiant(e)s qui
+    limite** (**19 avril 2024 à 23h59**). Tou(te)s les étudiant(e)s qui
     auront rempli le questionnaire à temps recevront 2 points de bonus
     pour le problème set 4 (10% des points).
 

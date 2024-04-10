@@ -131,3 +131,12 @@ df1 %>%
             mean_TI = mean(Total.Interactions)) %>%
   arrange(desc(n)) %>%
   head(10)
+
+# Utilisons plusieurs verbes dplyr pour comparer les posts de Ronaldo et Messi :
+
+igposts %>%
+  group_by(Account) %>%
+  filter(Account %in% c("Cristiano Ronaldo", "Leo Messi")) %>% 
+  summarize(n = n(), mean_Followers = mean(Followers.at.Posting),
+            mean_Likes = mean(Likes),
+            mean_Comments = mean(Comments)) 

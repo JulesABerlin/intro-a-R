@@ -1727,7 +1727,7 @@ Attention
 <span id="cb100-5"><a href="#cb100-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb100-6"><a href="#cb100-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(taille_f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 164.9975 167.2939 163.9058 166.9815 164.2533 154.7217</code></pre>
+<pre><code>[1] 171.2391 162.5007 166.8511 167.1202 158.6454 161.0319</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="co"># stocker taille_f comme objet de type 'data.frame'</span></span>
 <span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a>taille_f <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(taille_f)</span>
@@ -2274,7 +2274,7 @@ Astuce
 </div>
 </section>
 <section id="résumer-compter-et-regrouper-avec-summarize-count-et-group_by" class="level3">
-<h3 class="anchored" data-anchor-id="résumer-compter-et-regrouper-avec-summarize-count-et-group_by">résumer, compter et regrouper avec <code>summarize()</code>, <code>count()</code> et <code>group_by()</code></h3>
+<h3 class="anchored" data-anchor-id="résumer-compter-et-regrouper-avec-summarize-count-et-group_by">Résumer, compter et regrouper avec <code>summarize()</code>, <code>count()</code> et <code>group_by()</code></h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb124"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb124-1"><a href="#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="co"># summarize() : fonction qui réduit une ou plusieurs</span></span>
 <span id="cb124-2"><a href="#cb124-2" aria-hidden="true" tabindex="-1"></a><span class="co"># colonnes en une seule ligne, notamment pour résumer des</span></span>
@@ -2318,7 +2318,16 @@ Astuce
 <span id="cb126-14"><a href="#cb126-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>(), <span class="at">mean_Followers =</span> <span class="fu">mean</span>(Followers.at.Posting),</span>
 <span id="cb126-15"><a href="#cb126-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">mean_TI =</span> <span class="fu">mean</span>(Total.Interactions)) <span class="sc">%&gt;%</span></span>
 <span id="cb126-16"><a href="#cb126-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(n)) <span class="sc">%&gt;%</span></span>
-<span id="cb126-17"><a href="#cb126-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb126-17"><a href="#cb126-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="dv">10</span>)</span>
+<span id="cb126-18"><a href="#cb126-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb126-19"><a href="#cb126-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Utilisons plusieurs verbes dplyr pour comparer les Likes</span></span>
+<span id="cb126-20"><a href="#cb126-20" aria-hidden="true" tabindex="-1"></a><span class="co"># et Comments des posts de Ronaldo et Messi :</span></span>
+<span id="cb126-21"><a href="#cb126-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb126-22"><a href="#cb126-22" aria-hidden="true" tabindex="-1"></a>igposts <span class="sc">%&gt;%</span></span>
+<span id="cb126-23"><a href="#cb126-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Account) <span class="sc">%&gt;%</span></span>
+<span id="cb126-24"><a href="#cb126-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(Account <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Cristiano Ronaldo"</span>, <span class="st">"Leo Messi"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb126-25"><a href="#cb126-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>(), <span class="at">mean_Followers =</span> <span class="fu">mean</span>(Followers.at.Posting),</span>
+<span id="cb126-26"><a href="#cb126-26" aria-hidden="true" tabindex="-1"></a>        <span class="at">mean_Likes =</span> <span class="fu">mean</span>(Likes), <span class="at">mean_Comments =</span> <span class="fu">mean</span>(Comments))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>

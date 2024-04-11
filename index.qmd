@@ -2236,12 +2236,10 @@ df1 <- igposts %>%
                  Total.Interactions,
                  URL)
 
-str(df1)
-```
 
-```{r}
-#| echo: true
-#| output: false
+###############################################################################
+
+
 # mutate() : fonction pour créer une ou plusieurs nouvelles colonnes dans un data frame
 
 # Par exemple, nous pouvons créer une nouvelle colonne qui compte le nombre d'interactions par follower
@@ -2288,11 +2286,10 @@ df1 %>%
 df1 %>% 
   filter(Account == "Selena Gomez", 
          Total.Interactions >= 10000000)
-```
 
-```{r}
-#| echo: true
-#| output: false
+###############################################################################
+
+
 # arrange() : fonction pour trier les lignes selon un ou plusieurs critères
 
 # Trier des valeurs/facteurs textuelles par ordre alphabétique :
@@ -2329,11 +2326,10 @@ df1 %>% summarize(sum_TI = sum(Total.Interactions))
 df1 %>% 
   summarize(mean_TI = mean(Total.Interactions), 
                   mean_Followers = mean(Followers.at.Posting)) 
-```
 
-```{r}
-#| echo: true
-#| output: false
+
+###############################################################################
+
 
 # count() : fonction qui compte le nombre d'observations d'une ou plusieurs catégories
 
@@ -2353,11 +2349,10 @@ df1 %>%
   count(Account) %>% 
   arrange(-n) %>% 
   head(10)
-```
 
-```{r}
-#| echo: true
-#| output: false
+
+###############################################################################
+
 
 # group_by() : fonction qui regroupe des données selon une ou plusieurs catégories
 

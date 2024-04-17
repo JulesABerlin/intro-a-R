@@ -1263,7 +1263,7 @@ complexes.
 Le tableau suivant décrit les couches d'un graphique ggplot :
 
 | Couche                                                             | Déscription/Variables                                                                         | Obligatoire ? |
-|--------------------------------------------------------------------|:----------------------------------------------------------------------------------------------|:-------------:|
+|-----------------------|:--------------------|:--------------------------:|
 | *data*                                                             | le jeu de données que nous voulons visualiser                                                 |      oui      |
 | *aesthetics*                                                       | le *mapping* de nos variables : axes *x* et *y*, *color*, *fill*, *alpha*, *line width*, etc. |      oui      |
 | *geometries*                                                       | le type visuel du graphique : *point*, *line*, *histogram*, *bar*, *boxplot*                  |      oui      |
@@ -2420,5 +2420,6 @@ igposts %>%
 
 # Session 8 (cours en auto-apprentissage)
 
-**Sujet : Manipuler les données (partie 2)** Le matériel de cette
-session sera mis à disposition ici ultérieurement.
+**Sujet : Manipuler les données (partie 2)**
+
+Le matériel de cette session sera mis à disposition ici ultérieurement.

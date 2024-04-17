@@ -2278,6 +2278,8 @@ df1 %>%
 
 # Filtrer à partir de valeurs numériques, p. ex. les posts avec au moins 10 millions d'intéractions :
 
+options(scipen=999) # Cette commande désactive la notation scientifique des nombres
+
 df1 %>% 
   filter(Total.Interactions >= 10000000)
 
@@ -2415,3 +2417,6 @@ igposts %>%
     Assurez-vous de pouvoir lire correctement les fichiers CSV dans
     RStudio, car cela sera nécessaire pour résoudre l'ensemble de
     problèmes 3.
+# Session 8 (cours en auto-apprentissage)
+**Sujet : Manipuler les données (partie 2)**
+Le matériel de cette session sera mis à disposition ici ultérieurement.

@@ -2169,7 +2169,7 @@ bientôt, vous serez en mesure de charger facilement des ensembles de
 données dans RStudio ! Par ailleurs : il est normal de rencontrer des
 messages d'erreur. C'est une partie essentielle du processus
 d'apprentissage que de les surmonter en bricolant et en jouant avec vos
-données jusqu'à ce que vous puissiez les faire fonctionner.
+données et votre code R jusqu'à ce que vous puissiez le faire fonctionner.
 
 Après avoir chargé notre fichier CSV dans RStudio, appliqué des
 transformations et notre connaissance de l'opérateur pipe, nous pouvons
@@ -2217,7 +2217,7 @@ Essayons maintenant d'appliquer tout cela avec du code et les données
 #| output: false
 # select() : fonction pour extraire une ou plusieurs colonnes d'un data frame
 
-# Par exemple, nous pouvons extraire le quatres colonnes suivantes d'igposts (voir comment le pipe est utilisé)
+# Par exemple, nous pouvons extraire les quatres colonnes suivantes d'igposts (voir comment le pipe est utilisé) :
 
 igposts %>% select(Account, Type, Followers.at.Posting, Total.Interactions)
 

@@ -1728,7 +1728,7 @@ Attention
 <span id="cb100-5"><a href="#cb100-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb100-6"><a href="#cb100-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(taille_f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 162.1881 169.3388 171.1871 166.4731 159.8330 155.4983</code></pre>
+<pre><code>[1] 174.4056 164.9206 160.1439 173.6910 157.9456 159.1226</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="co"># stocker taille_f comme objet de type 'data.frame'</span></span>
 <span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a>taille_f <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(taille_f)</span>
@@ -2407,9 +2407,9 @@ Astuce
 <ul>
 <li><p>Attention, <strong>la session 8 du 17 et 18 avril 2024 sera une session en auto-apprentissage !</strong> Il n’y a donc pas d’enseignement en classe à Fribourg.</p></li>
 <li><p>Le matériel de session 8, la deuxième partie de la manipulation de données, sera accessible sur ce site à partir du 17 avril.</p></li>
-<li><p>Assurez-vous d’avoir <strong>rempli le questionnaire avant la date limite</strong> (<strong>19 avril 2024 à 23h59</strong>). Tou(te)s les étudiant(e)s qui auront rempli le questionnaire à temps recevront 2 points de bonus pour le problème set 4 (10% des points).</p></li>
+<li><p>Assurez-vous d’avoir <strong>rempli le questionnaire avant la date limite</strong> (<strong>19 avril 2024 à 23h59</strong>). Tou(te)s les étudiant(e)s qui auront rempli le questionnaire à temps recevront 2 points de bonus pour le Problem Set 4 (10% des points).</p></li>
 <li><p>Si vous avez des difficultés à accéder au questionnaire via le lien personnalisé qui vous a été envoyé par e-mail : Essayez à nouveau avec différents navigateurs, sur votre téléphone portable et désactivez les éventuels ad-blockers. Si nécessaire, veuillez contacter l’enseignant afin de recevoir un nouveau lien par e-mail.</p></li>
-<li><p>Dans deux semaines, les 24 et 25 avril, aura lieu <strong>Problem Set 3</strong>. Il portera principalement sur les contenus des sessions 7 et 8 (manipulation de données). Comblez vous-même les éventuelles lacunes de vos connaissances (p.&nbsp;ex. configurer correctement le répertoire de travail, utiliser l’opérateur d’assignation <code>&lt;-</code>, etc.) Assurez-vous de pouvoir lire correctement les fichiers CSV dans RStudio, car cela sera nécessaire pour résoudre l’ensemble de problèmes 3.</p></li>
+<li><p>Dans deux semaines, les 24 et 25 avril, aura lieu <strong>Problem Set 3</strong>. Il portera principalement sur les contenus des sessions 7 et 8 (manipulation de données). Comblez vous-même les éventuelles lacunes de vos connaissances (p.&nbsp;ex. configurer correctement le répertoire de travail, utiliser l’opérateur d’affectation <code>&lt;-</code>, etc.) Assurez-vous de pouvoir lire correctement les fichiers CSV dans RStudio, car cela sera nécessaire pour résoudre l’ensemble de problèmes 3.</p></li>
 </ul>
 </section>
 </section>
@@ -2760,12 +2760,10 @@ Solution
 </div>
 </div>
 </section>
-<section id="diamonds-iii-1" class="level3">
-<h3 class="anchored" data-anchor-id="diamonds-iii-1">7 : diamonds III</h3>
+<section id="mtcars-v" class="level3">
+<h3 class="anchored" data-anchor-id="mtcars-v">8 : mtcars V</h3>
 <ul>
-<li>Calculez le prix moyen en USD des diamants des différentes catégories de pureté (<code>clarity</code>) dans <code>diamonds</code> !</li>
-<li>Triez le résultat par ordre décroissant des prix moyens</li>
-<li>Quelle catégorie de pureté est la plus chère en moyenne dans <code>diamonds</code> ?</li>
+<li>Regroupez mtcars par <code>gear</code>, puis, à l’aide de <code>summarize()</code>, calculez <code>n</code>, la médiane et la variance de mpg.</li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-44-contents" aria-controls="callout-44" aria-expanded="false" aria-label="Toggle callout">
@@ -2780,51 +2778,9 @@ Solution
 <div id="callout-44" class="callout-44-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb144"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb144-1"><a href="#cb144-1" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span></span>
-<span id="cb144-2"><a href="#cb144-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(clarity) <span class="sc">%&gt;%</span></span>
-<span id="cb144-3"><a href="#cb144-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">prix_moyen =</span> <span class="fu">mean</span>(price)) <span class="sc">%&gt;%</span></span>
-<span id="cb144-4"><a href="#cb144-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(prix_moyen))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 8 × 2
-  clarity prix_moyen
-  &lt;ord&gt;        &lt;dbl&gt;
-1 SI2          5063.
-2 SI1          3996.
-3 VS2          3925.
-4 I1           3924.
-5 VS1          3839.
-6 VVS2         3284.
-7 IF           2865.
-8 VVS1         2523.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb146"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb146-1"><a href="#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Avec un prix par diamant de 5063 USD en moyenne, la</span></span>
-<span id="cb146-2"><a href="#cb146-2" aria-hidden="true" tabindex="-1"></a><span class="co"># catégorie de pureté SI2 est la plus chère dans diamonds.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="mtcars-v" class="level3">
-<h3 class="anchored" data-anchor-id="mtcars-v">8 : mtcars V</h3>
-<ul>
-<li>Regroupez mtcars par <code>gear</code>, puis, à l’aide de <code>summarize()</code>, calculez <code>n</code>, la médiane et la variance de mpg.</li>
-</ul>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-45-contents" aria-controls="callout-45" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-45" class="callout-45-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb147"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb147-1"><a href="#cb147-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
-<span id="cb147-2"><a href="#cb147-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(gear) <span class="sc">%&gt;%</span></span>
-<span id="cb147-3"><a href="#cb147-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>(), <span class="at">median_mpg =</span> <span class="fu">median</span>(mpg), <span class="at">var_mpg =</span> <span class="fu">var</span>(mpg))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb144"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb144-1"><a href="#cb144-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
+<span id="cb144-2"><a href="#cb144-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(gear) <span class="sc">%&gt;%</span></span>
+<span id="cb144-3"><a href="#cb144-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>(), <span class="at">median_mpg =</span> <span class="fu">median</span>(mpg), <span class="at">var_mpg =</span> <span class="fu">var</span>(mpg))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 4
    gear     n median_mpg var_mpg
@@ -2846,6 +2802,55 @@ Solution
 <li>Regroupez ensuite les données par espèce et utilisez <code>summarize()</code> pour calculer une nouvelle variable : <code>mean_Petal.Surface</code>.</li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-45-contents" aria-controls="callout-45" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-45" class="callout-45-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb146"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb146-1"><a href="#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   150 obs. of  5 variables:
+ $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+ $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
+ $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+ $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
+ $ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb148"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb148-1"><a href="#cb148-1" aria-hidden="true" tabindex="-1"></a>iris <span class="sc">%&gt;%</span></span>
+<span id="cb148-2"><a href="#cb148-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(Petal.Length, Petal.Width, Species) <span class="sc">%&gt;%</span></span>
+<span id="cb148-3"><a href="#cb148-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">Petal.Surface =</span> Petal.Length <span class="sc">*</span> Petal.Width) <span class="sc">%&gt;%</span></span>
+<span id="cb148-4"><a href="#cb148-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Species) <span class="sc">%&gt;%</span></span>
+<span id="cb148-5"><a href="#cb148-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">mean_Petal.Surface =</span> <span class="fu">mean</span>(Petal.Surface))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  Species    mean_Petal.Surface
+  &lt;fct&gt;                   &lt;dbl&gt;
+1 setosa                  0.366
+2 versicolor              5.72 
+3 virginica              11.3  </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb150"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb150-1"><a href="#cb150-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Les iris de l'espèce virginica ont les plus grandes</span></span>
+<span id="cb150-2"><a href="#cb150-2" aria-hidden="true" tabindex="-1"></a><span class="co"># surfaces de pétales (en moyenne).</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="diamonds-iv" class="level3">
+<h3 class="anchored" data-anchor-id="diamonds-iv">10 : diamonds IV</h3>
+<ul>
+<li>Utilisez les verbes de <code>dplyr</code> pour calculer la moyenne des prix en USD par carat dans <code>diamonds</code>.</li>
+<li>Montrez les résultats, triés par ordre décroissant de dollars par <code>carat</code>, pour les différentes catégories de taille (<code>cut</code>).</li>
+<li>Montrez aussi <code>n</code>, le nombre de diamants par catégorie de taille.</li>
+</ul>
+<div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-46-contents" aria-controls="callout-46" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -2858,41 +2863,35 @@ Solution
 <div id="callout-46" class="callout-46-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb149"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb149-1"><a href="#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb151"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb151-1"><a href="#cb151-1" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span></span>
+<span id="cb151-2"><a href="#cb151-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(carat, cut, price) <span class="sc">%&gt;%</span></span>
+<span id="cb151-3"><a href="#cb151-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">USD_per_carat =</span> price<span class="sc">/</span>carat) <span class="sc">%&gt;%</span></span>
+<span id="cb151-4"><a href="#cb151-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(cut) <span class="sc">%&gt;%</span></span>
+<span id="cb151-5"><a href="#cb151-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>(), <span class="at">mean_USD_per_carat =</span> <span class="fu">mean</span>(USD_per_carat)) <span class="sc">%&gt;%</span></span>
+<span id="cb151-6"><a href="#cb151-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_USD_per_carat))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>'data.frame':   150 obs. of  5 variables:
- $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
- $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
- $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
- $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
- $ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
+<pre><code># A tibble: 5 × 3
+  cut           n mean_USD_per_carat
+  &lt;ord&gt;     &lt;int&gt;              &lt;dbl&gt;
+1 Premium   13791              4223.
+2 Very Good 12082              4014.
+3 Ideal     21551              3920.
+4 Good       4906              3860.
+5 Fair       1610              3767.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb151"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb151-1"><a href="#cb151-1" aria-hidden="true" tabindex="-1"></a>iris <span class="sc">%&gt;%</span></span>
-<span id="cb151-2"><a href="#cb151-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(Petal.Length, Petal.Width, Species) <span class="sc">%&gt;%</span></span>
-<span id="cb151-3"><a href="#cb151-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">Petal.Surface =</span> Petal.Length <span class="sc">*</span> Petal.Width) <span class="sc">%&gt;%</span></span>
-<span id="cb151-4"><a href="#cb151-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Species) <span class="sc">%&gt;%</span></span>
-<span id="cb151-5"><a href="#cb151-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">mean_Petal.Surface =</span> <span class="fu">mean</span>(Petal.Surface))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 2
-  Species    mean_Petal.Surface
-  &lt;fct&gt;                   &lt;dbl&gt;
-1 setosa                  0.366
-2 versicolor              5.72 
-3 virginica              11.3  </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb153"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb153-1"><a href="#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Les iris de l'espèce virginica ont les plus grandes</span></span>
-<span id="cb153-2"><a href="#cb153-2" aria-hidden="true" tabindex="-1"></a><span class="co"># surfaces de pétales (en moyenne).</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb153"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb153-1"><a href="#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="co"># En moyenne, les diamants de la meilleure qualité de</span></span>
+<span id="cb153-2"><a href="#cb153-2" aria-hidden="true" tabindex="-1"></a><span class="co"># taille (Ideal) ne sont pas les plus chers dans diamonds.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="diamonds-iv" class="level3">
-<h3 class="anchored" data-anchor-id="diamonds-iv">10 : diamonds IV</h3>
+<section id="igposts-i" class="level3">
+<h3 class="anchored" data-anchor-id="igposts-i">11 : igposts I</h3>
 <ul>
-<li>Utilisez les verbes de <code>dplyr</code> pour calculer la moyenne des prix en USD par carat dans <code>diamonds</code>.</li>
-<li>Montrez les résultats, triés par ordre décroissant de dollars par <code>carat</code>, pour les différentes catégories de taille (<code>cut</code>).</li>
-<li>Montrez aussi <code>n</code>, le nombre de diamants par catégorie de taille.</li>
+<li>Chargez le jeu de données <code>igposts</code>que nous avons vu pendant session 7.</li>
+<li>Si nécessaire, téléchargez le encore une fois depuis Moodle et sauvegardez le dans le dossier de votre ordinateur que vous avez définit comme répértoire de travail.</li>
+<li>Si nécessaire, transformez encore une fois les colonnes <code>igposts$Account</code>, <code>igposts$User.Name</code>et <code>igposts$Type</code> en variables catégorielles avec <code>as.factor()</code>.</li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-47-contents" aria-controls="callout-47" aria-expanded="false" aria-label="Toggle callout">
@@ -2907,66 +2906,23 @@ Solution
 <div id="callout-47" class="callout-47-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb154"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb154-1"><a href="#cb154-1" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span></span>
-<span id="cb154-2"><a href="#cb154-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(carat, cut, price) <span class="sc">%&gt;%</span></span>
-<span id="cb154-3"><a href="#cb154-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">USD_per_carat =</span> price<span class="sc">/</span>carat) <span class="sc">%&gt;%</span></span>
-<span id="cb154-4"><a href="#cb154-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(cut) <span class="sc">%&gt;%</span></span>
-<span id="cb154-5"><a href="#cb154-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>(), <span class="at">mean_USD_per_carat =</span> <span class="fu">mean</span>(USD_per_carat)) <span class="sc">%&gt;%</span></span>
-<span id="cb154-6"><a href="#cb154-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_USD_per_carat))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 3
-  cut           n mean_USD_per_carat
-  &lt;ord&gt;     &lt;int&gt;              &lt;dbl&gt;
-1 Premium   13791              4223.
-2 Very Good 12082              4014.
-3 Ideal     21551              3920.
-4 Good       4906              3860.
-5 Fair       1610              3767.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb156"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb156-1"><a href="#cb156-1" aria-hidden="true" tabindex="-1"></a><span class="co"># En moyenne, les diamants de la meilleure qualité de</span></span>
-<span id="cb156-2"><a href="#cb156-2" aria-hidden="true" tabindex="-1"></a><span class="co"># taille (Ideal) ne sont pas les plus chers dans diamonds.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="igposts-i" class="level3">
-<h3 class="anchored" data-anchor-id="igposts-i">11 : igposts I</h3>
-<ul>
-<li>Chargez le jeu de données <code>igposts</code>que nous avons vu pendant session 7.</li>
-<li>Si nécessaire, téléchargez le encore une fois depuis Moodle et sauvegardez le dans le dossier de votre ordinateur que vous avez définit comme répértoire de travail.</li>
-<li>Si nécessaire, transformez encore une fois les colonnes <code>igposts$Account</code>, <code>igposts$User.Name</code>et <code>igposts$Type</code> en variables catégorielles avec <code>as.factor()</code>.</li>
-</ul>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-48-contents" aria-controls="callout-48" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-48" class="callout-48-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb157"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb157-1"><a href="#cb157-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vous pouvez copier-coller le code que nous avons utilisé</span></span>
-<span id="cb157-2"><a href="#cb157-2" aria-hidden="true" tabindex="-1"></a><span class="co"># la dernière fois (modifiez-le pour votre ordi) :</span></span>
-<span id="cb157-3"><a href="#cb157-3" aria-hidden="true" tabindex="-1"></a>igposts <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"/Users/domus_julian/Documents/GitHub/intro-a-R/code/igposts.csv"</span>,</span>
-<span id="cb157-4"><a href="#cb157-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">encoding =</span> <span class="st">"UTF-8"</span>, <span class="at">na.strings =</span> <span class="st">"#N/A"</span>)</span>
-<span id="cb157-5"><a href="#cb157-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb157-6"><a href="#cb157-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Appliquez encore une fois les transformations de</span></span>
-<span id="cb157-7"><a href="#cb157-7" aria-hidden="true" tabindex="-1"></a><span class="co"># variables, si nécessaire :</span></span>
-<span id="cb157-8"><a href="#cb157-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb157-9"><a href="#cb157-9" aria-hidden="true" tabindex="-1"></a>igposts<span class="sc">$</span>Account <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(igposts<span class="sc">$</span>Account)</span>
-<span id="cb157-10"><a href="#cb157-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb157-11"><a href="#cb157-11" aria-hidden="true" tabindex="-1"></a>igposts<span class="sc">$</span>User.Name <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(igposts<span class="sc">$</span>User.Name)</span>
-<span id="cb157-12"><a href="#cb157-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb157-13"><a href="#cb157-13" aria-hidden="true" tabindex="-1"></a>igposts<span class="sc">$</span>Type <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(igposts<span class="sc">$</span>Type)</span>
-<span id="cb157-14"><a href="#cb157-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb157-15"><a href="#cb157-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Vérifier, si ça a marché :</span></span>
-<span id="cb157-16"><a href="#cb157-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb157-17"><a href="#cb157-17" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(igposts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb154"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb154-1"><a href="#cb154-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vous pouvez copier-coller le code que nous avons utilisé</span></span>
+<span id="cb154-2"><a href="#cb154-2" aria-hidden="true" tabindex="-1"></a><span class="co"># la dernière fois (modifiez-le pour votre ordi) :</span></span>
+<span id="cb154-3"><a href="#cb154-3" aria-hidden="true" tabindex="-1"></a>igposts <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"/Users/domus_julian/Documents/GitHub/intro-a-R/code/igposts.csv"</span>,</span>
+<span id="cb154-4"><a href="#cb154-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">encoding =</span> <span class="st">"UTF-8"</span>, <span class="at">na.strings =</span> <span class="st">"#N/A"</span>)</span>
+<span id="cb154-5"><a href="#cb154-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb154-6"><a href="#cb154-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Appliquez encore une fois les transformations de</span></span>
+<span id="cb154-7"><a href="#cb154-7" aria-hidden="true" tabindex="-1"></a><span class="co"># variables, si nécessaire :</span></span>
+<span id="cb154-8"><a href="#cb154-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb154-9"><a href="#cb154-9" aria-hidden="true" tabindex="-1"></a>igposts<span class="sc">$</span>Account <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(igposts<span class="sc">$</span>Account)</span>
+<span id="cb154-10"><a href="#cb154-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb154-11"><a href="#cb154-11" aria-hidden="true" tabindex="-1"></a>igposts<span class="sc">$</span>User.Name <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(igposts<span class="sc">$</span>User.Name)</span>
+<span id="cb154-12"><a href="#cb154-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb154-13"><a href="#cb154-13" aria-hidden="true" tabindex="-1"></a>igposts<span class="sc">$</span>Type <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(igposts<span class="sc">$</span>Type)</span>
+<span id="cb154-14"><a href="#cb154-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb154-15"><a href="#cb154-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Vérifier, si ça a marché :</span></span>
+<span id="cb154-16"><a href="#cb154-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb154-17"><a href="#cb154-17" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(igposts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>'data.frame':   100 obs. of  12 variables:
  $ Account             : Factor w/ 38 levels "Anastasia Karanikolaou",..: 24 31 21 7 7 7 16 35 31 7 ...
@@ -2994,7 +2950,7 @@ Solution
 <li>Affichez les 10 premiers par ordre décroissant de <code>n</code>.</li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-49-contents" aria-controls="callout-49" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-48-contents" aria-controls="callout-48" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3003,14 +2959,14 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-49" class="callout-49-contents callout-collapse collapse">
+<div id="callout-48" class="callout-48-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb159"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb159-1"><a href="#cb159-1" aria-hidden="true" tabindex="-1"></a>igposts <span class="sc">%&gt;%</span></span>
-<span id="cb159-2"><a href="#cb159-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Account) <span class="sc">%&gt;%</span></span>
-<span id="cb159-3"><a href="#cb159-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb159-4"><a href="#cb159-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(n)) <span class="sc">%&gt;%</span></span>
-<span id="cb159-5"><a href="#cb159-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb156"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb156-1"><a href="#cb156-1" aria-hidden="true" tabindex="-1"></a>igposts <span class="sc">%&gt;%</span></span>
+<span id="cb156-2"><a href="#cb156-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Account) <span class="sc">%&gt;%</span></span>
+<span id="cb156-3"><a href="#cb156-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb156-4"><a href="#cb156-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(n)) <span class="sc">%&gt;%</span></span>
+<span id="cb156-5"><a href="#cb156-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 2
    Account                n
@@ -3039,7 +2995,7 @@ Solution
 <li>Affichez les top 10.</li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-50-contents" aria-controls="callout-50" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-49-contents" aria-controls="callout-49" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3048,15 +3004,15 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-50" class="callout-50-contents callout-collapse collapse">
+<div id="callout-49" class="callout-49-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb161"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb161-1"><a href="#cb161-1" aria-hidden="true" tabindex="-1"></a>igposts <span class="sc">%&gt;%</span></span>
-<span id="cb161-2"><a href="#cb161-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Account) <span class="sc">%&gt;%</span></span>
-<span id="cb161-3"><a href="#cb161-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">mean_Likes =</span> <span class="fu">mean</span>(Likes), <span class="at">mean_Comments =</span> <span class="fu">mean</span>(Comments),</span>
-<span id="cb161-4"><a href="#cb161-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">mean_Views =</span> <span class="fu">mean</span>(Views)) <span class="sc">%&gt;%</span></span>
-<span id="cb161-5"><a href="#cb161-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_Likes)) <span class="sc">%&gt;%</span></span>
-<span id="cb161-6"><a href="#cb161-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb158"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb158-1"><a href="#cb158-1" aria-hidden="true" tabindex="-1"></a>igposts <span class="sc">%&gt;%</span></span>
+<span id="cb158-2"><a href="#cb158-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Account) <span class="sc">%&gt;%</span></span>
+<span id="cb158-3"><a href="#cb158-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">mean_Likes =</span> <span class="fu">mean</span>(Likes), <span class="at">mean_Comments =</span> <span class="fu">mean</span>(Comments),</span>
+<span id="cb158-4"><a href="#cb158-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">mean_Views =</span> <span class="fu">mean</span>(Views)) <span class="sc">%&gt;%</span></span>
+<span id="cb158-5"><a href="#cb158-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_Likes)) <span class="sc">%&gt;%</span></span>
+<span id="cb158-6"><a href="#cb158-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 4
    Account            mean_Likes mean_Comments mean_Views
@@ -3084,7 +3040,7 @@ Solution
 <li>Allez voir l’URL du post avec le plus de <code>Likes</code> : De quoi s’agit-il ?</li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-51-contents" aria-controls="callout-51" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-50-contents" aria-controls="callout-50" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3093,13 +3049,13 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-51" class="callout-51-contents callout-collapse collapse">
+<div id="callout-50" class="callout-50-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb163"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb163-1"><a href="#cb163-1" aria-hidden="true" tabindex="-1"></a>igposts <span class="sc">%&gt;%</span></span>
-<span id="cb163-2"><a href="#cb163-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(Account, Likes, URL) <span class="sc">%&gt;%</span></span>
-<span id="cb163-3"><a href="#cb163-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(Likes)) <span class="sc">%&gt;%</span></span>
-<span id="cb163-4"><a href="#cb163-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb160"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb160-1"><a href="#cb160-1" aria-hidden="true" tabindex="-1"></a>igposts <span class="sc">%&gt;%</span></span>
+<span id="cb160-2"><a href="#cb160-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(Account, Likes, URL) <span class="sc">%&gt;%</span></span>
+<span id="cb160-3"><a href="#cb160-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(Likes)) <span class="sc">%&gt;%</span></span>
+<span id="cb160-4"><a href="#cb160-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>            Account    Likes                                      URL
 1         Leo Messi 23075849 https://www.instagram.com/p/CpLxnFlNJZn/
@@ -3108,9 +3064,9 @@ Solution
 4 Cristiano Ronaldo 16317762 https://www.instagram.com/p/CodNx8BL1-X/
 5 Cristiano Ronaldo 14603158 https://www.instagram.com/p/CosNn0ZN-57/</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb165"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb165-1"><a href="#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Le post Instagram le plus liké dans igposts est un post</span></span>
-<span id="cb165-2"><a href="#cb165-2" aria-hidden="true" tabindex="-1"></a><span class="co"># de type album de Leo Messi dans lequel il met en scène un</span></span>
-<span id="cb165-3"><a href="#cb165-3" aria-hidden="true" tabindex="-1"></a><span class="co"># prix qu'il a reçu de la FIFA.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb162"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb162-1"><a href="#cb162-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Le post Instagram le plus liké dans igposts est un post</span></span>
+<span id="cb162-2"><a href="#cb162-2" aria-hidden="true" tabindex="-1"></a><span class="co"># de type album de Leo Messi dans lequel il met en scène un</span></span>
+<span id="cb162-3"><a href="#cb162-3" aria-hidden="true" tabindex="-1"></a><span class="co"># prix qu'il a reçu de la FIFA.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <blockquote class="instagram-media blockquote" data-instgrm-captioned="" data-instgrm-permalink="https://www.instagram.com/p/CpLxnFlNJZn/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
 <div style="padding:16px;">
@@ -3202,7 +3158,7 @@ View this post on Instagram
 <li>Allez voir l’URL du post avec le plus de <code>Comments</code> : De quoi s’agit-il ?</li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-52-contents" aria-controls="callout-52" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-51-contents" aria-controls="callout-51" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3211,13 +3167,13 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-52" class="callout-52-contents callout-collapse collapse">
+<div id="callout-51" class="callout-51-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb166"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb166-1"><a href="#cb166-1" aria-hidden="true" tabindex="-1"></a>igposts <span class="sc">%&gt;%</span></span>
-<span id="cb166-2"><a href="#cb166-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(Account, Comments, URL) <span class="sc">%&gt;%</span></span>
-<span id="cb166-3"><a href="#cb166-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(Comments)) <span class="sc">%&gt;%</span></span>
-<span id="cb166-4"><a href="#cb166-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb163"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb163-1"><a href="#cb163-1" aria-hidden="true" tabindex="-1"></a>igposts <span class="sc">%&gt;%</span></span>
+<span id="cb163-2"><a href="#cb163-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(Account, Comments, URL) <span class="sc">%&gt;%</span></span>
+<span id="cb163-3"><a href="#cb163-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(Comments)) <span class="sc">%&gt;%</span></span>
+<span id="cb163-4"><a href="#cb163-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>            Account Comments                                      URL
 1      Selena Gomez   259671 https://www.instagram.com/p/Co_P7YgrrFO/
@@ -3226,10 +3182,10 @@ Solution
 4 Cristiano Ronaldo   183645 https://www.instagram.com/p/CodNx8BL1-X/
 5           Shakira   180662 https://www.instagram.com/p/Co8GDELuSpG/</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb168"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb168-1"><a href="#cb168-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Le post Instagram ayant reçu le plus de commentaires dans</span></span>
-<span id="cb168-2"><a href="#cb168-2" aria-hidden="true" tabindex="-1"></a><span class="co"># igposts est de type photo et a été publié par Selena</span></span>
-<span id="cb168-3"><a href="#cb168-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Gomez. Il la représente en train de boire un cocktail et</span></span>
-<span id="cb168-4"><a href="#cb168-4" aria-hidden="true" tabindex="-1"></a><span class="co"># de flirter avec la caméra.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb165"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb165-1"><a href="#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Le post Instagram ayant reçu le plus de commentaires dans</span></span>
+<span id="cb165-2"><a href="#cb165-2" aria-hidden="true" tabindex="-1"></a><span class="co"># igposts est de type photo et a été publié par Selena</span></span>
+<span id="cb165-3"><a href="#cb165-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Gomez. Il la représente en train de boire un cocktail et</span></span>
+<span id="cb165-4"><a href="#cb165-4" aria-hidden="true" tabindex="-1"></a><span class="co"># de flirter avec la caméra.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <blockquote class="instagram-media blockquote" data-instgrm-captioned="" data-instgrm-permalink="https://www.instagram.com/p/Co_P7YgrrFO/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
 <div style="padding:16px;">
@@ -3321,7 +3277,7 @@ View this post on Instagram
 <li>Allez voir l’URL du post avec le plus de <code>Views</code> : De quoi s’agit-il ?</li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-53-contents" aria-controls="callout-53" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-52-contents" aria-controls="callout-52" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3330,13 +3286,13 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-53" class="callout-53-contents callout-collapse collapse">
+<div id="callout-52" class="callout-52-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb169"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb169-1"><a href="#cb169-1" aria-hidden="true" tabindex="-1"></a>igposts <span class="sc">%&gt;%</span></span>
-<span id="cb169-2"><a href="#cb169-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(Account, Views, URL) <span class="sc">%&gt;%</span></span>
-<span id="cb169-3"><a href="#cb169-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(Views)) <span class="sc">%&gt;%</span></span>
-<span id="cb169-4"><a href="#cb169-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb166"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb166-1"><a href="#cb166-1" aria-hidden="true" tabindex="-1"></a>igposts <span class="sc">%&gt;%</span></span>
+<span id="cb166-2"><a href="#cb166-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(Account, Views, URL) <span class="sc">%&gt;%</span></span>
+<span id="cb166-3"><a href="#cb166-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(Views)) <span class="sc">%&gt;%</span></span>
+<span id="cb166-4"><a href="#cb166-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Account    Views                                      URL
 1 Kendall 51269891 https://www.instagram.com/p/CoYqX0hr1jr/
@@ -3345,11 +3301,11 @@ Solution
 4 KAROL G 15466414 https://www.instagram.com/p/ComtUDjrPAD/
 5       V 10998354 https://www.instagram.com/p/CpJn09fPvud/</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb171"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb171-1"><a href="#cb171-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Le post Instagram qui a reçu le plus de Views (vidéos</span></span>
-<span id="cb171-2"><a href="#cb171-2" aria-hidden="true" tabindex="-1"></a><span class="co"># vues) dans igposts est un post d'album de Kendall Jenner</span></span>
-<span id="cb171-3"><a href="#cb171-3" aria-hidden="true" tabindex="-1"></a><span class="co"># dans lequel elle partage de courtes séquences de selfie</span></span>
-<span id="cb171-4"><a href="#cb171-4" aria-hidden="true" tabindex="-1"></a><span class="co"># d'elle-même, partageant un moment intime avec ses</span></span>
-<span id="cb171-5"><a href="#cb171-5" aria-hidden="true" tabindex="-1"></a><span class="co"># followers (le son ne semble plus fonctionner).</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb168"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb168-1"><a href="#cb168-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Le post Instagram qui a reçu le plus de Views (vidéos</span></span>
+<span id="cb168-2"><a href="#cb168-2" aria-hidden="true" tabindex="-1"></a><span class="co"># vues) dans igposts est un post d'album de Kendall Jenner</span></span>
+<span id="cb168-3"><a href="#cb168-3" aria-hidden="true" tabindex="-1"></a><span class="co"># dans lequel elle partage de courtes séquences de selfie</span></span>
+<span id="cb168-4"><a href="#cb168-4" aria-hidden="true" tabindex="-1"></a><span class="co"># d'elle-même, partageant un moment intime avec ses</span></span>
+<span id="cb168-5"><a href="#cb168-5" aria-hidden="true" tabindex="-1"></a><span class="co"># followers (le son ne semble plus fonctionner).</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <blockquote class="instagram-media blockquote" data-instgrm-captioned="" data-instgrm-permalink="https://www.instagram.com/p/CoYqX0hr1jr/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
 <div style="padding:16px;">
@@ -3441,7 +3397,7 @@ View this post on Instagram
 <li>Trouvez maintenant le post avec le plus grand nombre de <code>Likes_par_Follower</code> et naviguez jusqu’à son URL : que montre-t-il ?</li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-54-contents" aria-controls="callout-54" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-53-contents" aria-controls="callout-53" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3450,14 +3406,14 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-54" class="callout-54-contents callout-collapse collapse">
+<div id="callout-53" class="callout-53-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb172"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb172-1"><a href="#cb172-1" aria-hidden="true" tabindex="-1"></a>igposts <span class="sc">%&gt;%</span></span>
-<span id="cb172-2"><a href="#cb172-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">Likes_par_Follower =</span> Likes<span class="sc">/</span>Followers.at.Posting) <span class="sc">%&gt;%</span></span>
-<span id="cb172-3"><a href="#cb172-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(Account, Likes_par_Follower, URL) <span class="sc">%&gt;%</span></span>
-<span id="cb172-4"><a href="#cb172-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(Likes_par_Follower)) <span class="sc">%&gt;%</span></span>
-<span id="cb172-5"><a href="#cb172-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb169"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb169-1"><a href="#cb169-1" aria-hidden="true" tabindex="-1"></a>igposts <span class="sc">%&gt;%</span></span>
+<span id="cb169-2"><a href="#cb169-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">Likes_par_Follower =</span> Likes<span class="sc">/</span>Followers.at.Posting) <span class="sc">%&gt;%</span></span>
+<span id="cb169-3"><a href="#cb169-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(Account, Likes_par_Follower, URL) <span class="sc">%&gt;%</span></span>
+<span id="cb169-4"><a href="#cb169-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(Likes_par_Follower)) <span class="sc">%&gt;%</span></span>
+<span id="cb169-5"><a href="#cb169-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                 Account Likes_par_Follower
 1 Anastasia Karanikolaou          0.7621047
@@ -3472,11 +3428,11 @@ Solution
 4 https://www.instagram.com/p/Co2oCgzOlEr/
 5 https://www.instagram.com/p/Co7takyvRw-/</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb174"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb174-1"><a href="#cb174-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Le post Instagram qui a reçu le plus de Likes par</span></span>
-<span id="cb174-2"><a href="#cb174-2" aria-hidden="true" tabindex="-1"></a><span class="co"># follower dans igposts est un post de type album de</span></span>
-<span id="cb174-3"><a href="#cb174-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Anastasia Karanikolaou, une amie de Kylie Jenner. Les</span></span>
-<span id="cb174-4"><a href="#cb174-4" aria-hidden="true" tabindex="-1"></a><span class="co"># photos montres les deux amies sur une place de basketball</span></span>
-<span id="cb174-5"><a href="#cb174-5" aria-hidden="true" tabindex="-1"></a><span class="co"># en faisant des grimaces.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb171"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb171-1"><a href="#cb171-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Le post Instagram qui a reçu le plus de Likes par</span></span>
+<span id="cb171-2"><a href="#cb171-2" aria-hidden="true" tabindex="-1"></a><span class="co"># follower dans igposts est un post de type album de</span></span>
+<span id="cb171-3"><a href="#cb171-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Anastasia Karanikolaou, une amie de Kylie Jenner. Les</span></span>
+<span id="cb171-4"><a href="#cb171-4" aria-hidden="true" tabindex="-1"></a><span class="co"># photos montres les deux amies sur une place de basketball</span></span>
+<span id="cb171-5"><a href="#cb171-5" aria-hidden="true" tabindex="-1"></a><span class="co"># en faisant des grimaces.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -3488,7 +3444,7 @@ Solution
 <li>Faites la même chose qu’à la question 17, mais cette fois créez la variable <code>Comments_par_Follower</code>.</li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-55-contents" aria-controls="callout-55" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-54-contents" aria-controls="callout-54" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3497,14 +3453,14 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-55" class="callout-55-contents callout-collapse collapse">
+<div id="callout-54" class="callout-54-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb175"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb175-1"><a href="#cb175-1" aria-hidden="true" tabindex="-1"></a>igposts <span class="sc">%&gt;%</span></span>
-<span id="cb175-2"><a href="#cb175-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">Comments_par_Follower =</span> Comments<span class="sc">/</span>Followers.at.Posting) <span class="sc">%&gt;%</span></span>
-<span id="cb175-3"><a href="#cb175-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(Account, Comments_par_Follower, URL) <span class="sc">%&gt;%</span></span>
-<span id="cb175-4"><a href="#cb175-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(Comments_par_Follower)) <span class="sc">%&gt;%</span></span>
-<span id="cb175-5"><a href="#cb175-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb172"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb172-1"><a href="#cb172-1" aria-hidden="true" tabindex="-1"></a>igposts <span class="sc">%&gt;%</span></span>
+<span id="cb172-2"><a href="#cb172-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">Comments_par_Follower =</span> Comments<span class="sc">/</span>Followers.at.Posting) <span class="sc">%&gt;%</span></span>
+<span id="cb172-3"><a href="#cb172-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(Account, Comments_par_Follower, URL) <span class="sc">%&gt;%</span></span>
+<span id="cb172-4"><a href="#cb172-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(Comments_par_Follower)) <span class="sc">%&gt;%</span></span>
+<span id="cb172-5"><a href="#cb172-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Account Comments_par_Follower                                      URL
 1   KIARA           0.008216050 https://www.instagram.com/p/CoXmBSLvj7A/
@@ -3513,9 +3469,9 @@ Solution
 4    ROSÉ           0.001815361 https://www.instagram.com/p/CogZR2xSvmd/
 5 KAROL G           0.001803296 https://www.instagram.com/p/CopttjOOD2z/</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb177"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb177-1"><a href="#cb177-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Le post Instagram qui a reçu le plus de commentaires par</span></span>
-<span id="cb177-2"><a href="#cb177-2" aria-hidden="true" tabindex="-1"></a><span class="co"># follower dans igposts est un post d'album de l'actrice</span></span>
-<span id="cb177-3"><a href="#cb177-3" aria-hidden="true" tabindex="-1"></a><span class="co"># indienne Kiara Advani avec des photos de son mariage.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb174"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb174-1"><a href="#cb174-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Le post Instagram qui a reçu le plus de commentaires par</span></span>
+<span id="cb174-2"><a href="#cb174-2" aria-hidden="true" tabindex="-1"></a><span class="co"># follower dans igposts est un post d'album de l'actrice</span></span>
+<span id="cb174-3"><a href="#cb174-3" aria-hidden="true" tabindex="-1"></a><span class="co"># indienne Kiara Advani avec des photos de son mariage.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <blockquote class="instagram-media blockquote" data-instgrm-captioned="" data-instgrm-permalink="https://www.instagram.com/p/CoXmBSLvj7A/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
 <div style="padding:16px;">
@@ -3606,7 +3562,7 @@ View this post on Instagram
 <li>Faites la même chose que dans les questions 17 et 18, mais cette fois pour <code>Views_par_Follower</code> (ne calculez cette variable que pour les posts qui ont reçu plus de 0 vues).</li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-56-contents" aria-controls="callout-56" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-55-contents" aria-controls="callout-55" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3615,15 +3571,15 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-56" class="callout-56-contents callout-collapse collapse">
+<div id="callout-55" class="callout-55-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb178"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb178-1"><a href="#cb178-1" aria-hidden="true" tabindex="-1"></a>igposts <span class="sc">%&gt;%</span></span>
-<span id="cb178-2"><a href="#cb178-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(Views <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb178-3"><a href="#cb178-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">Views_par_Follower =</span> Views<span class="sc">/</span>Followers.at.Posting) <span class="sc">%&gt;%</span></span>
-<span id="cb178-4"><a href="#cb178-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(Account, Views_par_Follower, URL) <span class="sc">%&gt;%</span></span>
-<span id="cb178-5"><a href="#cb178-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(Views_par_Follower)) <span class="sc">%&gt;%</span></span>
-<span id="cb178-6"><a href="#cb178-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb175"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb175-1"><a href="#cb175-1" aria-hidden="true" tabindex="-1"></a>igposts <span class="sc">%&gt;%</span></span>
+<span id="cb175-2"><a href="#cb175-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(Views <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb175-3"><a href="#cb175-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">Views_par_Follower =</span> Views<span class="sc">/</span>Followers.at.Posting) <span class="sc">%&gt;%</span></span>
+<span id="cb175-4"><a href="#cb175-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(Account, Views_par_Follower, URL) <span class="sc">%&gt;%</span></span>
+<span id="cb175-5"><a href="#cb175-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(Views_par_Follower)) <span class="sc">%&gt;%</span></span>
+<span id="cb175-6"><a href="#cb175-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Account Views_par_Follower                                      URL
 1 KAROL G          0.2629886 https://www.instagram.com/p/ComtUDjrPAD/
@@ -3632,10 +3588,10 @@ Solution
 4 Zendaya          0.1828481 https://www.instagram.com/p/CpHHbGWunhI/
 5 Kendall          0.1790413 https://www.instagram.com/p/CpL9r3nvNnm/</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb180"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb180-1"><a href="#cb180-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Le post Instagram qui a reçu le plus de views par</span></span>
-<span id="cb180-2"><a href="#cb180-2" aria-hidden="true" tabindex="-1"></a><span class="co"># follower est un album publié par la chanteuse colombienne</span></span>
-<span id="cb180-3"><a href="#cb180-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Karol G. Le post montre des photos et une vidéo d'elle</span></span>
-<span id="cb180-4"><a href="#cb180-4" aria-hidden="true" tabindex="-1"></a><span class="co"># avec Rihanna.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb177"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb177-1"><a href="#cb177-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Le post Instagram qui a reçu le plus de views par</span></span>
+<span id="cb177-2"><a href="#cb177-2" aria-hidden="true" tabindex="-1"></a><span class="co"># follower est un album publié par la chanteuse colombienne</span></span>
+<span id="cb177-3"><a href="#cb177-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Karol G. Le post montre des photos et une vidéo d'elle</span></span>
+<span id="cb177-4"><a href="#cb177-4" aria-hidden="true" tabindex="-1"></a><span class="co"># avec Rihanna.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <blockquote class="instagram-media blockquote" data-instgrm-captioned="" data-instgrm-permalink="https://www.instagram.com/p/ComtUDjrPAD/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
 <div style="padding:16px;">
@@ -3720,15 +3676,10 @@ View this post on Instagram
 </div>
 </div>
 </section>
-<section id="write.csv" class="level3">
-<h3 class="anchored" data-anchor-id="write.csv">20 : write.csv()</h3>
-<ul>
-<li>Utilisez les verbes de <code>dplyr</code> pour calculer la moyenne des prix en USD par carat dans <code>diamonds</code>.</li>
-<li>Montrez les résultats, triés par ordre décroissant de dollars par <code>carat</code>, pour les différentes catégories de taille (<code>cut</code>).</li>
-<li>Montrez aussi <code>n</code>, le nombre de diamants par catégorie de taille.</li>
-</ul>
+<section id="write.csv-pas-pertinent-pour-problem-set-3" class="level3">
+<h3 class="anchored" data-anchor-id="write.csv-pas-pertinent-pour-problem-set-3">20 : write.csv() (pas pertinent pour Problem Set 3)</h3>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-57-contents" aria-controls="callout-57" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-56-contents" aria-controls="callout-56" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3737,28 +3688,9 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-57" class="callout-57-contents callout-collapse collapse">
+<div id="callout-56" class="callout-56-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb181"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb181-1"><a href="#cb181-1" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span></span>
-<span id="cb181-2"><a href="#cb181-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(carat, cut, price) <span class="sc">%&gt;%</span></span>
-<span id="cb181-3"><a href="#cb181-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">USD_per_carat =</span> price<span class="sc">/</span>carat) <span class="sc">%&gt;%</span></span>
-<span id="cb181-4"><a href="#cb181-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(cut) <span class="sc">%&gt;%</span></span>
-<span id="cb181-5"><a href="#cb181-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>(), <span class="at">mean_USD_per_carat =</span> <span class="fu">mean</span>(USD_per_carat)) <span class="sc">%&gt;%</span></span>
-<span id="cb181-6"><a href="#cb181-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_USD_per_carat))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 3
-  cut           n mean_USD_per_carat
-  &lt;ord&gt;     &lt;int&gt;              &lt;dbl&gt;
-1 Premium   13791              4223.
-2 Very Good 12082              4014.
-3 Ideal     21551              3920.
-4 Good       4906              3860.
-5 Fair       1610              3767.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb183"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb183-1"><a href="#cb183-1" aria-hidden="true" tabindex="-1"></a><span class="co"># En moyenne, les diamants de la meilleure qualité de</span></span>
-<span id="cb183-2"><a href="#cb183-2" aria-hidden="true" tabindex="-1"></a><span class="co"># taille (Ideal) ne sont pas les plus chers dans diamonds.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+
 </div>
 </div>
 </div>

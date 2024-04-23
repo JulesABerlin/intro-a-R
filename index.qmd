@@ -2242,12 +2242,12 @@ df1 <- igposts %>%
 
 # mutate() : fonction pour créer une ou plusieurs nouvelles colonnes dans un data frame
 
-# Par exemple, nous pouvons créer une nouvelle colonne qui compte le nombre d'interactions par follower
+# Par exemple, nous pouvons créer une nouvelle colonne qui compte le nombre d'interactions par follower :
 
 df1 %>% mutate(TI_par_Follower = Total.Interactions/Followers.at.Posting)
 
-# Attention, sans opérateur <-, nous ne changeons pas l'objet df1
-# Pour ce faire et sauvegarder notre nouvelle colonne, nous pouvons l'écraser :
+# Attention, sans opérateur <-, nous ne changeons pas l'objet df1 !
+# Pour ce faire et sauvegarder notre nouvelle colonne, nous pouvons écraser df1 avec une nouvelle vérsion de df1 :
 
 df1 <- df1 %>% 
         mutate(TI_par_Follower = Total.Interactions/Followers.at.Posting)

@@ -1728,7 +1728,7 @@ Attention
 <span id="cb100-5"><a href="#cb100-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb100-6"><a href="#cb100-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(taille_f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 154.7685 168.5616 164.2271 166.6115 159.3061 161.4161</code></pre>
+<pre><code>[1] 161.8797 169.4832 174.4066 153.2286 161.9748 163.0726</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="co"># stocker taille_f comme objet de type 'data.frame'</span></span>
 <span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a>taille_f <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(taille_f)</span>
@@ -1947,12 +1947,12 @@ Astuce
 <section id="session-7" class="level1">
 <h1>Session 7</h1>
 <p><strong>Sujet : Manipuler les données (partie 1)</strong></p>
-<p>Le premier but de cette session est d’apprendre à importer des données dans RStudio à partir de <strong>fichier CSV</strong> et de les stocker en forme de data frame (format tabulaire).</p>
+<p>Le premier but de cette session est d’apprendre à importer des données dans RStudio à partir de <strong>fichiers CSV</strong> et de les stocker en forme de data frame (format tabulaire).</p>
 <p>Le deuxième but est de se familiariser avec <code>dplyr</code> (prononcé “dee-ply-er” en anglais), un paquet du <code>tidyverse</code> conçu pour manipuler les données en forme de data frame.</p>
 <p>Contrairement aux jeux de données intégrés à R (tels que <code>diamonds</code>, etc.), la plupart des jeux de données du monde réel nécessitent des <strong>transformations</strong> avant de pouvoir être analysés et visualisés. À cette fin, nous examinerons également certaines transformations de types de variables et un nouvel opérateur, le <code>%&gt;%</code> (angl. “pipe”; trad. franç. “tuyau”), qui est très utile pour les manipulations de données.</p>
 <section id="lire-des-données-dans-rstudio" class="level2">
 <h2 class="anchored" data-anchor-id="lire-des-données-dans-rstudio">Lire des données dans RStudio</h2>
-<p>Par la suite, nous alons appliquer ces verbes avec un jeu de données concret, un fichier CSV nommé <code>igposts.csv</code>, qui contient des posts Instagram de célébritées qui ont reçu beaucoup d’interactions d’utilisateurs. Pour y arriver, il faut charger ce jeu de données dans notre session RStudio en cours.</p>
+<p>Par la suite, nous alons appliquer <code>dplyr</code> pour manipuler les données d’un jeu de données concret : un fichier CSV nommé <code>igposts.csv</code>. Ce fichier contient des posts Instagram de célébritées qui ont reçu beaucoup d’interactions d’utilisateurs. Pour cette application, il faut d’abord charger ce jeu de données dans notre session RStudio en cours.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -3715,6 +3715,49 @@ View this post on Instagram
 </div>
 </blockquote>
 <script async="" src="//www.instagram.com/embed.js"></script>
+</div>
+</div>
+</div>
+</section>
+<section id="write.csv" class="level3">
+<h3 class="anchored" data-anchor-id="write.csv">20 : write.csv()</h3>
+<ul>
+<li>Utilisez les verbes de <code>dplyr</code> pour calculer la moyenne des prix en USD par carat dans <code>diamonds</code>.</li>
+<li>Montrez les résultats, triés par ordre décroissant de dollars par <code>carat</code>, pour les différentes catégories de taille (<code>cut</code>).</li>
+<li>Montrez aussi <code>n</code>, le nombre de diamants par catégorie de taille.</li>
+</ul>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-57-contents" aria-controls="callout-57" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-57" class="callout-57-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb181"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb181-1"><a href="#cb181-1" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span></span>
+<span id="cb181-2"><a href="#cb181-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(carat, cut, price) <span class="sc">%&gt;%</span></span>
+<span id="cb181-3"><a href="#cb181-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">USD_per_carat =</span> price<span class="sc">/</span>carat) <span class="sc">%&gt;%</span></span>
+<span id="cb181-4"><a href="#cb181-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(cut) <span class="sc">%&gt;%</span></span>
+<span id="cb181-5"><a href="#cb181-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>(), <span class="at">mean_USD_per_carat =</span> <span class="fu">mean</span>(USD_per_carat)) <span class="sc">%&gt;%</span></span>
+<span id="cb181-6"><a href="#cb181-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_USD_per_carat))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 3
+  cut           n mean_USD_per_carat
+  &lt;ord&gt;     &lt;int&gt;              &lt;dbl&gt;
+1 Premium   13791              4223.
+2 Very Good 12082              4014.
+3 Ideal     21551              3920.
+4 Good       4906              3860.
+5 Fair       1610              3767.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb183"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb183-1"><a href="#cb183-1" aria-hidden="true" tabindex="-1"></a><span class="co"># En moyenne, les diamants de la meilleure qualité de</span></span>
+<span id="cb183-2"><a href="#cb183-2" aria-hidden="true" tabindex="-1"></a><span class="co"># taille (Ideal) ne sont pas les plus chers dans diamonds.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>

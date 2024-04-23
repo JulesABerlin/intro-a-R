@@ -1728,7 +1728,7 @@ Attention
 <span id="cb100-5"><a href="#cb100-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb100-6"><a href="#cb100-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(taille_f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 169.6682 171.6891 165.2242 159.7806 167.2126 166.4692</code></pre>
+<pre><code>[1] 162.1881 169.3388 171.1871 166.4731 159.8330 155.4983</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="co"># stocker taille_f comme objet de type 'data.frame'</span></span>
 <span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a>taille_f <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(taille_f)</span>
@@ -2225,19 +2225,20 @@ Astuce
 <span id="cb120-33"><a href="#cb120-33" aria-hidden="true" tabindex="-1"></a><span class="co"># colonnes dans un data frame</span></span>
 <span id="cb120-34"><a href="#cb120-34" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb120-35"><a href="#cb120-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Par exemple, nous pouvons créer une nouvelle colonne qui</span></span>
-<span id="cb120-36"><a href="#cb120-36" aria-hidden="true" tabindex="-1"></a><span class="co"># compte le nombre d'interactions par follower</span></span>
+<span id="cb120-36"><a href="#cb120-36" aria-hidden="true" tabindex="-1"></a><span class="co"># compte le nombre d'interactions par follower :</span></span>
 <span id="cb120-37"><a href="#cb120-37" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb120-38"><a href="#cb120-38" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
 <span id="cb120-39"><a href="#cb120-39" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">TI_par_Follower =</span> Total.Interactions<span class="sc">/</span>Followers.at.Posting)</span>
 <span id="cb120-40"><a href="#cb120-40" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb120-41"><a href="#cb120-41" aria-hidden="true" tabindex="-1"></a><span class="co"># Attention, sans opérateur &lt;-, nous ne changeons pas</span></span>
-<span id="cb120-42"><a href="#cb120-42" aria-hidden="true" tabindex="-1"></a><span class="co"># l'objet df1 Pour ce faire et sauvegarder notre nouvelle</span></span>
-<span id="cb120-43"><a href="#cb120-43" aria-hidden="true" tabindex="-1"></a><span class="co"># colonne, nous pouvons l'écraser :</span></span>
-<span id="cb120-44"><a href="#cb120-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb120-45"><a href="#cb120-45" aria-hidden="true" tabindex="-1"></a>df1 <span class="ot">&lt;-</span> df1 <span class="sc">%&gt;%</span></span>
-<span id="cb120-46"><a href="#cb120-46" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">TI_par_Follower =</span> Total.Interactions<span class="sc">/</span>Followers.at.Posting)</span>
-<span id="cb120-47"><a href="#cb120-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb120-48"><a href="#cb120-48" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(df1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb120-42"><a href="#cb120-42" aria-hidden="true" tabindex="-1"></a><span class="co"># l'objet df1 !  Pour ce faire et sauvegarder notre</span></span>
+<span id="cb120-43"><a href="#cb120-43" aria-hidden="true" tabindex="-1"></a><span class="co"># nouvelle colonne, nous pouvons écraser df1 avec une</span></span>
+<span id="cb120-44"><a href="#cb120-44" aria-hidden="true" tabindex="-1"></a><span class="co"># nouvelle vérsion de df1 :</span></span>
+<span id="cb120-45"><a href="#cb120-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-46"><a href="#cb120-46" aria-hidden="true" tabindex="-1"></a>df1 <span class="ot">&lt;-</span> df1 <span class="sc">%&gt;%</span></span>
+<span id="cb120-47"><a href="#cb120-47" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">TI_par_Follower =</span> Total.Interactions<span class="sc">/</span>Followers.at.Posting)</span>
+<span id="cb120-48"><a href="#cb120-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-49"><a href="#cb120-49" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(df1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="manipulation-de-lignes-avec-filter-et-arrange" class="level3">

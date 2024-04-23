@@ -2021,16 +2021,16 @@ suivre le processus suivant :
             du fichier CSV contient les noms des colonnes.
 
         -   **Separator = Comma** : Indique à RStudio que les valeurs du
-            tableau sont séparées par des virgules (attention, certains
-            documents francophones utilisent le point-virgule ( ;) à la
-            place de la virgule).
+            tableau sont séparées par des virgules "," (attention, certains
+            documents francophones utilisent le point-virgule ";" à la
+            place de la virgule, ce qu'il faudrait tenir en compte, si c'était le cas).
 
-        -   **Decimal = Period** : Indique à RStudio que le point (.)
-            est utilisé pour les décimales (et non la virgule comme
-            souvent dans les documents en français).
+        -   **Decimal = Period** : Indique à RStudio que le point "."
+            est utilisé pour les décimales (et non la virgule "," comme c'est
+            souvent le cas dans les documents en français).
 
         -   **na.strings = #N/A** : Indique à RStudio que les cellules
-            vides dans le tableau sont désignées par #N/A (cela peut
+            vides dans le tableau, c'est à dire, les valeurs manquantes, sont désignées par #N/A (cela peut
             être différent dans d'autres fichiers CSV).
 
 5.  Finalement, vous pouvez copier et coller le code qui apparaît dans

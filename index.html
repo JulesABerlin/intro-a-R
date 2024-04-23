@@ -1728,7 +1728,7 @@ Attention
 <span id="cb100-5"><a href="#cb100-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb100-6"><a href="#cb100-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(taille_f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 161.8797 169.4832 174.4066 153.2286 161.9748 163.0726</code></pre>
+<pre><code>[1] 169.6972 159.7508 163.4678 160.9406 161.7607 167.3341</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="co"># stocker taille_f comme objet de type 'data.frame'</span></span>
 <span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a>taille_f <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(taille_f)</span>
@@ -2018,9 +2018,9 @@ Nguyen, Laetitia, 19<br>
 <ul>
 <li><p><strong>Encoding = UTF-8</strong> : Indique à RStudio d’utiliser <a href="https://blog.hubspot.fr/website/encodage-utf-8">l’encodage de caractères UTF-8</a> (qui est un standard très répandu), ce qui est important pour lire correctement toutes les lettres (notamment les caractères avec des accents : é, ä, ê, etc.).</p></li>
 <li><p><strong>Heading = YES</strong> : Indique à RStudio que la première ligne du fichier CSV contient les noms des colonnes.</p></li>
-<li><p><strong>Separator = Comma</strong> : Indique à RStudio que les valeurs du tableau sont séparées par des virgules (attention, certains documents francophones utilisent le point-virgule ( ;) à la place de la virgule).</p></li>
-<li><p><strong>Decimal = Period</strong> : Indique à RStudio que le point (.) est utilisé pour les décimales (et non la virgule comme souvent dans les documents en français).</p></li>
-<li><p><strong>na.strings = #N/A</strong> : Indique à RStudio que les cellules vides dans le tableau sont désignées par #N/A (cela peut être différent dans d’autres fichiers CSV).</p></li>
+<li><p><strong>Separator = Comma</strong> : Indique à RStudio que les valeurs du tableau sont séparées par des virgules “,” (attention, certains documents francophones utilisent le point-virgule “;” à la place de la virgule, ce qu’il faudrait tenir en compte, si c’était le cas).</p></li>
+<li><p><strong>Decimal = Period</strong> : Indique à RStudio que le point “.” est utilisé pour les décimales (et non la virgule “,” comme c’est souvent le cas dans les documents en français).</p></li>
+<li><p><strong>na.strings = #N/A</strong> : Indique à RStudio que les cellules vides dans le tableau, c’est à dire, les valeurs manquantes, sont désignées par #N/A (cela peut être différent dans d’autres fichiers CSV).</p></li>
 </ul></li>
 </ul></li>
 <li><p>Finalement, vous pouvez copier et coller le code qui apparaît dans la console dans votre script R pour facilement recharger le fichier CSV ultérieurement.</p></li>

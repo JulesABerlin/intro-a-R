@@ -1728,7 +1728,7 @@ Attention
 <span id="cb100-5"><a href="#cb100-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb100-6"><a href="#cb100-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(taille_f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 169.6972 159.7508 163.4678 160.9406 161.7607 167.3341</code></pre>
+<pre><code>[1] 169.6682 171.6891 165.2242 159.7806 167.2126 166.4692</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="co"># stocker taille_f comme objet de type 'data.frame'</span></span>
 <span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a>taille_f <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(taille_f)</span>
@@ -2161,7 +2161,7 @@ Astuce
 <p>De plus, vous pouvez aussi utiliser <code>|&gt;</code> comme opérateur pipe altérnatif (équivalent à <code>%&gt;%</code>).</p>
 </div>
 </div>
-<p>Vous pouvez déjà constater que travailler avec des jeux de données du monde réel, tels que le jeu de données Instagram <code>igposts</code>, nécessite un travail préparatoire substantiel. Mais rassurez-vous et ne vous découragez pas, plus vous pratiquez, plus cela devient facile et, bientôt, vous serez en mesure de charger facilement des ensembles de données dans RStudio ! Par ailleurs : il est normal de rencontrer des messages d’erreur. C’est une partie essentielle du processus d’apprentissage que de les surmonter en bricolant et en jouant avec vos données jusqu’à ce que vous puissiez les faire fonctionner.</p>
+<p>Vous pouvez déjà constater que travailler avec des jeux de données du monde réel, tels que le jeu de données Instagram <code>igposts</code>, nécessite un travail préparatoire substantiel. Mais rassurez-vous et ne vous découragez pas, plus vous pratiquez, plus cela devient facile et, bientôt, vous serez en mesure de charger facilement des ensembles de données dans RStudio ! Par ailleurs : il est normal de rencontrer des messages d’erreur. C’est une partie essentielle du processus d’apprentissage que de les surmonter en bricolant et en jouant avec vos données et votre code R jusqu’à ce que vous puissiez le faire fonctionner.</p>
 <p>Après avoir chargé notre fichier CSV dans RStudio, appliqué des transformations et notre connaissance de l’opérateur pipe, nous pouvons maintenant manipuler les données avec le package <code>dplyr</code>.</p>
 </section>
 </section>
@@ -2193,8 +2193,8 @@ Astuce
 <div class="sourceCode cell-code" id="cb120"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="co"># select() : fonction pour extraire une ou plusieurs</span></span>
 <span id="cb120-2"><a href="#cb120-2" aria-hidden="true" tabindex="-1"></a><span class="co"># colonnes d'un data frame</span></span>
 <span id="cb120-3"><a href="#cb120-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb120-4"><a href="#cb120-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Par exemple, nous pouvons extraire le quatres colonnes</span></span>
-<span id="cb120-5"><a href="#cb120-5" aria-hidden="true" tabindex="-1"></a><span class="co"># suivantes d'igposts (voir comment le pipe est utilisé)</span></span>
+<span id="cb120-4"><a href="#cb120-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Par exemple, nous pouvons extraire les quatres colonnes</span></span>
+<span id="cb120-5"><a href="#cb120-5" aria-hidden="true" tabindex="-1"></a><span class="co"># suivantes d'igposts (voir comment le pipe est utilisé) :</span></span>
 <span id="cb120-6"><a href="#cb120-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb120-7"><a href="#cb120-7" aria-hidden="true" tabindex="-1"></a>igposts <span class="sc">%&gt;%</span></span>
 <span id="cb120-8"><a href="#cb120-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(Account, Type, Followers.at.Posting, Total.Interactions)</span>

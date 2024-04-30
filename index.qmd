@@ -1941,11 +1941,11 @@ franç. "tuyau"), qui est très utile pour les manipulations de données.
 
 ## Lire des données dans RStudio
 
-Par la suite, nous alons appliquer `dplyr` pour manipuler les données d'un jeu de données
-concret : un fichier CSV nommé `igposts.csv`. Ce fichier contient des posts
-Instagram de célébritées qui ont reçu beaucoup d'interactions
-d'utilisateurs. Pour cette application, il faut d'abord charger ce jeu de données dans
-notre session RStudio en cours.
+Par la suite, nous alons appliquer `dplyr` pour manipuler les données
+d'un jeu de données concret : un fichier CSV nommé `igposts.csv`. Ce
+fichier contient des posts Instagram de célébritées qui ont reçu
+beaucoup d'interactions d'utilisateurs. Pour cette application, il faut
+d'abord charger ce jeu de données dans notre session RStudio en cours.
 
 ::: {.callout-note icon="true"}
 ## À noter
@@ -2021,17 +2021,19 @@ suivre le processus suivant :
             du fichier CSV contient les noms des colonnes.
 
         -   **Separator = Comma** : Indique à RStudio que les valeurs du
-            tableau sont séparées par des virgules "," (attention, certains
-            documents francophones utilisent le point-virgule ";" à la
-            place de la virgule, ce qu'il faudrait tenir en compte, si c'était le cas).
+            tableau sont séparées par des virgules "," (attention,
+            certains documents francophones utilisent le point-virgule
+            ";" à la place de la virgule, ce qu'il faudrait tenir en
+            compte, si c'était le cas).
 
         -   **Decimal = Period** : Indique à RStudio que le point "."
-            est utilisé pour les décimales (et non la virgule "," comme c'est
-            souvent le cas dans les documents en français).
+            est utilisé pour les décimales (et non la virgule "," comme
+            c'est souvent le cas dans les documents en français).
 
         -   **na.strings = #N/A** : Indique à RStudio que les cellules
-            vides dans le tableau, c'est à dire, les valeurs manquantes, sont désignées par #N/A (cela peut
-            être différent dans d'autres fichiers CSV).
+            vides dans le tableau, c'est à dire, les valeurs manquantes,
+            sont désignées par #N/A (cela peut être différent dans
+            d'autres fichiers CSV).
 
 5.  Finalement, vous pouvez copier et coller le code qui apparaît dans
     la console dans votre script R pour facilement recharger le fichier
@@ -2169,7 +2171,8 @@ bientôt, vous serez en mesure de charger facilement des ensembles de
 données dans RStudio ! Par ailleurs : il est normal de rencontrer des
 messages d'erreur. C'est une partie essentielle du processus
 d'apprentissage que de les surmonter en bricolant et en jouant avec vos
-données et votre code R jusqu'à ce que vous puissiez le faire fonctionner.
+données et votre code R jusqu'à ce que vous puissiez le faire
+fonctionner.
 
 Après avoir chargé notre fichier CSV dans RStudio, appliqué des
 transformations et notre connaissance de l'opérateur pipe, nous pouvons
@@ -2427,8 +2430,8 @@ autonome des problèmes de manipulation de données à l'aide du code R et
 de vous préparer ainsi au Problem Set 3.
 
 Les exercices suivants se composent d'une question et d'une solution
-modèle sous forme de code R. Notez qu'en programmation R, il y a
-souvent plusieurs solutions pour arriver à la réponse correcte.
+modèle sous forme de code R. Notez qu'en programmation R, il y a souvent
+plusieurs solutions pour arriver à la réponse correcte.
 
 ::: {.callout-tip title="Conseil"}
 Pour un meilleur effet d'apprentissage : essayez d'abord de résoudre la
@@ -2450,7 +2453,8 @@ solution modèle.
 ### 1 : mtcars I
 
 -   Affichez la structure de `mtcars`avec `str(mtcars)`.
--   Sélectionnez ensuite les colonnes `mpg` et `cyl` de `mtcars` avec `dplyr`.
+-   Sélectionnez ensuite les colonnes `mpg` et `cyl` de `mtcars` avec
+    `dplyr`.
 
 ::: {.callout-caution collapse="true"}
 ## Solution
@@ -2469,7 +2473,8 @@ mtcars %>%
 
 -   Filtrez mtcars pour `mpg >= 25` !
 
--   Combien de modèles de voitures dans `mtcars` répondent à ce critère ?
+-   Combien de modèles de voitures dans `mtcars` répondent à ce critère
+    ?
 
 ::: {.callout-caution collapse="true"}
 ## Solution
@@ -2533,7 +2538,8 @@ mtcars_v2 %>%
 ### 5 : diamonds I
 
 -   Affichez encore une fois `str(diamonds)` !
--   Utilisez des verbes `dplyr`pour compter le nombre de diamants dans `diamonds`qui pèsent plus de 3 carats !
+-   Utilisez des verbes `dplyr`pour compter le nombre de diamants dans
+    `diamonds`qui pèsent plus de 3 carats !
 
 ::: {.callout-caution collapse="true"}
 ## Solution
@@ -2575,9 +2581,11 @@ mean(diamonds$price)
 
 ### 7 : diamonds III
 
--   Calculez le prix moyen en USD des diamants des différentes catégories de pureté (`clarity`) dans `diamonds` !
+-   Calculez le prix moyen en USD des diamants des différentes
+    catégories de pureté (`clarity`) dans `diamonds` !
 -   Triez le résultat par ordre décroissant des prix moyens
--   Quelle catégorie de pureté est la plus chère en moyenne dans `diamonds` ?
+-   Quelle catégorie de pureté est la plus chère en moyenne dans
+    `diamonds` ?
 
 ::: {.callout-caution collapse="true"}
 ## Solution
@@ -2596,7 +2604,8 @@ diamonds %>%
 
 ### 8 : mtcars V
 
--  Regroupez mtcars par `gear`, puis, à l'aide de `summarize()`, calculez `n`, la médiane et la variance de mpg.
+-   Regroupez mtcars par `gear`, puis, à l'aide de `summarize()`,
+    calculez `n`, la médiane et la variance de mpg.
 
 ::: {.callout-caution collapse="true"}
 ## Solution
@@ -2614,9 +2623,13 @@ mtcars %>%
 
 ### 9 : iris I
 
--   Sélectionner `Petal.Length`, `Petal.Width`, et `Species` dans `iris`. 
--   Ensuite, utilisez `mutate()` pour créer une nouvelle colonne, appelée `Petal.Surface`, qui est le produit de `Petal.Length` et `Petal.Width`. 
--   Regroupez ensuite les données par espèce et utilisez `summarize()` pour calculer une nouvelle variable : `mean_Petal.Surface`.
+-   Sélectionner `Petal.Length`, `Petal.Width`, et `Species` dans
+    `iris`.
+-   Ensuite, utilisez `mutate()` pour créer une nouvelle colonne,
+    appelée `Petal.Surface`, qui est le produit de `Petal.Length` et
+    `Petal.Width`.
+-   Regroupez ensuite les données par espèce et utilisez `summarize()`
+    pour calculer une nouvelle variable : `mean_Petal.Surface`.
 
 ::: {.callout-caution collapse="true"}
 ## Solution
@@ -2638,8 +2651,10 @@ iris %>%
 
 ### 10 : diamonds IV
 
--   Utilisez les verbes de `dplyr` pour calculer la moyenne des prix en USD par carat dans `diamonds`. 
--   Montrez les résultats, triés par ordre décroissant de dollars par `carat`, pour les différentes catégories de taille (`cut`). 
+-   Utilisez les verbes de `dplyr` pour calculer la moyenne des prix en
+    USD par carat dans `diamonds`.
+-   Montrez les résultats, triés par ordre décroissant de dollars par
+    `carat`, pour les différentes catégories de taille (`cut`).
 -   Montrez aussi `n`, le nombre de diamants par catégorie de taille.
 
 ::: {.callout-caution collapse="true"}
@@ -2661,9 +2676,14 @@ diamonds %>%
 
 ### 11 : igposts I
 
--   Chargez le jeu de données `igposts`que nous avons vu pendant session 7.
--   Si nécessaire, téléchargez le encore une fois depuis Moodle et sauvegardez le dans le dossier de votre ordinateur que vous avez définit comme répértoire de travail.
--   Si nécessaire, transformez encore une fois les colonnes `igposts$Account`, `igposts$User.Name`et `igposts$Type` en variables catégorielles avec `as.factor()`.
+-   Chargez le jeu de données `igposts`que nous avons vu pendant session
+    7.
+-   Si nécessaire, téléchargez le encore une fois depuis Moodle et
+    sauvegardez le dans le dossier de votre ordinateur que vous avez
+    définit comme répértoire de travail.
+-   Si nécessaire, transformez encore une fois les colonnes
+    `igposts$Account`, `igposts$User.Name`et `igposts$Type` en variables
+    catégorielles avec `as.factor()`.
 
 ::: {.callout-caution collapse="true"}
 ## Solution
@@ -2690,7 +2710,8 @@ str(igposts)
 
 ### 12 : igposts II
 
--   Utilisez `dplyr` pour trouver le nombre `n`de posts Instagram regroupés par compte des influenceurs dans `igposts`.
+-   Utilisez `dplyr` pour trouver le nombre `n`de posts Instagram
+    regroupés par compte des influenceurs dans `igposts`.
 -   Affichez les 10 premiers par ordre décroissant de `n`.
 
 ::: {.callout-caution collapse="true"}
@@ -2709,7 +2730,9 @@ igposts %>%
 
 ### 13 : igposts III
 
--   Utilisez `dplyr` pour calculer le nombre moyen de `Likes`, `Comments`et `Views`par compte (`Account`) des influenceurs dans `igposts`.
+-   Utilisez `dplyr` pour calculer le nombre moyen de `Likes`,
+    `Comments`et `Views`par compte (`Account`) des influenceurs dans
+    `igposts`.
 -   Triez-les par ordre décroissant de la moyenne des `Likes`.
 -   Affichez les top 10.
 
@@ -2729,8 +2752,10 @@ igposts %>%
 
 ### 14 : igposts IV
 
--   Utilisez `dplyr` pour afficher les variables `Account`, `Likes` et `URL` des 5 posts dans `igposts` qui ont reçu le plus de `Likes`.
--   Allez voir l'URL du post avec le plus de `Likes` : De quoi s'agit-il ?
+-   Utilisez `dplyr` pour afficher les variables `Account`, `Likes` et
+    `URL` des 5 posts dans `igposts` qui ont reçu le plus de `Likes`.
+-   Allez voir l'URL du post avec le plus de `Likes` : De quoi s'agit-il
+    ?
 
 ::: {.callout-caution collapse="true"}
 ## Solution
@@ -2738,6 +2763,7 @@ igposts %>%
 ```{r}
 #| echo: true
 #| output: true
+#| warning: false
 igposts %>% 
   select(Account, Likes, URL) %>% 
   arrange(desc(Likes)) %>% 
@@ -2745,13 +2771,14 @@ igposts %>%
 
 # Le post Instagram le plus liké dans igposts est un post de type album de Leo Messi dans lequel il met en scène un prix qu'il a reçu de la FIFA.
 ```
-<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/CpLxnFlNJZn/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/CpLxnFlNJZn/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/CpLxnFlNJZn/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Leo Messi (@leomessi)</a></p></div></blockquote> <script async src="//www.instagram.com/embed.js"></script>
 :::
 
 ### 15 : igposts V
 
--   Faites la même chose que dans la question 14, mais maintenant pour les `Comments` au lieu des `Likes` !
--   Allez voir l'URL du post avec le plus de `Comments` : De quoi s'agit-il ?
+-   Faites la même chose que dans la question 14, mais maintenant pour
+    les `Comments` au lieu des `Likes` !
+-   Allez voir l'URL du post avec le plus de `Comments` : De quoi
+    s'agit-il ?
 
 ::: {.callout-caution collapse="true"}
 ## Solution
@@ -2766,13 +2793,15 @@ igposts %>%
 
 #Le post Instagram ayant reçu le plus de commentaires dans igposts est de type photo et a été publié par Selena Gomez. Il la représente en train de boire un cocktail et de flirter avec la caméra.
 ```
-<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/Co_P7YgrrFO/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/Co_P7YgrrFO/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/Co_P7YgrrFO/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Selena Gomez (@selenagomez)</a></p></div></blockquote> <script async src="//www.instagram.com/embed.js"></script>
 :::
 
 ### 16 : igposts VI
 
--   Faites la même chose que dans les questions 14 et 15, mais maintenant pour les `Views` (à noter : Dans Instagram, la métrique `Views`désigne les **video views** uniquement ) !
--   Allez voir l'URL du post avec le plus de `Views` : De quoi s'agit-il ?
+-   Faites la même chose que dans les questions 14 et 15, mais
+    maintenant pour les `Views` (à noter : Dans Instagram, la métrique
+    `Views`désigne les **video views** uniquement ) !
+-   Allez voir l'URL du post avec le plus de `Views` : De quoi s'agit-il
+    ?
 
 ::: {.callout-caution collapse="true"}
 ## Solution
@@ -2787,13 +2816,15 @@ igposts %>%
 
 #Le post Instagram qui a reçu le plus de Views (vidéos vues) dans igposts est un post d'album de Kendall Jenner dans lequel elle partage de courtes séquences de selfie d'elle-même, partageant un moment intime avec ses followers (le son ne semble plus fonctionner).
 ```
-<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/CoYqX0hr1jr/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/CoYqX0hr1jr/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/CoYqX0hr1jr/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Kendall (@kendalljenner)</a></p></div></blockquote> <script async src="//www.instagram.com/embed.js"></script>
 :::
 
 ### 17 : igposts VII
 
--   Utilisez dplyr pour créer une nouvelle colonne :  `Likes_par_Follower` (définie comme `Likes` divisé par `Followers.at.Posting`).
--   Trouvez maintenant le post avec le plus grand nombre de `Likes_par_Follower` et naviguez jusqu'à son URL : que montre-t-il ? 
+-   Utilisez dplyr pour créer une nouvelle colonne :
+    `Likes_par_Follower` (définie comme `Likes` divisé par
+    `Followers.at.Posting`).
+-   Trouvez maintenant le post avec le plus grand nombre de
+    `Likes_par_Follower` et naviguez jusqu'à son URL : que montre-t-il ?
 
 ::: {.callout-caution collapse="true"}
 ## Solution
@@ -2810,7 +2841,8 @@ igposts %>%
 
 ### 18 : igposts VIII
 
--   Faites la même chose qu'à la question 17, mais cette fois créez la variable `Comments_par_Follower`. 
+-   Faites la même chose qu'à la question 17, mais cette fois créez la
+    variable `Comments_par_Follower`.
 
 ::: {.callout-caution collapse="true"}
 ## Solution
@@ -2825,13 +2857,14 @@ igposts %>%
 
 #Le post Instagram qui a reçu le plus de commentaires par follower dans igposts est un post d'album de l'actrice indienne Kiara Advani avec des photos de son mariage.
 ```
-<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/CoXmBSLvj7A/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/CoXmBSLvj7A/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/CoXmBSLvj7A/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by KIARA (@kiaraaliaadvani)</a></p></div></blockquote> <script async src="//www.instagram.com/embed.js"></script>
 
 :::
 
 ### 19 : igposts IX
 
--   Faites la même chose que dans les questions 17 et 18, mais cette fois pour `Views_par_Follower` (ne calculez cette variable que pour les posts qui ont reçu plus de 0 vues).
+-   Faites la même chose que dans les questions 17 et 18, mais cette
+    fois pour `Views_par_Follower` (ne calculez cette variable que pour
+    les posts qui ont reçu plus de 0 vues).
 
 ::: {.callout-caution collapse="true"}
 ## Solution
@@ -2847,12 +2880,9 @@ igposts %>%
 
 #Le post Instagram qui a reçu le plus de views par follower est un album publié par la chanteuse colombienne Karol G. Le post montre des photos et une vidéo d'elle avec Rihanna.
 ```
-<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/ComtUDjrPAD/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/ComtUDjrPAD/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/ComtUDjrPAD/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by KAROL G (@karolg)</a></p></div></blockquote> <script async src="//www.instagram.com/embed.js"></script>
 :::
 
 ### 20 : write.csv() (pas pertinent pour Problem Set 3)
-
-
 
 ::: {.callout-caution collapse="true"}
 ## Solution
@@ -2863,6 +2893,7 @@ igposts %>%
 
 ```
 :::
+
 # Session 9 (Problem Set 3)
 
 Les résultats du **Problem Set 3** (bonnes réponses, échelle des notes)
@@ -2916,3 +2947,38 @@ hist_ps_3 <-ggplot(points_ps_3,
              color="red",  linewidth=1, linetype="dashed")
 hist_ps_3
 ```
+
+# Session 10
+
+**Sujet : La statistique déscriptive**
+
+La **statistique descriptive** est généralement la première étape d'une
+analyse statistique. Elle aide à comprendre le jeu de données et ses
+caractéristiques à un niveau descriptif. 
+
+Il ne s'agit donc **pas**
+d'analyser des **relations de cause à effet** (c'est en effet le rôle de
+la *statistique inférentielle*).
+
+Les mesures suivantes font souvent partie des statistiques d
+
+-   La taille de l'échantillon (nombre d'observations n)
+
+-   Les mesures de tendance centrale (moyenne, médiane, mode)
+
+-   Les mesures de dispersion (variances, kurtosis, etc.
+
+-   Identification des valeurs extrêmes (également appelées valeurs
+    aberrantes) de variables numériques.
+
+-   Répartition en pourcentage des variables catégorielles
+    (identification de la fréquence de chaque catégorie)
+
+échantillon ou d'une population en utilisant des mesures de tendance
+centrale (moyenne, médiane, mode), de dispersion (étendue, variance,
+écart-type) et de position (percentiles, quartiles). Elle inclut
+également l'utilisation de graphiques et de tableaux pour représenter
+visuellement les données. La statistique descriptive est une étape
+importante dans l'analyse de données quantitatives, car elle permet de
+décrire les données de manière claire et concise, facilitant ainsi leur
+interprétation.

@@ -129,7 +129,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#session-9-problem-set-3" id="toc-session-9-problem-set-3" class="nav-link" data-scroll-target="#session-9-problem-set-3">Session 9 (Problem Set 3)</a></li>
   <li><a href="#session-10" id="toc-session-10" class="nav-link" data-scroll-target="#session-10">Session 10</a>
   <ul class="collapse">
-  <li><a href="#analyse-des-réponses-au-questionnaire-1ère-partie" id="toc-analyse-des-réponses-au-questionnaire-1ère-partie" class="nav-link" data-scroll-target="#analyse-des-réponses-au-questionnaire-1ère-partie">Analyse des réponses au questionnaire, 1ère partie</a></li>
+  <li><a href="#analyse-des-réponses-au-questionnaire-1ère-partie-stats-déscriptives" id="toc-analyse-des-réponses-au-questionnaire-1ère-partie-stats-déscriptives" class="nav-link" data-scroll-target="#analyse-des-réponses-au-questionnaire-1ère-partie-stats-déscriptives">Analyse des réponses au questionnaire, 1ère partie (stats déscriptives)</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1733,7 +1733,7 @@ Attention
 <span id="cb100-5"><a href="#cb100-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb100-6"><a href="#cb100-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(taille_f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 163.4616 162.0823 163.2489 171.8970 152.6610 159.2517</code></pre>
+<pre><code>[1] 160.7140 169.2228 152.4856 169.3440 157.2345 169.8558</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="co"># stocker taille_f comme objet de type 'data.frame'</span></span>
 <span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a>taille_f <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(taille_f)</span>
@@ -3331,6 +3331,16 @@ Solution
 <section id="session-10" class="level1">
 <h1>Session 10</h1>
 <p><strong>Sujet : La statistique déscriptive</strong></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+À noter
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>La <strong>statistique descriptive</strong> est généralement la première étape d’une analyse statistique. Elle aide à comprendre le jeu de données et ses caractéristiques à un niveau descriptif.</p>
 <p>Il ne s’agit donc <strong>pas</strong> d’analyser des <strong>relations de cause à effet</strong> (c’est en effet le rôle de la <em>statistique inférentielle</em>).</p>
 <p>Les mesures suivantes font souvent partie des statistiques descriptives (souvent appelés <em>summary statistics</em> en anglais) et sont utilisées pour une première analyse des variables de type numérique d’un jeu de données.</p>
@@ -3346,7 +3356,9 @@ Solution
 <li>La fréquence de chaque catégories (p.&nbsp;ex. combien de participants à un questionnaire sont des femmes ?)</li>
 <li>La répartition des différentes catégories (p.&nbsp;ex. quel est le pourcentage de femmes dans l’échantillon ?)</li>
 </ul>
-<p>Dans la a mise en œuvre, par exemple dans un travail scientifique, les statistiques descriptives sont souvent présentées sous deux formats :</p>
+</div>
+</div>
+<p>Dans la a mise en œuvre d’une analyse statistique, par exemple dans un travail scientifique, les statistiques descriptives sont souvent présentées sous deux formats :</p>
 <ul>
 <li><p>des <strong>tableaux</strong> pour les mesures telles que la taille de l’échantillon, les moyennes, etc. Souvent aussi pour différentes catégories, p.&nbsp;ex. homme et femme.</p></li>
 <li><p>des <strong>graphiques</strong> pour la visualisation de distributions, par exemple des histogrammes, et des répartitions de variables catégorielles, par exemple par le biais de diagrammes à barres.</p></li>
@@ -3354,8 +3366,8 @@ Solution
 <p>Lorsque l’on veut représenter des statistiques descriptives dans R, il est souvent utile de combiner les deux paquets R <code>dplyr</code> et <code>ggplot2</code>. C’est une bonne nouvelle, car nous avons déjà examiné les principaux codes R nécessaires pour dans ce cours.</p>
 <p>Pour nous entraîner à nouveau, cette fois avec nos propres données, nous allons procéder ci-dessous à une analyse descriptive des réponses au questionnaire !</p>
 <p>Vous verrez donc par la suite comment ce que nous avons appris jusqu’à présent dans le cours peut être combiné de manière utile.</p>
-<section id="analyse-des-réponses-au-questionnaire-1ère-partie" class="level2">
-<h2 class="anchored" data-anchor-id="analyse-des-réponses-au-questionnaire-1ère-partie">Analyse des réponses au questionnaire, 1ère partie</h2>
+<section id="analyse-des-réponses-au-questionnaire-1ère-partie-stats-déscriptives" class="level2">
+<h2 class="anchored" data-anchor-id="analyse-des-réponses-au-questionnaire-1ère-partie-stats-déscriptives">Analyse des réponses au questionnaire, 1ère partie (stats déscriptives)</h2>
 <p>Veuillez ouvrir un nouveau script R et charger les paquets <code>tidyverse</code> et <code>ggthemes</code>. Ensuite, vous pouvez définir votre répértoire de travaille.</p>
 <p>Vous pouvez ensuite télécharger le fichier <code>reponses_socio.csv</code>depuis la page Moodle du cours (matériel de la 10ème session) et le sauvegarder dans votre répértoire de travail.</p>
 <div class="quarto-figure quarto-figure-center">

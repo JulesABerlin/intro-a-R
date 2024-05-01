@@ -1733,7 +1733,7 @@ Attention
 <span id="cb100-5"><a href="#cb100-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb100-6"><a href="#cb100-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(taille_f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 162.5160 163.6568 170.7210 162.5983 159.1561 167.3483</code></pre>
+<pre><code>[1] 163.4616 162.0823 163.2489 171.8970 152.6610 159.2517</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="co"># stocker taille_f comme objet de type 'data.frame'</span></span>
 <span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a>taille_f <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(taille_f)</span>
@@ -3522,20 +3522,22 @@ Solution
 <span id="cb195-2"><a href="#cb195-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(note_ecole, note_uni, genre) <span class="sc">%&gt;%</span></span>
 <span id="cb195-3"><a href="#cb195-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(genre) <span class="sc">%&gt;%</span></span>
 <span id="cb195-4"><a href="#cb195-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(note_ecole <span class="sc">&gt;</span> <span class="fl">3.99</span>, note_uni <span class="sc">&gt;</span> <span class="fl">0.99</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb195-5"><a href="#cb195-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">note_ecole_moyenne =</span> <span class="fu">mean</span>(note_ecole), <span class="at">note_uni_moyenne =</span> <span class="fu">mean</span>(note_uni))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb195-5"><a href="#cb195-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>(), <span class="at">note_ecole_moyenne =</span> <span class="fu">mean</span>(note_ecole),</span>
+<span id="cb195-6"><a href="#cb195-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">note_uni_moyenne =</span> <span class="fu">mean</span>(note_uni))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 3
-  genre note_ecole_moyenne note_uni_moyenne
-  &lt;fct&gt;              &lt;dbl&gt;            &lt;dbl&gt;
-1 Autre               4.5              4.75
-2 Femme               4.90             4.88
-3 Homme               4.59             4.84</code></pre>
+<pre><code># A tibble: 3 × 4
+  genre     n note_ecole_moyenne note_uni_moyenne
+  &lt;fct&gt; &lt;int&gt;              &lt;dbl&gt;            &lt;dbl&gt;
+1 Autre     2               4.5              4.75
+2 Femme    53               4.90             4.88
+3 Homme    16               4.59             4.84</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb197"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb197-1"><a href="#cb197-1" aria-hidden="true" tabindex="-1"></a>reponses_socio <span class="sc">%&gt;%</span></span>
-<span id="cb197-2"><a href="#cb197-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(note_ecole, note_uni) <span class="sc">%&gt;%</span></span>
-<span id="cb197-3"><a href="#cb197-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(note_ecole <span class="sc">&gt;</span> <span class="fl">3.99</span>, note_uni <span class="sc">&gt;</span> <span class="fl">0.99</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb197-4"><a href="#cb197-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> note_uni, <span class="at">y =</span> note_ecole)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb197-5"><a href="#cb197-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb197"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb197-1"><a href="#cb197-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualisation de la relation entre note_ecole et note_uni</span></span>
+<span id="cb197-2"><a href="#cb197-2" aria-hidden="true" tabindex="-1"></a>reponses_socio <span class="sc">%&gt;%</span></span>
+<span id="cb197-3"><a href="#cb197-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(note_ecole, note_uni) <span class="sc">%&gt;%</span></span>
+<span id="cb197-4"><a href="#cb197-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(note_ecole <span class="sc">&gt;</span> <span class="fl">3.99</span>, note_uni <span class="sc">&gt;</span> <span class="fl">0.99</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb197-5"><a href="#cb197-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> note_uni, <span class="at">y =</span> note_ecole)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb197-6"><a href="#cb197-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
 </div>

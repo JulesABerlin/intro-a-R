@@ -3122,9 +3122,10 @@ reponses_socio %>%
   group_by(genre) %>% 
   filter(note_ecole > 3.99,
          note_uni > 0.99) %>% 
-  summarize(note_ecole_moyenne = mean(note_ecole),
+  summarize(n = n(), note_ecole_moyenne = mean(note_ecole),
             note_uni_moyenne = mean(note_uni))
 
+# Visualisation de la relation entre note_ecole et note_uni
 reponses_socio %>% 
   select(note_ecole,note_uni) %>% 
   filter(note_ecole > 3.99,

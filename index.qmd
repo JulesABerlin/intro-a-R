@@ -2951,6 +2951,8 @@ hist_ps_3
 
 **Sujet : La statistique déscriptive**
 
+::: {.callout-note icon="true"}
+## À noter
 La **statistique descriptive** est généralement la première étape d'une
 analyse statistique. Elle aide à comprendre le jeu de données et ses
 caractéristiques à un niveau descriptif.
@@ -2984,8 +2986,9 @@ faire partie d'une analyse déscriptive, notamment :
     un questionnaire sont des femmes ?)
 -   La répartition des différentes catégories (p. ex. quel est le
     pourcentage de femmes dans l'échantillon ?)
+::: 
 
-Dans la a mise en œuvre, par exemple dans un travail scientifique, les
+Dans la a mise en œuvre d'une analyse statistique, par exemple dans un travail scientifique, les
 statistiques descriptives sont souvent présentées sous deux formats :
 
 -   des **tableaux** pour les mesures telles que la taille de
@@ -3008,7 +3011,7 @@ questionnaire !
 Vous verrez donc par la suite comment ce que nous avons appris jusqu'à
 présent dans le cours peut être combiné de manière utile.
 
-## Analyse des réponses au questionnaire, 1ère partie
+## Analyse des réponses au questionnaire, 1ère partie (stats déscriptives)
 
 Veuillez ouvrir un nouveau script R et charger les paquets `tidyverse` et `ggthemes`. Ensuite, vous pouvez définir votre répértoire de travaille.
 

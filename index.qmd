@@ -2773,6 +2773,9 @@ igposts %>%
 ```
 :::
 
+[URL Instagram du post de Leo
+Messi](https://www.instagram.com/p/CpLxnFlNJZn/)
+
 ### 15 : igposts V
 
 -   Faites la même chose que dans la question 14, mais maintenant pour
@@ -2794,6 +2797,9 @@ igposts %>%
 #Le post Instagram ayant reçu le plus de commentaires dans igposts est de type photo et a été publié par Selena Gomez. Il la représente en train de boire un cocktail et de flirter avec la caméra.
 ```
 :::
+
+[URL du post Instagram de Selena
+Gomez](https://www.instagram.com/p/Co_P7YgrrFO/)
 
 ### 16 : igposts VI
 
@@ -2818,6 +2824,9 @@ igposts %>%
 ```
 :::
 
+[URL du post Instagram de Kendall
+Jenner](https://www.instagram.com/p/CoYqX0hr1jr/)
+
 ### 17 : igposts VII
 
 -   Utilisez dplyr pour créer une nouvelle colonne :
@@ -2839,6 +2848,9 @@ igposts %>%
 ```
 :::
 
+[URL du post Instagram de Anastasia
+Karanikolaou](https://www.instagram.com/p/CoptMRoJtUD/)
+
 ### 18 : igposts VIII
 
 -   Faites la même chose qu'à la question 17, mais cette fois créez la
@@ -2858,6 +2870,9 @@ igposts %>%
 #Le post Instagram qui a reçu le plus de commentaires par follower dans igposts est un post d'album de l'actrice indienne Kiara Advani avec des photos de son mariage.
 ```
 :::
+
+[URL du post Instagram de
+KIARA](https://www.instagram.com/p/CoXmBSLvj7A/)
 
 ### 19 : igposts IX
 
@@ -2881,17 +2896,8 @@ igposts %>%
 ```
 :::
 
-### 20 : write.csv() (pas pertinent pour Problem Set 3)
-
-::: {.callout-caution collapse="true"}
-## Solution
-
-```{r}
-#| echo: true
-#| output: true
-
-```
-:::
+[URL du post Instagram de Karol
+G](https://www.instagram.com/p/ComtUDjrPAD/)
 
 # Session 9 (Problem Set 3)
 
@@ -2953,6 +2959,7 @@ hist_ps_3
 
 ::: {.callout-note icon="true"}
 ## À noter
+
 La **statistique descriptive** est généralement la première étape d'une
 analyse statistique. Elle aide à comprendre le jeu de données et ses
 caractéristiques à un niveau descriptif.
@@ -2986,10 +2993,11 @@ faire partie d'une analyse déscriptive, notamment :
     un questionnaire sont des femmes ?)
 -   La répartition des différentes catégories (p. ex. quel est le
     pourcentage de femmes dans l'échantillon ?)
-::: 
+:::
 
-Dans la a mise en œuvre d'une analyse statistique, par exemple dans un travail scientifique, les
-statistiques descriptives sont souvent présentées sous deux formats :
+Dans la a mise en œuvre d'une analyse statistique, par exemple dans un
+travail scientifique, les statistiques descriptives sont souvent
+présentées sous deux formats :
 
 -   des **tableaux** pour les mesures telles que la taille de
     l'échantillon, les moyennes, etc. Souvent aussi pour différentes
@@ -3013,14 +3021,16 @@ présent dans le cours peut être combiné de manière utile.
 
 ## Analyse des réponses au questionnaire, 1ère partie (stats déscriptives)
 
-Veuillez ouvrir un nouveau script R et charger les paquets `tidyverse` et `ggthemes`. Ensuite, vous pouvez définir votre répértoire de travaille.
+Veuillez ouvrir un nouveau script R et charger les paquets `tidyverse`
+et `ggthemes`. Ensuite, vous pouvez définir votre répértoire de
+travaille.
 
 Vous pouvez ensuite télécharger le fichier `reponses_socio.csv`depuis la
 page Moodle du cours (matériel de la 10ème session) et le sauvegarder
 dans votre répértoire de travail.
 
 ![Paramètres pour l'importation du fichier
-reponses_socio.csv](images/Screenshot 2024-05-01 at 09.09.22.png)
+reponses_socio.csv](images/Screenshot%202024-05-01%20at%2009.09.22.png)
 
 ```{r}
 #| echo: true
@@ -3151,3 +3161,40 @@ reponses_socio %>%
   group_by(suisse,permis) %>% 
   summarize(n = n())
 ```
+
+## La fonction `write.csv()`
+
+Avec R, vous ne pouvez pas seulement lire des données au format CSV (entrée de données ; avec des fonctions telles que `read.csv()`), mais vous pouvez également créer des fichiers CSV à partir de votre session en cours (sortie de données), notamment avec la fonction `write.csv()` !
+
+La syntaxe de la fonction nécessite comme arguments le nom du data frame que vous voulez sauvegarder comme CSV ainsi que le chemin du fichier sur votre ordinateur qui inclut le nom que vous voulez donner au ficher CSV : `write.csv(nom_df, "chemin_du_fichier/nom_du_ficher.csv")`
+
+```{r}
+# Voici un exemple avec du code (recréons le tableau avec les animaux de Ice Age !)
+
+name <- c("Manny", "Sid", "Diego", "Ellie", 
+          "Peaches", "Scrat", "Rudy", "Buck")
+
+species <- c("mammoth", "sloth", "sabertooth", "mammoth", 
+             "mammoth", "squirrel", "dinosaur", "weasel")
+
+female <- c(FALSE, FALSE, FALSE, TRUE, 
+            TRUE, FALSE, FALSE, FALSE)
+
+age <- c(30, 20, 35, 25, 
+         7, 4, 100, 28)
+
+weight <- c(5000, 80, 400, 4000, 
+            1000, 1, 10000, 3)
+
+ice_age_df <- data.frame(name, species, female, age, weight)
+
+print(ice_age_df)
+
+# Maintenant, notre but est de créer un ficher CSV qui contient les données du data frame ice_age_df
+# Il faut adapter le chemin du fichier suivant pour qu'il marche sur votre ordinateur :
+
+write.csv(ice_age_df, file = "/Users/domus_julian/Documents/GitHub/intro-a-R/code/ice_age_df.csv")
+
+```
+
+Si tout a bien marché, vous devrez maintenant avoir un ficher CSV, nommé `ice_age_df.csv`dans votre répértoire de travail !

@@ -2910,9 +2910,9 @@ participé au Problem Set 3.
 -   Le nombre maximal de points était de 20, il fallait 10 pour passer
     le test.
 
--   La moyenne des points obtenus était de 11.5 (note = 4.25).
+-   La moyenne des points obtenus était de 12.15 (note = 4.5).
 
--   59 étudiant.es (75%) ont réussi Problem Set 3.
+-   63 étudiant.es (79.7%) ont réussi Problem Set 3.
 
 ```{r}
 #| echo: false
@@ -2932,14 +2932,14 @@ setwd("/Users/domus_julian/Documents/GitHub/intro-a-R/code")
 # Enregistrez le fichier CSV points_ps_2 dans votre répertoire de travail, 
 # puis importez les données dans R (modifiez le code suivant selon votre ordinateur) :
 
-points_ps_3 <- read.csv("~/Documents/GitHub/intro-a-R/code/points_ps_3.csv", encoding="UTF-8")
+points_ps_3 <- read.csv("~/Documents/GitHub/intro-a-R/code/points_ps_3_v2.csv", encoding="UTF-8")
 
 #points_ps_3 # il y a 79 observations
 
 hist_ps_3 <-ggplot(points_ps_3, 
                    aes(x=x)) + 
   geom_histogram(binwidth = 1, color="black", fill="white") +
-  labs(title = "Histogramme des points obtenus dans le PS 3", # labs() permet de définir plusieurs labels en même temps (titre, axes, etc.)
+  labs(title = "Histogramme des points obtenus dans le PS 3 (Corrigé !)", # labs() permet de définir plusieurs labels en même temps (titre, axes, etc.)
        subtitle = "n = 79 résultats de test", 
        caption = "Source des données : Moodle") +       
   xlab("Points obtenus") +                             

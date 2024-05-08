@@ -3411,7 +3411,7 @@ print(resultat_test_t)
 
 La très petite valeur p indique qu'il est extrêmement improbable que
 l'utilisation d'Internet des 20-29 ans ne diffère PAS significativement
-de la moyenne nationale. Nous pouvons alor rejetter H0. En d'autres
+de la moyenne nationale. Nous pouvons alors rejetter H0. En d'autres
 termes : Nous pouvons supposer avec une très grande certitude que les
 20-29 ans ont une utilisation d'Internet significativement plus élevée
 que la moyenne de la population.
@@ -3480,7 +3480,7 @@ print(t_test_two_sample)
 ```
 
 La très petite valeur p, inférieure à 1%, indique qu'il est extrêmement
-improbable que 24 hommes suisses tiré au hasard sont envirion de même
+improbable que 24 hommes suisses tiré au hasard sont environ de même
 taille que 24 joueuses de la WNBA. Nous pouvons alors rejetter H0. En
 d'autres termes : Nous pouvons supposer avec une très grande certitude
 que les joueuses de la WNBA sont significativement plus grande que les

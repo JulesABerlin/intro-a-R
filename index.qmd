@@ -357,7 +357,7 @@ Dans R, on ne peut généralement pas mélanger les valeurs numériques,
 textuelles et logiques dans le même vecteur !
 :::
 
-## Devoir pour Session 2
+### Devoir pour Session 2
 
 -   Si ce n'est pas encore fait : Installez R et RStudio sur votre
     ordinateur.
@@ -854,7 +854,7 @@ Il faut l'adapter et inclure un chemin de fichier de votre ordinateur.
 Vous pouvez ensuite vérifier si le répertoire de travail a été
 correctement défini avec la fonction `getwd()`
 
-## Devoir pour Session 3 (Problem Set 1)
+### Devoir pour Session 3 (Problem Set 1)
 
 -   **Problem Set 1**
 
@@ -1366,7 +1366,7 @@ Maintenant il s'agit d'interpréter le graphique. Que nous dit-il sur la
 relation entre prix et carats des diamants ? Quel rôle joue la variable
 *pureté* (`clarity`)?
 
-## Devoir pour Session 5
+### Devoir pour Session 5
 
 -   Exécutez toutes les sections de code de la session 4 sur votre
     ordinateur.
@@ -1824,7 +1824,7 @@ voitures à 8 cylindres qui sont relativement efficaces en termes de
 consommation de carburant, surpassant quelques voitures à 6 cylindres,
 par exemple.
 
-## Devoir pour Session 6 (Problem Set 2)
+### Devoir pour Session 6 (Problem Set 2)
 
 -   **Problem Set 2**
 
@@ -2392,7 +2392,7 @@ igposts %>%
             mean_Comments = mean(Comments)) 
 ```
 
-## Devoir pour Session 8 et infos questionnaire/Problem Set 3
+### Devoir pour Session 8 et infos questionnaire/Problem Set 3
 
 -   Attention, **la session 8 du 17 et 18 avril 2024 sera une session en
     auto-apprentissage !** Il n'y a donc pas d'enseignement en classe à
@@ -2457,7 +2457,7 @@ solution modèle.
     `dplyr`.
 
 ::: {.callout-caution collapse="true"}
-## Solution
+### Solution
 
 ```{r}
 #| echo: true
@@ -2477,7 +2477,7 @@ mtcars %>%
     ?
 
 ::: {.callout-caution collapse="true"}
-## Solution
+### Solution
 
 ```{r}
 #| echo: true
@@ -2494,7 +2494,7 @@ mtcars %>%
 -   Triez `mtcars` par `mpg` dans l'ordre décroissant !
 
 ::: {.callout-caution collapse="true"}
-## Solution
+### Solution
 
 ```{r}
 #| echo: true
@@ -2519,7 +2519,7 @@ mtcars %>%
     par rapport à son poids ?
 
 ::: {.callout-caution collapse="true"}
-## Solution
+### Solution
 
 ```{r}
 #| echo: true
@@ -2542,7 +2542,7 @@ mtcars_v2 %>%
     `diamonds`qui pèsent plus de 3 carats !
 
 ::: {.callout-caution collapse="true"}
-## Solution
+### Solution
 
 ```{r}
 #| echo: true
@@ -2565,7 +2565,7 @@ diamonds %>%
 -   Calculez le prix moyen en USD des diamants dans `diamonds` !
 
 ::: {.callout-caution collapse="true"}
-## Solution
+### Solution
 
 ```{r}
 #| echo: true
@@ -2588,7 +2588,7 @@ mean(diamonds$price)
     `diamonds` ?
 
 ::: {.callout-caution collapse="true"}
-## Solution
+### Solution
 
 ```{r}
 #| echo: true
@@ -2608,7 +2608,7 @@ diamonds %>%
     calculez `n`, la médiane et la variance de mpg.
 
 ::: {.callout-caution collapse="true"}
-## Solution
+### Solution
 
 ```{r}
 #| echo: true
@@ -2632,7 +2632,7 @@ mtcars %>%
     pour calculer une nouvelle variable : `mean_Petal.Surface`.
 
 ::: {.callout-caution collapse="true"}
-## Solution
+### Solution
 
 ```{r}
 #| echo: true
@@ -2658,7 +2658,7 @@ iris %>%
 -   Montrez aussi `n`, le nombre de diamants par catégorie de taille.
 
 ::: {.callout-caution collapse="true"}
-## Solution
+### Solution
 
 ```{r}
 #| echo: true
@@ -2686,7 +2686,7 @@ diamonds %>%
     catégorielles avec `as.factor()`.
 
 ::: {.callout-caution collapse="true"}
-## Solution
+### Solution
 
 ```{r}
 #| echo: true
@@ -2715,7 +2715,7 @@ str(igposts)
 -   Affichez les 10 premiers par ordre décroissant de `n`.
 
 ::: {.callout-caution collapse="true"}
-## Solution
+### Solution
 
 ```{r}
 #| echo: true
@@ -2737,7 +2737,7 @@ igposts %>%
 -   Affichez les top 10.
 
 ::: {.callout-caution collapse="true"}
-## Solution
+### Solution
 
 ```{r}
 #| echo: true
@@ -2758,7 +2758,7 @@ igposts %>%
     ?
 
 ::: {.callout-caution collapse="true"}
-## Solution
+### Solution
 
 ```{r}
 #| echo: true
@@ -2784,7 +2784,7 @@ Messi](https://www.instagram.com/p/CpLxnFlNJZn/)
     s'agit-il ?
 
 ::: {.callout-caution collapse="true"}
-## Solution
+### Solution
 
 ```{r}
 #| echo: true
@@ -2810,7 +2810,7 @@ Gomez](https://www.instagram.com/p/Co_P7YgrrFO/)
     ?
 
 ::: {.callout-caution collapse="true"}
-## Solution
+### Solution
 
 ```{r}
 #| echo: true
@@ -2836,7 +2836,7 @@ Jenner](https://www.instagram.com/p/CoYqX0hr1jr/)
     `Likes_par_Follower` et naviguez jusqu'à son URL : que montre-t-il ?
 
 ::: {.callout-caution collapse="true"}
-## Solution
+### Solution
 
 ```{r}
 igposts %>% 
@@ -2857,7 +2857,7 @@ Karanikolaou](https://www.instagram.com/p/CoptMRoJtUD/)
     variable `Comments_par_Follower`.
 
 ::: {.callout-caution collapse="true"}
-## Solution
+### Solution
 
 ```{r}
 #| echo: true
@@ -2881,7 +2881,7 @@ KIARA](https://www.instagram.com/p/CoXmBSLvj7A/)
     les posts qui ont reçu plus de 0 vues).
 
 ::: {.callout-caution collapse="true"}
-## Solution
+### Solution
 
 ```{r}
 #| echo: true
@@ -3164,9 +3164,15 @@ reponses_socio %>%
 
 ## La fonction `write.csv()`
 
-Avec R, vous ne pouvez pas seulement lire des données au format CSV (entrée de données ; avec des fonctions telles que `read.csv()`), mais vous pouvez également créer des fichiers CSV à partir de votre session en cours (sortie de données), notamment avec la fonction `write.csv()` !
+Avec R, vous ne pouvez pas seulement lire des données au format CSV
+(entrée de données ; avec des fonctions telles que `read.csv()`), mais
+vous pouvez également créer des fichiers CSV à partir de votre session
+en cours (sortie de données), notamment avec la fonction `write.csv()` !
 
-La syntaxe de la fonction nécessite comme arguments le nom du data frame que vous voulez sauvegarder comme CSV ainsi que le chemin du fichier sur votre ordinateur qui inclut le nom que vous voulez donner au ficher CSV : `write.csv(nom_df, "chemin_du_fichier/nom_du_ficher.csv")`
+La syntaxe de la fonction nécessite comme arguments le nom du data frame
+que vous voulez sauvegarder comme CSV ainsi que le chemin du fichier sur
+votre ordinateur qui inclut le nom que vous voulez donner au ficher CSV
+: `write.csv(nom_df, "chemin_du_fichier/nom_du_ficher.csv")`
 
 ```{r}
 # Voici un exemple avec du code (recréons le tableau avec les animaux de Ice Age !)
@@ -3197,4 +3203,322 @@ write.csv(ice_age_df, file = "/Users/domus_julian/Documents/GitHub/intro-a-R/cod
 
 ```
 
-Si tout a bien marché, vous devrez maintenant avoir un ficher CSV, nommé `ice_age_df.csv`dans votre répértoire de travail !
+Si tout a bien marché, vous devrez maintenant avoir un ficher CSV, nommé
+`ice_age_df.csv`dans votre répértoire de travail !
+
+# Session 11
+
+**Sujet : La statistique inférentielle**
+
+Dans cette leçon, nous allons nous concentrer sur trois méthodes de
+statistiques inférentielles couramment utilisées :
+
+-   Les tests t (angl. Student's t-test)
+
+-   l'analyse de variance (angl. ANOVA = ANalysis Of VAriance)
+
+-   La régression linéaire (angl. linear regression).
+
+Mais d'abord, il faut répondre à la question suivante :
+
+## C'est quoi la statistique inférentielle ?
+
+::: {.callout-note icon="true"}
+## À noter
+
+Les statistiques inférentielles sont une branche des statistiques qui
+permet de tirer des conclusions générales sur une population entière en
+se basant sur l'analyse statistique d'un échantillon représentatif de
+cette population.
+:::
+
+En sciences sociales, les statistiques inférentielles sont souvent
+utilisées pour démontrer des corrélations et des relations de cause à
+effet entre des variables. Nous voulons savoir, par exemple, si le genre
+(variable x) a une influence sur les notes de maturité (variable y).
+
+En général, pour analyser de telles relations, nous formulons souvent
+des hypothèses basées sur des théories ou des suppositions tiré de la
+littérature d'un domaine de recherche, que nous pouvons ensuite tester
+sur notre échantillon. Les résultats obtenus nous permettent de
+confirmer ou d'infirmer nos hypothèses et de généraliser les conclusions
+à la population entière. Ceci nous permet de contribuer à la création de
+nouvelles connaissance dans notre domaine de recherche
+
+## le test t
+
+Le test t est est un outil statistique qui permet d'évaluer les moyennes
+d'un ou deux échantillons à l'aide d'un test d'hypothèse. Il est aussi
+appelé test t de Student, car le statisticien qui l'a inventé au début
+du 20ème siècle, William Sealy Gosset, a publié sous le pseudonyme de
+"Student" ([Wikipédia,
+2024](https://en.wikipedia.org/wiki/Student%27s_t-test)).
+
+Dans R, le test t est éffectué avec la fonction `test.t()`.
+
+Il existe trois types de tests t :
+
+1.  **Le test t à un échantillon** (angl. one sample t-test) : pour
+    évaluer si la moyenne d'un seul échantillon diffère de manière
+    significative d'une valeur connue.
+
+    -   Par exemple, si la moyenne des notes d'un groupe de 30 lycéens,
+        qui est de 4.9, est significativement différente de 5.0 ou non.
+
+2.  **Le test t à deux échantillons indépendants** (angl. two sample
+    t-test ; aussi appelé Welch two sample t-test) : pour évaluer si les
+    moyennes de deux échantillons indépendants diffèrent de manière
+    significative.
+
+    -   Par exemple, si la moyenne des notes de 30 lycéennes, qui est de
+        5.0, est significativement différente ou non de la moyenne des
+        notes de 30 lycéens, qui est de 4.8.
+
+3.  **Le test t pour échantillons appariés** (angl. pairwise t-test) :
+    pour comparer les moyennes de deux groupes qui sont liés ou appariés
+    d'une certaine manière. Dans ce type de test, chaque participant est
+    mesuré deux fois, une fois dans chaque groupe, ce qui permet de
+    réduire les effets des variations individuelles.
+
+    -   Par exemple, nous pourrions enregistrer la moyenne des notes
+        d'une classe de 30 élèves avant et après un cours de soutien
+        scolaire en ligne. Il y a donc deux mesures pour chaque élève.
+        Le cours de soutien scolaire est dans ce cas un traitement.
+
+    -   (à noter : nous n'allons pas traiter ce type de test t plus en
+        détail dans l'exercice)
+
+Voyons maintenant des exemples avec du code !
+
+### Exemple 1 : test t à un échantillon
+
+**Problème** : Tester si la moyenne de QI d'un échantillon
+d'étudiant(e)s, qui est de 105, est différente de manière significative
+de la moyenne de la population, qui est de 100.
+
+-   Notre hypothèse H1 stipule qu'il y a une différence significative
+    entre le QI des étudiant(e)s et celui de la population générale. En
+    effet, nous assumons que le QI des étudiant(e)s est plus élevé que
+    celui de la population.
+
+-   L'hypothèse nulle H0 serait donc le contraire, c'est à dire que la
+    différence n'est pas significative entre les deux groupes.
+
+À noter : dans le code qui suit, nous allons encore une fois utiliser la
+fonction `rnorm()`que nous avons vu en classe pour créer des valeurs
+"aléatoires" qui suivent une loi normale. Nous pouvons utiliser ces
+valeurs pour simuler notre problème.
+
+```{r}
+# Générer des données d'échantillon avec n = 25 observations hypothétiques de QI d'étudiant(e).
+# Nous simulons, avec rnorm() 25 observations d'une loi normale avec une moyenne de 25 et un écart-type de 15
+scores_qi <- rnorm(25, mean = 105, sd = 15)
+
+# Test t à un échantillon
+# Il faut 2 arguments dans la fonction t.test() : les données à tester (scores_qi) et la valeur à laquelle on veut comparer les données (mu = 100)
+resultat_test_t <- t.test(scores_qi, mu = 100)
+print(resultat_test_t)
+```
+
+Il s'agit maintenant d'interpréter le résultat du test t dans R.
+
+-   **La statistique t** quantifie la différence entre les moyennes des
+    groupes par rapport à la variabilité de l'échantillon. Le signe de
+    la statistique t indique si la moyenne de l'échantillon est
+    supérieure (t positif) ou inférieure (t négatif) à la moyenne de la
+    comparaison. L'ampleur reflète combien d'erreurs standard la
+    différence est par rapport à zéro. En général, des valeurs absolues
+    plus élevées suggèrent des preuves plus solides contre l'hypothèse
+    nulle, ce qui se traduit par des valeurs p plus faibles.
+
+-   **df** signifie "degrees of freedom". Dans un test t, les degrés de
+    liberté font référence au nombre de valeurs dans le calcul final
+    d'une statistique qui sont libres de varier. Il s'agit d'une mesure
+    de la quantité d'informations disponibles pour estimer le paramètre
+    statistique.
+
+-   La **valeur p** (angl. p-value) est la probabilité d'observer un
+    résultat aussi extrême que celui obtenu dans l'échantillon sous
+    l'hypothèse nulle. Elle est utilisée pour déterminer si le résultat
+    du test est statistiquement significatif en comparant sa valeur à un
+    seuil de signification prédéfini (habituellement 5% = 0.05). La
+    p-value est calculée à partir de la statistique de test t et des
+    degrés de liberté associés à l'échantillon.
+
+En pratique, c'est surtout la valeur p qui compte ! Dans notre cas, elle
+est clairement supérieure à 5% ( \> 0.05), ce qui nous indique que la
+différence du QI entre les étudiant(e)s et la population n'est PAS
+significative (si nous utilisons des intérvalles de confiance de 95%) !
+
+Cela veut dire que **nous ne pouvons PAS abondonner notre hypothèse
+nulle H0** car il y a une forte probabilité que la différence de QI
+observée dans notre échantillon est le résultat d'un pure hasard. En
+d'autres termes, selon cet échantillon, nous ne pouvons pas conclure que
+le QI des étudiant(e)s et significativement plus élevé que celui de la
+population générale.
+
+```{r}
+# Regénérons encore une fois des données d'échantillon, mais cette fois-ci avec n = 50 observations 
+scores_qi <- rnorm(50, mean = 105, sd = 15)
+
+# Test t à un échantillon
+resultat_test_t <- t.test(scores_qi, mu = 100)
+print(resultat_test_t)
+```
+
+La valeur p est maintenant beaucoup plus petite, soit inférieure à 1%
+(\< 0.01). Cela nous indique que la différence entre le QI des
+étudiant(e)s et de la population est significative (si nous utilisons
+des intervalles de confiance de 95%) !
+
+Avec un tel résultat de test t, **nous pouvons rejetter l'hypothèse
+nulle H0**, car la probabilité que les valeurs observées soient le
+résultat d'un pure hasard sont très faible (moins de 1%). Nous pouvont
+alors inférer que le QI des étudiant(e)s est significativement plus
+élevé que celui de la population générale.
+
+### Exercice 1
+
+Selon l'étude [World Internet Project de l'Université de
+Zurich](https://doi.org/10.5167/uzh-251581), qui a évalué les données
+pour la Suisse, les personnes en Suisse ont passé en moyenne 5.6 heures
+en ligne en 2023. Chez les 20-29 ans, ce chiffre s'élève même à 7.9
+heures en moyenne.
+
+Réalisez un test T en utilisant ces statistiques comme suit :
+
+-   Simulez avec `rnorm()`30 valeurs pour l'utilisation d'Internet en
+    heures par jour pour le groupe d'âge 20-29 ans
+    (`mean = 7.9, sd = 2`).
+
+-   Testez si la durée moyenne d'utilisation d'Internet en heures de
+    votre échantillon simulé de 30 suisses de 20 à 29 ans se distingue
+    significativement de la moyenne nationale (`mu = 5.6`).
+
+::: {.callout-caution collapse="true"}
+### Solution
+
+```{r}
+#| echo: true
+#| output: true
+# Générons des données d'échantillon hypothétique avec n = 30 observations 
+usage_20_29 <- rnorm(30, mean = 7.9, sd = 2)
+
+# Test t à un échantillon
+resultat_test_t <- t.test(usage_20_29, mu = 5.6)
+print(resultat_test_t)
+```
+
+La très petite valeur p indique qu'il est extrêmement improbable que
+l'utilisation d'Internet des 20-29 ans ne diffère PAS significativement
+de la moyenne nationale. Nous pouvons alor rejetter H0. En d'autres
+termes : Nous pouvons supposer avec une très grande certitude que les
+20-29 ans ont une utilisation d'Internet significativement plus élevée
+que la moyenne de la population.
+:::
+
+### Exemple 2 : test t à deux échantillons
+
+Utilisons encore une fois la fonction `rnorm()`, mais maintenant pour
+simuler deux échantillons hypothétiques :
+
+-   Un échantillon de 5 tailles de femmes suisses
+
+-   Un échantillon de 5 tailles d'homme suisses
+
+Selon l'article de [*24
+heures*](https://www.24heures.ch/calculateur-en-ligne-quelle-taille-faites-vous-par-rapport-aux-autres-191558705635#),
+qu'on a déjà vu en classe, en Suisse, les femmes ont une taille moyenne
+de 164.7 cm tandis que les hommes mesurent 177.4 cm en moyenne. Dans la
+suite, nous supposons que les écarts-types sont de +- 5.6 cm pour les
+femmes et de +- 6.1 cm pour les hommes.
+
+```{r}
+# Données exemplaires :
+tailles_f <- rnorm(5, mean = 177.4, sd = 5.6)
+tailles_h <- rnorm(5, mean = 164.7, sd = 6.1)
+
+# Two-sample t-test
+t_test_two_sample <- t.test(tailles_f, tailles_h)
+print(t_test_two_sample)
+
+```
+
+Comme nos échantillons de `n = 5` sont très petit, il se peut que la
+différence de taille moyenne entre les suisses et les suissesses n'est
+pa significative si on utilise des intervalles de confiances de 95% !
+Cependant, dès que nous augmentons l'échantillon simulé, par exemple à
+`n = 20` ou `n = 100`, le test T indique clairement que la différence de
+taille est significative.
+
+### Exercice 2
+
+Supposons maintenant qu'un avion en provenance d'Amérique atterrisse à
+Genève-Cointrin. Il transporte une sélection de 24 joueuses de la
+Women's NBA, la ligue professionnelle féminine de basket-ball aux
+États-Unis. Selon [les statistiques de la
+WNBA](https://jokermag.com/average-height-wnba-players/), ces joueuses
+mesurent en moyenne 184.5 cm.
+
+Quelle est la probabilité que 24 hommes suisses choisis au hasard
+mesurent également cette taille en moyenne ? (Supposons que l'écart-type
+des joueuses est de 6.5 cm).
+
+::: {.callout-caution collapse="true"}
+### Solution
+
+```{r}
+#| echo: true
+#| output: true
+# Générons des données pour deux échantillons hypothétique avec n = 24 observations chacun
+tailles_f_WNBA <- rnorm(24, mean = 184.5, sd = 6.5)
+tailles_h <- rnorm(24, mean = 177.4, sd = 6.1)
+
+# Two-sample t-test
+t_test_two_sample <- t.test(tailles_f_WNBA, tailles_h)
+print(t_test_two_sample)
+```
+
+La très petite valeur p, inférieure à 1%, indique qu'il est extrêmement
+improbable que 24 hommes suisses tiré au hasard sont envirion de même
+taille que 24 joueuses de la WNBA. Nous pouvons alors rejetter H0. En
+d'autres termes : Nous pouvons supposer avec une très grande certitude
+que les joueuses de la WNBA sont significativement plus grande que les
+hommes suisses moyens.
+:::
+
+À noter : la fonction `t.test()`, comme on l'a utilisé dans ces exemples
+de code jusqu'à présent, utilise plusieurs paramètres par défaut, si
+nous ne les spécifions pas comme arguments dans la fonction. Voici
+quelques-un de ces paramètres, qu'on peut aussi visualiser avec
+`?t.test()` :
+
+```         
+t.test(x, y = NULL,
+       alternative = c("two.sided", "less", "greater"),
+       mu = 0, paired = FALSE, var.equal = FALSE,
+       conf.level = 0.95, ...)
+```
+
+En fonction de votre problématique et de vos données, par exemple dans
+un travail de bachelor, il peut être nécessaire de spécifier
+explicitement certains de ces paramètres. Pour ce faire, il peut être
+utile de lire les pages d'aide de R et de rechercher d'autres documents
+en ligne pertinents pour votre problématique spécifique.
+
+-   Un tutoriel qui approfondit le test t dans R est par exemple [celui
+    de Datacamp
+    (2024)](https://www.datacamp.com/tutorial/t-tests-r-tutorial).
+
+## L'analyse de la variance (ANOVA) (sous construction)
+
+L'ANOVA est utilisée pour comparer les moyennes de plus de deux groupes.
+Elle permet de déterminer s'il existe une différence significative entre
+les groupes. L'ANOVA est, de ce point de vue, une généralisation du test
+t à plus de deux groupes qu'on veut comparer.
+
+## La régression linéaire avec `lm()`(sous construction)
+
+La fonction `lm()` est utilisée pour effectuer une régression linéaire.
+Elle permet de modéliser la relation entre une variable dépendante et
+une ou plusieurs variables indépendantes.

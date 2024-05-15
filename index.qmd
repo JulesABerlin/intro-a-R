@@ -3206,9 +3206,9 @@ write.csv(ice_age_df, file = "/Users/domus_julian/Documents/GitHub/intro-a-R/cod
 Si tout a bien marché, vous devrez maintenant avoir un ficher CSV, nommé
 `ice_age_df.csv`dans votre répértoire de travail !
 
-# Session 11
+# Session 11 (cours en auto-apprentissage)
 
-**Sujet : La statistique inférentielle**
+**Sujet : La statistique inférentielle, Partie 1 (t-test)**
 
 Dans cette leçon, nous allons nous concentrer sur trois méthodes de
 statistiques inférentielles couramment utilisées :
@@ -3247,16 +3247,60 @@ nouvelles connaissance dans notre domaine de recherche
 
 ## le test t
 
+::: {.callout-note icon="true"}
+## À noter
+
 Le test t est est un outil statistique qui permet d'évaluer les moyennes
 d'un ou deux échantillons à l'aide d'un test d'hypothèse. Il est aussi
 appelé test t de Student, car le statisticien qui l'a inventé au début
 du 20ème siècle, William Sealy Gosset, a publié sous le pseudonyme de
 "Student" ([Wikipédia,
 2024](https://en.wikipedia.org/wiki/Student%27s_t-test)).
+:::
+
+::: {.callout-caution collapse="false"}
+## Attention
+
+Pour effectuer un test t, il y a plusieurs hypothèses qui doivent être
+satisfaites :
+
+1.  **Les données sont continues**
+2.  **L'échantillonnage est aléatoire**
+    -   Les données de chaque échantillon ont été prélevées au hasard
+        dans une population.
+3.  **Indépendance**
+    -   Les observations doivent être indépendantes les unes des autres.
+        Cela signifie que la valeur d'une observation ne doit pas
+        dépendre de la valeur d'une autre observation.
+    -   Pour les tests t à deux échantillons, les échantillons doivent
+        être indépendants. Si les échantillons ne sont pas indépendants,
+        un test t par paires peut être approprié.
+4.  **Normalité**
+    -   La variable continue étudiée doit (plus ou moins) suivre une loi
+        normale dans chaque groupe ou échantillon.
+    -   Cette hypothèse peut être vérifiée à l'aide de graphiques (comme
+        un histogramme) ou de tests statistiques (comme [le test de
+        Shapiro-Wilk](https://www.statology.org/shapiro-wilk-test-r/) :
+        `shapiro.test()`).
+5.  **Homogénéité des variances (homoscédasticité)**
+    -   Les variances des données dans chaque groupe est similaire.
+    -   Cette hypothèse peut être vérifiée à l'aide [du test de Levene
+        ou du test de
+        Bartlett](https://www.datanovia.com/en/lessons/homogeneity-of-variance-test-in-r/).
+
+En pratique, les tests t sont relativement robustes aux déviations de
+ces hypothèses, surtout si le nombre d'observations (n) de chaque
+échantillon est important.
+
+Néanmoins, si une ou plusieurs de ces hypothèses n'est pas satisfaite,
+alors des alternatives au test t peuvent être utilisées, comme [le test
+de Wilcoxon-Mann-Whitney](#0) (`wilcox.test()`)ou [le test de
+Kruskal-Wallis](#0) (`kruskal.test()`).
+:::
 
 Dans R, le test t est éffectué avec la fonction `test.t()`.
 
-Il existe trois types de tests t :
+Il existe **trois types** de tests t :
 
 1.  **Le test t à un échantillon** (angl. one sample t-test) : pour
     évaluer si la moyenne d'un seul échantillon diffère de manière
@@ -3371,11 +3415,11 @@ La valeur p est maintenant beaucoup plus petite, soit inférieure à 1%
 étudiant(e)s et de la population est significative (si nous utilisons
 des intervalles de confiance de 95%) !
 
-Avec un tel résultat de test t, **nous pouvons rejetter l'hypothèse
-nulle H0**, car la probabilité que les valeurs observées soient le
-résultat d'un pure hasard sont très faible (moins de 1%). Nous pouvont
-alors inférer que le QI des étudiant(e)s est significativement plus
-élevé que celui de la population générale.
+Avec un tel résultat de test t, **nous pouvons rejeter l'hypothèse nulle
+H0**, car la probabilité que les valeurs observées soient le résultat
+d'un pure hasard sont très faible (moins de 1%). Nous pouvont alors
+inférer que le QI des étudiant(e)s est significativement plus élevé que
+celui de la population générale.
 
 ### Exercice 1
 
@@ -3409,12 +3453,15 @@ resultat_test_t <- t.test(usage_20_29, mu = 5.6)
 print(resultat_test_t)
 ```
 
-La très petite valeur p indique qu'il est extrêmement improbable que
+La très faible valeur p indique qu'il est extrêmement improbable que
 l'utilisation d'Internet des 20-29 ans ne diffère PAS significativement
-de la moyenne nationale. Nous pouvons alors rejetter H0. En d'autres
-termes : Nous pouvons supposer avec une très grande certitude que les
-20-29 ans ont une utilisation d'Internet significativement plus élevée
-que la moyenne de la population.
+de la moyenne nationale.
+
+Nous pouvons alors rejeter H0.
+
+En d'autres termes : Nous pouvons supposer avec une très grande
+certitude que les 20-29 ans ont une utilisation d'Internet
+significativement plus élevée que la moyenne de la population en Suisse.
 :::
 
 ### Exemple 2 : test t à deux échantillons
@@ -3481,7 +3528,7 @@ print(t_test_two_sample)
 
 La très petite valeur p, inférieure à 1%, indique qu'il est extrêmement
 improbable que 24 hommes suisses tiré au hasard sont environ de même
-taille que 24 joueuses de la WNBA. Nous pouvons alors rejetter H0. En
+taille que 24 joueuses de la WNBA. Nous pouvons alors rejeter H0. En
 d'autres termes : Nous pouvons supposer avec une très grande certitude
 que les joueuses de la WNBA sont significativement plus grande que les
 hommes suisses moyens.
@@ -3510,15 +3557,474 @@ en ligne pertinents pour votre problématique spécifique.
     de Datacamp
     (2024)](https://www.datacamp.com/tutorial/t-tests-r-tutorial).
 
-## L'analyse de la variance (ANOVA) (sous construction)
+# Session 12
 
-L'ANOVA est utilisée pour comparer les moyennes de plus de deux groupes.
-Elle permet de déterminer s'il existe une différence significative entre
-les groupes. L'ANOVA est, de ce point de vue, une généralisation du test
-t à plus de deux groupes qu'on veut comparer.
+**Sujet : La statistique inférentielle, Partie 2 (ANOVA et régression
+linéaire)**
 
-## La régression linéaire avec `lm()`(sous construction)
+## L'analyse de la variance (ANOVA)
 
-La fonction `lm()` est utilisée pour effectuer une régression linéaire.
-Elle permet de modéliser la relation entre une variable dépendante et
-une ou plusieurs variables indépendantes.
+::: {.callout-note icon="true"}
+## À noter
+
+L'analyse de la variance (abbrégée **ANOVA**) est un ensemble de modèles
+statistiques et de procédures d'estimation associées utilisés pour
+analyser les différences entre les moyennes. L'ANOVA a été développée
+par le statisticien britannique [Ronald Fisher
+(1890-1962)](https://fr.wikipedia.org/wiki/Ronald_Aylmer_Fisher).
+
+L'ANOVA permet d'étudier le comportement d'une variable quantitative à
+expliquer en fonction d'une ou de plusieurs variables catégorielles. 
+
+Dans sa forme la plus simple, l'ANOVA fournit un test statistique
+permettant de déterminer si deux moyennes de population ou plus sont
+égales, et généralise donc le test t au-delà de deux moyennes. En
+d'autres termes, l'ANOVA est utilisée pour tester si les différences
+entre deux ou plusieurs moyennes d'une variable quantitative à expliquer
+sont significatives ou si elles peuvent être attribuées au hasard.
+
+Le principe de l'ANOVA est basé sur la loi de la variance totale, selon
+laquelle la variance observée d'une variable particulière est divisée en
+composantes attribuables à différentes sources de variation, telles que
+la variation entre les groupes et la variation à l'intérieur des
+groupes.
+
+En fonction du nombre de facteurs et du nombre de niveaux dans chaque
+facteur, il existe différents types d'ANOVA, tels que l'ANOVA à un
+facteur, l'ANOVA à deux facteurs, etc.
+
+(Source : [Wikipédia,
+2024](https://en.wikipedia.org/wiki/Analysis_of_variance)).
+:::
+
+::: {.callout-caution collapse="false"}
+## Attention
+
+Comme pour le test t, l'ANOVA nécessite certaines hypothèses concernant
+les données. Les observations de la variable à expliquer doivent
+notamment être indépendamment et identiquement distribuées
+(approximativement une distribution normale) et la variance entre les
+groupes doit être similaire (homoscédasticité).
+:::
+
+Dans R, la **fonction `aov()`** est utilisée pour effectuer des ANOVAs à
+un ou plusieurs facteurs.
+
+-   Elle prend en entrée une formule qui spécifie la variable réponse et
+    les facteurs explicatifs, ainsi qu'un data frame contenant les
+    données. Syntaxe : `aov(formula, data)`
+
+-   La fonction `aov()` renvoie un objet de classe *aov* qui contient
+    les résultats de l'analyse de variance, y compris
+
+    -   les sommes de carrés,
+
+    -   les degrés de liberté,
+
+    -   les valeurs de F et
+
+    -   les valeurs de p pour chaque effet du modèle.
+
+En résumé, `aov()` est utilisée pour ajuster des modèles linéaires à
+effets fixes et pour effectuer des analyses de variance.
+
+### Exemple 1 : ANOVA avec le jeu de données `palmerpenguins`
+
+[![](images/palmerpenguins.png)](https://allisonhorst.github.io/palmerpenguins/index.html)
+
+Pour cet exemple, il faut télécharger le paquet R `palmerpenguins`.
+Celui-ci contient un jeu de données avec des informations sur trois
+espèces de pingouins (Adélie, Chinstrap et Gentoo) qui vivent dans
+l'archipel de Palmer en Antarctique.
+
+Les données ont été collectées entre 2007 et 2009 et comprennent des
+mesures telles que la longueur du bec (`bill_length_mm`), la longueur
+des nageoires (`flipper_length_mm`), le poids corporel (`body_mass_g`)
+et le sexe des pingouins.
+
+-   Utilisez le code suivant pour la première installation du paquet :
+    `install.packages("palmerpenguins")`
+
+-   Après l'installation, il suffit d'activer le paquet avec
+    `library(palmerpenguins)`
+
+-   Il est toujours recommandé de comprendre un nouveau jeu de données
+    au niveau déscriptif, utilisez donc `?palmerpenguins` et naviguez un
+    peu sur [le site des créatrices de ce paquet
+    R](https://allisonhorst.github.io/palmerpenguins/) !
+
+-   Le **but de notre ANOVA** est de déterminer si les différences de
+    longueur moyenne des nageoires `flipper_length_mm` entre les trois
+    espèces de pingouins sont statistiquement significatives.
+
+    -   `flipper_length_mm` est donc notre variable quantitative à
+        expliquer et
+
+    -   `species` est notre variable catégorielle qui indique à quelle
+        espèces de pingouins (Adélie, Chinstrap et Gentoo) chaque
+        observation de `flipper_length_mm` appartient.
+
+```{r}
+#| echo: true
+#| output: true
+#| warning: false
+
+library(tidyverse)
+library(palmerpenguins)
+
+# Explorez d'abord un peu la structure du jeu de données
+str(penguins)
+
+# Visualisez les distributions de flipper length avec des boxplots
+ggplot(penguins, aes(x = species, y = flipper_length_mm)) +
+  geom_boxplot()
+
+# Comme alternative, vous pouvez aussi créez un histogramme plus avancé pour comparer flipper length par espèce
+ggplot(data = penguins, aes(x = flipper_length_mm)) +
+  geom_histogram(aes(fill = species), color = "black", alpha = 0.5, position = "identity", bins = 30) +
+  scale_fill_manual(values = c("darkorange","darkorchid","cyan4")) +
+  theme_minimal() +
+  labs(title = "Histograms of flipper length by penguin species",
+       subtitle = "n = 344 ; data source : palmerpenguin R package")
+
+# Calculs des variances de flipper length avec dplyr par espèce de pingouin, pour vérifier si l'hypothèse des variances similaire entre groupes est satisfaite :
+penguins %>% 
+  group_by(species) %>% 
+  summarize(var_fl = var(flipper_length_mm, na.rm = TRUE))
+
+# ANOVA avec aov()
+anova_1 <- aov(flipper_length_mm ~ species, data = penguins)
+summary(anova_1)
+
+# à noter, avec TukeyHSD() nous pouvons vérifier d'avantage les différence entre chaque paire de variables des trois groupe :
+TukeyHSD(anova_1)
+
+# Nous pouvons rejeter H0 avec une grande certitude !
+```
+
+## La régression linéaire avec `lm()`
+
+::: {.callout-note icon="true"}
+## À noter
+
+La fonction **`lm()`** dans R est utilisée pour ajuster un modèle de
+régression linéaire. Elle est couramment utilisée dans le contexte de la
+régression linéaire pour étudier la relation entre une variable
+dépendante (`y`) et une ou plusieurs variables indépendantes (`x1`,
+`x2`, etc.).
+
+Nous parlons de régression linéaire **multiple** si il y a plus d'une
+variable indépendante.
+:::
+
+La syntaxe de base de la fonction `lm()` est la suivante :
+**`lm(formula, data)`**.
+
+-   L'argument `formula` désigne une formule qui décrit le modèle à
+    ajuster. Par exemple, `y ~ x1 + x2` signifie que la variable
+    dépendante y est modélisée en fonction des variables indépendantes
+    x1 et x2.
+
+-   L'argument `data` requiert l'indication du jeu de données que la
+    régression doit utiliser en tant qu'entrée contenant les variables
+    mentionnées dans la formule.
+
+### Exemple 1 : La régression linéaire à une variable avec `mtcars`
+
+Voici un exemple d'utilisation de la fonction `lm()` avec le jeu de
+données `mtcars` : `lm(mpg ~ wt, data = mtcars)`
+
+-   Notre but est de modéliser la relation entre la variable dépendante
+    `mpg` (miles per gallon) et la variable indépendante `wt` (weight).
+
+-   Notre **hypothèse** est qu'il existe une relation négative entre
+    `wt` et `mpg` des véhicules dans `mtcars`. En d'autres termes, nous
+    nous attendons à ce que les voitures plus lourdes aient tendance à
+    parcourir moins de distance avec une unité de carburant que les
+    voitures plus légères.
+
+-   Nous supposons qu'il s'agit d'une **relation de cause à effet**, car
+    les lois de la physique nous apprennent que l'accélération et le
+    déplacement d'objets plus lourds nécessitent une force et une
+    énergie plus importantes. Par conséquent, nous supposons que les
+    voitures plus lourdes consomment généralement plus d'énergie en
+    forme de carburant que les voitures plus légères.
+
+```{r}
+# Charger le jeu de données mtcars
+data(mtcars)
+
+# Ajuster un modèle de régression linéaire avec mpg comme variable dépendante et wt comme variable indépendante
+modele_1 <- lm(mpg ~ wt, data = mtcars)
+
+# Afficher le résumé du modèle que nous pouvons interpréter
+summary(modele_1)
+```
+
+Le résultat de la régression linéaire indique que le modèle linéaire
+`modele_1` prédit la variable dépendante `mpg` en fonction de la
+variable indépendante `wt`. Regardons le résultat plus en detail :
+
+-   Les coefficients du modèle sont présentés dans la section
+    *Coefficients*.
+
+    -   L'interception est estimée à 37,285 et le coefficient pour `wt`
+        est estimé à -5,345. Cela signifie que pour chaque augmentation
+        d'une unité de `wt`, la valeur prédite de `mpg` diminue de 5,345
+        unités en moyenne. En d'autres termes, pour chaque tranche de 1
+        000 livres (environ 454 kg) de plus qu'une voiture pèse, la
+        valeur de sa consommation de carburant diminue de 5,345 miles.
+
+    -   La valeur de p (Pr(\>\|t\|)) pour le coefficient de `wt` est
+        très faible (\< 0,000000000129), ce qui indique que le
+        coefficient est significativement différent de zéro et que la
+        variable `wt` a un effet significatif sur la variable dépendante
+        `mpg`.
+
+-   La section *Residuals* indique les résidus minimaux, du premier
+    quartile, de la médiane, du troisième quartile et maximaux. Ces
+    valeurs peuvent être utilisées pour vérifier si les hypothèses du
+    modèle sont satisfaites.
+
+-   Le *Residual standard error* est l'écart type résiduel, qui mesure
+    l'écart entre les valeurs prédites et les valeurs réelles de la
+    variable dépendante. Plus cette valeur est faible, mieux le modèle
+    s'adapte aux données. Dans ce cas, la valeur est de 3,046.
+
+-   Le *Multiple R-squared* est le coefficient de détermination, qui
+    mesure la proportion de la variance de la variable dépendante
+    expliquée par la variable indépendante. Dans ce cas, le coefficient
+    de détermination est de 0,7528, ce qui indique que la variable `wt`
+    explique environ 75,28% de la variance de la variable `mpg`. Pour un
+    modèle de régression ne comportant qu'une seule variable, il s'agit
+    d'une valeur exceptionnellement élevée. Cela signifie que les
+    variations de la consommation de carburant d'une voiture à l'autre
+    s'expliquent dans une très large mesure par les différences de poids
+    !
+
+-   Le *Adjusted R-squared* est une mesure de la proportion de la
+    variance de la variable dépendante qui est expliquée par les
+    variables indépendantes dans un modèle de régression linéaire, tout
+    en tenant compte du nombre de variables indépendantes dans le
+    modèle. Il est calculé en ajustant le R-squared en fonction du
+    nombre de variables indépendantes dans le modèle, et est toujours
+    inférieur ou égal au R-squared. Un modèle avec un coefficient de
+    détermination ajusté plus élevé est considéré comme un meilleur
+    modèle, car il explique une plus grande proportion de la variance de
+    la variable dépendante tout en utilisant un nombre raisonnable de
+    variables indépendantes.
+
+-   Enfin, la *F-statistic* est utilisée pour tester l'hypothèse nulle
+    que le coefficient de régression est égal à zéro. Dans ce cas, la
+    valeur de p associée à la statistique F est très faible (\<
+    0,0000000001294), ce qui indique que l'hypothèse nulle peut être
+    rejetée et que le modèle est significatif.
+
+La vidéo YouTube suivante de StatQuest, un créateur de contenus qui
+explique très bien lest concepts statistiques (en anglais), décrit
+comment interpréter les résultats d'une regression linéaire dans R :
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/u1cc1r_Y7M0?si=TBPst3RY5jKWxIyu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+
+</iframe>
+
+**Les graphiques de diagnostic**
+
+Les graphiques de diagnostic (angl. diagnostic plots) sont des
+graphiques utilisés pour évaluer la qualité d'un modèle de régression
+linéaire et vérifier si les hypothèses du modèle sont satisfaites. En
+utilisant la fonction `plot()` après avoir calculé un modèle de
+régression linéaire avec `lm()` dans R, nous pouvons visualiser quatre
+types de plots diagnostiques :
+
+1.  **Résidus vs valeurs prédites** : Ce plot montre la relation entre
+    les résidus (la différence entre les valeurs réelles et les valeurs
+    prédites) et les valeurs prédites. Si les points sont aléatoires
+    autour de la ligne horizontale à zéro, cela indique que les résidus
+    sont indépendants et que la variance est constante.
+2.  **Résidus vs variables indépendantes** : Ce plot montre la relation
+    entre les résidus et chaque variable indépendante. Si les points
+    sont aléatoires autour de la ligne horizontale à zéro, cela indique
+    que la relation entre les variables indépendantes et la variable
+    dépendante est linéaire.
+3.  **QQ-plot** : Ce plot compare les quantiles des résidus standardisés
+    avec les quantiles d'une distribution normale standard. Si les
+    points sont proches de la ligne diagonale, cela indique que les
+    résidus suivent une distribution normale.
+4.  **Densité des résidus** : Ce plot montre la densité des résidus. Si
+    la densité est symétrique autour de zéro et suit une forme de
+    cloche, cela indique que les résidus suivent une distribution
+    normale.
+
+En examinant cesgraphiques de diagnostic, nous pouvons évaluer si les
+hypothèses du modèle de régression linéaire sont satisfaites, telles que
+l'indépendance des résidus, l'homoscédasticité, la linéarité et la
+normalité des résidus. Si les hypothèses ne sont pas satisfaites, cela
+peut indiquer que le modèle n'est pas adéquat et qu'une transformation
+des données ou une sélection de variables différente peut être
+nécessaire.
+
+```{r}
+# Afficher les graphiques de diagnostic
+par(mfrow=c(2,2))
+plot(modele_1)
+```
+
+Dans la pratique, **il suffit d'évaluer visuellement les graphiques de
+diagnostic**. Si les lignes rouges qui indiquent les valeurs moyennes
+des résidus (les points) ne s'écartent pas de manière importante des
+lignes pointillées, le modèle de régression est bon à utiliser. Si les
+écarts sont importants, il peut être nécessaire de trouver un autre
+modèle ou de transformer les données (par exemple, transformation
+logarithmique, etc.). Dans le cas spécifique, les graphique de
+diagnostic sont acceptable.
+
+### Exemple 2 : La régression linéaire multiple avec `mtcars`
+
+Pouvons-nous encore améliorer `modele_1` qui prédit `mpg` dans le jeu de
+données mtcars ? Une possibilité évidente est d'inclure d'autres
+variables x, en plus de `wt`, dans notre modèle de régression pour
+prédire `mpg`.
+
+En d'autres termes, nous devrions effectuer une régression linéaire
+multiple !
+
+Si nous vérifions à nouveau les variables de mtcars (par exemple, avec
+`?mtcars`), une autre variable nous saute aux yeux qui pourrait avoir un
+impact sur `mpg` : la variable `hp`, qui indique la puissance brute en
+chevaux des voitures.
+
+Nous pouvons raisonnablement supposer une relation causale : que les
+voitures avec plus de chevaux, c'est-à-dire avec des moteurs plus
+puissants, consomment plus de `mpg` que les voitures avec moins de `hp`.
+
+```{r}
+# Ajuster un modèle de régression linéaire multiple avec mpg comme variable dépendante et wt et hp comme variables indépendantes
+modele_2 <- lm(mpg ~ wt + hp, data = mtcars)
+
+# Afficher le résumé du modèle que nous pouvons interpréter
+summary(modele_2)
+
+# Afficher les graphiques de diagnostic
+par(mfrow=c(2,2))
+plot(modele_2)
+```
+
+Les résultats montrent qu'en effet, la puissance en chevaux `hp` a
+également un effet négatif sur `mpg`. La valeur p de `hp` indique un
+effet significatif au niveau de 1% (mais pas au niveau de 0,1% comme
+pour `wt`).
+
+Le R-carré de notre modèle a également augmenté pour atteindre 82,68%
+(R-carré ajusté à 81,48%), ce qui est une valeur très élevée. Cela
+signifie que `modele_2` peut effectivement expliquer une plus grande
+partie de la variabilité de `mpg` que `modele_1`. Néanmoins, parce qu'il
+utilise plus de variables, le `modele_2` est aussi plus complexe. Cela
+se traduit par une statistique F (69.21) plus faible pour `modele_2` que
+pour `modele_1` (statistique F = 91,38).
+
+Une question est alors : **comment choisir le meilleur modèle de
+regression ?**
+
+### Exemple 3 : La régression par étape avec `mtcars`
+
+Une possible solution est d'utiliser ce qu'on appelle **la régression
+par étape**. C'est une méthode d'ajustement des modèles de régression
+dans laquelle le choix des variables prédictives est effectué par une
+procédure automatique.
+
+Dans R, la régression par étapes peut être effectuée à l'aide de
+différentes approches, notamment la fonction `step()`, qui base ses
+sélections sur les valeurs AIC (critère d'information d'Akaike).
+
+-   Pour notre exemple de régression par étapes, nous allons prédire
+    `mpg` en utilisant toutes les autres variables de l'ensemble de
+    données `mtcars`.
+
+-   A partir de ce « modèle complet », nous utiliserons ensuite une
+    procédure qui éliminera les variables qui ne contribuent pas de
+    manière significative à expliquer la variation de `mpg`.
+
+-   La procédure continuera à éliminer des variables jusqu'à ce qu'un
+    optimum soit atteint, c'est-à-dire un modèle qui a un pouvoir
+    explicatif suffisant (montré par sa valeur R-carré) mais qui n'est
+    pas trop complexe (ou suradapté) avec trop de variables (ceci est
+    décidé sur la base de la métrique AIC, **qui va être minimisée** par
+    la procédure).
+
+-   La bonne nouvelle, c'est que R produira le modèle optimal pour nous
+    !
+
+Voyons comment ça marche avec du code R !
+
+```{r}
+# Il faut éventuellement d'abord installer le paquet stats
+# install.packages("stats")
+library(stats)
+
+# Créons le modèle complet avec toutes le variables de mtcars (avec ~ .)
+full_model <- lm(mpg ~ ., data = mtcars)
+summary(full_model)
+
+# Nous utilisons la fonction step(), en commençant par le modèle complet et en permettant à la fois la sélection en amont et l'élimination en aval sur la base de l'AIC (avec direction = "both")
+stepwise_model <- step(full_model, direction = "both")
+```
+
+Voici comment la régression par étape choisit le meilleur modèle :
+
+-   **AIC le plus faible** : le modèle ayant l'AIC le plus faible est
+    généralement préféré car il suggère un meilleur ajustement du modèle
+    compte tenu du nombre de variables explicatives utilisées. L'AIC
+    permet d'équilibrer l'adéquation et la complexité du modèle. Dans
+    notre exemple, le modèle optimal retenu est donc
+    `mpg ~ wt + qsec + am`.
+
+Après avoir exécuté la régression par étape, le résumé de
+`stepwise_model` affiche les coefficients pour chaque variable
+explicative ainsi que des statistiques telles que le R-carré, la
+statistique F et les valeurs p pour les variables explicatives.
+
+```{r}
+summary(stepwise_model)
+```
+
+**Graphiques de diagnostic** : Après avoir choisi un modèle, il est
+essentiel de vérifier les graphiques des résidus pour valider les
+hypothèses d'homoscédasticité, de normalité et d'indépendance des
+résidus :
+
+```{r}
+par(mfrow=c(2,2))
+plot(stepwise_model)
+```
+
+Les graphiques de diagnostic sont acceptable pour notre modèle !
+
+### Ressources pour aller plus loin (pas pertinent pour le Problem Set 4)
+
+Je vous recommande de jeter un coup d'œil à d'autres vidéos YouTube de
+StatQuest qui expliquent clairement les concepts statistiques, dont
+beaucoup sont très pertinents pour les sciences sociales et pour vos
+études en général, p. ex. :
+
+-   [Linear Regression, Clearly
+    Explained!!!](https://youtu.be/nk2CQITm_eo?si=rtNUDxVBeq6D7xkr)
+-   [Multiple Regression in R,
+    Step-by-Step!!!](https://youtu.be/mno47Jn4gaU?si=PDMYDHu1ANTV70V2)
+-   [The Normal Distribution, Clearly
+    Explained!!!](https://youtu.be/rzFX5NWojp0?si=A10LmX2WJ1mbN46c)
+-   [p-values: What they are and how to interpret
+    them](https://youtu.be/vemZtEM63GY?si=SO9AOuuRMhDch-yk)
+-   [R-squared, Clearly
+    Explained!!!](https://youtu.be/2AQKmw14mHM?si=gN5HL80pFAi_R0CM)
+-   [Hypothesis Testing and The Null Hypothesis, Clearly
+    Explained!!!](https://youtu.be/0oc49DyA3hU?si=gH4KNuhTOYtnGoZU)
+-   [Logistic Regression in R, Clearly
+    Explained!!!](https://youtu.be/C4N3_XJJ-jU?si=2MPycgEfuUTQMaRa)
+
+### Devoir pour Session 13 (Problem Set 4) et infos sur la session 14
+
+-   La semaine prochaine, les 22 et 23 mai, **le Problem Set 4** aura lieu pendant la session 13. Son contenu sera axé sur les statistiques descriptives et inférentielles (contenu des sessions 10, 11 et 12).
+-   Attention, **la session 14 du 29 et 30 mai 2024 sera une session en
+    auto-apprentissage !** Il n'y a donc pas d'enseignement en classe à
+    Fribourg.La session 14 vous fournira surtout des ressources R plus avancées que vous pourrez utiliser plus tard, par exemple pendant votre travail de bachelor, pour vos analyses empiriques. 

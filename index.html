@@ -127,12 +127,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#analyse-des-réponses-au-questionnaire-1ère-partie-stats-déscriptives" id="toc-analyse-des-réponses-au-questionnaire-1ère-partie-stats-déscriptives" class="nav-link" data-scroll-target="#analyse-des-réponses-au-questionnaire-1ère-partie-stats-déscriptives">Analyse des réponses au questionnaire, 1ère partie (stats déscriptives)</a></li>
   <li><a href="#la-fonction-write.csv" id="toc-la-fonction-write.csv" class="nav-link" data-scroll-target="#la-fonction-write.csv">La fonction <code>write.csv()</code></a></li>
   </ul></li>
-  <li><a href="#session-11" id="toc-session-11" class="nav-link" data-scroll-target="#session-11">Session 11</a>
+  <li><a href="#session-11-cours-en-auto-apprentissage" id="toc-session-11-cours-en-auto-apprentissage" class="nav-link" data-scroll-target="#session-11-cours-en-auto-apprentissage">Session 11 (cours en auto-apprentissage)</a>
   <ul class="collapse">
   <li><a href="#cest-quoi-la-statistique-inférentielle" id="toc-cest-quoi-la-statistique-inférentielle" class="nav-link" data-scroll-target="#cest-quoi-la-statistique-inférentielle">C’est quoi la statistique inférentielle ?</a></li>
   <li><a href="#le-test-t" id="toc-le-test-t" class="nav-link" data-scroll-target="#le-test-t">le test t</a></li>
-  <li><a href="#lanalyse-de-la-variance-anova-sous-construction" id="toc-lanalyse-de-la-variance-anova-sous-construction" class="nav-link" data-scroll-target="#lanalyse-de-la-variance-anova-sous-construction">L’analyse de la variance (ANOVA) (sous construction)</a></li>
-  <li><a href="#la-régression-linéaire-avec-lmsous-construction" id="toc-la-régression-linéaire-avec-lmsous-construction" class="nav-link" data-scroll-target="#la-régression-linéaire-avec-lmsous-construction">La régression linéaire avec <code>lm()</code>(sous construction)</a></li>
+  </ul></li>
+  <li><a href="#session-12" id="toc-session-12" class="nav-link" data-scroll-target="#session-12">Session 12</a>
+  <ul class="collapse">
+  <li><a href="#lanalyse-de-la-variance-anova" id="toc-lanalyse-de-la-variance-anova" class="nav-link" data-scroll-target="#lanalyse-de-la-variance-anova">L’analyse de la variance (ANOVA)</a></li>
+  <li><a href="#la-régression-linéaire-avec-lm" id="toc-la-régression-linéaire-avec-lm" class="nav-link" data-scroll-target="#la-régression-linéaire-avec-lm">La régression linéaire avec <code>lm()</code></a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1736,7 +1739,7 @@ Attention
 <span id="cb100-5"><a href="#cb100-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb100-6"><a href="#cb100-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(taille_f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 160.2428 169.4557 158.2028 165.0333 162.7896 159.5292</code></pre>
+<pre><code>[1] 165.2214 163.2405 164.0793 173.1154 160.5916 161.1072</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="co"># stocker taille_f comme objet de type 'data.frame'</span></span>
 <span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a>taille_f <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(taille_f)</span>
@@ -3630,9 +3633,9 @@ Non Oui
 <p>Si tout a bien marché, vous devrez maintenant avoir un ficher CSV, nommé <code>ice_age_df.csv</code>dans votre répértoire de travail !</p>
 </section>
 </section>
-<section id="session-11" class="level1">
-<h1>Session 11</h1>
-<p><strong>Sujet : La statistique inférentielle</strong></p>
+<section id="session-11-cours-en-auto-apprentissage" class="level1">
+<h1>Session 11 (cours en auto-apprentissage)</h1>
+<p><strong>Sujet : La statistique inférentielle, Partie 1 (t-test)</strong></p>
 <p>Dans cette leçon, nous allons nous concentrer sur trois méthodes de statistiques inférentielles couramment utilisées :</p>
 <ul>
 <li><p>Les tests t (angl. Student’s t-test)</p></li>
@@ -3660,9 +3663,61 @@ Non Oui
 </section>
 <section id="le-test-t" class="level2">
 <h2 class="anchored" data-anchor-id="le-test-t">le test t</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+À noter
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Le test t est est un outil statistique qui permet d’évaluer les moyennes d’un ou deux échantillons à l’aide d’un test d’hypothèse. Il est aussi appelé test t de Student, car le statisticien qui l’a inventé au début du 20ème siècle, William Sealy Gosset, a publié sous le pseudonyme de “Student” (<a href="https://en.wikipedia.org/wiki/Student%27s_t-test">Wikipédia, 2024</a>).</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-59-contents" aria-controls="callout-59" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Attention
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-59" class="callout-59-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Pour effectuer un test t, il y a plusieurs hypothèses qui doivent être satisfaites :</p>
+<ol type="1">
+<li><strong>Les données sont continues</strong></li>
+<li><strong>L’échantillonnage est aléatoire</strong>
+<ul>
+<li>Les données de chaque échantillon ont été prélevées au hasard dans une population.</li>
+</ul></li>
+<li><strong>Indépendance</strong>
+<ul>
+<li>Les observations doivent être indépendantes les unes des autres. Cela signifie que la valeur d’une observation ne doit pas dépendre de la valeur d’une autre observation.</li>
+<li>Pour les tests t à deux échantillons, les échantillons doivent être indépendants. Si les échantillons ne sont pas indépendants, un test t par paires peut être approprié.</li>
+</ul></li>
+<li><strong>Normalité</strong>
+<ul>
+<li>La variable continue étudiée doit (plus ou moins) suivre une loi normale dans chaque groupe ou échantillon.</li>
+<li>Cette hypothèse peut être vérifiée à l’aide de graphiques (comme un histogramme) ou de tests statistiques (comme <a href="https://www.statology.org/shapiro-wilk-test-r/">le test de Shapiro-Wilk</a> : <code>shapiro.test()</code>).</li>
+</ul></li>
+<li><strong>Homogénéité des variances (homoscédasticité)</strong>
+<ul>
+<li>Les variances des données dans chaque groupe est similaire.</li>
+<li>Cette hypothèse peut être vérifiée à l’aide <a href="https://www.datanovia.com/en/lessons/homogeneity-of-variance-test-in-r/">du test de Levene ou du test de Bartlett</a>.</li>
+</ul></li>
+</ol>
+<p>En pratique, les tests t sont relativement robustes aux déviations de ces hypothèses, surtout si le nombre d’observations (n) de chaque échantillon est important.</p>
+<p>Néanmoins, si une ou plusieurs de ces hypothèses n’est pas satisfaite, alors des alternatives au test t peuvent être utilisées, comme <a href="#0">le test de Wilcoxon-Mann-Whitney</a> (<code>wilcox.test()</code>)ou <a href="#0">le test de Kruskal-Wallis</a> (<code>kruskal.test()</code>).</p>
+</div>
+</div>
+</div>
 <p>Dans R, le test t est éffectué avec la fonction <code>test.t()</code>.</p>
-<p>Il existe trois types de tests t :</p>
+<p>Il existe <strong>trois types</strong> de tests t :</p>
 <ol type="1">
 <li><p><strong>Le test t à un échantillon</strong> (angl. one sample t-test) : pour évaluer si la moyenne d’un seul échantillon diffère de manière significative d’une valeur connue.</p>
 <ul>
@@ -3745,7 +3800,7 @@ mean of x
 </div>
 </div>
 <p>La valeur p est maintenant beaucoup plus petite, soit inférieure à 1% (&lt; 0.01). Cela nous indique que la différence entre le QI des étudiant(e)s et de la population est significative (si nous utilisons des intervalles de confiance de 95%) !</p>
-<p>Avec un tel résultat de test t, <strong>nous pouvons rejetter l’hypothèse nulle H0</strong>, car la probabilité que les valeurs observées soient le résultat d’un pure hasard sont très faible (moins de 1%). Nous pouvont alors inférer que le QI des étudiant(e)s est significativement plus élevé que celui de la population générale.</p>
+<p>Avec un tel résultat de test t, <strong>nous pouvons rejeter l’hypothèse nulle H0</strong>, car la probabilité que les valeurs observées soient le résultat d’un pure hasard sont très faible (moins de 1%). Nous pouvont alors inférer que le QI des étudiant(e)s est significativement plus élevé que celui de la population générale.</p>
 </section>
 <section id="exercice-1" class="level3">
 <h3 class="anchored" data-anchor-id="exercice-1">Exercice 1</h3>
@@ -3756,7 +3811,7 @@ mean of x
 <li><p>Testez si la durée moyenne d’utilisation d’Internet en heures de votre échantillon simulé de 30 suisses de 20 à 29 ans se distingue significativement de la moyenne nationale (<code>mu = 5.6</code>).</p></li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-58-contents" aria-controls="callout-58" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-60-contents" aria-controls="callout-60" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3765,7 +3820,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-58" class="callout-58-contents callout-collapse collapse">
+<div id="callout-60" class="callout-60-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb213"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb213-1"><a href="#cb213-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Générons des données d'échantillon hypothétique avec n =</span></span>
@@ -3789,7 +3844,9 @@ mean of x
  7.936042 </code></pre>
 </div>
 </div>
-<p>La très petite valeur p indique qu’il est extrêmement improbable que l’utilisation d’Internet des 20-29 ans ne diffère PAS significativement de la moyenne nationale. Nous pouvons alors rejetter H0. En d’autres termes : Nous pouvons supposer avec une très grande certitude que les 20-29 ans ont une utilisation d’Internet significativement plus élevée que la moyenne de la population.</p>
+<p>La très faible valeur p indique qu’il est extrêmement improbable que l’utilisation d’Internet des 20-29 ans ne diffère PAS significativement de la moyenne nationale.</p>
+<p>Nous pouvons alors rejeter H0.</p>
+<p>En d’autres termes : Nous pouvons supposer avec une très grande certitude que les 20-29 ans ont une utilisation d’Internet significativement plus élevée que la moyenne de la population en Suisse.</p>
 </div>
 </div>
 </div>
@@ -3831,7 +3888,7 @@ mean of x mean of y
 <p>Supposons maintenant qu’un avion en provenance d’Amérique atterrisse à Genève-Cointrin. Il transporte une sélection de 24 joueuses de la Women’s NBA, la ligue professionnelle féminine de basket-ball aux États-Unis. Selon <a href="https://jokermag.com/average-height-wnba-players/">les statistiques de la WNBA</a>, ces joueuses mesurent en moyenne 184.5 cm.</p>
 <p>Quelle est la probabilité que 24 hommes suisses choisis au hasard mesurent également cette taille en moyenne ? (Supposons que l’écart-type des joueuses est de 6.5 cm).</p>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-59-contents" aria-controls="callout-59" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-61-contents" aria-controls="callout-61" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3840,7 +3897,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-59" class="callout-59-contents callout-collapse collapse">
+<div id="callout-61" class="callout-61-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb217"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb217-1"><a href="#cb217-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Générons des données pour deux échantillons hypothétique</span></span>
@@ -3865,7 +3922,7 @@ mean of x mean of y
  184.7814  178.3258 </code></pre>
 </div>
 </div>
-<p>La très petite valeur p, inférieure à 1%, indique qu’il est extrêmement improbable que 24 hommes suisses tiré au hasard sont environ de même taille que 24 joueuses de la WNBA. Nous pouvons alors rejetter H0. En d’autres termes : Nous pouvons supposer avec une très grande certitude que les joueuses de la WNBA sont significativement plus grande que les hommes suisses moyens.</p>
+<p>La très petite valeur p, inférieure à 1%, indique qu’il est extrêmement improbable que 24 hommes suisses tiré au hasard sont environ de même taille que 24 joueuses de la WNBA. Nous pouvons alors rejeter H0. En d’autres termes : Nous pouvons supposer avec une très grande certitude que les joueuses de la WNBA sont significativement plus grande que les hommes suisses moyens.</p>
 </div>
 </div>
 </div>
@@ -3880,13 +3937,562 @@ mean of x mean of y
 </ul>
 </section>
 </section>
-<section id="lanalyse-de-la-variance-anova-sous-construction" class="level2">
-<h2 class="anchored" data-anchor-id="lanalyse-de-la-variance-anova-sous-construction">L’analyse de la variance (ANOVA) (sous construction)</h2>
-<p>L’ANOVA est utilisée pour comparer les moyennes de plus de deux groupes. Elle permet de déterminer s’il existe une différence significative entre les groupes. L’ANOVA est, de ce point de vue, une généralisation du test t à plus de deux groupes qu’on veut comparer.</p>
 </section>
-<section id="la-régression-linéaire-avec-lmsous-construction" class="level2">
-<h2 class="anchored" data-anchor-id="la-régression-linéaire-avec-lmsous-construction">La régression linéaire avec <code>lm()</code>(sous construction)</h2>
-<p>La fonction <code>lm()</code> est utilisée pour effectuer une régression linéaire. Elle permet de modéliser la relation entre une variable dépendante et une ou plusieurs variables indépendantes.</p>
+<section id="session-12" class="level1">
+<h1>Session 12</h1>
+<p><strong>Sujet : La statistique inférentielle, Partie 2 (ANOVA et régression linéaire)</strong></p>
+<section id="lanalyse-de-la-variance-anova" class="level2">
+<h2 class="anchored" data-anchor-id="lanalyse-de-la-variance-anova">L’analyse de la variance (ANOVA)</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+À noter
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>L’analyse de la variance (abbrégée <strong>ANOVA</strong>) est un ensemble de modèles statistiques et de procédures d’estimation associées utilisés pour analyser les différences entre les moyennes. L’ANOVA a été développée par le statisticien britannique <a href="https://fr.wikipedia.org/wiki/Ronald_Aylmer_Fisher">Ronald Fisher (1890-1962)</a>.</p>
+<p>L’ANOVA permet d’étudier le comportement d’une variable quantitative à expliquer en fonction d’une ou de plusieurs variables catégorielles.&nbsp;</p>
+<p>Dans sa forme la plus simple, l’ANOVA fournit un test statistique permettant de déterminer si deux moyennes de population ou plus sont égales, et généralise donc le test t au-delà de deux moyennes. En d’autres termes, l’ANOVA est utilisée pour tester si les différences entre deux ou plusieurs moyennes d’une variable quantitative à expliquer sont significatives ou si elles peuvent être attribuées au hasard.</p>
+<p>Le principe de l’ANOVA est basé sur la loi de la variance totale, selon laquelle la variance observée d’une variable particulière est divisée en composantes attribuables à différentes sources de variation, telles que la variation entre les groupes et la variation à l’intérieur des groupes.</p>
+<p>En fonction du nombre de facteurs et du nombre de niveaux dans chaque facteur, il existe différents types d’ANOVA, tels que l’ANOVA à un facteur, l’ANOVA à deux facteurs, etc.</p>
+<p>(Source : <a href="https://en.wikipedia.org/wiki/Analysis_of_variance">Wikipédia, 2024</a>).</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-63-contents" aria-controls="callout-63" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Attention
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-63" class="callout-63-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Comme pour le test t, l’ANOVA nécessite certaines hypothèses concernant les données. Les observations de la variable à expliquer doivent notamment être indépendamment et identiquement distribuées (approximativement une distribution normale) et la variance entre les groupes doit être similaire (homoscédasticité).</p>
+</div>
+</div>
+</div>
+<p>Dans R, la <strong>fonction <code>aov()</code></strong> est utilisée pour effectuer des ANOVAs à un ou plusieurs facteurs.</p>
+<ul>
+<li><p>Elle prend en entrée une formule qui spécifie la variable réponse et les facteurs explicatifs, ainsi qu’un data frame contenant les données. Syntaxe : <code>aov(formula, data)</code></p></li>
+<li><p>La fonction <code>aov()</code> renvoie un objet de classe <em>aov</em> qui contient les résultats de l’analyse de variance, y compris</p>
+<ul>
+<li><p>les sommes de carrés,</p></li>
+<li><p>les degrés de liberté,</p></li>
+<li><p>les valeurs de F et</p></li>
+<li><p>les valeurs de p pour chaque effet du modèle.</p></li>
+</ul></li>
+</ul>
+<p>En résumé, <code>aov()</code> est utilisée pour ajuster des modèles linéaires à effets fixes et pour effectuer des analyses de variance.</p>
+<section id="exemple-1-anova-avec-le-jeu-de-données-palmerpenguins" class="level3">
+<h3 class="anchored" data-anchor-id="exemple-1-anova-avec-le-jeu-de-données-palmerpenguins">Exemple 1 : ANOVA avec le jeu de données <code>palmerpenguins</code></h3>
+<p><a href="https://allisonhorst.github.io/palmerpenguins/index.html"><img src="images/palmerpenguins.png" class="img-fluid"></a></p>
+<p>Pour cet exemple, il faut télécharger le paquet R <code>palmerpenguins</code>. Celui-ci contient un jeu de données avec des informations sur trois espèces de pingouins (Adélie, Chinstrap et Gentoo) qui vivent dans l’archipel de Palmer en Antarctique.</p>
+<p>Les données ont été collectées entre 2007 et 2009 et comprennent des mesures telles que la longueur du bec (<code>bill_length_mm</code>), la longueur des nageoires (<code>flipper_length_mm</code>), le poids corporel (<code>body_mass_g</code>) et le sexe des pingouins.</p>
+<ul>
+<li><p>Utilisez le code suivant pour la première installation du paquet : <code>install.packages("palmerpenguins")</code></p></li>
+<li><p>Après l’installation, il suffit d’activer le paquet avec <code>library(palmerpenguins)</code></p></li>
+<li><p>Il est toujours recommandé de comprendre un nouveau jeu de données au niveau déscriptif, utilisez donc <code>?palmerpenguins</code> et naviguez un peu sur <a href="https://allisonhorst.github.io/palmerpenguins/">le site des créatrices de ce paquet R</a> !</p></li>
+<li><p>Le <strong>but de notre ANOVA</strong> est de déterminer si les différences de longueur moyenne des nageoires <code>flipper_length_mm</code> entre les trois espèces de pingouins sont statistiquement significatives.</p>
+<ul>
+<li><p><code>flipper_length_mm</code> est donc notre variable quantitative à expliquer et</p></li>
+<li><p><code>species</code> est notre variable catégorielle qui indique à quelle espèces de pingouins (Adélie, Chinstrap et Gentoo) chaque observation de <code>flipper_length_mm</code> appartient.</p></li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb220"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb220-1"><a href="#cb220-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb220-2"><a href="#cb220-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb220-3"><a href="#cb220-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb220-4"><a href="#cb220-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Explorez d'abord un peu la structure du jeu de données</span></span>
+<span id="cb220-5"><a href="#cb220-5" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [344 × 8] (S3: tbl_df/tbl/data.frame)
+ $ species          : Factor w/ 3 levels "Adelie","Chinstrap",..: 1 1 1 1 1 1 1 1 1 1 ...
+ $ island           : Factor w/ 3 levels "Biscoe","Dream",..: 3 3 3 3 3 3 3 3 3 3 ...
+ $ bill_length_mm   : num [1:344] 39.1 39.5 40.3 NA 36.7 39.3 38.9 39.2 34.1 42 ...
+ $ bill_depth_mm    : num [1:344] 18.7 17.4 18 NA 19.3 20.6 17.8 19.6 18.1 20.2 ...
+ $ flipper_length_mm: int [1:344] 181 186 195 NA 193 190 181 195 193 190 ...
+ $ body_mass_g      : int [1:344] 3750 3800 3250 NA 3450 3650 3625 4675 3475 4250 ...
+ $ sex              : Factor w/ 2 levels "female","male": 2 1 1 NA 1 2 1 2 NA NA ...
+ $ year             : int [1:344] 2007 2007 2007 2007 2007 2007 2007 2007 2007 2007 ...</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb222"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb222-1"><a href="#cb222-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualisez les distributions de flipper length avec des</span></span>
+<span id="cb222-2"><a href="#cb222-2" aria-hidden="true" tabindex="-1"></a><span class="co"># boxplots</span></span>
+<span id="cb222-3"><a href="#cb222-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> flipper_length_mm)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 2 rows containing non-finite values (`stat_boxplot()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-86-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb224"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb224-1"><a href="#cb224-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Comme alternative, vous pouvez aussi créez un histogramme</span></span>
+<span id="cb224-2"><a href="#cb224-2" aria-hidden="true" tabindex="-1"></a><span class="co"># plus avancé pour comparer flipper length par espèce</span></span>
+<span id="cb224-3"><a href="#cb224-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">fill =</span> species),</span>
+<span id="cb224-4"><a href="#cb224-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">position =</span> <span class="st">"identity"</span>, <span class="at">bins =</span> <span class="dv">30</span>) <span class="sc">+</span></span>
+<span id="cb224-5"><a href="#cb224-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"darkorange"</span>, <span class="st">"darkorchid"</span>,</span>
+<span id="cb224-6"><a href="#cb224-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"cyan4"</span>)) <span class="sc">+</span> <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Histograms of flipper length by penguin species"</span>,</span>
+<span id="cb224-7"><a href="#cb224-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"n = 344 ; data source : palmerpenguin R package"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 2 rows containing non-finite values (`stat_bin()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-86-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb226"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb226-1"><a href="#cb226-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculs des variances de flipper length avec dplyr par</span></span>
+<span id="cb226-2"><a href="#cb226-2" aria-hidden="true" tabindex="-1"></a><span class="co"># espèce de pingouin, pour vérifier si l'hypothèse des</span></span>
+<span id="cb226-3"><a href="#cb226-3" aria-hidden="true" tabindex="-1"></a><span class="co"># variances similaire entre groupes est satisfaite :</span></span>
+<span id="cb226-4"><a href="#cb226-4" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb226-5"><a href="#cb226-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
+<span id="cb226-6"><a href="#cb226-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">var_fl =</span> <span class="fu">var</span>(flipper_length_mm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  species   var_fl
+  &lt;fct&gt;      &lt;dbl&gt;
+1 Adelie      42.8
+2 Chinstrap   50.9
+3 Gentoo      42.1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb228"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb228-1"><a href="#cb228-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA avec aov()</span></span>
+<span id="cb228-2"><a href="#cb228-2" aria-hidden="true" tabindex="-1"></a>anova_1 <span class="ot">&lt;-</span> <span class="fu">aov</span>(flipper_length_mm <span class="sc">~</span> species, <span class="at">data =</span> penguins)</span>
+<span id="cb228-3"><a href="#cb228-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(anova_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             Df Sum Sq Mean Sq F value              Pr(&gt;F)    
+species       2  52473   26237   594.8 &lt;0.0000000000000002 ***
+Residuals   339  14953      44                                
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+2 observations deleted due to missingness</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb230"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb230-1"><a href="#cb230-1" aria-hidden="true" tabindex="-1"></a><span class="co"># à noter, avec TukeyHSD() nous pouvons vérifier d'avantage</span></span>
+<span id="cb230-2"><a href="#cb230-2" aria-hidden="true" tabindex="-1"></a><span class="co"># les différence entre chaque paire de variables des trois</span></span>
+<span id="cb230-3"><a href="#cb230-3" aria-hidden="true" tabindex="-1"></a><span class="co"># groupe :</span></span>
+<span id="cb230-4"><a href="#cb230-4" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD</span>(anova_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = flipper_length_mm ~ species, data = penguins)
+
+$species
+                      diff       lwr       upr p adj
+Chinstrap-Adelie  5.869887  3.586583  8.153191     0
+Gentoo-Adelie    27.233349 25.334376 29.132323     0
+Gentoo-Chinstrap 21.363462 19.000841 23.726084     0</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb232"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb232-1"><a href="#cb232-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Nous pouvons rejeter H0 avec une grande certitude !</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="la-régression-linéaire-avec-lm" class="level2">
+<h2 class="anchored" data-anchor-id="la-régression-linéaire-avec-lm">La régression linéaire avec <code>lm()</code></h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+À noter
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La fonction <strong><code>lm()</code></strong> dans R est utilisée pour ajuster un modèle de régression linéaire. Elle est couramment utilisée dans le contexte de la régression linéaire pour étudier la relation entre une variable dépendante (<code>y</code>) et une ou plusieurs variables indépendantes (<code>x1</code>, <code>x2</code>, etc.).</p>
+<p>Nous parlons de régression linéaire <strong>multiple</strong> si il y a plus d’une variable indépendante.</p>
+</div>
+</div>
+<p>La syntaxe de base de la fonction <code>lm()</code> est la suivante : <strong><code>lm(formula, data)</code></strong>.</p>
+<ul>
+<li><p>L’argument <code>formula</code> désigne une formule qui décrit le modèle à ajuster. Par exemple, <code>y ~ x1 + x2</code> signifie que la variable dépendante y est modélisée en fonction des variables indépendantes x1 et x2.</p></li>
+<li><p>L’argument <code>data</code> requiert l’indication du jeu de données que la régression doit utiliser en tant qu’entrée contenant les variables mentionnées dans la formule.</p></li>
+</ul>
+<section id="exemple-1-la-régression-linéaire-à-une-variable-avec-mtcars" class="level3">
+<h3 class="anchored" data-anchor-id="exemple-1-la-régression-linéaire-à-une-variable-avec-mtcars">Exemple 1 : La régression linéaire à une variable avec <code>mtcars</code></h3>
+<p>Voici un exemple d’utilisation de la fonction <code>lm()</code> avec le jeu de données <code>mtcars</code> : <code>lm(mpg ~ wt, data = mtcars)</code></p>
+<ul>
+<li><p>Notre but est de modéliser la relation entre la variable dépendante <code>mpg</code> (miles per gallon) et la variable indépendante <code>wt</code> (weight).</p></li>
+<li><p>Notre <strong>hypothèse</strong> est qu’il existe une relation négative entre <code>wt</code> et <code>mpg</code> des véhicules dans <code>mtcars</code>. En d’autres termes, nous nous attendons à ce que les voitures plus lourdes aient tendance à parcourir moins de distance avec une unité de carburant que les voitures plus légères.</p></li>
+<li><p>Nous supposons qu’il s’agit d’une <strong>relation de cause à effet</strong>, car les lois de la physique nous apprennent que l’accélération et le déplacement d’objets plus lourds nécessitent une force et une énergie plus importantes. Par conséquent, nous supposons que les voitures plus lourdes consomment généralement plus d’énergie en forme de carburant que les voitures plus légères.</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb233"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb233-1"><a href="#cb233-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Charger le jeu de données mtcars</span></span>
+<span id="cb233-2"><a href="#cb233-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
+<span id="cb233-3"><a href="#cb233-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb233-4"><a href="#cb233-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajuster un modèle de régression linéaire avec mpg comme</span></span>
+<span id="cb233-5"><a href="#cb233-5" aria-hidden="true" tabindex="-1"></a><span class="co"># variable dépendante et wt comme variable indépendante</span></span>
+<span id="cb233-6"><a href="#cb233-6" aria-hidden="true" tabindex="-1"></a>modele_1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> wt, <span class="at">data =</span> mtcars)</span>
+<span id="cb233-7"><a href="#cb233-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb233-8"><a href="#cb233-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Afficher le résumé du modèle que nous pouvons interpréter</span></span>
+<span id="cb233-9"><a href="#cb233-9" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modele_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = mpg ~ wt, data = mtcars)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-4.5432 -2.3647 -0.1252  1.4096  6.8727 
+
+Coefficients:
+            Estimate Std. Error t value             Pr(&gt;|t|)    
+(Intercept)  37.2851     1.8776  19.858 &lt; 0.0000000000000002 ***
+wt           -5.3445     0.5591  -9.559       0.000000000129 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 3.046 on 30 degrees of freedom
+Multiple R-squared:  0.7528,    Adjusted R-squared:  0.7446 
+F-statistic: 91.38 on 1 and 30 DF,  p-value: 0.0000000001294</code></pre>
+</div>
+</div>
+<p>Le résultat de la régression linéaire indique que le modèle linéaire <code>modele_1</code> prédit la variable dépendante <code>mpg</code> en fonction de la variable indépendante <code>wt</code>. Regardons le résultat plus en detail :</p>
+<ul>
+<li><p>Les coefficients du modèle sont présentés dans la section <em>Coefficients</em>.</p>
+<ul>
+<li><p>L’interception est estimée à 37,285 et le coefficient pour <code>wt</code> est estimé à -5,345. Cela signifie que pour chaque augmentation d’une unité de <code>wt</code>, la valeur prédite de <code>mpg</code> diminue de 5,345 unités en moyenne. En d’autres termes, pour chaque tranche de 1 000 livres (environ 454 kg) de plus qu’une voiture pèse, la valeur de sa consommation de carburant diminue de 5,345 miles.</p></li>
+<li><p>La valeur de p (Pr(&gt;|t|)) pour le coefficient de <code>wt</code> est très faible (&lt; 0,000000000129), ce qui indique que le coefficient est significativement différent de zéro et que la variable <code>wt</code> a un effet significatif sur la variable dépendante <code>mpg</code>.</p></li>
+</ul></li>
+<li><p>La section <em>Residuals</em> indique les résidus minimaux, du premier quartile, de la médiane, du troisième quartile et maximaux. Ces valeurs peuvent être utilisées pour vérifier si les hypothèses du modèle sont satisfaites.</p></li>
+<li><p>Le <em>Residual standard error</em> est l’écart type résiduel, qui mesure l’écart entre les valeurs prédites et les valeurs réelles de la variable dépendante. Plus cette valeur est faible, mieux le modèle s’adapte aux données. Dans ce cas, la valeur est de 3,046.</p></li>
+<li><p>Le <em>Multiple R-squared</em> est le coefficient de détermination, qui mesure la proportion de la variance de la variable dépendante expliquée par la variable indépendante. Dans ce cas, le coefficient de détermination est de 0,7528, ce qui indique que la variable <code>wt</code> explique environ 75,28% de la variance de la variable <code>mpg</code>. Pour un modèle de régression ne comportant qu’une seule variable, il s’agit d’une valeur exceptionnellement élevée. Cela signifie que les variations de la consommation de carburant d’une voiture à l’autre s’expliquent dans une très large mesure par les différences de poids !</p></li>
+<li><p>Le <em>Adjusted R-squared</em> est une mesure de la proportion de la variance de la variable dépendante qui est expliquée par les variables indépendantes dans un modèle de régression linéaire, tout en tenant compte du nombre de variables indépendantes dans le modèle. Il est calculé en ajustant le R-squared en fonction du nombre de variables indépendantes dans le modèle, et est toujours inférieur ou égal au R-squared. Un modèle avec un coefficient de détermination ajusté plus élevé est considéré comme un meilleur modèle, car il explique une plus grande proportion de la variance de la variable dépendante tout en utilisant un nombre raisonnable de variables indépendantes.</p></li>
+<li><p>Enfin, la <em>F-statistic</em> est utilisée pour tester l’hypothèse nulle que le coefficient de régression est égal à zéro. Dans ce cas, la valeur de p associée à la statistique F est très faible (&lt; 0,0000000001294), ce qui indique que l’hypothèse nulle peut être rejetée et que le modèle est significatif.</p></li>
+</ul>
+<p>La vidéo YouTube suivante de StatQuest, un créateur de contenus qui explique très bien lest concepts statistiques (en anglais), décrit comment interpréter les résultats d’une regression linéaire dans R :</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/u1cc1r_Y7M0?si=TBPst3RY5jKWxIyu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+</iframe>
+<p><strong>Les graphiques de diagnostic</strong></p>
+<p>Les graphiques de diagnostic (angl. diagnostic plots) sont des graphiques utilisés pour évaluer la qualité d’un modèle de régression linéaire et vérifier si les hypothèses du modèle sont satisfaites. En utilisant la fonction <code>plot()</code> après avoir calculé un modèle de régression linéaire avec <code>lm()</code> dans R, nous pouvons visualiser quatre types de plots diagnostiques :</p>
+<ol type="1">
+<li><strong>Résidus vs valeurs prédites</strong> : Ce plot montre la relation entre les résidus (la différence entre les valeurs réelles et les valeurs prédites) et les valeurs prédites. Si les points sont aléatoires autour de la ligne horizontale à zéro, cela indique que les résidus sont indépendants et que la variance est constante.</li>
+<li><strong>Résidus vs variables indépendantes</strong> : Ce plot montre la relation entre les résidus et chaque variable indépendante. Si les points sont aléatoires autour de la ligne horizontale à zéro, cela indique que la relation entre les variables indépendantes et la variable dépendante est linéaire.</li>
+<li><strong>QQ-plot</strong> : Ce plot compare les quantiles des résidus standardisés avec les quantiles d’une distribution normale standard. Si les points sont proches de la ligne diagonale, cela indique que les résidus suivent une distribution normale.</li>
+<li><strong>Densité des résidus</strong> : Ce plot montre la densité des résidus. Si la densité est symétrique autour de zéro et suit une forme de cloche, cela indique que les résidus suivent une distribution normale.</li>
+</ol>
+<p>En examinant cesgraphiques de diagnostic, nous pouvons évaluer si les hypothèses du modèle de régression linéaire sont satisfaites, telles que l’indépendance des résidus, l’homoscédasticité, la linéarité et la normalité des résidus. Si les hypothèses ne sont pas satisfaites, cela peut indiquer que le modèle n’est pas adéquat et qu’une transformation des données ou une sélection de variables différente peut être nécessaire.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb235"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb235-1"><a href="#cb235-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Afficher les graphiques de diagnostic</span></span>
+<span id="cb235-2"><a href="#cb235-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb235-3"><a href="#cb235-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(modele_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-88-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Dans la pratique, <strong>il suffit d’évaluer visuellement les graphiques de diagnostic</strong>. Si les lignes rouges qui indiquent les valeurs moyennes des résidus (les points) ne s’écartent pas de manière importante des lignes pointillées, le modèle de régression est bon à utiliser. Si les écarts sont importants, il peut être nécessaire de trouver un autre modèle ou de transformer les données (par exemple, transformation logarithmique, etc.). Dans le cas spécifique, les graphique de diagnostic sont acceptable.</p>
+</section>
+<section id="exemple-2-la-régression-linéaire-multiple-avec-mtcars" class="level3">
+<h3 class="anchored" data-anchor-id="exemple-2-la-régression-linéaire-multiple-avec-mtcars">Exemple 2 : La régression linéaire multiple avec <code>mtcars</code></h3>
+<p>Pouvons-nous encore améliorer <code>modele_1</code> qui prédit <code>mpg</code> dans le jeu de données mtcars ? Une possibilité évidente est d’inclure d’autres variables x, en plus de <code>wt</code>, dans notre modèle de régression pour prédire <code>mpg</code>.</p>
+<p>En d’autres termes, nous devrions effectuer une régression linéaire multiple !</p>
+<p>Si nous vérifions à nouveau les variables de mtcars (par exemple, avec <code>?mtcars</code>), une autre variable nous saute aux yeux qui pourrait avoir un impact sur <code>mpg</code> : la variable <code>hp</code>, qui indique la puissance brute en chevaux des voitures.</p>
+<p>Nous pouvons raisonnablement supposer une relation causale : que les voitures avec plus de chevaux, c’est-à-dire avec des moteurs plus puissants, consomment plus de <code>mpg</code> que les voitures avec moins de <code>hp</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb236"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb236-1"><a href="#cb236-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajuster un modèle de régression linéaire multiple avec</span></span>
+<span id="cb236-2"><a href="#cb236-2" aria-hidden="true" tabindex="-1"></a><span class="co"># mpg comme variable dépendante et wt et hp comme variables</span></span>
+<span id="cb236-3"><a href="#cb236-3" aria-hidden="true" tabindex="-1"></a><span class="co"># indépendantes</span></span>
+<span id="cb236-4"><a href="#cb236-4" aria-hidden="true" tabindex="-1"></a>modele_2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> wt <span class="sc">+</span> hp, <span class="at">data =</span> mtcars)</span>
+<span id="cb236-5"><a href="#cb236-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb236-6"><a href="#cb236-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Afficher le résumé du modèle que nous pouvons interpréter</span></span>
+<span id="cb236-7"><a href="#cb236-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modele_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = mpg ~ wt + hp, data = mtcars)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-3.941 -1.600 -0.182  1.050  5.854 
+
+Coefficients:
+            Estimate Std. Error t value             Pr(&gt;|t|)    
+(Intercept) 37.22727    1.59879  23.285 &lt; 0.0000000000000002 ***
+wt          -3.87783    0.63273  -6.129           0.00000112 ***
+hp          -0.03177    0.00903  -3.519              0.00145 ** 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 2.593 on 29 degrees of freedom
+Multiple R-squared:  0.8268,    Adjusted R-squared:  0.8148 
+F-statistic: 69.21 on 2 and 29 DF,  p-value: 0.000000000009109</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb238"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb238-1"><a href="#cb238-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Afficher les graphiques de diagnostic</span></span>
+<span id="cb238-2"><a href="#cb238-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb238-3"><a href="#cb238-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(modele_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-89-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Les résultats montrent qu’en effet, la puissance en chevaux <code>hp</code> a également un effet négatif sur <code>mpg</code>. La valeur p de <code>hp</code> indique un effet significatif au niveau de 1% (mais pas au niveau de 0,1% comme pour <code>wt</code>).</p>
+<p>Le R-carré de notre modèle a également augmenté pour atteindre 82,68% (R-carré ajusté à 81,48%), ce qui est une valeur très élevée. Cela signifie que <code>modele_2</code> peut effectivement expliquer une plus grande partie de la variabilité de <code>mpg</code> que <code>modele_1</code>. Néanmoins, parce qu’il utilise plus de variables, le <code>modele_2</code> est aussi plus complexe. Cela se traduit par une statistique F (69.21) plus faible pour <code>modele_2</code> que pour <code>modele_1</code> (statistique F = 91,38).</p>
+<p>Une question est alors : <strong>comment choisir le meilleur modèle de regression ?</strong></p>
+</section>
+<section id="exemple-3-la-régression-par-étape-avec-mtcars" class="level3">
+<h3 class="anchored" data-anchor-id="exemple-3-la-régression-par-étape-avec-mtcars">Exemple 3 : La régression par étape avec <code>mtcars</code></h3>
+<p>Une possible solution est d’utiliser ce qu’on appelle <strong>la régression par étape</strong>. C’est une méthode d’ajustement des modèles de régression dans laquelle le choix des variables prédictives est effectué par une procédure automatique.</p>
+<p>Dans R, la régression par étapes peut être effectuée à l’aide de différentes approches, notamment la fonction <code>step()</code>, qui base ses sélections sur les valeurs AIC (critère d’information d’Akaike).</p>
+<ul>
+<li><p>Pour notre exemple de régression par étapes, nous allons prédire <code>mpg</code> en utilisant toutes les autres variables de l’ensemble de données <code>mtcars</code>.</p></li>
+<li><p>A partir de ce « modèle complet », nous utiliserons ensuite une procédure qui éliminera les variables qui ne contribuent pas de manière significative à expliquer la variation de <code>mpg</code>.</p></li>
+<li><p>La procédure continuera à éliminer des variables jusqu’à ce qu’un optimum soit atteint, c’est-à-dire un modèle qui a un pouvoir explicatif suffisant (montré par sa valeur R-carré) mais qui n’est pas trop complexe (ou suradapté) avec trop de variables (ceci est décidé sur la base de la métrique AIC, <strong>qui va être minimisée</strong> par la procédure).</p></li>
+<li><p>La bonne nouvelle, c’est que R produira le modèle optimal pour nous !</p></li>
+</ul>
+<p>Voyons comment ça marche avec du code R !</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb239"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb239-1"><a href="#cb239-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Il faut éventuellement d'abord installer le paquet stats</span></span>
+<span id="cb239-2"><a href="#cb239-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages('stats')</span></span>
+<span id="cb239-3"><a href="#cb239-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stats)</span>
+<span id="cb239-4"><a href="#cb239-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb239-5"><a href="#cb239-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Créons le modèle complet avec toutes le variables de</span></span>
+<span id="cb239-6"><a href="#cb239-6" aria-hidden="true" tabindex="-1"></a><span class="co"># mtcars (avec ~ .)</span></span>
+<span id="cb239-7"><a href="#cb239-7" aria-hidden="true" tabindex="-1"></a>full_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> ., <span class="at">data =</span> mtcars)</span>
+<span id="cb239-8"><a href="#cb239-8" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(full_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = mpg ~ ., data = mtcars)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-3.4506 -1.6044 -0.1196  1.2193  4.6271 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)  
+(Intercept) 12.30337   18.71788   0.657   0.5181  
+cyl         -0.11144    1.04502  -0.107   0.9161  
+disp         0.01334    0.01786   0.747   0.4635  
+hp          -0.02148    0.02177  -0.987   0.3350  
+drat         0.78711    1.63537   0.481   0.6353  
+wt          -3.71530    1.89441  -1.961   0.0633 .
+qsec         0.82104    0.73084   1.123   0.2739  
+vs           0.31776    2.10451   0.151   0.8814  
+am           2.52023    2.05665   1.225   0.2340  
+gear         0.65541    1.49326   0.439   0.6652  
+carb        -0.19942    0.82875  -0.241   0.8122  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 2.65 on 21 degrees of freedom
+Multiple R-squared:  0.869, Adjusted R-squared:  0.8066 
+F-statistic: 13.93 on 10 and 21 DF,  p-value: 0.0000003793</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb241"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb241-1"><a href="#cb241-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Nous utilisons la fonction step(), en commençant par le</span></span>
+<span id="cb241-2"><a href="#cb241-2" aria-hidden="true" tabindex="-1"></a><span class="co"># modèle complet et en permettant à la fois la sélection en</span></span>
+<span id="cb241-3"><a href="#cb241-3" aria-hidden="true" tabindex="-1"></a><span class="co"># amont et l'élimination en aval sur la base de l'AIC (avec</span></span>
+<span id="cb241-4"><a href="#cb241-4" aria-hidden="true" tabindex="-1"></a><span class="co"># direction = 'both')</span></span>
+<span id="cb241-5"><a href="#cb241-5" aria-hidden="true" tabindex="-1"></a>stepwise_model <span class="ot">&lt;-</span> <span class="fu">step</span>(full_model, <span class="at">direction =</span> <span class="st">"both"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Start:  AIC=70.9
+mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb
+
+       Df Sum of Sq    RSS    AIC
+- cyl   1    0.0799 147.57 68.915
+- vs    1    0.1601 147.66 68.932
+- carb  1    0.4067 147.90 68.986
+- gear  1    1.3531 148.85 69.190
+- drat  1    1.6270 149.12 69.249
+- disp  1    3.9167 151.41 69.736
+- hp    1    6.8399 154.33 70.348
+- qsec  1    8.8641 156.36 70.765
+&lt;none&gt;              147.49 70.898
+- am    1   10.5467 158.04 71.108
+- wt    1   27.0144 174.51 74.280
+
+Step:  AIC=68.92
+mpg ~ disp + hp + drat + wt + qsec + vs + am + gear + carb
+
+       Df Sum of Sq    RSS    AIC
+- vs    1    0.2685 147.84 66.973
+- carb  1    0.5201 148.09 67.028
+- gear  1    1.8211 149.40 67.308
+- drat  1    1.9826 149.56 67.342
+- disp  1    3.9009 151.47 67.750
+- hp    1    7.3632 154.94 68.473
+&lt;none&gt;              147.57 68.915
+- qsec  1   10.0933 157.67 69.032
+- am    1   11.8359 159.41 69.384
++ cyl   1    0.0799 147.49 70.898
+- wt    1   27.0280 174.60 72.297
+
+Step:  AIC=66.97
+mpg ~ disp + hp + drat + wt + qsec + am + gear + carb
+
+       Df Sum of Sq    RSS    AIC
+- carb  1    0.6855 148.53 65.121
+- gear  1    2.1437 149.99 65.434
+- drat  1    2.2139 150.06 65.449
+- disp  1    3.6467 151.49 65.753
+- hp    1    7.1060 154.95 66.475
+&lt;none&gt;              147.84 66.973
+- am    1   11.5694 159.41 67.384
+- qsec  1   15.6830 163.53 68.200
++ vs    1    0.2685 147.57 68.915
++ cyl   1    0.1883 147.66 68.932
+- wt    1   27.3799 175.22 70.410
+
+Step:  AIC=65.12
+mpg ~ disp + hp + drat + wt + qsec + am + gear
+
+       Df Sum of Sq    RSS    AIC
+- gear  1     1.565 150.09 63.457
+- drat  1     1.932 150.46 63.535
+&lt;none&gt;              148.53 65.121
+- disp  1    10.110 158.64 65.229
+- am    1    12.323 160.85 65.672
+- hp    1    14.826 163.35 66.166
++ carb  1     0.685 147.84 66.973
++ vs    1     0.434 148.09 67.028
++ cyl   1     0.414 148.11 67.032
+- qsec  1    26.408 174.94 68.358
+- wt    1    69.127 217.66 75.350
+
+Step:  AIC=63.46
+mpg ~ disp + hp + drat + wt + qsec + am
+
+       Df Sum of Sq    RSS    AIC
+- drat  1     3.345 153.44 62.162
+- disp  1     8.545 158.64 63.229
+&lt;none&gt;              150.09 63.457
+- hp    1    13.285 163.38 64.171
++ gear  1     1.565 148.53 65.121
++ cyl   1     1.003 149.09 65.242
++ vs    1     0.645 149.45 65.319
++ carb  1     0.107 149.99 65.434
+- am    1    20.036 170.13 65.466
+- qsec  1    25.574 175.67 66.491
+- wt    1    67.572 217.66 73.351
+
+Step:  AIC=62.16
+mpg ~ disp + hp + wt + qsec + am
+
+       Df Sum of Sq    RSS    AIC
+- disp  1     6.629 160.07 61.515
+&lt;none&gt;              153.44 62.162
+- hp    1    12.572 166.01 62.682
++ drat  1     3.345 150.09 63.457
++ gear  1     2.977 150.46 63.535
++ cyl   1     2.447 150.99 63.648
++ vs    1     1.121 152.32 63.927
++ carb  1     0.011 153.43 64.160
+- qsec  1    26.470 179.91 65.255
+- am    1    32.198 185.63 66.258
+- wt    1    69.043 222.48 72.051
+
+Step:  AIC=61.52
+mpg ~ hp + wt + qsec + am
+
+       Df Sum of Sq    RSS    AIC
+- hp    1     9.219 169.29 61.307
+&lt;none&gt;              160.07 61.515
++ disp  1     6.629 153.44 62.162
++ carb  1     3.227 156.84 62.864
++ drat  1     1.428 158.64 63.229
+- qsec  1    20.225 180.29 63.323
++ cyl   1     0.249 159.82 63.465
++ vs    1     0.249 159.82 63.466
++ gear  1     0.171 159.90 63.481
+- am    1    25.993 186.06 64.331
+- wt    1    78.494 238.56 72.284
+
+Step:  AIC=61.31
+mpg ~ wt + qsec + am
+
+       Df Sum of Sq    RSS    AIC
+&lt;none&gt;              169.29 61.307
++ hp    1     9.219 160.07 61.515
++ carb  1     8.036 161.25 61.751
++ disp  1     3.276 166.01 62.682
++ cyl   1     1.501 167.78 63.022
++ drat  1     1.400 167.89 63.042
++ gear  1     0.123 169.16 63.284
++ vs    1     0.000 169.29 63.307
+- am    1    26.178 195.46 63.908
+- qsec  1   109.034 278.32 75.217
+- wt    1   183.347 352.63 82.790</code></pre>
+</div>
+</div>
+<p>Voici comment la régression par étape choisit le meilleur modèle :</p>
+<ul>
+<li><strong>AIC le plus faible</strong> : le modèle ayant l’AIC le plus faible est généralement préféré car il suggère un meilleur ajustement du modèle compte tenu du nombre de variables explicatives utilisées. L’AIC permet d’équilibrer l’adéquation et la complexité du modèle. Dans notre exemple, le modèle optimal retenu est donc <code>mpg ~ wt + qsec + am</code>.</li>
+</ul>
+<p>Après avoir exécuté la régression par étape, le résumé de <code>stepwise_model</code> affiche les coefficients pour chaque variable explicative ainsi que des statistiques telles que le R-carré, la statistique F et les valeurs p pour les variables explicatives.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb243"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb243-1"><a href="#cb243-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(stepwise_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = mpg ~ wt + qsec + am, data = mtcars)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-3.4811 -1.5555 -0.7257  1.4110  4.6610 
+
+Coefficients:
+            Estimate Std. Error t value   Pr(&gt;|t|)    
+(Intercept)   9.6178     6.9596   1.382   0.177915    
+wt           -3.9165     0.7112  -5.507 0.00000695 ***
+qsec          1.2259     0.2887   4.247   0.000216 ***
+am            2.9358     1.4109   2.081   0.046716 *  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 2.459 on 28 degrees of freedom
+Multiple R-squared:  0.8497,    Adjusted R-squared:  0.8336 
+F-statistic: 52.75 on 3 and 28 DF,  p-value: 0.0000000000121</code></pre>
+</div>
+</div>
+<p><strong>Graphiques de diagnostic</strong> : Après avoir choisi un modèle, il est essentiel de vérifier les graphiques des résidus pour valider les hypothèses d’homoscédasticité, de normalité et d’indépendance des résidus :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb245"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb245-1"><a href="#cb245-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb245-2"><a href="#cb245-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(stepwise_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-92-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Les graphiques de diagnostic sont acceptable pour notre modèle !</p>
+</section>
+<section id="ressources-pour-aller-plus-loin-pas-pertinent-pour-le-problem-set-4" class="level3">
+<h3 class="anchored" data-anchor-id="ressources-pour-aller-plus-loin-pas-pertinent-pour-le-problem-set-4">Ressources pour aller plus loin (pas pertinent pour le Problem Set 4)</h3>
+<p>Je vous recommande de jeter un coup d’œil à d’autres vidéos YouTube de StatQuest qui expliquent clairement les concepts statistiques, dont beaucoup sont très pertinents pour les sciences sociales et pour vos études en général, p.&nbsp;ex. :</p>
+<ul>
+<li><a href="https://youtu.be/nk2CQITm_eo?si=rtNUDxVBeq6D7xkr">Linear Regression, Clearly Explained!!!</a></li>
+<li><a href="https://youtu.be/mno47Jn4gaU?si=PDMYDHu1ANTV70V2">Multiple Regression in R, Step-by-Step!!!</a></li>
+<li><a href="https://youtu.be/rzFX5NWojp0?si=A10LmX2WJ1mbN46c">The Normal Distribution, Clearly Explained!!!</a></li>
+<li><a href="https://youtu.be/vemZtEM63GY?si=SO9AOuuRMhDch-yk">p-values: What they are and how to interpret them</a></li>
+<li><a href="https://youtu.be/2AQKmw14mHM?si=gN5HL80pFAi_R0CM">R-squared, Clearly Explained!!!</a></li>
+<li><a href="https://youtu.be/0oc49DyA3hU?si=gH4KNuhTOYtnGoZU">Hypothesis Testing and The Null Hypothesis, Clearly Explained!!!</a></li>
+<li><a href="https://youtu.be/C4N3_XJJ-jU?si=2MPycgEfuUTQMaRa">Logistic Regression in R, Clearly Explained!!!</a></li>
+</ul>
+</section>
+<section id="devoir-pour-session-13-problem-set-4-et-infos-sur-la-session-14" class="level3">
+<h3 class="anchored" data-anchor-id="devoir-pour-session-13-problem-set-4-et-infos-sur-la-session-14">Devoir pour Session 13 (Problem Set 4) et infos sur la session 14</h3>
+<ul>
+<li>La semaine prochaine, les 22 et 23 mai, <strong>le Problem Set 4</strong> aura lieu pendant la session 13. Son contenu sera axé sur les statistiques descriptives et inférentielles (contenu des sessions 10, 11 et 12).</li>
+<li>Attention, <strong>la session 14 du 29 et 30 mai 2024 sera une session en auto-apprentissage !</strong> Il n’y a donc pas d’enseignement en classe à Fribourg.La session 14 vous fournira surtout des ressources R plus avancées que vous pourrez utiliser plus tard, par exemple pendant votre travail de bachelor, pour vos analyses empiriques.</li>
+</ul>
+</section>
 </section>
 </section>
 

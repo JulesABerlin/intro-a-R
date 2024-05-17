@@ -3208,16 +3208,16 @@ Si tout a bien marché, vous devrez maintenant avoir un ficher CSV, nommé
 
 # Session 11 (cours en auto-apprentissage)
 
-**Sujet : La statistique inférentielle, Partie 1 (t-test)**
+**Sujet : La statistique inférentielle, Partie 1 (tests t)**
 
-Dans cette leçon, nous allons nous concentrer sur trois méthodes de
+Dans cette et la prochaine session, nous allons nous concentrer sur trois méthodes de
 statistiques inférentielles couramment utilisées :
 
--   Les tests t (angl. Student's t-test)
+-   Les **tests t** (angl. Student's t-test)
 
--   l'analyse de variance (angl. ANOVA = ANalysis Of VAriance)
+-   l'**analyse de variance** (angl. **ANOVA** = ANalysis Of VAriance)
 
--   La régression linéaire (angl. linear regression).
+-   La **régression linéaire** (angl. linear regression).
 
 Mais d'abord, il faut répondre à la question suivante :
 

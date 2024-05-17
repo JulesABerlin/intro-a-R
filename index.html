@@ -1739,7 +1739,7 @@ Attention
 <span id="cb100-5"><a href="#cb100-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb100-6"><a href="#cb100-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(taille_f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 165.2214 163.2405 164.0793 173.1154 160.5916 161.1072</code></pre>
+<pre><code>[1] 161.4466 170.1149 158.0802 165.4954 167.7353 162.0055</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="co"># stocker taille_f comme objet de type 'data.frame'</span></span>
 <span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a>taille_f <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(taille_f)</span>
@@ -4173,14 +4173,7 @@ F-statistic: 91.38 on 1 and 30 DF,  p-value: 0.0000000001294</code></pre>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/u1cc1r_Y7M0?si=TBPst3RY5jKWxIyu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
 <p><strong>Les graphiques de diagnostic</strong></p>
-<p>Les graphiques de diagnostic (angl. diagnostic plots) sont des graphiques utilisés pour évaluer la qualité d’un modèle de régression linéaire et vérifier si les hypothèses du modèle sont satisfaites. En utilisant la fonction <code>plot()</code> après avoir calculé un modèle de régression linéaire avec <code>lm()</code> dans R, nous pouvons visualiser quatre types de plots diagnostiques :</p>
-<ol type="1">
-<li><strong>Résidus vs valeurs prédites</strong> : Ce plot montre la relation entre les résidus (la différence entre les valeurs réelles et les valeurs prédites) et les valeurs prédites. Si les points sont aléatoires autour de la ligne horizontale à zéro, cela indique que les résidus sont indépendants et que la variance est constante.</li>
-<li><strong>Résidus vs variables indépendantes</strong> : Ce plot montre la relation entre les résidus et chaque variable indépendante. Si les points sont aléatoires autour de la ligne horizontale à zéro, cela indique que la relation entre les variables indépendantes et la variable dépendante est linéaire.</li>
-<li><strong>QQ-plot</strong> : Ce plot compare les quantiles des résidus standardisés avec les quantiles d’une distribution normale standard. Si les points sont proches de la ligne diagonale, cela indique que les résidus suivent une distribution normale.</li>
-<li><strong>Densité des résidus</strong> : Ce plot montre la densité des résidus. Si la densité est symétrique autour de zéro et suit une forme de cloche, cela indique que les résidus suivent une distribution normale.</li>
-</ol>
-<p>En examinant cesgraphiques de diagnostic, nous pouvons évaluer si les hypothèses du modèle de régression linéaire sont satisfaites, telles que l’indépendance des résidus, l’homoscédasticité, la linéarité et la normalité des résidus. Si les hypothèses ne sont pas satisfaites, cela peut indiquer que le modèle n’est pas adéquat et qu’une transformation des données ou une sélection de variables différente peut être nécessaire.</p>
+<p>Les graphiques de diagnostic (angl. diagnostic plots) sont des graphiques utilisés pour évaluer la qualité d’un modèle de régression linéaire et vérifier si les hypothèses du modèle sont satisfaites (p.&nbsp;ex. si les variables suivent approximativement une loi normale). En utilisant la fonction <code>plot()</code> après avoir calculé un modèle de régression linéaire avec <code>lm()</code> dans R, nous pouvons visualiser quatre types de plots diagnostiques :</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb235"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb235-1"><a href="#cb235-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Afficher les graphiques de diagnostic</span></span>
 <span id="cb235-2"><a href="#cb235-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
@@ -4193,6 +4186,8 @@ F-statistic: 91.38 on 1 and 30 DF,  p-value: 0.0000000001294</code></pre>
 </div>
 </div>
 </div>
+<p>Explications des quatre graphiques diagnostiques : (<strong>SOUS CONSTRUCTION</strong>)</p>
+<p>En examinant ces graphiques de diagnostic, nous pouvons évaluer si les hypothèses du modèle de régression linéaire sont satisfaites, telles que l’indépendance des résidus, l’homoscédasticité, la linéarité et la normalité des résidus. Si les hypothèses ne sont pas satisfaites, cela peut indiquer que le modèle n’est pas adéquat et qu’une transformation des données ou une sélection de variables différente peut être nécessaire.</p>
 <p>Dans la pratique, <strong>il suffit d’évaluer visuellement les graphiques de diagnostic</strong>. Si les lignes rouges qui indiquent les valeurs moyennes des résidus (les points) ne s’écartent pas de manière importante des lignes pointillées, le modèle de régression est bon à utiliser. Si les écarts sont importants, il peut être nécessaire de trouver un autre modèle ou de transformer les données (par exemple, transformation logarithmique, etc.). Dans le cas spécifique, les graphique de diagnostic sont acceptable.</p>
 </section>
 <section id="exemple-2-la-régression-linéaire-multiple-avec-mtcars" class="level3">
@@ -4459,7 +4454,7 @@ Multiple R-squared:  0.8497,    Adjusted R-squared:  0.8336
 F-statistic: 52.75 on 3 and 28 DF,  p-value: 0.0000000000121</code></pre>
 </div>
 </div>
-<p><strong>Graphiques de diagnostic</strong> : Après avoir choisi un modèle, il est essentiel de vérifier les graphiques des résidus pour valider les hypothèses d’homoscédasticité, de normalité et d’indépendance des résidus :</p>
+<p><strong>Graphiques de diagnostic</strong> : Après avoir choisi un modèle, il est utile de vérifier les graphiques des résidus pour valider les hypothèses d’homoscédasticité, de normalité et d’indépendance des résidus :</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb245"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb245-1"><a href="#cb245-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
 <span id="cb245-2"><a href="#cb245-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(stepwise_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

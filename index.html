@@ -70,6 +70,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="index_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -1739,7 +1768,7 @@ Attention
 <span id="cb100-5"><a href="#cb100-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb100-6"><a href="#cb100-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(taille_f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 161.4466 170.1149 158.0802 165.4954 167.7353 162.0055</code></pre>
+<pre><code>[1] 177.8840 164.6464 162.2174 170.1930 173.5382 166.5997</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="co"># stocker taille_f comme objet de type 'data.frame'</span></span>
 <span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a>taille_f <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(taille_f)</span>
@@ -4098,6 +4127,22 @@ Gentoo-Chinstrap 21.363462 19.000841 23.726084     0</code></pre>
 </section>
 <section id="la-régression-linéaire-avec-lm" class="level2">
 <h2 class="anchored" data-anchor-id="la-régression-linéaire-avec-lm">La régression linéaire avec <code>lm()</code></h2>
+<section id="explications-théoriques-de-la-régression-linéaire" class="level3">
+<h3 class="anchored" data-anchor-id="explications-théoriques-de-la-régression-linéaire">Explications théoriques de la régression linéaire</h3>
+<p>Dans le monde réel, nous supposons souvent qu’il existe des <strong>relations de cause à effet</strong>.</p>
+<ul>
+<li>Par exemple, nous pouvons supposer que les personnes ayant un niveau d’éducation élevé ont des salaires plus élevés. Il s’agit bien sûr d’une généralisation et il se peut qu’elle ne soit vraie qu’en moyenne (il se peut que certaines personnes ayant un très faible niveau d’éducation aient des salaires très élevés et vice versa). Néanmoins, malgré quelques exceptions à la règle, nous pouvons raisonnablement supposer qu’en moyenne, une telle relation de cause à effet entre le niveau d’éducation et le salaire existe.</li>
+</ul>
+<p>La question suivante est donc de savoir quelle est l’ampleur d’un tel effet et s’il est possible de le quantifier.</p>
+<ul>
+<li><p>Est-il possible, par exemple, de prédire une augmentation moyenne du salaire en % pour chaque année d’études supplémentaire ? Répondre à une telle question peut s’avérer compliqué pour différentes raisons.</p></li>
+<li><p>Si l’éducation est importante, un certain nombre d’autres facteurs peuvent également influencer le salaire d’une personne, tels que l’âge, le sexe, l’origine, la classe sociale, l’intelligence, les capacités de communication, la résistance au stress et peut-être même la taille, l’attrait physique et l’attitude politique. Si ces autres facteurs ont également une influence sur le salaire, comment déterminer l’impact fractionnel du niveau d’éducation ?</p></li>
+</ul>
+<p>Un autre problème, en particulier dans la pratique, est que nombre de ces autres facteurs peuvent ne pas être disponibles ou être difficiles à mesurer.</p>
+<ul>
+<li>Et même si tous ces facteurs pouvaient être observés et contrôlés, la relation entre le niveau d’éducation et le salaire sera toujours soumise à un certain degré de hasard. Peut-être y a-t-il d’autres facteurs inconnus, ou peut-être y a-t-il simplement une fluctuation inexplicable du niveau de salaire entre tous les individus, même ceux qui ont des qualifications et des profils socio-économiques très similaires.</li>
+</ul>
+<p>Une solution possible pour quantifier néanmoins la relation de causalité entre deux variables, telles que le niveau d’éducation et le salaire des personnes, malgré ces incertitudes, est d’effectuer une <strong>analyse de régression linéaire</strong> !</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -4108,15 +4153,62 @@ Gentoo-Chinstrap 21.363462 19.000841 23.726084     0</code></pre>
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>La régression linéaire est une méthode statistique utilisée pour modéliser la relation linéaire entre une <strong>variable à expliquer (y)</strong> et une ou plusieurs <strong>variables explicatives (x1, x2, etc.)</strong>.</p>
+<ul>
+<li><p>La variable à expliquer, y, est parfois aussi appelée <strong>variable dépendante</strong> ou <strong>variable de réponse</strong> et, en anglais, <strong>output variable</strong>, <strong>response variable</strong>, <strong>predicted variable</strong></p></li>
+<li><p>Les variables explicatives, x, quant à eux, sont aussi appelées <strong>variables indépendantes</strong> ou <strong>prédicteurs</strong> et, en anglais, <strong>input variables</strong>, <strong>predictor variables</strong>.</p></li>
+</ul>
+<p>Nous parlons de régression linéaire <strong>simple</strong>, si il y a seulement une variable explicative x et de régression linéaire <strong>multiple</strong> si il y a plus d’une variable explicative, p.&nbsp;ex. x1, x2, x3, etc.</p>
+</div>
+</div>
+<p>En analyse de données, un modèle de régression a deux principaux types d’applications possibles :</p>
+<ul>
+<li><p><strong>Explication (causale)</strong> : Si nous supposons qu’il existe une relation causale entre y et x, nous pouvons expliquer les variations observées de y en termes de variations observées de x.</p>
+<ul>
+<li>Par exemple, considérons un échantillon aléatoire de données sur la taille et le poids des personnes. Nous pouvons supposer qu’en moyenne, les personnes plus grandes pèsent plus que les personnes plus petites (relation de cause à effet). Par conséquent, nous pourrions développer un modèle de régression qui explique les variations de poids (y) en termes de variations de taille (x).</li>
+</ul></li>
+<li><p><strong>Prédiction</strong> : Si nous disposons d’un échantillon représentatif de données contenant des observations des valeurs y et x, nous pouvons adapter un modèle de régression aux données. Par la suite, nous pouvons utiliser le modèle de régression pour un nouvel ensemble de données qui ne contient que des valeurs x et prédire les valeurs y correspondantes.</p>
+<ul>
+<li>Supposons par exemple que vous soyez un agent immobilier. Vous disposez d’un ensemble de données de 200 ventes de maisons dans une ville au cours des cinq derniers mois, qui contient le prix de vente (y) et la taille de la maison en mètres carrés (x). Vous pouvez maintenant adapter un modèle de régression à vos données et l’utiliser pour prédire les prix de vente attendus des maisons actuellement sur le marché en fonction de leurs superficie (x), que vous connaissez.</li>
+</ul></li>
+</ul>
+<p>Notez qu’un modèle de régression linéaire, comme tout modèle, est toujours <strong>une simplification de la réalité</strong>. Par conséquent, la précision des modèles de régression linéaire appliqués à des données réelles ne sera jamais de 100 %, c’est-à-dire qu’elle est sujette à une erreur d’estimation.</p>
+<p>Comprendre (et aussi quantifier) cette déviation du modèle de régression par rapport aux valeurs observées est également une étape importante de toute analyse de régression, comme nous le verrons par la suite.</p>
+<p>Au niveau technique, l’objectif de la régression linéaire est de spécifier une équation mathématique, appelée <strong>modèle de régression</strong>, qui quantifie la relation entre les variables y et x sur la base d’un ensemble d’observations.</p>
+<p>Par exemple, dans le cas d’une régression linéaire simple avec une variable x, nous utiliserions l’équation suivante :</p>
+<p><span class="math display">\[
+y = \beta_0 + \beta_1 x + \epsilon
+\]</span> où :</p>
+<ul>
+<li><p><span class="math inline">\(y\)</span> est la variable à expliquer</p></li>
+<li><p><span class="math inline">\(x\)</span> est la variable explicative.</p></li>
+<li><p><span class="math inline">\(\beta_0\)</span> est l’ordonnée à l’origine de la droite de régression.</p></li>
+<li><p><span class="math inline">\(\beta_1\)</span> est la pente de la droite de régression.</p></li>
+<li><p><span class="math inline">\(\epsilon\)</span> est le terme d’erreur aléatoire</p></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+À noter
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Si cela est trop abstrait pour certaines personnes : Nous pourrions également dire que, d’un point de vue pratique, l’objectif d’une régression linéaire simple est d’ajuster une ligne droite à un nuage de points. Le modèle de régression serait la droite de régression qui modélise la relation entre les variables y et x (les observations sous la forme d’un nuage de points).</p>
+</div>
+</div>
+</section>
+<section id="la-fonction-lm" class="level3">
+<h3 class="anchored" data-anchor-id="la-fonction-lm">La fonction <code>lm()</code></h3>
 <p>La fonction <strong><code>lm()</code></strong> dans R est utilisée pour ajuster un modèle de régression linéaire. Elle est couramment utilisée dans le contexte de la régression linéaire pour étudier la relation entre une variable dépendante (<code>y</code>) et une ou plusieurs variables indépendantes (<code>x1</code>, <code>x2</code>, etc.).</p>
-<p>Nous parlons de régression linéaire <strong>multiple</strong> si il y a plus d’une variable indépendante.</p>
-</div>
-</div>
 <p>La syntaxe de base de la fonction <code>lm()</code> est la suivante : <strong><code>lm(formula, data)</code></strong>.</p>
 <ul>
 <li><p>L’argument <code>formula</code> désigne une formule qui décrit le modèle à ajuster. Par exemple, <code>y ~ x1 + x2</code> signifie que la variable dépendante y est modélisée en fonction des variables indépendantes x1 et x2.</p></li>
 <li><p>L’argument <code>data</code> requiert l’indication du jeu de données que la régression doit utiliser en tant qu’entrée contenant les variables mentionnées dans la formule.</p></li>
 </ul>
+</section>
 <section id="exemple-1-la-régression-linéaire-à-une-variable-avec-mtcars" class="level3">
 <h3 class="anchored" data-anchor-id="exemple-1-la-régression-linéaire-à-une-variable-avec-mtcars">Exemple 1 : La régression linéaire à une variable avec <code>mtcars</code></h3>
 <p>Voici un exemple d’utilisation de la fonction <code>lm()</code> avec le jeu de données <code>mtcars</code> : <code>lm(mpg ~ wt, data = mtcars)</code></p>
@@ -4173,11 +4265,16 @@ F-statistic: 91.38 on 1 and 30 DF,  p-value: 0.0000000001294</code></pre>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/u1cc1r_Y7M0?si=TBPst3RY5jKWxIyu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
 <p><strong>Les graphiques de diagnostic</strong></p>
-<p>Les graphiques de diagnostic (angl. diagnostic plots) sont des graphiques utilisés pour évaluer la qualité d’un modèle de régression linéaire et vérifier si les hypothèses du modèle sont satisfaites (p.&nbsp;ex. si les variables suivent approximativement une loi normale). En utilisant la fonction <code>plot()</code> après avoir calculé un modèle de régression linéaire avec <code>lm()</code> dans R, nous pouvons visualiser quatre types de plots diagnostiques :</p>
+<p>Les graphiques de diagnostic (angl. diagnostic plots) sont des graphiques utilisés pour évaluer la qualité d’un modèle de régression linéaire et vérifier si les hypothèses du modèle sont satisfaites (p. ex. si les variables suivent approximativement une loi normale).</p>
+<p>En utilisant la fonction <code>plot()</code> après avoir calculé un modèle de régression linéaire dans R, nous pouvons visualiser quatre types de plots diagnostiques :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb235"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb235-1"><a href="#cb235-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Afficher les graphiques de diagnostic</span></span>
-<span id="cb235-2"><a href="#cb235-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
-<span id="cb235-3"><a href="#cb235-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(modele_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb235"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb235-1"><a href="#cb235-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cette commande fait en sorte que les graphes de</span></span>
+<span id="cb235-2"><a href="#cb235-2" aria-hidden="true" tabindex="-1"></a><span class="co"># diagnostic soient tous affichés en même temps, sur un</span></span>
+<span id="cb235-3"><a href="#cb235-3" aria-hidden="true" tabindex="-1"></a><span class="co"># panneau 2 X 2 :</span></span>
+<span id="cb235-4"><a href="#cb235-4" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb235-5"><a href="#cb235-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb235-6"><a href="#cb235-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Afficher ensuite les graphiques de diagnostic :</span></span>
+<span id="cb235-7"><a href="#cb235-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(modele_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -4186,9 +4283,16 @@ F-statistic: 91.38 on 1 and 30 DF,  p-value: 0.0000000001294</code></pre>
 </div>
 </div>
 </div>
-<p>Explications des quatre graphiques diagnostiques : (<strong>SOUS CONSTRUCTION</strong>)</p>
-<p>En examinant ces graphiques de diagnostic, nous pouvons évaluer si les hypothèses du modèle de régression linéaire sont satisfaites, telles que l’indépendance des résidus, l’homoscédasticité, la linéarité et la normalité des résidus. Si les hypothèses ne sont pas satisfaites, cela peut indiquer que le modèle n’est pas adéquat et qu’une transformation des données ou une sélection de variables différente peut être nécessaire.</p>
-<p>Dans la pratique, <strong>il suffit d’évaluer visuellement les graphiques de diagnostic</strong>. Si les lignes rouges qui indiquent les valeurs moyennes des résidus (les points) ne s’écartent pas de manière importante des lignes pointillées, le modèle de régression est bon à utiliser. Si les écarts sont importants, il peut être nécessaire de trouver un autre modèle ou de transformer les données (par exemple, transformation logarithmique, etc.). Dans le cas spécifique, les graphique de diagnostic sont acceptable.</p>
+<p><strong>Explications des quatre graphiques diagnostiques</strong> :</p>
+<ol type="1">
+<li><p><strong>Residuals vs Fitted</strong> : Ce graphique montre si les résidus (la distance entre les valeurs modélisées et observées) présentent des tendances non linéaires. Il peut y avoir une relation non linéaire entre les variables explicatives x et une variable expliquée y, et le schéma peut apparaître dans ce graphique si le modèle ne capture pas la relation non linéaire. Si vous trouvez des résidus plus ou moins uniformément répartis (approximés par la ligne rouge) autour de la ligne horizontale en pointillés sans tendances distinctes, c’est une bonne indication que vous n’avez pas de relations non linéaires.</p></li>
+<li><p><strong>Q-Q Residuals</strong> : Ce graphique montre si les résidus (les points) suivent une loi normale. Les résidus se situent-ils plus ou moins sur la ligne droite diagonale en pointillés ou s’en écartent-ils fortement ? C’est une bonne chose si les résidus sont bien alignés sur la ligne droite en pointillés.</p></li>
+<li><p><strong>Scale-Location</strong> : Ce graphique affiche les valeurs ajustées d’un modèle de régression sur l’axe des abscisses et la racine carrée des résidus standardisés sur l’axe des ordonnées. C’est ainsi que vous pouvez vérifier l’hypothèse de variance égale (homoscédasticité). C’est une bonne chose si vous voyez une ligne rouge plus ou moins horizontale avec des points répartis de manière égale (au hasard) autour d’elle.</p></li>
+<li><p><strong>Residuals vs Leverage</strong> : Ce graphique permet d’identifier les valeurs aberrantes influentes (valeurs extrêmes) dans les données qui peuvent affecter le modèle de régression linéaire. Toutes les valeurs aberrantes ne sont pas nécessairement influentes ; certaines peuvent ne pas avoir d’impact significatif sur le modèle de régression, ce qui signifie que les résultats de l’analyse de régression restent similaires, que ces cas soient inclus ou exclus. Cependant, certaines valeurs aberrantes peuvent avoir une grande influence et modifier les résultats si elles sont exclues, car elles ne s’alignent pas sur la tendance générale. Dans ce graphique, nous nous concentrons sur les valeurs aberrantes situées dans les coins supérieurs ou inférieurs droits, en dehors des lignes pointillées, qui indiquent des scores élevés de « distance de Cook ». Ces cas ont un impact significatif sur les résultats de la régression et doivent être notés.</p></li>
+</ol>
+<p>En examinant ces graphiques de diagnostic, nous pouvons évaluer si les hypothèses du modèle de régression linéaire sont satisfaites, telles que l’indépendance des résidus, l’homoscédasticité, la linéarité et la normalité des résidus.</p>
+<p>Si les graphiques de diagnostic montrent que les hypothèses ne sont pas satisfaites, cela peut indiquer que le modèle n’est pas adéquat et qu’une transformation des données ou une sélection de variables différente peut être nécessaire.</p>
+<p>Dans le cas spécifique du modèle de régression <code>modele_1</code>, qui modélise <code>mpg ~ wt</code> dans le jeu de données <code>mtcars</code>, les graphique de diagnostic sont tout à fait acceptable.</p>
 </section>
 <section id="exemple-2-la-régression-linéaire-multiple-avec-mtcars" class="level3">
 <h3 class="anchored" data-anchor-id="exemple-2-la-régression-linéaire-multiple-avec-mtcars">Exemple 2 : La régression linéaire multiple avec <code>mtcars</code></h3>

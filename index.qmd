@@ -3704,18 +3704,153 @@ TukeyHSD(anova_1)
 
 ## La régression linéaire avec `lm()`
 
+### Explications théoriques de la régression linéaire
+
+Dans le monde réel, nous supposons souvent qu'il existe des **relations
+de cause à effet**.
+
+-   Par exemple, nous pouvons supposer que les personnes ayant un niveau
+    d'éducation élevé ont des salaires plus élevés. Il s'agit bien sûr
+    d'une généralisation et il se peut qu'elle ne soit vraie qu'en
+    moyenne (il se peut que certaines personnes ayant un très faible
+    niveau d'éducation aient des salaires très élevés et vice versa).
+    Néanmoins, malgré quelques exceptions à la règle, nous pouvons
+    raisonnablement supposer qu'en moyenne, une telle relation de cause
+    à effet entre le niveau d'éducation et le salaire existe.
+
+La question suivante est donc de savoir quelle est l'ampleur d'un tel
+effet et s'il est possible de le quantifier.
+
+-   Est-il possible, par exemple, de prédire une augmentation moyenne du
+    salaire en % pour chaque année d'études supplémentaire ? Répondre à
+    une telle question peut s'avérer compliqué pour différentes raisons.
+
+-   Si l'éducation est importante, un certain nombre d'autres facteurs
+    peuvent également influencer le salaire d'une personne, tels que
+    l'âge, le sexe, l'origine, la classe sociale, l'intelligence, les
+    capacités de communication, la résistance au stress et peut-être
+    même la taille, l'attrait physique et l'attitude politique. Si ces
+    autres facteurs ont également une influence sur le salaire, comment
+    déterminer l'impact fractionnel du niveau d'éducation ?
+
+Un autre problème, en particulier dans la pratique, est que nombre de
+ces autres facteurs peuvent ne pas être disponibles ou être difficiles à
+mesurer.
+
+-   Et même si tous ces facteurs pouvaient être observés et contrôlés,
+    la relation entre le niveau d'éducation et le salaire sera toujours
+    soumise à un certain degré de hasard. Peut-être y a-t-il d'autres
+    facteurs inconnus, ou peut-être y a-t-il simplement une fluctuation
+    inexplicable du niveau de salaire entre tous les individus, même
+    ceux qui ont des qualifications et des profils socio-économiques
+    très similaires.
+
+Une solution possible pour quantifier néanmoins la relation de causalité
+entre deux variables, telles que le niveau d'éducation et le salaire des
+personnes, malgré ces incertitudes, est d'effectuer une **analyse de
+régression linéaire** !
+
 ::: {.callout-note icon="true"}
 ## À noter
+
+La régression linéaire est une méthode statistique utilisée pour
+modéliser la relation linéaire entre une **variable à expliquer (y)** et
+une ou plusieurs **variables explicatives (x1, x2, etc.)**.
+
+-   La variable à expliquer, y, est parfois aussi appelée **variable
+    dépendante** ou **variable de réponse** et, en anglais, **output
+    variable**, **response variable**, **predicted variable**
+
+-   Les variables explicatives, x, quant à eux, sont aussi appelées
+    **variables indépendantes** ou **prédicteurs** et, en anglais,
+    **input variables**, **predictor variables**.
+
+Nous parlons de régression linéaire **simple**, si il y a seulement une
+variable explicative x et de régression linéaire **multiple** si il y a
+plus d'une variable explicative, p. ex. x1, x2, x3, etc.
+:::
+
+En analyse de données, un modèle de régression a deux principaux types
+d'applications possibles :
+
+-   **Explication (causale)** : Si nous supposons qu'il existe une
+    relation causale entre y et x, nous pouvons expliquer les variations
+    observées de y en termes de variations observées de x.
+
+    -   Par exemple, considérons un échantillon aléatoire de données sur
+        la taille et le poids des personnes. Nous pouvons supposer qu'en
+        moyenne, les personnes plus grandes pèsent plus que les
+        personnes plus petites (relation de cause à effet). Par
+        conséquent, nous pourrions développer un modèle de régression
+        qui explique les variations de poids (y) en termes de variations
+        de taille (x).
+
+-   **Prédiction** : Si nous disposons d'un échantillon représentatif de
+    données contenant des observations des valeurs y et x, nous pouvons
+    adapter un modèle de régression aux données. Par la suite, nous
+    pouvons utiliser le modèle de régression pour un nouvel ensemble de
+    données qui ne contient que des valeurs x et prédire les valeurs y
+    correspondantes.
+
+    -   Supposons par exemple que vous soyez un agent immobilier. Vous
+        disposez d'un ensemble de données de 200 ventes de maisons dans
+        une ville au cours des cinq derniers mois, qui contient le prix
+        de vente (y) et la taille de la maison en mètres carrés (x).
+        Vous pouvez maintenant adapter un modèle de régression à vos
+        données et l'utiliser pour prédire les prix de vente attendus
+        des maisons actuellement sur le marché en fonction de leurs
+        superficie (x), que vous connaissez.
+
+Notez qu'un modèle de régression linéaire, comme tout modèle, est
+toujours **une simplification de la réalité**. Par conséquent, la
+précision des modèles de régression linéaire appliqués à des données
+réelles ne sera jamais de 100 %, c'est-à-dire qu'elle est sujette à une
+erreur d'estimation.
+
+Comprendre (et aussi quantifier) cette déviation du modèle de régression
+par rapport aux valeurs observées est également une étape importante de
+toute analyse de régression, comme nous le verrons par la suite.
+
+Au niveau technique, l'objectif de la régression linéaire est de
+spécifier une équation mathématique, appelée **modèle de régression**,
+qui quantifie la relation entre les variables y et x sur la base d'un
+ensemble d'observations.
+
+Par exemple, dans le cas d'une régression linéaire simple avec une
+variable x, nous utiliserions l'équation suivante :
+
+$$
+y = \beta_0 + \beta_1 x + \epsilon
+$$ où :
+
+-   $y$ est la variable à expliquer
+
+-   $x$ est la variable explicative.
+
+-   $\beta_0$ est l'ordonnée à l'origine de la droite de régression.
+
+-   $\beta_1$ est la pente de la droite de régression.
+
+-   $\epsilon$ est le terme d'erreur aléatoire
+
+::: {.callout-note icon="true"}
+## À noter
+
+Si cela est trop abstrait pour certaines personnes : Nous pourrions
+également dire que, d'un point de vue pratique, l'objectif d'une
+régression linéaire simple est d'ajuster une ligne droite à un nuage de
+points. Le modèle de régression serait la droite de régression qui
+modélise la relation entre les variables y et x (les observations sous
+la forme d'un nuage de points).
+:::
+
+### La fonction `lm()`
 
 La fonction **`lm()`** dans R est utilisée pour ajuster un modèle de
 régression linéaire. Elle est couramment utilisée dans le contexte de la
 régression linéaire pour étudier la relation entre une variable
 dépendante (`y`) et une ou plusieurs variables indépendantes (`x1`,
 `x2`, etc.).
-
-Nous parlons de régression linéaire **multiple** si il y a plus d'une
-variable indépendante.
-:::
 
 La syntaxe de base de la fonction `lm()` est la suivante :
 **`lm(formula, data)`**.
@@ -3832,35 +3967,41 @@ comment interpréter les résultats d'une regression linéaire dans R :
 
 Les graphiques de diagnostic (angl. diagnostic plots) sont des
 graphiques utilisés pour évaluer la qualité d'un modèle de régression
-linéaire et vérifier si les hypothèses du modèle sont satisfaites (p. ex. si les variables suivent approximativement une loi normale). En
-utilisant la fonction `plot()` après avoir calculé un modèle de
-régression linéaire avec `lm()` dans R, nous pouvons visualiser quatre
-types de plots diagnostiques :
+linéaire et vérifier si les hypothèses du modèle sont satisfaites (p.
+ex. si les variables suivent approximativement une loi normale).
+
+En utilisant la fonction `plot()` après avoir calculé un modèle de
+régression linéaire dans R, nous pouvons visualiser quatre types de
+plots diagnostiques :
 
 ```{r}
-# Afficher les graphiques de diagnostic
-par(mfrow=c(2,2))
+# Cette commande fait en sorte que les graphes de diagnostic soient tous affichés en même temps, sur un panneau 2 X 2 :
+par(mfrow=c(2,2)) 
+
+# Afficher ensuite les graphiques de diagnostic :
 plot(modele_1)
 ```
 
-Explications des quatre graphiques diagnostiques : (**SOUS CONSTRUCTION**)
+**Explications des quatre graphiques diagnostiques** :
+
+1.  **Residuals vs Fitted** : Ce graphique montre si les résidus (la distance entre les valeurs modélisées et observées) présentent des tendances non linéaires. Il peut y avoir une relation non linéaire entre les variables explicatives x et une variable expliquée y, et le schéma peut apparaître dans ce graphique si le modèle ne capture pas la relation non linéaire. Si vous trouvez des résidus plus ou moins uniformément répartis (approximés par la ligne rouge) autour de la ligne horizontale en pointillés sans tendances distinctes, c'est une bonne indication que vous n'avez pas de relations non linéaires.
+
+2.  **Q-Q Residuals** : Ce graphique montre si les résidus (les points) suivent une loi normale. Les résidus se situent-ils plus ou moins sur la ligne droite diagonale en pointillés ou s'en écartent-ils fortement ? C'est une bonne chose si les résidus sont bien alignés sur la ligne droite en pointillés.
+
+3.  **Scale-Location** : Ce graphique affiche les valeurs ajustées d'un modèle de régression sur l'axe des abscisses et la racine carrée des résidus standardisés sur l'axe des ordonnées. C'est ainsi que vous pouvez vérifier l'hypothèse de variance égale (homoscédasticité). C'est une bonne chose si vous voyez une ligne rouge plus ou moins horizontale avec des points répartis de manière égale (au hasard) autour d'elle.
+
+4.  **Residuals vs Leverage** : Ce graphique permet d'identifier les valeurs aberrantes influentes (valeurs extrêmes) dans les données qui peuvent affecter le modèle de régression linéaire. Toutes les valeurs aberrantes ne sont pas nécessairement influentes ; certaines peuvent ne pas avoir d'impact significatif sur le modèle de régression, ce qui signifie que les résultats de l'analyse de régression restent similaires, que ces cas soient inclus ou exclus. Cependant, certaines valeurs aberrantes peuvent avoir une grande influence et modifier les résultats si elles sont exclues, car elles ne s'alignent pas sur la tendance générale. Dans ce graphique, nous nous concentrons sur les valeurs aberrantes situées dans les coins supérieurs ou inférieurs droits, en dehors des lignes pointillées, qui indiquent des scores élevés de « distance de Cook ». Ces cas ont un impact significatif sur les résultats de la régression et doivent être notés.
 
 En examinant ces graphiques de diagnostic, nous pouvons évaluer si les
 hypothèses du modèle de régression linéaire sont satisfaites, telles que
 l'indépendance des résidus, l'homoscédasticité, la linéarité et la
-normalité des résidus. Si les hypothèses ne sont pas satisfaites, cela
-peut indiquer que le modèle n'est pas adéquat et qu'une transformation
-des données ou une sélection de variables différente peut être
-nécessaire.
+normalité des résidus.
 
-Dans la pratique, **il suffit d'évaluer visuellement les graphiques de
-diagnostic**. Si les lignes rouges qui indiquent les valeurs moyennes
-des résidus (les points) ne s'écartent pas de manière importante des
-lignes pointillées, le modèle de régression est bon à utiliser. Si les
-écarts sont importants, il peut être nécessaire de trouver un autre
-modèle ou de transformer les données (par exemple, transformation
-logarithmique, etc.). Dans le cas spécifique, les graphique de
-diagnostic sont acceptable.
+Si les graphiques de diagnostic montrent que les hypothèses ne sont pas satisfaites, cela peut indiquer que le
+modèle n'est pas adéquat et qu'une transformation des données ou une
+sélection de variables différente peut être nécessaire.
+
+Dans le cas spécifique du modèle de régression `modele_1`, qui modélise `mpg ~ wt` dans le jeu de données `mtcars`, les graphique de diagnostic sont tout à fait acceptable.
 
 ### Exemple 2 : La régression linéaire multiple avec `mtcars`
 
@@ -3972,9 +4113,8 @@ summary(stepwise_model)
 ```
 
 **Graphiques de diagnostic** : Après avoir choisi un modèle, il est
-utile de vérifier les graphiques des résidus pour valider les
-hypothèses d'homoscédasticité, de normalité et d'indépendance des
-résidus :
+utile de vérifier les graphiques des résidus pour valider les hypothèses
+d'homoscédasticité, de normalité et d'indépendance des résidus :
 
 ```{r}
 par(mfrow=c(2,2))
@@ -4007,7 +4147,12 @@ beaucoup sont très pertinents pour les sciences sociales et pour vos
 
 ### Devoir pour Session 13 (Problem Set 4) et infos sur la session 14
 
--   La semaine prochaine, les 22 et 23 mai, **le Problem Set 4** aura lieu pendant la session 13. Son contenu sera axé sur les statistiques descriptives et inférentielles (contenu des sessions 10, 11 et 12).
+-   La semaine prochaine, les 22 et 23 mai, **le Problem Set 4** aura
+    lieu pendant la session 13. Son contenu sera axé sur les
+    statistiques descriptives et inférentielles (contenu des sessions
+    10, 11 et 12).
 -   Attention, **la session 14 du 29 et 30 mai 2024 sera une session en
     auto-apprentissage !** Il n'y a donc pas d'enseignement en classe à
-    Fribourg.La session 14 vous fournira surtout des ressources R plus avancées que vous pourrez utiliser plus tard, par exemple pendant votre travail de bachelor, pour vos analyses empiriques. 
+    Fribourg.La session 14 vous fournira surtout des ressources R plus
+    avancées que vous pourrez utiliser plus tard, par exemple pendant
+    votre travail de bachelor, pour vos analyses empiriques.

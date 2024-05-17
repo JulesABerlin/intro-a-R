@@ -3832,43 +3832,26 @@ comment interpréter les résultats d'une regression linéaire dans R :
 
 Les graphiques de diagnostic (angl. diagnostic plots) sont des
 graphiques utilisés pour évaluer la qualité d'un modèle de régression
-linéaire et vérifier si les hypothèses du modèle sont satisfaites. En
+linéaire et vérifier si les hypothèses du modèle sont satisfaites (p. ex. si les variables suivent approximativement une loi normale). En
 utilisant la fonction `plot()` après avoir calculé un modèle de
 régression linéaire avec `lm()` dans R, nous pouvons visualiser quatre
 types de plots diagnostiques :
-
-1.  **Résidus vs valeurs prédites** : Ce plot montre la relation entre
-    les résidus (la différence entre les valeurs réelles et les valeurs
-    prédites) et les valeurs prédites. Si les points sont aléatoires
-    autour de la ligne horizontale à zéro, cela indique que les résidus
-    sont indépendants et que la variance est constante.
-2.  **Résidus vs variables indépendantes** : Ce plot montre la relation
-    entre les résidus et chaque variable indépendante. Si les points
-    sont aléatoires autour de la ligne horizontale à zéro, cela indique
-    que la relation entre les variables indépendantes et la variable
-    dépendante est linéaire.
-3.  **QQ-plot** : Ce plot compare les quantiles des résidus standardisés
-    avec les quantiles d'une distribution normale standard. Si les
-    points sont proches de la ligne diagonale, cela indique que les
-    résidus suivent une distribution normale.
-4.  **Densité des résidus** : Ce plot montre la densité des résidus. Si
-    la densité est symétrique autour de zéro et suit une forme de
-    cloche, cela indique que les résidus suivent une distribution
-    normale.
-
-En examinant cesgraphiques de diagnostic, nous pouvons évaluer si les
-hypothèses du modèle de régression linéaire sont satisfaites, telles que
-l'indépendance des résidus, l'homoscédasticité, la linéarité et la
-normalité des résidus. Si les hypothèses ne sont pas satisfaites, cela
-peut indiquer que le modèle n'est pas adéquat et qu'une transformation
-des données ou une sélection de variables différente peut être
-nécessaire.
 
 ```{r}
 # Afficher les graphiques de diagnostic
 par(mfrow=c(2,2))
 plot(modele_1)
 ```
+
+Explications des quatre graphiques diagnostiques : (**SOUS CONSTRUCTION**)
+
+En examinant ces graphiques de diagnostic, nous pouvons évaluer si les
+hypothèses du modèle de régression linéaire sont satisfaites, telles que
+l'indépendance des résidus, l'homoscédasticité, la linéarité et la
+normalité des résidus. Si les hypothèses ne sont pas satisfaites, cela
+peut indiquer que le modèle n'est pas adéquat et qu'une transformation
+des données ou une sélection de variables différente peut être
+nécessaire.
 
 Dans la pratique, **il suffit d'évaluer visuellement les graphiques de
 diagnostic**. Si les lignes rouges qui indiquent les valeurs moyennes
@@ -3989,7 +3972,7 @@ summary(stepwise_model)
 ```
 
 **Graphiques de diagnostic** : Après avoir choisi un modèle, il est
-essentiel de vérifier les graphiques des résidus pour valider les
+utile de vérifier les graphiques des résidus pour valider les
 hypothèses d'homoscédasticité, de normalité et d'indépendance des
 résidus :
 

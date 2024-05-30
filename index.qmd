@@ -20,7 +20,9 @@ toc-location: left
 toc-title: Table des matières
 ---
 
-# Session 1
+# Session 1 \| Introduction
+
+**Sujet : : Bienvenue, pourquoi R ? et commandes de base I**
 
 ```{r}
 #| echo: false
@@ -32,11 +34,25 @@ knitr::opts_chunk$set(tidy.opts = list(width.cutoff = 60), tidy = TRUE)
 Bienvenue dans la première leçon du cours **Exercices Méthode II** du
 Bachelor en sciences de la communication à l'Université de Fribourg !
 
-Sur cette page, je vous guiderai dans vos premiers pas avec R.
+Sur cette page Github, je vous guiderai dans vos premiers pas avec R.
 
-R est un langage de programmation open-source qui vous permet d'analyser
-et de visualiser des données sur des phénomènes de communication
-intéressants.
+::: {.callout-note icon="true"}
+## À noter
+
+**R** est un langage de programmation et un environnement logiciel pour
+l'analyse statistique, la visualisation de données et le calcul
+scientifique. Il est largement utilisé par les statisticiens, les
+chercheurs en sciences des données et de plus en plus en sciences
+sociales y compris en sciences de la communication.
+
+R est idéal pour la manipulation, l'analyse, la modélisation et la
+visualisation de données. C'est un logiciel libre et open source, ce qui
+signifie qu'il est gratuit à utiliser, modifier et distribuer. Il
+dispose d'une grande communauté d'utilisateurs et de développeurs qui
+contribuent à son développement et à sa maintenance.
+:::
+
+## Installer les logiciels R et RStudio
 
 Pour utiliser R sur votre ordinateur portable, vous devez d'abord
 installer les deux logiciels suivants :
@@ -47,7 +63,7 @@ installer les deux logiciels suivants :
 Notez que nous n'écrirons le code R que dans RStudio, l'interface. Le
 langage de programmation R doit d'abord être installé, mais il
 fonctionnera ensuite en arrière-plan. Il n'est donc pas nécessaire
-d'ouvrir R directement par la suite.
+d'ouvrir R directement sur votre ordinateur par la suite.
 
 ## L'interface RStudio
 
@@ -67,9 +83,10 @@ Nous travaillons principalement dans le volet **source**, c'est là que
 nous écrivons notre code.
 
 Vous pouvez ouvrir le volet source en créant un nouveau **R script**
-(cliquez sur le signe plus vert dans le coin supérieur gauche). Vous
-pouvez réécrire ou copier-coller le calcul simple suivant et l'insérer
-dans votre script :
+(cliquez sur le signe plus vert dans le coin supérieur gauche).
+
+Vous pouvez réécrire ou copier-coller le calcul simple suivant et
+l'insérer dans votre script :
 
 ```{r}
 #| echo: true
@@ -368,7 +385,7 @@ textuelles et logiques dans le même vecteur !
 -   Essayez de résoudre vous-même les éventuels messages d'erreur en
     adaptant le code.
 
-# Session 2
+# Session 2 \| Commandes de base II, jeux de données intégrés
 
 ## Répétition rapide de session 1
 
@@ -883,7 +900,7 @@ correctement défini avec la fonction `getwd()`
         lequel vous êtes inscrits via my.unifr (A, B, C, D) si vous
         voulez participer au Problem Set 1.
 
-    -   Chaque étudiant.e n'aura accès qu'au Problem Set 1 de son
+    -   Chaque étudiant-e n'aura accès qu'au Problem Set 1 de son
         groupe.
 
     -   Les personnes qui ne sont inscrites dans aucun groupe ne peuvent
@@ -894,7 +911,7 @@ correctement défini avec la fonction `getwd()`
 Les résultats du **Problem Set 1** (bonnes réponses, échelle des notes)
 sont accéssibles sur la page Moodle de l'exercice.
 
-Voici l'histogramme des points obtenus par n = 81 étudiant.es qui ont
+Voici l'histogramme des points obtenus par n = 81 étudiant-e-s qui ont
 participé au Problem Set 1.
 
 -   Le nombre maximal de points était de 20, il fallait 10 pour passer
@@ -902,7 +919,7 @@ participé au Problem Set 1.
 
 -   La moyenne des points obtenus était de 14.6 points (note = 4.75).
 
--   79 étudiant.es ont réussi Problem Set 2 (98%).
+-   79 étudiant-e-s ont réussi Problem Set 2 (98%).
 
 ```{r}
 #| echo: false
@@ -924,7 +941,7 @@ setwd("/Users/domus_julian/Documents/GitHub/intro-a-R/code")
 
 points_ps_1 <- read.csv("~/Documents/GitHub/intro-a-R/code/points_PS_1.csv", encoding="UTF-8")
 
-#points_ps_1 # il y a 81 observations de trois variables : etudiant.e, groupe et points
+#points_ps_1 # il y a 81 observations de trois variables : etudiant-e, groupe et points
 
 hist_ps_1 <-ggplot(points_ps_1, 
                    aes(x=points)) + 
@@ -943,7 +960,7 @@ hist_ps_1 <-ggplot(points_ps_1,
 hist_ps_1
 ```
 
-# Session 4
+# Session 4 \| Paquets R, données CSV, visualisations I
 
 La session 4 a pour but d'introduire trois éléments fondamentaux en
 analyse de données avec R :
@@ -1018,9 +1035,7 @@ library(ggthemes)
 À noter : `ggplot2` et `dplyr` sont installés avec le `tidyverse`, il ne
 faut donc plus les installer séparément.
 
-::: {.callout-caution collapse="false"}
-## Attention
-
+::: {.callout-important title="Important"}
 Notez qu'une fois installé, vous n'avez pas besoin de le réinstaller les
 paquets à chaque fois avec `install.packages()`. Cependant, vous devez
 **activer** tous les paquets R que vous voulez utiliser dans une session
@@ -1263,7 +1278,7 @@ complexes.
 Le tableau suivant décrit les couches d'un graphique ggplot :
 
 | Couche                                                             | Déscription/Variables                                                                         | Obligatoire ? |
-|-----------------------|:--------------------|:--------------------------:|
+|-----------------------|:------------------------------|:----------------:|
 | *data*                                                             | le jeu de données que nous voulons visualiser                                                 |      oui      |
 | *aesthetics*                                                       | le *mapping* de nos variables : axes *x* et *y*, *color*, *fill*, *alpha*, *line width*, etc. |      oui      |
 | *geometries*                                                       | le type visuel du graphique : *point*, *line*, *histogram*, *bar*, *boxplot*                  |      oui      |
@@ -1383,7 +1398,7 @@ relation entre prix et carats des diamants ? Quel rôle joue la variable
     d'expliquer comment il est structuré (nombre d'observations n, unité
     statistique, variables, origine des données, etc).
 
-# Session 5
+# Session 5 \| Visualisations II
 
 La session 5 a pour but d'approfondir les techniques de visualisation de
 données avec le paquet `ggplot2`, notamment la création des types de
@@ -1625,6 +1640,19 @@ distribution*).
 
 Utilisez aussi `?rnorm()`pour accéder à plus d'infos.
 
+::: {.callout-tip title="Astuce"}
+La fonction `set.seed()` dans R est utilisée pour définir la graine
+(seed en anglais) du générateur de nombres aléatoires. La graine est un
+nombre entier qui sert de point de départ pour le générateur de nombres
+aléatoires.
+
+En définissant une graine spécifique, par exemple avec `set.seed(123)`,
+vous garantissez que la séquence de nombres aléatoires générée par la
+suite avec des fonctions telles que `rnorm()`, sera la même à chaque
+fois que vous exécuterez le code, ce qui est utile pour la
+reproductibilité des résultats.
+:::
+
 Dans le code R suivant, nous utilisons `rnorm()` pour simuler les
 distributions des tailles des hommes et des femmes en Suisse.
 
@@ -1640,6 +1668,8 @@ les hommes.
 # Simulation de tailles de femmes en Suisse
 # Créer 500 valeurs aléatoires de taille 
 # (moyenne = 164.7 et écart-type = 5.6) avec la fonction rnorm().
+set.seed(123)
+
 taille_f <- rnorm(500, mean = 164.7, sd = 5.6)
 
 head(taille_f)
@@ -1856,7 +1886,7 @@ par exemple.
         peut être rempli en ligne via LimeSurvey jusqu'au **vendredi 19
         avril 2024 à 23h59**.
 
-    -   Tous les étudiant.es recevront prochainement un lien personnel
+    -   Tous les étudiant-e-s recevront prochainement un lien personnel
         d'invitation au questionnaire par e-mail (les réponses seront
         anonymisées et mélangées par le logiciel, l'enseignant ne verra
         que si les personnes invitées ont répondu au questionnaire avant
@@ -1871,7 +1901,7 @@ par exemple.
 Les résultats du **Problem Set 2** (bonnes réponses, échelle des notes)
 sont accéssibles sur la page Moodle de l'exercice.
 
-Voici l'histogramme des points obtenus par n = 82 étudiant.es qui ont
+Voici l'histogramme des points obtenus par n = 82 étudiant-e-s qui ont
 participé au Problem Set 2.
 
 -   Le nombre maximal de points était de 20, il fallait 10 pour passer
@@ -1879,7 +1909,7 @@ participé au Problem Set 2.
 
 -   La moyenne des points obtenus était de 12.5 (note = 4.5).
 
--   71 étudiant.es (86%) ont réussi Problem Set 2.
+-   71 étudiant-e-s (86%) ont réussi Problem Set 2.
 
 ```{r}
 #| echo: false
@@ -1901,7 +1931,7 @@ setwd("/Users/domus_julian/Documents/GitHub/intro-a-R/code")
 
 points_ps_2 <- read.csv("~/Documents/GitHub/intro-a-R/code/points_ps_2.csv", encoding="UTF-8")
 
-#points_ps_2 # il y a 82 observations de trois variables : etudiant.e, groupe et points
+#points_ps_2 # il y a 82 observations de trois variables : etudiant-e, groupe et points
 
 hist_ps_2 <-ggplot(points_ps_2, 
                    aes(x=points_ps_2)) + 
@@ -1920,7 +1950,7 @@ hist_ps_2 <-ggplot(points_ps_2,
 hist_ps_2
 ```
 
-# Session 7
+# Session 7 \| Manipuler les données I
 
 **Sujet : Manipuler les données (partie 1)**
 
@@ -2421,7 +2451,7 @@ igposts %>%
     RStudio, car cela sera nécessaire pour résoudre l'ensemble de
     problèmes 3.
 
-# Session 8 (cours en auto-apprentissage)
+# Session 8 (en auto-apprentissage) \| Manipuler les données II
 
 **Sujet : Manipuler les données (partie 2)**
 
@@ -2904,7 +2934,7 @@ G](https://www.instagram.com/p/ComtUDjrPAD/)
 Les résultats du **Problem Set 3** (bonnes réponses, échelle des notes)
 sont accéssibles sur la page Moodle de l'exercice.
 
-Voici l'histogramme des points obtenus par n = 79 étudiant.es qui ont
+Voici l'histogramme des points obtenus par n = 79 étudiant-e-s qui ont
 participé au Problem Set 3.
 
 -   Le nombre maximal de points était de 20, il fallait 10 pour passer
@@ -2912,7 +2942,7 @@ participé au Problem Set 3.
 
 -   La moyenne des points obtenus était de 12.15 (note = 4.5).
 
--   63 étudiant.es (79.7%) ont réussi Problem Set 3.
+-   63 étudiant-e-s (79.7%) ont réussi Problem Set 3.
 
 ```{r}
 #| echo: false
@@ -2953,9 +2983,9 @@ hist_ps_3 <-ggplot(points_ps_3,
 hist_ps_3
 ```
 
-# Session 10
+# Session 10 \| Statistiques descriptives
 
-**Sujet : La statistique déscriptive**
+**Sujet : La statistique descriptive**
 
 ::: {.callout-note icon="true"}
 ## À noter
@@ -3206,12 +3236,12 @@ write.csv(ice_age_df, file = "/Users/domus_julian/Documents/GitHub/intro-a-R/cod
 Si tout a bien marché, vous devrez maintenant avoir un ficher CSV, nommé
 `ice_age_df.csv`dans votre répértoire de travail !
 
-# Session 11 (cours en auto-apprentissage)
+# Session 11 (en auto-apprentissage) \| Statistiques inférentielles I
 
 **Sujet : La statistique inférentielle, Partie 1 (tests t)**
 
-Dans cette et la prochaine session, nous allons nous concentrer sur trois méthodes de
-statistiques inférentielles couramment utilisées :
+Dans cette et la prochaine session, nous allons nous concentrer sur
+trois méthodes de statistiques inférentielles couramment utilisées :
 
 -   Les **tests t** (angl. Student's t-test)
 
@@ -3356,6 +3386,7 @@ valeurs pour simuler notre problème.
 ```{r}
 # Générer des données d'échantillon avec n = 25 observations hypothétiques de QI d'étudiant(e).
 # Nous simulons, avec rnorm() 25 observations d'une loi normale avec une moyenne de 25 et un écart-type de 15
+set.seed(123)
 scores_qi <- rnorm(25, mean = 105, sd = 15)
 
 # Test t à un échantillon
@@ -3403,6 +3434,7 @@ population générale.
 
 ```{r}
 # Regénérons encore une fois des données d'échantillon, mais cette fois-ci avec n = 50 observations 
+set.seed(123)
 scores_qi <- rnorm(50, mean = 105, sd = 15)
 
 # Test t à un échantillon
@@ -3446,6 +3478,8 @@ Réalisez un test T en utilisant ces statistiques comme suit :
 #| echo: true
 #| output: true
 # Générons des données d'échantillon hypothétique avec n = 30 observations 
+set.seed(123)
+
 usage_20_29 <- rnorm(30, mean = 7.9, sd = 2)
 
 # Test t à un échantillon
@@ -3482,6 +3516,7 @@ femmes et de +- 6.1 cm pour les hommes.
 
 ```{r}
 # Données exemplaires :
+set.seed(123)
 tailles_f <- rnorm(5, mean = 177.4, sd = 5.6)
 tailles_h <- rnorm(5, mean = 164.7, sd = 6.1)
 
@@ -3518,6 +3553,7 @@ des joueuses est de 6.5 cm).
 #| echo: true
 #| output: true
 # Générons des données pour deux échantillons hypothétique avec n = 24 observations chacun
+set.seed(123)
 tailles_f_WNBA <- rnorm(24, mean = 184.5, sd = 6.5)
 tailles_h <- rnorm(24, mean = 177.4, sd = 6.1)
 
@@ -3557,7 +3593,7 @@ en ligne pertinents pour votre problématique spécifique.
     de Datacamp
     (2024)](https://www.datacamp.com/tutorial/t-tests-r-tutorial).
 
-# Session 12
+# Session 12 \| Statistiques inférentielles II
 
 **Sujet : La statistique inférentielle, Partie 2 (ANOVA et régression
 linéaire)**
@@ -3984,24 +4020,60 @@ plot(modele_1)
 
 **Explications des quatre graphiques diagnostiques** :
 
-1.  **Residuals vs Fitted** : Ce graphique montre si les résidus (la distance entre les valeurs modélisées et observées) présentent des tendances non linéaires. Il peut y avoir une relation non linéaire entre les variables explicatives x et une variable expliquée y, et le schéma peut apparaître dans ce graphique si le modèle ne capture pas la relation non linéaire. Si vous trouvez des résidus plus ou moins uniformément répartis (approximés par la ligne rouge) autour de la ligne horizontale en pointillés sans tendances distinctes, c'est une bonne indication que vous n'avez pas de relations non linéaires.
+1.  **Residuals vs Fitted** : Ce graphique montre si les résidus (la
+    distance entre les valeurs modélisées et observées) présentent des
+    tendances non linéaires. Il peut y avoir une relation non linéaire
+    entre les variables explicatives x et une variable expliquée y, et
+    le schéma peut apparaître dans ce graphique si le modèle ne capture
+    pas la relation non linéaire. Si vous trouvez des résidus plus ou
+    moins uniformément répartis (approximés par la ligne rouge) autour
+    de la ligne horizontale en pointillés sans tendances distinctes,
+    c'est une bonne indication que vous n'avez pas de relations non
+    linéaires.
 
-2.  **Q-Q Residuals** : Ce graphique montre si les résidus (les points) suivent une loi normale. Les résidus se situent-ils plus ou moins sur la ligne droite diagonale en pointillés ou s'en écartent-ils fortement ? C'est une bonne chose si les résidus sont bien alignés sur la ligne droite en pointillés.
+2.  **Q-Q Residuals** : Ce graphique montre si les résidus (les points)
+    suivent une loi normale. Les résidus se situent-ils plus ou moins
+    sur la ligne droite diagonale en pointillés ou s'en écartent-ils
+    fortement ? C'est une bonne chose si les résidus sont bien alignés
+    sur la ligne droite en pointillés.
 
-3.  **Scale-Location** : Ce graphique affiche les valeurs ajustées d'un modèle de régression sur l'axe des abscisses et la racine carrée des résidus standardisés sur l'axe des ordonnées. C'est ainsi que vous pouvez vérifier l'hypothèse de variance égale (homoscédasticité). C'est une bonne chose si vous voyez une ligne rouge plus ou moins horizontale avec des points répartis de manière égale (au hasard) autour d'elle.
+3.  **Scale-Location** : Ce graphique affiche les valeurs ajustées d'un
+    modèle de régression sur l'axe des abscisses et la racine carrée des
+    résidus standardisés sur l'axe des ordonnées. C'est ainsi que vous
+    pouvez vérifier l'hypothèse de variance égale (homoscédasticité).
+    C'est une bonne chose si vous voyez une ligne rouge plus ou moins
+    horizontale avec des points répartis de manière égale (au hasard)
+    autour d'elle.
 
-4.  **Residuals vs Leverage** : Ce graphique permet d'identifier les valeurs aberrantes influentes (valeurs extrêmes) dans les données qui peuvent affecter le modèle de régression linéaire. Toutes les valeurs aberrantes ne sont pas nécessairement influentes ; certaines peuvent ne pas avoir d'impact significatif sur le modèle de régression, ce qui signifie que les résultats de l'analyse de régression restent similaires, que ces cas soient inclus ou exclus. Cependant, certaines valeurs aberrantes peuvent avoir une grande influence et modifier les résultats si elles sont exclues, car elles ne s'alignent pas sur la tendance générale. Dans ce graphique, nous nous concentrons sur les valeurs aberrantes situées dans les coins supérieurs ou inférieurs droits, en dehors des lignes pointillées, qui indiquent des scores élevés de « distance de Cook ». Ces cas ont un impact significatif sur les résultats de la régression et doivent être notés.
+4.  **Residuals vs Leverage** : Ce graphique permet d'identifier les
+    valeurs aberrantes influentes (valeurs extrêmes) dans les données
+    qui peuvent affecter le modèle de régression linéaire. Toutes les
+    valeurs aberrantes ne sont pas nécessairement influentes ; certaines
+    peuvent ne pas avoir d'impact significatif sur le modèle de
+    régression, ce qui signifie que les résultats de l'analyse de
+    régression restent similaires, que ces cas soient inclus ou exclus.
+    Cependant, certaines valeurs aberrantes peuvent avoir une grande
+    influence et modifier les résultats si elles sont exclues, car elles
+    ne s'alignent pas sur la tendance générale. Dans ce graphique, nous
+    nous concentrons sur les valeurs aberrantes situées dans les coins
+    supérieurs ou inférieurs droits, en dehors des lignes pointillées,
+    qui indiquent des scores élevés de « distance de Cook ». Ces cas ont
+    un impact significatif sur les résultats de la régression et doivent
+    être notés.
 
 En examinant ces graphiques de diagnostic, nous pouvons évaluer si les
 hypothèses du modèle de régression linéaire sont satisfaites, telles que
 l'indépendance des résidus, l'homoscédasticité, la linéarité et la
 normalité des résidus.
 
-Si les graphiques de diagnostic montrent que les hypothèses ne sont pas satisfaites, cela peut indiquer que le
-modèle n'est pas adéquat et qu'une transformation des données ou une
-sélection de variables différente peut être nécessaire.
+Si les graphiques de diagnostic montrent que les hypothèses ne sont pas
+satisfaites, cela peut indiquer que le modèle n'est pas adéquat et
+qu'une transformation des données ou une sélection de variables
+différente peut être nécessaire.
 
-Dans le cas spécifique du modèle de régression `modele_1`, qui modélise `mpg ~ wt` dans le jeu de données `mtcars`, les graphique de diagnostic sont tout à fait acceptable.
+Dans le cas spécifique du modèle de régression `modele_1`, qui modélise
+`mpg ~ wt` dans le jeu de données `mtcars`, les graphique de diagnostic
+sont tout à fait acceptable.
 
 ### Exemple 2 : La régression linéaire multiple avec `mtcars`
 
@@ -4123,7 +4195,7 @@ plot(stepwise_model)
 
 Les graphiques de diagnostic sont acceptable pour notre modèle !
 
-### Ressources pour aller plus loin (pas pertinent pour le Problem Set 4)
+### Ressources pour aller plus loin
 
 Je vous recommande de jeter un coup d'œil à d'autres vidéos YouTube de
 StatQuest qui expliquent clairement les concepts statistiques, dont
@@ -4156,3 +4228,218 @@ beaucoup sont très pertinents pour les sciences sociales et pour vos
     Fribourg.La session 14 vous fournira surtout des ressources R plus
     avancées que vous pourrez utiliser plus tard, par exemple pendant
     votre travail de bachelor, pour vos analyses empiriques.
+
+# Session 13 (Problem Set 4)
+
+Les résultats du **Problem Set 4** (bonnes réponses, échelle des notes)
+sont accéssibles sur la page Moodle de l'exercice.
+
+::: {.callout-important title="Important"}
+**Spécificité du Problem Set 4** : les étudiant-e-s qui ont répondu dans
+les temps au questionnaire sur l'utilisation des médias se voient
+attribuer 2 points bonus supplémentaires à leur score dans le Problem
+Set 4. Ces 2 points bonus, obtenus par une majorité d'étudiant-e-s, sont
+pris en compte pour le calcul final de la note du cours (ils ne sont
+toutefois pas comptabilisés dans l'histogramme ci-dessous).
+:::
+
+Voici l'histogramme des points obtenus par n = 71 étudiant-e-s qui ont
+participé au Problem Set 4.
+
+-   Le nombre maximal de points était de 20, il fallait 10 pour passer
+    le test.
+
+-   La moyenne des points obtenus était de 11.
+
+-   47 étudiant-e-s (66%) ont réussi Problem Set 4.
+
+```{r}
+#| echo: false
+#| output: true
+#| warning: false
+# script pour faire un histogramme des points obtenus dans le Problem Set 4
+# cours : Exercices Méthodes II
+# date : 22/23 mai 2024
+# auteur : Julian Maitra
+
+library(tidyverse)
+
+# Adaptez le code suivant pour votre répertoire de travail :
+
+setwd("/Users/domus_julian/Documents/GitHub/intro-a-R/code")
+
+# Enregistrez le fichier CSV points_ps_2 dans votre répertoire de travail, 
+# puis importez les données dans R (modifiez le code suivant selon votre ordinateur) :
+
+points_ps_4 <- read.csv("~/Documents/GitHub/intro-a-R/code/pps_4.csv", encoding="UTF-8")
+
+points_ps_4 <- points_ps_4 %>% filter(pps_4 > 0)
+
+#points_ps_2 # il y a 71 observations de trois variables : etudiant-e, groupe et points
+
+hist_ps_4 <-ggplot(points_ps_4, 
+                   aes(x=pps_4)) + 
+  geom_histogram(binwidth = 1, color="black", fill="white") +
+  labs(title = "Histogramme des points obtenus dans le PS 4", # labs() permet de définir plusieurs labels en même temps (titre, axes, etc.)
+       subtitle = "n = 71 résultats de test", 
+       caption = "Source des données : Moodle") +       
+  xlab("Points obtenus") +                             
+  ylab("Fréquence") + 
+  theme_minimal() +
+  coord_cartesian(xlim = c(0,20), ylim = c(0,14)) +
+  scale_x_continuous(breaks = seq(0,20, by=1)) +
+   scale_y_continuous(breaks = seq(0,14, by=2)) +
+  geom_vline(aes(xintercept=9.5),
+             color="red",  linewidth=1, linetype="dashed")
+hist_ps_4
+```
+
+# Session 14 (en auto-apprentissage)
+
+**Continuez à améliorer votre maîtrise de R en sciences de la
+communication**
+
+Voici des étapes clés pour devenir un·e utilisateur·trice avancé·e de R.
+
+### Pratique régulière
+
+-   Il est essentiel de pratiquer régulièrement pour devenir plus à
+    l'aise avec R.
+
+-   Intégrez l'utilisation de R dans vos projets académiques et
+    personnels autant que possible.
+
+### Application académique
+
+-   Demandez aux enseignant-e-s d'autres cours si vous pouvez utiliser R
+    dans leurs cours.
+
+-   Proposez d'utiliser R pour l'analyse de données dans vos travaux de
+    séminaire et de Bachelor.
+
+-   Collaborez avec d'autres étudiant-e-s utilisateurs·trices de R sur
+    des projets de recherche en groupe à l'université.
+
+### MOOC
+
+Pour répéter et approfondir vos connaissances en R, des **MOOC**
+(massive open online courses) sont disponibles gratuitement en tant
+qu'auditeur/auditrice (après inscription) :
+
+1.  **Datacamp**: Introduction to R
+    (4h): <https://www.datacamp.com/courses/free-introduction-to-r>
+
+2.  **Edx (Harvard)**: R Basics
+    (8-16h): <https://www.edx.org/course/data-science-r-basics>
+
+3.  **Edx (Stanford)**: R Programming Fundamentals
+    (12-18h): <https://www.edx.org/course/r-programming-fundamentals>
+
+4.  **Coursera**: Data Analysis with R Programming
+    (37h): <https://www.coursera.org/learn/data-analysis-r>
+
+5.  **Udacity**: Data Analysis with R (2
+    months): <https://www.udacity.com/course/data-analysis-with-r--ud651>
+
+Si vous payez entre 50 et 200 USD, il est également possible de valider
+de tels MOOC avec un certificat. Ces certificats peuvent notamment être
+reliés à LinkedIn et y être affichés.
+
+### Tutoriels sur Youtube
+
+Il existe également de nombreux tutoriels R sur Youtube. Il peut s'agir
+de cours R complets de différents niveaux ou de courtes vidéos montrant
+comment utiliser une technique R particulière (par ex. un certain type
+de visualisation).
+
+1.  **Introduction à R et RStudio (ft. mon chat radioactif) :** Tutoriel
+    facile à comprendre en français d'environ 1h par le chercheur belge
+    Nathan Uyttendaele (Il aborde certains aspects et logiciels que nous
+    ne traitons pas dans notre cours. Mais dans l'ensemble, c'est une
+    bonne introduction à R et RStudio pour les débutants)
+    : <https://www.youtube.com/watch?v=sav3Mbe0_DM>
+
+2.  **Introduction to R & RStudio and other videos on Data Analysis with
+    R** by Wouter van Atteveldt (computational communication scientist,
+    VU Amsterdam)
+    : <https://www.youtube.com/watch?v=PVhZD5MINYM&list=PLjXODJ_lGN_V2ntvV2CN_GvzZ6Qm5km9L>
+
+3.  **Boot Camp of the Summer Institute in Computational Social
+    Science**, SICSS, taught by Chris Bail from Duke University
+    (multiple videos, social science focus)
+    : <https://sicss.io/boot_camp/>
+
+4.  **R Programming Tutorial: Learn the basics of statistical
+    computing** (by Barton Poulson, 2h comprehensive general R
+    introduction) : <https://www.youtube.com/watch?v=_V8eKsto3Ug>
+
+### Intelligence artificielle pour coder
+
+Utiliser l'intelligence artificielle générative pour coder. Jouez avec,
+demandez simplement du code R pour faire certaines choses. Ces
+interfaces peuvent vous fournir du code prêt à l'emploi, que vous pouvez
+copier et coller directement dans RStudio !
+
+-   [ChatGPT ](https://chatgpt.com)
+
+-   [Le Chat de Mistral](https://chat.mistral.ai/chat)
+
+### Communautés en Ligne
+
+Participez à des communautés en ligne pour rester connecté·e avec les
+dernières tendances et partager vos connaissances :
+
+-   [GitHub](https://github.com) : Le réseau social des développeurs
+-   [Stackoverflow](https://stackoverflow.com) : Un forum d'entraide
+    pour programmeurs
+-   [Kaggle](https://www.kaggle.com) : Une plateforme pour le machine
+    learning et l'analyse de données
+
+### Lecture spécialisée
+
+Approfondissez vos connaissances en R avec des livres numérique
+open-source :
+
+-   **R for Data Science** \[anglais\] Une référence bien établie en
+    sciences des données avec R par Wickham & Grolemund (2023, 2e éd.) :
+    [https://r4ds.hadley.nz/](https://r4ds.hadley.nz)
+
+-   **R Cookbook** \[anglais\] Référence établie pour l'introduction,
+    les statistiques et les graphiques avec R par Long & Teetor (2019,
+    2e éd.) : <https://rc2e.com/>
+
+-   **R Graphics Cookbook** \[anglais\] Ouvrage de référence pour
+    concevoir des graphiques attrayants avec R (2022, 2e éd.), by Chang
+    : <https://r-graphics.org/>
+
+-   **Introduction à la programmation R** par Goulet (2016, 5e éd.) de
+    l’Université
+    Laval : <https://cran.r-project.org/doc/contrib/Goulet_introduction_programmation_R.pdf>
+
+### Valorisation des Compétences
+
+-   Mettez en avant vos compétences en programmation R dans votre CV et
+    sur LinkedIn, notamment les certificats obtenus via des MOOCs.
+
+Ces conseils vous aideront à utiliser efficacement R dans le domaine des
+sciences de la communication et à développer une expertise approfondie.
+
+### Au revoir et à bientôt
+
+Ainsi se termine ce cours et donc l'introduction à R dans le cadre des
+Exercices Méthodes II du [Bachelor en sciences de la communication à
+l'Université de
+Fribourg](https://www.unifr.ch/dcm/fr/etudes/bachelor/bachelor-fr-communication-medias/)
+!
+
+J'espère que vous avez appris beaucoup de choses, notamment des
+techniquesqui vous seront utiles pour la suite de vos études ! 💪 😎
+
+Et n'oubliez pas qu'au final, il faut surtout faire preuve de bon sens
+pour comprendre comment des compétences comme la programmation R peuvent
+être utilisées au mieux pour étudier des phénomènes intéressants en
+sciences de la communication ! 😄
+
+*Julian Maitra, Fribourg, 30 mai 2024.*
+
+**FIN DU COURS**

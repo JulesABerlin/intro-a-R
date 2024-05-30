@@ -110,8 +110,9 @@ window.Quarto = {
     <h2 id="toc-title">Table des matières</h2>
    
   <ul class="collapse">
-  <li><a href="#session-1" id="toc-session-1" class="nav-link active" data-scroll-target="#session-1">Session 1</a>
+  <li><a href="#session-1-introduction" id="toc-session-1-introduction" class="nav-link active" data-scroll-target="#session-1-introduction">Session 1 | Introduction</a>
   <ul class="collapse">
+  <li><a href="#installer-les-logiciels-r-et-rstudio" id="toc-installer-les-logiciels-r-et-rstudio" class="nav-link" data-scroll-target="#installer-les-logiciels-r-et-rstudio">Installer les logiciels R et RStudio</a></li>
   <li><a href="#linterface-rstudio" id="toc-linterface-rstudio" class="nav-link" data-scroll-target="#linterface-rstudio">L’interface RStudio</a></li>
   <li><a href="#exécuter-un-script-r" id="toc-exécuter-un-script-r" class="nav-link" data-scroll-target="#exécuter-un-script-r">Exécuter un script R</a></li>
   <li><a href="#commenter-votre-code-avec-un" id="toc-commenter-votre-code-avec-un" class="nav-link" data-scroll-target="#commenter-votre-code-avec-un">Commenter votre code avec un <code>#</code></a></li>
@@ -119,7 +120,7 @@ window.Quarto = {
   <li><a href="#variables-à-élément-unique" id="toc-variables-à-élément-unique" class="nav-link" data-scroll-target="#variables-à-élément-unique">Variables à élément unique</a></li>
   <li><a href="#variables-à-plusieurs-éléments-vecteurs" id="toc-variables-à-plusieurs-éléments-vecteurs" class="nav-link" data-scroll-target="#variables-à-plusieurs-éléments-vecteurs">Variables à plusieurs éléments : vecteurs</a></li>
   </ul></li>
-  <li><a href="#session-2" id="toc-session-2" class="nav-link" data-scroll-target="#session-2">Session 2</a>
+  <li><a href="#session-2-commandes-de-base-ii-jeux-de-donnees-integres" id="toc-session-2-commandes-de-base-ii-jeux-de-donnees-integres" class="nav-link" data-scroll-target="#session-2-commandes-de-base-ii-jeux-de-donnees-integres">Session 2 | Commandes de base II, jeux de données intégrés</a>
   <ul class="collapse">
   <li><a href="#répétition-rapide-de-session-1" id="toc-répétition-rapide-de-session-1" class="nav-link" data-scroll-target="#répétition-rapide-de-session-1">Répétition rapide de session 1</a></li>
   <li><a href="#données-en-forme-de-tableau" id="toc-données-en-forme-de-tableau" class="nav-link" data-scroll-target="#données-en-forme-de-tableau">Données en forme de tableau</a></li>
@@ -130,13 +131,13 @@ window.Quarto = {
   <li><a href="#le-répértoire-de-travail" id="toc-le-répértoire-de-travail" class="nav-link" data-scroll-target="#le-répértoire-de-travail">Le répértoire de travail</a></li>
   </ul></li>
   <li><a href="#session-3-problem-set-1" id="toc-session-3-problem-set-1" class="nav-link" data-scroll-target="#session-3-problem-set-1">Session 3 (Problem Set 1)</a></li>
-  <li><a href="#session-4" id="toc-session-4" class="nav-link" data-scroll-target="#session-4">Session 4</a>
+  <li><a href="#session-4-paquets-r-données-csv-visualisations-i" id="toc-session-4-paquets-r-données-csv-visualisations-i" class="nav-link" data-scroll-target="#session-4-paquets-r-données-csv-visualisations-i">Session 4 | Paquets R, données CSV, visualisations I</a>
   <ul class="collapse">
   <li><a href="#les-paquets-r" id="toc-les-paquets-r" class="nav-link" data-scroll-target="#les-paquets-r">Les paquets R</a></li>
   <li><a href="#les-jeux-de-données-intégrés" id="toc-les-jeux-de-données-intégrés" class="nav-link" data-scroll-target="#les-jeux-de-données-intégrés">Les jeux de données intégrés</a></li>
   <li><a href="#introduction-aux-visualisations-avec-ggplot2" id="toc-introduction-aux-visualisations-avec-ggplot2" class="nav-link" data-scroll-target="#introduction-aux-visualisations-avec-ggplot2">Introduction aux visualisations avec <code>ggplot2</code></a></li>
   </ul></li>
-  <li><a href="#session-5" id="toc-session-5" class="nav-link" data-scroll-target="#session-5">Session 5</a>
+  <li><a href="#session-5-visualisations-ii" id="toc-session-5-visualisations-ii" class="nav-link" data-scroll-target="#session-5-visualisations-ii">Session 5 | Visualisations II</a>
   <ul class="collapse">
   <li><a href="#les-nuages-de-points-angl.-scatter-plots" id="toc-les-nuages-de-points-angl.-scatter-plots" class="nav-link" data-scroll-target="#les-nuages-de-points-angl.-scatter-plots">1. Les nuages de points (angl. <em>scatter plots</em>)</a></li>
   <li><a href="#les-diagrammes-à-barres" id="toc-les-diagrammes-à-barres" class="nav-link" data-scroll-target="#les-diagrammes-à-barres">2. Les diagrammes à barres</a></li>
@@ -144,28 +145,30 @@ window.Quarto = {
   <li><a href="#les-boîtes-à-moustaches-angl.-boxplots" id="toc-les-boîtes-à-moustaches-angl.-boxplots" class="nav-link" data-scroll-target="#les-boîtes-à-moustaches-angl.-boxplots">4. Les boîtes à moustaches (angl. <em>boxplots</em>)</a></li>
   </ul></li>
   <li><a href="#session-6-problem-set-2" id="toc-session-6-problem-set-2" class="nav-link" data-scroll-target="#session-6-problem-set-2">Session 6 (Problem Set 2)</a></li>
-  <li><a href="#session-7" id="toc-session-7" class="nav-link" data-scroll-target="#session-7">Session 7</a>
+  <li><a href="#session-7-manipuler-les-données-i" id="toc-session-7-manipuler-les-données-i" class="nav-link" data-scroll-target="#session-7-manipuler-les-données-i">Session 7 | Manipuler les données I</a>
   <ul class="collapse">
   <li><a href="#lire-des-données-dans-rstudio" id="toc-lire-des-données-dans-rstudio" class="nav-link" data-scroll-target="#lire-des-données-dans-rstudio">Lire des données dans RStudio</a></li>
   <li><a href="#manipuler-les-données-avec-dplyr" id="toc-manipuler-les-données-avec-dplyr" class="nav-link" data-scroll-target="#manipuler-les-données-avec-dplyr">Manipuler les données avec <code>dplyr</code></a></li>
   </ul></li>
-  <li><a href="#session-8-cours-en-auto-apprentissage" id="toc-session-8-cours-en-auto-apprentissage" class="nav-link" data-scroll-target="#session-8-cours-en-auto-apprentissage">Session 8 (cours en auto-apprentissage)</a></li>
+  <li><a href="#session-8-en-auto-apprentissage-manipuler-les-données-ii" id="toc-session-8-en-auto-apprentissage-manipuler-les-données-ii" class="nav-link" data-scroll-target="#session-8-en-auto-apprentissage-manipuler-les-données-ii">Session 8 (en auto-apprentissage) | Manipuler les données II</a></li>
   <li><a href="#session-9-problem-set-3" id="toc-session-9-problem-set-3" class="nav-link" data-scroll-target="#session-9-problem-set-3">Session 9 (Problem Set 3)</a></li>
-  <li><a href="#session-10" id="toc-session-10" class="nav-link" data-scroll-target="#session-10">Session 10</a>
+  <li><a href="#session-10-statistiques-descriptives" id="toc-session-10-statistiques-descriptives" class="nav-link" data-scroll-target="#session-10-statistiques-descriptives">Session 10 | Statistiques descriptives</a>
   <ul class="collapse">
   <li><a href="#analyse-des-réponses-au-questionnaire-1ère-partie-stats-déscriptives" id="toc-analyse-des-réponses-au-questionnaire-1ère-partie-stats-déscriptives" class="nav-link" data-scroll-target="#analyse-des-réponses-au-questionnaire-1ère-partie-stats-déscriptives">Analyse des réponses au questionnaire, 1ère partie (stats déscriptives)</a></li>
   <li><a href="#la-fonction-write.csv" id="toc-la-fonction-write.csv" class="nav-link" data-scroll-target="#la-fonction-write.csv">La fonction <code>write.csv()</code></a></li>
   </ul></li>
-  <li><a href="#session-11-cours-en-auto-apprentissage" id="toc-session-11-cours-en-auto-apprentissage" class="nav-link" data-scroll-target="#session-11-cours-en-auto-apprentissage">Session 11 (cours en auto-apprentissage)</a>
+  <li><a href="#session-11-en-auto-apprentissage-statistiques-inférentielles-i" id="toc-session-11-en-auto-apprentissage-statistiques-inférentielles-i" class="nav-link" data-scroll-target="#session-11-en-auto-apprentissage-statistiques-inférentielles-i">Session 11 (en auto-apprentissage) | Statistiques inférentielles I</a>
   <ul class="collapse">
   <li><a href="#cest-quoi-la-statistique-inférentielle" id="toc-cest-quoi-la-statistique-inférentielle" class="nav-link" data-scroll-target="#cest-quoi-la-statistique-inférentielle">C’est quoi la statistique inférentielle ?</a></li>
   <li><a href="#le-test-t" id="toc-le-test-t" class="nav-link" data-scroll-target="#le-test-t">le test t</a></li>
   </ul></li>
-  <li><a href="#session-12" id="toc-session-12" class="nav-link" data-scroll-target="#session-12">Session 12</a>
+  <li><a href="#session-12-statistiques-inférentielles-ii" id="toc-session-12-statistiques-inférentielles-ii" class="nav-link" data-scroll-target="#session-12-statistiques-inférentielles-ii">Session 12 | Statistiques inférentielles II</a>
   <ul class="collapse">
   <li><a href="#lanalyse-de-la-variance-anova" id="toc-lanalyse-de-la-variance-anova" class="nav-link" data-scroll-target="#lanalyse-de-la-variance-anova">L’analyse de la variance (ANOVA)</a></li>
   <li><a href="#la-régression-linéaire-avec-lm" id="toc-la-régression-linéaire-avec-lm" class="nav-link" data-scroll-target="#la-régression-linéaire-avec-lm">La régression linéaire avec <code>lm()</code></a></li>
   </ul></li>
+  <li><a href="#session-13-problem-set-4" id="toc-session-13-problem-set-4" class="nav-link" data-scroll-target="#session-13-problem-set-4">Session 13 (Problem Set 4)</a></li>
+  <li><a href="#session-14-en-auto-apprentissage" id="toc-session-14-en-auto-apprentissage" class="nav-link" data-scroll-target="#session-14-en-auto-apprentissage">Session 14 (en auto-apprentissage)</a></li>
   </ul>
 </nav>
 </div>
@@ -213,17 +216,34 @@ window.Quarto = {
 </header>
 
 
-<section id="session-1" class="level1">
-<h1>Session 1</h1>
+<section id="session-1-introduction" class="level1">
+<h1>Session 1 | Introduction</h1>
+<p><strong>Sujet : : Bienvenue, pourquoi R ? et commandes de base I</strong></p>
 <p>Bienvenue dans la première leçon du cours <strong>Exercices Méthode II</strong> du Bachelor en sciences de la communication à l’Université de Fribourg !</p>
-<p>Sur cette page, je vous guiderai dans vos premiers pas avec R.</p>
-<p>R est un langage de programmation open-source qui vous permet d’analyser et de visualiser des données sur des phénomènes de communication intéressants.</p>
+<p>Sur cette page Github, je vous guiderai dans vos premiers pas avec R.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+À noter
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>R</strong> est un langage de programmation et un environnement logiciel pour l’analyse statistique, la visualisation de données et le calcul scientifique. Il est largement utilisé par les statisticiens, les chercheurs en sciences des données et de plus en plus en sciences sociales y compris en sciences de la communication.</p>
+<p>R est idéal pour la manipulation, l’analyse, la modélisation et la visualisation de données. C’est un logiciel libre et open source, ce qui signifie qu’il est gratuit à utiliser, modifier et distribuer. Il dispose d’une grande communauté d’utilisateurs et de développeurs qui contribuent à son développement et à sa maintenance.</p>
+</div>
+</div>
+<section id="installer-les-logiciels-r-et-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="installer-les-logiciels-r-et-rstudio">Installer les logiciels R et RStudio</h2>
 <p>Pour utiliser R sur votre ordinateur portable, vous devez d’abord installer les deux logiciels suivants :</p>
 <ol type="1">
 <li>le langage de programmation <a href="https://cran.r-project.org">R</a></li>
 <li>l’interface <a href="https://posit.co/download/rstudio-desktop/">RStudio</a></li>
 </ol>
-<p>Notez que nous n’écrirons le code R que dans RStudio, l’interface. Le langage de programmation R doit d’abord être installé, mais il fonctionnera ensuite en arrière-plan. Il n’est donc pas nécessaire d’ouvrir R directement par la suite.</p>
+<p>Notez que nous n’écrirons le code R que dans RStudio, l’interface. Le langage de programmation R doit d’abord être installé, mais il fonctionnera ensuite en arrière-plan. Il n’est donc pas nécessaire d’ouvrir R directement sur votre ordinateur par la suite.</p>
+</section>
 <section id="linterface-rstudio" class="level2">
 <h2 class="anchored" data-anchor-id="linterface-rstudio">L’interface RStudio</h2>
 <div class="quarto-figure quarto-figure-center">
@@ -243,7 +263,8 @@ window.Quarto = {
 <section id="exécuter-un-script-r" class="level2">
 <h2 class="anchored" data-anchor-id="exécuter-un-script-r">Exécuter un script R</h2>
 <p>Nous travaillons principalement dans le volet <strong>source</strong>, c’est là que nous écrivons notre code.</p>
-<p>Vous pouvez ouvrir le volet source en créant un nouveau <strong>R script</strong> (cliquez sur le signe plus vert dans le coin supérieur gauche). Vous pouvez réécrire ou copier-coller le calcul simple suivant et l’insérer dans votre script :</p>
+<p>Vous pouvez ouvrir le volet source en créant un nouveau <strong>R script</strong> (cliquez sur le signe plus vert dans le coin supérieur gauche).</p>
+<p>Vous pouvez réécrire ou copier-coller le calcul simple suivant et l’insérer dans votre script :</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> <span class="sc">+</span> <span class="dv">14</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -533,7 +554,7 @@ Important
 <span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>femme <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -542,7 +563,7 @@ Attention
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse show">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Dans R, on ne peut généralement pas mélanger les valeurs numériques, textuelles et logiques dans le même vecteur !</p>
 </div>
@@ -558,8 +579,8 @@ Attention
 </section>
 </section>
 </section>
-<section id="session-2" class="level1">
-<h1>Session 2</h1>
+<section id="session-2-commandes-de-base-ii-jeux-de-donnees-integres" class="level1">
+<h1>Session 2 | Commandes de base II, jeux de données intégrés</h1>
 <section id="répétition-rapide-de-session-1" class="level2">
 <h2 class="anchored" data-anchor-id="répétition-rapide-de-session-1">Répétition rapide de session 1</h2>
 <div class="cell">
@@ -1111,7 +1132,7 @@ Important
 <li><p><strong>Attention</strong> :</p>
 <ul>
 <li><p>Vous devez tous venir la semaine prochaine dans le groupe dans lequel vous êtes inscrits via my.unifr (A, B, C, D) si vous voulez participer au Problem Set 1.</p></li>
-<li><p>Chaque étudiant.e n’aura accès qu’au Problem Set 1 de son groupe.</p></li>
+<li><p>Chaque étudiant-e n’aura accès qu’au Problem Set 1 de son groupe.</p></li>
 <li><p>Les personnes qui ne sont inscrites dans aucun groupe ne peuvent pas valider le Problem Set 1.</p></li>
 </ul></li>
 </ul>
@@ -1121,11 +1142,11 @@ Important
 <section id="session-3-problem-set-1" class="level1">
 <h1>Session 3 (Problem Set 1)</h1>
 <p>Les résultats du <strong>Problem Set 1</strong> (bonnes réponses, échelle des notes) sont accéssibles sur la page Moodle de l’exercice.</p>
-<p>Voici l’histogramme des points obtenus par n = 81 étudiant.es qui ont participé au Problem Set 1.</p>
+<p>Voici l’histogramme des points obtenus par n = 81 étudiant-e-s qui ont participé au Problem Set 1.</p>
 <ul>
 <li><p>Le nombre maximal de points était de 20, il fallait 10 pour passer le test.</p></li>
 <li><p>La moyenne des points obtenus était de 14.6 points (note = 4.75).</p></li>
-<li><p>79 étudiant.es ont réussi Problem Set 2 (98%).</p></li>
+<li><p>79 étudiant-e-s ont réussi Problem Set 2 (98%).</p></li>
 </ul>
 <div class="cell">
 <div class="cell-output-display">
@@ -1137,8 +1158,8 @@ Important
 </div>
 </div>
 </section>
-<section id="session-4" class="level1">
-<h1>Session 4</h1>
+<section id="session-4-paquets-r-données-csv-visualisations-i" class="level1">
+<h1>Session 4 | Paquets R, données CSV, visualisations I</h1>
 <p>La session 4 a pour but d’introduire trois éléments fondamentaux en analyse de données avec R :</p>
 <ol type="1">
 <li>Installer et charger des <strong>paquets R</strong> sur son ordinateur</li>
@@ -1198,20 +1219,17 @@ Astuce
 <span id="cb76-5"><a href="#cb76-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>À noter : <code>ggplot2</code> et <code>dplyr</code> sont installés avec le <code>tidyverse</code>, il ne faut donc plus les installer séparément.</p>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout callout-style-default callout-important callout-titled" title="Important">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Attention
+Important
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-20" class="callout-20-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Notez qu’une fois installé, vous n’avez pas besoin de le réinstaller les paquets à chaque fois avec <code>install.packages()</code>. Cependant, vous devez <strong>activer</strong> tous les paquets R que vous voulez utiliser dans une session avec la commande <code>library()</code>. Sans activation, vous allez recevoir des messages d’erreur.</p>
-</div>
 </div>
 </div>
 <p>Certains paquets ont des documentations auxquelles vous pouvez accéder grâce au point d’interrogation. Ces infos sont affichés dans le volet <em>Output</em> sous l’onglet <em>Help</em>.</p>
@@ -1267,7 +1285,7 @@ Astuce
 <p>Le jeu de données <code>iris</code> est un ensemble de données célèbre qui contient les mesures en centimètres des variables longueur et largeur du sépale, ainsi que longueur et largeur du pétale, pour trois expèces de fleurs d’iris (Setosa, Virginica et Versicolor). Il y a 150 observations en total (50 pour chaque espèce).</p>
 <p>Le jeu de données a été rendu célèbre par le statisticien et biologiste britannique <strong>Ronald Fisher</strong> dans un article scientifique de 1936 qui avait beaucoup d’influence dans le domaine des statistiques. Les données d’iris eux-même ont été récolté par le botaniste Edgar Anderson en 1935 sur la péninsule de Gaspésie au Québéc, Canada.</p>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1276,7 +1294,7 @@ Plus sur Ronald Fisher
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Ronald Fisher (1890-1962) était un statisticien, généticien et biologiste britannique qui a joué un rôle crucial dans le développement de la science statistique moderne. Il est connu pour son travail dans le développement des fondements des méthodes statistiques, incluant l’analyse de variance (ANOVA), le test exact de Fisher et l’estimation du maximum likelihood. Fisher a également apporté des contributions significatives en génétique, où son travail sur la théorie de la sélection naturelle et la génétique des populations a aidé à combler le fossé entre la génétique mendélienne et l’évolution darwinienne. Il est considéré comme l’un des architectes principaux de la synthèse néo-darwinienne. Son influence s’étend au-delà de la statistique et de la génétique aux domaines plus larges de la biologie et de la recherche agricole, faisant de lui une figure pivotale de la science du 20e siècle.</p>
 </div>
@@ -1416,8 +1434,8 @@ Astuce
 <caption>Les couches d’un graphique ggplot</caption>
 <colgroup>
 <col style="width: 31%">
-<col style="width: 29%">
-<col style="width: 38%">
+<col style="width: 43%">
+<col style="width: 25%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1560,8 +1578,8 @@ Astuce
 </section>
 </section>
 </section>
-<section id="session-5" class="level1">
-<h1>Session 5</h1>
+<section id="session-5-visualisations-ii" class="level1">
+<h1>Session 5 | Visualisations II</h1>
 <p>La session 5 a pour but d’approfondir les techniques de visualisation de données avec le paquet <code>ggplot2</code>, notamment la création des types de graphique suivants :</p>
 <ol type="1">
 <li>Les nuages de points (angl. <em>scatter plots</em>)</li>
@@ -1703,7 +1721,7 @@ Astuce
 </div>
 <p>Que nous dit le graphique ? Il est intéressant de constater que dans le jeu de données <code>diamonds</code>, le niveau de qualité le plus élevé de la taille, à savoir <code>ideal</code>, est également le plus fréquent.</p>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1712,7 +1730,7 @@ Attention
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-28" class="callout-28-contents callout-collapse collapse show">
+<div id="callout-29" class="callout-29-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Dans la fonction <code>ggplot()</code>, il y a une différence si vous voulez ajouter de la couleur aux points (qui ont mathématiquement zéro dimension) ou aux surfaces (qui ont deux dimensions), comme dans les diagrammes à barres.</p>
 <p>Si vous voulez ajouter de la couleur à une surface, vous devez utiliser l’argument <code>fill = "xyz"</code>. L’argument <code>color = "xyz"</code> que nous avons utilisé pour ajouter de la couleur aux nuages de points ne fera qu’ajouter de la couleur à la ligne autour de la surface !</p>
@@ -1758,17 +1776,33 @@ Attention
 </ul>
 <p>Notez que par défaut, la fonction utilise <code>mean = 0</code> et <code>sd = 1</code>, ce qui correspond à une <strong>loi normale centrée réduite</strong> (angl. <em>standard normal distribution</em>).</p>
 <p>Utilisez aussi <code>?rnorm()</code>pour accéder à plus d’infos.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Astuce">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Astuce
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La fonction <code>set.seed()</code> dans R est utilisée pour définir la graine (seed en anglais) du générateur de nombres aléatoires. La graine est un nombre entier qui sert de point de départ pour le générateur de nombres aléatoires.</p>
+<p>En définissant une graine spécifique, par exemple avec <code>set.seed(123)</code>, vous garantissez que la séquence de nombres aléatoires générée par la suite avec des fonctions telles que <code>rnorm()</code>, sera la même à chaque fois que vous exécuterez le code, ce qui est utile pour la reproductibilité des résultats.</p>
+</div>
+</div>
 <p>Dans le code R suivant, nous utilisons <code>rnorm()</code> pour simuler les distributions des tailles des hommes et des femmes en Suisse.</p>
 <p>Selon un article de <a href="https://www.24heures.ch/calculateur-en-ligne-quelle-taille-faites-vous-par-rapport-aux-autres-191558705635#"><em>24 heures</em></a>, en Suisse, les femmes ont une taille moyenne de 164.7 cm tandis que les hommes mesurent 177.4 cm en moyenne. Dans la suite, nous supposons que les écarts-types sont de +- 5.6 cm pour les femmes et de +- 6.1 cm pour les hommes.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb100"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulation de tailles de femmes en Suisse Créer 500</span></span>
 <span id="cb100-2"><a href="#cb100-2" aria-hidden="true" tabindex="-1"></a><span class="co"># valeurs aléatoires de taille (moyenne = 164.7 et</span></span>
 <span id="cb100-3"><a href="#cb100-3" aria-hidden="true" tabindex="-1"></a><span class="co"># écart-type = 5.6) avec la fonction rnorm().</span></span>
-<span id="cb100-4"><a href="#cb100-4" aria-hidden="true" tabindex="-1"></a>taille_f <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">500</span>, <span class="at">mean =</span> <span class="fl">164.7</span>, <span class="at">sd =</span> <span class="fl">5.6</span>)</span>
+<span id="cb100-4"><a href="#cb100-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
 <span id="cb100-5"><a href="#cb100-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb100-6"><a href="#cb100-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(taille_f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb100-6"><a href="#cb100-6" aria-hidden="true" tabindex="-1"></a>taille_f <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">500</span>, <span class="at">mean =</span> <span class="fl">164.7</span>, <span class="at">sd =</span> <span class="fl">5.6</span>)</span>
+<span id="cb100-7"><a href="#cb100-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb100-8"><a href="#cb100-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(taille_f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 159.7072 168.4934 174.5986 171.5940 170.1567 170.2337</code></pre>
+<pre><code>[1] 161.5613 163.4110 173.4288 165.0948 165.4240 174.3044</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="co"># stocker taille_f comme objet de type 'data.frame'</span></span>
 <span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a>taille_f <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(taille_f)</span>
@@ -1958,7 +1992,7 @@ Astuce
 <ul>
 <li><p>Nous allons évaluer <strong>un questionnaire sur votre comportement d’utilisation des médias</strong> avec R comme autre élément important du cours.</p></li>
 <li><p>Le questionnaire est <strong>anonyme</strong> (même pour l’enseignant) et peut être rempli en ligne via LimeSurvey jusqu’au <strong>vendredi 19 avril 2024 à 23h59</strong>.</p></li>
-<li><p>Tous les étudiant.es recevront prochainement un lien personnel d’invitation au questionnaire par e-mail (les réponses seront anonymisées et mélangées par le logiciel, l’enseignant ne verra que si les personnes invitées ont répondu au questionnaire avant la date limite).</p></li>
+<li><p>Tous les étudiant-e-s recevront prochainement un lien personnel d’invitation au questionnaire par e-mail (les réponses seront anonymisées et mélangées par le logiciel, l’enseignant ne verra que si les personnes invitées ont répondu au questionnaire avant la date limite).</p></li>
 <li><p>Chaque étudiant(e) qui aura rempli le questionnaire dans les délais recevra un <strong>bonus de 2 points dans le Problem Set 4</strong> (10% des points).</p></li>
 </ul></li>
 </ul>
@@ -1968,11 +2002,11 @@ Astuce
 <section id="session-6-problem-set-2" class="level1">
 <h1>Session 6 (Problem Set 2)</h1>
 <p>Les résultats du <strong>Problem Set 2</strong> (bonnes réponses, échelle des notes) sont accéssibles sur la page Moodle de l’exercice.</p>
-<p>Voici l’histogramme des points obtenus par n = 82 étudiant.es qui ont participé au Problem Set 2.</p>
+<p>Voici l’histogramme des points obtenus par n = 82 étudiant-e-s qui ont participé au Problem Set 2.</p>
 <ul>
 <li><p>Le nombre maximal de points était de 20, il fallait 10 pour passer le test.</p></li>
 <li><p>La moyenne des points obtenus était de 12.5 (note = 4.5).</p></li>
-<li><p>71 étudiant.es (86%) ont réussi Problem Set 2.</p></li>
+<li><p>71 étudiant-e-s (86%) ont réussi Problem Set 2.</p></li>
 </ul>
 <div class="cell">
 <div class="cell-output-display">
@@ -1984,8 +2018,8 @@ Astuce
 </div>
 </div>
 </section>
-<section id="session-7" class="level1">
-<h1>Session 7</h1>
+<section id="session-7-manipuler-les-données-i" class="level1">
+<h1>Session 7 | Manipuler les données I</h1>
 <p><strong>Sujet : Manipuler les données (partie 1)</strong></p>
 <p>Le premier but de cette session est d’apprendre à importer des données dans RStudio à partir de <strong>fichiers CSV</strong> et de les stocker en forme de data frame (format tabulaire).</p>
 <p>Le deuxième but est de se familiariser avec <code>dplyr</code> (prononcé “dee-ply-er” en anglais), un paquet du <code>tidyverse</code> conçu pour manipuler les données en forme de data frame.</p>
@@ -2097,7 +2131,7 @@ Nguyen, Laetitia, 19<br>
 <p>Notez que les variables sont soit de type textuel (chr = “character”; p. ex. <code>Account</code>= le nom du compte Insta qui a publié le post), soit numérique (int = “integer”; p.&nbsp;ex. <code>Total.Interactions</code> = la somme des <code>Likes</code>et <code>Comments</code> qu’un post a reçu).</p>
 <p>Vous pouvez aussi cliquer sur l’objet et explorer le tableau manuellement pour le comprendre d’avantage (comme nous l’avons fait avec <code>mtcars</code>, etc.).</p>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2106,7 +2140,7 @@ Attention
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-34" class="callout-34-contents callout-collapse collapse show">
+<div id="callout-36" class="callout-36-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <ul>
 <li><p>Vous ne devez pas ouvrir les fichiers CSV avec des autres logiciels avant de les importer dans RStudio (par ex. avec Excel), car cela a souvent pour conséquence de modifier automatiquement le format du fichier CSV, ce qui entraîne ensuite des erreurs.</p></li>
@@ -2453,8 +2487,8 @@ Astuce
 </section>
 </section>
 </section>
-<section id="session-8-cours-en-auto-apprentissage" class="level1">
-<h1>Session 8 (cours en auto-apprentissage)</h1>
+<section id="session-8-en-auto-apprentissage-manipuler-les-données-ii" class="level1">
+<h1>Session 8 (en auto-apprentissage) | Manipuler les données II</h1>
 <p><strong>Sujet : Manipuler les données (partie 2)</strong></p>
 <p>L’objectif de la session 8 est de vous entraîner à résoudre de manière autonome des problèmes de manipulation de données à l’aide du code R et de vous préparer ainsi au Problem Set 3.</p>
 <p>Les exercices suivants se composent d’une question et d’une solution modèle sous forme de code R. Notez qu’en programmation R, il y a souvent plusieurs solutions pour arriver à la réponse correcte.</p>
@@ -2486,7 +2520,7 @@ Conseil
 <li>Sélectionnez ensuite les colonnes <code>mpg</code> et <code>cyl</code> de <code>mtcars</code> avec <code>dplyr</code>.</li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-39-contents" aria-controls="callout-39" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2495,7 +2529,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-37" class="callout-37-contents callout-collapse collapse">
+<div id="callout-39" class="callout-39-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb123"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb123-1"><a href="#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(mtcars)</span>
@@ -2514,7 +2548,7 @@ Solution
 <li><p>Combien de modèles de voitures dans <code>mtcars</code> répondent à ce critère ?</p></li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2523,7 +2557,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-38" class="callout-38-contents callout-collapse collapse">
+<div id="callout-40" class="callout-40-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb124"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb124-1"><a href="#cb124-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
@@ -2550,7 +2584,7 @@ Lotus Europa   30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2</code></pre>
 <li>Triez <code>mtcars</code> par <code>mpg</code> dans l’ordre décroissant !</li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-39-contents" aria-controls="callout-39" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2559,7 +2593,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-39" class="callout-39-contents callout-collapse collapse">
+<div id="callout-41" class="callout-41-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb127"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb127-1"><a href="#cb127-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
@@ -2613,7 +2647,7 @@ Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4</code></
 <li><p>Quel modèle de voiture de <code>mtcars</code> est le plus économe en carburant par rapport à son poids ?</p></li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-42-contents" aria-controls="callout-42" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2622,7 +2656,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-40" class="callout-40-contents callout-collapse collapse">
+<div id="callout-42" class="callout-42-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb129"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb129-1"><a href="#cb129-1" aria-hidden="true" tabindex="-1"></a>mtcars_v2 <span class="ot">&lt;-</span> mtcars <span class="sc">%&gt;%</span></span>
@@ -2680,7 +2714,7 @@ Lincoln Continental  1.917404</code></pre>
 <li>Utilisez des verbes <code>dplyr</code>pour compter le nombre de diamants dans <code>diamonds</code>qui pèsent plus de 3 carats !</li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-43-contents" aria-controls="callout-43" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2689,7 +2723,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-41" class="callout-41-contents callout-collapse collapse">
+<div id="callout-43" class="callout-43-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb132"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb132-1"><a href="#cb132-1" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span></span>
@@ -2725,7 +2759,7 @@ Solution
 <li>Calculez le prix moyen en USD des diamants dans <code>diamonds</code> !</li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-42-contents" aria-controls="callout-42" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-44-contents" aria-controls="callout-44" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2734,7 +2768,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-42" class="callout-42-contents callout-collapse collapse">
+<div id="callout-44" class="callout-44-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb137"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb137-1"><a href="#cb137-1" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span></span>
@@ -2764,7 +2798,7 @@ Solution
 <li>Quelle catégorie de pureté est la plus chère en moyenne dans <code>diamonds</code> ?</li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-43-contents" aria-controls="callout-43" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-45-contents" aria-controls="callout-45" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2773,7 +2807,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-43" class="callout-43-contents callout-collapse collapse">
+<div id="callout-45" class="callout-45-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb141"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb141-1"><a href="#cb141-1" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span></span>
@@ -2806,7 +2840,7 @@ Solution
 <li>Regroupez mtcars par <code>gear</code>, puis, à l’aide de <code>summarize()</code>, calculez <code>n</code>, la médiane et la variance de mpg.</li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-44-contents" aria-controls="callout-44" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-46-contents" aria-controls="callout-46" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2815,7 +2849,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-44" class="callout-44-contents callout-collapse collapse">
+<div id="callout-46" class="callout-46-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb144"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb144-1"><a href="#cb144-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
@@ -2842,7 +2876,7 @@ Solution
 <li>Regroupez ensuite les données par espèce et utilisez <code>summarize()</code> pour calculer une nouvelle variable : <code>mean_Petal.Surface</code>.</li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-45-contents" aria-controls="callout-45" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-47-contents" aria-controls="callout-47" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2851,7 +2885,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-45" class="callout-45-contents callout-collapse collapse">
+<div id="callout-47" class="callout-47-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb146"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb146-1"><a href="#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2891,7 +2925,7 @@ Solution
 <li>Montrez aussi <code>n</code>, le nombre de diamants par catégorie de taille.</li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-46-contents" aria-controls="callout-46" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-48-contents" aria-controls="callout-48" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2900,7 +2934,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-46" class="callout-46-contents callout-collapse collapse">
+<div id="callout-48" class="callout-48-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb151"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb151-1"><a href="#cb151-1" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span></span>
@@ -2937,7 +2971,7 @@ Solution
 <li>Si nécessaire, transformez encore une fois les colonnes <code>igposts$Account</code>, <code>igposts$User.Name</code>et <code>igposts$Type</code> en variables catégorielles avec <code>as.factor()</code>.</li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-47-contents" aria-controls="callout-47" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-49-contents" aria-controls="callout-49" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2946,7 +2980,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-47" class="callout-47-contents callout-collapse collapse">
+<div id="callout-49" class="callout-49-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb154"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb154-1"><a href="#cb154-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vous pouvez copier-coller le code que nous avons utilisé</span></span>
@@ -2993,7 +3027,7 @@ Solution
 <li>Affichez les 10 premiers par ordre décroissant de <code>n</code>.</li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-48-contents" aria-controls="callout-48" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-50-contents" aria-controls="callout-50" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3002,7 +3036,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-48" class="callout-48-contents callout-collapse collapse">
+<div id="callout-50" class="callout-50-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb156"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb156-1"><a href="#cb156-1" aria-hidden="true" tabindex="-1"></a>igposts <span class="sc">%&gt;%</span></span>
@@ -3038,7 +3072,7 @@ Solution
 <li>Affichez les top 10.</li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-49-contents" aria-controls="callout-49" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-51-contents" aria-controls="callout-51" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3047,7 +3081,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-49" class="callout-49-contents callout-collapse collapse">
+<div id="callout-51" class="callout-51-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb158"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb158-1"><a href="#cb158-1" aria-hidden="true" tabindex="-1"></a>igposts <span class="sc">%&gt;%</span></span>
@@ -3083,7 +3117,7 @@ Solution
 <li>Allez voir l’URL du post avec le plus de <code>Likes</code> : De quoi s’agit-il ?</li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-50-contents" aria-controls="callout-50" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-52-contents" aria-controls="callout-52" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3092,7 +3126,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-50" class="callout-50-contents callout-collapse collapse">
+<div id="callout-52" class="callout-52-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb160"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb160-1"><a href="#cb160-1" aria-hidden="true" tabindex="-1"></a>igposts <span class="sc">%&gt;%</span></span>
@@ -3123,7 +3157,7 @@ Solution
 <li>Allez voir l’URL du post avec le plus de <code>Comments</code> : De quoi s’agit-il ?</li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-51-contents" aria-controls="callout-51" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-53-contents" aria-controls="callout-53" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3132,7 +3166,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-51" class="callout-51-contents callout-collapse collapse">
+<div id="callout-53" class="callout-53-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb163"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb163-1"><a href="#cb163-1" aria-hidden="true" tabindex="-1"></a>igposts <span class="sc">%&gt;%</span></span>
@@ -3164,7 +3198,7 @@ Solution
 <li>Allez voir l’URL du post avec le plus de <code>Views</code> : De quoi s’agit-il ?</li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-52-contents" aria-controls="callout-52" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-54-contents" aria-controls="callout-54" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3173,7 +3207,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-52" class="callout-52-contents callout-collapse collapse">
+<div id="callout-54" class="callout-54-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb166"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb166-1"><a href="#cb166-1" aria-hidden="true" tabindex="-1"></a>igposts <span class="sc">%&gt;%</span></span>
@@ -3206,7 +3240,7 @@ Solution
 <li>Trouvez maintenant le post avec le plus grand nombre de <code>Likes_par_Follower</code> et naviguez jusqu’à son URL : que montre-t-il ?</li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-53-contents" aria-controls="callout-53" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-55-contents" aria-controls="callout-55" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3215,7 +3249,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-53" class="callout-53-contents callout-collapse collapse">
+<div id="callout-55" class="callout-55-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb169"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb169-1"><a href="#cb169-1" aria-hidden="true" tabindex="-1"></a>igposts <span class="sc">%&gt;%</span></span>
@@ -3254,7 +3288,7 @@ Solution
 <li>Faites la même chose qu’à la question 17, mais cette fois créez la variable <code>Comments_par_Follower</code>.</li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-54-contents" aria-controls="callout-54" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-56-contents" aria-controls="callout-56" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3263,7 +3297,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-54" class="callout-54-contents callout-collapse collapse">
+<div id="callout-56" class="callout-56-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb172"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb172-1"><a href="#cb172-1" aria-hidden="true" tabindex="-1"></a>igposts <span class="sc">%&gt;%</span></span>
@@ -3294,7 +3328,7 @@ Solution
 <li>Faites la même chose que dans les questions 17 et 18, mais cette fois pour <code>Views_par_Follower</code> (ne calculez cette variable que pour les posts qui ont reçu plus de 0 vues).</li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-55-contents" aria-controls="callout-55" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-57-contents" aria-controls="callout-57" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3303,7 +3337,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-55" class="callout-55-contents callout-collapse collapse">
+<div id="callout-57" class="callout-57-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb175"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb175-1"><a href="#cb175-1" aria-hidden="true" tabindex="-1"></a>igposts <span class="sc">%&gt;%</span></span>
@@ -3334,11 +3368,11 @@ Solution
 <section id="session-9-problem-set-3" class="level1">
 <h1>Session 9 (Problem Set 3)</h1>
 <p>Les résultats du <strong>Problem Set 3</strong> (bonnes réponses, échelle des notes) sont accéssibles sur la page Moodle de l’exercice.</p>
-<p>Voici l’histogramme des points obtenus par n = 79 étudiant.es qui ont participé au Problem Set 3.</p>
+<p>Voici l’histogramme des points obtenus par n = 79 étudiant-e-s qui ont participé au Problem Set 3.</p>
 <ul>
 <li><p>Le nombre maximal de points était de 20, il fallait 10 pour passer le test.</p></li>
 <li><p>La moyenne des points obtenus était de 12.15 (note = 4.5).</p></li>
-<li><p>63 étudiant.es (79.7%) ont réussi Problem Set 3.</p></li>
+<li><p>63 étudiant-e-s (79.7%) ont réussi Problem Set 3.</p></li>
 </ul>
 <div class="cell">
 <div class="cell-output-display">
@@ -3350,9 +3384,9 @@ Solution
 </div>
 </div>
 </section>
-<section id="session-10" class="level1">
-<h1>Session 10</h1>
-<p><strong>Sujet : La statistique déscriptive</strong></p>
+<section id="session-10-statistiques-descriptives" class="level1">
+<h1>Session 10 | Statistiques descriptives</h1>
+<p><strong>Sujet : La statistique descriptive</strong></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -3662,8 +3696,8 @@ Non Oui
 <p>Si tout a bien marché, vous devrez maintenant avoir un ficher CSV, nommé <code>ice_age_df.csv</code>dans votre répértoire de travail !</p>
 </section>
 </section>
-<section id="session-11-cours-en-auto-apprentissage" class="level1">
-<h1>Session 11 (cours en auto-apprentissage)</h1>
+<section id="session-11-en-auto-apprentissage-statistiques-inférentielles-i" class="level1">
+<h1>Session 11 (en auto-apprentissage) | Statistiques inférentielles I</h1>
 <p><strong>Sujet : La statistique inférentielle, Partie 1 (tests t)</strong></p>
 <p>Dans cette et la prochaine session, nous allons nous concentrer sur trois méthodes de statistiques inférentielles couramment utilisées :</p>
 <ul>
@@ -3706,7 +3740,7 @@ Non Oui
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-59-contents" aria-controls="callout-59" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-61-contents" aria-controls="callout-61" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3715,7 +3749,7 @@ Attention
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-59" class="callout-59-contents callout-collapse collapse show">
+<div id="callout-61" class="callout-61-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Pour effectuer un test t, il y a plusieurs hypothèses qui doivent être satisfaites :</p>
 <ol type="1">
@@ -3776,26 +3810,27 @@ Attention
 <span id="cb209-2"><a href="#cb209-2" aria-hidden="true" tabindex="-1"></a><span class="co"># observations hypothétiques de QI d'étudiant(e).  Nous</span></span>
 <span id="cb209-3"><a href="#cb209-3" aria-hidden="true" tabindex="-1"></a><span class="co"># simulons, avec rnorm() 25 observations d'une loi normale</span></span>
 <span id="cb209-4"><a href="#cb209-4" aria-hidden="true" tabindex="-1"></a><span class="co"># avec une moyenne de 25 et un écart-type de 15</span></span>
-<span id="cb209-5"><a href="#cb209-5" aria-hidden="true" tabindex="-1"></a>scores_qi <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">25</span>, <span class="at">mean =</span> <span class="dv">105</span>, <span class="at">sd =</span> <span class="dv">15</span>)</span>
-<span id="cb209-6"><a href="#cb209-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb209-7"><a href="#cb209-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Test t à un échantillon Il faut 2 arguments dans la</span></span>
-<span id="cb209-8"><a href="#cb209-8" aria-hidden="true" tabindex="-1"></a><span class="co"># fonction t.test() : les données à tester (scores_qi) et</span></span>
-<span id="cb209-9"><a href="#cb209-9" aria-hidden="true" tabindex="-1"></a><span class="co"># la valeur à laquelle on veut comparer les données (mu =</span></span>
-<span id="cb209-10"><a href="#cb209-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 100)</span></span>
-<span id="cb209-11"><a href="#cb209-11" aria-hidden="true" tabindex="-1"></a>resultat_test_t <span class="ot">&lt;-</span> <span class="fu">t.test</span>(scores_qi, <span class="at">mu =</span> <span class="dv">100</span>)</span>
-<span id="cb209-12"><a href="#cb209-12" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(resultat_test_t)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb209-5"><a href="#cb209-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb209-6"><a href="#cb209-6" aria-hidden="true" tabindex="-1"></a>scores_qi <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">25</span>, <span class="at">mean =</span> <span class="dv">105</span>, <span class="at">sd =</span> <span class="dv">15</span>)</span>
+<span id="cb209-7"><a href="#cb209-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb209-8"><a href="#cb209-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Test t à un échantillon Il faut 2 arguments dans la</span></span>
+<span id="cb209-9"><a href="#cb209-9" aria-hidden="true" tabindex="-1"></a><span class="co"># fonction t.test() : les données à tester (scores_qi) et</span></span>
+<span id="cb209-10"><a href="#cb209-10" aria-hidden="true" tabindex="-1"></a><span class="co"># la valeur à laquelle on veut comparer les données (mu =</span></span>
+<span id="cb209-11"><a href="#cb209-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 100)</span></span>
+<span id="cb209-12"><a href="#cb209-12" aria-hidden="true" tabindex="-1"></a>resultat_test_t <span class="ot">&lt;-</span> <span class="fu">t.test</span>(scores_qi, <span class="at">mu =</span> <span class="dv">100</span>)</span>
+<span id="cb209-13"><a href="#cb209-13" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(resultat_test_t)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     One Sample t-test
 
 data:  scores_qi
-t = 1.4351, df = 24, p-value = 0.1642
+t = 1.5844, df = 24, p-value = 0.1262
 alternative hypothesis: true mean is not equal to 100
 95 percent confidence interval:
-  98.16614 110.20501
+  98.63817 110.36192
 sample estimates:
 mean of x 
- 104.1856 </code></pre>
+    104.5 </code></pre>
 </div>
 </div>
 <p>Il s’agit maintenant d’interpréter le résultat du test t dans R.</p>
@@ -3809,23 +3844,24 @@ mean of x
 <div class="cell">
 <div class="sourceCode cell-code" id="cb211"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb211-1"><a href="#cb211-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Regénérons encore une fois des données d'échantillon,</span></span>
 <span id="cb211-2"><a href="#cb211-2" aria-hidden="true" tabindex="-1"></a><span class="co"># mais cette fois-ci avec n = 50 observations</span></span>
-<span id="cb211-3"><a href="#cb211-3" aria-hidden="true" tabindex="-1"></a>scores_qi <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="at">mean =</span> <span class="dv">105</span>, <span class="at">sd =</span> <span class="dv">15</span>)</span>
-<span id="cb211-4"><a href="#cb211-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb211-5"><a href="#cb211-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Test t à un échantillon</span></span>
-<span id="cb211-6"><a href="#cb211-6" aria-hidden="true" tabindex="-1"></a>resultat_test_t <span class="ot">&lt;-</span> <span class="fu">t.test</span>(scores_qi, <span class="at">mu =</span> <span class="dv">100</span>)</span>
-<span id="cb211-7"><a href="#cb211-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(resultat_test_t)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb211-3"><a href="#cb211-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb211-4"><a href="#cb211-4" aria-hidden="true" tabindex="-1"></a>scores_qi <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="at">mean =</span> <span class="dv">105</span>, <span class="at">sd =</span> <span class="dv">15</span>)</span>
+<span id="cb211-5"><a href="#cb211-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb211-6"><a href="#cb211-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Test t à un échantillon</span></span>
+<span id="cb211-7"><a href="#cb211-7" aria-hidden="true" tabindex="-1"></a>resultat_test_t <span class="ot">&lt;-</span> <span class="fu">t.test</span>(scores_qi, <span class="at">mu =</span> <span class="dv">100</span>)</span>
+<span id="cb211-8"><a href="#cb211-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(resultat_test_t)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     One Sample t-test
 
 data:  scores_qi
-t = 4.0869, df = 49, p-value = 0.0001618
+t = 2.8085, df = 49, p-value = 0.007129
 alternative hypothesis: true mean is not equal to 100
 95 percent confidence interval:
- 104.5391 113.3214
+ 101.5691 109.4630
 sample estimates:
 mean of x 
- 108.9302 </code></pre>
+ 105.5161 </code></pre>
 </div>
 </div>
 <p>La valeur p est maintenant beaucoup plus petite, soit inférieure à 1% (&lt; 0.01). Cela nous indique que la différence entre le QI des étudiant(e)s et de la population est significative (si nous utilisons des intervalles de confiance de 95%) !</p>
@@ -3840,7 +3876,7 @@ mean of x
 <li><p>Testez si la durée moyenne d’utilisation d’Internet en heures de votre échantillon simulé de 30 suisses de 20 à 29 ans se distingue significativement de la moyenne nationale (<code>mu = 5.6</code>).</p></li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-60-contents" aria-controls="callout-60" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-62-contents" aria-controls="callout-62" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3849,28 +3885,30 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-60" class="callout-60-contents callout-collapse collapse">
+<div id="callout-62" class="callout-62-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb213"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb213-1"><a href="#cb213-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Générons des données d'échantillon hypothétique avec n =</span></span>
 <span id="cb213-2"><a href="#cb213-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 30 observations</span></span>
-<span id="cb213-3"><a href="#cb213-3" aria-hidden="true" tabindex="-1"></a>usage_20_29 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean =</span> <span class="fl">7.9</span>, <span class="at">sd =</span> <span class="dv">2</span>)</span>
+<span id="cb213-3"><a href="#cb213-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
 <span id="cb213-4"><a href="#cb213-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb213-5"><a href="#cb213-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Test t à un échantillon</span></span>
-<span id="cb213-6"><a href="#cb213-6" aria-hidden="true" tabindex="-1"></a>resultat_test_t <span class="ot">&lt;-</span> <span class="fu">t.test</span>(usage_20_29, <span class="at">mu =</span> <span class="fl">5.6</span>)</span>
-<span id="cb213-7"><a href="#cb213-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(resultat_test_t)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb213-5"><a href="#cb213-5" aria-hidden="true" tabindex="-1"></a>usage_20_29 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean =</span> <span class="fl">7.9</span>, <span class="at">sd =</span> <span class="dv">2</span>)</span>
+<span id="cb213-6"><a href="#cb213-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb213-7"><a href="#cb213-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Test t à un échantillon</span></span>
+<span id="cb213-8"><a href="#cb213-8" aria-hidden="true" tabindex="-1"></a>resultat_test_t <span class="ot">&lt;-</span> <span class="fu">t.test</span>(usage_20_29, <span class="at">mu =</span> <span class="fl">5.6</span>)</span>
+<span id="cb213-9"><a href="#cb213-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(resultat_test_t)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     One Sample t-test
 
 data:  usage_20_29
-t = 7.083, df = 29, p-value = 0.00000008591
+t = 6.1576, df = 29, p-value = 0.000001035
 alternative hypothesis: true mean is not equal to 5.6
 95 percent confidence interval:
- 7.261505 8.610580
+ 7.073147 8.538438
 sample estimates:
 mean of x 
- 7.936042 </code></pre>
+ 7.805792 </code></pre>
 </div>
 </div>
 <p>La très faible valeur p indique qu’il est extrêmement improbable que l’utilisation d’Internet des 20-29 ans ne diffère PAS significativement de la moyenne nationale.</p>
@@ -3890,24 +3928,25 @@ mean of x
 <p>Selon l’article de <a href="https://www.24heures.ch/calculateur-en-ligne-quelle-taille-faites-vous-par-rapport-aux-autres-191558705635#"><em>24 heures</em></a>, qu’on a déjà vu en classe, en Suisse, les femmes ont une taille moyenne de 164.7 cm tandis que les hommes mesurent 177.4 cm en moyenne. Dans la suite, nous supposons que les écarts-types sont de +- 5.6 cm pour les femmes et de +- 6.1 cm pour les hommes.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb215"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb215-1"><a href="#cb215-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Données exemplaires :</span></span>
-<span id="cb215-2"><a href="#cb215-2" aria-hidden="true" tabindex="-1"></a>tailles_f <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">5</span>, <span class="at">mean =</span> <span class="fl">177.4</span>, <span class="at">sd =</span> <span class="fl">5.6</span>)</span>
-<span id="cb215-3"><a href="#cb215-3" aria-hidden="true" tabindex="-1"></a>tailles_h <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">5</span>, <span class="at">mean =</span> <span class="fl">164.7</span>, <span class="at">sd =</span> <span class="fl">6.1</span>)</span>
-<span id="cb215-4"><a href="#cb215-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb215-5"><a href="#cb215-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Two-sample t-test</span></span>
-<span id="cb215-6"><a href="#cb215-6" aria-hidden="true" tabindex="-1"></a>t_test_two_sample <span class="ot">&lt;-</span> <span class="fu">t.test</span>(tailles_f, tailles_h)</span>
-<span id="cb215-7"><a href="#cb215-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(t_test_two_sample)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb215-2"><a href="#cb215-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb215-3"><a href="#cb215-3" aria-hidden="true" tabindex="-1"></a>tailles_f <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">5</span>, <span class="at">mean =</span> <span class="fl">177.4</span>, <span class="at">sd =</span> <span class="fl">5.6</span>)</span>
+<span id="cb215-4"><a href="#cb215-4" aria-hidden="true" tabindex="-1"></a>tailles_h <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">5</span>, <span class="at">mean =</span> <span class="fl">164.7</span>, <span class="at">sd =</span> <span class="fl">6.1</span>)</span>
+<span id="cb215-5"><a href="#cb215-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb215-6"><a href="#cb215-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Two-sample t-test</span></span>
+<span id="cb215-7"><a href="#cb215-7" aria-hidden="true" tabindex="-1"></a>t_test_two_sample <span class="ot">&lt;-</span> <span class="fu">t.test</span>(tailles_f, tailles_h)</span>
+<span id="cb215-8"><a href="#cb215-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(t_test_two_sample)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Welch Two Sample t-test
 
 data:  tailles_f and tailles_h
-t = 3.7805, df = 5.8884, p-value = 0.009501
+t = 3.7297, df = 6.8056, p-value = 0.007747
 alternative hypothesis: true difference in means is not equal to 0
 95 percent confidence interval:
-  5.282681 24.923487
+  5.091961 23.016717
 sample estimates:
 mean of x mean of y 
- 178.3898  163.2867 </code></pre>
+ 178.4840  164.4297 </code></pre>
 </div>
 </div>
 <p>Comme nos échantillons de <code>n = 5</code> sont très petit, il se peut que la différence de taille moyenne entre les suisses et les suissesses n’est pa significative si on utilise des intervalles de confiances de 95% ! Cependant, dès que nous augmentons l’échantillon simulé, par exemple à <code>n = 20</code> ou <code>n = 100</code>, le test T indique clairement que la différence de taille est significative.</p>
@@ -3917,7 +3956,7 @@ mean of x mean of y
 <p>Supposons maintenant qu’un avion en provenance d’Amérique atterrisse à Genève-Cointrin. Il transporte une sélection de 24 joueuses de la Women’s NBA, la ligue professionnelle féminine de basket-ball aux États-Unis. Selon <a href="https://jokermag.com/average-height-wnba-players/">les statistiques de la WNBA</a>, ces joueuses mesurent en moyenne 184.5 cm.</p>
 <p>Quelle est la probabilité que 24 hommes suisses choisis au hasard mesurent également cette taille en moyenne ? (Supposons que l’écart-type des joueuses est de 6.5 cm).</p>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-61-contents" aria-controls="callout-61" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-63-contents" aria-controls="callout-63" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3926,29 +3965,30 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-61" class="callout-61-contents callout-collapse collapse">
+<div id="callout-63" class="callout-63-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb217"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb217-1"><a href="#cb217-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Générons des données pour deux échantillons hypothétique</span></span>
 <span id="cb217-2"><a href="#cb217-2" aria-hidden="true" tabindex="-1"></a><span class="co"># avec n = 24 observations chacun</span></span>
-<span id="cb217-3"><a href="#cb217-3" aria-hidden="true" tabindex="-1"></a>tailles_f_WNBA <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">24</span>, <span class="at">mean =</span> <span class="fl">184.5</span>, <span class="at">sd =</span> <span class="fl">6.5</span>)</span>
-<span id="cb217-4"><a href="#cb217-4" aria-hidden="true" tabindex="-1"></a>tailles_h <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">24</span>, <span class="at">mean =</span> <span class="fl">177.4</span>, <span class="at">sd =</span> <span class="fl">6.1</span>)</span>
-<span id="cb217-5"><a href="#cb217-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb217-6"><a href="#cb217-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Two-sample t-test</span></span>
-<span id="cb217-7"><a href="#cb217-7" aria-hidden="true" tabindex="-1"></a>t_test_two_sample <span class="ot">&lt;-</span> <span class="fu">t.test</span>(tailles_f_WNBA, tailles_h)</span>
-<span id="cb217-8"><a href="#cb217-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(t_test_two_sample)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb217-3"><a href="#cb217-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb217-4"><a href="#cb217-4" aria-hidden="true" tabindex="-1"></a>tailles_f_WNBA <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">24</span>, <span class="at">mean =</span> <span class="fl">184.5</span>, <span class="at">sd =</span> <span class="fl">6.5</span>)</span>
+<span id="cb217-5"><a href="#cb217-5" aria-hidden="true" tabindex="-1"></a>tailles_h <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">24</span>, <span class="at">mean =</span> <span class="fl">177.4</span>, <span class="at">sd =</span> <span class="fl">6.1</span>)</span>
+<span id="cb217-6"><a href="#cb217-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb217-7"><a href="#cb217-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Two-sample t-test</span></span>
+<span id="cb217-8"><a href="#cb217-8" aria-hidden="true" tabindex="-1"></a>t_test_two_sample <span class="ot">&lt;-</span> <span class="fu">t.test</span>(tailles_f_WNBA, tailles_h)</span>
+<span id="cb217-9"><a href="#cb217-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(t_test_two_sample)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Welch Two Sample t-test
 
 data:  tailles_f_WNBA and tailles_h
-t = 3.218, df = 42.904, p-value = 0.002459
+t = 3.8971, df = 45.668, p-value = 0.0003162
 alternative hypothesis: true difference in means is not equal to 0
 95 percent confidence interval:
-  2.409631 10.501533
+  3.253468 10.207582
 sample estimates:
 mean of x mean of y 
- 184.7814  178.3258 </code></pre>
+ 184.4436  177.7131 </code></pre>
 </div>
 </div>
 <p>La très petite valeur p, inférieure à 1%, indique qu’il est extrêmement improbable que 24 hommes suisses tiré au hasard sont environ de même taille que 24 joueuses de la WNBA. Nous pouvons alors rejeter H0. En d’autres termes : Nous pouvons supposer avec une très grande certitude que les joueuses de la WNBA sont significativement plus grande que les hommes suisses moyens.</p>
@@ -3967,8 +4007,8 @@ mean of x mean of y
 </section>
 </section>
 </section>
-<section id="session-12" class="level1">
-<h1>Session 12</h1>
+<section id="session-12-statistiques-inférentielles-ii" class="level1">
+<h1>Session 12 | Statistiques inférentielles II</h1>
 <p><strong>Sujet : La statistique inférentielle, Partie 2 (ANOVA et régression linéaire)</strong></p>
 <section id="lanalyse-de-la-variance-anova" class="level2">
 <h2 class="anchored" data-anchor-id="lanalyse-de-la-variance-anova">L’analyse de la variance (ANOVA)</h2>
@@ -3991,7 +4031,7 @@ mean of x mean of y
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-63-contents" aria-controls="callout-63" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-65-contents" aria-controls="callout-65" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -4000,7 +4040,7 @@ Attention
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-63" class="callout-63-contents callout-collapse collapse show">
+<div id="callout-65" class="callout-65-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Comme pour le test t, l’ANOVA nécessite certaines hypothèses concernant les données. Les observations de la variable à expliquer doivent notamment être indépendamment et identiquement distribuées (approximativement une distribution normale) et la variance entre les groupes doit être similaire (homoscédasticité).</p>
 </div>
@@ -4572,8 +4612,8 @@ F-statistic: 52.75 on 3 and 28 DF,  p-value: 0.0000000000121</code></pre>
 </div>
 <p>Les graphiques de diagnostic sont acceptable pour notre modèle !</p>
 </section>
-<section id="ressources-pour-aller-plus-loin-pas-pertinent-pour-le-problem-set-4" class="level3">
-<h3 class="anchored" data-anchor-id="ressources-pour-aller-plus-loin-pas-pertinent-pour-le-problem-set-4">Ressources pour aller plus loin (pas pertinent pour le Problem Set 4)</h3>
+<section id="ressources-pour-aller-plus-loin" class="level3">
+<h3 class="anchored" data-anchor-id="ressources-pour-aller-plus-loin">Ressources pour aller plus loin</h3>
 <p>Je vous recommande de jeter un coup d’œil à d’autres vidéos YouTube de StatQuest qui expliquent clairement les concepts statistiques, dont beaucoup sont très pertinents pour les sciences sociales et pour vos études en général, p.&nbsp;ex. :</p>
 <ul>
 <li><a href="https://youtu.be/nk2CQITm_eo?si=rtNUDxVBeq6D7xkr">Linear Regression, Clearly Explained!!!</a></li>
@@ -4592,6 +4632,122 @@ F-statistic: 52.75 on 3 and 28 DF,  p-value: 0.0000000000121</code></pre>
 <li>Attention, <strong>la session 14 du 29 et 30 mai 2024 sera une session en auto-apprentissage !</strong> Il n’y a donc pas d’enseignement en classe à Fribourg.La session 14 vous fournira surtout des ressources R plus avancées que vous pourrez utiliser plus tard, par exemple pendant votre travail de bachelor, pour vos analyses empiriques.</li>
 </ul>
 </section>
+</section>
+</section>
+<section id="session-13-problem-set-4" class="level1">
+<h1>Session 13 (Problem Set 4)</h1>
+<p>Les résultats du <strong>Problem Set 4</strong> (bonnes réponses, échelle des notes) sont accéssibles sur la page Moodle de l’exercice.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="Important">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Spécificité du Problem Set 4</strong> : les étudiant-e-s qui ont répondu dans les temps au questionnaire sur l’utilisation des médias se voient attribuer 2 points bonus supplémentaires à leur score dans le Problem Set 4. Ces 2 points bonus, obtenus par une majorité d’étudiant-e-s, sont pris en compte pour le calcul final de la note du cours (ils ne sont toutefois pas comptabilisés dans l’histogramme ci-dessous).</p>
+</div>
+</div>
+<p>Voici l’histogramme des points obtenus par n = 71 étudiant-e-s qui ont participé au Problem Set 4.</p>
+<ul>
+<li><p>Le nombre maximal de points était de 20, il fallait 10 pour passer le test.</p></li>
+<li><p>La moyenne des points obtenus était de 11.</p></li>
+<li><p>47 étudiant-e-s (66%) ont réussi Problem Set 4.</p></li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-93-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="session-14-en-auto-apprentissage" class="level1">
+<h1>Session 14 (en auto-apprentissage)</h1>
+<p><strong>Continuez à améliorer votre maîtrise de R en sciences de la communication</strong></p>
+<p>Voici des étapes clés pour devenir un·e utilisateur·trice avancé·e de R.</p>
+<section id="pratique-régulière" class="level3">
+<h3 class="anchored" data-anchor-id="pratique-régulière">Pratique régulière</h3>
+<ul>
+<li><p>Il est essentiel de pratiquer régulièrement pour devenir plus à l’aise avec R.</p></li>
+<li><p>Intégrez l’utilisation de R dans vos projets académiques et personnels autant que possible.</p></li>
+</ul>
+</section>
+<section id="application-académique" class="level3">
+<h3 class="anchored" data-anchor-id="application-académique">Application académique</h3>
+<ul>
+<li><p>Demandez aux enseignant-e-s d’autres cours si vous pouvez utiliser R dans leurs cours.</p></li>
+<li><p>Proposez d’utiliser R pour l’analyse de données dans vos travaux de séminaire et de Bachelor.</p></li>
+<li><p>Collaborez avec d’autres étudiant-e-s utilisateurs·trices de R sur des projets de recherche en groupe à l’université.</p></li>
+</ul>
+</section>
+<section id="mooc" class="level3">
+<h3 class="anchored" data-anchor-id="mooc">MOOC</h3>
+<p>Pour répéter et approfondir vos connaissances en R, des <strong>MOOC</strong> (massive open online courses) sont disponibles gratuitement en tant qu’auditeur/auditrice (après inscription) :</p>
+<ol type="1">
+<li><p><strong>Datacamp</strong>: Introduction to R (4h):&nbsp;<a href="https://www.datacamp.com/courses/free-introduction-to-r" class="uri">https://www.datacamp.com/courses/free-introduction-to-r</a></p></li>
+<li><p><strong>Edx (Harvard)</strong>: R Basics (8-16h):&nbsp;<a href="https://www.edx.org/course/data-science-r-basics" class="uri">https://www.edx.org/course/data-science-r-basics</a></p></li>
+<li><p><strong>Edx (Stanford)</strong>: R Programming Fundamentals (12-18h):&nbsp;<a href="https://www.edx.org/course/r-programming-fundamentals" class="uri">https://www.edx.org/course/r-programming-fundamentals</a></p></li>
+<li><p><strong>Coursera</strong>: Data Analysis with R Programming (37h):&nbsp;<a href="https://www.coursera.org/learn/data-analysis-r" class="uri">https://www.coursera.org/learn/data-analysis-r</a></p></li>
+<li><p><strong>Udacity</strong>: Data Analysis with R (2 months):&nbsp;<a href="https://www.udacity.com/course/data-analysis-with-r--ud651" class="uri">https://www.udacity.com/course/data-analysis-with-r--ud651</a></p></li>
+</ol>
+<p>Si vous payez entre 50 et 200 USD, il est également possible de valider de tels MOOC avec un certificat. Ces certificats peuvent notamment être reliés à LinkedIn et y être affichés.</p>
+</section>
+<section id="tutoriels-sur-youtube" class="level3">
+<h3 class="anchored" data-anchor-id="tutoriels-sur-youtube">Tutoriels sur Youtube</h3>
+<p>Il existe également de nombreux tutoriels R sur Youtube. Il peut s’agir de cours R complets de différents niveaux ou de courtes vidéos montrant comment utiliser une technique R particulière (par ex. un certain type de visualisation).</p>
+<ol type="1">
+<li><p><strong>Introduction à R et RStudio (ft. mon chat radioactif) :</strong> Tutoriel facile à comprendre en français d’environ 1h par le chercheur belge Nathan Uyttendaele (Il aborde certains aspects et logiciels que nous ne traitons pas dans notre cours. Mais dans l’ensemble, c’est une bonne introduction à R et RStudio pour les débutants) :&nbsp;<a href="https://www.youtube.com/watch?v=sav3Mbe0_DM" class="uri">https://www.youtube.com/watch?v=sav3Mbe0_DM</a></p></li>
+<li><p><strong>Introduction to R &amp; RStudio and other videos on Data Analysis with R</strong>&nbsp;by Wouter van Atteveldt (computational communication scientist, VU Amsterdam) :&nbsp;<a href="https://www.youtube.com/watch?v=PVhZD5MINYM&amp;list=PLjXODJ_lGN_V2ntvV2CN_GvzZ6Qm5km9L" class="uri">https://www.youtube.com/watch?v=PVhZD5MINYM&amp;list=PLjXODJ_lGN_V2ntvV2CN_GvzZ6Qm5km9L</a></p></li>
+<li><p><strong>Boot Camp of the Summer Institute in Computational Social Science</strong>, SICSS, taught by Chris Bail from Duke University (multiple videos, social science focus) :&nbsp;<a href="https://sicss.io/boot_camp/" class="uri">https://sicss.io/boot_camp/</a></p></li>
+<li><p><strong>R Programming Tutorial: Learn the basics of statistical computing</strong>&nbsp;(by Barton Poulson, 2h comprehensive general R introduction) :&nbsp;<a href="https://www.youtube.com/watch?v=_V8eKsto3Ug" class="uri">https://www.youtube.com/watch?v=_V8eKsto3Ug</a></p></li>
+</ol>
+</section>
+<section id="intelligence-artificielle-pour-coder" class="level3">
+<h3 class="anchored" data-anchor-id="intelligence-artificielle-pour-coder">Intelligence artificielle pour coder</h3>
+<p>Utiliser l’intelligence artificielle générative pour coder. Jouez avec, demandez simplement du code R pour faire certaines choses. Ces interfaces peuvent vous fournir du code prêt à l’emploi, que vous pouvez copier et coller directement dans RStudio !</p>
+<ul>
+<li><p><a href="https://chatgpt.com">ChatGPT</a></p></li>
+<li><p><a href="https://chat.mistral.ai/chat">Le Chat de Mistral</a></p></li>
+</ul>
+</section>
+<section id="communautés-en-ligne" class="level3">
+<h3 class="anchored" data-anchor-id="communautés-en-ligne">Communautés en Ligne</h3>
+<p>Participez à des communautés en ligne pour rester connecté·e avec les dernières tendances et partager vos connaissances :</p>
+<ul>
+<li><a href="https://github.com">GitHub</a> : Le réseau social des développeurs</li>
+<li><a href="https://stackoverflow.com">Stackoverflow</a> : Un forum d’entraide pour programmeurs</li>
+<li><a href="https://www.kaggle.com">Kaggle</a> : Une plateforme pour le machine learning et l’analyse de données</li>
+</ul>
+</section>
+<section id="lecture-spécialisée" class="level3">
+<h3 class="anchored" data-anchor-id="lecture-spécialisée">Lecture spécialisée</h3>
+<p>Approfondissez vos connaissances en R avec des livres numérique open-source :</p>
+<ul>
+<li><p><strong>R for Data Science</strong> [anglais] Une référence bien établie en sciences des données avec R par Wickham &amp; Grolemund (2023, 2e éd.) : <a href="https://r4ds.hadley.nz">https://r4ds.hadley.nz/</a></p></li>
+<li><p><strong>R Cookbook</strong> [anglais] Référence établie pour l’introduction, les statistiques et les graphiques avec R par Long &amp; Teetor (2019, 2e éd.) :&nbsp;<a href="https://rc2e.com/" class="uri">https://rc2e.com/</a></p></li>
+<li><p><strong>R Graphics Cookbook</strong> [anglais] Ouvrage de référence pour concevoir des graphiques attrayants avec R&nbsp;(2022, 2e éd.), by Chang :&nbsp;<a href="https://r-graphics.org/" class="uri">https://r-graphics.org/</a></p></li>
+<li><p><strong>Introduction à la programmation R</strong>&nbsp;par Goulet (2016, 5e éd.) de l’Université Laval&nbsp;:&nbsp;<a href="https://cran.r-project.org/doc/contrib/Goulet_introduction_programmation_R.pdf" class="uri">https://cran.r-project.org/doc/contrib/Goulet_introduction_programmation_R.pdf</a></p></li>
+</ul>
+</section>
+<section id="valorisation-des-compétences" class="level3">
+<h3 class="anchored" data-anchor-id="valorisation-des-compétences">Valorisation des Compétences</h3>
+<ul>
+<li>Mettez en avant vos compétences en programmation R dans votre CV et sur LinkedIn, notamment les certificats obtenus via des MOOCs.</li>
+</ul>
+<p>Ces conseils vous aideront à utiliser efficacement R dans le domaine des sciences de la communication et à développer une expertise approfondie.</p>
+</section>
+<section id="au-revoir-et-à-bientôt" class="level3">
+<h3 class="anchored" data-anchor-id="au-revoir-et-à-bientôt">Au revoir et à bientôt</h3>
+<p>Ainsi se termine ce cours et donc l’introduction à R dans le cadre des Exercices Méthodes II du <a href="https://www.unifr.ch/dcm/fr/etudes/bachelor/bachelor-fr-communication-medias/">Bachelor en sciences de la communication à l’Université de Fribourg</a> !</p>
+<p>J’espère que vous avez appris beaucoup de choses, notamment des techniquesqui vous seront utiles pour la suite de vos études ! 💪 😎</p>
+<p>Et n’oubliez pas qu’au final, il faut surtout faire preuve de bon sens pour comprendre comment des compétences comme la programmation R peuvent être utilisées au mieux pour étudier des phénomènes intéressants en sciences de la communication ! 😄</p>
+<p><em>Julian Maitra, Fribourg, 30 mai 2024.</em></p>
+<p><strong>FIN DU COURS</strong></p>
 </section>
 </section>
 

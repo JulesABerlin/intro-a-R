@@ -1,6 +1,6 @@
 ---
 title: "Exercices Méthodes II"
-date: 2024-02-22
+date: 2025-03-07
 author:
   - name: Julian Maitra
     orcid: 0000-0003-3989-5158
@@ -20,9 +20,9 @@ toc-location: left
 toc-title: Table des matières
 ---
 
-# Session 1 \| Introduction
+{{< pagebreak >}} \# Session 1 \| Introduction
 
-**Sujet : : Bienvenue, pourquoi R ? et commandes de base I**
+**Sujet : Bienvenue, pourquoi R ? et commandes de base I**
 
 ```{r}
 #| echo: false
@@ -161,6 +161,8 @@ x <- 5
 
 Si vous exécutez ce code, une nouvelle variable, `x`, sera créée dans le
 volet **environnement** en haut à droite de RStudio.
+
+{{< pagebreak >}}
 
 ::: {.callout-note icon="true"}
 ## À noter
@@ -385,7 +387,9 @@ textuelles et logiques dans le même vecteur !
 -   Essayez de résoudre vous-même les éventuels messages d'erreur en
     adaptant le code.
 
-# Session 2 \| Commandes de base II, jeux de données intégrés
+{{< pagebreak >}}
+
+# Session 2 \| Commandes de base II
 
 ## Répétition rapide de session 1
 
@@ -770,7 +774,7 @@ Il existe deux sous-type de facteurs :
 -   Les **facteurs nominaux** (sans ordre) : toutes les catégories sont
     équivalentes les unes aux autres. Il n'y a pas de hiérarchisation.
 
-    -   Exemples : le genre et l'appartenance à un parti
+    -   Exemples : le genre et l'appartenance à un parti politique
 
 -   Les **facteurs ordinaux** (avec un ordre): il y a un ordre ou une
     hiérarchie spécifié parmi les catégories (p. ex. des niveaux tels
@@ -906,20 +910,22 @@ correctement défini avec la fonction `getwd()`
     -   Les personnes qui ne sont inscrites dans aucun groupe ne peuvent
         pas valider le Problem Set 1.
 
+{{< pagebreak >}}
+
 # Session 3 (Problem Set 1)
 
 Les résultats du **Problem Set 1** (bonnes réponses, échelle des notes)
-sont accéssibles sur la page Moodle de l'exercice.
+sont accessibles sur la page Moodle de l'exercice.
 
-Voici l'histogramme des points obtenus par n = 81 étudiant-e-s qui ont
+Voici l'histogramme des points obtenus par n = 62 étudiant-e-s qui ont
 participé au Problem Set 1.
 
 -   Le nombre maximal de points était de 20, il fallait 10 pour passer
     le test.
 
--   La moyenne des points obtenus était de 14.6 points (note = 4.75).
+-   La moyenne des points obtenus était de 14.2 points (note = 4.75).
 
--   79 étudiant-e-s ont réussi Problem Set 2 (98%).
+-   59 étudiant-e-s ont réussi Problem Set 1 (95%).
 
 ```{r}
 #| echo: false
@@ -927,7 +933,7 @@ participé au Problem Set 1.
 #| warning: false
 # script pour faire un histogramme des points obtenus dans le Problem Set 1
 # cours : Exercices Méthodes II
-# date : 6/7 mars 2024
+# date : 5/6 mars 2025
 # auteur : Julian Maitra
 
 library(ggplot2)
@@ -936,18 +942,18 @@ library(ggplot2)
 
 setwd("/Users/domus_julian/Documents/GitHub/intro-a-R/code")
 
-# Enregistrez le fichier CSV points_ps_2 dans votre répertoire de travail, 
+# Enregistrez le fichier CSV points_ps_1 dans votre répertoire de travail, 
 # puis importez les données dans R (modifiez le code suivant selon votre ordinateur) :
 
 points_ps_1 <- read.csv("~/Documents/GitHub/intro-a-R/code/points_PS_1.csv", encoding="UTF-8")
 
-#points_ps_1 # il y a 81 observations de trois variables : etudiant-e, groupe et points
+#points_ps_1 # il y a 62 observations de trois variables : etudiant-e, groupe et points
 
 hist_ps_1 <-ggplot(points_ps_1, 
                    aes(x=points)) + 
   geom_histogram(binwidth = 1, color="black", fill="white") +
   labs(title = "Histogramme des points obtenus dans le PS 1", # labs() permet de définir plusieurs labels en même temps (titre, axes, etc.)
-       subtitle = "n = 81 résultats de test", 
+       subtitle = "n = 62 résultats de test", 
        caption = "Source des données : Moodle") +       
   xlab("Points obtenus") +                             
   ylab("Fréquence") +
@@ -959,6 +965,8 @@ hist_ps_1 <-ggplot(points_ps_1,
              color="red",  linewidth=1, linetype="dashed")
 hist_ps_1
 ```
+
+{{< pagebreak >}}
 
 # Session 4 \| Paquets R, données CSV, visualisations I
 
@@ -1277,13 +1285,13 @@ complexes.
 
 Le tableau suivant décrit les couches d'un graphique ggplot :
 
-| Couche                                                             | Déscription/Variables                                                                         | Obligatoire ? |
-|-----------------------|:------------------------------|:----------------:|
-| *data*                                                             | le jeu de données que nous voulons visualiser                                                 |      oui      |
-| *aesthetics*                                                       | le *mapping* de nos variables : axes *x* et *y*, *color*, *fill*, *alpha*, *line width*, etc. |      oui      |
-| *geometries*                                                       | le type visuel du graphique : *point*, *line*, *histogram*, *bar*, *boxplot*                  |      oui      |
-| *themes*                                                           | Le design du graphique                                                                        |      non      |
-| Autres couches optionelles : *facets*, *statistics*, *coordinates* | Pour des visualisations plus complexes                                                        |      non      |
+| Couche | Déscription/Variables | Obligatoire ? |
+|-----------------------|:------------------------------|:-----------------:|
+| *data* | le jeu de données que nous voulons visualiser | oui |
+| *aesthetics* | le *mapping* de nos variables : axes *x* et *y*, *color*, *fill*, *alpha*, *line width*, etc. | oui |
+| *geometries* | le type visuel du graphique : *point*, *line*, *histogram*, *bar*, *boxplot* | oui |
+| *themes* | Le design du graphique | non |
+| Autres couches optionelles : *facets*, *statistics*, *coordinates* | Pour des visualisations plus complexes | non |
 
 : Les couches d'un graphique ggplot
 
@@ -1397,6 +1405,8 @@ relation entre prix et carats des diamants ? Quel rôle joue la variable
     données `diamonds`. Vous devez être en mesure de comprendre et
     d'expliquer comment il est structuré (nombre d'observations n, unité
     statistique, variables, origine des données, etc).
+
+{{< pagebreak >}}
 
 # Session 5 \| Visualisations II
 
@@ -1892,9 +1902,11 @@ par exemple.
         que si les personnes invitées ont répondu au questionnaire avant
         la date limite).
 
-    -   Chaque étudiant(e) qui aura rempli le questionnaire dans les
+    -   Chaque étudiant-e qui aura rempli le questionnaire dans les
         délais recevra un **bonus de 2 points dans le Problem Set 4**
         (10% des points).
+
+{{< pagebreak >}}
 
 # Session 6 (Problem Set 2)
 
@@ -1950,6 +1962,8 @@ hist_ps_2 <-ggplot(points_ps_2,
 hist_ps_2
 ```
 
+{{< pagebreak >}}
+
 # Session 7 \| Manipuler les données I
 
 **Sujet : Manipuler les données (partie 1)**
@@ -1969,7 +1983,7 @@ cette fin, nous examinerons également certaines transformations de types
 de variables et un nouvel opérateur, le `%>%` (angl. "pipe"; trad.
 franç. "tuyau"), qui est très utile pour les manipulations de données.
 
-## Lire des données dans RStudio
+## Lire des données auf format CSV dans RStudio
 
 Par la suite, nous alons appliquer `dplyr` pour manipuler les données
 d'un jeu de données concret : un fichier CSV nommé `igposts.csv`. Ce
@@ -2080,6 +2094,8 @@ igposts <- read.csv("/Users/domus_julian/Documents/GitHub/intro-a-R/code/igposts
 str(igposts)
 ```
 
+## Explorez votre jeu de données importé
+
 Cela nous montre qu'il s'agit d'un data frame avec 100 observations et
 12 variables. Chaque ligne représente un post Instagram d'une célébrité
 (unité statistique) et chaque colonnes une variable différente associé à
@@ -2122,7 +2138,7 @@ cruciales pour la manipulation de données avec R :
 
 -   L'opérateur `%>%` (angl. "pipe"; trad. française "tuyau")
 
-### La transformation du type de variable
+## La transformation du type de variable
 
 Lorsque l'on analyse des jeux de données, on constate parfois que toutes
 les variables **ne sont pas enregistrées dans un format utile pour
@@ -2163,7 +2179,7 @@ str(igposts)
 
 Nous allons voir par la suite, pourquoi ces factorisations sont utiles.
 
-### L'opérateur `%>%`
+## L'opérateur `%>%`
 
 La fonction principale du pipe `%>%` : construire **une séquence de
 fonctions ("un tuyau")** qui est plus facile à comprendre et a lire dans
@@ -2243,7 +2259,7 @@ différents types de manipulation de données, notamment :
 Essayons maintenant d'appliquer tout cela avec du code et les données
 `igposts` pour comprendre ce que ça veut dire en pratique !
 
-### Manipulation de colonnes : `select()`et `mutate()`
+## Manipulation de colonnes : `select()`et `mutate()`
 
 ```{r}
 #| echo: true
@@ -2288,7 +2304,7 @@ df1 <- df1 %>%
 str(df1)
 ```
 
-### Manipulation de lignes avec `filter()` et `arrange()`
+## Manipulation de lignes avec `filter()` et `arrange()`
 
 ```{r}
 #| echo: true
@@ -2344,7 +2360,7 @@ df1 %>%
   head(10)
 ```
 
-### Résumer, compter et regrouper avec `summarize()`, `count()` et `group_by()`
+## Résumer, compter et regrouper avec `summarize()`, `count()` et `group_by()`
 
 ```{r}
 #| echo: true
@@ -2432,7 +2448,7 @@ igposts %>%
     données, sera accessible sur ce site à partir du 17 avril.
 
 -   Assurez-vous d'avoir **rempli le questionnaire avant la date
-    limite** (**19 avril 2024 à 23h59**). Tou(te)s les étudiant(e)s qui
+    limite** (**19 avril 2024 à 23h59**). Tou(te)s les étudiant-e-s qui
     auront rempli le questionnaire à temps recevront 2 points de bonus
     pour le Problem Set 4 (10% des points).
 
@@ -2450,6 +2466,8 @@ igposts %>%
     Assurez-vous de pouvoir lire correctement les fichiers CSV dans
     RStudio, car cela sera nécessaire pour résoudre l'ensemble de
     problèmes 3.
+
+{{< pagebreak >}}
 
 # Session 8 (en auto-apprentissage) \| Manipuler les données II
 
@@ -2469,6 +2487,8 @@ question avec votre propre script R sans consulter immédiatement la
 solution modèle. Comparez ensuite votre propre code avec celui de la
 solution modèle.
 :::
+
+## Exercices avec solutions
 
 ### 0 : Préparez-vous pour l'exercice
 
@@ -2929,6 +2949,8 @@ igposts %>%
 [URL du post Instagram de Karol
 G](https://www.instagram.com/p/ComtUDjrPAD/)
 
+{{< pagebreak >}}
+
 # Session 9 (Problem Set 3)
 
 Les résultats du **Problem Set 3** (bonnes réponses, échelle des notes)
@@ -2982,6 +3004,8 @@ hist_ps_3 <-ggplot(points_ps_3,
              color="red",  linewidth=1, linetype="dashed")
 hist_ps_3
 ```
+
+{{< pagebreak >}}
 
 # Session 10 \| Statistiques descriptives
 
@@ -3100,8 +3124,8 @@ ggplot(data = reponses_socio,
   geom_histogram(binwidth = 10, 
                  fill = "steelblue",
                      color = "black") +
-  labs(title = "Trajets en minutes des étudiant(e)s pour arriver à l'UniFR",
-       subtitle = "Questionnaire avec n = 74 participant(e)s",
+  labs(title = "Trajets en minutes des étudiant-e-s pour arriver à l'UniFR",
+       subtitle = "Questionnaire avec n = 74 participant-e-s",
        x = "Trajet en minutes",
        y = "Fréquence") +
   theme_minimal()
@@ -3236,6 +3260,8 @@ write.csv(ice_age_df, file = "/Users/domus_julian/Documents/GitHub/intro-a-R/cod
 Si tout a bien marché, vous devrez maintenant avoir un ficher CSV, nommé
 `ice_age_df.csv`dans votre répértoire de travail !
 
+{{< pagebreak >}}
+
 # Session 11 (en auto-apprentissage) \| Statistiques inférentielles I
 
 **Sujet : La statistique inférentielle, Partie 1 (tests t)**
@@ -3367,12 +3393,12 @@ Voyons maintenant des exemples avec du code !
 ### Exemple 1 : test t à un échantillon
 
 **Problème** : Tester si la moyenne de QI d'un échantillon
-d'étudiant(e)s, qui est de 105, est différente de manière significative
+d'étudiant-e-s, qui est de 105, est différente de manière significative
 de la moyenne de la population, qui est de 100.
 
 -   Notre hypothèse H1 stipule qu'il y a une différence significative
-    entre le QI des étudiant(e)s et celui de la population générale. En
-    effet, nous assumons que le QI des étudiant(e)s est plus élevé que
+    entre le QI des étudiant-e-s et celui de la population générale. En
+    effet, nous assumons que le QI des étudiant-e-s est plus élevé que
     celui de la population.
 
 -   L'hypothèse nulle H0 serait donc le contraire, c'est à dire que la
@@ -3384,7 +3410,7 @@ fonction `rnorm()`que nous avons vu en classe pour créer des valeurs
 valeurs pour simuler notre problème.
 
 ```{r}
-# Générer des données d'échantillon avec n = 25 observations hypothétiques de QI d'étudiant(e).
+# Générer des données d'échantillon avec n = 25 observations hypothétiques de QI d'étudiant-e.
 # Nous simulons, avec rnorm() 25 observations d'une loi normale avec une moyenne de 25 et un écart-type de 15
 set.seed(123)
 scores_qi <- rnorm(25, mean = 105, sd = 15)
@@ -3422,14 +3448,14 @@ Il s'agit maintenant d'interpréter le résultat du test t dans R.
 
 En pratique, c'est surtout la valeur p qui compte ! Dans notre cas, elle
 est clairement supérieure à 5% ( \> 0.05), ce qui nous indique que la
-différence du QI entre les étudiant(e)s et la population n'est PAS
+différence du QI entre les étudiant-e-s et la population n'est PAS
 significative (si nous utilisons des intérvalles de confiance de 95%) !
 
 Cela veut dire que **nous ne pouvons PAS abondonner notre hypothèse
 nulle H0** car il y a une forte probabilité que la différence de QI
 observée dans notre échantillon est le résultat d'un pure hasard. En
 d'autres termes, selon cet échantillon, nous ne pouvons pas conclure que
-le QI des étudiant(e)s et significativement plus élevé que celui de la
+le QI des étudiant-e-s et significativement plus élevé que celui de la
 population générale.
 
 ```{r}
@@ -3444,13 +3470,13 @@ print(resultat_test_t)
 
 La valeur p est maintenant beaucoup plus petite, soit inférieure à 1%
 (\< 0.01). Cela nous indique que la différence entre le QI des
-étudiant(e)s et de la population est significative (si nous utilisons
+étudiant-e-s et de la population est significative (si nous utilisons
 des intervalles de confiance de 95%) !
 
 Avec un tel résultat de test t, **nous pouvons rejeter l'hypothèse nulle
 H0**, car la probabilité que les valeurs observées soient le résultat
 d'un pure hasard sont très faible (moins de 1%). Nous pouvont alors
-inférer que le QI des étudiant(e)s est significativement plus élevé que
+inférer que le QI des étudiant-e-s est significativement plus élevé que
 celui de la population générale.
 
 ### Exercice 1
@@ -3592,6 +3618,8 @@ en ligne pertinents pour votre problématique spécifique.
 -   Un tutoriel qui approfondit le test t dans R est par exemple [celui
     de Datacamp
     (2024)](https://www.datacamp.com/tutorial/t-tests-r-tutorial).
+
+{{< pagebreak >}}
 
 # Session 12 \| Statistiques inférentielles II
 
@@ -4229,6 +4257,8 @@ beaucoup sont très pertinents pour les sciences sociales et pour vos
     avancées que vous pourrez utiliser plus tard, par exemple pendant
     votre travail de bachelor, pour vos analyses empiriques.
 
+{{< pagebreak >}}
+
 # Session 13 (Problem Set 4)
 
 Les résultats du **Problem Set 4** (bonnes réponses, échelle des notes)
@@ -4275,7 +4305,7 @@ points_ps_4 <- read.csv("~/Documents/GitHub/intro-a-R/code/pps_4.csv", encoding=
 
 points_ps_4 <- points_ps_4 %>% filter(pps_4 > 0)
 
-#points_ps_2 # il y a 71 observations de trois variables : etudiant-e, groupe et points
+#points_ps_2 # il y a 71 observations de trois variables : étudiant-e, groupe et points
 
 hist_ps_4 <-ggplot(points_ps_4, 
                    aes(x=pps_4)) + 
@@ -4293,6 +4323,8 @@ hist_ps_4 <-ggplot(points_ps_4,
              color="red",  linewidth=1, linetype="dashed")
 hist_ps_4
 ```
+
+{{< pagebreak >}}
 
 # Session 14 (en auto-apprentissage)
 
@@ -4380,7 +4412,7 @@ demandez simplement du code R pour faire certaines choses. Ces
 interfaces peuvent vous fournir du code prêt à l'emploi, que vous pouvez
 copier et coller directement dans RStudio !
 
--   [ChatGPT ](https://chatgpt.com)
+-   [ChatGPT](https://chatgpt.com)
 
 -   [Le Chat de Mistral](https://chat.mistral.ai/chat)
 

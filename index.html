@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Julian Maitra">
-<meta name="dcterms.date" content="2024-02-22">
+<meta name="dcterms.date" content="2025-03-07">
 
 <title>Exercices Méthodes II</title>
 <style>
@@ -110,17 +110,14 @@ window.Quarto = {
     <h2 id="toc-title">Table des matières</h2>
    
   <ul class="collapse">
-  <li><a href="#session-1-introduction" id="toc-session-1-introduction" class="nav-link active" data-scroll-target="#session-1-introduction">Session 1 | Introduction</a>
-  <ul class="collapse">
-  <li><a href="#installer-les-logiciels-r-et-rstudio" id="toc-installer-les-logiciels-r-et-rstudio" class="nav-link" data-scroll-target="#installer-les-logiciels-r-et-rstudio">Installer les logiciels R et RStudio</a></li>
+  <li><a href="#installer-les-logiciels-r-et-rstudio" id="toc-installer-les-logiciels-r-et-rstudio" class="nav-link active" data-scroll-target="#installer-les-logiciels-r-et-rstudio">Installer les logiciels R et RStudio</a></li>
   <li><a href="#linterface-rstudio" id="toc-linterface-rstudio" class="nav-link" data-scroll-target="#linterface-rstudio">L’interface RStudio</a></li>
   <li><a href="#exécuter-un-script-r" id="toc-exécuter-un-script-r" class="nav-link" data-scroll-target="#exécuter-un-script-r">Exécuter un script R</a></li>
   <li><a href="#commenter-votre-code-avec-un" id="toc-commenter-votre-code-avec-un" class="nav-link" data-scroll-target="#commenter-votre-code-avec-un">Commenter votre code avec un <code>#</code></a></li>
   <li><a href="#lopérateur-daffectation--" id="toc-lopérateur-daffectation--" class="nav-link" data-scroll-target="#lopérateur-daffectation--">L’opérateur d’affectation <code>&lt;-</code></a></li>
   <li><a href="#variables-à-élément-unique" id="toc-variables-à-élément-unique" class="nav-link" data-scroll-target="#variables-à-élément-unique">Variables à élément unique</a></li>
   <li><a href="#variables-à-plusieurs-éléments-vecteurs" id="toc-variables-à-plusieurs-éléments-vecteurs" class="nav-link" data-scroll-target="#variables-à-plusieurs-éléments-vecteurs">Variables à plusieurs éléments : vecteurs</a></li>
-  </ul></li>
-  <li><a href="#session-2-commandes-de-base-ii-jeux-de-donnees-integres" id="toc-session-2-commandes-de-base-ii-jeux-de-donnees-integres" class="nav-link" data-scroll-target="#session-2-commandes-de-base-ii-jeux-de-donnees-integres">Session 2 | Commandes de base II, jeux de données intégrés</a>
+  <li><a href="#session-2-commandes-de-base-ii" id="toc-session-2-commandes-de-base-ii" class="nav-link" data-scroll-target="#session-2-commandes-de-base-ii">Session 2 | Commandes de base II</a>
   <ul class="collapse">
   <li><a href="#répétition-rapide-de-session-1" id="toc-répétition-rapide-de-session-1" class="nav-link" data-scroll-target="#répétition-rapide-de-session-1">Répétition rapide de session 1</a></li>
   <li><a href="#données-en-forme-de-tableau" id="toc-données-en-forme-de-tableau" class="nav-link" data-scroll-target="#données-en-forme-de-tableau">Données en forme de tableau</a></li>
@@ -147,10 +144,19 @@ window.Quarto = {
   <li><a href="#session-6-problem-set-2" id="toc-session-6-problem-set-2" class="nav-link" data-scroll-target="#session-6-problem-set-2">Session 6 (Problem Set 2)</a></li>
   <li><a href="#session-7-manipuler-les-données-i" id="toc-session-7-manipuler-les-données-i" class="nav-link" data-scroll-target="#session-7-manipuler-les-données-i">Session 7 | Manipuler les données I</a>
   <ul class="collapse">
-  <li><a href="#lire-des-données-dans-rstudio" id="toc-lire-des-données-dans-rstudio" class="nav-link" data-scroll-target="#lire-des-données-dans-rstudio">Lire des données dans RStudio</a></li>
+  <li><a href="#lire-des-données-auf-format-csv-dans-rstudio" id="toc-lire-des-données-auf-format-csv-dans-rstudio" class="nav-link" data-scroll-target="#lire-des-données-auf-format-csv-dans-rstudio">Lire des données auf format CSV dans RStudio</a></li>
+  <li><a href="#explorez-votre-jeu-de-données-importé" id="toc-explorez-votre-jeu-de-données-importé" class="nav-link" data-scroll-target="#explorez-votre-jeu-de-données-importé">Explorez votre jeu de données importé</a></li>
+  <li><a href="#la-transformation-du-type-de-variable" id="toc-la-transformation-du-type-de-variable" class="nav-link" data-scroll-target="#la-transformation-du-type-de-variable">La transformation du type de variable</a></li>
+  <li><a href="#lopérateur" id="toc-lopérateur" class="nav-link" data-scroll-target="#lopérateur">L’opérateur <code>%&gt;%</code></a></li>
   <li><a href="#manipuler-les-données-avec-dplyr" id="toc-manipuler-les-données-avec-dplyr" class="nav-link" data-scroll-target="#manipuler-les-données-avec-dplyr">Manipuler les données avec <code>dplyr</code></a></li>
+  <li><a href="#manipulation-de-colonnes-selectet-mutate" id="toc-manipulation-de-colonnes-selectet-mutate" class="nav-link" data-scroll-target="#manipulation-de-colonnes-selectet-mutate">Manipulation de colonnes : <code>select()</code>et <code>mutate()</code></a></li>
+  <li><a href="#manipulation-de-lignes-avec-filter-et-arrange" id="toc-manipulation-de-lignes-avec-filter-et-arrange" class="nav-link" data-scroll-target="#manipulation-de-lignes-avec-filter-et-arrange">Manipulation de lignes avec <code>filter()</code> et <code>arrange()</code></a></li>
+  <li><a href="#résumer-compter-et-regrouper-avec-summarize-count-et-group_by" id="toc-résumer-compter-et-regrouper-avec-summarize-count-et-group_by" class="nav-link" data-scroll-target="#résumer-compter-et-regrouper-avec-summarize-count-et-group_by">Résumer, compter et regrouper avec <code>summarize()</code>, <code>count()</code> et <code>group_by()</code></a></li>
   </ul></li>
-  <li><a href="#session-8-en-auto-apprentissage-manipuler-les-données-ii" id="toc-session-8-en-auto-apprentissage-manipuler-les-données-ii" class="nav-link" data-scroll-target="#session-8-en-auto-apprentissage-manipuler-les-données-ii">Session 8 (en auto-apprentissage) | Manipuler les données II</a></li>
+  <li><a href="#session-8-en-auto-apprentissage-manipuler-les-données-ii" id="toc-session-8-en-auto-apprentissage-manipuler-les-données-ii" class="nav-link" data-scroll-target="#session-8-en-auto-apprentissage-manipuler-les-données-ii">Session 8 (en auto-apprentissage) | Manipuler les données II</a>
+  <ul class="collapse">
+  <li><a href="#exercices-avec-solutions" id="toc-exercices-avec-solutions" class="nav-link" data-scroll-target="#exercices-avec-solutions">Exercices avec solutions</a></li>
+  </ul></li>
   <li><a href="#session-9-problem-set-3" id="toc-session-9-problem-set-3" class="nav-link" data-scroll-target="#session-9-problem-set-3">Session 9 (Problem Set 3)</a></li>
   <li><a href="#session-10-statistiques-descriptives" id="toc-session-10-statistiques-descriptives" class="nav-link" data-scroll-target="#session-10-statistiques-descriptives">Session 10 | Statistiques descriptives</a>
   <ul class="collapse">
@@ -204,7 +210,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 22, 2024</p>
+      <p class="date">March 7, 2025</p>
     </div>
   </div>
   
@@ -216,9 +222,8 @@ window.Quarto = {
 </header>
 
 
-<section id="session-1-introduction" class="level1">
-<h1>Session 1 | Introduction</h1>
-<p><strong>Sujet : : Bienvenue, pourquoi R ? et commandes de base I</strong></p>
+<p></p><div style="page-break-after: always;"></div> # Session 1 | Introduction<p></p>
+<p><strong>Sujet : Bienvenue, pourquoi R ? et commandes de base I</strong></p>
 <p>Bienvenue dans la première leçon du cours <strong>Exercices Méthode II</strong> du Bachelor en sciences de la communication à l’Université de Fribourg !</p>
 <p>Sur cette page Github, je vous guiderai dans vos premiers pas avec R.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -335,6 +340,7 @@ Astuce
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Si vous exécutez ce code, une nouvelle variable, <code>x</code>, sera créée dans le volet <strong>environnement</strong> en haut à droite de RStudio.</p>
+<div style="page-break-after: always;"></div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -576,11 +582,11 @@ Attention
 <li><p>Lisez ensuite encore une fois ce script et exécutez toutes les sections de code sur votre ordinateur.</p></li>
 <li><p>Essayez de résoudre vous-même les éventuels messages d’erreur en adaptant le code.</p></li>
 </ul>
+<div style="page-break-after: always;"></div>
 </section>
 </section>
-</section>
-<section id="session-2-commandes-de-base-ii-jeux-de-donnees-integres" class="level1">
-<h1>Session 2 | Commandes de base II, jeux de données intégrés</h1>
+<section id="session-2-commandes-de-base-ii" class="level1">
+<h1>Session 2 | Commandes de base II</h1>
 <section id="répétition-rapide-de-session-1" class="level2">
 <h2 class="anchored" data-anchor-id="répétition-rapide-de-session-1">Répétition rapide de session 1</h2>
 <div class="cell">
@@ -1022,7 +1028,7 @@ Astuce
 <ul>
 <li><p>Les <strong>facteurs nominaux</strong> (sans ordre) : toutes les catégories sont équivalentes les unes aux autres. Il n’y a pas de hiérarchisation.</p>
 <ul>
-<li>Exemples : le genre et l’appartenance à un parti</li>
+<li>Exemples : le genre et l’appartenance à un parti politique</li>
 </ul></li>
 <li><p>Les <strong>facteurs ordinaux</strong> (avec un ordre): il y a un ordre ou une hiérarchie spécifié parmi les catégories (p.&nbsp;ex. des niveaux tels que <em>faible</em>, <em>moyen</em>, <em>élevé</em>).</p>
 <ul>
@@ -1136,17 +1142,18 @@ Important
 <li><p>Les personnes qui ne sont inscrites dans aucun groupe ne peuvent pas valider le Problem Set 1.</p></li>
 </ul></li>
 </ul>
+<div style="page-break-after: always;"></div>
 </section>
 </section>
 </section>
 <section id="session-3-problem-set-1" class="level1">
 <h1>Session 3 (Problem Set 1)</h1>
-<p>Les résultats du <strong>Problem Set 1</strong> (bonnes réponses, échelle des notes) sont accéssibles sur la page Moodle de l’exercice.</p>
-<p>Voici l’histogramme des points obtenus par n = 81 étudiant-e-s qui ont participé au Problem Set 1.</p>
+<p>Les résultats du <strong>Problem Set 1</strong> (bonnes réponses, échelle des notes) sont accessibles sur la page Moodle de l’exercice.</p>
+<p>Voici l’histogramme des points obtenus par n = 62 étudiant-e-s qui ont participé au Problem Set 1.</p>
 <ul>
 <li><p>Le nombre maximal de points était de 20, il fallait 10 pour passer le test.</p></li>
-<li><p>La moyenne des points obtenus était de 14.6 points (note = 4.75).</p></li>
-<li><p>79 étudiant-e-s ont réussi Problem Set 2 (98%).</p></li>
+<li><p>La moyenne des points obtenus était de 14.2 points (note = 4.75).</p></li>
+<li><p>59 étudiant-e-s ont réussi Problem Set 1 (95%).</p></li>
 </ul>
 <div class="cell">
 <div class="cell-output-display">
@@ -1157,6 +1164,7 @@ Important
 </div>
 </div>
 </div>
+<div style="page-break-after: always;"></div>
 </section>
 <section id="session-4-paquets-r-données-csv-visualisations-i" class="level1">
 <h1>Session 4 | Paquets R, données CSV, visualisations I</h1>
@@ -1434,8 +1442,8 @@ Astuce
 <caption>Les couches d’un graphique ggplot</caption>
 <colgroup>
 <col style="width: 31%">
-<col style="width: 43%">
-<col style="width: 25%">
+<col style="width: 42%">
+<col style="width: 26%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1575,6 +1583,7 @@ Astuce
 <li><p>Assurez-vous que le paquet R <code>tidyverse</code> est installé correctement sur votre ordinateur.</p></li>
 <li><p>Utilisez le code R de manière autonome pour explorer le jeu de données <code>diamonds</code>. Vous devez être en mesure de comprendre et d’expliquer comment il est structuré (nombre d’observations n, unité statistique, variables, origine des données, etc).</p></li>
 </ul>
+<div style="page-break-after: always;"></div>
 </section>
 </section>
 </section>
@@ -1993,9 +2002,10 @@ Astuce
 <li><p>Nous allons évaluer <strong>un questionnaire sur votre comportement d’utilisation des médias</strong> avec R comme autre élément important du cours.</p></li>
 <li><p>Le questionnaire est <strong>anonyme</strong> (même pour l’enseignant) et peut être rempli en ligne via LimeSurvey jusqu’au <strong>vendredi 19 avril 2024 à 23h59</strong>.</p></li>
 <li><p>Tous les étudiant-e-s recevront prochainement un lien personnel d’invitation au questionnaire par e-mail (les réponses seront anonymisées et mélangées par le logiciel, l’enseignant ne verra que si les personnes invitées ont répondu au questionnaire avant la date limite).</p></li>
-<li><p>Chaque étudiant(e) qui aura rempli le questionnaire dans les délais recevra un <strong>bonus de 2 points dans le Problem Set 4</strong> (10% des points).</p></li>
+<li><p>Chaque étudiant-e qui aura rempli le questionnaire dans les délais recevra un <strong>bonus de 2 points dans le Problem Set 4</strong> (10% des points).</p></li>
 </ul></li>
 </ul>
+<div style="page-break-after: always;"></div>
 </section>
 </section>
 </section>
@@ -2017,6 +2027,7 @@ Astuce
 </div>
 </div>
 </div>
+<div style="page-break-after: always;"></div>
 </section>
 <section id="session-7-manipuler-les-données-i" class="level1">
 <h1>Session 7 | Manipuler les données I</h1>
@@ -2024,8 +2035,8 @@ Astuce
 <p>Le premier but de cette session est d’apprendre à importer des données dans RStudio à partir de <strong>fichiers CSV</strong> et de les stocker en forme de data frame (format tabulaire).</p>
 <p>Le deuxième but est de se familiariser avec <code>dplyr</code> (prononcé “dee-ply-er” en anglais), un paquet du <code>tidyverse</code> conçu pour manipuler les données en forme de data frame.</p>
 <p>Contrairement aux jeux de données intégrés à R (tels que <code>diamonds</code>, etc.), la plupart des jeux de données du monde réel nécessitent des <strong>transformations</strong> avant de pouvoir être analysés et visualisés. À cette fin, nous examinerons également certaines transformations de types de variables et un nouvel opérateur, le <code>%&gt;%</code> (angl. “pipe”; trad. franç. “tuyau”), qui est très utile pour les manipulations de données.</p>
-<section id="lire-des-données-dans-rstudio" class="level2">
-<h2 class="anchored" data-anchor-id="lire-des-données-dans-rstudio">Lire des données dans RStudio</h2>
+<section id="lire-des-données-auf-format-csv-dans-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="lire-des-données-auf-format-csv-dans-rstudio">Lire des données auf format CSV dans RStudio</h2>
 <p>Par la suite, nous alons appliquer <code>dplyr</code> pour manipuler les données d’un jeu de données concret : un fichier CSV nommé <code>igposts.csv</code>. Ce fichier contient des posts Instagram de célébritées qui ont reçu beaucoup d’interactions d’utilisateurs. Pour cette application, il faut d’abord charger ce jeu de données dans notre session RStudio en cours.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -2127,6 +2138,9 @@ Nguyen, Laetitia, 19<br>
  $ Description         : chr  "Gracias a todos los que hicieron posible que ganara este premio. A todos los de la @afaseleccion, a mi familia "| __truncated__ "I deleted this one time because I thought maybe it was too much but eh (taking a break from social)" "“Ab humari permanent booking hogayi hai” \n\nWe seek your blessings and love on our journey ahead ❤️🙏" "Great feeling to have scored 4 goals and reaching my 500th league goal in a very solid win by the team!💪🏼\n⚽️⚽️⚽️⚽️" ...</code></pre>
 </div>
 </div>
+</section>
+<section id="explorez-votre-jeu-de-données-importé" class="level2">
+<h2 class="anchored" data-anchor-id="explorez-votre-jeu-de-données-importé">Explorez votre jeu de données importé</h2>
 <p>Cela nous montre qu’il s’agit d’un data frame avec 100 observations et 12 variables. Chaque ligne représente un post Instagram d’une célébrité (unité statistique) et chaque colonnes une variable différente associé à ce post.</p>
 <p>Notez que les variables sont soit de type textuel (chr = “character”; p. ex. <code>Account</code>= le nom du compte Insta qui a publié le post), soit numérique (int = “integer”; p.&nbsp;ex. <code>Total.Interactions</code> = la somme des <code>Likes</code>et <code>Comments</code> qu’un post a reçu).</p>
 <p>Vous pouvez aussi cliquer sur l’objet et explorer le tableau manuellement pour le comprendre d’avantage (comme nous l’avons fait avec <code>mtcars</code>, etc.).</p>
@@ -2156,8 +2170,9 @@ Attention
 <li><p>la transformation du types de variable (p.&nbsp;ex. de variables textuelles en facteurs)</p></li>
 <li><p>L’opérateur <code>%&gt;%</code> (angl. “pipe”; trad. française “tuyau”)</p></li>
 </ul>
-<section id="la-transformation-du-type-de-variable" class="level3">
-<h3 class="anchored" data-anchor-id="la-transformation-du-type-de-variable">La transformation du type de variable</h3>
+</section>
+<section id="la-transformation-du-type-de-variable" class="level2">
+<h2 class="anchored" data-anchor-id="la-transformation-du-type-de-variable">La transformation du type de variable</h2>
 <p>Lorsque l’on analyse des jeux de données, on constate parfois que toutes les variables <strong>ne sont pas enregistrées dans un format utile pour l’analyse</strong>. Parfois, par exemple, les valeurs numériques sont enregistrées sous forme de texte. Il est alors utile de les transformer dans un format numérique (par exemple avec la fonction <code>as.numeric()</code>.</p>
 <p>Mais il y a aussi le cas suivant : les variables sous forme de texte ne représentent pas simplement des textes, mais certaines <strong>catégories</strong>. Dans ce cas, il est judicieux de les transformer en une variable catégorielle, c’est-à-dire un facteur, à l’aide de la fonction <code>as.factor()</code>.</p>
 <p>Dans notre exemple de jeu de données <code>igposts</code>, qui contient des métriques sur les posts Instagram, nous pouvons justement constater cela. Certes, certaines variables textuelles, telles que <code>URL</code> (le lien vers le post) et <code>Description</code> (le message textuel associé au post Instagram), sont tout à fait pertinentes. D’autres, en revanche, sont des catégories. La plus évidente est la variable <code>Type</code>, qui indique si un post Instagram est une photo, une vidéo ou un album. Factorisons ci-dessous quelques-unes de ces variables catégorielles à l’aide de code :</p>
@@ -2192,8 +2207,8 @@ Attention
 </div>
 <p>Nous allons voir par la suite, pourquoi ces factorisations sont utiles.</p>
 </section>
-<section id="lopérateur" class="level3">
-<h3 class="anchored" data-anchor-id="lopérateur">L’opérateur <code>%&gt;%</code></h3>
+<section id="lopérateur" class="level2">
+<h2 class="anchored" data-anchor-id="lopérateur">L’opérateur <code>%&gt;%</code></h2>
 <p>La fonction principale du pipe <code>%&gt;%</code> : construire <strong>une séquence de fonctions (“un tuyau”)</strong> qui est plus facile à comprendre et a lire dans le code.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb116"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Par exemple, regardez la fonction suivante : quel est le</span></span>
@@ -2238,7 +2253,6 @@ Astuce
 <p>Vous pouvez déjà constater que travailler avec des jeux de données du monde réel, tels que le jeu de données Instagram <code>igposts</code>, nécessite un travail préparatoire substantiel. Mais rassurez-vous et ne vous découragez pas, plus vous pratiquez, plus cela devient facile et, bientôt, vous serez en mesure de charger facilement des ensembles de données dans RStudio ! Par ailleurs : il est normal de rencontrer des messages d’erreur. C’est une partie essentielle du processus d’apprentissage que de les surmonter en bricolant et en jouant avec vos données et votre code R jusqu’à ce que vous puissiez le faire fonctionner.</p>
 <p>Après avoir chargé notre fichier CSV dans RStudio, appliqué des transformations et notre connaissance de l’opérateur pipe, nous pouvons maintenant manipuler les données avec le package <code>dplyr</code>.</p>
 </section>
-</section>
 <section id="manipuler-les-données-avec-dplyr" class="level2">
 <h2 class="anchored" data-anchor-id="manipuler-les-données-avec-dplyr">Manipuler les données avec <code>dplyr</code></h2>
 <p>Le paquet <code>dplyr</code> est basé sur une logique de <em>verbes</em> pour les différents types de manipulation de données, notamment :</p>
@@ -2261,8 +2275,9 @@ Astuce
 </ul></li>
 </ul>
 <p>Essayons maintenant d’appliquer tout cela avec du code et les données <code>igposts</code> pour comprendre ce que ça veut dire en pratique !</p>
-<section id="manipulation-de-colonnes-selectet-mutate" class="level3">
-<h3 class="anchored" data-anchor-id="manipulation-de-colonnes-selectet-mutate">Manipulation de colonnes : <code>select()</code>et <code>mutate()</code></h3>
+</section>
+<section id="manipulation-de-colonnes-selectet-mutate" class="level2">
+<h2 class="anchored" data-anchor-id="manipulation-de-colonnes-selectet-mutate">Manipulation de colonnes : <code>select()</code>et <code>mutate()</code></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb120"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="co"># select() : fonction pour extraire une ou plusieurs</span></span>
 <span id="cb120-2"><a href="#cb120-2" aria-hidden="true" tabindex="-1"></a><span class="co"># colonnes d'un data frame</span></span>
@@ -2315,8 +2330,8 @@ Astuce
 <span id="cb120-49"><a href="#cb120-49" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(df1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="manipulation-de-lignes-avec-filter-et-arrange" class="level3">
-<h3 class="anchored" data-anchor-id="manipulation-de-lignes-avec-filter-et-arrange">Manipulation de lignes avec <code>filter()</code> et <code>arrange()</code></h3>
+<section id="manipulation-de-lignes-avec-filter-et-arrange" class="level2">
+<h2 class="anchored" data-anchor-id="manipulation-de-lignes-avec-filter-et-arrange">Manipulation de lignes avec <code>filter()</code> et <code>arrange()</code></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb121"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb121-1"><a href="#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="co"># filter() : fonction pour filtrer les lignes selon un ou</span></span>
 <span id="cb121-2"><a href="#cb121-2" aria-hidden="true" tabindex="-1"></a><span class="co"># plusieurs critères</span></span>
@@ -2380,8 +2395,8 @@ Astuce
 <span id="cb121-60"><a href="#cb121-60" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="résumer-compter-et-regrouper-avec-summarize-count-et-group_by" class="level3">
-<h3 class="anchored" data-anchor-id="résumer-compter-et-regrouper-avec-summarize-count-et-group_by">Résumer, compter et regrouper avec <code>summarize()</code>, <code>count()</code> et <code>group_by()</code></h3>
+<section id="résumer-compter-et-regrouper-avec-summarize-count-et-group_by" class="level2">
+<h2 class="anchored" data-anchor-id="résumer-compter-et-regrouper-avec-summarize-count-et-group_by">Résumer, compter et regrouper avec <code>summarize()</code>, <code>count()</code> et <code>group_by()</code></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb122"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="co"># summarize() : fonction qui réduit une ou plusieurs</span></span>
 <span id="cb122-2"><a href="#cb122-2" aria-hidden="true" tabindex="-1"></a><span class="co"># colonnes en une seule ligne, notamment pour résumer des</span></span>
@@ -2474,16 +2489,16 @@ Astuce
 <span id="cb122-89"><a href="#cb122-89" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>(), <span class="at">mean_Followers =</span> <span class="fu">mean</span>(Followers.at.Posting),</span>
 <span id="cb122-90"><a href="#cb122-90" aria-hidden="true" tabindex="-1"></a>        <span class="at">mean_Likes =</span> <span class="fu">mean</span>(Likes), <span class="at">mean_Comments =</span> <span class="fu">mean</span>(Comments))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
 <section id="devoir-pour-session-8-et-infos-questionnaireproblem-set-3" class="level3">
 <h3 class="anchored" data-anchor-id="devoir-pour-session-8-et-infos-questionnaireproblem-set-3">Devoir pour Session 8 et infos questionnaire/Problem Set 3</h3>
 <ul>
 <li><p>Attention, <strong>la session 8 du 17 et 18 avril 2024 sera une session en auto-apprentissage !</strong> Il n’y a donc pas d’enseignement en classe à Fribourg.</p></li>
 <li><p>Le matériel de session 8, la deuxième partie de la manipulation de données, sera accessible sur ce site à partir du 17 avril.</p></li>
-<li><p>Assurez-vous d’avoir <strong>rempli le questionnaire avant la date limite</strong> (<strong>19 avril 2024 à 23h59</strong>). Tou(te)s les étudiant(e)s qui auront rempli le questionnaire à temps recevront 2 points de bonus pour le Problem Set 4 (10% des points).</p></li>
+<li><p>Assurez-vous d’avoir <strong>rempli le questionnaire avant la date limite</strong> (<strong>19 avril 2024 à 23h59</strong>). Tou(te)s les étudiant-e-s qui auront rempli le questionnaire à temps recevront 2 points de bonus pour le Problem Set 4 (10% des points).</p></li>
 <li><p>Si vous avez des difficultés à accéder au questionnaire via le lien personnalisé qui vous a été envoyé par e-mail : Essayez à nouveau avec différents navigateurs, sur votre téléphone portable et désactivez les éventuels ad-blockers. Si nécessaire, veuillez contacter l’enseignant afin de recevoir un nouveau lien par e-mail.</p></li>
 <li><p>Dans deux semaines, les 24 et 25 avril, aura lieu <strong>Problem Set 3</strong>. Il portera principalement sur les contenus des sessions 7 et 8 (manipulation de données). Comblez vous-même les éventuelles lacunes de vos connaissances (p.&nbsp;ex. configurer correctement le répertoire de travail, utiliser l’opérateur d’affectation <code>&lt;-</code>, etc.) Assurez-vous de pouvoir lire correctement les fichiers CSV dans RStudio, car cela sera nécessaire pour résoudre l’ensemble de problèmes 3.</p></li>
 </ul>
+<div style="page-break-after: always;"></div>
 </section>
 </section>
 </section>
@@ -2505,6 +2520,8 @@ Conseil
 <p>Pour un meilleur effet d’apprentissage : essayez d’abord de résoudre la question avec votre propre script R sans consulter immédiatement la solution modèle. Comparez ensuite votre propre code avec celui de la solution modèle.</p>
 </div>
 </div>
+<section id="exercices-avec-solutions" class="level2">
+<h2 class="anchored" data-anchor-id="exercices-avec-solutions">Exercices avec solutions</h2>
 <section id="préparez-vous-pour-lexercice" class="level3">
 <h3 class="anchored" data-anchor-id="préparez-vous-pour-lexercice">0 : Préparez-vous pour l’exercice</h3>
 <ul>
@@ -3363,6 +3380,8 @@ Solution
 </div>
 </div>
 <p><a href="https://www.instagram.com/p/ComtUDjrPAD/">URL du post Instagram de Karol G</a></p>
+<div style="page-break-after: always;"></div>
+</section>
 </section>
 </section>
 <section id="session-9-problem-set-3" class="level1">
@@ -3383,6 +3402,7 @@ Solution
 </div>
 </div>
 </div>
+<div style="page-break-after: always;"></div>
 </section>
 <section id="session-10-statistiques-descriptives" class="level1">
 <h1>Session 10 | Statistiques descriptives</h1>
@@ -3509,8 +3529,8 @@ Solution
 </div>
 <div class="sourceCode cell-code" id="cb183"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb183-1"><a href="#cb183-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plus sophistiqué</span></span>
 <span id="cb183-2"><a href="#cb183-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> reponses_socio, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> trajet)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">10</span>,</span>
-<span id="cb183-3"><a href="#cb183-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"steelblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Trajets en minutes des étudiant(e)s pour arriver à l'UniFR"</span>,</span>
-<span id="cb183-4"><a href="#cb183-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Questionnaire avec n = 74 participant(e)s"</span>, <span class="at">x =</span> <span class="st">"Trajet en minutes"</span>,</span>
+<span id="cb183-3"><a href="#cb183-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"steelblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Trajets en minutes des étudiant-e-s pour arriver à l'UniFR"</span>,</span>
+<span id="cb183-4"><a href="#cb183-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Questionnaire avec n = 74 participant-e-s"</span>, <span class="at">x =</span> <span class="st">"Trajet en minutes"</span>,</span>
 <span id="cb183-5"><a href="#cb183-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Fréquence"</span>) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
@@ -3694,6 +3714,7 @@ Non Oui
 <span id="cb208-6"><a href="#cb208-6" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(ice_age_df, <span class="at">file =</span> <span class="st">"/Users/domus_julian/Documents/GitHub/intro-a-R/code/ice_age_df.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Si tout a bien marché, vous devrez maintenant avoir un ficher CSV, nommé <code>ice_age_df.csv</code>dans votre répértoire de travail !</p>
+<div style="page-break-after: always;"></div>
 </section>
 </section>
 <section id="session-11-en-auto-apprentissage-statistiques-inférentielles-i" class="level1">
@@ -3799,15 +3820,15 @@ Attention
 <p>Voyons maintenant des exemples avec du code !</p>
 <section id="exemple-1-test-t-à-un-échantillon" class="level3">
 <h3 class="anchored" data-anchor-id="exemple-1-test-t-à-un-échantillon">Exemple 1 : test t à un échantillon</h3>
-<p><strong>Problème</strong> : Tester si la moyenne de QI d’un échantillon d’étudiant(e)s, qui est de 105, est différente de manière significative de la moyenne de la population, qui est de 100.</p>
+<p><strong>Problème</strong> : Tester si la moyenne de QI d’un échantillon d’étudiant-e-s, qui est de 105, est différente de manière significative de la moyenne de la population, qui est de 100.</p>
 <ul>
-<li><p>Notre hypothèse H1 stipule qu’il y a une différence significative entre le QI des étudiant(e)s et celui de la population générale. En effet, nous assumons que le QI des étudiant(e)s est plus élevé que celui de la population.</p></li>
+<li><p>Notre hypothèse H1 stipule qu’il y a une différence significative entre le QI des étudiant-e-s et celui de la population générale. En effet, nous assumons que le QI des étudiant-e-s est plus élevé que celui de la population.</p></li>
 <li><p>L’hypothèse nulle H0 serait donc le contraire, c’est à dire que la différence n’est pas significative entre les deux groupes.</p></li>
 </ul>
 <p>À noter : dans le code qui suit, nous allons encore une fois utiliser la fonction <code>rnorm()</code>que nous avons vu en classe pour créer des valeurs “aléatoires” qui suivent une loi normale. Nous pouvons utiliser ces valeurs pour simuler notre problème.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb209"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb209-1"><a href="#cb209-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Générer des données d'échantillon avec n = 25</span></span>
-<span id="cb209-2"><a href="#cb209-2" aria-hidden="true" tabindex="-1"></a><span class="co"># observations hypothétiques de QI d'étudiant(e).  Nous</span></span>
+<span id="cb209-2"><a href="#cb209-2" aria-hidden="true" tabindex="-1"></a><span class="co"># observations hypothétiques de QI d'étudiant-e.  Nous</span></span>
 <span id="cb209-3"><a href="#cb209-3" aria-hidden="true" tabindex="-1"></a><span class="co"># simulons, avec rnorm() 25 observations d'une loi normale</span></span>
 <span id="cb209-4"><a href="#cb209-4" aria-hidden="true" tabindex="-1"></a><span class="co"># avec une moyenne de 25 et un écart-type de 15</span></span>
 <span id="cb209-5"><a href="#cb209-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
@@ -3839,8 +3860,8 @@ mean of x
 <li><p><strong>df</strong> signifie “degrees of freedom”. Dans un test t, les degrés de liberté font référence au nombre de valeurs dans le calcul final d’une statistique qui sont libres de varier. Il s’agit d’une mesure de la quantité d’informations disponibles pour estimer le paramètre statistique.</p></li>
 <li><p>La <strong>valeur p</strong> (angl. p-value) est la probabilité d’observer un résultat aussi extrême que celui obtenu dans l’échantillon sous l’hypothèse nulle. Elle est utilisée pour déterminer si le résultat du test est statistiquement significatif en comparant sa valeur à un seuil de signification prédéfini (habituellement 5% = 0.05). La p-value est calculée à partir de la statistique de test t et des degrés de liberté associés à l’échantillon.</p></li>
 </ul>
-<p>En pratique, c’est surtout la valeur p qui compte ! Dans notre cas, elle est clairement supérieure à 5% ( &gt; 0.05), ce qui nous indique que la différence du QI entre les étudiant(e)s et la population n’est PAS significative (si nous utilisons des intérvalles de confiance de 95%) !</p>
-<p>Cela veut dire que <strong>nous ne pouvons PAS abondonner notre hypothèse nulle H0</strong> car il y a une forte probabilité que la différence de QI observée dans notre échantillon est le résultat d’un pure hasard. En d’autres termes, selon cet échantillon, nous ne pouvons pas conclure que le QI des étudiant(e)s et significativement plus élevé que celui de la population générale.</p>
+<p>En pratique, c’est surtout la valeur p qui compte ! Dans notre cas, elle est clairement supérieure à 5% ( &gt; 0.05), ce qui nous indique que la différence du QI entre les étudiant-e-s et la population n’est PAS significative (si nous utilisons des intérvalles de confiance de 95%) !</p>
+<p>Cela veut dire que <strong>nous ne pouvons PAS abondonner notre hypothèse nulle H0</strong> car il y a une forte probabilité que la différence de QI observée dans notre échantillon est le résultat d’un pure hasard. En d’autres termes, selon cet échantillon, nous ne pouvons pas conclure que le QI des étudiant-e-s et significativement plus élevé que celui de la population générale.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb211"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb211-1"><a href="#cb211-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Regénérons encore une fois des données d'échantillon,</span></span>
 <span id="cb211-2"><a href="#cb211-2" aria-hidden="true" tabindex="-1"></a><span class="co"># mais cette fois-ci avec n = 50 observations</span></span>
@@ -3864,8 +3885,8 @@ mean of x
  105.5161 </code></pre>
 </div>
 </div>
-<p>La valeur p est maintenant beaucoup plus petite, soit inférieure à 1% (&lt; 0.01). Cela nous indique que la différence entre le QI des étudiant(e)s et de la population est significative (si nous utilisons des intervalles de confiance de 95%) !</p>
-<p>Avec un tel résultat de test t, <strong>nous pouvons rejeter l’hypothèse nulle H0</strong>, car la probabilité que les valeurs observées soient le résultat d’un pure hasard sont très faible (moins de 1%). Nous pouvont alors inférer que le QI des étudiant(e)s est significativement plus élevé que celui de la population générale.</p>
+<p>La valeur p est maintenant beaucoup plus petite, soit inférieure à 1% (&lt; 0.01). Cela nous indique que la différence entre le QI des étudiant-e-s et de la population est significative (si nous utilisons des intervalles de confiance de 95%) !</p>
+<p>Avec un tel résultat de test t, <strong>nous pouvons rejeter l’hypothèse nulle H0</strong>, car la probabilité que les valeurs observées soient le résultat d’un pure hasard sont très faible (moins de 1%). Nous pouvont alors inférer que le QI des étudiant-e-s est significativement plus élevé que celui de la population générale.</p>
 </section>
 <section id="exercice-1" class="level3">
 <h3 class="anchored" data-anchor-id="exercice-1">Exercice 1</h3>
@@ -4004,6 +4025,7 @@ mean of x mean of y
 <ul>
 <li>Un tutoriel qui approfondit le test t dans R est par exemple <a href="https://www.datacamp.com/tutorial/t-tests-r-tutorial">celui de Datacamp (2024)</a>.</li>
 </ul>
+<div style="page-break-after: always;"></div>
 </section>
 </section>
 </section>
@@ -4094,7 +4116,8 @@ Attention
 <span id="cb222-2"><a href="#cb222-2" aria-hidden="true" tabindex="-1"></a><span class="co"># boxplots</span></span>
 <span id="cb222-3"><a href="#cb222-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> flipper_length_mm)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 2 rows containing non-finite values (`stat_boxplot()`).</code></pre>
+<pre><code>Warning: Removed 2 rows containing non-finite outside the scale range
+(`stat_boxplot()`).</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
@@ -4111,7 +4134,8 @@ Attention
 <span id="cb224-6"><a href="#cb224-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"cyan4"</span>)) <span class="sc">+</span> <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Histograms of flipper length by penguin species"</span>,</span>
 <span id="cb224-7"><a href="#cb224-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"n = 344 ; data source : palmerpenguin R package"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 2 rows containing non-finite values (`stat_bin()`).</code></pre>
+<pre><code>Warning: Removed 2 rows containing non-finite outside the scale range
+(`stat_bin()`).</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
@@ -4631,6 +4655,7 @@ F-statistic: 52.75 on 3 and 28 DF,  p-value: 0.0000000000121</code></pre>
 <li>La semaine prochaine, les 22 et 23 mai, <strong>le Problem Set 4</strong> aura lieu pendant la session 13. Son contenu sera axé sur les statistiques descriptives et inférentielles (contenu des sessions 10, 11 et 12).</li>
 <li>Attention, <strong>la session 14 du 29 et 30 mai 2024 sera une session en auto-apprentissage !</strong> Il n’y a donc pas d’enseignement en classe à Fribourg.La session 14 vous fournira surtout des ressources R plus avancées que vous pourrez utiliser plus tard, par exemple pendant votre travail de bachelor, pour vos analyses empiriques.</li>
 </ul>
+<div style="page-break-after: always;"></div>
 </section>
 </section>
 </section>
@@ -4665,6 +4690,7 @@ Important
 </div>
 </div>
 </div>
+<div style="page-break-after: always;"></div>
 </section>
 <section id="session-14-en-auto-apprentissage" class="level1">
 <h1>Session 14 (en auto-apprentissage)</h1>

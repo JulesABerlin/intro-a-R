@@ -968,7 +968,7 @@ hist_ps_1
 
 {{< pagebreak >}}
 
-# Session 4 \| Paquets R, données CSV, visualisations I
+# Session 4 \| Paquets R, jeux de données intégrés, visualisations I
 
 La session 4 a pour but d'introduire trois éléments fondamentaux en
 analyse de données avec R :

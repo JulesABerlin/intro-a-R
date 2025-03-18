@@ -1877,8 +1877,7 @@ par exemple.
         responsabilité de vous en assurer.
 
     -   Le Problem Set 2 concernera principalement le contenu des
-        sessions 4 et 5, à savoir la visualisation de données avec
-        ggplot2.
+        sessions 4 et 5.
 
     -   Les bases de R qui ont été traitées dans les premières sessions,
         comme par exemple la création et l'écrasement d'objets avec
@@ -1893,10 +1892,10 @@ par exemple.
         du cours.
 
     -   Le questionnaire est **anonyme** (même pour l'enseignant) et
-        peut être rempli en ligne via LimeSurvey jusqu'au **vendredi 19
-        avril 2024 à 23h59**.
+        peut être rempli en ligne via LimeSurvey jusqu'au **lundi 31
+        mars 2025 à 23h59**.
 
-    -   Tous les étudiant-e-s recevront prochainement un lien personnel
+    -   Tous les étudiant-e-s ont reçu un lien personnel
         d'invitation au questionnaire par e-mail (les réponses seront
         anonymisées et mélangées par le logiciel, l'enseignant ne verra
         que si les personnes invitées ont répondu au questionnaire avant

@@ -1912,15 +1912,15 @@ par exemple.
 Les résultats du **Problem Set 2** (bonnes réponses, échelle des notes)
 sont accéssibles sur la page Moodle de l'exercice.
 
-Voici l'histogramme des points obtenus par n = 82 étudiant-e-s qui ont
-participé au Problem Set 2.
+Voici l'histogramme des points obtenus par n = 65 étudiant-e-s qui ont
+participé au Problem Set 2 le 26 et 27 mars 2025.
 
 -   Le nombre maximal de points était de 20, il fallait 10 pour passer
     le test.
 
--   La moyenne des points obtenus était de 12.5 (note = 4.5).
+-   La moyenne des points obtenus était de 12.7 (note = 4.5).
 
--   71 étudiant-e-s (86%) ont réussi Problem Set 2.
+-   56 étudiant-e-s (86%) ont réussi Problem Set 2.
 
 ```{r}
 #| echo: false
@@ -1942,13 +1942,13 @@ setwd("/Users/domus_julian/Documents/GitHub/intro-a-R/code")
 
 points_ps_2 <- read.csv("~/Documents/GitHub/intro-a-R/code/points_ps_2.csv", encoding="UTF-8")
 
-#points_ps_2 # il y a 82 observations de trois variables : etudiant-e, groupe et points
+#points_ps_2 # il y a 65 observations de trois variables : etudiant-e, groupe et points
 
 hist_ps_2 <-ggplot(points_ps_2, 
                    aes(x=points_ps_2)) + 
   geom_histogram(binwidth = 1, color="black", fill="white") +
   labs(title = "Histogramme des points obtenus dans le PS 2", # labs() permet de définir plusieurs labels en même temps (titre, axes, etc.)
-       subtitle = "n = 82 résultats de test", 
+       subtitle = "n = 65 résultats de test", 
        caption = "Source des données : Moodle") +       
   xlab("Points obtenus") +                             
   ylab("Fréquence") + 

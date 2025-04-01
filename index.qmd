@@ -1286,7 +1286,7 @@ complexes.
 Le tableau suivant décrit les couches d'un graphique ggplot :
 
 | Couche | Déscription/Variables | Obligatoire ? |
-|-----------------------|:------------------------------|:-----------------:|
+|-----------------------|:-----------------------------|:-----------------:|
 | *data* | le jeu de données que nous voulons visualiser | oui |
 | *aesthetics* | le *mapping* de nos variables : axes *x* et *y*, *color*, *fill*, *alpha*, *line width*, etc. | oui |
 | *geometries* | le type visuel du graphique : *point*, *line*, *histogram*, *bar*, *boxplot* | oui |
@@ -1895,11 +1895,11 @@ par exemple.
         peut être rempli en ligne via LimeSurvey jusqu'au **lundi 31
         mars 2025 à 23h59**.
 
-    -   Tous les étudiant-e-s ont reçu un lien personnel
-        d'invitation au questionnaire par e-mail (les réponses seront
-        anonymisées et mélangées par le logiciel, l'enseignant ne verra
-        que si les personnes invitées ont répondu au questionnaire avant
-        la date limite).
+    -   Tous les étudiant-e-s ont reçu un lien personnel d'invitation au
+        questionnaire par e-mail (les réponses seront anonymisées et
+        mélangées par le logiciel, l'enseignant ne verra que si les
+        personnes invitées ont répondu au questionnaire avant la date
+        limite).
 
     -   Chaque étudiant-e qui aura rempli le questionnaire dans les
         délais recevra un **bonus de 2 points dans le Problem Set 4**
@@ -2437,38 +2437,32 @@ igposts %>%
             mean_Comments = mean(Comments)) 
 ```
 
-### Devoir pour Session 8 et infos questionnaire/Problem Set 3
+### Devoir pour Session 8 et infos questionnaire
 
--   Attention, **la session 8 du 17 et 18 avril 2024 sera une session en
-    auto-apprentissage !** Il n'y a donc pas d'enseignement en classe à
-    Fribourg.
-
--   Le matériel de session 8, la deuxième partie de la manipulation de
-    données, sera accessible sur ce site à partir du 17 avril.
-
--   Assurez-vous d'avoir **rempli le questionnaire avant la date
-    limite** (**19 avril 2024 à 23h59**). Tou(te)s les étudiant-e-s qui
-    auront rempli le questionnaire à temps recevront 2 points de bonus
-    pour le Problem Set 4 (10% des points).
-
--   Si vous avez des difficultés à accéder au questionnaire via le lien
-    personnalisé qui vous a été envoyé par e-mail : Essayez à nouveau
-    avec différents navigateurs, sur votre téléphone portable et
-    désactivez les éventuels ad-blockers. Si nécessaire, veuillez
-    contacter l'enseignant afin de recevoir un nouveau lien par e-mail.
-
--   Dans deux semaines, les 24 et 25 avril, aura lieu **Problem Set 3**.
-    Il portera principalement sur les contenus des sessions 7 et 8
-    (manipulation de données). Comblez vous-même les éventuelles lacunes
-    de vos connaissances (p. ex. configurer correctement le répertoire
-    de travail, utiliser l'opérateur d'affectation `<-`, etc.)
-    Assurez-vous de pouvoir lire correctement les fichiers CSV dans
-    RStudio, car cela sera nécessaire pour résoudre l'ensemble de
-    problèmes 3.
+-   Assurez-vous que vous pouvez charger correctement le fichier de
+    données igposts.csv dans votre session R active.
+-   Nous téléchargerons désormais régulièrement des fichiers CSV avec
+    des jeux de données, c'est pourquoi ce processus doit fonctionner
+    sur votre ordinateur portable. (Cela s'applique également aux
+    Problem Sets 3 et 4).
+-   **Questionnaire** : Merci à toutes et tous les étudiant-e-s qui ont
+    rempli le questionnaire avant la date limite (31 mars 2025). Vous
+    recevrez 2 points bonus dans le Problem Set 4. Ceux-ci seront
+    ajoutés séparément à la fin du cours, lorsque la note finale sera
+    déterminée.
+-   Nous commencerons bientôt à évaluer les données du questionnaire
+    dans l'exercice.
+-   Si vous avez rencontré des difficultés lors des deux premiers
+    Problem Sets, assurez-vous que vous pouvez exécuter correctement sur
+    votre ordinateur portable tout le code R traité jusqu'à présent dans
+    le cours et que vous comprenez bien toutes les étapes. Nous vous
+    rappellons que tout le contenu de la page GitHub et de la page
+    Moodle du cours est pertinent pour les Problem Sets (pas seulement
+    ce qui a été discuté en classe).
 
 {{< pagebreak >}}
 
-# Session 8 (en auto-apprentissage) \| Manipuler les données II
+# Session 8 \| Manipuler les données II
 
 **Sujet : Manipuler les données (partie 2)**
 

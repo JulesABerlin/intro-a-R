@@ -2055,10 +2055,10 @@ suivre le processus suivant :
 
         -   **Encoding = UTF-8** : Indique à RStudio d'utiliser
             [l'encodage de caractères
-            UTF-8](https://blog.hubspot.fr/website/encodage-utf-8) (qui
-            est un standard très répandu), ce qui est important pour
-            lire correctement toutes les lettres (notamment les
-            caractères avec des accents : é, ä, ê, etc.).
+            UTF-8](https://fr.wikipedia.org/wiki/UTF-8) (qui est un
+            standard très répandu), ce qui est important pour lire
+            correctement toutes les lettres (notamment les caractères
+            avec des accents : é, ä, ê, etc.).
 
         -   **Heading = YES** : Indique à RStudio que la première ligne
             du fichier CSV contient les noms des colonnes.

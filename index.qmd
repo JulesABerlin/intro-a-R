@@ -2037,8 +2037,8 @@ Pour charger le jeu de données `igposts.csv` dans RStudio, vous pouvez
 suivre le processus suivant :
 
 1.  Vous téléchargez le fichier `igposts.csv` depuis le [site Moodle du
-    cours](https://moodle.unifr.ch/course/view.php?id=276028#section-7)
-    (voir matériel de la 7e session).
+    cours](https://moodle.unifr.ch/course/section.php?id=410649) (voir
+    matériel de la 7e session).
 
 2.  Stockez le fichier `igposts.csv` dans le dossier que vous avez
     définit comme répértoire de travail.

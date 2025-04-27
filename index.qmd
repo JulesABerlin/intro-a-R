@@ -1286,7 +1286,7 @@ complexes.
 Le tableau suivant décrit les couches d'un graphique ggplot :
 
 | Couche | Déscription/Variables | Obligatoire ? |
-|-----------------------|:-----------------------------|:-----------------:|
+|----|:---|:--:|
 | *data* | le jeu de données que nous voulons visualiser | oui |
 | *aesthetics* | le *mapping* de nos variables : axes *x* et *y*, *color*, *fill*, *alpha*, *line width*, etc. | oui |
 | *geometries* | le type visuel du graphique : *point*, *line*, *histogram*, *bar*, *boxplot* | oui |
@@ -2949,15 +2949,15 @@ G](https://www.instagram.com/p/ComtUDjrPAD/)
 Les résultats du **Problem Set 3** (bonnes réponses, échelle des notes)
 sont accéssibles sur la page Moodle de l'exercice.
 
-Voici l'histogramme des points obtenus par n = 79 étudiant-e-s qui ont
-participé au Problem Set 3.
+Voici l'histogramme des points obtenus par n = 64 étudiant-e-s qui ont
+participé au Problem Set 3 le 16 et 17 avril 2025 dans trois groupes (A, B, C).
 
 -   Le nombre maximal de points était de 20, il fallait 10 pour passer
     le test.
 
--   La moyenne des points obtenus était de 12.15 (note = 4.5).
+-   La moyenne des points obtenus était de 13.1 (note = 4.5).
 
--   63 étudiant-e-s (79.7%) ont réussi Problem Set 3.
+-   58 étudiant-e-s (90.6%) ont réussi Problem Set 3.
 
 ```{r}
 #| echo: false
@@ -2965,7 +2965,7 @@ participé au Problem Set 3.
 #| warning: false
 # script pour faire un histogramme des points obtenus dans le Problem Set 3
 # cours : Exercices Méthodes II
-# date : 24/25 avril 2024
+# date : 16/17 avril 2025
 # auteur : Julian Maitra
 
 library(ggplot2)
@@ -2974,18 +2974,18 @@ library(ggplot2)
 
 setwd("/Users/domus_julian/Documents/GitHub/intro-a-R/code")
 
-# Enregistrez le fichier CSV points_ps_2 dans votre répertoire de travail, 
+# Enregistrez le fichier CSV points_ps_3 dans votre répertoire de travail, 
 # puis importez les données dans R (modifiez le code suivant selon votre ordinateur) :
 
-points_ps_3 <- read.csv("~/Documents/GitHub/intro-a-R/code/points_ps_3_v2.csv", encoding="UTF-8")
+points_ps_3 <- read.csv("~/Documents/GitHub/intro-a-R/code/points_ps_3.csv", encoding="UTF-8")
 
-#points_ps_3 # il y a 79 observations
+#points_ps_3 # il y a 64 observations
 
 hist_ps_3 <-ggplot(points_ps_3, 
-                   aes(x=x)) + 
+                   aes(x=points_ps_3)) + 
   geom_histogram(binwidth = 1, color="black", fill="white") +
-  labs(title = "Histogramme des points obtenus dans le PS 3 (Corrigé !)", # labs() permet de définir plusieurs labels en même temps (titre, axes, etc.)
-       subtitle = "n = 79 résultats de test", 
+  labs(title = "Histogramme des points obtenus dans le PS 3", 
+       subtitle = "n = 64 résultats de test", 
        caption = "Source des données : Moodle") +       
   xlab("Points obtenus") +                             
   ylab("Fréquence") + 

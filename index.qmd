@@ -1286,7 +1286,7 @@ complexes.
 Le tableau suivant décrit les couches d'un graphique ggplot :
 
 | Couche | Déscription/Variables | Obligatoire ? |
-|----|:---|:--:|
+|------------------------|:-----------------------|:----------------------:|
 | *data* | le jeu de données que nous voulons visualiser | oui |
 | *aesthetics* | le *mapping* de nos variables : axes *x* et *y*, *color*, *fill*, *alpha*, *line width*, etc. | oui |
 | *geometries* | le type visuel du graphique : *point*, *line*, *histogram*, *bar*, *boxplot* | oui |
@@ -2950,7 +2950,8 @@ Les résultats du **Problem Set 3** (bonnes réponses, échelle des notes)
 sont accéssibles sur la page Moodle de l'exercice.
 
 Voici l'histogramme des points obtenus par n = 64 étudiant-e-s qui ont
-participé au Problem Set 3 le 16 et 17 avril 2025 dans trois groupes (A, B, C).
+participé au Problem Set 3 le 16 et 17 avril 2025 dans trois groupes (A,
+B, C).
 
 -   Le nombre maximal de points était de 20, il fallait 10 pour passer
     le test.
@@ -3019,7 +3020,7 @@ Les mesures suivantes font souvent partie des statistiques descriptives
 une première analyse des variables de type numérique d'un jeu de
 données.
 
--   La taille de l'échantillon (nombre d'observations n)
+-   La taille de l'échantillon (nombre d'observations *n*)
 
 -   Les mesures de tendance centrale (moyenne, médiane, mode)
 
@@ -3030,14 +3031,14 @@ données.
 
 Ces mesure permettent d'obtenir une première idée de la structure d'un
 jeu de données. Elles permettent également d'identifier des valeurs
-extrêmes (angl. outliers) qui peuvent jouer un rôle important dans un
-jeud de données.
+extrêmes (angl. *outliers*) qui peuvent jouer un rôle important dans un
+jeu de données.
 
 Des mesures concernant les **variables catégorielles** peuvent également
 faire partie d'une analyse déscriptive, notamment :
 
--   La fréquence de chaque catégories (p. ex. combien de participants à
-    un questionnaire sont des femmes ?)
+-   La fréquence de chaque catégories (p. ex. combien de participant-e-s
+    à un questionnaire sont des femmes ?)
 -   La répartition des différentes catégories (p. ex. quel est le
     pourcentage de femmes dans l'échantillon ?)
 :::
@@ -3048,7 +3049,7 @@ présentées sous deux formats :
 
 -   des **tableaux** pour les mesures telles que la taille de
     l'échantillon, les moyennes, etc. Souvent aussi pour différentes
-    catégories, p. ex. homme et femme.
+    catégories, p. ex. hommes et femmes.
 
 -   des **graphiques** pour la visualisation de distributions, par
     exemple des histogrammes, et des répartitions de variables
@@ -3057,11 +3058,11 @@ présentées sous deux formats :
 Lorsque l'on veut représenter des statistiques descriptives dans R, il
 est souvent utile de combiner les deux paquets R `dplyr` et `ggplot2`.
 C'est une bonne nouvelle, car nous avons déjà examiné les principaux
-codes R nécessaires pour dans ce cours.
+codes R nécessaires pour utiliser ces deux paquets dans ce cours.
 
 Pour nous entraîner à nouveau, cette fois avec nos propres données, nous
 allons procéder ci-dessous à une analyse descriptive des réponses au
-questionnaire !
+questionnaire (version de 2024) !
 
 Vous verrez donc par la suite comment ce que nous avons appris jusqu'à
 présent dans le cours peut être combiné de manière utile.
@@ -3072,12 +3073,12 @@ Veuillez ouvrir un nouveau script R et charger les paquets `tidyverse`
 et `ggthemes`. Ensuite, vous pouvez définir votre répértoire de
 travaille.
 
-Vous pouvez ensuite télécharger le fichier `reponses_socio.csv`depuis la
-page Moodle du cours (matériel de la 10ème session) et le sauvegarder
+Vous pouvez ensuite télécharger le fichier `reponses_socio.csv` depuis
+la page Moodle du cours (matériel de la 10ème session) et le sauvegarder
 dans votre répértoire de travail.
 
 ![Paramètres pour l'importation du fichier
-reponses_socio.csv](images/Screenshot%202024-05-01%20at%2009.09.22.png)
+`reponses_socio.csv`.](images/Screenshot%202024-05-01%20at%2009.09.22.png)
 
 ```{r}
 #| echo: true

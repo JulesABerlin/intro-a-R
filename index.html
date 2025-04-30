@@ -3421,35 +3421,35 @@ Solution
 <p>Il ne s’agit donc <strong>pas</strong> d’analyser des <strong>relations de cause à effet</strong> (c’est en effet le rôle de la <em>statistique inférentielle</em>).</p>
 <p>Les mesures suivantes font souvent partie des statistiques descriptives (souvent appelés <em>summary statistics</em> en anglais) et sont utilisées pour une première analyse des variables de type numérique d’un jeu de données.</p>
 <ul>
-<li><p>La taille de l’échantillon (nombre d’observations n)</p></li>
+<li><p>La taille de l’échantillon (nombre d’observations <em>n</em>)</p></li>
 <li><p>Les mesures de tendance centrale (moyenne, médiane, mode)</p></li>
 <li><p>Les mesures de dispersion (étendue, variance, écart-type, kurtosis, etc.)</p></li>
 <li><p>Les mesure de position (percentiles, quartiles)</p></li>
 </ul>
-<p>Ces mesure permettent d’obtenir une première idée de la structure d’un jeu de données. Elles permettent également d’identifier des valeurs extrêmes (angl. outliers) qui peuvent jouer un rôle important dans un jeud de données.</p>
+<p>Ces mesure permettent d’obtenir une première idée de la structure d’un jeu de données. Elles permettent également d’identifier des valeurs extrêmes (angl. <em>outliers</em>) qui peuvent jouer un rôle important dans un jeu de données.</p>
 <p>Des mesures concernant les <strong>variables catégorielles</strong> peuvent également faire partie d’une analyse déscriptive, notamment :</p>
 <ul>
-<li>La fréquence de chaque catégories (p.&nbsp;ex. combien de participants à un questionnaire sont des femmes ?)</li>
+<li>La fréquence de chaque catégories (p.&nbsp;ex. combien de participant-e-s à un questionnaire sont des femmes ?)</li>
 <li>La répartition des différentes catégories (p.&nbsp;ex. quel est le pourcentage de femmes dans l’échantillon ?)</li>
 </ul>
 </div>
 </div>
 <p>Dans la a mise en œuvre d’une analyse statistique, par exemple dans un travail scientifique, les statistiques descriptives sont souvent présentées sous deux formats :</p>
 <ul>
-<li><p>des <strong>tableaux</strong> pour les mesures telles que la taille de l’échantillon, les moyennes, etc. Souvent aussi pour différentes catégories, p.&nbsp;ex. homme et femme.</p></li>
+<li><p>des <strong>tableaux</strong> pour les mesures telles que la taille de l’échantillon, les moyennes, etc. Souvent aussi pour différentes catégories, p.&nbsp;ex. hommes et femmes.</p></li>
 <li><p>des <strong>graphiques</strong> pour la visualisation de distributions, par exemple des histogrammes, et des répartitions de variables catégorielles, par exemple par le biais de diagrammes à barres.</p></li>
 </ul>
-<p>Lorsque l’on veut représenter des statistiques descriptives dans R, il est souvent utile de combiner les deux paquets R <code>dplyr</code> et <code>ggplot2</code>. C’est une bonne nouvelle, car nous avons déjà examiné les principaux codes R nécessaires pour dans ce cours.</p>
-<p>Pour nous entraîner à nouveau, cette fois avec nos propres données, nous allons procéder ci-dessous à une analyse descriptive des réponses au questionnaire !</p>
+<p>Lorsque l’on veut représenter des statistiques descriptives dans R, il est souvent utile de combiner les deux paquets R <code>dplyr</code> et <code>ggplot2</code>. C’est une bonne nouvelle, car nous avons déjà examiné les principaux codes R nécessaires pour utiliser ces deux paquets dans ce cours.</p>
+<p>Pour nous entraîner à nouveau, cette fois avec nos propres données, nous allons procéder ci-dessous à une analyse descriptive des réponses au questionnaire (version de 2024) !</p>
 <p>Vous verrez donc par la suite comment ce que nous avons appris jusqu’à présent dans le cours peut être combiné de manière utile.</p>
 <section id="analyse-des-réponses-au-questionnaire-1ère-partie-stats-déscriptives" class="level2">
 <h2 class="anchored" data-anchor-id="analyse-des-réponses-au-questionnaire-1ère-partie-stats-déscriptives">Analyse des réponses au questionnaire, 1ère partie (stats déscriptives)</h2>
 <p>Veuillez ouvrir un nouveau script R et charger les paquets <code>tidyverse</code> et <code>ggthemes</code>. Ensuite, vous pouvez définir votre répértoire de travaille.</p>
-<p>Vous pouvez ensuite télécharger le fichier <code>reponses_socio.csv</code>depuis la page Moodle du cours (matériel de la 10ème session) et le sauvegarder dans votre répértoire de travail.</p>
+<p>Vous pouvez ensuite télécharger le fichier <code>reponses_socio.csv</code> depuis la page Moodle du cours (matériel de la 10ème session) et le sauvegarder dans votre répértoire de travail.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/Screenshot%202024-05-01%20at%2009.09.22.png" class="img-fluid figure-img"></p>
-<figcaption>Paramètres pour l’importation du fichier reponses_socio.csv</figcaption>
+<figcaption>Paramètres pour l’importation du fichier <code>reponses_socio.csv</code>.</figcaption>
 </figure>
 </div>
 <div class="cell">

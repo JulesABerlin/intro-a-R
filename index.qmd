@@ -3256,7 +3256,7 @@ Si tout a bien marché, vous devrez maintenant avoir un ficher CSV, nommé
 
 {{< pagebreak >}}
 
-# Session 11 (en auto-apprentissage) \| Statistiques inférentielles I
+# Session 11 \| Statistiques inférentielles I
 
 **Sujet : La statistique inférentielle, Partie 1 (tests t)**
 

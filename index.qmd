@@ -3537,8 +3537,8 @@ femmes et de +- 6.1 cm pour les hommes.
 ```{r}
 # Données exemplaires :
 set.seed(123)
-tailles_f <- rnorm(5, mean = 177.4, sd = 5.6)
-tailles_h <- rnorm(5, mean = 164.7, sd = 6.1)
+tailles_f <- rnorm(5, mean = 164.7, sd = 5.6)
+tailles_h <- rnorm(5, mean = 177.4, sd = 6.1)
 
 # Two-sample t-test
 t_test_two_sample <- t.test(tailles_f, tailles_h)

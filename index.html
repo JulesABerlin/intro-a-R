@@ -3950,8 +3950,8 @@ mean of x
 <div class="cell">
 <div class="sourceCode cell-code" id="cb215"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb215-1"><a href="#cb215-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Données exemplaires :</span></span>
 <span id="cb215-2"><a href="#cb215-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb215-3"><a href="#cb215-3" aria-hidden="true" tabindex="-1"></a>tailles_f <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">5</span>, <span class="at">mean =</span> <span class="fl">177.4</span>, <span class="at">sd =</span> <span class="fl">5.6</span>)</span>
-<span id="cb215-4"><a href="#cb215-4" aria-hidden="true" tabindex="-1"></a>tailles_h <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">5</span>, <span class="at">mean =</span> <span class="fl">164.7</span>, <span class="at">sd =</span> <span class="fl">6.1</span>)</span>
+<span id="cb215-3"><a href="#cb215-3" aria-hidden="true" tabindex="-1"></a>tailles_f <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">5</span>, <span class="at">mean =</span> <span class="fl">164.7</span>, <span class="at">sd =</span> <span class="fl">5.6</span>)</span>
+<span id="cb215-4"><a href="#cb215-4" aria-hidden="true" tabindex="-1"></a>tailles_h <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">5</span>, <span class="at">mean =</span> <span class="fl">177.4</span>, <span class="at">sd =</span> <span class="fl">6.1</span>)</span>
 <span id="cb215-5"><a href="#cb215-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb215-6"><a href="#cb215-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Two-sample t-test</span></span>
 <span id="cb215-7"><a href="#cb215-7" aria-hidden="true" tabindex="-1"></a>t_test_two_sample <span class="ot">&lt;-</span> <span class="fu">t.test</span>(tailles_f, tailles_h)</span>
@@ -3961,13 +3961,13 @@ mean of x
     Welch Two Sample t-test
 
 data:  tailles_f and tailles_h
-t = 3.7297, df = 6.8056, p-value = 0.007747
+t = -3.0109, df = 6.8056, p-value = 0.02031
 alternative hypothesis: true difference in means is not equal to 0
 95 percent confidence interval:
-  5.091961 23.016717
+ -20.308039  -2.383283
 sample estimates:
 mean of x mean of y 
- 178.4840  164.4297 </code></pre>
+ 165.7840  177.1297 </code></pre>
 </div>
 </div>
 <p>Comme nos échantillons de <code>n = 5</code> sont très petit, il se peut que la différence de taille moyenne entre les suisses et les suissesses n’est pa significative si on utilise des intervalles de confiances de 95% ! Cependant, dès que nous augmentons l’échantillon simulé, par exemple à <code>n = 20</code> ou <code>n = 100</code>, le test T indique clairement que la différence de taille est significative.</p>

@@ -3344,7 +3344,7 @@ ces hypothèses, surtout si le nombre d'observations (n) de chaque
 
 Néanmoins, si une ou plusieurs de ces hypothèses n'est pas satisfaite,
 alors des alternatives au test t peuvent être utilisées, comme [le test
-de Wilcoxon-Mann-Whitney](#0) (`wilcox.test()`)ou [le test de
+de Wilcoxon-Mann-Whitney](#0) (`wilcox.test()`) ou [le test de
 Kruskal-Wallis](#0) (`kruskal.test()`).
 :::
 
@@ -3380,7 +3380,7 @@ Il existe **trois types** de tests t :
         Le cours de soutien scolaire est dans ce cas un traitement.
 
     -   (à noter : nous n'allons pas traiter ce type de test t plus en
-        détail dans l'exercice)
+        détail dans l'exercice).
 
 Voyons maintenant des exemples avec du code !
 
@@ -3404,12 +3404,12 @@ fonction `rnorm()`que nous avons vu en classe pour créer des valeurs
 valeurs pour simuler notre problème.
 
 ```{r}
-# Générer des données d'échantillon avec n = 25 observations hypothétiques de QI d'étudiant-e.
-# Nous simulons, avec rnorm() 25 observations d'une loi normale avec une moyenne de 25 et un écart-type de 15
+# Générer des données d'échantillon avec n = 25 observations hypothétiques de QI d'étudiant-e-s.
+# Nous simulons, avec rnorm() 25 observations qui suivent une loi normale avec une moyenne de 105 et un écart-type de 15
 set.seed(123)
 scores_qi <- rnorm(25, mean = 105, sd = 15)
 
-# Test t à un échantillon
+# Test t à un échantillon :
 # Il faut 2 arguments dans la fonction t.test() : les données à tester (scores_qi) et la valeur à laquelle on veut comparer les données (mu = 100)
 resultat_test_t <- t.test(scores_qi, mu = 100)
 print(resultat_test_t)

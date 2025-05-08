@@ -3796,7 +3796,7 @@ Attention
 </ul></li>
 </ol>
 <p>En pratique, les tests t sont relativement robustes aux déviations de ces hypothèses, surtout si le nombre d’observations (n) de chaque échantillon est important.</p>
-<p>Néanmoins, si une ou plusieurs de ces hypothèses n’est pas satisfaite, alors des alternatives au test t peuvent être utilisées, comme <a href="#0">le test de Wilcoxon-Mann-Whitney</a> (<code>wilcox.test()</code>)ou <a href="#0">le test de Kruskal-Wallis</a> (<code>kruskal.test()</code>).</p>
+<p>Néanmoins, si une ou plusieurs de ces hypothèses n’est pas satisfaite, alors des alternatives au test t peuvent être utilisées, comme <a href="#0">le test de Wilcoxon-Mann-Whitney</a> (<code>wilcox.test()</code>) ou <a href="#0">le test de Kruskal-Wallis</a> (<code>kruskal.test()</code>).</p>
 </div>
 </div>
 </div>
@@ -3814,7 +3814,7 @@ Attention
 <li><p><strong>Le test t pour échantillons appariés</strong> (angl. pairwise t-test) : pour comparer les moyennes de deux groupes qui sont liés ou appariés d’une certaine manière. Dans ce type de test, chaque participant est mesuré deux fois, une fois dans chaque groupe, ce qui permet de réduire les effets des variations individuelles.</p>
 <ul>
 <li><p>Par exemple, nous pourrions enregistrer la moyenne des notes d’une classe de 30 élèves avant et après un cours de soutien scolaire en ligne. Il y a donc deux mesures pour chaque élève. Le cours de soutien scolaire est dans ce cas un traitement.</p></li>
-<li><p>(à noter : nous n’allons pas traiter ce type de test t plus en détail dans l’exercice)</p></li>
+<li><p>(à noter : nous n’allons pas traiter ce type de test t plus en détail dans l’exercice).</p></li>
 </ul></li>
 </ol>
 <p>Voyons maintenant des exemples avec du code !</p>
@@ -3828,18 +3828,19 @@ Attention
 <p>À noter : dans le code qui suit, nous allons encore une fois utiliser la fonction <code>rnorm()</code>que nous avons vu en classe pour créer des valeurs “aléatoires” qui suivent une loi normale. Nous pouvons utiliser ces valeurs pour simuler notre problème.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb209"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb209-1"><a href="#cb209-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Générer des données d'échantillon avec n = 25</span></span>
-<span id="cb209-2"><a href="#cb209-2" aria-hidden="true" tabindex="-1"></a><span class="co"># observations hypothétiques de QI d'étudiant-e.  Nous</span></span>
-<span id="cb209-3"><a href="#cb209-3" aria-hidden="true" tabindex="-1"></a><span class="co"># simulons, avec rnorm() 25 observations d'une loi normale</span></span>
-<span id="cb209-4"><a href="#cb209-4" aria-hidden="true" tabindex="-1"></a><span class="co"># avec une moyenne de 25 et un écart-type de 15</span></span>
-<span id="cb209-5"><a href="#cb209-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb209-6"><a href="#cb209-6" aria-hidden="true" tabindex="-1"></a>scores_qi <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">25</span>, <span class="at">mean =</span> <span class="dv">105</span>, <span class="at">sd =</span> <span class="dv">15</span>)</span>
-<span id="cb209-7"><a href="#cb209-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb209-8"><a href="#cb209-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Test t à un échantillon Il faut 2 arguments dans la</span></span>
-<span id="cb209-9"><a href="#cb209-9" aria-hidden="true" tabindex="-1"></a><span class="co"># fonction t.test() : les données à tester (scores_qi) et</span></span>
-<span id="cb209-10"><a href="#cb209-10" aria-hidden="true" tabindex="-1"></a><span class="co"># la valeur à laquelle on veut comparer les données (mu =</span></span>
-<span id="cb209-11"><a href="#cb209-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 100)</span></span>
-<span id="cb209-12"><a href="#cb209-12" aria-hidden="true" tabindex="-1"></a>resultat_test_t <span class="ot">&lt;-</span> <span class="fu">t.test</span>(scores_qi, <span class="at">mu =</span> <span class="dv">100</span>)</span>
-<span id="cb209-13"><a href="#cb209-13" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(resultat_test_t)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb209-2"><a href="#cb209-2" aria-hidden="true" tabindex="-1"></a><span class="co"># observations hypothétiques de QI d'étudiant-e-s.  Nous</span></span>
+<span id="cb209-3"><a href="#cb209-3" aria-hidden="true" tabindex="-1"></a><span class="co"># simulons, avec rnorm() 25 observations qui suivent une</span></span>
+<span id="cb209-4"><a href="#cb209-4" aria-hidden="true" tabindex="-1"></a><span class="co"># loi normale avec une moyenne de 105 et un écart-type de</span></span>
+<span id="cb209-5"><a href="#cb209-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 15</span></span>
+<span id="cb209-6"><a href="#cb209-6" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb209-7"><a href="#cb209-7" aria-hidden="true" tabindex="-1"></a>scores_qi <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">25</span>, <span class="at">mean =</span> <span class="dv">105</span>, <span class="at">sd =</span> <span class="dv">15</span>)</span>
+<span id="cb209-8"><a href="#cb209-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb209-9"><a href="#cb209-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Test t à un échantillon : Il faut 2 arguments dans la</span></span>
+<span id="cb209-10"><a href="#cb209-10" aria-hidden="true" tabindex="-1"></a><span class="co"># fonction t.test() : les données à tester (scores_qi) et</span></span>
+<span id="cb209-11"><a href="#cb209-11" aria-hidden="true" tabindex="-1"></a><span class="co"># la valeur à laquelle on veut comparer les données (mu =</span></span>
+<span id="cb209-12"><a href="#cb209-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 100)</span></span>
+<span id="cb209-13"><a href="#cb209-13" aria-hidden="true" tabindex="-1"></a>resultat_test_t <span class="ot">&lt;-</span> <span class="fu">t.test</span>(scores_qi, <span class="at">mu =</span> <span class="dv">100</span>)</span>
+<span id="cb209-14"><a href="#cb209-14" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(resultat_test_t)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     One Sample t-test

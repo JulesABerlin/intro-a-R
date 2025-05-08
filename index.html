@@ -3782,7 +3782,7 @@ Attention
 <li><strong>Indépendance</strong>
 <ul>
 <li>Les observations doivent être indépendantes les unes des autres. Cela signifie que la valeur d’une observation ne doit pas dépendre de la valeur d’une autre observation.</li>
-<li>Pour les tests t à deux échantillons, les échantillons doivent être indépendants. Si les échantillons ne sont pas indépendants, un test t par paires peut être approprié.</li>
+<li>Pour les tests t à deux échantillons, les échantillons doivent être indépendants. Si les échantillons ne sont pas indépendants, un test t pour échantillons appariés peut être approprié.</li>
 </ul></li>
 <li><strong>Normalité</strong>
 <ul>
@@ -3803,15 +3803,15 @@ Attention
 <p>Dans R, le test t est éffectué avec la fonction <code>test.t()</code>.</p>
 <p>Il existe <strong>trois types</strong> de tests t :</p>
 <ol type="1">
-<li><p><strong>Le test t à un échantillon</strong> (angl. one sample t-test) : pour évaluer si la moyenne d’un seul échantillon diffère de manière significative d’une valeur connue.</p>
+<li><p><strong>Le test t à un échantillon</strong> (angl. <em>one sample t-test</em>) : pour évaluer si la moyenne d’un seul échantillon diffère de manière significative d’une valeur connue.</p>
 <ul>
 <li>Par exemple, si la moyenne des notes d’un groupe de 30 lycéens, qui est de 4.9, est significativement différente de 5.0 ou non.</li>
 </ul></li>
-<li><p><strong>Le test t à deux échantillons indépendants</strong> (angl. two sample t-test ; aussi appelé Welch two sample t-test) : pour évaluer si les moyennes de deux échantillons indépendants diffèrent de manière significative.</p>
+<li><p><strong>Le test t à deux échantillons indépendants</strong> (angl. <em>two sample t-test</em> ; aussi appelé <em>Welch two sample t-test</em>) : pour évaluer si les moyennes de deux échantillons indépendants diffèrent de manière significative.</p>
 <ul>
 <li>Par exemple, si la moyenne des notes de 30 lycéennes, qui est de 5.0, est significativement différente ou non de la moyenne des notes de 30 lycéens, qui est de 4.8.</li>
 </ul></li>
-<li><p><strong>Le test t pour échantillons appariés</strong> (angl. pairwise t-test) : pour comparer les moyennes de deux groupes qui sont liés ou appariés d’une certaine manière. Dans ce type de test, chaque participant est mesuré deux fois, une fois dans chaque groupe, ce qui permet de réduire les effets des variations individuelles.</p>
+<li><p><strong>Le test t pour échantillons appariés</strong> (angl. <em>pairwise t-test</em>) : pour comparer les moyennes de deux groupes qui sont liés ou appariés d’une certaine manière. Dans ce type de test, chaque participant est mesuré deux fois, une fois dans chaque groupe, ce qui permet de réduire les effets des variations individuelles.</p>
 <ul>
 <li><p>Par exemple, nous pourrions enregistrer la moyenne des notes d’une classe de 30 élèves avant et après un cours de soutien scolaire en ligne. Il y a donc deux mesures pour chaque élève. Le cours de soutien scolaire est dans ce cas un traitement.</p></li>
 <li><p>(à noter : nous n’allons pas traiter ce type de test t plus en détail dans l’exercice).</p></li>
@@ -3822,10 +3822,10 @@ Attention
 <h3 class="anchored" data-anchor-id="exemple-1-test-t-à-un-échantillon">Exemple 1 : test t à un échantillon</h3>
 <p><strong>Problème</strong> : Tester si la moyenne de QI d’un échantillon d’étudiant-e-s, qui est de 105, est différente de manière significative de la moyenne de la population, qui est de 100.</p>
 <ul>
-<li><p>Notre hypothèse H1 stipule qu’il y a une différence significative entre le QI des étudiant-e-s et celui de la population générale. En effet, nous assumons que le QI des étudiant-e-s est plus élevé que celui de la population.</p></li>
-<li><p>L’hypothèse nulle H0 serait donc le contraire, c’est à dire que la différence n’est pas significative entre les deux groupes.</p></li>
+<li><p>Notre <strong>hypothèse H1</strong> (angl. <em>alternative hypothesis</em>) stipule qu’il y a une différence significative entre le QI des étudiant-e-s et celui de la population générale. En effet, nous assumons que le QI des étudiant-e-s est plus élevé que celui de la population.</p></li>
+<li><p>L’<strong>hypothèse nulle H0</strong> (angl. <em>null hypothesis</em>) serait donc le contraire, c’est à dire que la différence n’est pas significative entre les deux groupes.</p></li>
 </ul>
-<p>À noter : dans le code qui suit, nous allons encore une fois utiliser la fonction <code>rnorm()</code>que nous avons vu en classe pour créer des valeurs “aléatoires” qui suivent une loi normale. Nous pouvons utiliser ces valeurs pour simuler notre problème.</p>
+<p>À noter : dans le code qui suit, nous allons encore une fois utiliser la fonction <code>rnorm()</code> que nous avons vu en classe pour créer des valeurs “aléatoires” qui suivent une loi normale. Nous pouvons utiliser ces valeurs pour simuler notre problème.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb209"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb209-1"><a href="#cb209-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Générer des données d'échantillon avec n = 25</span></span>
 <span id="cb209-2"><a href="#cb209-2" aria-hidden="true" tabindex="-1"></a><span class="co"># observations hypothétiques de QI d'étudiant-e-s.  Nous</span></span>
@@ -3835,10 +3835,10 @@ Attention
 <span id="cb209-6"><a href="#cb209-6" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
 <span id="cb209-7"><a href="#cb209-7" aria-hidden="true" tabindex="-1"></a>scores_qi <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">25</span>, <span class="at">mean =</span> <span class="dv">105</span>, <span class="at">sd =</span> <span class="dv">15</span>)</span>
 <span id="cb209-8"><a href="#cb209-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb209-9"><a href="#cb209-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Test t à un échantillon : Il faut 2 arguments dans la</span></span>
-<span id="cb209-10"><a href="#cb209-10" aria-hidden="true" tabindex="-1"></a><span class="co"># fonction t.test() : les données à tester (scores_qi) et</span></span>
-<span id="cb209-11"><a href="#cb209-11" aria-hidden="true" tabindex="-1"></a><span class="co"># la valeur à laquelle on veut comparer les données (mu =</span></span>
-<span id="cb209-12"><a href="#cb209-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 100)</span></span>
+<span id="cb209-9"><a href="#cb209-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Test t à un échantillon où il faut 2 arguments dans la</span></span>
+<span id="cb209-10"><a href="#cb209-10" aria-hidden="true" tabindex="-1"></a><span class="co"># fonction t.test() : (1) les données à tester (scores_qi)</span></span>
+<span id="cb209-11"><a href="#cb209-11" aria-hidden="true" tabindex="-1"></a><span class="co"># et (2) la valeur à laquelle on veut comparer les données</span></span>
+<span id="cb209-12"><a href="#cb209-12" aria-hidden="true" tabindex="-1"></a><span class="co"># (mu = 100)</span></span>
 <span id="cb209-13"><a href="#cb209-13" aria-hidden="true" tabindex="-1"></a>resultat_test_t <span class="ot">&lt;-</span> <span class="fu">t.test</span>(scores_qi, <span class="at">mu =</span> <span class="dv">100</span>)</span>
 <span id="cb209-14"><a href="#cb209-14" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(resultat_test_t)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">

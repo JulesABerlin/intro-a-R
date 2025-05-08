@@ -3324,7 +3324,7 @@ satisfaites :
         dépendre de la valeur d'une autre observation.
     -   Pour les tests t à deux échantillons, les échantillons doivent
         être indépendants. Si les échantillons ne sont pas indépendants,
-        un test t par paires peut être approprié.
+        un test t pour échantillons appariés peut être approprié.
 4.  **Normalité**
     -   La variable continue étudiée doit (plus ou moins) suivre une loi
         normale dans chaque groupe ou échantillon.
@@ -3352,23 +3352,23 @@ Dans R, le test t est éffectué avec la fonction `test.t()`.
 
 Il existe **trois types** de tests t :
 
-1.  **Le test t à un échantillon** (angl. one sample t-test) : pour
+1.  **Le test t à un échantillon** (angl. *one sample t-test*) : pour
     évaluer si la moyenne d'un seul échantillon diffère de manière
     significative d'une valeur connue.
 
     -   Par exemple, si la moyenne des notes d'un groupe de 30 lycéens,
         qui est de 4.9, est significativement différente de 5.0 ou non.
 
-2.  **Le test t à deux échantillons indépendants** (angl. two sample
-    t-test ; aussi appelé Welch two sample t-test) : pour évaluer si les
-    moyennes de deux échantillons indépendants diffèrent de manière
+2.  **Le test t à deux échantillons indépendants** (angl. *two sample
+    t-test* ; aussi appelé *Welch two sample t-test*) : pour évaluer si
+    les moyennes de deux échantillons indépendants diffèrent de manière
     significative.
 
     -   Par exemple, si la moyenne des notes de 30 lycéennes, qui est de
         5.0, est significativement différente ou non de la moyenne des
         notes de 30 lycéens, qui est de 4.8.
 
-3.  **Le test t pour échantillons appariés** (angl. pairwise t-test) :
+3.  **Le test t pour échantillons appariés** (angl. *pairwise t-test*) :
     pour comparer les moyennes de deux groupes qui sont liés ou appariés
     d'une certaine manière. Dans ce type de test, chaque participant est
     mesuré deux fois, une fois dans chaque groupe, ce qui permet de
@@ -3390,16 +3390,17 @@ Voyons maintenant des exemples avec du code !
 d'étudiant-e-s, qui est de 105, est différente de manière significative
 de la moyenne de la population, qui est de 100.
 
--   Notre hypothèse H1 stipule qu'il y a une différence significative
-    entre le QI des étudiant-e-s et celui de la population générale. En
-    effet, nous assumons que le QI des étudiant-e-s est plus élevé que
-    celui de la population.
+-   Notre **hypothèse H1** (angl. *alternative hypothesis*) stipule
+    qu'il y a une différence significative entre le QI des étudiant-e-s
+    et celui de la population générale. En effet, nous assumons que le
+    QI des étudiant-e-s est plus élevé que celui de la population.
 
--   L'hypothèse nulle H0 serait donc le contraire, c'est à dire que la
-    différence n'est pas significative entre les deux groupes.
+-   L'**hypothèse nulle H0** (angl. *null hypothesis*) serait donc le
+    contraire, c'est à dire que la différence n'est pas significative
+    entre les deux groupes.
 
 À noter : dans le code qui suit, nous allons encore une fois utiliser la
-fonction `rnorm()`que nous avons vu en classe pour créer des valeurs
+fonction `rnorm()` que nous avons vu en classe pour créer des valeurs
 "aléatoires" qui suivent une loi normale. Nous pouvons utiliser ces
 valeurs pour simuler notre problème.
 
@@ -3409,8 +3410,8 @@ valeurs pour simuler notre problème.
 set.seed(123)
 scores_qi <- rnorm(25, mean = 105, sd = 15)
 
-# Test t à un échantillon :
-# Il faut 2 arguments dans la fonction t.test() : les données à tester (scores_qi) et la valeur à laquelle on veut comparer les données (mu = 100)
+# Test t à un échantillon où
+# il faut 2 arguments dans la fonction t.test() : (1) les données à tester (scores_qi) et (2) la valeur à laquelle on veut comparer les données (mu = 100)
 resultat_test_t <- t.test(scores_qi, mu = 100)
 print(resultat_test_t)
 ```

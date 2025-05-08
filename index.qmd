@@ -3526,7 +3526,7 @@ simuler deux échantillons hypothétiques :
 
 -   Un échantillon de 5 tailles de femmes suisses
 
--   Un échantillon de 5 tailles d'homme suisses
+-   Un échantillon de 5 tailles d'hommes suisses
 
 Selon l'article de [*24
 heures*](https://www.24heures.ch/calculateur-en-ligne-quelle-taille-faites-vous-par-rapport-aux-autres-191558705635#),

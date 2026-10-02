@@ -39,9 +39,9 @@ diffèrent selon le genre (variable x). Une relation **causale** ne peut
 En général, pour analyser de telles relations, nous formulons souvent
 des hypothèses basées sur des théories ou des suppositions tiré de la
 littérature d'un domaine de recherche, que nous pouvons ensuite tester
-sur notre échantillon. Les résultats obtenus nous permettent de
-confirmer ou d'infirmer nos hypothèses et de généraliser les conclusions
-à la population entière. Ceci nous permet de contribuer à la création de
+sur notre échantillon. Les résultats obtenus nous permettent de rejeter
+ou non l'hypothèse nulle, et de généraliser prudemment les conclusions à
+la population entière. Ceci nous permet de contribuer à la création de
 nouvelles connaissance dans notre domaine de recherche
 
 ## le test t
@@ -75,12 +75,17 @@ satisfaites :
         être indépendants. Si les échantillons ne sont pas indépendants,
         un test t pour échantillons appariés peut être approprié.
 4.  **Normalité**
-    -   La variable continue étudiée doit (plus ou moins) suivre une loi
-        normale dans chaque groupe ou échantillon.
-    -   Cette hypothèse peut être vérifiée à l'aide de graphiques (comme
-        un histogramme) ou de tests statistiques (comme [le test de
-        Shapiro-Wilk](https://www.statology.org/shapiro-wilk-test-r/) :
-        `shapiro.test()`).
+    -   Ce qui compte, c'est que la **moyenne** de l'échantillon suive
+        approximativement une loi normale. C'est le cas si la variable
+        étudiée est à peu près normale dans chaque groupe, ou si les
+        échantillons sont assez grands (théorème central limite).
+    -   Cette hypothèse est donc surtout importante pour les **petits**
+        échantillons. Vérifiez-la plutôt visuellement (histogramme,
+        [graphique Q-Q](https://fr.wikipedia.org/wiki/Droite_de_Henry)
+        avec `qqnorm()`) que par un test : un test de normalité comme
+        Shapiro-Wilk (`shapiro.test()`) manque de puissance avec peu de
+        données et signale des écarts sans importance avec beaucoup de
+        données.
 5.  **Homogénéité des variances (homoscédasticité)**, uniquement pour
     le test t « classique » de Student (`var.equal = TRUE`)
     -   Les variances des données dans chaque groupe sont similaires.
@@ -95,9 +100,17 @@ ces hypothèses, surtout si le nombre d'observations (n) de chaque
 échantillon est important.
 
 Néanmoins, si une ou plusieurs de ces hypothèses n'est pas satisfaite,
-alors des alternatives au test t peuvent être utilisées, comme [le test
-de Wilcoxon-Mann-Whitney](#0) (`wilcox.test()`) ou [le test de
-Kruskal-Wallis](#0) (`kruskal.test()`).
+alors des alternatives non paramétriques au test t peuvent être
+utilisées : [le test de
+Wilcoxon-Mann-Whitney](https://fr.wikipedia.org/wiki/Test_de_Wilcoxon-Mann-Whitney)
+(`wilcox.test()`) pour deux groupes indépendants, ou [le test des rangs
+signés de
+Wilcoxon](https://fr.wikipedia.org/wiki/Test_des_rangs_sign%C3%A9s_de_Wilcoxon)
+(`wilcox.test(..., paired = TRUE)`) pour un échantillon ou des données
+appariées. (Pour plus de deux groupes, l'équivalent non paramétrique de
+l'ANOVA est [le test de
+Kruskal-Wallis](https://fr.wikipedia.org/wiki/Test_de_Kruskal-Wallis),
+`kruskal.test()`.)
 :::
 
 Dans R, le test t est effectué avec la fonction `t.test()`.
@@ -123,7 +136,7 @@ Il existe **trois types** de tests t :
         5.0, est significativement différente ou non de la moyenne des
         notes de 30 lycéens, qui est de 4.8.
 
-3.  **Le test t pour échantillons appariés** (angl. *pairwise t-test*) :
+3.  **Le test t pour échantillons appariés** (angl. *paired t-test*) :
     pour comparer les moyennes de deux groupes qui sont liés ou appariés
     d'une certaine manière. Dans ce type de test, chaque participant est
     mesuré deux fois, une fois dans chaque groupe, ce qui permet de
@@ -312,9 +325,8 @@ différence de manière beaucoup plus fiable.
 Supposons maintenant qu'un avion en provenance d'Amérique atterrisse à
 Genève-Cointrin. Il transporte une sélection de 24 joueuses de la
 Women's NBA, la ligue professionnelle féminine de basket-ball aux
-États-Unis. Selon [les statistiques de la
-WNBA](https://jokermag.com/average-height-wnba-players/), ces joueuses
-mesurent en moyenne 184.5 cm.
+États-Unis. Les joueuses de la WNBA mesurent en moyenne environ
+1,83 à 1,85 m ; nous utilisons ici une valeur approximative de 184.5 cm.
 
 Testez si la taille moyenne de ces 24 joueuses diffère significativement
 de celle de 24 hommes suisses tirés au hasard. (Supposons que

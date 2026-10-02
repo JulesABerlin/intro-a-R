@@ -89,8 +89,9 @@ affiché :
 10+14
 ```
 
-Notez que le nombre entre crochets indique la ligne du résultat. Ici, il
-s'agit de 1 car il n'y a qu'une seule ligne.
+Notez que le nombre entre crochets indique la **position du premier
+élément** affiché sur cette ligne. Ici, il n'y a qu'un élément, donc
+`[1]`. Essayez `1:30` pour voir la différence.
 
 Voici quelques autres calculs simples, suivi de leurs résultats :
 

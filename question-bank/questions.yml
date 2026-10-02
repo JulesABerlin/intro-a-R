@@ -941,7 +941,7 @@
     e) Personne n’indique 7 frères et sœurs : le maximum est de 5.
     Vérifiez avec `table(reponses_socio$fraterie)`.
   uses_data: reponses_socio.csv
-  note: 'Corrigé Moodle (données réelles) : c, d, e. Recalculé avec les données synthétiques : c, d.'
+  note: 'Corrigé recalculé avec les données synthétiques.'
 
 - id: 41
   session: 11
@@ -1369,7 +1369,7 @@
   explanation: |
     `nrow(reponses_socio)` ou `dim(reponses_socio)` : le nombre de lignes correspond au nombre d’observations.
   uses_data: reponses_socio.csv
-  note: 'Moodle utilisait reponses.csv, identique à reponses_socio.csv. Recalculé avec les données synthétiques : 74.'
+  note: 'Moodle utilisait le nom reponses.csv. Corrigé recalculé avec les données synthétiques.'
 
 - id: 71
   session: 10
@@ -1382,8 +1382,8 @@
     (`naissance`, `genre`, `permis`, `suisse`, `origine`, `fraterie`, `domicile`, `trajet`, `note_ecole`, `note_uni`).
   uses_data: reponses_socio.csv
   note: >-
-    Corrigé Moodle : 4, qui ne correspondait pas au fichier. Le fichier synthétique est écrit
-    sans la colonne des noms de lignes : 10 variables.
+    Le fichier synthétique est écrit sans la colonne des noms de lignes. Corrigé
+    recalculé avec les données synthétiques.
 
 - id: 72
   session: 10
@@ -1393,7 +1393,7 @@
   explanation: |
     `table(reponses_socio$genre)` ou `reponses_socio %>% count(genre)`.
   uses_data: reponses_socio.csv
-  note: 'Corrigé Moodle (données réelles) : 56. Recalculé avec les données synthétiques : 51.'
+  note: 'Corrigé recalculé avec les données synthétiques.'
 
 - id: 73
   session: 10
@@ -1404,7 +1404,7 @@
   explanation: |
     `table(reponses_socio$genre)` ou `reponses_socio %>% count(genre)`.
   uses_data: reponses_socio.csv
-  note: 'Corrigé Moodle (données réelles) : 16. Recalculé avec les données synthétiques : 17.'
+  note: 'Corrigé recalculé avec les données synthétiques.'
 
 - id: 74
   session: 12
@@ -1449,7 +1449,7 @@
     ```
     Pour `suisse == "Oui"`, la moyenne vaut 33,52 minutes, soit 34 une fois arrondie.
   uses_data: reponses_socio.csv
-  note: 'Corrigé Moodle (données réelles) : 37. Recalculé avec les données synthétiques : 34.'
+  note: 'Corrigé recalculé avec les données synthétiques.'
 
 - id: 77
   session: 2
@@ -1549,7 +1549,7 @@
     ```
     `arrange()` trie par ordre croissant : la première ligne, `Homme` (20,6 minutes), a le trajet moyen le plus court.
   uses_data: reponses_socio.csv
-  note: 'Corrigé Moodle (données réelles) : Autre. Recalculé avec les données synthétiques : Homme.'
+  note: 'Corrigé recalculé avec les données synthétiques.'
 
 - id: 84
   session: 1
@@ -1938,8 +1938,8 @@
     Attention : le groupe sans passeport suisse ne compte que 10 personnes. Pour savoir si une telle différence est due au hasard, il faudrait un test (session 11).
   uses_data: reponses_socio.csv
   note: >-
-    Corrigé Moodle (données réelles) : Faux. La réécriture du PS4 l’étiquette à tort
-    « 117 » (question 18). Recalculé avec les données synthétiques : Vrai (21,5 contre 33,5 minutes).
+    La réécriture du PS4 l’étiquette à tort « 117 » (question 18). Corrigé recalculé
+    avec les données synthétiques.
 
 - id: 117
   session: 10

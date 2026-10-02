@@ -136,7 +136,7 @@ str(igposts)
 ## Explorez votre jeu de données importé
 
 Cela nous montre qu'il s'agit d'un data frame avec 100 observations et
-12 variables. Chaque ligne représente un post Instagram d'une célébrité
+11 variables. Chaque ligne représente un post Instagram d'une célébrité
 (unité statistique) et chaque colonnes une variable différente associé à
 ce post.
 
@@ -194,8 +194,7 @@ catégorielle, c'est-à-dire un facteur, à l'aide de la fonction
 Dans notre exemple de jeu de données `igposts`, qui contient des
 métriques sur les posts Instagram, nous pouvons justement constater
 cela. Certes, certaines variables textuelles, telles que `URL` (le lien
-vers le post) et `Description` (le message textuel associé au post
-Instagram), sont tout à fait pertinentes. D'autres, en revanche, sont
+vers le post), sont tout à fait pertinentes. D'autres, en revanche, sont
 des catégories. La plus évidente est la variable `Type`, qui indique si
 un post Instagram est une photo, une vidéo ou un album. Factorisons
 ci-dessous quelques-unes de ces variables catégorielles à l'aide de code

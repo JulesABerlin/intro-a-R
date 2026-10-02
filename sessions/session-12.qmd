@@ -142,7 +142,7 @@ penguins %>%
 anova_1 <- aov(flipper_length_mm ~ species, data = penguins)
 summary(anova_1)
 
-# à noter, avec TukeyHSD() nous pouvons vérifier d'avantage les différence entre chaque paire de variables des trois groupe :
+# à noter, avec TukeyHSD() nous pouvons vérifier d'avantage les différences entre chaque paire d'espèces :
 TukeyHSD(anova_1)
 
 # Nous pouvons rejeter H0 avec une grande certitude !

@@ -11,9 +11,19 @@ igposts <- read.csv("https://julesaberlin.github.io/intro-a-R/data/igposts.csv",
 | Fichier | Contenu |
 |---|---|
 | `reponses_socio.csv` | **Données synthétiques** : 74 réponses simulées à partir du questionnaire d’une classe (sessions 10 et 13). Aucune personne réelle. |
-| `igposts.csv` | 100 posts Instagram publics de célébrités (export CrowdTangle, sessions 7 et 8). |
+| `igposts.csv` | 100 posts Instagram publics de 38 comptes de célébrités, publiés entre le 6 février et le 6 mars 2023 (sessions 7 et 8). Métriques publiques uniquement : la légende des posts (`Description`) a été retirée. |
 | `points_PS_1.csv`, `points_ps_2.csv`, `points_ps_3.csv`, `points_ps_4.csv` | Points obtenus aux Problem Sets (groupe et points seulement, sans identifiant). |
 | `ice_age_df.csv` | Le petit tableau des animaux de *L’Âge de glace* (session 10). |
+
+## À propos de `igposts.csv`
+
+Les données proviennent d’un export de **CrowdTangle**, l’outil de Meta pour
+l’analyse de contenus publics sur Facebook et Instagram (fermé en août 2024).
+Elles ne contiennent que des métriques publiques (abonné·es, interactions,
+mentions « J’aime », commentaires, vues) et le lien vers chaque post. Le texte
+des légendes, qui mentionnait d’autres comptes, a été retiré. Les photos et
+textes des posts restent la propriété de leurs auteur·es ; ils ne sont pas
+reproduits ici.
 
 ## À propos de `reponses_socio.csv`
 

@@ -293,12 +293,13 @@ simuler deux échantillons hypothétiques :
 
 -   Un échantillon de 5 tailles d'hommes suisses
 
-Selon l'article de [*24
-heures*](https://www.24heures.ch/calculateur-en-ligne-quelle-taille-faites-vous-par-rapport-aux-autres-191558705635#),
-qu'on a déjà vu en classe, en Suisse, les femmes ont une taille moyenne
-de 164.7 cm tandis que les hommes mesurent 177.4 cm en moyenne. Dans la
-suite, nous supposons que les écarts-types sont de +- 5.6 cm pour les
-femmes et de +- 6.1 cm pour les hommes.
+D'après l'Enquête suisse sur la santé 2017 ([Staub et al.,
+2022](https://pmc.ncbi.nlm.nih.gov/articles/PMC9502675/)), que nous avons
+déjà vue en session 5, les femmes mesurent en moyenne 164,6 cm
+(écart-type 6,5 cm) et les hommes 177,0 cm (écart-type 7,1 cm). Dans la
+suite, nous utilisons des valeurs proches : une moyenne de 164.7 cm pour
+les femmes et de 177.4 cm pour les hommes, avec des écarts-types un peu
+plus petits de 5.6 cm et de 6.1 cm.
 
 ```{r}
 # Données exemplaires :

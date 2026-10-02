@@ -1,4 +1,4 @@
-# Session 1 \| Introduction
+# Introduction
 
 ```{r}
 #| include: false
@@ -371,7 +371,7 @@ des types, R les convertit sans prévenir vers le type le plus général
 -   Essayez de résoudre vous-même les éventuels messages d'erreur en
     adaptant le code.
 
-## Exercices
+## Exercices {.unnumbered}
 
 Choisissez *Vrai* ou *Faux*, cochez une réponse ou tapez un nombre : la couleur indique tout de suite si votre réponse est correcte. Cliquez sur **Explication** pour voir la correction.
 

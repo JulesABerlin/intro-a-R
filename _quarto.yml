@@ -54,7 +54,8 @@ format:
     theme: [cosmo, theme.scss]
     toc: true
     toc-depth: 2
-    number-sections: false
+    number-sections: true
+    number-depth: 2
     # ajouté par webexercises::add_to_quarto()
     css: include/webex.css
     include-after-body: include/webex.js

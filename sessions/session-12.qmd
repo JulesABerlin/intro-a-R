@@ -80,13 +80,14 @@ effets fixes et pour effectuer des analyses de variance.
 
 Pour cet exemple, il faut télécharger le paquet R `palmerpenguins`.
 Celui-ci contient un jeu de données avec des informations sur trois
-espèces de pingouins (Adélie, Chinstrap et Gentoo) qui vivent dans
+espèces de manchots (Adélie, à jugulaire et papou ; en anglais Adelie,
+Chinstrap et Gentoo) qui vivent dans
 l'archipel de Palmer en Antarctique.
 
 Les données ont été collectées entre 2007 et 2009 et comprennent des
 mesures telles que la longueur du bec (`bill_length_mm`), la longueur
 des nageoires (`flipper_length_mm`), le poids corporel (`body_mass_g`)
-et le sexe des pingouins.
+et le sexe des manchots.
 
 -   Utilisez le code suivant pour la première installation du paquet :
     `install.packages("palmerpenguins")`
@@ -101,13 +102,13 @@ et le sexe des pingouins.
 
 -   Le **but de notre ANOVA** est de déterminer si les différences de
     longueur moyenne des nageoires `flipper_length_mm` entre les trois
-    espèces de pingouins sont statistiquement significatives.
+    espèces de manchots sont statistiquement significatives.
 
     -   `flipper_length_mm` est donc notre variable quantitative à
         expliquer et
 
     -   `species` est notre variable catégorielle qui indique à quelle
-        espèces de pingouins (Adélie, Chinstrap et Gentoo) chaque
+        espèces de manchots (Adelie, Chinstrap et Gentoo) chaque
         observation de `flipper_length_mm` appartient.
 
 ```{r}
@@ -133,7 +134,7 @@ ggplot(data = penguins, aes(x = flipper_length_mm)) +
   labs(title = "Histograms of flipper length by penguin species",
        subtitle = "n = 344 ; data source : palmerpenguin R package")
 
-# Calculs des variances de flipper length avec dplyr par espèce de pingouin, pour vérifier si l'hypothèse des variances similaire entre groupes est satisfaite :
+# Calculs des variances de flipper length avec dplyr par espèce de manchot, pour vérifier si l'hypothèse des variances similaire entre groupes est satisfaite :
 penguins %>% 
   group_by(species) %>% 
   summarize(var_fl = var(flipper_length_mm, na.rm = TRUE))
@@ -191,10 +192,12 @@ mesurer.
     ceux qui ont des qualifications et des profils socio-économiques
     très similaires.
 
-Une solution possible pour quantifier néanmoins la relation de causalité
-entre deux variables, telles que le niveau d'éducation et le salaire des
-personnes, malgré ces incertitudes, est d'effectuer une **analyse de
-régression linéaire** !
+La **régression linéaire** permet de **quantifier l'association** entre
+x et y, éventuellement en tenant compte d'autres variables mesurées
+(« toutes choses égales par ailleurs »). Elle ne prouve pas à elle seule
+une relation causale : si des facteurs importants ne sont pas mesurés
+(p. ex. les capacités ou l'origine sociale), le coefficient de
+l'éducation peut être biaisé.
 
 ::: {.callout-note icon="true"}
 ## À noter
@@ -219,17 +222,17 @@ plus d'une variable explicative, p. ex. x1, x2, x3, etc.
 En analyse de données, un modèle de régression a deux principaux types
 d'applications possibles :
 
--   **Explication (causale)** : Si nous supposons qu'il existe une
-    relation causale entre y et x, nous pouvons expliquer les variations
-    observées de y en termes de variations observées de x.
+-   **Explication** : nous pouvons décrire comment les variations
+    observées de y sont associées aux variations observées de x. Une
+    interprétation causale demande en plus des arguments théoriques ou un
+    dispositif adapté (p. ex. une expérience).
 
     -   Par exemple, considérons un échantillon aléatoire de données sur
-        la taille et le poids des personnes. Nous pouvons supposer qu'en
-        moyenne, les personnes plus grandes pèsent plus que les
-        personnes plus petites (relation de cause à effet). Par
-        conséquent, nous pourrions développer un modèle de régression
-        qui explique les variations de poids (y) en termes de variations
-        de taille (x).
+        la taille et le poids des personnes. En moyenne, les personnes
+        plus grandes pèsent plus que les personnes plus petites
+        (association). Nous pourrions donc développer un modèle de
+        régression qui décrit les variations de poids (y) en fonction des
+        variations de taille (x).
 
 -   **Prédiction** : Si nous disposons d'un échantillon représentatif de
     données contenant des observations des valeurs y et x, nous pouvons
@@ -353,8 +356,9 @@ variable indépendante `wt`. Regardons le résultat plus en detail :
         est estimé à -5,345. Cela signifie que pour chaque augmentation
         d'une unité de `wt`, la valeur prédite de `mpg` diminue de 5,345
         unités en moyenne. En d'autres termes, pour chaque tranche de 1
-        000 livres (environ 454 kg) de plus qu'une voiture pèse, la
-        valeur de sa consommation de carburant diminue de 5,345 miles.
+        000 livres (environ 454 kg) de plus, une voiture parcourt en
+        moyenne **5,3 miles de moins par gallon** (elle consomme donc
+        davantage).
 
     -   La valeur de p (Pr(\>\|t\|)) pour le coefficient de `wt` est
         très faible (\< 0,000000000129), ce qui indique que le
@@ -500,9 +504,9 @@ Si nous vérifions à nouveau les variables de mtcars (par exemple, avec
 impact sur `mpg` : la variable `hp`, qui indique la puissance brute en
 chevaux des voitures.
 
-Nous pouvons raisonnablement supposer une relation causale : que les
-voitures avec plus de chevaux, c'est-à-dire avec des moteurs plus
-puissants, consomment plus de `mpg` que les voitures avec moins de `hp`.
+On peut supposer que les voitures avec plus de chevaux, c'est-à-dire
+avec des moteurs plus puissants, parcourent **moins de miles par
+gallon** que les voitures avec moins de `hp`.
 
 ```{r}
 # Ajuster un modèle de régression linéaire multiple avec mpg comme variable dépendante et wt et hp comme variables indépendantes
@@ -524,10 +528,19 @@ pour `wt`).
 Le R-carré de notre modèle a également augmenté pour atteindre 82,68%
 (R-carré ajusté à 81,48%), ce qui est une valeur très élevée. Cela
 signifie que `modele_2` peut effectivement expliquer une plus grande
-partie de la variabilité de `mpg` que `modele_1`. Néanmoins, parce qu'il
-utilise plus de variables, le `modele_2` est aussi plus complexe. Cela
-se traduit par une statistique F (69.21) plus faible pour `modele_2` que
-pour `modele_1` (statistique F = 91,38).
+partie de la variabilité de `mpg` que `modele_1`.
+
+Pour comparer deux modèles emboîtés, on utilise
+`anova(modele_1, modele_2)` :
+
+```{r}
+anova(modele_1, modele_2)
+```
+
+Ici, l'ajout de `hp` améliore significativement l'ajustement (F = 12,4 ;
+p = 0,0015). Le R² ajusté et l'AIC sont d'autres critères. La statistique
+F de `summary()` teste seulement si le modèle explique quelque chose ;
+elle ne sert pas à comparer des modèles.
 
 Une question est alors : **comment choisir le meilleur modèle de
 regression ?**
@@ -547,27 +560,30 @@ sélections sur les valeurs AIC (critère d'information d'Akaike).
     `mpg` en utilisant toutes les autres variables de l'ensemble de
     données `mtcars`.
 
--   A partir de ce « modèle complet », nous utiliserons ensuite une
-    procédure qui éliminera les variables qui ne contribuent pas de
-    manière significative à expliquer la variation de `mpg`.
+-   A partir de ce « modèle complet », la procédure retire (et
+    éventuellement réintroduit) des variables une à une, tant que cela
+    fait **baisser l'AIC**.
 
--   La procédure continuera à éliminer des variables jusqu'à ce qu'un
-    optimum soit atteint, c'est-à-dire un modèle qui a un pouvoir
-    explicatif suffisant (montré par sa valeur R-carré) mais qui n'est
-    pas trop complexe (ou suradapté) avec trop de variables (ceci est
-    décidé sur la base de la métrique AIC, **qui va être minimisée** par
-    la procédure).
+-   L'AIC équilibre l'ajustement du modèle et sa complexité : il pénalise
+    chaque variable supplémentaire. La procédure s'arrête lorsqu'aucun
+    changement ne fait plus baisser l'AIC.
 
--   La bonne nouvelle, c'est que R produira le modèle optimal pour nous
-    !
+-   R propose ainsi le modèle ayant l'AIC le plus faible **parmi ceux
+    explorés**. Ce n'est pas forcément « le » meilleur modèle.
+
+::: {.callout-warning icon="true"}
+## Attention
+
+La sélection automatique pas à pas est pratique pour explorer, mais
+elle est **critiquée** : elle tend à surestimer la qualité du modèle
+(valeurs p et R² trop optimistes), et le modèle choisi peut changer avec
+d'autres données. En recherche, on choisit plutôt les variables à partir
+de la théorie et de la question de recherche.
+:::
 
 Voyons comment ça marche avec du code R !
 
 ```{r}
-# Il faut éventuellement d'abord installer le paquet stats
-# install.packages("stats")
-library(stats)
-
 # Créons le modèle complet avec toutes le variables de mtcars (avec ~ .)
 full_model <- lm(mpg ~ ., data = mtcars)
 summary(full_model)
@@ -576,14 +592,13 @@ summary(full_model)
 stepwise_model <- step(full_model, direction = "both")
 ```
 
-Voici comment la régression par étape choisit le meilleur modèle :
+Voici comment la régression par étape choisit le modèle retenu :
 
 -   **AIC le plus faible** : le modèle ayant l'AIC le plus faible est
     généralement préféré car il suggère un meilleur ajustement du modèle
     compte tenu du nombre de variables explicatives utilisées. L'AIC
     permet d'équilibrer l'adéquation et la complexité du modèle. Dans
-    notre exemple, le modèle optimal retenu est donc
-    `mpg ~ wt + qsec + am`.
+    notre exemple, le modèle retenu est donc `mpg ~ wt + qsec + am`.
 
 Après avoir exécuté la régression par étape, le résumé de
 `stepwise_model` affiche les coefficients pour chaque variable

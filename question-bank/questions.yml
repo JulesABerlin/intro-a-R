@@ -138,23 +138,22 @@
     revenus_df <- data.frame(nom, genre, revenus_en_milles_chf, classe_de_revenus)
     revenus_df
   options:
-    a: 'Ce data frame contient deux variables catégorielles.'
+    a: 'Ce data frame contient deux facteurs.'
     b: '`revenus_df$classe_de_revenus` est une variable catégorielle ordinale.'
     c: '`revenus_df$genre` est une variable catégorielle ordinale.'
     d: 'Ce data frame contient des informations sur trois femmes et trois personnes ayant un haut revenu.'
     e: 'Ce data frame contient des informations sur cinq classes de revenus différentes.'
   key: [a, b, e]
   explanation: |
-    a) `genre` et `classe_de_revenus` sont des facteurs, donc des variables catégorielles (`nom` sert d’identifiant).
+    a) `genre` et `classe_de_revenus` sont des facteurs (`factor()`). `nom` est une variable textuelle, qui sert d’identifiant.
     b) `classe_de_revenus` est un facteur ordonné (`ordered = TRUE`).
     c) `genre` est créé avec `ordered = FALSE` : il est nominal.
     d) Il y a bien trois femmes, mais seulement deux personnes dans la classe « haut ».
     e) Les cinq niveaux de `classe_de_revenus` apparaissent tous dans les données.
   uses_data: ~
-  check: true
   note: >-
-    a) dépend de la définition : nom est aussi une variable textuelle. Le corrigé
-    Moodle (a vrai) suppose que seuls les facteurs comptent comme catégoriels.
+    a) reformulée (« deux facteurs » au lieu de « deux variables catégorielles ») :
+    nom est aussi une variable textuelle, le corrigé (a vrai) n’est plus ambigu.
 
 - id: 7
   session: 4
@@ -244,7 +243,7 @@
     a: 'Le jeu de données contient 150 observations de 5 variables.'
     b: 'Le jeu de données contient des observations de trois espèces d’iris différentes.'
     c: 'L’unité statistique du jeu de données est `Petal.Length` (longueur de pétale) des fleurs d’iris.'
-    d: 'Les données sur les iris ont été collectées par Edgar Anderson en 1935 en Gaspésie (*Gaspe Peninsula*) au Québec, Canada.'
+    d: 'Les mesures ont été publiées par Edgar Anderson (1935).'
     e: 'Toutes les autres réponses sont incorrectes.'
   drop: [e]
   key: [a, b, d]
@@ -252,7 +251,7 @@
     a) `dim(iris)` renvoie `150 5`.
     b) `levels(iris$Species)` : setosa, versicolor et virginica.
     c) L’unité statistique est une **fleur** ; `Petal.Length` est une variable.
-    d) La page d’aide `?iris` cite Anderson (1935), *The irises of the Gaspe Peninsula*.
+    d) La page d’aide `?iris` cite Anderson (1935), *The irises of the Gaspe Peninsula*. 1935 est l’année de publication ; selon Anderson, deux des trois espèces proviennent de la péninsule de Gaspé (Québec).
   uses_data: ~
 
 - id: 11
@@ -513,15 +512,15 @@
       labs(x = "Espèce", y = "Longueur des nageoires (mm)") +
       theme_minimal()
   options:
-    a: 'La ligne noire épaisse au milieu des boxplots indique la longueur moyenne des nageoires pour chaque espèce de pingouins.'
-    b: 'Au moins un pingouin Adélie de l’échantillon a une nageoire plus longue qu’au moins un pingouin Gentoo.'
-    c: 'Les boxplots nous indiquent qu’il existe des différences statistiquement significatives dans la longueur des nageoires entre les trois espèces de pingouins.'
-    d: 'Sur la seule base des boxplots, nous ne pouvons pas savoir si les différences de longueur des nageoires des différentes espèces de pingouins sont statistiquement significatives (nous pourrions faire une ANOVA pour le savoir).'
+    a: 'La ligne noire épaisse au milieu des boxplots indique la longueur moyenne des nageoires pour chaque espèce de manchots.'
+    b: 'Au moins un manchot Adélie de l’échantillon a une nageoire plus longue qu’au moins un manchot papou (Gentoo).'
+    c: 'Les boxplots nous indiquent qu’il existe des différences statistiquement significatives dans la longueur des nageoires entre les trois espèces de manchots.'
+    d: 'Sur la seule base des boxplots, nous ne pouvons pas savoir si les différences de longueur des nageoires des différentes espèces de manchots sont statistiquement significatives (nous pourrions faire une ANOVA pour le savoir).'
     e: 'Les boxplots indiquent qu’il y a deux valeurs extrêmes (*outliers*) dans l’ensemble de données.'
   key: [b, d, e]
   explanation: |
     a) La ligne du milieu est la **médiane**, pas la moyenne.
-    b) La nageoire la plus longue chez les Adélie (210 mm) dépasse la plus courte chez les Gentoo (203 mm).
+    b) La nageoire la plus longue chez les manchots Adélie (210 mm) dépasse la plus courte chez les manchots papous (203 mm).
     c) et d) Un graphique ne teste rien : il faut un test (ici une ANOVA) pour conclure à une différence significative.
     e) Les deux points isolés appartiennent aux Adélie (172 mm et 210 mm).
   uses_data: ~
@@ -543,19 +542,19 @@
     a: 'Le graphique montre différents niveaux de qualité de la couleur des diamants.'
     b: 'En moyenne, la relation entre le carat et le prix semble linéaire (le prix et le carat augmentent proportionnellement).'
     c: 'En moyenne, la relation entre le carat et le prix semble exponentielle (le prix augmente plus vite que le carat).'
-    d: 'La pureté a un impact considérable sur le prix d’un diamant.'
+    d: 'À carat égal, les diamants plus purs semblent plus chers dans ce graphique.'
     e: 'Le diamant le plus lourd est aussi le plus cher.'
   key: [c, d]
   explanation: |
     a) Les couleurs du graphique représentent la **pureté** (`clarity`), pas la couleur des diamants (`color`).
     b) et c) Le nuage de points s’incurve vers le haut : le prix augmente plus vite que le carat.
-    d) À carat égal, les diamants plus purs sont nettement plus chers.
+    d) Pour un même carat, les points des puretés élevées se situent plus haut. Parmi les diamants d’environ 1 carat, le prix médian passe de 2 808 USD (I1) à 9 764 USD (IF).
     e) Le diamant le plus lourd (5,01 carats) coûte 18 018 USD, alors que le plus cher coûte 18 823 USD.
   uses_data: ~
-  check: true
   note: >-
-    d) est une lecture du graphique (pas un calcul). L’image d’origine pointait vers
-    l’ancien site (unnamed-chunk-39) ; le graphique est maintenant regénéré (code de la session 4).
+    d) reformulée (lecture du graphique « à carat égal », pas un effet causal) et vérifiée
+    dans R. L’image d’origine pointait vers l’ancien site ; le graphique est regénéré
+    (code de la session 4).
 
 - id: 25
   session: 4
@@ -664,7 +663,7 @@
     print(g)
   options:
     a: '`g` est un objet stocké dans le volet *Environment* de RStudio.'
-    b: 'Le graphique `g` affiche une relation entre le poids des voitures (`wt`) et leur consommation de carburant (`mpg`).'
+    b: 'Le graphique `g` affiche une relation entre le poids des voitures (`wt`) et leur efficacité énergétique (`mpg`, miles par gallon).'
     c: 'Le code produit un histogramme.'
     d: 'Chaque point dans le graphique représente une voiture du jeu de données `mtcars`.'
     e: 'Le graphique indique que les deux variables affichées sont négativement corrélées.'
@@ -1416,14 +1415,14 @@
   session: 12
   problem_sets: [4]
   type: numeric
-  stem: 'Quel est le poids moyen en grammes des pingouins du jeu de données `penguins` (paquet `palmerpenguins`) ? Arrondissez au gramme.'
+  stem: 'Quel est le poids moyen en grammes des manchots du jeu de données `penguins` (paquet `palmerpenguins`) ? Arrondissez au gramme.'
   key: 4202
   explanation: |
     ```r
     library(palmerpenguins)
     mean(penguins$body_mass_g, na.rm = TRUE)   # 4201.754
     ```
-    Deux pingouins n’ont pas de poids (`NA`) : sans `na.rm = TRUE`, le résultat est `NA`.
+    Deux manchots n’ont pas de poids (`NA`) : sans `na.rm = TRUE`, le résultat est `NA`.
   uses_data: ~
   note: 'Corrigé vide dans la réécriture du PS4 ; corrigé Moodle n° 74 = 4202, vérifié dans R.'
 
@@ -1431,7 +1430,7 @@
   session: 12
   problem_sets: [4]
   type: numeric
-  stem: 'Quel est le poids moyen en grammes des pingouins **femelles** du jeu de données `penguins` ? Arrondissez au gramme.'
+  stem: 'Quel est le poids moyen en grammes des manchots **femelles** du jeu de données `penguins` ? Arrondissez au gramme.'
   key: 3862
   explanation: |
     ```r

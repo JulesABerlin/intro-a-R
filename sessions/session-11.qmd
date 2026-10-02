@@ -30,9 +30,11 @@ cette population.
 :::
 
 En sciences sociales, les statistiques inférentielles sont souvent
-utilisées pour démontrer des corrélations et des relations de cause à
-effet entre des variables. Nous voulons savoir, par exemple, si le genre
-(variable x) a une influence sur les notes de maturité (variable y).
+utilisées pour évaluer si une différence ou une association observée dans
+l'échantillon est susceptible d'exister aussi dans la population. Nous
+voulons savoir, par exemple, si les notes de maturité (variable y)
+diffèrent selon le genre (variable x). Une relation **causale** ne peut
+être conclue que si le dispositif le permet (p. ex. une expérience).
 
 En général, pour analyser de telles relations, nous formulons souvent
 des hypothèses basées sur des théories ou des suppositions tiré de la
@@ -79,8 +81,11 @@ satisfaites :
         un histogramme) ou de tests statistiques (comme [le test de
         Shapiro-Wilk](https://www.statology.org/shapiro-wilk-test-r/) :
         `shapiro.test()`).
-5.  **Homogénéité des variances (homoscédasticité)**
-    -   Les variances des données dans chaque groupe est similaire.
+5.  **Homogénéité des variances (homoscédasticité)**, uniquement pour
+    le test t « classique » de Student (`var.equal = TRUE`)
+    -   Les variances des données dans chaque groupe sont similaires.
+    -   La variante de Welch, utilisée par défaut dans R, n'exige pas
+        cette hypothèse.
     -   Cette hypothèse peut être vérifiée à l'aide [du test de Levene
         ou du test de
         Bartlett](https://www.datanovia.com/en/lessons/homogeneity-of-variance-test-in-r/).
@@ -95,7 +100,7 @@ de Wilcoxon-Mann-Whitney](#0) (`wilcox.test()`) ou [le test de
 Kruskal-Wallis](#0) (`kruskal.test()`).
 :::
 
-Dans R, le test t est éffectué avec la fonction `test.t()`.
+Dans R, le test t est effectué avec la fonction `t.test()`.
 
 Il existe **trois types** de tests t :
 
@@ -107,9 +112,12 @@ Il existe **trois types** de tests t :
         qui est de 4.9, est significativement différente de 5.0 ou non.
 
 2.  **Le test t à deux échantillons indépendants** (angl. *two sample
-    t-test* ; aussi appelé *Welch two sample t-test*) : pour évaluer si
-    les moyennes de deux échantillons indépendants diffèrent de manière
-    significative.
+    t-test*) : pour évaluer si les moyennes de deux échantillons
+    indépendants diffèrent de manière significative. Par défaut, R
+    effectue la variante de **Welch** (*Welch two sample t-test*), qui
+    n'exige pas que les variances soient égales (`var.equal = FALSE`). Le
+    test t « classique » de Student (`var.equal = TRUE`) suppose des
+    variances égales.
 
     -   Par exemple, si la moyenne des notes de 30 lycéennes, qui est de
         5.0, est significativement différente ou non de la moyenne des
@@ -137,14 +145,16 @@ Voyons maintenant des exemples avec du code !
 d'étudiant-e-s, qui est de 105, est différente de manière significative
 de la moyenne de la population, qui est de 100.
 
--   Notre **hypothèse H1** (angl. *alternative hypothesis*) stipule
-    qu'il y a une différence significative entre le QI des étudiant-e-s
-    et celui de la population générale. En effet, nous assumons que le
-    QI des étudiant-e-s est plus élevé que celui de la population.
+-   L'**hypothèse nulle H0** (angl. *null hypothesis*) : la moyenne de
+    QI des étudiant·es dans la population est égale à 100 (μ = 100).
 
--   L'**hypothèse nulle H0** (angl. *null hypothesis*) serait donc le
-    contraire, c'est à dire que la différence n'est pas significative
-    entre les deux groupes.
+-   L'**hypothèse alternative H1** (angl. *alternative hypothesis*) :
+    elle est différente de 100 (μ ≠ 100).
+
+Les hypothèses portent sur la **population**, pas sur le résultat du
+test. Le test ci-dessous est bilatéral (il cherche un écart dans les deux
+sens). Pour tester seulement si le QI est *plus élevé*, on ajouterait
+`alternative = "greater"` dans `t.test()`.
 
 À noter : dans le code qui suit, nous allons encore une fois utiliser la
 fonction `rnorm()` que nous avons vu en classe pour créer des valeurs
@@ -188,17 +198,17 @@ Il s'agit maintenant d'interpréter le résultat du test t dans R.
     p-value est calculée à partir de la statistique de test t et des
     degrés de liberté associés à l'échantillon.
 
-En pratique, c'est surtout la valeur p qui compte ! Dans notre cas, elle
-est clairement supérieure à 5% ( \> 0.05), ce qui nous indique que la
-différence du QI entre les étudiant-e-s et la population n'est PAS
-significative (si nous utilisons des intérvalles de confiance de 95%) !
+La valeur p indique si l'écart observé est compatible avec H0. Mais
+regardez aussi la **moyenne estimée** et l'**intervalle de confiance à
+95 %** affichés par `t.test()` : ils indiquent l'ampleur de la différence
+et sa précision.
 
-Cela veut dire que **nous ne pouvons PAS abondonner notre hypothèse
-nulle H0** car il y a une forte probabilité que la différence de QI
-observée dans notre échantillon est le résultat d'un pure hasard. En
-d'autres termes, selon cet échantillon, nous ne pouvons pas conclure que
-le QI des étudiant-e-s et significativement plus élevé que celui de la
-population générale.
+Dans notre cas, la valeur p (0,13) est supérieure au seuil α = 0,05 :
+**nous ne rejetons pas H0**. Les données sont compatibles avec une
+moyenne de 100 ; cela ne prouve pas que la moyenne *est* 100.
+L'intervalle de confiance à 95 % (de 98,6 à 110,4), qui contient 100, le
+montre aussi. Avec seulement 25 observations, le test manque peut-être
+simplement de puissance.
 
 ```{r}
 # Regénérons encore une fois des données d'échantillon, mais cette fois-ci avec n = 50 observations 
@@ -210,16 +220,13 @@ resultat_test_t <- t.test(scores_qi, mu = 100)
 print(resultat_test_t)
 ```
 
-La valeur p est maintenant beaucoup plus petite, soit inférieure à 1%
-(\< 0.01). Cela nous indique que la différence entre le QI des
-étudiant-e-s et de la population est significative (si nous utilisons
-des intervalles de confiance de 95%) !
+La valeur p est maintenant beaucoup plus petite. Si la vraie moyenne
+était 100, obtenir un écart aussi grand ou plus grand serait très
+improbable (p = 0,007). **Nous rejetons H0** au seuil de 5 %. La moyenne
+estimée (105,5) est supérieure à 100.
 
-Avec un tel résultat de test t, **nous pouvons rejeter l'hypothèse nulle
-H0**, car la probabilité que les valeurs observées soient le résultat
-d'un pure hasard sont très faible (moins de 1%). Nous pouvont alors
-inférer que le QI des étudiant-e-s est significativement plus élevé que
-celui de la population générale.
+À retenir : pour une même différence réelle, un **échantillon plus
+grand** donne au test plus de puissance.
 
 ### Exercice 1
 
@@ -255,15 +262,13 @@ resultat_test_t <- t.test(usage_20_29, mu = 5.6)
 print(resultat_test_t)
 ```
 
-La très faible valeur p indique qu'il est extrêmement improbable que
-l'utilisation d'Internet des 20-29 ans ne diffère PAS significativement
-de la moyenne nationale.
+La valeur p est très faible : des données comme celles-ci seraient très
+improbables si la moyenne des 20-29 ans était de 5,6 heures. Nous
+rejetons H0. La moyenne estimée de l'échantillon (7,8 heures) est
+supérieure à la moyenne nationale.
 
-Nous pouvons alors rejeter H0.
-
-En d'autres termes : Nous pouvons supposer avec une très grande
-certitude que les 20-29 ans ont une utilisation d'Internet
-significativement plus élevée que la moyenne de la population en Suisse.
+(Les données étant simulées avec une moyenne de 7,9 heures, ce résultat
+était attendu.)
 :::
 
 ### Exemple 2 : test t à deux échantillons
@@ -294,12 +299,13 @@ print(t_test_two_sample)
 
 ```
 
-Comme nos échantillons de `n = 5` sont très petit, il se peut que la
-différence de taille moyenne entre les suisses et les suissesses n'est
-pa significative si on utilise des intervalles de confiances de 95% !
-Cependant, dès que nous augmentons l'échantillon simulé, par exemple à
-`n = 20` ou `n = 100`, le test T indique clairement que la différence de
-taille est significative.
+Avec `set.seed(123)`, la différence est significative (p ≈ 0,02) même
+avec `n = 5`, car l'écart entre hommes et femmes (environ 11 cm) est grand
+par rapport à la variabilité. Essayez d'autres graines : avec
+`set.seed(8)`, par exemple, la différence n'est plus significative
+(p ≈ 0,15). Avec des échantillons aussi petits, le résultat varie d'une
+simulation à l'autre. Avec `n = 20` ou `n = 100`, le test détecte la
+différence de manière beaucoup plus fiable.
 
 ### Exercice 2
 
@@ -310,9 +316,9 @@ Women's NBA, la ligue professionnelle féminine de basket-ball aux
 WNBA](https://jokermag.com/average-height-wnba-players/), ces joueuses
 mesurent en moyenne 184.5 cm.
 
-Quelle est la probabilité que 24 hommes suisses choisis au hasard
-mesurent également cette taille en moyenne ? (Supposons que l'écart-type
-des joueuses est de 6.5 cm).
+Testez si la taille moyenne de ces 24 joueuses diffère significativement
+de celle de 24 hommes suisses tirés au hasard. (Supposons que
+l'écart-type des joueuses est de 6.5 cm.)
 
 ::: {.callout-caution collapse="true"}
 ### Solution
@@ -330,12 +336,9 @@ t_test_two_sample <- t.test(tailles_f_WNBA, tailles_h)
 print(t_test_two_sample)
 ```
 
-La très petite valeur p, inférieure à 1%, indique qu'il est extrêmement
-improbable que 24 hommes suisses tiré au hasard sont environ de même
-taille que 24 joueuses de la WNBA. Nous pouvons alors rejeter H0. En
-d'autres termes : Nous pouvons supposer avec une très grande certitude
-que les joueuses de la WNBA sont significativement plus grande que les
-hommes suisses moyens.
+La valeur p est très faible (p < 0,001) : nous rejetons H0. Dans ces
+données, les joueuses sont en moyenne plus grandes que les hommes suisses
+(environ 184,4 cm contre 177,7 cm).
 :::
 
 À noter : la fonction `t.test()`, comme on l'a utilisé dans ces exemples

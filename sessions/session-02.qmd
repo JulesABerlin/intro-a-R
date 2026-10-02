@@ -209,8 +209,11 @@ m4[1,]
 # Extraire tous les éléments de la troisième colonne :
 m4[,3]
 
-# Extraire la moitié supérieure de la matrice :
-m4[c(6:10),]
+# Extraire la moitié inférieure de la matrice (lignes 6 à 10) :
+m4[6:10, ]
+
+# Et la moitié supérieure (lignes 1 à 5) :
+m4[1:5, ]
 
 ```
 

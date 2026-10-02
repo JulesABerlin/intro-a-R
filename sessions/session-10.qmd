@@ -14,8 +14,11 @@ La **statistique descriptive** est généralement la première étape d'une
 analyse statistique. Elle aide à comprendre le jeu de données et ses
 caractéristiques à un niveau descriptif.
 
-Il ne s'agit donc **pas** d'analyser des **relations de cause à effet**
-(c'est en effet le rôle de la *statistique inférentielle*).
+La statistique descriptive **résume** les données de l'échantillon. La
+statistique **inférentielle** permet ensuite de généraliser de
+l'échantillon à la population (avec une marge d'incertitude). Établir une
+**relation de cause à effet** demande en plus un dispositif adapté, par
+exemple une expérience randomisée.
 
 Les mesures suivantes font souvent partie des statistiques descriptives
 (souvent appelés *summary statistics* en anglais) et sont utilisées pour

@@ -965,27 +965,33 @@
   problem_sets: [4]
   type: multi
   stem: |
-    Supposons que nous fassions un test t pour savoir si la taille moyenne d’un échantillon
-    simulé de 100 joueuses de la WNBA sélectionnées au hasard est significativement
-    différente de la taille moyenne de 100 hommes néerlandais sélectionnés au hasard.
-    La capture d’écran suivante montre le résultat du test t. Jugez chaque affirmation.
+    Supposons que nous fassions un test t pour savoir si la taille moyenne de 100 joueuses
+    de la WNBA sélectionnées au hasard diffère de celle de 100 hommes néerlandais sélectionnés
+    au hasard. Le code suivant simule les deux échantillons et effectue le test.
+    Exécutez-le et jugez chaque affirmation.
+  code: |
+    set.seed(2026)
+    wnba <- rnorm(100, mean = 184.5, sd = 6.5)
+    pays_bas <- rnorm(100, mean = 183.8, sd = 7.1)
+    t.test(wnba, pays_bas)
   options:
-    a: 'La joueuse de basket-ball moyenne de l’échantillon mesure 186,1539 cm.'
+    a: 'Dans l’échantillon simulé, la joueuse de basket-ball moyenne mesure 183,86 cm.'
     b: 'La valeur p du test indique que la différence entre les tailles moyennes est statistiquement significative au niveau de 5 %.'
-    c: 'L’hypothèse nulle du test t est qu’il n’y a pas de différence significative de taille entre les deux populations (joueuses WNBA et hommes néerlandais).'
+    c: 'L’hypothèse nulle du test t est que les moyennes des deux populations (joueuses de la WNBA et hommes néerlandais) sont égales.'
     d: 'Le test t indique que les hommes néerlandais sont significativement plus grands que les joueuses de basket-ball de la WNBA.'
-    e: 'Les résultats du test t indiquent que dans les échantillons simulés, il n’y a pas de différences significatives entre les tailles moyennes des joueuses de basket et des hommes néerlandais.'
+    e: 'Les résultats du test t indiquent que, dans les échantillons simulés, il n’y a pas de différence significative entre les tailles moyennes des joueuses de basket et des hommes néerlandais.'
   key: [a, c, e]
   explanation: |
-    a) La sortie de `t.test()` indique la moyenne de chaque échantillon.
-    b), d) et e) La valeur p est supérieure à 0,05 : on ne rejette pas H0, la différence n’est pas significative.
-    c) H0 postule l’égalité des moyennes des deux populations.
+    a) Sous *sample estimates*, `mean of x` (les joueuses) vaut 183,86 cm ; `mean of y` (les hommes néerlandais) vaut 184,66 cm.
+    b), d) et e) La valeur p (0,40) est supérieure à 0,05 : on ne rejette pas H0. Dans l’échantillon, les hommes néerlandais sont un peu plus grands, mais cet écart de 0,8 cm n’est pas significatif ; l’intervalle de confiance à 95 % (de −2,66 à 1,06 cm) contient 0.
+    c) Les hypothèses portent sur les populations : H0 postule que les deux moyennes sont égales (μ₁ = μ₂), H1 qu’elles diffèrent.
   uses_data: ~
-  needs_image: true
-  check: true
   note: >-
-    La capture d’écran de la sortie t.test() (simulation non reproductible) manque.
-    Le corrigé a, c, e ne peut pas être vérifié sans elle.
+    La capture d’écran d’origine manquait ; la sortie est maintenant reproductible
+    (set.seed(2026), valeurs vérifiées dans R). Avec un écart réel de 0,7 cm, un résultat
+    non significatif est le cas typique ; certaines graines (p. ex. 123) donnent p < 0,05
+    et changeraient le corrigé. Proposition c) reformulée (fact-check : H0 porte sur les
+    populations, pas sur la significativité).
 
 - id: 43
   session: 11
@@ -1830,12 +1836,11 @@
   stem: 'Dans le jeu de données `igposts.csv`, la variable `Views` désigne le nombre de fois qu’un post Instagram a été vu par les utilisateurs.'
   key: false
   explanation: |
-    `Views` compte les **vues de vidéos** : elle n’est renseignée que pour les posts qui contiennent une vidéo. Les autres posts ont `NA`, ce qui ne veut pas dire que personne ne les a vus. Le nombre total d’affichages d’un post n’est pas disponible dans les données.
+    `Views` compte les vues de **vidéos** : les 88 posts sans vidéo ont la valeur 0. Cela ne veut pas dire que personne ne les a vus : le nombre total d’affichages n’est pas dans les données.
   uses_data: igposts.csv
-  check: true
   note: >-
-    Explication manquante dans la réécriture du PS3. Celle-ci suppose que Views = vues
-    de vidéos (définition CrowdTangle) ; à confirmer.
+    Vérifié dans igposts.csv : 88 posts avec Views = 0, 12 avec Views > 0 (tous des albums),
+    aucune valeur manquante. Cohérent avec la session 8 (Views = vues de vidéos).
 
 - id: 109
   session: 7

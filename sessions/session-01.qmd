@@ -354,8 +354,10 @@ femme <- c(TRUE, TRUE, TRUE, FALSE, TRUE)
 ::: {.callout-caution collapse="false"}
 ## Attention
 
-Dans R, on ne peut généralement pas mélanger les valeurs numériques,
-textuelles et logiques dans le même vecteur !
+Un vecteur ne contient qu'**un seul type** de données. Si l'on mélange
+des types, R les convertit sans prévenir vers le type le plus général
+(logique → numérique → texte) : `c(1, "a", TRUE)` donne
+`"1" "a" "TRUE"`.
 :::
 
 ### Devoir pour Session 2

@@ -5,6 +5,7 @@ project:
   render:
     - index.qmd
     - sessions/*.qmd
+    - apropos.qmd
   resources:
     - data/*
 
@@ -21,9 +22,12 @@ book:
         - name: Université de Fribourg
           url: https://www.unifr.ch/home/en/
   date: 2025-03-07
-  license: "MIT"
   site-url: https://julesaberlin.github.io/intro-a-R/
   repo-url: https://github.com/julesaberlin/intro-a-R
+  page-footer:
+    center: >-
+      Textes et exercices : [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr)
+      · Code : MIT · Éléments de tiers : voir [À propos](/apropos.qmd)
   chapters:
     - index.qmd
     - sessions/session-01.qmd
@@ -40,6 +44,7 @@ book:
     - sessions/session-12.qmd
     - sessions/session-13.qmd
     - sessions/session-14.qmd
+    - apropos.qmd
 
 execute:
   freeze: auto

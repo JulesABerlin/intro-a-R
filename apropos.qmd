@@ -1,0 +1,66 @@
+# À propos {.unnumbered}
+
+## Auteur et contact
+
+Ce site accompagne le cours **Exercices Méthodes II** du Bachelor en
+sciences de la communication de l'[Université de Fribourg](https://www.unifr.ch).
+
+**Julian Maitra**, Université de Fribourg\
+Courriel : [julian.maitra\@unifr.ch](mailto:julian.maitra@unifr.ch)\
+ORCID : [0000-0003-3989-5158](https://orcid.org/0000-0003-3989-5158)
+
+Vous avez repéré une erreur ou une question mal formulée ? Écrivez-moi, ou
+ouvrez une *issue* sur [GitHub](https://github.com/julesaberlin/intro-a-R/issues).
+
+## Licences
+
+-   **Textes, exercices, explications et figures** produites pour ce site :
+    [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr).
+    Vous pouvez les partager et les adapter à des fins non commerciales, en
+    citant l'auteur et en partageant vos adaptations sous la même licence.
+-   **Code R** (extraits de code, `_common.R`, scripts du dossier `data-raw/`) :
+    [licence MIT](https://github.com/julesaberlin/intro-a-R/blob/main/LICENSE).
+-   **Éléments de tiers** : ils restent sous leur propre licence.
+
+| Élément | Où | Auteur·e | Licence |
+|---|---|---|---|
+| Photo de trois espèces d'iris | Session 4 | Diego Mariano, via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Flores_de_%C3%8Dris.png) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| Photo d'une Toyota Corolla de 1974 | Session 4 | Jeremy from Sydney, Australia, via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:1974_Toyota_Corolla_(KE20)_L_2-door_sedan_(20538771443).jpg) | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) |
+| Photo d'un diamant | Session 4 | Jerry Cone, via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Diamond-1128734.jpg) | Domaine public |
+| Logo du paquet palmerpenguins | Session 12 | Allison Horst ([palmerpenguins](https://allisonhorst.github.io/palmerpenguins/)) | [CC0](https://creativecommons.org/publicdomain/zero/1.0/) |
+| Exercices interactifs (`webex.css`, `webex.js`) | Toutes les pages | Dale Barr, Lisa DeBruine et Caspar J. Van Lissa ([webexercises](https://github.com/psyteachr/webexercises)) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| Jeux de données intégrés à R (`iris`, `mtcars`, `women`, `diamonds`, `mpg`, `penguins`) | Sessions 4 à 13 | Voir la page d'aide de chaque jeu de données (p. ex. `?iris`) | Licences de R et des paquets concernés |
+
+## Données
+
+-   **`reponses_socio.csv`** est un fichier **synthétique** : ses données ont
+    été simulées à partir du questionnaire d'une classe, et il ne contient
+    **aucune personne réelle**. Les valeurs rares ont été regroupées pour
+    protéger les participant·es (voir la
+    [description des données](https://github.com/julesaberlin/intro-a-R/blob/main/data/README.md)).
+-   **`igposts.csv`** contient 100 posts Instagram publics de 38 comptes de
+    célébrités (février–mars 2023), issus d'un export de **CrowdTangle**,
+    l'outil de Meta pour l'analyse de contenus publics. Il ne contient que des
+    métriques publiques et le lien vers chaque post ; le texte des légendes a
+    été retiré. Les photos et textes des posts restent la propriété de leurs
+    auteur·es.
+-   Les fichiers **`points_*.csv`** contiennent les points obtenus aux Problem
+    Sets, sans aucun identifiant.
+
+## Cookies et suivi
+
+Ce site ne dépose **aucun cookie** et n'utilise **aucun outil de mesure
+d'audience** ni de suivi. Il est hébergé par GitHub Pages ; GitHub peut
+enregistrer l'adresse IP des visiteurs (voir la
+[déclaration de confidentialité de GitHub](https://docs.github.com/fr/site-policy/privacy-policies/github-general-privacy-statement)).
+
+Seule la session 12 charge des ressources depuis d'autres serveurs : MathJax
+(jsDelivr) et une bibliothèque de compatibilité (cdnjs) pour afficher les
+formules, ainsi qu'une vidéo YouTube intégrée en mode « confidentialité
+renforcée » (youtube-nocookie.com).
+
+## Intelligence artificielle
+
+Les explications des exercices ont été en partie rédigées avec l'aide d'un
+outil d'intelligence artificielle (Claude, d'Anthropic), puis relues par
+l'auteur.

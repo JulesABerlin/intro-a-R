@@ -75,8 +75,8 @@ np1 + geom_smooth(method = lm)
 
 Que nous indique la ligne de régression ? En principe, elle indique une
 correlation légèrement négative entre les variables `Sepal.Length`et
-`Sepal.Width` ! (la zone grise autour de la ligne bleue indique une
-marge d'erreur).
+`Sepal.Width` ! (la zone grise autour de la ligne bleue est
+l'intervalle de confiance à 95 % de la droite de régression).
 
 Cela signifie que les iris dont les sépales sont plus longs ont tendance
 à avoir des sépales un peu moins larges ! Gardez cette constatation à
@@ -108,6 +108,10 @@ np1 + geom_smooth(method = lm)
 Les trois lignes de régression (une pour chaque type d'iris) montrent
 maintenant un tout autre résultat : en effet, la corrélation entre
 `Sepal.Length` et `Sepal.Width` est clairement positive.
+
+Ce renversement s'appelle le **paradoxe de Simpson** : une tendance
+globale peut s'inverser lorsqu'on tient compte d'une variable de groupe
+(ici l'espèce).
 
 Cette constatation est un exemple d'analyse exploratoire des données,
 rendue possible par les possibilités de visualisation de `ggplot2`.
@@ -210,8 +214,9 @@ En règle générale, l'histogramme possède des barres d'une largeur égale"
 L'histogramme est particulièrement utile pour :
 
 -   **Analyser la distribution** : Comprendre si les données sont
-    normalement distribuées, asymmétriques (angl. *skewness*), ou si
-    elles présentent un plateau (kurtosis).
+    normalement distribuées, asymétriques (angl. *skewness*), ou si
+    elles ont des queues plus ou moins épaisses que la loi normale
+    (*kurtosis*).
 -   **Détecter les valeurs extrêmes** : Identifier les données qui
     s'écartent du reste de l'ensemble des données de manière
     signifiante.
@@ -220,10 +225,11 @@ L'histogramme est particulièrement utile pour :
     distribution de données.
 
 Avec `ggplot2` en R, créer un histogramme se fait avec la couche
-géometrique `geom_histogram()`. `ggplot2` calcule automatiquement la
-taille des intervalles (angl. *bins*) par défaut, mais cela peut être
-ajusté manuellement en spécifiant l'argument `binwidth = xyz`dans la
-fonction `geom_histogram()`, p. ex. `geom_histogram(binwidth = 30)`.
+géometrique `geom_histogram()`. Par défaut, `geom_histogram()` découpe
+les données en 30 intervalles (angl. *bins*) et affiche un message
+invitant à choisir une meilleure valeur. On peut fixer la largeur des
+intervalles avec l'argument `binwidth` (p. ex.
+`geom_histogram(binwidth = 30)`) ou leur nombre avec `bins`.
 :::
 
 Avant de créer un histogramme avec le code R, introduisons d'abord une
@@ -261,12 +267,12 @@ reproductibilité des résultats.
 Dans le code R suivant, nous utilisons `rnorm()` pour simuler les
 distributions des tailles des hommes et des femmes en Suisse.
 
-Selon un article de [*24
-heures*](https://www.24heures.ch/calculateur-en-ligne-quelle-taille-faites-vous-par-rapport-aux-autres-191558705635#),
-en Suisse, les femmes ont une taille moyenne de 164.7 cm tandis que les
-hommes mesurent 177.4 cm en moyenne. Dans la suite, nous supposons que
-les écarts-types sont de +- 5.6 cm pour les femmes et de +- 6.1 cm pour
-les hommes.
+D'après l'Enquête suisse sur la santé 2017 ([Staub et al.,
+2022](https://pmc.ncbi.nlm.nih.gov/articles/PMC9502675/)), les femmes
+mesurent en moyenne 164,6 cm (écart-type 6,5 cm) et les hommes 177,0 cm
+(écart-type 7,1 cm). Dans la suite, nous utilisons des valeurs proches :
+une moyenne de 164.7 cm pour les femmes et de 177.4 cm pour les hommes,
+avec des écarts-types un peu plus petits de 5.6 cm et de 6.1 cm.
 
 ```{r}
 #| warning: false
@@ -348,11 +354,17 @@ Les **boîtes à moustaches**, ou **boxplots**, sont un type de graphique
 pour représenter la distribution d'un ensemble de données à travers cinq
 mesures clés :
 
-1.  le minimum (début de la "moustache" ou point extrême de minimum)
+1.  l'extrémité de la moustache inférieure
 2.  le premier quartile (Q1 ; début de la boîte)
 3.  la médiane (Q2 ; ligne qui "coupe la boîte en deux")
 4.  le troisième quartile (Q3 ; fin de la boîte) et
-5.  le maximum (fin de la moustache ou point extrême de maximum)
+5.  l'extrémité de la moustache supérieure.
+
+Les moustaches s'étendent jusqu'aux valeurs les plus extrêmes situées à
+moins de 1,5 × l'écart interquartile de la boîte ; les valeurs au-delà
+sont dessinées comme des points (valeurs extrêmes potentielles). Les
+moustaches correspondent donc au minimum et au maximum seulement s'il n'y
+a pas de valeurs extrêmes.
 
 Ces diagrammes permettent d'identifier rapidement la médiane, l'étendue
 interquartile (angl. *interquartile range* = *IQR*) et les valeurs
@@ -370,18 +382,17 @@ set.seed(1238)
 df <- data.frame(value = rnorm(300, mean = 5, sd = 2))
 
 # Calculating summary statistics for annotations
+# Les moustaches s'arrêtent aux valeurs les plus extrêmes situées à moins de
+# 1,5 × IQR de la boîte (convention de Tukey, utilisée par geom_boxplot())
 summaries <- df %>% 
   summarise(
     Min = min(value),
     Q1 = quantile(value, 0.25),
     Median = median(value),
     Q3 = quantile(value, 0.75),
-    Max = max(value),
-    IQR = IQR(value)
-  ) %>% 
-  mutate(
-    LowerWhisker = pmax(Q1 - 1.5 * IQR, Min),
-    UpperWhisker = pmin(Q3 + 1.5 * IQR, Max)
+    IQR = IQR(value),
+    LowerWhisker = min(value[value >= Q1 - 1.5 * IQR]),
+    UpperWhisker = max(value[value <= Q3 + 1.5 * IQR])
   )
 
 # Creating the boxplot with annotations
@@ -390,9 +401,10 @@ p <- ggplot(df, aes(x = factor(1), y = value)) +
   geom_text(data = summaries, aes(x = 1.4, y = Q1, label = paste("Q1 :", round(Q1, 2))), hjust = -0.1) +
   geom_text(data = summaries, aes(x = 1.4, y = Median, label = paste("Médiane :", round(Median, 2))), hjust = -0.1) +
   geom_text(data = summaries, aes(x = 1.4, y = Q3, label = paste("Q3 :", round(Q3, 2))), hjust = -0.1) +
-  geom_text(data = summaries, aes(x = 1.0, y = LowerWhisker, label = paste("Minimum (valeur extême) :", round(LowerWhisker, 2))), hjust = -0.3) +
-  geom_text(data = summaries, aes(x = 1.0, y = UpperWhisker, label = paste("Maximum :", round(UpperWhisker, 2))), hjust = -0.3) +
-  scale_x_discrete(labels = NULL) + # Hide x-axis labels
+  geom_text(data = summaries, aes(x = 1.0, y = LowerWhisker, label = paste("Fin de la moustache inférieure :", round(LowerWhisker, 2))), hjust = -0.1) +
+  geom_text(data = summaries, aes(x = 1.0, y = UpperWhisker, label = paste("Fin de la moustache supérieure :", round(UpperWhisker, 2))), hjust = -0.1) +
+  geom_text(data = summaries, aes(x = 1.0, y = Min, label = paste("Valeur extrême :", round(Min, 2))), hjust = -0.15) +
+  scale_x_discrete(labels = NULL, expand = expansion(add = c(0.6, 1.2))) + # Hide x-axis labels, room for the annotations
   theme_minimal() +
   theme(axis.title.x=element_blank(),
         axis.text.x=element_blank(),

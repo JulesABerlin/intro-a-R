@@ -64,3 +64,18 @@ renforcée » (youtube-nocookie.com).
 Les explications des exercices ont été en partie rédigées avec l'aide d'un
 outil d'intelligence artificielle (Claude, d'Anthropic), puis relues par
 l'auteur.
+
+## Remerciements
+
+Je remercie chaleureusement **Franck Bleu**, tuteur en méthodes
+quantitatives à l'Université de Fribourg (semestre de printemps 2025),
+qui a contribué à l'élaboration et à la relecture des questions à choix
+multiples des Problem Sets. Ces questions sont devenues les exercices
+interactifs de ce site. Il a aussi accompagné les étudiant·es dans leur
+apprentissage de R.
+
+Je remercie également les étudiant·es des Exercices Méthodes II de
+l'Université de Fribourg (2023–2025), dont les questions, les erreurs
+fécondes et les retours ont façonné ce matériel au fil des semestres,
+ainsi que **Jérôme Chariatte**, qui assure aujourd'hui le cours et
+continue de faire vivre ces ressources.

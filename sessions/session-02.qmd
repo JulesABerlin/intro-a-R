@@ -426,7 +426,7 @@ Et voici comment créer un facteur ordinal :
 tailles <- c("Small", "Medium", "Large", "Medium", "Small")
 
 # On le transforme en facteur ordinal en spécifiant les arguments suivants :
-tailles_facteur <- factor(tailles, order = TRUE, levels = c("Small", "Medium", "Large"))
+tailles_facteur <- factor(tailles, ordered = TRUE, levels = c("Small", "Medium", "Large"))
 
 levels(tailles_facteur)
 
@@ -444,10 +444,10 @@ Transformons maintenant la colonne `species` de notre jeu de données
 str(ice_age_df)
 
 # Transformation en facteur :
-# ice_age_df$species <- as.factor(ice_age_df$species)
+ice_age_df$species <- as.factor(ice_age_df$species)
 
 # Vérifions encore une fois la structure de l'objet :
-# str(ice_age_df)
+str(ice_age_df)
 
 ```
 
@@ -489,6 +489,17 @@ Il faut l'adapter et inclure un chemin de fichier de votre ordinateur.
 
 Vous pouvez ensuite vérifier si le répertoire de travail a été
 correctement défini avec la fonction `getwd()`
+
+::: {.callout-tip}
+## Bonne pratique : les projets RStudio
+
+Créez un **projet RStudio** (*File → New Project*) pour chaque travail.
+Le répertoire de travail est alors défini automatiquement sur le dossier
+du projet, et vos chemins de fichiers relatifs (p. ex.
+`read.csv("donnees.csv")`) restent valables sur n'importe quel
+ordinateur. Avec `setwd()`, le code cesse de fonctionner dès qu'il est
+déplacé sur un autre ordinateur.
+:::
 
 ### Devoir pour Session 3 (Problem Set 1)
 

@@ -1,0 +1,62 @@
+project:
+  type: book
+  output-dir: _book
+  execute-dir: project
+  render:
+    - index.qmd
+    - sessions/*.qmd
+    - apropos.qmd
+  resources:
+    - data/*
+
+lang: fr
+language:
+  title-block-author-single: "Auteur"
+
+book:
+  title: "Exercices Méthodes II"
+  subtitle: "Introduction à R pour les sciences de la communication"
+  author:
+    - name: Julian Maitra
+      orcid: 0000-0003-3989-5158
+      affiliation:
+        - name: Université de Fribourg
+          url: https://www.unifr.ch/home/en/
+  date: 2025-03-07
+  site-url: https://julesaberlin.github.io/intro-a-R/
+  repo-url: https://github.com/julesaberlin/intro-a-R
+  page-footer:
+    center: >-
+      Textes et exercices : [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr)
+      · Code : MIT · Éléments de tiers : voir [À propos](/apropos.qmd)
+  chapters:
+    - index.qmd
+    - sessions/session-01.qmd
+    - sessions/session-02.qmd
+    - sessions/session-03.qmd
+    - sessions/session-04.qmd
+    - sessions/session-05.qmd
+    - sessions/session-06.qmd
+    - sessions/session-07.qmd
+    - sessions/session-08.qmd
+    - sessions/session-09.qmd
+    - sessions/session-10.qmd
+    - sessions/session-11.qmd
+    - sessions/session-12.qmd
+    - sessions/session-13.qmd
+    - sessions/session-14.qmd
+    - apropos.qmd
+
+execute:
+  freeze: auto
+
+format:
+  html:
+    theme: [cosmo, theme.scss]
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    number-depth: 2
+    # ajouté par webexercises::add_to_quarto()
+    css: include/webex.css
+    include-after-body: include/webex.js

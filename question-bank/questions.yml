@@ -1,0 +1,2042 @@
+# Banque de questions du cours Exercices Méthodes II
+#
+# Questions élaborées par Julian Maitra avec la contribution de Franck Bleu (tuteur en
+# méthodes quantitatives, Université de Fribourg, SP 2025).
+#
+# Une entrée par question de la banque Moodle (ID 1–125, cf. source/solutions_all.qmd).
+# Champs :
+#   id           numéro de la question dans la banque Moodle
+#   session      session (1–12) dont relève la question, selon le sujet
+#   problem_sets Problem Set(s) dans lesquels la question figure (1–4)
+#   type         vf (Vrai/Faux) | mcq (une seule réponse) | multi (plusieurs
+#                réponses, affichées comme une liste de Vrai/Faux) | numeric | text
+#   stem         énoncé (Markdown)
+#   code         code R à exécuter (affiché, pas évalué)
+#   figure       code R qui produit le graphique de la question (évalué au rendu)
+#   options      propositions a–e (mcq, multi)
+#   drop         propositions « méta » (p. ex. « toutes les autres réponses sont
+#                correctes ») omises dans l’affichage Vrai/Faux d’une question multi
+#   key          corrigé : true/false (vf), lettre (mcq), liste de lettres (multi),
+#                nombre (numeric), texte ou liste de textes acceptés (text) ;
+#                TBD = à recalculer avec les données synthétiques (étape 4)
+#   tol          tolérance pour les réponses numériques (facultatif)
+#   explanation  explication en français (Markdown)
+#   uses_data    fichier CSV utilisé (data/), sinon ~
+#   variant_of   la question est une variante d’une autre (non affichée par défaut)
+#   needs_image  la question dépend d’une image manquante (non affichée)
+#   check        corrigé non vérifiable dans R : à relire
+#   note         remarque pour l’enseignant (non affichée)
+
+- id: 1
+  session: 7
+  problem_sets: [3]
+  type: text
+  stem: |
+    Associez les photos suivantes aux comptes Instagram qui les ont publiées
+    (toutes les photos proviennent des 10 premières publications selon
+    `Total.Interactions` dans `igposts.csv`).
+  key: [Jin of BTS, Selena Gomez, Cristiano Ronaldo, KIARA, Leo Messi]
+  explanation: |
+    Triez `igposts` par `Total.Interactions` décroissant, affichez les 10 premières
+    lignes et ouvrez les URL pour comparer les photos.
+  uses_data: igposts.csv
+  needs_image: true
+  check: true
+  note: >-
+    Question d’association : les 5 captures d’écran (problemset_3_images/) manquent.
+    Clé = compte de la photo 1 à 5, dans l’ordre.
+
+- id: 2
+  session: 7
+  problem_sets: [3]
+  type: mcq
+  stem: 'Quel est le rôle principal de l’opérateur `%>%` dans `dplyr` ?'
+  options:
+    a: 'Importer des données.'
+    b: 'Assigner des variables.'
+    c: 'Créer des séquences de fonctions pour simplifier le code.'
+    d: 'Convertir des types de données.'
+    e: 'Aucune des autres réponses n’est correcte.'
+  key: c
+  explanation: |
+    Le *pipe* `%>%` transmet le résultat d’une fonction comme premier argument de la
+    suivante. On enchaîne ainsi les étapes de gauche à droite au lieu d’imbriquer
+    les fonctions : `x %>% f() %>% g()` équivaut à `g(f(x))`.
+  uses_data: ~
+
+- id: 3
+  session: 11
+  problem_sets: [4]
+  type: mcq
+  stem: |
+    Vous avez effectué un test t à un échantillon et obtenu une statistique t de
+    4.0869 avec 49 degrés de liberté et une valeur p de 0.0001618. Quelle conclusion
+    pouvez-vous en tirer au niveau de signification de 5 % ?
+  options:
+    a: 'Ne pas rejeter l’hypothèse nulle (H0).'
+    b: 'Rejeter l’hypothèse nulle (H0).'
+    c: 'Il n’y a pas assez d’informations pour conclure.'
+    d: 'Augmenter la taille de l’échantillon.'
+    e: 'Aucune des autres réponses n’est correcte.'
+  key: b
+  explanation: |
+    La valeur p (0.00016) est bien inférieure au seuil de 0.05 : on rejette H0.
+    La moyenne de l’échantillon diffère significativement de la valeur testée.
+  uses_data: ~
+
+- id: 4
+  session: 2
+  type: multi
+  stem: 'Exécutez le code R suivant et jugez chaque proposition :'
+  code: |
+    a <- c(1:5)
+    b <- c(5:10)
+    c <- a * b
+  options:
+    a: 'Les longueurs de `a` et `b` sont égales.'
+    b: 'Dans cet exemple de code, `c` ne peut être créé que si `a` et `b` sont créés avant.'
+    c: '`length(a) <= length(b)`'
+    d: 'Dans cet exemple de code, le signe deux-points (`:`) crée des séquences de nombres entiers.'
+    e: 'Trois autres réponses sont correctes.'
+  drop: [e]
+  key: [b, c, d, e]
+  explanation: |
+    a) `a` a 5 éléments, `b` en a 6 : les longueurs diffèrent (et `length(a) <= length(b)` renvoie `TRUE`).
+    b) R doit connaître `a` et `b` pour calculer `a * b`.
+    d) `1:5` crée la suite 1, 2, 3, 4, 5.
+    Remarque : comme les longueurs diffèrent, R « recycle » le vecteur le plus court et affiche un avertissement, mais `c` est quand même créé.
+  uses_data: ~
+
+- id: 5
+  session: 1
+  type: multi
+  stem: 'La fonction `class()` appliquée à une variable à un élément peut donner comme résultat :'
+  options:
+    a: '`"numeric"`'
+    b: '`"logical"`'
+    c: '`"character"`'
+    d: '`6`'
+    e: 'Aucune des autres réponses n’est correcte.'
+  drop: [e]
+  key: [a, b, c]
+  explanation: |
+    `class()` renvoie toujours un **texte** décrivant la classe de l’objet, p. ex.
+    `class(5)` → `"numeric"`, `class(TRUE)` → `"logical"`, `class("a")` → `"character"`.
+    Elle ne renvoie jamais un nombre comme `6`.
+  uses_data: ~
+
+- id: 6
+  session: 2
+  type: multi
+  stem: 'Exécutez le code R suivant et jugez chaque proposition :'
+  code: |
+    nom <- c("Kim", "Claire", "Antoine", "Mathilde", "Ali", "Charlotte", "Tiger", "Sacha")
+    genre <- factor(c("non binaire", "femme", "homme", "femme", "homme", "femme", "homme", "homme"),
+                    ordered = FALSE)
+    revenus_en_milles_chf <- c(77, 154, 15, 82, 104, 48, 540, 63)
+    classe_de_revenus <- factor(c("moyen", "haut", "très faible", "moyen", "haut", "faible", "très haut", "moyen"),
+                                ordered = TRUE,
+                                levels = c("très faible", "faible", "moyen", "haut", "très haut"))
+
+    revenus_df <- data.frame(nom, genre, revenus_en_milles_chf, classe_de_revenus)
+    revenus_df
+  options:
+    a: 'Ce data frame contient deux facteurs.'
+    b: '`revenus_df$classe_de_revenus` est une variable catégorielle ordinale.'
+    c: '`revenus_df$genre` est une variable catégorielle ordinale.'
+    d: 'Ce data frame contient des informations sur trois femmes et trois personnes ayant un haut revenu.'
+    e: 'Ce data frame contient des informations sur cinq classes de revenus différentes.'
+  key: [a, b, e]
+  explanation: |
+    a) `genre` et `classe_de_revenus` sont des facteurs (`factor()`). `nom` est une variable textuelle, qui sert d’identifiant.
+    b) `classe_de_revenus` est un facteur ordonné (`ordered = TRUE`).
+    c) `genre` est créé avec `ordered = FALSE` : il est nominal.
+    d) Il y a bien trois femmes, mais seulement deux personnes dans la classe « haut ».
+    e) Les cinq niveaux de `classe_de_revenus` apparaissent tous dans les données.
+  uses_data: ~
+  note: >-
+    a) reformulée (« deux facteurs » au lieu de « deux variables catégorielles ») :
+    nom est aussi une variable textuelle, le corrigé (a vrai) n’est plus ambigu.
+
+- id: 7
+  session: 4
+  problem_sets: [2]
+  type: multi
+  stem: 'Jugez chaque proposition :'
+  options:
+    a: 'Le paquet `ggplot2` est inclus dans `tidyverse`.'
+    b: 'Le paquet `ggplot` est à utiliser pour faire des graphiques avec une variable, tandis que le paquet `ggplot2` est utile pour voir graphiquement la corrélation entre deux variables.'
+    c: 'Le responsable de `ggplot2` (qui maintient le paquet) est Thomas Lin Pedersen.'
+    d: '`ggplot2` est très utile pour modifier des données.'
+    e: '`ggplot2` construit des graphiques de manière incrémentale, en travaillant avec des couches.'
+  key: [a, c, e]
+  explanation: |
+    a) `ggplot2` fait partie des paquets chargés par `library(tidyverse)`.
+    b) Il n’existe pas de paquet `ggplot` distinct : `ggplot()` est la fonction principale de `ggplot2`.
+    c) `packageDescription("ggplot2")$Maintainer` l’indique.
+    d) Pour modifier des données, on utilise `dplyr` ; `ggplot2` sert à les visualiser.
+    e) On ajoute les couches les unes aux autres avec `+`.
+  uses_data: ~
+
+- id: 8
+  session: 2
+  problem_sets: [1]
+  type: multi
+  stem: 'Exécutez le code R suivant et jugez chaque proposition :'
+  code: |
+    name    <- c("Manny", "Sid", "Diego", "Ellie", "Peaches", "Scrat", "Rudy", "Buck")
+    species <- c("mammoth", "sloth", "sabertooth", "mammoth", "mammoth", "squirrel", "dinosaur", "weasel")
+    female  <- c(FALSE, FALSE, FALSE, TRUE, TRUE, FALSE, FALSE, FALSE)
+    age     <- c(30, 20, 35, 25, 7, 4, 100, 28)
+    weight  <- c(5000, 80, 400, 4000, 1000, 1, 10000, 3)
+
+    ice_age_df <- data.frame(name, species, female, age, weight)
+    ice_age_df
+  options:
+    a: 'La colonne `female` (fr. « femelle ») du jeu de données `ice_age_df` est de type logique (*logical*).'
+    b: 'Les unités statistiques du jeu de données `ice_age_df` sont les noms, les espèces, le genre (femelle), le poids et l’âge des animaux de l’ère glaciaire.'
+    c: 'L’unité statistique du jeu de données `ice_age_df` est un animal de l’âge de glace, avec n = 8 observations.'
+    d: 'Le jeu de données `ice_age_df` contient des informations sur trois mammouths différents.'
+    e: 'Buck, l’écureuil, pèse 1 kg.'
+  key: [a, c, d]
+  explanation: |
+    a) `female` est créé à partir d’un vecteur de `TRUE`/`FALSE`, donc de type logique.
+    b) Ce sont les **variables** (colonnes), pas les unités statistiques.
+    c) Chaque ligne correspond à un animal, soit 8 observations.
+    d) « mammoth » apparaît trois fois dans `species` (Manny, Ellie, Peaches).
+    e) Buck est une belette (*weasel*) de 3 kg. C’est Scrat, l’écureuil, qui pèse 1 kg.
+  uses_data: ~
+
+- id: 9
+  session: 2
+  problem_sets: [1]
+  type: multi
+  stem: 'Exécutez le code R suivant et jugez chaque proposition :'
+  code: |
+    name    <- c("Manny", "Sid", "Diego", "Ellie", "Peaches", "Scrat", "Rudy", "Buck")
+    species <- c("mammoth", "sloth", "sabertooth", "mammoth", "mammoth", "squirrel", "dinosaur", "weasel")
+    female  <- c(FALSE, FALSE, FALSE, TRUE, TRUE, FALSE, FALSE, FALSE)
+    age     <- c(30, 20, 35, 25, 7, 4, 100, 28)
+    weight  <- c(5000, 80, 400, 4000, 1000, 1, 10000, 3)
+
+    ice_age_df <- data.frame(name, species, female, age, weight)
+    print(ice_age_df)
+  options:
+    a: 'Le code `ice_age_df$name` affiche les éléments de la colonne `name` du jeu de données `ice_age_df`.'
+    b: 'Le code `ice_age_df[, 2]` affiche les éléments de la deuxième colonne de `ice_age_df`.'
+    c: 'Les dimensions du jeu de données `ice_age_df` sont 8 × 5 (8 lignes et 5 colonnes).'
+    d: 'L’objet `ice_age_df` est de type matrice (*matrix*).'
+    e: 'Le code `mean(ice_age_df$age)` calcule la moyenne de la colonne `age` du jeu de données `ice_age_df`.'
+  key: [a, b, c, e]
+  explanation: |
+    a) et e) Le `$` extrait une colonne par son nom ; `mean()` en calcule la moyenne.
+    b) Dans `[lignes, colonnes]`, laisser les lignes vides sélectionne toutes les lignes de la 2ᵉ colonne.
+    c) `dim(ice_age_df)` renvoie `8 5`.
+    d) `class(ice_age_df)` renvoie `"data.frame"` : contrairement à une matrice, un data frame peut contenir des colonnes de types différents.
+  uses_data: ~
+  note: >-
+    Dans exercise_problemset_1_final.qmd, la question 8 n’a ni ID ni propositions.
+    Son code (print(ice_age_df)) correspond à la question 9 de la banque.
+
+- id: 10
+  session: 4
+  type: multi
+  stem: 'Jugez chaque proposition relative au jeu de données `iris`, intégré à R :'
+  options:
+    a: 'Le jeu de données contient 150 observations de 5 variables.'
+    b: 'Le jeu de données contient des observations de trois espèces d’iris différentes.'
+    c: 'L’unité statistique du jeu de données est `Petal.Length` (longueur de pétale) des fleurs d’iris.'
+    d: 'Les mesures ont été publiées par Edgar Anderson (1935).'
+    e: 'Toutes les autres réponses sont incorrectes.'
+  drop: [e]
+  key: [a, b, d]
+  explanation: |
+    a) `dim(iris)` renvoie `150 5`.
+    b) `levels(iris$Species)` : setosa, versicolor et virginica.
+    c) L’unité statistique est une **fleur** ; `Petal.Length` est une variable.
+    d) La page d’aide `?iris` cite Anderson (1935), *The irises of the Gaspe Peninsula*. 1935 est l’année de publication ; selon Anderson, deux des trois espèces proviennent de la péninsule de Gaspé (Québec).
+  uses_data: ~
+
+- id: 11
+  session: 2
+  problem_sets: [1]
+  type: multi
+  stem: 'Exécutez le code R suivant et jugez chaque proposition :'
+  code: |
+    m1 <- matrix(c(1:25), nrow = 5, byrow = TRUE)
+    print(m1)
+  options:
+    a: '`m1` est une matrice de dimension 5 × 5 (5 lignes et 5 colonnes).'
+    b: 'Dans le code R ci-dessus, l’argument `byrow = TRUE` spécifie que les valeurs de la matrice `m1` sont remplies par ligne.'
+    c: '`m1` est une matrice de type textuel.'
+    d: '`m1` est une matrice à 24 éléments.'
+    e: 'Le code R ci-dessus ne fonctionne pas et génère un message d’erreur.'
+  key: [a, b]
+  explanation: |
+    25 valeurs réparties sur 5 lignes donnent une matrice 5 × 5 de type numérique (*integer*),
+    remplie ligne par ligne grâce à `byrow = TRUE`.
+  uses_data: ~
+
+- id: 12
+  session: 2
+  variant_of: 11
+  type: multi
+  stem: 'Exécutez le code R suivant et jugez chaque proposition :'
+  code: |
+    m1 <- matrix(c(1:36), nrow = 6, byrow = FALSE)
+    print(m1)
+  options:
+    a: '`m1` est une matrice de dimension 6 × 6 (6 lignes et 6 colonnes).'
+    b: 'Dans le code R ci-dessus, l’argument `byrow = FALSE` spécifie que les valeurs de la matrice `m1` sont remplies par ligne.'
+    c: '`m1` est une matrice de type textuel.'
+    d: '`m1` est une matrice à 36 éléments.'
+    e: 'Le code R ci-dessus ne fonctionne pas et génère un message d’erreur.'
+  key: [a, d]
+  explanation: |
+    36 valeurs sur 6 lignes donnent une matrice numérique 6 × 6 de 36 éléments.
+    Avec `byrow = FALSE` (valeur par défaut), la matrice est remplie **par colonne**.
+  uses_data: ~
+
+- id: 13
+  session: 2
+  variant_of: 11
+  type: multi
+  stem: 'Exécutez le code R suivant et jugez chaque proposition :'
+  code: |
+    m1 <- matrix(c(1:49), nrow = 7, byrow = FALSE)
+    print(m1)
+  options:
+    a: '`m1` est une matrice de dimension 7 × 7 (7 lignes et 7 colonnes).'
+    b: 'Dans le code R ci-dessus, l’argument `byrow = FALSE` spécifie que les valeurs de la matrice `m1` sont remplies par colonne.'
+    c: '`m1` est une matrice de type numérique.'
+    d: '`m1` est une matrice à 48 éléments.'
+    e: 'Le code R ci-dessus ne fonctionne pas et génère un message d’erreur.'
+  key: [a, b, c]
+  explanation: |
+    49 valeurs sur 7 lignes donnent une matrice numérique 7 × 7, donc 49 éléments (pas 48),
+    remplie par colonne car `byrow = FALSE`.
+  uses_data: ~
+
+- id: 14
+  session: 2
+  variant_of: 11
+  type: multi
+  stem: 'Exécutez le code R suivant et jugez chaque proposition :'
+  code: |
+    m1 <- matrix(c(1:64), nrow = 8, byrow = TRUE)
+    print(m1)
+  options:
+    a: '`m1` est une matrice de dimension 8 × 8 (8 lignes et 8 colonnes).'
+    b: 'Dans le code R ci-dessus, l’argument `byrow = TRUE` spécifie que les valeurs de la matrice `m1` sont remplies par colonne.'
+    c: '`m1` est une matrice de type numérique.'
+    d: '`m1` est une matrice à 64 éléments.'
+    e: 'Le code R ci-dessus ne fonctionne pas et génère un message d’erreur.'
+  key: [a, c, d]
+  explanation: |
+    64 valeurs sur 8 lignes donnent une matrice numérique 8 × 8 de 64 éléments.
+    `byrow = TRUE` remplit la matrice **par ligne**, pas par colonne.
+  uses_data: ~
+
+- id: 15
+  session: 4
+  type: multi
+  stem: 'Jugez chaque proposition relative au jeu de données `mtcars`, intégré à R :'
+  options:
+    a: '`mtcars` est un `"data.frame"`.'
+    b: 'Le jeu de données `mtcars` contient 32 observations de 11 variables.'
+    c: 'Avec 33,9 milles par gallon (`mpg`), la Toyota Corolla est le modèle de voiture le plus efficace en termes de consommation de carburant dans le jeu de données.'
+    d: 'La Ford Pantera L a une boîte de vitesses manuelle.'
+    e: 'Toutes les autres réponses sont correctes.'
+  drop: [e]
+  key: [a, b, c, d, e]
+  explanation: |
+    a) et b) `class(mtcars)` renvoie `"data.frame"` et `dim(mtcars)` renvoie `32 11`.
+    c) `mtcars[which.max(mtcars$mpg), ]` donne la Toyota Corolla (33,9 mpg).
+    d) `mtcars["Ford Pantera L", "am"]` vaut 1, ce qui signifie « manuelle » (voir `?mtcars`).
+  uses_data: ~
+
+- id: 16
+  session: 1
+  type: multi
+  stem: 'Exécutez le code R suivant et jugez chaque proposition :'
+  code: |
+    number <- "7"
+  options:
+    a: 'Le code `number^2` donne 36 comme résultat dans la console.'
+    b: 'Le code `number <- as.numeric(number)` ne change rien à ma variable.'
+    c: '`number` peut être utilisé dans la fonction `c()` afin de créer un vecteur.'
+    d: '`length(number)` donne une erreur.'
+    e: 'Le code `as.numeric(number)^2` donne 36 comme résultat dans la console.'
+  key: [c]
+  explanation: |
+    `number` contient le **texte** `"7"`.
+    a) Un calcul sur du texte produit une erreur.
+    b) `as.numeric()` transforme le texte en nombre : la classe de `number` change.
+    c) `c(number, "8")` crée un vecteur textuel.
+    d) `length(number)` renvoie 1.
+    e) `as.numeric(number)^2` vaut 49, pas 36.
+  uses_data: ~
+
+- id: 17
+  session: 1
+  problem_sets: [1]
+  type: multi
+  stem: 'Exécutez le code suivant et jugez chaque proposition :'
+  code: |
+    n <- "079 123 45 67"
+    print(n)
+    class(n)
+  options:
+    a: 'Le code crée un objet numérique avec 10 éléments.'
+    b: '`n` est une variable de type textuel.'
+    c: '`n` est une variable avec un élément.'
+    d: 'Si l’on a créé correctement `n` comme décrit ci-dessus et que l’on exécute `n * 2`, on obtient un message d’erreur.'
+    e: 'Dans R, il n’est jamais utile de stocker des numéros sous forme de texte.'
+  key: [b, c, d]
+  explanation: |
+    Les guillemets font de `n` une chaîne de caractères à **un** élément. Une opération
+    arithmétique sur du texte (`n * 2`) produit une erreur.
+    e) Stocker des numéros de téléphone, codes postaux ou identifiants en texte est souvent
+    utile : on ne calcule pas avec eux, et les zéros initiaux sont conservés.
+  uses_data: ~
+
+- id: 18
+  session: 1
+  variant_of: 17
+  type: multi
+  stem: 'Exécutez le code suivant et jugez chaque proposition :'
+  code: |
+    n <- "076 666 88 44"
+    print(n)
+    class(n)
+  options:
+    a: 'Le code crée un objet numérique avec 10 éléments.'
+    b: '`n` est une variable de type textuel.'
+    c: '`n` est une variable avec un élément.'
+    d: 'Si l’on a créé correctement `n` comme décrit ci-dessus et que l’on exécute `n * 2`, on obtient un message d’erreur.'
+    e: 'Dans R, il n’est jamais utile de stocker des numéros sous forme de texte.'
+  key: [b, c, d]
+  explanation: |
+    Les guillemets font de `n` une chaîne de caractères à un élément : ce n’est pas un nombre, et `n * 2` produit une erreur.
+  uses_data: ~
+
+- id: 19
+  session: 1
+  variant_of: 17
+  type: multi
+  stem: 'Exécutez le code suivant et jugez chaque proposition :'
+  code: |
+    n <- "076 333 77 55"
+    print(n)
+    class(n)
+  options:
+    a: 'Le code crée un objet numérique avec 10 éléments.'
+    b: '`n` est une variable de type textuel.'
+    c: '`n` est une variable avec un élément.'
+    d: 'Si l’on a créé correctement `n` comme décrit ci-dessus et que l’on exécute `n * 2`, on obtient un message d’erreur.'
+    e: 'Dans R, il n’est jamais utile de stocker des numéros sous forme de texte.'
+  key: [b, c, d]
+  explanation: |
+    Les guillemets font de `n` une chaîne de caractères à un élément : ce n’est pas un nombre, et `n * 2` produit une erreur.
+  uses_data: ~
+
+- id: 20
+  session: 1
+  variant_of: 17
+  type: multi
+  stem: 'Exécutez le code suivant et jugez chaque proposition :'
+  code: |
+    n <- "078 123 77 55"
+    print(n)
+    class(n)
+  options:
+    a: 'Le code crée un objet numérique avec 10 éléments.'
+    b: '`n` est une variable de type textuel.'
+    c: '`n` est une variable avec un élément.'
+    d: 'Si l’on a créé correctement `n` comme décrit ci-dessus et que l’on exécute `n * 2`, on obtient un message d’erreur.'
+    e: 'Dans R, il n’est jamais utile de stocker des numéros sous forme de texte.'
+  key: [b, c, d]
+  explanation: |
+    Les guillemets font de `n` une chaîne de caractères à un élément : ce n’est pas un nombre, et `n * 2` produit une erreur.
+  uses_data: ~
+
+- id: 21
+  session: 1
+  type: multi
+  stem: 'Exécutez le code suivant et jugez chaque proposition :'
+  code: |
+    a <- 66
+    a <- 77
+    a <- 88
+  options:
+    a: 'Ce code génère une variable, `a`, dont la valeur finale correspond à 88.'
+    b: 'Le code écrase deux fois la variable `a`.'
+    c: 'Le code génère une erreur, car il ne peut pas créer trois variables portant exactement le même nom.'
+    d: 'Le code crée trois variables, toutes nommées `a`, et les stocke simultanément dans l’environnement.'
+    e: 'Toutes les autres réponses sont incorrectes.'
+  drop: [e]
+  key: [a, b]
+  explanation: |
+    Chaque nouvelle affectation remplace l’ancienne valeur : il n’existe qu’un seul objet `a`,
+    qui vaut 88 à la fin. R ne produit pas d’erreur lorsqu’on réutilise un nom.
+  uses_data: ~
+
+- id: 22
+  session: 1
+  problem_sets: [1]
+  type: multi
+  stem: 'Exécutez le code R suivant et jugez chaque proposition :'
+  code: |
+    a <- c(0:15)
+    print(a)
+  options:
+    a: '`print(a)` est une fonction qui affiche l’objet `a` dans la console.'
+    b: 'Au lieu d’utiliser `print(a)`, on pourrait simplement afficher l’objet `a` en exécutant son nom `a`.'
+    c: 'La fonction `print()` dans R sert à imprimer le code R sur papier avec l’imprimante.'
+    d: 'Dans cet exemple de code, `a` est une fonction R.'
+    e: 'Dans cet exemple de code, un vecteur nommé `c` est créé.'
+  key: [a, b]
+  explanation: |
+    `print(a)` affiche le contenu de l’objet `a` dans la console. En session interactive,
+    taper simplement `a` a le même effet. `a` est un vecteur (pas une fonction), et `c()`
+    est la fonction de concaténation qui le crée : aucun objet nommé `c` n’est créé.
+  uses_data: ~
+
+- id: 23
+  session: 12
+  problem_sets: [4]
+  type: multi
+  stem: 'Jugez chaque proposition concernant le graphique suivant :'
+  figure: |
+    library(ggplot2)
+    library(palmerpenguins)
+    ggplot(penguins, aes(x = species, y = flipper_length_mm)) +
+      geom_boxplot() +
+      labs(x = "Espèce", y = "Longueur des nageoires (mm)") +
+      theme_minimal()
+  options:
+    a: 'La ligne noire épaisse au milieu des boxplots indique la longueur moyenne des nageoires pour chaque espèce de manchots.'
+    b: 'Au moins un manchot Adélie de l’échantillon a une nageoire plus longue qu’au moins un manchot papou (Gentoo).'
+    c: 'Les boxplots nous indiquent qu’il existe des différences statistiquement significatives dans la longueur des nageoires entre les trois espèces de manchots.'
+    d: 'Sur la seule base des boxplots, nous ne pouvons pas savoir si les différences de longueur des nageoires des différentes espèces de manchots sont statistiquement significatives (nous pourrions faire une ANOVA pour le savoir).'
+    e: 'Les boxplots indiquent qu’il y a deux valeurs extrêmes (*outliers*) dans l’ensemble de données.'
+  key: [b, d, e]
+  explanation: |
+    a) La ligne du milieu est la **médiane**, pas la moyenne.
+    b) La nageoire la plus longue chez les manchots Adélie (210 mm) dépasse la plus courte chez les manchots papous (203 mm).
+    c) et d) Un graphique ne teste rien : il faut un test (ici une ANOVA) pour conclure à une différence significative.
+    e) Les deux points isolés appartiennent aux Adélie (172 mm et 210 mm).
+  uses_data: ~
+
+- id: 24
+  session: 4
+  problem_sets: [2]
+  type: multi
+  stem: 'Jugez chaque proposition concernant le graphique suivant :'
+  figure: |
+    library(ggplot2)
+    ggplot(data = diamonds,
+           mapping = aes(x = carat, y = price, color = clarity)) +
+      geom_point() +
+      labs(title = "La relation entre prix et carat des diamants",
+           subtitle = "n = 53 940 diamants",
+           y = "Prix", x = "Carat", colour = "Pureté")
+  options:
+    a: 'Le graphique montre différents niveaux de qualité de la couleur des diamants.'
+    b: 'En moyenne, la relation entre le carat et le prix semble linéaire (le prix et le carat augmentent proportionnellement).'
+    c: 'En moyenne, la relation entre le carat et le prix semble exponentielle (le prix augmente plus vite que le carat).'
+    d: 'À carat égal, les diamants plus purs semblent plus chers dans ce graphique.'
+    e: 'Le diamant le plus lourd est aussi le plus cher.'
+  key: [c, d]
+  explanation: |
+    a) Les couleurs du graphique représentent la **pureté** (`clarity`), pas la couleur des diamants (`color`).
+    b) et c) Le nuage de points s’incurve vers le haut : le prix augmente plus vite que le carat.
+    d) Pour un même carat, les points des puretés élevées se situent plus haut. Parmi les diamants d’environ 1 carat, le prix médian passe de 2 808 USD (I1) à 9 764 USD (IF).
+    e) Le diamant le plus lourd (5,01 carats) coûte 18 018 USD, alors que le plus cher coûte 18 823 USD.
+  uses_data: ~
+  note: >-
+    d) reformulée (lecture du graphique « à carat égal », pas un effet causal) et vérifiée
+    dans R. L’image d’origine pointait vers l’ancien site ; le graphique est regénéré
+    (code de la session 4).
+
+- id: 25
+  session: 4
+  problem_sets: [2]
+  type: multi
+  stem: |
+    Jugez chaque proposition concernant les couches d’un graphique `ggplot2`
+    (*Data*, *Aesthetics*, *Geometries*, *Facets*, *Statistics*, *Coordinates*, *Theme*) :
+  options:
+    a: 'Pour créer un graphique ggplot2, il faut toujours définir les paramètres de toutes les couches les unes après les autres.'
+    b: 'La couche *Geometries* définit le type de graphique (par ex. nuage de points, diagramme à barres, boîtes à moustaches, etc.).'
+    c: 'En général, on construit un graphique ggplot2 par couches en commençant par la couche *Data*.'
+    d: 'La couche *Aesthetics* définit le design du graphique (par exemple, elle permet de générer le graphique dans le design du Wall Street Journal ou du magazine The Economist).'
+    e: 'Les couches *Facets*, *Statistics*, *Coordinates* et *Theme* ne doivent pas obligatoirement être spécifiées dans le code, car R utilise pour celles-ci des paramètres standard prédéfinis.'
+  key: [b, c, e]
+  explanation: |
+    a) et e) Seules *Data*, *Aesthetics* et *Geometries* sont nécessaires ; les autres couches ont des valeurs par défaut.
+    c) On commence par `ggplot(data = ...)`, puis on ajoute les couches.
+    d) *Aesthetics* (`aes()`) relie les variables aux axes, couleurs, tailles, etc. Le style « WSJ » ou « Economist » relève de la couche *Theme* (p. ex. `theme_wsj()` du paquet `ggthemes`).
+  uses_data: ~
+  note: >-
+    L’image d’origine (schéma des couches) manque ; l’énoncé nomme maintenant les couches
+    pour que la question se suffise à elle-même.
+
+- id: 26
+  session: 5
+  problem_sets: [2]
+  type: multi
+  stem: 'Jugez chaque proposition concernant l’histogramme suivant des points obtenus au Problem Set 1 :'
+  figure: |
+    library(ggplot2)
+    points_ps_1 <- read.csv("https://julesaberlin.github.io/intro-a-R/data/points_PS_1.csv", encoding = "UTF-8")
+    ggplot(points_ps_1, aes(x = points)) +
+      geom_histogram(binwidth = 1, color = "black", fill = "white") +
+      labs(x = "Points obtenus", y = "Fréquence") +
+      theme_minimal()
+  options:
+    a: 'Les étudiant·es ont obtenu le plus fréquemment 13 points dans le Problem Set 1.'
+    b: 'Le graphique montre qu’en médiane, 16 points ont été obtenus dans le Problem Set 1.'
+    c: 'Le graphique montre qu’en moyenne, 16 points ont été obtenus dans le Problem Set 1.'
+    d: 'L’histogramme montre que la distribution des points dans le Problem Set 1 suit une loi normale centrée réduite.'
+    e: 'Toutes les autres réponses sont incorrectes.'
+  drop: [e]
+  key: [e]
+  explanation: |
+    a) La barre la plus haute est à 14 points (le mode).
+    b) et c) Un histogramme ne montre ni la médiane ni la moyenne exactes. Ici, la médiane vaut 14 et la moyenne 14,2.
+    d) Une loi normale *centrée réduite* a une moyenne de 0 et un écart-type de 1 : ce n’est pas le cas de points compris entre 8 et 20.
+  uses_data: points_PS_1.csv
+
+- id: 27
+  session: 5
+  problem_sets: [2]
+  type: multi
+  stem: 'Comment peut-on ajuster la **largeur des intervalles** dans un histogramme créé avec `ggplot2` ?'
+  options:
+    a: 'En utilisant l’argument `bins`.'
+    b: 'En ajustant l’argument `width`.'
+    c: 'En modifiant l’argument `binwidth`.'
+    d: 'En changeant l’argument `interval`.'
+    e: 'Toutes les réponses sont incorrectes.'
+  drop: [e]
+  key: [a, c]
+  explanation: |
+    `binwidth` fixe directement la largeur de chaque barre ; `bins` fixe le **nombre** de barres,
+    ce qui change aussi leur largeur. `geom_histogram()` n’a pas d’argument `interval`.
+  uses_data: ~
+
+- id: 28
+  session: 5
+  problem_sets: [2]
+  type: multi
+  stem: 'Jugez chaque proposition concernant le graphique suivant, créé avec le jeu de données `mpg` (inclus dans le paquet `ggplot2`) :'
+  figure: |
+    library(ggplot2)
+    ggplot(mpg, aes(x = displ, y = hwy)) +
+      geom_point() +
+      geom_smooth(method = "lm", formula = y ~ x) +
+      theme_minimal()
+  options:
+    a: 'La ligne de régression indique que la corrélation entre la taille du moteur et l’efficacité du carburant est négative.'
+    b: 'Les données présentées proviennent du jeu de données `mtcars`.'
+    c: 'Le jeu de données `mpg` contient des données relatives à l’économie de carburant de 1999 à 2008 pour 38 modèles de voitures populaires.'
+    d: 'L’axe des x de ce graphique indique les miles par gallon (`mpg`).'
+    e: 'Le graphique montre que les moteurs de plus grande taille ont tendance à être associés à un plus grand nombre de miles par gallon.'
+  key: [a, c]
+  explanation: |
+    a) et e) La droite descend : plus la cylindrée (`displ`) est grande, moins on parcourt de miles par gallon (`hwy`).
+    b) Les données viennent de `mpg`, pas de `mtcars`.
+    c) C’est la description de `?mpg`.
+    d) L’axe des x montre la cylindrée (`displ`, en litres) ; les miles par gallon sont sur l’axe des y.
+  uses_data: ~
+  note: >-
+    L’image d’origine (mpg_displ.png) manque ; le graphique est regénéré
+    (displ × hwy avec droite de régression). À comparer avec l’original.
+
+- id: 29
+  session: 5
+  problem_sets: [2]
+  type: multi
+  stem: 'Exécutez le code R suivant et jugez chaque proposition :'
+  code: |
+    library(ggplot2)
+    data(mtcars)
+    g <- ggplot(mtcars, aes(mpg, wt)) + geom_point()
+    print(g)
+  options:
+    a: '`g` est un objet stocké dans le volet *Environment* de RStudio.'
+    b: 'Le graphique `g` affiche une relation entre le poids des voitures (`wt`) et leur efficacité énergétique (`mpg`, miles par gallon).'
+    c: 'Le code produit un histogramme.'
+    d: 'Chaque point dans le graphique représente une voiture du jeu de données `mtcars`.'
+    e: 'Le graphique indique que les deux variables affichées sont négativement corrélées.'
+  key: [a, b, d, e]
+  explanation: |
+    a) L’affectation `<-` stocke le graphique dans l’objet `g`.
+    c) `geom_point()` produit un **nuage de points**, pas un histogramme.
+    d) Chaque ligne de `mtcars` (une voiture) donne un point.
+    e) Les voitures lourdes parcourent moins de miles par gallon : `cor(mtcars$mpg, mtcars$wt)` vaut −0,87.
+  uses_data: ~
+
+- id: 30
+  session: 5
+  problem_sets: [2]
+  type: multi
+  stem: 'Exécutez le code R suivant et jugez chaque proposition :'
+  code: |
+    library(ggplot2)
+    data(mtcars)
+    # Transformations :
+    mtcars$cyl <- as.factor(mtcars$cyl)
+    mtcars$gear <- as.factor(mtcars$gear)
+    # Diagramme à barres :
+    ggplot(mtcars, aes(x = cyl, fill = gear)) +
+      geom_bar() +
+      labs(title = "Distribution of cylinders and gears in mtcars")
+  options:
+    a: 'Ce code produit un diagramme à barres représentant le nombre de voitures par nombre de cylindres.'
+    b: 'La couleur des barres est déterminée par le nombre de vitesses (`gear`).'
+    c: 'Les cylindres et les vitesses sont transformés en variables de type facteur.'
+    d: 'Le graphique montre qu’il n’y a pas de voitures avec 8 cylindres et 4 vitesses dans `mtcars`.'
+    e: 'Les voitures à 6 cylindres sont moins fréquentes que celles à 4 ou 8 cylindres.'
+  key: [a, b, c, d, e]
+  explanation: |
+    a) `geom_bar()` compte les voitures par valeur de `cyl`.
+    b) `fill = gear` colore les barres selon le nombre de vitesses.
+    c) `as.factor()` transforme `cyl` et `gear` en facteurs.
+    d) La barre des 8 cylindres ne contient que des voitures à 3 et 5 vitesses.
+    e) Il y a 7 voitures à 6 cylindres, contre 11 à 4 cylindres et 14 à 8 cylindres.
+  uses_data: ~
+
+- id: 31
+  session: 5
+  problem_sets: [2]
+  type: multi
+  stem: 'Exécutez le code R suivant et jugez chaque proposition :'
+  code: |
+    rnorm(1000)
+  options:
+    a: 'Ce code génère 1000 valeurs « aléatoires » qui se rapprochent d’une loi normale centrée réduite (*standard normal distribution*).'
+    b: 'Ce code génère un message d’erreur, car il y a des arguments manquants dans la fonction `rnorm()`.'
+    c: 'Ce code génère 1000 valeurs « aléatoires » qui se rapprochent d’une loi normale avec une moyenne = 1 et un écart-type = 0.'
+    d: 'Ce code génère des valeurs numériques positives et négatives.'
+    e: 'Toutes les lois normales ont le même écart-type.'
+  key: [a, d]
+  explanation: |
+    Sans autres arguments, `rnorm()` utilise `mean = 0` et `sd = 1` : c’est la loi normale centrée réduite,
+    qui produit des valeurs positives et négatives autour de 0.
+    e) L’écart-type est un paramètre de la loi : il varie d’une loi normale à l’autre.
+  uses_data: ~
+
+- id: 32
+  session: 7
+  problem_sets: [2, 3]
+  type: multi
+  stem: 'Exécutez le code R suivant et jugez chaque proposition :'
+  code: |
+    library(tidyverse)
+    data(diamonds)
+
+    diamonds %>%
+      group_by(clarity) %>%
+      summarize(n = n(), prix_moyen = mean(price))
+  options:
+    a: 'La sortie du code indique les prix moyens en USD des diamants pour chaque type de pureté dans le jeu de données `diamonds`.'
+    b: 'En moyenne, les diamants du type de pureté le plus élevé coûtent 1790 USD.'
+    c: 'Il y a le même nombre de diamants pour chaque type de pureté dans le jeu de données `diamonds`.'
+    d: 'L’argument `n = n()` dans la fonction `summarize()` nous permet de compter le nombre d’observations dans chaque catégorie.'
+    e: 'La fonction `group_by(clarity)` regroupe les diamants par type de pureté dans le résultat.'
+  key: [a, d, e]
+  explanation: |
+    a), d) et e) `group_by()` crée un groupe par pureté ; `summarize()` calcule ensuite, pour chaque groupe, le nombre de diamants (`n()`) et le prix moyen.
+    b) 1790 est le **nombre** de diamants de pureté maximale (IF) ; leur prix moyen est d’environ 2865 USD.
+    c) Les effectifs varient de 741 (I1) à 13 065 (SI1).
+  uses_data: ~
+
+- id: 33
+  session: 7
+  problem_sets: [3]
+  type: multi
+  stem: 'Exécutez le code R suivant et jugez chaque proposition :'
+  code: |
+    library(tidyverse)
+    data(mtcars)
+    mtcars %>% arrange(mpg)
+  options:
+    a: 'La fonction `arrange(mpg)` trie les voitures de `mtcars` par valeurs `mpg` croissantes.'
+    b: 'La fonction `arrange(mpg)` trie les voitures de `mtcars` par valeurs `mpg` décroissantes.'
+    c: 'Plus la valeur `mpg` d’une voiture est élevée dans `mtcars`, plus elle peut aller loin avec une unité (gallon) de carburant.'
+    d: 'Le code R modifie l’objet `mtcars` dans l’environnement de RStudio lorsqu’il est exécuté.'
+    e: 'La Cadillac Fleetwood utilise le carburant le plus efficacement de toutes les voitures du jeu de données.'
+  key: [a, c]
+  explanation: |
+    a) et b) `arrange()` trie par ordre croissant ; pour l’ordre décroissant, on écrit `arrange(desc(mpg))`.
+    d) Sans affectation (`<-`), le résultat est seulement affiché : `mtcars` ne change pas.
+    e) La Cadillac Fleetwood apparaît en **premier** : c’est l’une des voitures les moins efficaces (10,4 mpg).
+  uses_data: ~
+
+- id: 34
+  session: 7
+  problem_sets: [3]
+  type: multi
+  stem: |
+    Exécutez le code R suivant et jugez chaque proposition. La fonction `rnorm()` simule
+    des valeurs aléatoires qui se rapprochent d’une loi normale ; on suppose ici qu’il
+    s’agit de tailles de femmes en Suisse (en cm).
+  code: |
+    library(tidyverse)
+    taille_f <- rnorm(500, mean = 164.7, sd = 5.6) %>% as.data.frame()
+    taille_f %>% count(taille_f <= 160)
+  options:
+    a: 'La fonction `count(taille_f <= 160)` compte le nombre de valeurs inférieures ou égales à 160 (femmes de 160 cm ou moins) ainsi que celles supérieures à 160 (femmes de plus de 160 cm).'
+    b: 'En général, la fonction `count()` de `dplyr` est utile pour compter le nombre d’observations d’un jeu de données qui correspondent à certains critères.'
+    c: 'Si vous exécutez le code plusieurs fois de suite, vous obtiendrez toujours un résultat légèrement différent, car la fonction `rnorm()` génère des valeurs « aléatoires ».'
+    d: '`taille_f` est un objet de type *data frame* dans RStudio.'
+    e: '`taille_f` comporte 100 lignes (observations).'
+  key: [a, b, c, d]
+  explanation: |
+    a) et b) Le critère `taille_f <= 160` vaut `TRUE` ou `FALSE` ; `count()` compte les lignes de chaque groupe.
+    c) Chaque appel à `rnorm()` tire de nouvelles valeurs (sauf si l’on fixe `set.seed()`).
+    d) `as.data.frame()` transforme le vecteur en data frame.
+    e) `rnorm(500, ...)` crée 500 valeurs, donc 500 lignes, pas 100.
+  uses_data: ~
+  note: >-
+    Proposition e) remise à « 100 lignes » comme dans Moodle (la réécriture disait
+    « 500 lignes », ce qui contredisait le corrigé a, b, c, d). Cf. PLAN_book.md.
+
+- id: 35
+  session: 8
+  problem_sets: [3]
+  type: multi
+  stem: |
+    Exécutez le code R suivant et jugez chaque proposition. Les unités américaines sont
+    converties : 1 pouce (*inch*) = 2,54 cm et 1 livre (*pound*) = 0,4536 kg.
+  code: |
+    library(tidyverse)
+    data(women)
+    print(women)
+    ?women
+    women %>% summarize(n = n(),
+                        taille_moyenne_cm = mean(height * 2.54),
+                        poids_moyen_kg = mean(weight * 0.4536))
+  options:
+    a: '`women` est un jeu de données contenant les tailles et les poids de 15 femmes américaines âgées de 20 à 39 ans.'
+    b: 'La femme moyenne du jeu de données `women` mesure environ 165 cm et pèse environ 62 kg.'
+    c: 'Les données indiquent que les femmes américaines pèsent en moyenne beaucoup plus que les femmes européennes.'
+    d: 'Le jeu de données `women` est composé de 15 lignes et de 2 colonnes.'
+    e: 'Le code R transforme les unités américaines, pouces (*inches*) et livres (*pounds*), en centimètres et kilogrammes.'
+  key: [b, d, e]
+  explanation: |
+    a) La page d’aide `?women` indique des femmes âgées de **30 à 39 ans**.
+    b) Le résumé donne 165,1 cm et 62,0 kg.
+    c) Le jeu de données ne contient aucune femme européenne : aucune comparaison n’est possible.
+    d) `dim(women)` renvoie `15 2`.
+    e) Les multiplications par 2,54 et 0,4536 font la conversion.
+  uses_data: ~
+  note: >-
+    Propositions d’origine de Moodle restaurées (la réécriture les avait toutes remplacées
+    en gardant l’ancien corrigé b, d, e). Vérifié dans R. Cf. PLAN_book.md.
+
+- id: 36
+  session: 7
+  problem_sets: [3]
+  type: multi
+  stem: |
+    Ouvrez le post Instagram suivant, qui fait partie de `igposts.csv`, et jugez chaque
+    proposition : <https://www.instagram.com/p/CpHHbGWunhI/>
+  options:
+    a: 'Le post a été publié par le compte Instagram dont le `User.Name` est **zendaya**.'
+    b: 'Il s’agit d’un post Instagram de type **Album**.'
+    c: 'Il s’agit d’un post Instagram de type **Video**.'
+    d: 'Le post a reçu des **Views**.'
+    e: 'Zendaya est une actrice et chanteuse **britannique**.'
+  key: [a, b, d]
+  explanation: |
+    On peut aussi chercher le post dans les données :
+    `igposts %>% filter(grepl("CpHHbGWunhI", URL)) %>% select(User.Name, Type, Views)`.
+    Le post vient de **zendaya**, il est de type **Album** et compte environ 31 millions de vues.
+    e) Zendaya est américaine.
+  uses_data: igposts.csv
+
+- id: 37
+  session: 10
+  problem_sets: [4]
+  type: multi
+  stem: 'Jugez chaque affirmation concernant les **statistiques descriptives** :'
+  options:
+    a: 'L’objectif des statistiques descriptives est principalement d’analyser les relations causales entre les variables.'
+    b: 'La partie descriptive d’une analyse statistique fournit généralement des indications telles que la taille de l’échantillon (n), les fréquences des variables catégorielles et les moyennes des variables numériques.'
+    c: 'Les tests d’hypothèse, par exemple avec un test t, sont une étape courante des statistiques descriptives.'
+    d: 'Les statistiques descriptives précèdent souvent les statistiques inférentielles dans une analyse de données quantitatives en sciences sociales.'
+    e: 'Certaines visualisations de données, comme les histogrammes, se prêtent bien à la présentation de statistiques descriptives.'
+  key: [b, d, e]
+  explanation: |
+    Les statistiques descriptives **résument** les données de l’échantillon (effectifs, fréquences, moyennes, dispersion, graphiques).
+    Les tests d’hypothèse et l’analyse de relations causales relèvent des statistiques **inférentielles**, qui viennent généralement ensuite.
+  uses_data: ~
+
+- id: 38
+  session: 11
+  problem_sets: [4]
+  type: multi
+  stem: 'Lesquelles des hypothèses suivantes pourraient être testées dans un **test t à deux échantillons** ?'
+  options:
+    a: 'Les deux échantillons proviennent de populations avec la même moyenne.'
+    b: 'Les deux échantillons proviennent de populations avec des moyennes différentes.'
+    c: 'L’une des populations est beaucoup plus nombreuse que l’autre.'
+    d: 'Les populations ont la même moyenne mais des variances très différentes.'
+    e: 'Trois groupes d’humains sont de tailles moyennes très différentes.'
+  key: [a, b]
+  explanation: |
+    Le test t à deux échantillons compare **deux moyennes** : H0 « les moyennes sont égales » (a) contre H1 « elles diffèrent » (b).
+    Il ne teste ni la taille des populations ni les variances. Pour comparer trois groupes, on utilise une ANOVA.
+  uses_data: ~
+
+- id: 39
+  session: 12
+  problem_sets: [4]
+  type: multi
+  stem: 'Exécutez le code suivant et jugez chaque proposition :'
+  code: |
+    data(mtcars)
+    modele_1 <- lm(formula = mpg ~ wt + qsec + am, data = mtcars)
+    summary(modele_1)
+  options:
+    a: 'Ce modèle de régression pourrait être représenté visuellement par une ligne droite passant par un nuage de points.'
+    b: '`mpg` est la variable dépendante.'
+    c: '`wt`, `qsec` et `am` sont les variables indépendantes.'
+    d: 'Toutes les variables x de `modele_1` sont significatives au niveau de 5 %.'
+    e: 'Toutes les autres réponses sont correctes.'
+  drop: [e]
+  key: [b, c, d]
+  explanation: |
+    a) Avec trois variables indépendantes, le modèle ne se résume pas à une droite dans un nuage de points à deux dimensions.
+    b) et c) Dans `y ~ x1 + x2 + x3`, la variable à gauche du `~` est la variable dépendante.
+    d) Les valeurs p de `wt` (< 0,001), `qsec` (< 0,001) et `am` (0,047) sont toutes inférieures à 0,05.
+  uses_data: ~
+
+- id: 40
+  session: 10
+  problem_sets: [4]
+  type: multi
+  stem: 'Jugez chaque proposition concernant l’histogramme suivant (source des données : questionnaire du cours) :'
+  figure: |
+    library(ggplot2)
+    reponses_socio <- read.csv("https://julesaberlin.github.io/intro-a-R/data/reponses_socio.csv", encoding = "UTF-8")
+    ggplot(reponses_socio, aes(x = fraterie)) +
+      geom_histogram(binwidth = 1, color = "black", fill = "white") +
+      scale_x_continuous(breaks = 0:10) +
+      labs(x = "Nombre de frères et sœurs", y = "Fréquence") +
+      theme_minimal()
+  options:
+    a: 'L’histogramme montre que le nombre de frères et sœurs (variable `fraterie`) suit une loi normale.'
+    b: 'L’histogramme montre que la plupart des étudiant·es de la classe ont grandi dans des constellations familiales traditionnelles.'
+    c: 'L’histogramme montre qu’il y a plus d’étudiant·es qui ont 3 frères et sœurs que d’étudiant·es qui sont enfants uniques.'
+    d: 'La constellation la plus fréquente est celle des étudiant·es ayant un seul frère ou une seule sœur.'
+    e: 'Une personne ayant participé au questionnaire a indiqué qu’elle avait 7 frères et sœurs.'
+  key: [c, d]
+  explanation: |
+    a) Le nombre de frères et sœurs est une variable de comptage asymétrique, pas une loi normale.
+    b) Un histogramme du nombre de frères et sœurs ne dit rien sur la forme des familles.
+    c) 7 étudiant·es ont 3 frères et sœurs, contre 5 enfants uniques.
+    d) La barre la plus haute est celle d’un frère ou d’une sœur (33 étudiant·es).
+    e) Personne n’indique 7 frères et sœurs : le maximum est de 5.
+    Vérifiez avec `table(reponses_socio$fraterie)`.
+  uses_data: reponses_socio.csv
+  note: 'Corrigé recalculé avec les données synthétiques.'
+
+- id: 41
+  session: 11
+  problem_sets: [4]
+  type: multi
+  stem: 'Jugez chaque proposition relative aux **statistiques inférentielles** :'
+  options:
+    a: 'Les statistiques inférentielles permettent de tirer des conclusions sur une population entière en se basant sur l’analyse d’un échantillon représentatif de cette population.'
+    b: 'Si deux variables quantitatives, par exemple y et x, sont significativement corrélées, il existe toujours une relation de cause à effet entre ces deux variables.'
+    c: 'L’échantillonnage aléatoire est une méthode de sélection au hasard d’un sous-groupe de participants dans une population, où chaque membre a une chance égale d’être choisi, offrant ainsi une représentation fiable de la population entière.'
+    d: 'Un échantillon de 100 femmes suisses d’une taille moyenne de 180 cm est représentatif de la distribution de taille des femmes en Suisse.'
+    e: 'Les tests t, l’ANOVA et la régression linéaire peuvent être des techniques utiles dans une analyse de statistiques inférentielles.'
+  key: [a, c, e]
+  explanation: |
+    b) Corrélation n’est pas causalité : une troisième variable ou le hasard peuvent expliquer une corrélation.
+    d) La taille moyenne des femmes en Suisse est d’environ 165 cm : un échantillon dont la moyenne est de 180 cm n’est manifestement pas représentatif.
+  uses_data: ~
+
+- id: 42
+  session: 11
+  problem_sets: [4]
+  type: multi
+  stem: |
+    Supposons que nous fassions un test t pour savoir si la taille moyenne de 100 joueuses
+    de la WNBA sélectionnées au hasard diffère de celle de 100 hommes néerlandais sélectionnés
+    au hasard. Le code suivant simule les deux échantillons et effectue le test.
+    Exécutez-le et jugez chaque affirmation.
+  code: |
+    set.seed(2026)
+    wnba <- rnorm(100, mean = 184.5, sd = 6.5)
+    pays_bas <- rnorm(100, mean = 183.8, sd = 7.1)
+    t.test(wnba, pays_bas)
+  options:
+    a: 'Dans l’échantillon simulé, la joueuse de basket-ball moyenne mesure 183,86 cm.'
+    b: 'La valeur p du test indique que la différence entre les tailles moyennes est statistiquement significative au niveau de 5 %.'
+    c: 'L’hypothèse nulle du test t est que les moyennes des deux populations (joueuses de la WNBA et hommes néerlandais) sont égales.'
+    d: 'Le test t indique que les hommes néerlandais sont significativement plus grands que les joueuses de basket-ball de la WNBA.'
+    e: 'Les résultats du test t indiquent que, dans les échantillons simulés, il n’y a pas de différence significative entre les tailles moyennes des joueuses de basket et des hommes néerlandais.'
+  key: [a, c, e]
+  explanation: |
+    a) Sous *sample estimates*, `mean of x` (les joueuses) vaut 183,86 cm ; `mean of y` (les hommes néerlandais) vaut 184,66 cm.
+    b), d) et e) La valeur p (0,40) est supérieure à 0,05 : on ne rejette pas H0. Dans l’échantillon, les hommes néerlandais sont un peu plus grands, mais cet écart de 0,8 cm n’est pas significatif ; l’intervalle de confiance à 95 % (de −2,66 à 1,06 cm) contient 0.
+    c) Les hypothèses portent sur les populations : H0 postule que les deux moyennes sont égales (μ₁ = μ₂), H1 qu’elles diffèrent.
+  uses_data: ~
+  note: >-
+    La capture d’écran d’origine manquait ; la sortie est maintenant reproductible
+    (set.seed(2026), valeurs vérifiées dans R). Avec un écart réel de 0,7 cm, un résultat
+    non significatif est le cas typique ; certaines graines (p. ex. 123) donnent p < 0,05
+    et changeraient le corrigé. Proposition c) reformulée (fact-check : H0 porte sur les
+    populations, pas sur la significativité).
+
+- id: 43
+  session: 11
+  problem_sets: [4]
+  type: mcq
+  stem: 'Que signifie une valeur p inférieure à 0,05 dans le contexte d’un test statistique ?'
+  options:
+    a: 'Il y a une probabilité de 5 % que l’hypothèse nulle soit vraie.'
+    b: 'Il y a moins de 5 % de chances que les résultats observés soient dus au hasard.'
+    c: 'La probabilité que l’hypothèse nulle soit vraie est supérieure à 95 %.'
+    d: 'Les données ne suivent pas une loi normale.'
+    e: 'Toutes les autres réponses sont incorrectes.'
+  key: e
+  explanation: |
+    La valeur p est la probabilité d’observer des résultats au moins aussi extrêmes que ceux de
+    l’échantillon **si l’hypothèse nulle était vraie**. Elle se calcule en supposant H0 vraie :
+    ce n’est donc ni la probabilité que H0 soit vraie (a, c), ni la probabilité que les résultats
+    soient « dus au hasard » (b). Cette dernière lecture est très répandue, mais elle inverse la
+    condition : elle décrit P(H0 | données) au lieu de P(données | H0). La valeur p ne dit rien
+    non plus sur la normalité des données (d).
+  uses_data: ~
+  note: 'Corrigé Moodle : b. Corrigé changé en e (décision de Jules, cf. PLAN_book.md).'
+
+- id: 44
+  session: 5
+  problem_sets: [4]
+  type: multi
+  stem: 'Quels types de visualisation sont bien adaptés pour afficher la relation entre deux variables numériques ?'
+  options:
+    a: 'Histogramme'
+    b: 'Diagramme à barres'
+    c: 'Boîte à moustaches'
+    d: 'Nuage de points'
+    e: 'Toutes les réponses sont incorrectes'
+  drop: [e]
+  key: [d]
+  explanation: |
+    Le nuage de points place une variable numérique sur chaque axe. L’histogramme montre la
+    distribution d’**une** variable numérique ; le diagramme à barres compte des catégories ;
+    la boîte à moustaches compare une variable numérique entre catégories.
+  uses_data: ~
+
+- id: 45
+  session: 2
+  problem_sets: [1]
+  type: multi
+  stem: 'Jugez chaque proposition concernant les fonctions R `setwd()` et `getwd()` :'
+  options:
+    a: 'Avec la fonction `setwd()`, je peux définir un dossier sur mon ordinateur à partir duquel R lit et extrait des données.'
+    b: 'Les chemins d’accès aux dossiers que l’on doit spécifier comme arguments dans `setwd()` diffèrent généralement entre différents ordinateurs.'
+    c: 'Vous ne pouvez pas utiliser R si vous ne spécifiez pas votre répertoire de travail.'
+    d: 'Toutes les variables, matrices, jeux de données, etc. que je crée dans une session R sont enregistrés sous forme de fichiers dans mon répertoire de travail.'
+    e: 'Vous pouvez afficher votre répertoire de travail actuel dans une session R avec la fonction `getwd()`.'
+  key: [a, b, e]
+  explanation: |
+    c) R a toujours un répertoire de travail par défaut : on peut l’utiliser sans appeler `setwd()`.
+    d) Les objets vivent en mémoire (volet *Environment*). Ils ne sont écrits sur le disque que si on les exporte explicitement (p. ex. avec `write.csv()` ou `save()`).
+  uses_data: ~
+
+- id: 46
+  session: 1
+  problem_sets: [1]
+  type: multi
+  stem: 'Exécutez le code R suivant et jugez chaque proposition :'
+  code: |
+    a <- c(1, 22, 8, -5)
+    print(a)
+    class(a)
+  options:
+    a: '`a` est un vecteur.'
+    b: '`a` est un objet R de type numérique.'
+    c: 'Le code crée un objet dans le volet *Environment* de RStudio.'
+    d: 'Le code utilise la fonction de concaténation `c()`.'
+  key: [a, b, c, d]
+  explanation: |
+    Toutes les propositions sont correctes : `c()` crée un vecteur numérique (`class(a)` renvoie
+    `"numeric"`), et l’affectation `<-` le place dans l’environnement.
+  uses_data: ~
+
+- id: 47
+  session: 2
+  type: multi
+  stem: 'Exécutez le code R suivant et jugez chaque proposition :'
+  code: |
+    vecteur2 <- c(1, 2, 3, 4, 1000, 2000)
+  options:
+    a: 'La valeur médiane de `vecteur2` est égale à 3.5.'
+    b: 'La valeur moyenne de `vecteur2` est égale à 501.00.'
+    c: '`vecteur2` a une longueur de 3010.'
+    d: '`vecteur2` est un objet de classe numérique.'
+    e: 'Aucune des autres réponses n’est correcte.'
+  drop: [e]
+  key: [a, d]
+  explanation: |
+    a) La médiane d’un nombre pair de valeurs est la moyenne des deux valeurs centrales : (3 + 4) / 2 = 3.5.
+    b) `mean(vecteur2)` vaut 501.67.
+    c) `length(vecteur2)` vaut 6 ; 3010 est la **somme** des éléments.
+  uses_data: ~
+
+- id: 48
+  session: 2
+  problem_sets: [1]
+  type: numeric
+  stem: |
+    `length()` est une fonction de R qui permet de compter le nombre d’éléments d’un vecteur.
+    Utilisez-la pour calculer la longueur du vecteur `v2` créé avec le code suivant :
+  code: |
+    v2 <- c(log10(100):501)
+  key: 500
+  explanation: |
+    `log10(100)` vaut 2, donc `v2` contient les entiers de 2 à 501, soit 501 − 2 + 1 = 500 éléments.
+  uses_data: ~
+
+- id: 49
+  session: 2
+  type: numeric
+  stem: 'Calculez la valeur médiane du vecteur numérique suivant :'
+  code: |
+    vecteur1 <- c(1, 2, 3, 4, 1000, 2000)
+  key: 3.5
+  tol: 0.001
+  explanation: |
+    ```r
+    median(vecteur1)
+    ```
+    Avec 6 valeurs, la médiane est la moyenne des 3ᵉ et 4ᵉ valeurs triées : (3 + 4) / 2 = 3.5.
+    Les deux valeurs extrêmes (1000 et 2000) n’ont aucun effet sur la médiane, contrairement à la moyenne (501.67).
+  uses_data: ~
+
+- id: 50
+  session: 2
+  problem_sets: [1]
+  type: numeric
+  stem: 'Calculez la valeur médiane d’un vecteur composé de nombres entiers consécutifs compris entre −66 et 702.'
+  key: 318
+  explanation: |
+    ```r
+    median(-66:702)
+    ```
+    La suite de −66 à 702 comporte 769 valeurs. La médiane est la 385ᵉ valeur, soit −66 + 384 = 318.
+  uses_data: ~
+
+- id: 51
+  session: 2
+  variant_of: 50
+  type: numeric
+  stem: 'Calculez la valeur médiane d’un vecteur composé de nombres entiers consécutifs compris entre −66 et 136.'
+  key: 35
+  explanation: |
+    `median(-66:136)` vaut 35, le milieu de −66 et 136 : (−66 + 136) / 2 = 35.
+  uses_data: ~
+
+- id: 52
+  session: 2
+  variant_of: 50
+  type: numeric
+  stem: 'Calculez la valeur médiane d’un vecteur composé de nombres entiers consécutifs compris entre −58 et 136.'
+  key: 39
+  explanation: |
+    `median(-58:136)` vaut 39, le milieu de −58 et 136 : (−58 + 136) / 2 = 39.
+  uses_data: ~
+
+- id: 53
+  session: 2
+  variant_of: 50
+  type: numeric
+  stem: 'Calculez la valeur médiane d’un vecteur composé de nombres entiers consécutifs compris entre −58 et 264.'
+  key: 103
+  explanation: |
+    `median(-58:264)` vaut 103, le milieu de −58 et 264 : (−58 + 264) / 2 = 103.
+  uses_data: ~
+
+- id: 54
+  session: 4
+  problem_sets: [2]
+  type: numeric
+  stem: 'Quel est le prix en USD du diamant le moins cher du jeu de données `diamonds` ? (Donnez seulement la valeur numérique.)'
+  key: 326
+  explanation: |
+    ```r
+    min(diamonds$price)
+    ```
+  uses_data: ~
+
+- id: 55
+  session: 4
+  variant_of: 54
+  type: numeric
+  stem: 'Quel est le prix médian en USD des diamants du jeu de données `diamonds` (arrondi au dollar) ?'
+  key: 2401
+  explanation: |
+    ```r
+    median(diamonds$price)
+    ```
+  uses_data: ~
+
+- id: 56
+  session: 4
+  variant_of: 54
+  type: numeric
+  stem: 'Quel est le prix en USD du diamant le plus cher du jeu de données `diamonds` ? (Donnez seulement la valeur numérique.)'
+  key: 18823
+  explanation: |
+    ```r
+    max(diamonds$price)
+    ```
+  uses_data: ~
+
+- id: 57
+  session: 4
+  problem_sets: [2]
+  type: numeric
+  stem: 'Quelle est la longueur du pétale le plus court du jeu de données `iris` ? (Donnez seulement la valeur numérique.)'
+  key: 1
+  tol: 0.001
+  explanation: |
+    ```r
+    min(iris$Petal.Length)
+    ```
+  uses_data: ~
+
+- id: 58
+  session: 4
+  variant_of: 57
+  type: numeric
+  stem: 'Quelle est la longueur du pétale le plus long du jeu de données `iris` ? (Donnez seulement la valeur numérique.)'
+  key: 6.9
+  tol: 0.001
+  explanation: |
+    ```r
+    max(iris$Petal.Length)
+    ```
+  uses_data: ~
+
+- id: 59
+  session: 4
+  variant_of: 57
+  type: numeric
+  stem: 'Quelle est la longueur du sépale le plus court du jeu de données `iris` ? (Donnez seulement la valeur numérique.)'
+  key: 4.3
+  tol: 0.001
+  explanation: |
+    ```r
+    min(iris$Sepal.Length)
+    ```
+  uses_data: ~
+
+- id: 60
+  session: 4
+  variant_of: 57
+  type: numeric
+  stem: 'Quelle est la longueur du sépale le plus long du jeu de données `iris` ? (Donnez seulement la valeur numérique.)'
+  key: 7.9
+  tol: 0.001
+  explanation: |
+    ```r
+    max(iris$Sepal.Length)
+    ```
+  uses_data: ~
+
+- id: 61
+  session: 4
+  problem_sets: [2]
+  type: numeric
+  stem: 'Combien de chevaux-vapeur (*gross horsepower*, variable `hp`) a la Chrysler Imperial dans le jeu de données `mtcars` ?'
+  key: 230
+  explanation: |
+    Les noms des voitures sont les noms de lignes de `mtcars` :
+    ```r
+    mtcars["Chrysler Imperial", "hp"]
+    ```
+  uses_data: ~
+
+- id: 62
+  session: 4
+  variant_of: 61
+  type: numeric
+  stem: 'Combien de chevaux-vapeur (*gross horsepower*, variable `hp`) a la Maserati Bora dans le jeu de données `mtcars` ?'
+  key: 335
+  explanation: |
+    ```r
+    mtcars["Maserati Bora", "hp"]
+    ```
+  uses_data: ~
+
+- id: 63
+  session: 4
+  variant_of: 61
+  type: numeric
+  stem: 'Combien de chevaux-vapeur (*gross horsepower*, variable `hp`) a la Pontiac Firebird dans le jeu de données `mtcars` ?'
+  key: 175
+  explanation: |
+    ```r
+    mtcars["Pontiac Firebird", "hp"]
+    ```
+  uses_data: ~
+
+- id: 64
+  session: 4
+  variant_of: 61
+  type: numeric
+  stem: 'Combien de chevaux-vapeur (*gross horsepower*, variable `hp`) a la Volvo 142E dans le jeu de données `mtcars` ?'
+  key: 109
+  explanation: |
+    ```r
+    mtcars["Volvo 142E", "hp"]
+    ```
+  uses_data: ~
+
+- id: 65
+  session: 8
+  type: numeric
+  stem: 'Combien de posts Instagram de Rihanna (`User.Name` = `badgalriri`) le jeu de données `igposts.csv` contient-il ?'
+  key: 5
+  explanation: |
+    ```r
+    igposts %>% filter(User.Name == "badgalriri") %>% count()
+    ```
+  uses_data: igposts.csv
+  note: >-
+    Énoncé corrigé : Moodle indiquait « badgirlriri », qui n’existe pas dans les
+    données (0 post). Le compte de Rihanna est badgalriri (5 posts = corrigé Moodle).
+
+- id: 66
+  session: 8
+  problem_sets: [3]
+  type: numeric
+  stem: 'Combien de posts Instagram de Selena Gomez (`User.Name` = `selenagomez`) le jeu de données `igposts.csv` contient-il ?'
+  key: 6
+  explanation: |
+    ```r
+    igposts %>% filter(User.Name == "selenagomez") %>% count()
+    ```
+  uses_data: igposts.csv
+  note: 'La réécriture du PS3 indiquait 230 ; le corrigé Moodle (n° 66) et R donnent 6.'
+
+- id: 67
+  session: 8
+  problem_sets: [3]
+  type: numeric
+  stem: 'Combien de posts Instagram de type **Album** le jeu de données `igposts.csv` contient-il ?'
+  key: 73
+  explanation: |
+    ```r
+    igposts %>% count(Type)
+    ```
+    `count()` affiche le nombre de posts de chaque type : 73 albums.
+  uses_data: igposts.csv
+
+- id: 68
+  session: 8
+  variant_of: 67
+  type: numeric
+  stem: 'Combien de posts Instagram de type **Album** le jeu de données `igposts.csv` contient-il ?'
+  key: 73
+  explanation: |
+    ```r
+    igposts %>% count(Type)
+    ```
+  uses_data: igposts.csv
+  note: 'Doublon exact de la question 67 dans Moodle.'
+
+- id: 69
+  session: 8
+  problem_sets: [3]
+  type: numeric
+  stem: 'Combien de voitures du jeu de données `mtcars` ont une valeur `mpg` d’au moins 20 ?'
+  key: 14
+  explanation: |
+    ```r
+    mtcars %>% filter(mpg >= 20) %>% count()
+    ```
+    « Au moins 20 » inclut 20 : on utilise `>=`, pas `>`.
+  uses_data: ~
+
+- id: 70
+  session: 10
+  type: numeric
+  stem: 'Importez le jeu de données `reponses_socio.csv` dans RStudio. Combien d’**observations** contient-il ?'
+  key: 74
+  explanation: |
+    `nrow(reponses_socio)` ou `dim(reponses_socio)` : le nombre de lignes correspond au nombre d’observations.
+  uses_data: reponses_socio.csv
+  note: 'Moodle utilisait le nom reponses.csv. Corrigé recalculé avec les données synthétiques.'
+
+- id: 71
+  session: 10
+  problem_sets: [3]
+  type: numeric
+  stem: 'Importez le jeu de données `reponses_socio.csv` dans RStudio. Combien de **variables** contient-il ?'
+  key: 10
+  explanation: |
+    `ncol(reponses_socio)` ou `dim(reponses_socio)` : le nombre de colonnes correspond au nombre de variables
+    (`naissance`, `genre`, `permis`, `suisse`, `origine`, `fraterie`, `domicile`, `trajet`, `note_ecole`, `note_uni`).
+  uses_data: reponses_socio.csv
+  note: >-
+    Le fichier synthétique est écrit sans la colonne des noms de lignes. Corrigé
+    recalculé avec les données synthétiques.
+
+- id: 72
+  session: 10
+  type: numeric
+  stem: 'Importez le jeu de données `reponses_socio.csv` dans RStudio. Pour la variable `genre` : combien de **femmes** y a-t-il dans ce jeu de données ?'
+  key: 51
+  explanation: |
+    `table(reponses_socio$genre)` ou `reponses_socio %>% count(genre)`.
+  uses_data: reponses_socio.csv
+  note: 'Corrigé recalculé avec les données synthétiques.'
+
+- id: 73
+  session: 10
+  problem_sets: [3]
+  type: numeric
+  stem: 'Importez le jeu de données `reponses_socio.csv` dans RStudio. Pour la variable `genre` : combien d’**hommes** y a-t-il dans ce jeu de données ?'
+  key: 17
+  explanation: |
+    `table(reponses_socio$genre)` ou `reponses_socio %>% count(genre)`.
+  uses_data: reponses_socio.csv
+  note: 'Corrigé recalculé avec les données synthétiques.'
+
+- id: 74
+  session: 12
+  problem_sets: [4]
+  type: numeric
+  stem: 'Quel est le poids moyen en grammes des manchots du jeu de données `penguins` (paquet `palmerpenguins`) ? Arrondissez au gramme.'
+  key: 4202
+  explanation: |
+    ```r
+    library(palmerpenguins)
+    mean(penguins$body_mass_g, na.rm = TRUE)   # 4201.754
+    ```
+    Deux manchots n’ont pas de poids (`NA`) : sans `na.rm = TRUE`, le résultat est `NA`.
+  uses_data: ~
+  note: 'Corrigé vide dans la réécriture du PS4 ; corrigé Moodle n° 74 = 4202, vérifié dans R.'
+
+- id: 75
+  session: 12
+  problem_sets: [4]
+  type: numeric
+  stem: 'Quel est le poids moyen en grammes des manchots **femelles** du jeu de données `penguins` ? Arrondissez au gramme.'
+  key: 3862
+  explanation: |
+    ```r
+    penguins %>%
+      filter(sex == "female") %>%
+      summarize(poids_moyen = mean(body_mass_g))   # 3862.273
+    ```
+  uses_data: ~
+
+- id: 76
+  session: 10
+  problem_sets: [4]
+  type: numeric
+  stem: 'Dans le jeu de données `reponses_socio.csv`, combien de minutes les étudiant·es **possédant un passeport suisse** mettent-ils en moyenne pour se rendre à l’université ? Arrondissez à la minute.'
+  key: 34
+  explanation: |
+    ```r
+    reponses_socio %>%
+      group_by(suisse) %>%
+      summarize(trajet_moyen = mean(trajet))
+    ```
+    Pour `suisse == "Oui"`, la moyenne vaut 33,52 minutes, soit 34 une fois arrondie.
+  uses_data: reponses_socio.csv
+  note: 'Corrigé recalculé avec les données synthétiques.'
+
+- id: 77
+  session: 2
+  problem_sets: [1]
+  type: numeric
+  stem: 'Exécutez le code R suivant pour créer `v1`. Ensuite, avec votre propre code, calculez la variance de `v1`.'
+  code: |
+    v1 <- c(1:104)
+  key: 910
+  explanation: |
+    ```r
+    var(v1)
+    ```
+    Pour les entiers de 1 à *n*, la variance (d’échantillon) vaut *n*(*n* + 1) / 12 = 104 × 105 / 12 = 910.
+  uses_data: ~
+
+- id: 78
+  session: 2
+  variant_of: 77
+  type: numeric
+  stem: 'Exécutez le code R suivant pour créer `v1`. Ensuite, avec votre propre code, calculez la variance de `v1`.'
+  code: |
+    v1 <- c(6:104)
+  key: 825
+  explanation: |
+    `var(v1)` vaut 825 (99 entiers consécutifs : 99 × 100 / 12 = 825).
+  uses_data: ~
+
+- id: 79
+  session: 2
+  variant_of: 77
+  type: numeric
+  stem: 'Exécutez le code R suivant pour créer `v1`. Ensuite, avec votre propre code, calculez la variance de `v1`.'
+  code: |
+    v1 <- c(6:109)
+  key: 910
+  explanation: |
+    `var(v1)` vaut 910 : comme `1:104`, ce vecteur contient 104 entiers consécutifs, et un décalage ne change pas la variance.
+  uses_data: ~
+
+- id: 80
+  session: 2
+  variant_of: 77
+  type: numeric
+  stem: 'Exécutez le code R suivant pour créer `v1`. Ensuite, avec votre propre code, calculez la variance de `v1`.'
+  code: |
+    v1 <- c(11:205)
+  key: 3185
+  explanation: |
+    `var(v1)` vaut 3185 (195 entiers consécutifs : 195 × 196 / 12 = 3185).
+  uses_data: ~
+
+- id: 81
+  session: 8
+  problem_sets: [3]
+  type: text
+  stem: |
+    Quel est le `User.Name` du compte Instagram ayant le plus de `Followers.at.Posting`
+    parmi les comptes du jeu de données `igposts.csv` ? (Tapez le `User.Name` exact.)
+  key: cristiano
+  explanation: |
+    ```r
+    igposts %>% arrange(desc(Followers.at.Posting)) %>% select(User.Name) %>% head(1)
+    ```
+  uses_data: igposts.csv
+  note: >-
+    La réécriture du PS3 (question 15) posait la question des Views (ID 82) avec le
+    corrigé de l’ID 81. Décision de Jules : le PS3 utilise l’ID 81 (Followers).
+
+- id: 82
+  session: 8
+  type: text
+  stem: |
+    Quel est le `User.Name` du compte Instagram qui a publié le post ayant reçu le plus
+    grand nombre de `Views` dans le jeu de données `igposts.csv` ? (Tapez le `User.Name` exact.)
+  key: kendalljenner
+  explanation: |
+    ```r
+    igposts %>% arrange(desc(Views)) %>% select(User.Name, Views) %>% head(1)
+    ```
+  uses_data: igposts.csv
+
+- id: 83
+  session: 10
+  problem_sets: [4]
+  type: text
+  stem: |
+    Dans le jeu de données `reponses_socio.csv`, quel **genre** a le **trajet moyen** le plus
+    court pour se rendre à l’université ? (Tapez le genre exactement comme il figure dans les données.)
+  key: Homme
+  explanation: |
+    ```r
+    reponses_socio %>%
+      group_by(genre) %>%
+      summarize(trajet_moyen = mean(trajet)) %>%
+      arrange(trajet_moyen)
+    ```
+    `arrange()` trie par ordre croissant : la première ligne, `Homme` (20,6 minutes), a le trajet moyen le plus court.
+  uses_data: reponses_socio.csv
+  note: 'Corrigé recalculé avec les données synthétiques.'
+
+- id: 84
+  session: 1
+  type: vf
+  stem: 'Le code R suivant ouvre une page d’aide dans RStudio lorsqu’il est exécuté :'
+  code: |
+    ?typeof()
+  key: true
+  explanation: |
+    Le point d’interrogation ouvre l’aide de la fonction qui suit, avec ou sans parenthèses :
+    `?typeof` et `?typeof()` affichent la même page. `help(typeof)` fait de même.
+  uses_data: ~
+
+- id: 85
+  session: 1
+  problem_sets: [1]
+  type: vf
+  stem: 'Dans R, la fonction `c()` peut être utilisée pour concaténer des éléments afin de créer des vecteurs.'
+  key: true
+  explanation: |
+    `c()` (pour *combine* / concaténer) assemble ses arguments en un vecteur.
+  uses_data: ~
+
+- id: 86
+  session: 1
+  problem_sets: [1]
+  type: vf
+  stem: 'Le `#` permet d’insérer des commentaires dans le script, sans que cela ait des conséquences sur mon codage.'
+  key: true
+  explanation: |
+    Tout ce qui suit `#` sur une ligne est ignoré par R lors de l’exécution.
+  uses_data: ~
+
+- id: 87
+  session: 2
+  problem_sets: [1]
+  type: vf
+  stem: 'En statistique et en méthodes quantitatives en sciences sociales, c’est une convention de présenter les données dans des tableaux avec les unités statistiques (observations, cas, participants, etc.) en lignes et les variables en colonnes.'
+  key: true
+  explanation: |
+    C’est la convention des données « tidy » : une ligne par observation, une colonne par variable.
+  uses_data: ~
+
+- id: 88
+  session: 7
+  type: vf
+  stem: 'Le terme CSV désigne un format de texte ouvert permettant de représenter des données tabulaires sous forme de valeurs séparées par des virgules.'
+  key: true
+  explanation: |
+    CSV signifie *comma-separated values* : chaque ligne du fichier est une observation, et les valeurs sont séparées par des virgules.
+  uses_data: ~
+
+- id: 89
+  session: 10
+  type: vf
+  stem: 'En général, je peux enregistrer les données issues de ma session R sur mon ordinateur (par exemple, un data frame que j’ai créé) sous la forme de fichiers CSV.'
+  key: true
+  explanation: |
+    La fonction `write.csv()` écrit un data frame dans un fichier CSV, p. ex. `write.csv(ice_age_df, "ice_age_df.csv")`.
+  uses_data: ~
+
+- id: 90
+  session: 2
+  type: vf
+  stem: 'Les objets stockés dans l’environnement ne sont généralement stockés que temporairement, pour la session R en cours.'
+  key: true
+  explanation: |
+    Les objets vivent en mémoire et disparaissent quand on ferme R, sauf si on les exporte (p. ex. avec `write.csv()`). C’est pourquoi on garde tout son code dans un script : il permet de recréer les objets.
+  uses_data: ~
+
+- id: 91
+  session: 2
+  problem_sets: [1]
+  type: vf
+  stem: 'La variable *genre*, par exemple pour les participant·es à une enquête, est généralement utilisée comme facteur hiérarchique (ordonné) dans R.'
+  key: false
+  explanation: |
+    Le genre est une variable **nominale** : ses modalités n’ont pas d’ordre. On l’encode donc comme facteur simple, pas comme facteur ordonné.
+  uses_data: ~
+
+- id: 92
+  session: 4
+  type: vf
+  stem: 'Le code R suivant charge le paquet `tidyverse` pour la session R en cours, à condition que ce paquet ait été préalablement installé sur votre ordinateur :'
+  code: |
+    library(tidyverse)
+  key: true
+  explanation: |
+    Un paquet s’installe une fois avec `install.packages("tidyverse")`, puis se charge à chaque session avec `library(tidyverse)`. Si le paquet n’est pas installé, `library()` renvoie une erreur.
+  uses_data: ~
+
+- id: 93
+  session: 2
+  type: vf
+  stem: 'Le code suivant crée une matrice de dimension 5 × 10 :'
+  code: |
+    matrice1 <- matrix(c(5:10), nrow = 5, ncol = 10)
+  key: true
+  explanation: |
+    `nrow = 5` et `ncol = 10` fixent les dimensions ; `dim(matrice1)` renvoie `5 10`.
+    Les 6 valeurs de `5:10` sont recyclées pour remplir les 50 cases. Comme 6 ne divise pas 5, R affiche un **avertissement**, mais la matrice est bien créée.
+  uses_data: ~
+
+- id: 94
+  session: 1
+  problem_sets: [1]
+  type: vf
+  stem: 'Le code suivant crée une variable textuelle lorsqu’il est exécuté :'
+  code: |
+    monstre <- "vampire"
+  key: true
+  explanation: |
+    Les guillemets font de `"vampire"` une chaîne de caractères : `class(monstre)` renvoie `"character"`.
+  uses_data: ~
+
+- id: 95
+  session: 1
+  type: vf
+  stem: 'Les deux lignes de code suivantes créent exactement la même variable lorsqu’elles sont exécutées :'
+  code: |
+    a <- "Université de Fribourg"
+    a = "Université de Fribourg"
+  key: true
+  explanation: |
+    Pour une affectation, `=` et `<-` sont équivalents. Par convention, on utilise `<-` pour les affectations et on réserve `=` aux arguments des fonctions.
+  uses_data: ~
+
+- id: 96
+  session: 1
+  problem_sets: [1]
+  type: vf
+  stem: 'Dans R, l’opérateur d’affectation (`<-`) peut être utilisé pour créer des objets, tels que des variables à un élément, des vecteurs, des matrices et des data frames.'
+  key: true
+  explanation: |
+    `<-` assigne n’importe quel objet R à un nom : scalaire, vecteur, matrice, data frame, liste, etc.
+  uses_data: ~
+
+- id: 97
+  session: 5
+  problem_sets: [2]
+  type: vf
+  stem: 'Une visualisation des données peut servir à l’analyse exploratoire des données.'
+  key: true
+  explanation: |
+    Les graphiques sont un outil central de l’analyse exploratoire : ils révèlent la forme des distributions, les tendances et les valeurs aberrantes.
+  uses_data: ~
+
+- id: 98
+  session: 7
+  problem_sets: [2]
+  type: vf
+  stem: 'La fonction `as.factor()` peut être utilisée pour transformer des variables textuelles et numériques en facteurs.'
+  key: true
+  explanation: |
+    `as.factor()` convertit un vecteur textuel ou numérique en facteur, p. ex. `mtcars$cyl <- as.factor(mtcars$cyl)`.
+  uses_data: ~
+
+- id: 99
+  session: 5
+  problem_sets: [2]
+  type: vf
+  stem: 'Un boxplot peut être utilisé pour visualiser la distribution, la moyenne, les déciles et les valeurs extrêmes d’un ensemble de données.'
+  key: false
+  explanation: |
+    Un boxplot montre la **médiane** et les **quartiles** (plus les moustaches et les valeurs extrêmes), pas la moyenne ni les déciles.
+  uses_data: ~
+
+- id: 100
+  session: 5
+  problem_sets: [2]
+  type: vf
+  stem: 'Le code suivant crée un histogramme qui indique une loi normale :'
+  code: |
+    library(ggplot2)
+    ggplot(data = diamonds, aes(x = price)) +
+      geom_histogram(binwidth = 600, fill = "steelblue", color = "black") +
+      labs(title = "Histogramme des prix dans le jeu de données diamonds",
+           subtitle = "n = 53 940 observations",
+           x = "Prix en USD", y = "Fréquence") +
+      theme_minimal()
+  key: false
+  explanation: |
+    La distribution des prix est fortement asymétrique à droite : beaucoup de diamants bon marché, peu de diamants très chers. La moyenne (3933 USD) dépasse d’ailleurs nettement la médiane (2401 USD).
+  uses_data: ~
+
+- id: 101
+  session: 5
+  problem_sets: [2]
+  type: vf
+  stem: 'La couche `geom_smooth(method = lm)` peut être utilisée pour ajouter une ligne de régression à un nuage de points dans `ggplot2`.'
+  key: true
+  explanation: |
+    `geom_smooth(method = "lm")` ajoute la droite de régression linéaire (et son intervalle de confiance) au nuage de points.
+  uses_data: ~
+
+- id: 102
+  session: 4
+  problem_sets: [2]
+  type: vf
+  stem: '`ggplot2` est un paquet R qui fait partie du `tidyverse`.'
+  key: true
+  explanation: |
+    `tidyverse::tidyverse_packages()` liste les paquets du tidyverse ; `ggplot2` en fait partie.
+  uses_data: ~
+
+- id: 103
+  session: 4
+  type: vf
+  stem: '`ggthemes` est un paquet R qui fait partie du `tidyverse`.'
+  key: false
+  explanation: |
+    `ggthemes` complète `ggplot2` avec des thèmes supplémentaires, mais il ne fait pas partie du tidyverse : il faut l’installer et le charger séparément.
+  uses_data: ~
+
+- id: 104
+  session: 5
+  problem_sets: [2]
+  type: vf
+  stem: |
+    Le graphique suivant montre une simulation d’un million de tailles aléatoires d’hommes en
+    Suisse, réalisée avec la fonction `rnorm()`. Il illustre le fait que plus le nombre de
+    simulations est élevé, plus une loi normale est approchée avec précision.
+  figure: |
+    library(ggplot2)
+    set.seed(1)
+    taille_h <- data.frame(taille = rnorm(1000000, mean = 177.4, sd = 6.1))
+    ggplot(taille_h, aes(x = taille)) +
+      geom_histogram(binwidth = 1, fill = "steelblue", color = "black") +
+      labs(x = "Taille (cm)", y = "Fréquence") +
+      theme_minimal()
+  key: true
+  explanation: |
+    Avec un million de valeurs, l’histogramme prend presque parfaitement la forme en cloche de la loi normale. Avec seulement quelques dizaines de valeurs, il serait beaucoup plus irrégulier.
+  uses_data: ~
+  note: 'Image d’origine manquante ; graphique regénéré (moyenne 177,4 cm, écart-type 6,1 cm, cf. session 5).'
+
+- id: 105
+  session: 7
+  problem_sets: [3]
+  type: vf
+  stem: 'Un fichier CSV stocke des données textuelles dans lesquelles les valeurs sont généralement séparées par des espaces.'
+  key: false
+  explanation: |
+    Dans un fichier CSV (*comma-separated values*), les valeurs sont séparées par des **virgules** (parfois des points-virgules), pas par des espaces.
+  uses_data: ~
+
+- id: 106
+  session: 7
+  problem_sets: [3]
+  type: vf
+  stem: 'Lors de l’importation de fichiers CSV dans RStudio, il est important de savoir si les séparateurs décimaux des valeurs numériques sont des points (p. ex. 4.5) ou des virgules (p. ex. 4,5).'
+  key: true
+  explanation: |
+    Si le séparateur décimal est mal indiqué, les nombres sont lus comme du texte. L’argument `dec` de `read.csv()` le précise ; `read.csv2()` est prévu pour les fichiers avec virgule décimale et point-virgule comme séparateur.
+  uses_data: ~
+
+- id: 107
+  session: 8
+  problem_sets: [3]
+  type: vf
+  stem: 'Dans le jeu de données `igposts.csv`, l’actrice de Bollywood Kiara Advani (`Account` = KIARA) présente le ratio de commentaires par follower le plus élevé de tous les comptes Instagram du jeu de données.'
+  key: true
+  explanation: |
+    ```r
+    igposts %>%
+      mutate(ratio = Comments / Followers.at.Posting) %>%
+      arrange(desc(ratio)) %>%
+      select(Account, ratio) %>%
+      head()
+    ```
+    KIARA arrive en tête, que l’on compare les posts un par un ou la moyenne par compte.
+  uses_data: igposts.csv
+
+- id: 108
+  session: 7
+  problem_sets: [3]
+  type: vf
+  stem: 'Dans le jeu de données `igposts.csv`, la variable `Views` désigne le nombre de fois qu’un post Instagram a été vu par les utilisateurs.'
+  key: false
+  explanation: |
+    `Views` compte les vues de **vidéos** : les 88 posts sans vidéo ont la valeur 0. Cela ne veut pas dire que personne ne les a vus : le nombre total d’affichages n’est pas dans les données.
+  uses_data: igposts.csv
+  note: >-
+    Vérifié dans igposts.csv : 88 posts avec Views = 0, 12 avec Views > 0 (tous des albums),
+    aucune valeur manquante. Cohérent avec la session 8 (Views = vues de vidéos).
+
+- id: 109
+  session: 7
+  problem_sets: [3]
+  type: vf
+  stem: 'L’unité statistique (ou unité d’analyse) du jeu de données `igposts.csv` est le compte Instagram de célébrités telles que Cristiano Ronaldo et Kendall Jenner.'
+  key: false
+  explanation: |
+    Chaque ligne de `igposts` est un **post** Instagram : le jeu de données compte 100 posts publiés par 38 comptes. Un même compte apparaît donc sur plusieurs lignes.
+  uses_data: igposts.csv
+
+- id: 110
+  session: 8
+  problem_sets: [3]
+  type: vf
+  stem: |
+    Exécutez le code R suivant pour savoir si l’affirmation est vraie ou fausse :
+    la Toyota Corolla est le modèle de voiture le plus économe en carburant par rapport à son poids dans le jeu de données `mtcars`.
+  code: |
+    library(tidyverse)
+    data(mtcars)
+    mtcars %>%
+      select(mpg, wt) %>%
+      mutate(mpg_par_livre = mpg / wt) %>%
+      arrange(desc(mpg_par_livre))
+  key: false
+  explanation: |
+    La première ligne du résultat est la **Lotus Europa**, suivie de la Honda Civic. La Toyota Corolla a le `mpg` le plus élevé, mais pas le meilleur rapport `mpg` / poids.
+  uses_data: ~
+
+- id: 111
+  session: 7
+  problem_sets: [3]
+  type: vf
+  stem: 'Dans le code R suivant, l’argument `na.strings = "#N/A"` indique à R comment les valeurs manquantes sont désignées dans le fichier CSV importé.'
+  code: |
+    igposts <- read.csv("https://julesaberlin.github.io/intro-a-R/data/igposts.csv",
+                        encoding = "UTF-8", na.strings = "#N/A")
+  key: true
+  explanation: |
+    Toutes les cellules contenant `#N/A` sont lues comme `NA`, la valeur manquante de R. Sans cet argument, une colonne numérique contenant `#N/A` serait lue comme du texte.
+  uses_data: igposts.csv
+
+- id: 112
+  session: 11
+  problem_sets: [4]
+  type: vf
+  stem: 'Avec des échantillons de grande taille, même des différences (apparemment) faibles entre les moyennes de deux groupes peuvent devenir statistiquement significatives (par exemple, la taille moyenne des hommes dans deux pays différents).'
+  key: true
+  explanation: |
+    L’erreur standard diminue quand la taille de l’échantillon augmente : avec de très grands échantillons, même une petite différence donne une valeur p très faible. « Significatif » ne veut donc pas dire « important ».
+  uses_data: ~
+
+- id: 113
+  session: 10
+  problem_sets: [4]
+  type: vf
+  stem: 'Le code suivant fournit des statistiques descriptives du jeu de données `mtcars` :'
+  code: |
+    data(mtcars)
+    summary(mtcars)
+  key: true
+  explanation: |
+    `summary()` affiche pour chaque variable numérique le minimum, les quartiles, la médiane, la moyenne et le maximum.
+  uses_data: ~
+
+- id: 114
+  session: 12
+  problem_sets: [4]
+  type: vf
+  stem: 'En raison des lois de la physique, on peut raisonnablement supposer que les voitures plus lourdes consomment généralement plus de carburant par kilomètre que les voitures plus légères. En d’autres termes, nous pouvons supposer qu’il existe **une relation de cause à effet** entre le poids du véhicule et l’efficacité énergétique.'
+  key: true
+  explanation: |
+    Une corrélation seule ne prouve pas la causalité, mais ici un mécanisme connu (il faut plus d’énergie pour déplacer une masse plus grande) justifie l’hypothèse d’un effet causal du poids sur la consommation.
+  uses_data: ~
+
+- id: 115
+  session: 12
+  problem_sets: [4]
+  type: vf
+  stem: 'Le **R carré** d’un modèle de régression linéaire indique le pourcentage de la variabilité de la variable dépendante (y) qui peut être expliquée par la variabilité des variables indépendantes (x1, x2, etc.).'
+  key: true
+  explanation: |
+    Un R² de 0,75 signifie que le modèle explique 75 % de la variance de y. On le lit dans `summary(modele)` (*Multiple R-squared*).
+  uses_data: ~
+
+- id: 116
+  session: 10
+  problem_sets: [4]
+  type: vf
+  stem: 'Dans le jeu de données `reponses_socio.csv`, en moyenne, les étudiant·es **sans** passeport suisse ont besoin de moins de temps pour se rendre à l’université que leurs camarades suisses.'
+  key: true
+  explanation: |
+    ```r
+    reponses_socio %>%
+      group_by(suisse) %>%
+      summarize(trajet_moyen = mean(trajet))
+    ```
+    Les étudiant·es sans passeport suisse mettent en moyenne 21,5 minutes, contre 33,5 pour les Suisses·ses.
+    Attention : le groupe sans passeport suisse ne compte que 10 personnes. Pour savoir si une telle différence est due au hasard, il faudrait un test (session 11).
+  uses_data: reponses_socio.csv
+  note: >-
+    La réécriture du PS4 l’étiquette à tort « 117 » (question 18). Corrigé recalculé
+    avec les données synthétiques.
+
+- id: 117
+  session: 10
+  problem_sets: [4]
+  type: vf
+  stem: 'Les statistiques descriptives révèlent souvent des informations et des tendances intéressantes dans les données, même avant l’application de statistiques inférentielles.'
+  key: true
+  explanation: |
+    Effectifs, moyennes et graphiques montrent souvent déjà les principales tendances ; les statistiques inférentielles testent ensuite si elles se généralisent à la population.
+  uses_data: ~
+
+- id: 118
+  session: 1
+  problem_sets: [1]
+  type: vf
+  stem: 'Dans la capture d’écran suivante de RStudio, le script R se trouve dans le volet B :'
+  key: false
+  explanation: |
+    Le volet B n’est pas l’éditeur de script.
+  uses_data: ~
+  needs_image: true
+  check: true
+  note: >-
+    La capture d’écran (problemset_1_images/ch_1_question_11.png) manque : impossible de
+    nommer le bon volet dans l’explication.
+
+- id: 119
+  session: 1
+  type: vf
+  stem: 'En général, la syntaxe des commandes R n’est pas sensible à la casse, c’est-à-dire aux lettres majuscules et minuscules.'
+  key: false
+  explanation: |
+    R **est** sensible à la casse : `Mean(x)` produit une erreur alors que `mean(x)` fonctionne, et `a` et `A` sont deux objets différents.
+  uses_data: ~
+
+- id: 120
+  session: 1
+  problem_sets: [1]
+  type: vf
+  stem: 'Le logiciel RStudio, comme R, est un langage de programmation open source.'
+  key: false
+  explanation: |
+    R est le langage de programmation. RStudio est un *environnement de développement intégré* (IDE) qui facilite le travail avec R, mais n’est pas un langage en soi.
+  uses_data: ~
+
+- id: 121
+  session: 1
+  type: vf
+  stem: 'RStudio Desktop est un logiciel, dit environnement de développement, qui offre une interface utilisateur graphique permettant d’utiliser R, un langage de programmation.'
+  key: true
+  explanation: |
+    RStudio est un IDE : il réunit éditeur de script, console, environnement et fenêtre de graphiques. R tourne en arrière-plan.
+  uses_data: ~
+
+- id: 122
+  session: 2
+  problem_sets: [1]
+  type: vf
+  stem: 'Si vous disposez d’un échantillon de 100 T-shirts et que chaque T-shirt est soit petit, soit moyen, soit grand, la variable *taille de T-shirt* peut être considérée comme une variable catégorielle ordinale.'
+  key: true
+  explanation: |
+    Les modalités « petit », « moyen », « grand » sont des catégories qui ont un ordre naturel : il s’agit donc d’une variable ordinale (dans R, un facteur ordonné).
+  uses_data: ~
+
+- id: 123
+  session: 2
+  problem_sets: [1]
+  type: vf
+  stem: 'En statistique et en méthodes quantitatives des sciences sociales, il est de convention de placer chaque observation dans une colonne différente d’un tableau de données.'
+  key: false
+  explanation: |
+    C’est l’inverse : les observations sont en **lignes**, les variables en colonnes.
+  uses_data: ~
+
+- id: 124
+  session: 4
+  type: vf
+  stem: 'Le **tidyverse**, contraction de *tidy* et de *universe*, est une collection de paquets R (*R packages*) open source.'
+  key: true
+  explanation: |
+    `library(tidyverse)` charge d’un coup plusieurs paquets conçus pour fonctionner ensemble, dont `ggplot2`, `dplyr`, `tidyr` et `readr`.
+  uses_data: ~
+
+- id: 125
+  session: 1
+  type: vf
+  stem: 'Le code R suivant crée un vecteur avec 10 éléments numériques lorsqu’il est exécuté :'
+  code: |
+    n <- "079 123 45 67"
+  key: false
+  explanation: |
+    Les guillemets créent **un seul** élément de type texte : `length(n)` vaut 1 et `class(n)` renvoie `"character"`.
+  uses_data: ~

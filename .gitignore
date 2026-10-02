@@ -50,3 +50,18 @@ rsconnect/
 
 # add the raw_data subdirectory to gitignore file
 raw_data/
+
+# Quarto
+/.quarto/
+/_book/
+
+**/*.quarto_ipynb
+
+# Claude Code local settings
+/.claude/
+
+# Moodle exports and drafts of the question bank (kept locally, not published)
+/question-bank/source/
+
+# Internal review notes (audit, fact-check): kept locally, not published
+/review/

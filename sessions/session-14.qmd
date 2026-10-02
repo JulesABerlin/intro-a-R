@@ -1,0 +1,154 @@
+# Auto-apprentissage
+
+```{r}
+#| include: false
+source("_common.R")
+```
+
+**Continuez à améliorer votre maîtrise de R en sciences de la
+communication**
+
+Voici des étapes clés pour devenir un·e utilisateur·trice avancé·e de R.
+
+## Pratique régulière
+
+-   Il est essentiel de pratiquer régulièrement pour devenir plus à
+    l'aise avec R.
+
+-   Intégrez l'utilisation de R dans vos projets académiques et
+    personnels autant que possible.
+
+## Application académique
+
+-   Demandez aux enseignant-e-s d'autres cours si vous pouvez utiliser R
+    dans leurs cours.
+
+-   Proposez d'utiliser R pour l'analyse de données dans vos travaux de
+    séminaire et de Bachelor.
+
+-   Collaborez avec d'autres étudiant-e-s utilisateurs·trices de R sur
+    des projets de recherche en groupe à l'université.
+
+## MOOC
+
+Pour répéter et approfondir vos connaissances en R, des **MOOC**
+(massive open online courses) sont disponibles gratuitement en tant
+qu'auditeur/auditrice (après inscription) :
+
+1.  **Datacamp**: Introduction to R
+    (4h): <https://www.datacamp.com/courses/free-introduction-to-r>
+
+2.  **Edx (Harvard)**: R Basics
+    (8-16h): <https://www.edx.org/course/data-science-r-basics>
+
+3.  **Edx (Stanford)**: R Programming Fundamentals
+    (12-18h): <https://www.edx.org/course/r-programming-fundamentals>
+
+4.  **Coursera**: Data Analysis with R Programming
+    (37h): <https://www.coursera.org/learn/data-analysis-r>
+
+5.  **Udacity**: Data Analysis with R (2
+    months): <https://www.udacity.com/course/data-analysis-with-r--ud651>
+
+Si vous payez entre 50 et 200 USD, il est également possible de valider
+de tels MOOC avec un certificat. Ces certificats peuvent notamment être
+reliés à LinkedIn et y être affichés.
+
+## Tutoriels sur YouTube
+
+Il existe également de nombreux tutoriels R sur Youtube. Il peut s'agir
+de cours R complets de différents niveaux ou de courtes vidéos montrant
+comment utiliser une technique R particulière (par ex. un certain type
+de visualisation).
+
+1.  **Introduction à R et RStudio (ft. mon chat radioactif) :** Tutoriel
+    facile à comprendre en français d'environ 1h par le chercheur belge
+    Nathan Uyttendaele (Il aborde certains aspects et logiciels que nous
+    ne traitons pas dans notre cours. Mais dans l'ensemble, c'est une
+    bonne introduction à R et RStudio pour les débutants)
+    : <https://www.youtube.com/watch?v=sav3Mbe0_DM>
+
+2.  **Introduction to R & RStudio and other videos on Data Analysis with
+    R** by Wouter van Atteveldt (computational communication scientist,
+    VU Amsterdam)
+    : <https://www.youtube.com/watch?v=PVhZD5MINYM&list=PLjXODJ_lGN_V2ntvV2CN_GvzZ6Qm5km9L>
+
+3.  **Boot Camp of the Summer Institute in Computational Social
+    Science**, SICSS, taught by Chris Bail from Duke University
+    (multiple videos, social science focus)
+    : <https://sicss.io/boot_camp/>
+
+4.  **R Programming Tutorial: Learn the basics of statistical
+    computing** (by Barton Poulson, 2h comprehensive general R
+    introduction) : <https://www.youtube.com/watch?v=_V8eKsto3Ug>
+
+## Intelligence artificielle pour coder
+
+Utiliser l'intelligence artificielle générative pour coder. Jouez avec,
+demandez simplement du code R pour faire certaines choses. Ces
+interfaces peuvent vous fournir du code prêt à l'emploi, que vous pouvez
+copier et coller directement dans RStudio !
+
+-   [ChatGPT](https://chatgpt.com)
+
+-   [Le Chat de Mistral](https://chat.mistral.ai/chat)
+
+## Communautés en ligne
+
+Participez à des communautés en ligne pour rester connecté·e avec les
+dernières tendances et partager vos connaissances :
+
+-   [GitHub](https://github.com) : Le réseau social des développeurs
+-   [Stackoverflow](https://stackoverflow.com) : Un forum d'entraide
+    pour programmeurs
+-   [Kaggle](https://www.kaggle.com) : Une plateforme pour le machine
+    learning et l'analyse de données
+
+## Lecture spécialisée
+
+Approfondissez vos connaissances en R avec des livres numérique
+open-source :
+
+-   **R for Data Science** \[anglais\] Une référence bien établie en
+    sciences des données avec R par Wickham & Grolemund (2023, 2e éd.) :
+    [https://r4ds.hadley.nz/](https://r4ds.hadley.nz)
+
+-   **R Cookbook** \[anglais\] Référence établie pour l'introduction,
+    les statistiques et les graphiques avec R par Long & Teetor (2019,
+    2e éd.) : <https://rc2e.com/>
+
+-   **R Graphics Cookbook** \[anglais\] Ouvrage de référence pour
+    concevoir des graphiques attrayants avec R (2022, 2e éd.), by Chang
+    : <https://r-graphics.org/>
+
+-   **Introduction à la programmation R** par Goulet (2016, 5e éd.) de
+    l’Université
+    Laval : <https://cran.r-project.org/doc/contrib/Goulet_introduction_programmation_R.pdf>
+
+## Valorisation des compétences
+
+-   Mettez en avant vos compétences en programmation R dans votre CV et
+    sur LinkedIn, notamment les certificats obtenus via des MOOCs.
+
+Ces conseils vous aideront à utiliser efficacement R dans le domaine des
+sciences de la communication et à développer une expertise approfondie.
+
+## Au revoir et à bientôt
+
+Ainsi se termine ce cours et donc l'introduction à R dans le cadre des
+Exercices Méthodes II du [Bachelor en sciences de la communication à
+l'Université de
+Fribourg](https://www.unifr.ch/dcm/fr/etudes/bachelor/bachelor-fr-communication-medias/)
+!
+
+J'espère que vous avez appris beaucoup de choses, notamment des
+techniquesqui vous seront utiles pour la suite de vos études ! 💪 😎
+
+Et n'oubliez pas qu'au final, il faut surtout faire preuve de bon sens
+pour comprendre comment des compétences comme la programmation R peuvent
+être utilisées au mieux pour étudier des phénomènes intéressants en
+sciences de la communication ! 😄
+
+*Julian Maitra, Fribourg, 30 mai 2024.*
+
+**FIN DU COURS**

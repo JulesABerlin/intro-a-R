@@ -1,0 +1,390 @@
+# Statistiques inférentielles I
+
+```{r}
+#| include: false
+source("_common.R")
+```
+
+**Sujet : La statistique inférentielle, Partie 1 (tests t)**
+
+Dans cette et la prochaine session, nous allons nous concentrer sur
+trois méthodes de statistiques inférentielles couramment utilisées :
+
+-   Les **tests t** (angl. Student's t-test)
+
+-   l'**analyse de variance** (angl. **ANOVA** = ANalysis Of VAriance)
+
+-   La **régression linéaire** (angl. linear regression).
+
+Mais d'abord, il faut répondre à la question suivante :
+
+## C'est quoi la statistique inférentielle ?
+
+::: {.callout-note icon="true"}
+## À noter
+
+Les statistiques inférentielles sont une branche des statistiques qui
+permet de tirer des conclusions générales sur une population entière en
+se basant sur l'analyse statistique d'un échantillon représentatif de
+cette population.
+:::
+
+En sciences sociales, les statistiques inférentielles sont souvent
+utilisées pour évaluer si une différence ou une association observée dans
+l'échantillon est susceptible d'exister aussi dans la population. Nous
+voulons savoir, par exemple, si les notes de maturité (variable y)
+diffèrent selon le genre (variable x). Une relation **causale** ne peut
+être conclue que si le dispositif le permet (p. ex. une expérience).
+
+En général, pour analyser de telles relations, nous formulons souvent
+des hypothèses basées sur des théories ou des suppositions tiré de la
+littérature d'un domaine de recherche, que nous pouvons ensuite tester
+sur notre échantillon. Les résultats obtenus nous permettent de rejeter
+ou non l'hypothèse nulle, et de généraliser prudemment les conclusions à
+la population entière. Ceci nous permet de contribuer à la création de
+nouvelles connaissance dans notre domaine de recherche
+
+## Le test t
+
+::: {.callout-note icon="true"}
+## À noter
+
+Le test t est est un outil statistique qui permet d'évaluer les moyennes
+d'un ou deux échantillons à l'aide d'un test d'hypothèse. Il est aussi
+appelé test t de Student, car le statisticien qui l'a inventé au début
+du 20ème siècle, William Sealy Gosset, a publié sous le pseudonyme de
+"Student" ([Wikipédia,
+2024](https://en.wikipedia.org/wiki/Student%27s_t-test)).
+:::
+
+::: {.callout-caution collapse="false"}
+## Attention
+
+Pour effectuer un test t, il y a plusieurs hypothèses qui doivent être
+satisfaites :
+
+1.  **Les données sont continues**
+2.  **L'échantillonnage est aléatoire**
+    -   Les données de chaque échantillon ont été prélevées au hasard
+        dans une population.
+3.  **Indépendance**
+    -   Les observations doivent être indépendantes les unes des autres.
+        Cela signifie que la valeur d'une observation ne doit pas
+        dépendre de la valeur d'une autre observation.
+    -   Pour les tests t à deux échantillons, les échantillons doivent
+        être indépendants. Si les échantillons ne sont pas indépendants,
+        un test t pour échantillons appariés peut être approprié.
+4.  **Normalité**
+    -   Ce qui compte, c'est que la **moyenne** de l'échantillon suive
+        approximativement une loi normale. C'est le cas si la variable
+        étudiée est à peu près normale dans chaque groupe, ou si les
+        échantillons sont assez grands (théorème central limite).
+    -   Cette hypothèse est donc surtout importante pour les **petits**
+        échantillons. Vérifiez-la plutôt visuellement (histogramme,
+        [graphique Q-Q](https://fr.wikipedia.org/wiki/Droite_de_Henry)
+        avec `qqnorm()`) que par un test : un test de normalité comme
+        Shapiro-Wilk (`shapiro.test()`) manque de puissance avec peu de
+        données et signale des écarts sans importance avec beaucoup de
+        données.
+5.  **Homogénéité des variances (homoscédasticité)**, uniquement pour
+    le test t « classique » de Student (`var.equal = TRUE`)
+    -   Les variances des données dans chaque groupe sont similaires.
+    -   La variante de Welch, utilisée par défaut dans R, n'exige pas
+        cette hypothèse.
+    -   Cette hypothèse peut être vérifiée à l'aide [du test de Levene
+        ou du test de
+        Bartlett](https://www.datanovia.com/en/lessons/homogeneity-of-variance-test-in-r/).
+
+En pratique, les tests t sont relativement robustes aux déviations de
+ces hypothèses, surtout si le nombre d'observations (n) de chaque
+échantillon est important.
+
+Néanmoins, si une ou plusieurs de ces hypothèses n'est pas satisfaite,
+alors des alternatives non paramétriques au test t peuvent être
+utilisées : [le test de
+Wilcoxon-Mann-Whitney](https://fr.wikipedia.org/wiki/Test_de_Wilcoxon-Mann-Whitney)
+(`wilcox.test()`) pour deux groupes indépendants, ou [le test des rangs
+signés de
+Wilcoxon](https://fr.wikipedia.org/wiki/Test_des_rangs_sign%C3%A9s_de_Wilcoxon)
+(`wilcox.test(..., paired = TRUE)`) pour un échantillon ou des données
+appariées. (Pour plus de deux groupes, l'équivalent non paramétrique de
+l'ANOVA est [le test de
+Kruskal-Wallis](https://fr.wikipedia.org/wiki/Test_de_Kruskal-Wallis),
+`kruskal.test()`.)
+:::
+
+Dans R, le test t est effectué avec la fonction `t.test()`.
+
+Il existe **trois types** de tests t :
+
+1.  **Le test t à un échantillon** (angl. *one sample t-test*) : pour
+    évaluer si la moyenne d'un seul échantillon diffère de manière
+    significative d'une valeur connue.
+
+    -   Par exemple, si la moyenne des notes d'un groupe de 30 lycéens,
+        qui est de 4.9, est significativement différente de 5.0 ou non.
+
+2.  **Le test t à deux échantillons indépendants** (angl. *two sample
+    t-test*) : pour évaluer si les moyennes de deux échantillons
+    indépendants diffèrent de manière significative. Par défaut, R
+    effectue la variante de **Welch** (*Welch two sample t-test*), qui
+    n'exige pas que les variances soient égales (`var.equal = FALSE`). Le
+    test t « classique » de Student (`var.equal = TRUE`) suppose des
+    variances égales.
+
+    -   Par exemple, si la moyenne des notes de 30 lycéennes, qui est de
+        5.0, est significativement différente ou non de la moyenne des
+        notes de 30 lycéens, qui est de 4.8.
+
+3.  **Le test t pour échantillons appariés** (angl. *paired t-test*) :
+    pour comparer les moyennes de deux groupes qui sont liés ou appariés
+    d'une certaine manière. Dans ce type de test, chaque participant est
+    mesuré deux fois, une fois dans chaque groupe, ce qui permet de
+    réduire les effets des variations individuelles.
+
+    -   Par exemple, nous pourrions enregistrer la moyenne des notes
+        d'une classe de 30 élèves avant et après un cours de soutien
+        scolaire en ligne. Il y a donc deux mesures pour chaque élève.
+        Le cours de soutien scolaire est dans ce cas un traitement.
+
+    -   (à noter : nous n'allons pas traiter ce type de test t plus en
+        détail dans l'exercice).
+
+Voyons maintenant des exemples avec du code !
+
+### Exemple 1 : test t à un échantillon
+
+**Problème** : Tester si la moyenne de QI d'un échantillon
+d'étudiant-e-s, qui est de 105, est différente de manière significative
+de la moyenne de la population, qui est de 100.
+
+-   L'**hypothèse nulle H0** (angl. *null hypothesis*) : la moyenne de
+    QI des étudiant·es dans la population est égale à 100 (μ = 100).
+
+-   L'**hypothèse alternative H1** (angl. *alternative hypothesis*) :
+    elle est différente de 100 (μ ≠ 100).
+
+Les hypothèses portent sur la **population**, pas sur le résultat du
+test. Le test ci-dessous est bilatéral (il cherche un écart dans les deux
+sens). Pour tester seulement si le QI est *plus élevé*, on ajouterait
+`alternative = "greater"` dans `t.test()`.
+
+À noter : dans le code qui suit, nous allons encore une fois utiliser la
+fonction `rnorm()` que nous avons vu en classe pour créer des valeurs
+"aléatoires" qui suivent une loi normale. Nous pouvons utiliser ces
+valeurs pour simuler notre problème.
+
+```{r}
+# Générer des données d'échantillon avec n = 25 observations hypothétiques de QI d'étudiant-e-s.
+# Nous simulons, avec rnorm() 25 observations qui suivent une loi normale avec une moyenne de 105 et un écart-type de 15
+set.seed(123)
+scores_qi <- rnorm(25, mean = 105, sd = 15)
+
+# Test t à un échantillon où
+# il faut 2 arguments dans la fonction t.test() : (1) les données à tester (scores_qi) et (2) la valeur à laquelle on veut comparer les données (mu = 100)
+resultat_test_t <- t.test(scores_qi, mu = 100)
+print(resultat_test_t)
+```
+
+Il s'agit maintenant d'interpréter le résultat du test t dans R.
+
+-   **La statistique t** quantifie la différence entre les moyennes des
+    groupes par rapport à la variabilité de l'échantillon. Le signe de
+    la statistique t indique si la moyenne de l'échantillon est
+    supérieure (t positif) ou inférieure (t négatif) à la moyenne de la
+    comparaison. L'ampleur reflète combien d'erreurs standard la
+    différence est par rapport à zéro. En général, des valeurs absolues
+    plus élevées suggèrent des preuves plus solides contre l'hypothèse
+    nulle, ce qui se traduit par des valeurs p plus faibles.
+
+-   **df** signifie "degrees of freedom". Dans un test t, les degrés de
+    liberté font référence au nombre de valeurs dans le calcul final
+    d'une statistique qui sont libres de varier. Il s'agit d'une mesure
+    de la quantité d'informations disponibles pour estimer le paramètre
+    statistique.
+
+-   La **valeur p** (angl. p-value) est la probabilité d'observer un
+    résultat aussi extrême que celui obtenu dans l'échantillon sous
+    l'hypothèse nulle. Elle est utilisée pour déterminer si le résultat
+    du test est statistiquement significatif en comparant sa valeur à un
+    seuil de signification prédéfini (habituellement 5% = 0.05). La
+    p-value est calculée à partir de la statistique de test t et des
+    degrés de liberté associés à l'échantillon.
+
+La valeur p indique si l'écart observé est compatible avec H0. Mais
+regardez aussi la **moyenne estimée** et l'**intervalle de confiance à
+95 %** affichés par `t.test()` : ils indiquent l'ampleur de la différence
+et sa précision.
+
+Dans notre cas, la valeur p (0,13) est supérieure au seuil α = 0,05 :
+**nous ne rejetons pas H0**. Les données sont compatibles avec une
+moyenne de 100 ; cela ne prouve pas que la moyenne *est* 100.
+L'intervalle de confiance à 95 % (de 98,6 à 110,4), qui contient 100, le
+montre aussi. Avec seulement 25 observations, le test manque peut-être
+simplement de puissance.
+
+```{r}
+# Regénérons encore une fois des données d'échantillon, mais cette fois-ci avec n = 50 observations 
+set.seed(123)
+scores_qi <- rnorm(50, mean = 105, sd = 15)
+
+# Test t à un échantillon
+resultat_test_t <- t.test(scores_qi, mu = 100)
+print(resultat_test_t)
+```
+
+La valeur p est maintenant beaucoup plus petite. Si la vraie moyenne
+était 100, obtenir un écart aussi grand ou plus grand serait très
+improbable (p = 0,007). **Nous rejetons H0** au seuil de 5 %. La moyenne
+estimée (105,5) est supérieure à 100.
+
+À retenir : pour une même différence réelle, un **échantillon plus
+grand** donne au test plus de puissance.
+
+### Exercice 1
+
+Selon l'étude [World Internet Project de l'Université de
+Zurich](https://doi.org/10.5167/uzh-251581), qui a évalué les données
+pour la Suisse, les personnes en Suisse ont passé en moyenne 5.6 heures
+en ligne en 2023. Chez les 20-29 ans, ce chiffre s'élève même à 7.9
+heures en moyenne.
+
+Réalisez un test T en utilisant ces statistiques comme suit :
+
+-   Simulez avec `rnorm()`30 valeurs pour l'utilisation d'Internet en
+    heures par jour pour le groupe d'âge 20-29 ans
+    (`mean = 7.9, sd = 2`).
+
+-   Testez si la durée moyenne d'utilisation d'Internet en heures de
+    votre échantillon simulé de 30 suisses de 20 à 29 ans se distingue
+    significativement de la moyenne nationale (`mu = 5.6`).
+
+::: {.callout-caution collapse="true"}
+### Solution
+
+```{r}
+#| echo: true
+#| output: true
+# Générons des données d'échantillon hypothétique avec n = 30 observations 
+set.seed(123)
+
+usage_20_29 <- rnorm(30, mean = 7.9, sd = 2)
+
+# Test t à un échantillon
+resultat_test_t <- t.test(usage_20_29, mu = 5.6)
+print(resultat_test_t)
+```
+
+La valeur p est très faible : des données comme celles-ci seraient très
+improbables si la moyenne des 20-29 ans était de 5,6 heures. Nous
+rejetons H0. La moyenne estimée de l'échantillon (7,8 heures) est
+supérieure à la moyenne nationale.
+
+(Les données étant simulées avec une moyenne de 7,9 heures, ce résultat
+était attendu.)
+:::
+
+### Exemple 2 : test t à deux échantillons
+
+Utilisons encore une fois la fonction `rnorm()`, mais maintenant pour
+simuler deux échantillons hypothétiques :
+
+-   Un échantillon de 5 tailles de femmes suisses
+
+-   Un échantillon de 5 tailles d'hommes suisses
+
+D'après l'Enquête suisse sur la santé 2017 ([Staub et al.,
+2022](https://pmc.ncbi.nlm.nih.gov/articles/PMC9502675/)), que nous avons
+déjà vue en session 5, les femmes mesurent en moyenne 164,6 cm
+(écart-type 6,5 cm) et les hommes 177,0 cm (écart-type 7,1 cm). Dans la
+suite, nous utilisons des valeurs proches : une moyenne de 164.7 cm pour
+les femmes et de 177.4 cm pour les hommes, avec des écarts-types un peu
+plus petits de 5.6 cm et de 6.1 cm.
+
+```{r}
+# Données exemplaires :
+set.seed(123)
+tailles_f <- rnorm(5, mean = 164.7, sd = 5.6)
+tailles_h <- rnorm(5, mean = 177.4, sd = 6.1)
+
+# Two-sample t-test
+t_test_two_sample <- t.test(tailles_f, tailles_h)
+print(t_test_two_sample)
+
+```
+
+Avec `set.seed(123)`, la différence est significative (p ≈ 0,02) même
+avec `n = 5`, car l'écart entre hommes et femmes (environ 11 cm) est grand
+par rapport à la variabilité. Essayez d'autres graines : avec
+`set.seed(8)`, par exemple, la différence n'est plus significative
+(p ≈ 0,15). Avec des échantillons aussi petits, le résultat varie d'une
+simulation à l'autre. Avec `n = 20` ou `n = 100`, le test détecte la
+différence de manière beaucoup plus fiable.
+
+### Exercice 2
+
+Supposons maintenant qu'un avion en provenance d'Amérique atterrisse à
+Genève-Cointrin. Il transporte une sélection de 24 joueuses de la
+Women's NBA, la ligue professionnelle féminine de basket-ball aux
+États-Unis. Les joueuses de la WNBA mesurent en moyenne environ
+1,83 à 1,85 m ; nous utilisons ici une valeur approximative de 184.5 cm.
+
+Testez si la taille moyenne de ces 24 joueuses diffère significativement
+de celle de 24 hommes suisses tirés au hasard. (Supposons que
+l'écart-type des joueuses est de 6.5 cm.)
+
+::: {.callout-caution collapse="true"}
+### Solution
+
+```{r}
+#| echo: true
+#| output: true
+# Générons des données pour deux échantillons hypothétique avec n = 24 observations chacun
+set.seed(123)
+tailles_f_WNBA <- rnorm(24, mean = 184.5, sd = 6.5)
+tailles_h <- rnorm(24, mean = 177.4, sd = 6.1)
+
+# Two-sample t-test
+t_test_two_sample <- t.test(tailles_f_WNBA, tailles_h)
+print(t_test_two_sample)
+```
+
+La valeur p est très faible (p < 0,001) : nous rejetons H0. Dans ces
+données, les joueuses sont en moyenne plus grandes que les hommes suisses
+(environ 184,4 cm contre 177,7 cm).
+:::
+
+À noter : la fonction `t.test()`, comme on l'a utilisé dans ces exemples
+de code jusqu'à présent, utilise plusieurs paramètres par défaut, si
+nous ne les spécifions pas comme arguments dans la fonction. Voici
+quelques-un de ces paramètres, qu'on peut aussi visualiser avec
+`?t.test()` :
+
+```         
+t.test(x, y = NULL,
+       alternative = c("two.sided", "less", "greater"),
+       mu = 0, paired = FALSE, var.equal = FALSE,
+       conf.level = 0.95, ...)
+```
+
+En fonction de votre problématique et de vos données, par exemple dans
+un travail de bachelor, il peut être nécessaire de spécifier
+explicitement certains de ces paramètres. Pour ce faire, il peut être
+utile de lire les pages d'aide de R et de rechercher d'autres documents
+en ligne pertinents pour votre problématique spécifique.
+
+-   Un tutoriel qui approfondit le test t dans R est par exemple [celui
+    de Datacamp
+    (2024)](https://www.datacamp.com/tutorial/t-tests-r-tutorial).
+
+## Exercices {.unnumbered}
+
+Choisissez *Vrai* ou *Faux*, cochez une réponse ou tapez un nombre : la couleur indique tout de suite si votre réponse est correcte. Cliquez sur **Explication** pour voir la correction.
+
+```{r}
+#| echo: false
+#| results: asis
+#| message: false
+#| warning: false
+exercices(session = 11)
+```

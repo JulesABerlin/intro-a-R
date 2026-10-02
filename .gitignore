@@ -50,3 +50,12 @@ rsconnect/
 
 # add the raw_data subdirectory to gitignore file
 raw_data/
+
+# Quarto
+/.quarto/
+/_book/
+
+**/*.quarto_ipynb
+
+# Claude Code local settings
+/.claude/

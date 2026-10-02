@@ -1,0 +1,70 @@
+# Session 6 (Problem Set 2)
+
+```{r}
+#| include: false
+source("_common.R")
+```
+
+Les résultats du **Problem Set 2** (bonnes réponses, échelle des notes)
+sont accéssibles sur la page Moodle de l'exercice.
+
+Voici l'histogramme des points obtenus par n = 65 étudiant-e-s qui ont
+participé au Problem Set 2 le 26 et 27 mars 2025.
+
+-   Le nombre maximal de points était de 20, il fallait 10 pour passer
+    le test.
+
+-   La moyenne des points obtenus était de 12.7 (note = 4.5).
+
+-   56 étudiant-e-s (86%) ont réussi Problem Set 2.
+
+```{r}
+#| echo: false
+#| output: true
+#| warning: false
+# script pour faire un histogramme des points obtenus dans le Problem Set 2
+# cours : Exercices Méthodes II
+# date : 27/28 mars 2024
+# auteur : Julian Maitra
+
+library(ggplot2)
+
+# Adaptez le code suivant pour votre répertoire de travail :
+
+# setwd("~/Documents/exercices_methodes_2")
+
+# Enregistrez le fichier CSV points_ps_2 dans votre répertoire de travail, 
+# puis importez les données dans R (modifiez le code suivant selon votre ordinateur) :
+
+points_ps_2 <- read.csv("https://julesaberlin.github.io/intro-a-R/data/points_ps_2.csv", encoding="UTF-8")
+
+#points_ps_2 # il y a 65 observations d'une variable : les points
+
+hist_ps_2 <-ggplot(points_ps_2, 
+                   aes(x=points_ps_2)) + 
+  geom_histogram(binwidth = 1, color="black", fill="white") +
+  labs(title = "Histogramme des points obtenus dans le PS 2", # labs() permet de définir plusieurs labels en même temps (titre, axes, etc.)
+       subtitle = "n = 65 résultats de test", 
+       caption = "Source des données : Moodle") +       
+  xlab("Points obtenus") +                             
+  ylab("Fréquence") + 
+  theme_minimal() +
+  coord_cartesian(xlim = c(0,20), ylim = c(0,14)) +
+  scale_x_continuous(breaks = seq(0,20, by=1)) +
+   scale_y_continuous(breaks = seq(0,14, by=2)) +
+  geom_vline(aes(xintercept=9.5),
+             color="red",  linewidth=1, linetype="dashed")
+hist_ps_2
+```
+
+## Exercices de révision
+
+Ces questions reprennent le **Problem Set 2**. Choisissez *Vrai* ou *Faux*, cochez une réponse ou tapez un nombre : la couleur indique tout de suite si votre réponse est correcte. Cliquez sur **Explication** pour voir la correction.
+
+```{r}
+#| echo: false
+#| results: asis
+#| message: false
+#| warning: false
+exercices(problem_set = 2)
+```

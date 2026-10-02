@@ -23,7 +23,8 @@ vf <- function(x) {
 #   exercices(problem_set = 1)   les questions du Problem Set 1
 # Les questions qui dépendent d'une image manquante (needs_image) sont omises.
 # Chaque question est numérotée « Question <chapitre>.<rang> » ; son ancre stable
-# (#q<ID>) reprend le numéro de la banque, pour des liens qui ne changent pas.
+# (#q<ID>) reprend le numéro de la banque (non affiché), pour des liens qui ne
+# changent pas.
 exercices <- function(session = NULL, problem_set = NULL, variantes = FALSE,
                       fichier = "question-bank/questions.yml") {
   qs <- yaml::read_yaml(fichier)
@@ -79,6 +80,5 @@ afficher_question <- function(q, numero) {
   # Une ligne « a) … » par paragraphe, sans que Pandoc en fasse une liste
   # (il renumérote les listes : « a) b) d) » deviendrait « a) b) c) »)
   explication <- gsub("(?m)^([a-e])\\)", "\n\\1\\\\)", q$explanation, perl = TRUE)
-  reference <- paste0("\n\n[Réf. banque de questions : n° ", q$id, "]{.small .text-muted}\n")
-  cat(webexercises::hide("Explication"), explication, reference, webexercises::unhide(), sep = "")
+  cat(webexercises::hide("Explication"), explication, webexercises::unhide(), sep = "")
 }

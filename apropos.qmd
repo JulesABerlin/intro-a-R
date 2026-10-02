@@ -3,14 +3,17 @@
 ## Auteur et contact
 
 Ce site accompagne le cours **Exercices Méthodes II** du Bachelor en
-sciences de la communication de l'[Université de Fribourg](https://www.unifr.ch).
+sciences de la communication de l'[Université de Fribourg](https://www.unifr.ch),
+où Julian Maitra a enseigné ces exercices de 2023 à 2025.
 
-**Julian Maitra**, Université de Fribourg\
-Courriel : [julian.maitra\@unifr.ch](mailto:julian.maitra@unifr.ch)\
-ORCID : [0000-0003-3989-5158](https://orcid.org/0000-0003-3989-5158)
+**Julian Maitra** est aujourd'hui rattaché à l'[Institut für Publizistik-
+und Kommunikationswissenschaft
+(IfPuK)](https://www.polsoz.fu-berlin.de/en/kommwiss/arbeitsstellen/kommunikationspolitik/team/visiting-scientists/jmaitra/index.html)
+de la Freie Universität Berlin.\
+ORCID : [0000-0003-3989-5158](https://orcid.org/0000-0003-3989-5158)
 
-Vous avez repéré une erreur ou une question mal formulée ? Écrivez-moi, ou
-ouvrez une *issue* sur [GitHub](https://github.com/julesaberlin/intro-a-R/issues).
+Vous avez repéré une erreur ou une question mal formulée ? Signalez-la
+en ouvrant une *issue* sur [GitHub](https://github.com/julesaberlin/intro-a-R/issues).
 
 ## Licences
 

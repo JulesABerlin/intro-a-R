@@ -43,8 +43,13 @@ d'ouvrir R directement sur votre ordinateur par la suite.
 
 ## L'interface RStudio
 
-![Volets RStudio [Source :
-posit.co](https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html)](https://docs.posit.co/ide/user/ide/guide/ui/images/rstudio-panes-labeled.jpeg)
+<!-- TODO (Jules) : ajouter ici votre propre capture d'écran de RStudio
+(sans données visibles), p. ex. :
+![Les quatre volets de RStudio.](../images/rstudio-volets.png){width="80%" fig-alt="Fenêtre de RStudio avec les volets source, console, environnement et fichiers"}
+-->
+
+Pour une présentation détaillée de l'interface, voir la
+[documentation de Posit](https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html).
 
 Dans RStudio, il existe quatre volets différents :
 

@@ -76,7 +76,7 @@ effets fixes et pour effectuer des analyses de variance.
 
 ### Exemple 1 : ANOVA avec le jeu de données `palmerpenguins`
 
-[![](../images/palmerpenguins.png)](https://allisonhorst.github.io/palmerpenguins/index.html)
+![Logo du paquet [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/index.html). Illustration : Allison Horst, [CC0](https://creativecommons.org/publicdomain/zero/1.0/).](../images/palmerpenguins.png){width="200" fig-alt="Logo hexagonal du paquet palmerpenguins avec trois pingouins"}
 
 Pour cet exemple, il faut télécharger le paquet R `palmerpenguins`.
 Celui-ci contient un jeu de données avec des informations sur trois

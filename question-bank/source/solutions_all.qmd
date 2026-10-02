@@ -1,0 +1,130 @@
+---
+title: "Solutions"
+format: html
+---
+
+1. **Answer:** *(see matching pairs above)*
+2. **Answer:** c
+3. **Answer:** b
+4. **Answer:** b, c, d, e
+5. **Answer:** a, b, c
+6. **Answer:** a, b, e
+7. **Answer:** a, c, e
+8. **Answer:** a, c, d
+9. **Answer:** a, b, c, e
+10. **Answer:** a, b, d
+11. **Answer:** a, b
+12. **Answer:** a, d
+13. **Answer:** a, b, c
+14. **Answer:** a, c, d
+15. **Answer:** a, b, c, d, e
+16. **Answer:** c
+17. **Answer:** b, c, d
+18. **Answer:** b, c, d
+19. **Answer:** b, c, d
+20. **Answer:** b, c, d
+21. **Answer:** a, b
+22. **Answer:** a, b
+23. **Answer:** b, d, e
+24. **Answer:** c, d
+25. **Answer:** b, c, e
+26. **Answer:** e
+27. **Answer:** c
+28. **Answer:** a, c
+29. **Answer:** a, b, d, e
+30. **Answer:** a, b, c, d, e
+31. **Answer:** a, d
+32. **Answer:** a, d, e
+33. **Answer:** a, c
+34. **Answer:** a, b, c, d
+35. **Answer:** b, d, e
+36. **Answer:** a, b, d
+37. **Answer:** b, d, e
+38. **Answer:** a, b
+39. **Answer:** b, c, d
+40. **Answer:** c, d, e
+41. **Answer:** a, c, e
+42. **Answer:** a, c, e
+43. **Answer:** b
+44. **Answer:** d
+45. **Answer:** a, b, e
+46. **Answer:** a, b, c, d
+47. **Answer:** a, d
+48. **Answer:** 500; 500; 500
+49. **Answer:** 3.5; 501.6667; 4
+50. **Answer:** 318; 318; 318
+51. **Answer:** 35; 35; 35
+52. **Answer:** 39; 39; 39
+53. **Answer:** 103; 103; 103
+54. **Answer:** 326; 326; 326
+55. **Answer:** 2401; 2401; 2401
+56. **Answer:** 18823; 18823; 18823
+57. **Answer:** 1; 1; 1
+58. **Answer:** 6.9; 6.9; 6.9
+59. **Answer:** 4.3; 4.3; 4.3
+60. **Answer:** 7.9; 7.9; 7.9
+61. **Answer:** 230; 230; 230
+62. **Answer:** 335; 335; 335
+63. **Answer:** 175; 175; 175
+64. **Answer:** 109; 109; 109
+65. **Answer:** 5
+66. **Answer:** 6
+67. **Answer:** 73
+68. **Answer:** 73
+69. **Answer:** 14
+70. **Answer:** 74
+71. **Answer:** 4
+72. **Answer:** 56
+73. **Answer:** 16
+74. **Answer:** 4202
+75. **Answer:** 3862
+76. **Answer:** 37; 37; 37
+77. **Answer:** 910; 910; 910
+78. **Answer:** 825; 825; 825
+79. **Answer:** 910; 910; 910
+80. **Answer:** 3185; 3185; 3185
+81. **Answer:** cristiano
+82. **Answer:** kendalljenner
+83. **Answer:** Autre; autre
+84. **Answer:** a
+85. **Answer:** a
+86. **Answer:** a
+87. **Answer:** a
+88. **Answer:** a
+89. **Answer:** a
+90. **Answer:** a
+91. **Answer:** b
+92. **Answer:** a
+93. **Answer:** a
+94. **Answer:** a
+95. **Answer:** a
+96. **Answer:** a
+97. **Answer:** a
+98. **Answer:** a
+99. **Answer:** b
+100. **Answer:** b
+101. **Answer:** a
+102. **Answer:** a
+103. **Answer:** b
+104. **Answer:** a
+105. **Answer:** b
+106. **Answer:** a
+107. **Answer:** a
+108. **Answer:** b
+109. **Answer:** b
+110. **Answer:** b
+111. **Answer:** a
+112. **Answer:** a
+113. **Answer:** a
+114. **Answer:** a
+115. **Answer:** a
+116. **Answer:** a
+117. **Answer:** a
+118. **Answer:** b
+119. **Answer:** b
+120. **Answer:** b
+121. **Answer:** a
+122. **Answer:** a
+123. **Answer:** b
+124. **Answer:** a
+125. **Answer:** b

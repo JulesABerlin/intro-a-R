@@ -1,0 +1,233 @@
+---
+
+title: "Chapitre 13  : Solutions"
+format:
+  html:
+    extensions:
+      - fenced_divs
+---
+
+### Question 1 39
+
+**Réponse correcte :** *b, c, d*
+
+::: {.callout-note icon="true"}
+
+## Explication
+
+Dans le résumé du modèle, `mpg` est la variable dépendante, `wt`, `qsec` et `am` sont les variables indépendantes, et toutes trois sont significatives au niveau de 5 %.
+:::
+
+### Question 2 40 MISSING
+
+**Réponse correcte :** *c, d, e*
+
+::: {.callout-note icon="true"}
+
+## Explication
+
+c) L’histogramme montre qu’il y a plus d’étudiant(e)s qui ont 3 frères et sœurs que d’étudiant(e)s qui sont des enfants uniques.
+d) La constellation la plus fréquente est celle des étudiant(e)s ayant un seul frère ou une seule sœur.
+e) Une personne ayant participé au questionnaire a indiqué qu’elle avait 7 frères et sœurs.
+:::
+
+### Question 3 76 MISSING
+
+**Réponse correcte :** `37`
+
+::: {.callout-note icon="true"}
+
+## Explication
+
+*(À compléter après import et examen de `reponses_socio.csv`.)*
+:::
+
+### Question 4 74
+
+**Réponse correcte :**
+
+::: {.callout-note icon="true"}
+
+## Explication
+
+*(À compléter après calcul du poids moyen dans `penguins`.)*
+:::
+
+### Question 5 114
+
+**Réponse correcte :** *a (Vrai)*
+
+::: {.callout-note icon="true"}
+
+## Explication
+
+Plus le poids du véhicule augmente, plus son efficacité énergétique baisse, d’après les lois de la physique.
+:::
+
+### Question 6 37
+
+**Réponses correctes :** *b, d, e*
+
+::: {.callout-note icon="true"}
+
+## Explication
+
+Les statistiques descriptives résument les données (comptes pour variables catégorielles, moyennes pour variables numériques), elles précèdent souvent l’inférence, et s’appuient sur des visualisations comme histogrammes ou boxplots.
+:::
+
+### Question 7 43
+
+**Réponse correcte :** *b*
+
+::: {.callout-note icon="true"}
+
+## Explication
+
+Une p-valeur < 0,05 signifie que la probabilité d’observer des résultats aussi extrêmes sous l’hypothèse nulle est inférieure à 5 %.
+:::
+
+### Question 8 112
+
+**Réponse correcte :** *a (Vrai)*
+
+::: {.callout-note icon="true"}
+
+## Explication
+
+Avec de grands échantillons, même de très faibles différences peuvent devenir statistiquement significatives.
+:::
+
+### Question 9 38
+
+**Réponses correctes :** *a, b*
+
+::: {.callout-note icon="true"}
+
+## Explication
+
+Le test t à deux échantillons permet de vérifier si les moyennes de deux populations sont égales ou différentes.
+:::
+
+### Question 10 3 MISSING
+
+**Réponse correcte :** *b*
+
+::: {.callout-note icon="true"}
+
+## Explication
+
+*(À compléter selon la statistique de test et la p-valeur obtenues.)*
+b) Rejeter l’hypothèse nulle (H0).
+:::
+
+### Question 11 83 MISSING
+
+**Réponse correcte :**  *"Autre"*
+
+::: {.callout-note icon="true"}
+
+## Explication
+
+*(À compléter après examen des modalités de la variable `genre` dans `reponses_socio.csv`.)*
+:::
+
+### Question 12 23 MISSING
+
+**Réponse correcte :**  *b, d, e*
+
+::: {.callout-note icon="true"}
+
+## Explication
+
+*(À compléter après lecture du boxplot des longueurs de nageoires.)*
+:::
+
+### Question 13 113
+
+**Réponse correcte :** *a (Vrai)*
+
+::: {.callout-note icon="true"}
+
+## Explication
+
+`summary(mtcars)` affiche bien des statistiques descriptives (min., quartiles, médiane, moyenne, max.) pour chaque variable.
+:::
+
+### Question 14 41
+
+**Réponses correctes :** *a, c, e*
+
+::: {.callout-note icon="true"}
+
+## Explication
+
+Les statistiques inférentielles permettent d’inférer à partir d’un échantillon, le random sampling vise une représentation fiable, et tests t/ANOVA/régression sont des outils courants.
+:::
+
+### Question 15 115
+
+**Réponse correcte :** *a (Vrai)*
+
+::: {.callout-note icon="true"}
+
+## Explication
+
+Le R² indique la proportion de la variance de la variable dépendante expliquée par le modèle.
+:::
+
+### Question 16 117
+
+**Réponse correcte :** *a (Vrai)*
+
+::: {.callout-note icon="true"}
+
+## Explication
+
+Les statistiques descriptives révèlent souvent la forme, la tendance et la dispersion des données avant toute analyse inférentielle.
+:::
+
+### Question 17 75 MISSING
+
+**Réponse correcte :**  `3862`
+
+::: {.callout-note icon="true"}
+
+## Explication
+
+*(À compléter après filtrage des femelles dans `penguins`.)*
+:::
+
+### Question 18 117 MISSING
+
+**Réponse correcte :** *a*
+
+::: {.callout-note icon="true"}
+
+## Explication
+
+*(À compléter après comparaison des temps de trajet dans `reponses_socio.csv`.)*
+:::
+
+### Question 19 42 MISSING
+
+**Réponse correcte :** *a, c, e*
+
+::: {.callout-note icon="true"}
+
+## Explication
+
+a) La joueuse moyenne mesure `186,1539` cm.
+c) L’hypothèse nulle est qu’il n’y a pas de différence significative de taille entre les deux populations.
+e) Les résultats indiquent qu’il n’y a pas de différence significative entre les tailles moyennes.
+:::
+
+### Question 20 44
+
+**Réponse correcte :** *d*
+
+::: {.callout-note icon="true"}
+
+## Explication
+
+Un nuage de points (scatterplot) est la meilleure visualisation pour examiner la relation entre deux variables numériques.
+:::

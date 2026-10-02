@@ -1,0 +1,1292 @@
+---
+title: "Exercises"
+format: html
+---
+
+## $course$/top/Défaut pour ExMethodesII SP 23
+
+### Question 1
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Associez les photos suivantes aux comptes Instagram qui les ont publiées.&nbsp;</p><p dir="ltr" style="text-align: left;">(Remarque : toutes les photos proviennent des 10 premières publications Instagram selon Total.Interactions dans le jeu de données igposts.csv que nous avons vu en classe).<br></p>]]></text>
+
+- <p dir="ltr" style="text-align: left;"><img src="@@PLUGINFILE@@/Screenshot%202024-04-24%20at%2010.16.13.png" alt="Insta Post 1" width="1192" height="1196" class="img-fluid atto_image_button_text-bottom"><br></p> → Jin of BTS
+- <p dir="ltr" style="text-align: left;"><img src="@@PLUGINFILE@@/Screenshot%202024-04-24%20at%2010.18.34.png" alt="Selena Gomez" width="958" height="1196" class="img-fluid atto_image_button_text-bottom"><br></p> → Selena Gomez
+- <p dir="ltr" style="text-align: left;"><img src="@@PLUGINFILE@@/Screenshot%202024-04-24%20at%2010.19.39.png" alt="Insta Post 3" width="1192" height="1196" class="img-fluid atto_image_button_text-bottom"><br></p> → Cristiano Ronaldo
+- <p dir="ltr" style="text-align: left;"><img src="@@PLUGINFILE@@/Screenshot%202024-04-24%20at%2010.21.27.png" alt="Insta Post 4" width="954" height="1196" class="img-fluid atto_image_button_text-bottom"><br></p> → KIARA
+- <p dir="ltr" style="text-align: left;"><img src="@@PLUGINFILE@@/Screenshot%202024-04-24%20at%2010.22.40.png" alt="Insta Post 5" width="1192" height="1196" class="img-fluid atto_image_button_text-bottom"><br></p> → Leo Messi
+
+---
+
+### Question 2
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;"></p><p>Quel est le rôle principal de l'opérateur <strong>%&gt;%</strong> dans dplyr ?</p><br><p></p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;">Importer des données.<br></p>]]>
+- (b) <![CDATA[<p dir="ltr" style="text-align: left;">Assigner des variables.<br></p>]]>
+- (c) <![CDATA[<p dir="ltr" style="text-align: left;">Créer des séquence de fonctions pour simplifier le code.<br></p>]]>
+- (d) <![CDATA[<p dir="ltr" style="text-align: left;">Convertir des types de données.<br></p>]]>
+- (e) <![CDATA[<p dir="ltr" style="text-align: left;">Aucune des autres réponses n'est correcte.</p>]]>
+
+---
+
+### Question 3
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Vous avez effectué un test t à un échantillon et obtenu une statistique t de 4.0869 avec 49 degrés de liberté et une p-value de 0.0001618.&nbsp;</p><p dir="ltr" style="text-align: left;">Quelle conclusion pouvez-vous en tirer au niveau de signification de 5% ?</p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;">Ne pas rejeter l'hypothèse nulle (H0).<br></p>]]>
+- (b) Rejeter l'hypothèse nulle (H0).
+- (c) <![CDATA[<p dir="ltr" style="text-align: left;">Il n'y a pas assez d'informations pour conclure.</p>]]>
+- (d) <![CDATA[<p dir="ltr" style="text-align: left;">Augmenter la taille de l'échantillon.</p>]]>
+- (e) <![CDATA[<p dir="ltr" style="text-align: left;">Aucune des autres réponses n'est correctes.</p>]]>
+
+---
+
+### Question 4
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;"># Exécutez le code R suivant et cochez toutes les réponses correctes :&nbsp;<br></p><p dir="ltr" style="text-align: left;"><br></p><p dir="ltr" style="text-align: left;">a &lt;- c(1:5)</p><p dir="ltr" style="text-align: left;">b &lt;- c(5:10)</p><p dir="ltr" style="text-align: left;">c &lt;- a*b</p><p dir="ltr" style="text-align: left;"><br></p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;">Les longueurs de a et b sont égales.</p>]]>
+- (b) <![CDATA[<p dir="ltr" style="text-align: left;">Dans cet exemple de code, c ne peut être créé que si a et b sont créés avant.<br></p>]]>
+- (c) <![CDATA[<p dir="ltr" style="text-align: left;">length(a) &lt;= length(b)<br></p>]]>
+- (d) <![CDATA[<p dir="ltr" style="text-align: left;">Dans cet exemple de code, le signe colon (:) crée des séquences de nombres entiers.<br></p>]]>
+- (e) <![CDATA[<p dir="ltr" style="text-align: left;">Trois autres réponses sont correctes.<br></p>]]>
+
+---
+
+### Question 5
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;"><span lang="FR-CH">La
+fonction <i>class()</i> appliqué sur une variable à un élément peut donner comme
+résultat&nbsp;<span lang="FR-CH">(cochez
+toutes les réponses correctes) :&nbsp;</span></span><br></p>]]></text>
+
+- (a) <![CDATA["numeric"]]>
+- (b) <![CDATA["logical"]]>
+- (c) <![CDATA["character"]]>
+- (d) 6
+- (e) Aucune des autres réponses n'est correcte.
+
+---
+
+### Question 6
+
+<text><![CDATA[<p dir="ltr"># Exécutez le code R suivant pour répondre aux questions :</p><p dir="ltr"><span style="font-size: 0.9375rem;"><br></span></p><p dir="ltr"><span style="font-size: 0.9375rem;">nom &lt;- c("Kim", "Claire", "Antoine", "Mathilde", "Ali", "Charlotte", "Tiger", "Sacha")</span><br></p><p dir="ltr"><span style="font-size: 0.9375rem;">genre &lt;- factor(c("non binaire", "femme", "homme", "femme", "homme", "femme", "homme", "homme"), ordered = FALSE)</span><br></p><p dir="ltr"><span style="font-size: 0.9375rem;">revenus_en_milles_chf &lt;- c(77, 154, 15, 82, 104, 48, 540, 63)</span><br></p><p dir="ltr"><span style="font-size: 0.9375rem;">classe_de_revenus &lt;- factor(c("moyen", "haut", "très faible", "moyen", "haut", "faible", "très haut", "moyen"),</span><span style="font-size: 0.9375rem;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p><p dir="ltr">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ordered = TRUE, levels = c("très faible","faible", "moyen", "haut", "très haut"))</p><p dir="ltr"><span style="font-size: 0.9375rem;"><br></span></p><p dir="ltr"><span style="font-size: 0.9375rem;">revenus_df &lt;- data.frame(nom, genre, revenus_en_milles_chf, classe_de_revenus)</span><br></p><p dir="ltr"><span style="font-size: 0.9375rem;">revenus_df</span><br></p><p dir="ltr"><span style="font-size: 0.9375rem;"><br></span></p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;">Ce data frame contient deux variables catégorielles.<br></p>]]>
+- (b) <![CDATA[<p dir="ltr" style="text-align: left;">revenus_df$classe_de_revenus est une variable catégorielle ordinale.<br></p>]]>
+- (c) <![CDATA[<p dir="ltr" style="text-align: left;">revenus_df$genre est une variable catégorielle ordinale.<br></p>]]>
+- (d) <![CDATA[<p dir="ltr" style="text-align: left;">Ce data frame contient des informations sur trois femmes et trois personnes ayant un haut revenu.<br></p>]]>
+- (e) <![CDATA[<p dir="ltr" style="text-align: left;">Ce data frame contient des informations sur cinq classes de revenus différentes.<br></p>]]>
+
+---
+
+### Question 7
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Cochez toutes les propositions correctes :</p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;">le paquet ggplot2 est inclue dans tidyverse. </p>]]>
+- (b) <![CDATA[<p dir="ltr" style="text-align: left;">Le paquet ggplot est à utiliser pour faire des graphiques avec une variable, tandis que le paquet ggplot2 est utile pour voir graphiquement la corrélation entre deux variables.</p>]]>
+- (c) <![CDATA[<p dir="ltr" style="text-align: left;">Le responsable de ggplot2 (qui maintient le paquet) est Thomas Lin Pedersen</p>]]>
+- (d) <![CDATA[<p dir="ltr" style="text-align: left;">ggplot2 est très utile pour modifier des données</p>]]>
+- (e) <![CDATA[<p dir="ltr" style="text-align: left;">ggplot2 construit des graphiques de manière incrémentale, en travaillant avec des couches</p>]]>
+
+---
+
+### Question 8
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;"></p><p dir="ltr"># Exécutez le code R suivant et cochez toutes les réponses correctes :&nbsp;</p><p dir="ltr"><br></p><p dir="ltr">name &lt;- c("Manny", "Sid", "Diego", "Ellie", "Peaches", "Scrat", "Rudy", "Buck")</p><p dir="ltr">species &lt;- c("mammoth", "sloth", "sabertooth", "mammoth", "mammoth", "squirrel", "dinosaur", "weasel")</p><p dir="ltr">female &lt;- c(FALSE, FALSE, FALSE, TRUE, TRUE, FALSE, FALSE, FALSE)</p><p dir="ltr">age &lt;- c(30, 20, 35, 25, 7, 4, 100, 28)</p><p dir="ltr">weight &lt;- c(5000, 80, 400, 4000, 1000, 1, 10000, 3)</p><p dir="ltr"><br></p><p dir="ltr">ice_age_df &lt;- data.frame(name, species, female, age, weight)</p><p dir="ltr">ice_age_df</p><br><p></p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;">La colonne <em>female</em> (fr. "femelle") du jeu de données <em>ice_age_df</em> est de type logique (angl. "logical").<br></p>]]>
+- (b) <![CDATA[<p dir="ltr" style="text-align: left;">Les unités statistiques du jeu de données <em>ice_age_df&nbsp;</em>sont les noms, les espèces, le genre (femelle), le poids et l'âge des animaux de l'ère glaciaire.<br></p>]]>
+- (c) <![CDATA[<p dir="ltr" style="text-align: left;">L'unité statistique du jeu de données&nbsp;<em>ice_age_df</em> est un animal de l'âge de glace, avec n = 8 observations.<br></p>]]>
+- (d) <![CDATA[<p dir="ltr" style="text-align: left;">Le jeu de données <em>ice_age_df&nbsp;</em>contient des informations sur trois mammouths différents.<br></p>]]>
+- (e) <![CDATA[<p dir="ltr" style="text-align: left;">Buck, l'écureuil, pèse 1 kg.<br></p>]]>
+
+---
+
+### Question 9
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;"></p><p dir="ltr"># Exécutez le code R suivant et cochez toutes les réponses correctes :&nbsp;</p><p dir="ltr"><br></p><p dir="ltr"><span style="font-size: 0.9375rem;">name &lt;- c("Manny", "Sid", "Diego", "Ellie", "Peaches", "Scrat", "Rudy", "Buck")</span><br></p><p dir="ltr">species &lt;- c("mammoth", "sloth", "sabertooth", "mammoth", "mammoth", "squirrel", "dinosaur", "weasel")</p><p dir="ltr">female &lt;- c(FALSE, FALSE, FALSE, TRUE, TRUE, FALSE, FALSE, FALSE)</p><p dir="ltr">age &lt;- c(30, 20, 35, 25, 7, 4, 100, 28)</p><p dir="ltr">weight &lt;- c(5000, 80, 400, 4000, 1000, 1, 10000, 3)</p><p><br></p><p>ice_age_df &lt;- data.frame(name, species, female, age, weight)</p><p>print(ice_age_df)</p><p><br></p><p></p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;"># S'il est exécuté, le code R suivant affiche les éléments de la colonne <em>name</em> du jeu de données <em>ice_age_df </em>:<br></p><p dir="ltr" style="text-align: left;"><br></p><p dir="ltr" style="text-align: left;">ice_age_df$name</p><p dir="ltr" style="text-align: left;"><br></p>]]>
+- (b) <![CDATA[<p dir="ltr"># S'il est exécuté, le code R suivant affiche les éléments de la deuxième colonne de ice_age_df :<br></p><p dir="ltr"><br></p><p dir="ltr">ice_age_df[,2]</p><br><p></p>]]>
+- (c) <![CDATA[<p dir="ltr" style="text-align: left;"><span style="font-size: 15px;">Les dimensions du jeu de données <em>ice_age_df</em> sont 8 fois 5 (8 lignes sur 5 colonnes).</span></p>]]>
+- (d) <![CDATA[<p _d-id="120961"><span style="font-size: 15px;">L'objet&nbsp;<em>ice_age_df</em> est de type matrice (angl. "matrix").</span><br></p><br><p dir="ltr" style="text-align: left;"></p><p _d-id="120961"></p><p _d-id="120961"></p><p></p><p></p>]]>
+- (e) <![CDATA[<p _d-id="120968"># Le code R suivant calcule la moyenne de la colonne <em>age</em> du jeu de données <em>ice_age_df&nbsp;</em></p><p _d-id="120968"><br></p><p _d-id="120970">mean(ice_age_df$age)</p><br><p></p>]]>
+
+---
+
+### Question 10
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Répondez aux questions suivantes relatives au jeu de données <strong>iris</strong>, qui est intégré à R (cochez toutes les réponses correctes).<br></p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;">Le jeu de données contient 150 observations de 5 variables.<br></p>]]>
+- (b) <![CDATA[<p dir="ltr" style="text-align: left;">Le jeu de données contient des observations de trois espèces d'iris différentes.<br></p>]]>
+- (c) <![CDATA[<p dir="ltr" style="text-align: left;">L'unité statistique du jeu de données est Petal.Length (longueur de pétale) des fleurs d'iris.<br></p>]]>
+- (d) <![CDATA[<p dir="ltr" style="text-align: left;">Les données sur les iris ont été collectées par Edgar Anderson en 1935 en Gaspésie (angl. "Gaspe Peninsula") au Québec, Canada.<br></p>]]>
+- (e) <![CDATA[<p dir="ltr" style="text-align: left;">Toutes les autres réponses sont incorrectes.<br></p>]]>
+
+---
+
+### Question 11
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;"># Exécutez le code R suivant et cochez toutes les réponses correctes :&nbsp;<br></p><p dir="ltr" style="text-align: left;"><br></p><p dir="ltr" style="text-align: left;"><span id="cb31-6">m1 &lt;- matrix(c(1:25), nrow = 5, byrow = TRUE)</span>&nbsp;</p><p dir="ltr" style="text-align: left;"><span id="cb31-7"><a href="https://julesaberlin.github.io/intro-a-R/#cb31-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-8"><a href="https://julesaberlin.github.io/intro-a-R/#cb31-8" aria-hidden="true" tabindex="-1"></a>print(m1)</span><br></p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;"><em>m1</em> est une matrice de dimension 5 fois 5 (5 lignes sur 5 colonnes)</p>]]>
+- (b) <![CDATA[<p dir="ltr"><span style="font-size: 15px;">Dans le code R ci-dessus, l'argument <em>byrow = TRUE</em> spécifie que les valeurs de la matrice <em>m1</em> sont remplies par ligne.</span></p>]]>
+- (c) <![CDATA[<p><span style="font-size: 15px;"><em>m1</em> est une matrice de type textuel.</span></p>]]>
+- (d) <![CDATA[<p dir="ltr"><span style="font-size: 15px;"><em>m1</em> est une matrice à 24 éléments.</span></p>]]>
+- (e) <![CDATA[<p dir="ltr"><span style="font-size: 15px;">Le code R ci-dessus ne fonctionne pas et génère un message d'erreur.</span></p>]]>
+
+---
+
+### Question 12
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;"># Exécutez le code R suivant pour répondre aux questions :&nbsp;<br></p><p dir="ltr" style="text-align: left;"><br></p><p dir="ltr" style="text-align: left;"><span id="cb31-6">m1 &lt;- matrix(c(1:36), nrow = 6, byrow = FALSE)</span>&nbsp;</p><p dir="ltr" style="text-align: left;"><span id="cb31-7"><a href="https://julesaberlin.github.io/intro-a-R/#cb31-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-8"><a href="https://julesaberlin.github.io/intro-a-R/#cb31-8" aria-hidden="true" tabindex="-1"></a>print(m1)</span><br></p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;"><em>m1</em> est une matrice de dimension 6 fois 6 (6 lignes sur 6 colonnes)</p>]]>
+- (b) <![CDATA[<p dir="ltr"><span style="font-size: 15px;">Dans le code R ci-dessus, l'argument <em>byrow = FALSE</em> spécifie que les valeurs de la matrice <em>m1</em> sont remplies par ligne.</span></p>]]>
+- (c) <![CDATA[<p><span style="font-size: 15px;"><em>m1</em> est une matrice de type textuel.</span></p>]]>
+- (d) <![CDATA[<p dir="ltr"><span style="font-size: 15px;"><em>m1</em> est une matrice à 36 éléments.</span></p>]]>
+- (e) <![CDATA[<p dir="ltr"><span style="font-size: 15px;">Le code R ci-dessus ne fonctionne pas et génère un message d'erreur.</span></p>]]>
+
+---
+
+### Question 13
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;"># Exécutez le code R suivant pour répondre aux questions :&nbsp;<br></p><p dir="ltr" style="text-align: left;"><br></p><p dir="ltr" style="text-align: left;"><span id="cb31-6">m1 &lt;- matrix(c(1:49), nrow = 7, byrow = FALSE)</span>&nbsp;</p><p dir="ltr" style="text-align: left;"><span id="cb31-7"><a href="https://julesaberlin.github.io/intro-a-R/#cb31-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-8"><a href="https://julesaberlin.github.io/intro-a-R/#cb31-8" aria-hidden="true" tabindex="-1"></a>print(m1)</span><br></p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;"><em>m1</em> est une matrice de dimension 7 fois 7 (7 lignes sur 7 colonnes)</p>]]>
+- (b) <![CDATA[<p dir="ltr"><span style="font-size: 15px;">Dans le code R ci-dessus, l'argument <em>byrow = FALSE</em> spécifie que les valeurs de la matrice <em>m1</em> sont remplies par colonne.</span></p>]]>
+- (c) <![CDATA[<p><span style="font-size: 15px;"><em>m1</em> est une matrice de type numérique.</span></p>]]>
+- (d) <![CDATA[<p dir="ltr"><span style="font-size: 15px;"><em>m1</em> est une matrice à 48 éléments.</span></p>]]>
+- (e) <![CDATA[<p dir="ltr"><span style="font-size: 15px;">Le code R ci-dessus ne fonctionne pas et génère un message d'erreur.</span></p>]]>
+
+---
+
+### Question 14
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;"># Exécutez le code R suivant pour répondre aux questions :&nbsp;<br></p><p dir="ltr" style="text-align: left;"><br></p><p dir="ltr" style="text-align: left;"><span id="cb31-6">m1 &lt;- matrix(c(1:64), nrow = 8, byrow = TRUE)</span>&nbsp;</p><p dir="ltr" style="text-align: left;"><span id="cb31-7"><a href="https://julesaberlin.github.io/intro-a-R/#cb31-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-8"><a href="https://julesaberlin.github.io/intro-a-R/#cb31-8" aria-hidden="true" tabindex="-1"></a>print(m1)</span><br></p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;"><em>m1</em> est une matrice de dimension 8 fois 8 (8 lignes sur 8 colonnes)</p>]]>
+- (b) <![CDATA[<p dir="ltr"><span style="font-size: 15px;">Dans le code R ci-dessus, l'argument <em>byrow = TRUE</em> spécifie que les valeurs de la matrice <em>m1</em> sont remplies par colonne.</span></p>]]>
+- (c) <![CDATA[<p><span style="font-size: 15px;"><em>m1</em> est une matrice de type numérique.</span></p>]]>
+- (d) <![CDATA[<p dir="ltr"><span style="font-size: 15px;"><em>m1</em> est une matrice à 64 éléments.</span></p>]]>
+- (e) <![CDATA[<p dir="ltr"><span style="font-size: 15px;">Le code R ci-dessus ne fonctionne pas et génère un message d'erreur.</span></p>]]>
+
+---
+
+### Question 15
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Répondez aux questions suivantes relatives au jeu de données <strong>mtcars</strong>, qui est intégré à R (cochez toutes les réponses correctes).<br></p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;">mtcars est un "data.frame".<br></p>]]>
+- (b) <![CDATA[<p dir="ltr" style="text-align: left;">Le jeu de données mtcars contient 32 observations de 11 variables.</p>]]>
+- (c) <![CDATA[<p dir="ltr">Avec 33,9 milles par gallon (mpg), la Toyota Corolla est le modèle de voiture le plus efficace en termes de consommation de carburant dans le jeu de données.<br></p>]]>
+- (d) <![CDATA[<p dir="ltr" style="text-align: left;">la Ford Pantera L a une boîte de vitesses manuelle.<br></p>]]>
+- (e) <![CDATA[<p dir="ltr" style="text-align: left;">Toutes les autres réponses sont correctes.<br></p>]]>
+
+---
+
+### Question 16
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;"># Exécutez le code R suivant et cochez toutes les réponses correctes :&nbsp;</p><p dir="ltr" style="text-align: left;"><br></p><p dir="ltr" style="text-align: left;">number &lt;- "7"</p><p dir="ltr" style="text-align: left;"><br></p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;"># Le code suivant me donne 36 comme résultat dans la console :&nbsp;</p><p dir="ltr" style="text-align: left;"><br></p><p dir="ltr" style="text-align: left;"><span style="font-size: 0.9375rem;">number^2</span></p><p dir="ltr" style="text-align: left;"><span style="font-size: 0.9375rem;"><br></span></p>]]>
+- (b) <![CDATA[# Le code suivant ne va rien changer à ma variable :&nbsp;<br><br>number &lt;- as.numeric(number)<br><br>]]>
+- (c) number peut être utilisé dans la fonction c() afin de créer un vecteur.
+- (d) <![CDATA[<p dir="ltr" style="text-align: left;">length(number) va me donner une erreur.</p>]]>
+- (e) <![CDATA[<p dir="ltr"># Le code suivant me donne 36 comme résultat dans la console :&nbsp;</p><p dir="ltr"><br></p><p dir="ltr">as.numeric(number)^2</p><br>]]>
+
+---
+
+### Question 17
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;"></p><p dir="ltr"># Exécutez le code suivant et cochez toutes les réponses correctes :</p><p dir="ltr"><br></p><p dir="ltr">n &lt;- "079 123 45 67"</p><p dir="ltr">print(n)</p><p dir="ltr">class(n)</p><br><br><p></p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;"><span style="font-size: 15px;">Le code crée un objet numérique avec 10 éléments.</span><br></p>]]>
+- (b) <![CDATA[<p dir="ltr" style="text-align: left;"><em>n</em> est une variable de type textuelle</p>]]>
+- (c) <![CDATA[<p dir="ltr" style="text-align: left;"><em>n</em> est une variable avec un élément.</p>]]>
+- (d) <![CDATA[<p dir="ltr"><span style="font-size: 15px;">Si l'on a créé correctement <em>n</em> comme décrit dans le code ci-dessus et que l'on exécute le code suivant, on obtient un message d'erreur :</span></p><p dir="ltr"><span style="font-size: 15px;"><br></span></p><p dir="ltr"><span style="font-size: 15px;">n*2</span></p>]]>
+- (e) <![CDATA[<p dir="ltr" style="text-align: left;"><span style="font-size: 15px;">Dans R, il n'est jamais utile de produire des numéros sous forme de texte.</span><br></p>]]>
+
+---
+
+### Question 18
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;"></p><p dir="ltr"># Exécutez le code suivant et cochez toutes les réponses correctes :</p><p dir="ltr"><br></p><p dir="ltr">n &lt;- "076 666 88 44"</p><p dir="ltr">print(n)</p><p dir="ltr">class(n)</p><br><br><p></p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;"><span style="font-size: 15px;">Le code crée un objet numérique avec 10 éléments.</span><br></p>]]>
+- (b) <![CDATA[<p dir="ltr" style="text-align: left;"><em>n</em> est une variable de type textuelle</p>]]>
+- (c) <![CDATA[<p dir="ltr" style="text-align: left;"><em>n</em> est une variable avec un élément.</p>]]>
+- (d) <![CDATA[<p dir="ltr"><span style="font-size: 15px;">Si l'on a créé correctement <em>n</em> comme décrit dans le code ci-dessus et que l'on exécute le code suivant, on obtient un message d'erreur :</span></p><p dir="ltr"><span style="font-size: 15px;"><br></span></p><p dir="ltr"><span style="font-size: 15px;">n*2</span></p>]]>
+- (e) <![CDATA[<p dir="ltr" style="text-align: left;"><span style="font-size: 15px;">Dans R, il n'est jamais utile de produire des numéros sous forme de texte.</span><br></p>]]>
+
+---
+
+### Question 19
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;"></p><p dir="ltr"># Exécutez le code suivant et cochez toutes les réponses correctes :</p><p dir="ltr"><br></p><p dir="ltr">n &lt;- "076 333 77 55"</p><p dir="ltr">print(n)</p><p dir="ltr">class(n)</p><br><br><p></p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;"><span style="font-size: 15px;">Le code crée un objet numérique avec 10 éléments.</span><br></p>]]>
+- (b) <![CDATA[<p dir="ltr" style="text-align: left;"><em>n</em> est une variable de type textuelle</p>]]>
+- (c) <![CDATA[<p dir="ltr" style="text-align: left;"><em>n</em> est une variable avec un élément.</p>]]>
+- (d) <![CDATA[<p dir="ltr"><span style="font-size: 15px;">Si l'on a créé correctement <em>n</em> comme décrit dans le code ci-dessus et que l'on exécute le code suivant, on obtient un message d'erreur :</span></p><p dir="ltr"><span style="font-size: 15px;"><br></span></p><p dir="ltr"><span style="font-size: 15px;">n*2</span></p>]]>
+- (e) <![CDATA[<p dir="ltr" style="text-align: left;"><span style="font-size: 15px;">Dans R, il n'est jamais utile de produire des numéros sous forme de texte.</span><br></p>]]>
+
+---
+
+### Question 20
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;"></p><p dir="ltr"># Exécutez le code suivant et cochez toutes les réponses correctes :</p><p dir="ltr"><br></p><p dir="ltr">n &lt;- "078 123 77 55"</p><p dir="ltr">print(n)</p><p dir="ltr">class(n)</p><br><p></p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;"><span style="font-size: 15px;">Le code crée un objet numérique avec 10 éléments.</span><br></p>]]>
+- (b) <![CDATA[<p dir="ltr" style="text-align: left;"><em>n</em> est une variable de type textuelle</p>]]>
+- (c) <![CDATA[<p dir="ltr" style="text-align: left;"><em>n</em> est une variable avec un élément.</p>]]>
+- (d) <![CDATA[<p dir="ltr"><span style="font-size: 15px;">Si l'on a créé correctement <em>n</em> comme décrit dans le code ci-dessus et que l'on exécute le code suivant, on obtient un message d'erreur :</span></p><p dir="ltr"><span style="font-size: 15px;"><br></span></p><p dir="ltr"><span style="font-size: 15px;">n*2</span></p>]]>
+- (e) <![CDATA[<p dir="ltr" style="text-align: left;"><span style="font-size: 15px;">Dans R, il n'est jamais utile de produire des numéros sous forme de texte.</span><br></p>]]>
+
+---
+
+### Question 21
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;"># Cochez toutes les réponses correctes concernant le code suivant (exécutez-le) :<br></p><p dir="ltr" style="text-align: left;"><br></p><p dir="ltr" style="text-align: left;">a &lt;- 66</p><p dir="ltr" style="text-align: left;">a &lt;- 77</p><p dir="ltr" style="text-align: left;">a &lt;- 88</p><p dir="ltr" style="text-align: left;"><br></p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;">Ce code génère une variable, a, dont la valeur finale correspond à 88.<br></p>]]>
+- (b) <![CDATA[<p dir="ltr" style="text-align: left;">Le code écrase deux fois la variable a.<br></p>]]>
+- (c) <![CDATA[<p dir="ltr" style="text-align: left;">Le code génère une erreur, car il ne peut pas créer trois variables portant exactement le même nom.<br></p>]]>
+- (d) <![CDATA[<p dir="ltr" style="text-align: left;">Le code crée trois variables, toutes nommées a, et les stocke simultanément dans l'environnement.<br></p>]]>
+- (e) <![CDATA[<p dir="ltr" style="text-align: left;">Toutes les autres réponses sont incorrectes.<br></p>]]>
+
+---
+
+### Question 22
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;"><span style="font-size: 15px;"># Exécutez le code R suivant et cochez toutes les réponses correctes :&nbsp;</span><br></p><p dir="ltr" style="text-align: left;"><span style="font-size: 15px;"><br></span></p><p dir="ltr" style="text-align: left;">a&nbsp;&lt;- c(0:15)</p><p dir="ltr" style="text-align: left;">print(a)</p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;"><span style="font-size: 15px;"><em>print(a) </em>est une fonction qui affiche l'objet <em>a</em> dans la console.&nbsp;</span><br></p>]]>
+- (b) <![CDATA[<p dir="ltr" style="text-align: left;"><span style="font-size: 15px;">Au lieu d'utiliser <em>print(a)</em>, on pourrait simplement afficher l'objet <em>a</em> en éxécutant son nom,&nbsp;<em>a.</em></span><br></p>]]>
+- (c) <![CDATA[<p dir="ltr" style="text-align: left;"><span style="font-size: 15px;">La fonction print() dans R sert à imprimer le code R sur papier avec l'imprimante.</span><br></p>]]>
+- (d) <![CDATA[<p dir="ltr" style="text-align: left;"><span style="font-size: 15px;">Dans cet exemple de code, <em>a</em> est une fonction R.</span><br></p>]]>
+- (e) <![CDATA[<p dir="ltr" style="text-align: left;"><span style="font-size: 15px;">Dans cet exemple de code, un vecteur nommé <em>c</em> est créé.</span><br></p>]]>
+
+---
+
+### Question 23
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Cochez toutes les réponses correctes concernant le graphique suivant :&nbsp;</p><p dir="ltr" style="text-align: left;"><img src="@@PLUGINFILE@@/image.png" alt="" role="presentation" class="img-fluid"><br></p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;">La ligne noire épaisse du milieu des boxplots indique la longueur moyenne des nageoires pour chaque espèce de pingouins.<br></p>]]>
+- (b) <![CDATA[<p dir="ltr" style="text-align: left;">Au moins un pingouin Adélie de l'échantillon a une nageoire plus longue qu'au moins un pingouin Gentoo.<br></p>]]>
+- (c) <![CDATA[<p dir="ltr" style="text-align: left;">Les boxplots nous indiquent qu'il existe des différences statistiquement significatives dans la longueur des nageoires entre les trois espèces de pingouins.<br></p>]]>
+- (d) <![CDATA[<p dir="ltr" style="text-align: left;">Sur la seule base des boxplots, nous ne pouvons pas savoir si les différences de longueur des nageoires des différentes espèces de pingouins sont statistiquement significatives (nous pourrions faire une ANOVA pour le savoir).<br></p>]]>
+- (e) <![CDATA[<p dir="ltr" style="text-align: left;">Les boxplots indiquent qu'il y a deux valeurs extrêmes (angl. outliers) dans l'ensemble de données.<br></p>]]>
+
+---
+
+### Question 24
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Cochez toutes les réponses correctes concernant le graphique suivant :</p><p dir="ltr" style="text-align: left;"><img src="https://julesaberlin.github.io/intro-a-R/index_files/figure-html/unnamed-chunk-39-1.png"><br></p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;">Le graphique montre différents niveaux de qualité de la couleur des diamants.<br></p>]]>
+- (b) <![CDATA[<p dir="ltr" style="text-align: left;">En moyenne, la relation entre le carat et le prix semble linéaire (le prix et le carat augmentent proportionnellement).<br></p>]]>
+- (c) <![CDATA[<p dir="ltr" style="text-align: left;">En moyenne, la relation entre le carat et le prix semble exponentielle (le prix augmente plus vite que le carat).<br></p>]]>
+- (d) <![CDATA[<p dir="ltr" style="text-align: left;">La pureté a un impact considérable sur le prix d'un diamant.<br></p>]]>
+- (e) <![CDATA[<p dir="ltr" style="text-align: left;">Le diamant le plus lourd est aussi le plus cher.<br></p>]]>
+
+---
+
+### Question 25
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;"></p><p dir="ltr">Cochez toutes les réponses correctes qui se rapportent à l'image suivante, qui décrit les différentes couches d'un graphique ggplot2 :</p><p dir="ltr"><img src="@@PLUGINFILE@@/image.png" alt="" role="presentation"></p><br><p></p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;">Pour créer un graphique ggplot2, il faut toujours définir les paramètres de toutes les couches les unes après les autres.<br></p>]]>
+- (b) <![CDATA[<p dir="ltr" style="text-align: left;">La couche "Geometries" définit le type d'un graphique (par ex. nuage de points, diagramme à barres, boîtes à moustaches, etc.)<br></p>]]>
+- (c) <![CDATA[<p dir="ltr" style="text-align: left;">En général, il faut construire un graphique ggplot2 par couches en commençant par le bas, c'est-à-dire par la couche "Data".&nbsp;<br></p>]]>
+- (d) <![CDATA[<p dir="ltr" style="text-align: left;">La couche "Aesthetics" définit le design du graphique (par exemple, elle permet de générer le graphique dans le design du Wall Street Journal ou du magazine The Economist.<br></p>]]>
+- (e) <![CDATA[<p dir="ltr" style="text-align: left;">Les couches "Facets", "Statistics", "Coordinates" et "Theme" ne doivent pas obligatoirement être spécifiées dans le code, car R utilise pour celles-ci des paramètres standard prédéfinis.&nbsp;<br></p>]]>
+
+---
+
+### Question 26
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Cochez toutes les propositions correctes concernant le graphique suivant :</p><p dir="ltr" style="text-align: left;"><img src="@@PLUGINFILE@@/d1950a07-1716-406b-ab02-a0894033da2f.png" alt="hist_points_ps1
+" width="2026" height="1026" class="img-fluid atto_image_button_text-bottom"><br></p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;">Les étudiant.es ont obtenu le plus fréquemment 13 points dans Problem Set 1.<br></p>]]>
+- (b) <![CDATA[<p dir="ltr" style="text-align: left;">Le graphique montre qu'en médiane, 16 points ont été obtenus dans le Problem Set 1.<br></p>]]>
+- (c) <![CDATA[<p dir="ltr" style="text-align: left;">Le graphique montre qu'en moyenne, 16 points ont été obtenus dans Problem Set 1.<br></p>]]>
+- (d) <![CDATA[<p dir="ltr" style="text-align: left;">L'histogramme montre que la distribution des points dans le Problem Set 1 suit une loi normale centrée réduite.<br></p>]]>
+- (e) <![CDATA[<p dir="ltr" style="text-align: left;">Toutes les autres réponses sont incorrectes.</p>]]>
+
+---
+
+### Question 27
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;"></p><h1></h1>Comment peut-on ajuster la <strong>largeur des intervalles</strong> dans un histogramme créé avec ggplot2 ? (Cochez toutes les réponses correctes)<br><p></p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;">En utilisant
+l'argument <strong>bins.</strong><br></p>]]>
+- (b) <![CDATA[<p dir="ltr" style="text-align: left;">En ajustant
+l'argument <strong>width.</strong><br></p>]]>
+- (c) <![CDATA[<p dir="ltr" style="text-align: left;"><span>En modifiant l'argument <strong>binwidth.</strong></span><br></p>]]>
+- (d) <![CDATA[<p dir="ltr" style="text-align: left;">En changeant
+l'argument <strong>interval.</strong><br></p>]]>
+- (e) <![CDATA[<p dir="ltr" style="text-align: left;">Toutes les réponses sont incorrectes.</p>]]>
+
+---
+
+### Question 28
+
+<text><![CDATA[<p dir="ltr">Cochez toutes les réponses correctes concernant le graphique suivant, qui a été crée avec le jeu de données <strong>mpg </strong>(qui est inclu dans le paquet ggplot2).</p><p dir="ltr" style="text-align: left;"><img src="@@PLUGINFILE@@/mpg_displ.png" alt="mpg vs. displ" width="886" height="515" class="img-fluid atto_image_button_text-bottom"><br></p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;">La ligne de régression indique que la corrélation entre la taille du moteur et l'efficacité du carburant est négative.<br></p>]]>
+- (b) <![CDATA[<p dir="ltr" style="text-align: left;">Les données présentées proviennent du jeu de données mtcars.<br></p>]]>
+- (c) <![CDATA[<p dir="ltr" style="text-align: left;">Le jeu de données mpg contient des données relatives à l'économie de carburant de 1999 à 2008 pour 38 modèles de voitures populaires (angl. "Fuel economy data from 1999 to 2008 for 38 popular models of cars".)<br></p>]]>
+- (d) <![CDATA[<p dir="ltr" style="text-align: left;">L'axe des x de ce graphique indique les miles par gallon (mpg).</p>]]>
+- (e) <![CDATA[<p dir="ltr" style="text-align: left;">Le graphique montre que les moteurs de plus grande taille ont tendance à être associés à un plus grand nombre de miles par gallon.<br></p>]]>
+
+---
+
+### Question 29
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;"></p><p><em><span lang="EN-GB"></span></em></p><h1></h1><span># Exécutez le code R suivant et cochez toutes les réponses correctes :&nbsp;<br></span><p></p><p><span><span lang="EN-GB">data(mtcars)</span></span></p>
+
+<p><span lang="EN-GB">g &lt;-
+ggplot(mtcars, aes(mpg, wt)) + geom_point()</span></p>
+
+<p><span lang="EN-GB">print(g)</span></p><br><p></p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;">g est un objet stocké dans le volet environnement de RStudio</p>]]>
+- (b) <![CDATA[<p dir="ltr" style="text-align: left;"><span>Le graphique g affiche une relation entre le poids des
+voitures (wt) et leur consommation de carburant (mpg).</span><br></p>]]>
+- (c) <![CDATA[Le code produit un histogramme.<br>]]>
+- (d) <![CDATA[<p dir="ltr" style="text-align: left;"><span>Chaque point dans le graphique représente une voiture
+dans le jeu de données mtcars.</span><br></p>]]>
+- (e) <![CDATA[<p dir="ltr" style="text-align: left;">Le graphique indique que les deux variables affichées sont négativement corrélées.</p>]]>
+
+---
+
+### Question 30
+
+<text><![CDATA[<p dir="ltr"># Exécutez le code R suivant et cochez toutes les réponses correctes :<br></p><p dir="ltr">data(mtcars)</p><p dir="ltr"><span style="font-size: 0.9375rem;"># Transformations :</span><br></p><p dir="ltr">mtcars$cyl &lt;- as.factor(mtcars$cyl)</p><p dir="ltr">mtcars$gear &lt;- as.factor(mtcars$gear)</p><p dir="ltr"><span style="font-size: 0.9375rem;"># Diagramme à barres :</span><br></p><p dir="ltr">ggplot(mtcars,&nbsp;<span style="font-size: 0.9375rem;">aes(x = cyl,&nbsp;</span><span style="font-size: 0.9375rem;">fill = gear)) +&nbsp;</span><span style="font-size: 0.9375rem;">geom_bar() +&nbsp;</span><span style="font-size: 0.9375rem;">labs(title = "Distribution of cylinders and gears in mtcars")</span></p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;"><span>Ce code produit un diagramme à barres représentant le
+nombre de voitures par nombre de cylindres.</span><br></p>]]>
+- (b) <![CDATA[<p dir="ltr" style="text-align: left;"><span>La couleur des barres est déterminée par le nombre de
+vitesses (gear).</span><br></p>]]>
+- (c) <![CDATA[<p dir="ltr" style="text-align: left;">Les cylindres et les
+vitesses sont transformés en variables de types facteur.<br></p>]]>
+- (d) Le graphique montre qu'il n'y a pas de voitures avec 8 cylindres et 4 vitesses dans mtcars.
+- (e) <![CDATA[<p dir="ltr">Les voitures à 6 cylindres sont moins fréquentes que celles à 4 ou 8 cylindres.</p>]]>
+
+---
+
+### Question 31
+
+<text><![CDATA[<p dir="ltr"># Exécutez le code R suivant et cochez toutes les réponses correctes :&nbsp;</p><p dir="ltr"><span style="font-size: 0.9375rem;">rnorm(1000)</span><br></p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;">Ce code génère 1000 valeurs "aléatoires" qui se rapprochent d'une loi normale centrée réduite (angl. "standard normal distribution").<br></p>]]>
+- (b) <![CDATA[<p dir="ltr" style="text-align: left;">Ce code génère un message d'erreur, car il y a des arguments manquants dans la fonction rnorm().</p>]]>
+- (c) <![CDATA[<p dir="ltr">Ce code génère 1000 valeurs "aléatoires" qui se rapprochent d'une loi normale avec une&nbsp;<span style="font-size: 0.9375rem;">moyenne = 1 et un écart-type = 0.</span></p>]]>
+- (d) <![CDATA[<p dir="ltr" style="text-align: left;">Ce code génère des valeurs numériques positives et négatives.<br></p>]]>
+- (e) <![CDATA[<p dir="ltr" style="text-align: left;">Toutes les lois normales ont le même écart-type.<br></p>]]>
+
+---
+
+### Question 32
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;"># Exécutez le code R suivant et cochez toutes les réponses correctes.<br></p><p dir="ltr" style="text-align: left;"><br></p><p dir="ltr">data(diamonds)</p><p dir="ltr"><br></p><p dir="ltr">diamonds %&gt;% group_by(clarity) %&gt;% summarize(n = n(), prix_moyen = mean(price))</p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr"><span style="font-size: 0.9375rem;">La sortie du code indique les prix moyens en USD des diamants pour chaque type de pureté dans le jeu de données diamonds.</span><br></p>]]>
+- (b) <![CDATA[<p dir="ltr"><span style="font-size: 0.9375rem;">En moyenne, les diamants du type de pureté le plus élevé coûtent 1790 USD.</span><br></p>]]>
+- (c) <![CDATA[<p dir="ltr" style="text-align: left;">Il y a le même nombre de diamants pour chaque type de pureté dans le jeu de données diamonds.<br></p>]]>
+- (d) <![CDATA[<p dir="ltr" style="text-align: left;">L'argument<strong> n=n() </strong>dans la fonction summarize() nous permet de compter le nombre d'observations dans chaque catégorie dans le résultat.<br></p>]]>
+- (e) <![CDATA[<p dir="ltr" style="text-align: left;">La fonction<strong> group_by(clarity)</strong> regroupe les diamants par type de pureté dans le résultat.<br></p>]]>
+
+---
+
+### Question 33
+
+<text><![CDATA[<p dir="ltr"># Exécutez le code R suivant et sélectionnez toutes les réponses correctes.</p><p><br></p><p>data(mtcars)</p><p>mtcars %&gt;%<span style="font-size: 0.9375rem;">&nbsp;arrange(mpg)</span></p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;">La fonction <strong>arrange(mpg) </strong>trie les voitures dans mtcars par valeurs mpg croissantes.<br></p>]]>
+- (b) <![CDATA[<p dir="ltr" style="text-align: left;">La fonction&nbsp;<strong>arrange(mpg)&nbsp;</strong>trie les voitures dans mtcars par valeurs mpg décroissantes.<br></p>]]>
+- (c) <![CDATA[<p dir="ltr" style="text-align: left;">Plus la valeur mpg d'une voiture est élevée dans mtcars, plus elle peut aller loin avec une unité (gallon) de carburant.<br></p>]]>
+- (d) <![CDATA[<p dir="ltr" style="text-align: left;">Le code R modifie l'objet mtcars dans l'environnement de RStudio lorsqu'il est exécuté.<br></p>]]>
+- (e) <![CDATA[<p dir="ltr" style="text-align: left;">La Cadillac Fleetwood dans mtcars utilise le carburant le plus efficacement de toutes les voitures du jeu de données.<br></p>]]>
+
+---
+
+### Question 34
+
+<text><![CDATA[<p dir="ltr"># Exécutez le code R suivant et cochez toutes les réponses correctes.</p>
+<p dir="ltr"># Notez que cette question utilise la fonction rnorm() qui nous permet de simuler des valeurs aléatoires qui se rapprochent d'une loi normale. </p>
+<p dir="ltr"># Dans l'exemple, nous pouvons supposer que les valeurs représentent des tailles aléatoires de femmes en Suisse (en cm) qui se rapprochent d'une loi normale. </p>
+<p dir="ltr"></p>
+<p dir="ltr">taille_f &lt;- rnorm(500, mean = 164.7, sd = 5.6) %&gt;% as.data.frame()</p>
+<p dir="ltr"></p>
+<p dir="ltr">taille_f %&gt;% count(taille_f &lt;= 160)</p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;">La fonction <strong>count(taille_f &lt;= 160)</strong> compte le nombre des valeurs inférieures ou égales à 160 (femmes de 160 cm ou moins) ainsi que celles supérieures à 160 (femmes de plus de 160 cm).</p>]]>
+- (b) <![CDATA[<p dir="ltr" style="text-align: left;">En général, la fonction dplyr <strong>count()</strong> est utile pour compter le nombre d'observations dans un jeu de données qui correspondent à certains critères.</p>]]>
+- (c) <![CDATA[<p dir="ltr" style="text-align: left;">Si vous exécutez le code plusieurs fois de suite, vous obtiendrez toujours un résultat légèrement différent car la fonction <strong>rnorm()</strong> génère des valeurs "aléatoires" de tailles de femmes.</p>]]>
+- (d) <![CDATA[<p dir="ltr" style="text-align: left;">taille_f est un objet de type <strong>data frame</strong> dans RStudio.</p>]]>
+- (e) <![CDATA[<p dir="ltr" style="text-align: left;">taille_f comporte 100 lignes (observations).</p>]]>
+
+---
+
+### Question 35
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;"># Exécutez le code R suivant et cochez toutes les réponses correctes.</p>
+<p dir="ltr" style="text-align: left;"># Notez que les unités de longueur et de poids américaines sont converties : 1 inch (in) = 2.54 cm et 1 pound (lbs) = 0.4536 kg</p>
+<p dir="ltr">data(women)</p>
+<p dir="ltr">print(women)</p>
+<p dir="ltr">?women</p>
+<p dir="ltr">women %&gt;% summarize(n = n(), taille_moyenne_cm = mean(height*2.54), poids_moyen_kg = mean(weight*0.4536))</p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;"><strong>women</strong> est un jeu de données contenant les tailles et les poids de 15 femmes américaines âgées de 20 à 39 ans.</p>]]>
+- (b) <![CDATA[<p dir="ltr" style="text-align: left;">La femme moyenne du jeu de données <strong>women</strong> mesure environ 165 cm et pèse environ 62 kg.</p>]]>
+- (c) <![CDATA[<p dir="ltr" style="text-align: left;">Les données indiquent que les femmes américaines pèsent en moyenne beaucoup plus que les femmes européennes.</p>]]>
+- (d) <![CDATA[<p dir="ltr" style="text-align: left;">Le jeu de données <strong>women</strong> est composé de 15 lignes et de 2 colonnes.</p>]]>
+- (e) <![CDATA[<p dir="ltr" style="text-align: left;">Le code R transforme les unités américaines, pouces (inches) et livres (pounds), en centimètres et kilogrammes.</p>]]>
+
+---
+
+### Question 36
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Cliquez sur l'URL du post Instagram suivant qui fait partie de igposts.csv et cochez toutes les réponses correctes.</p>
+<p dir="ltr" style="text-align: left;"></p>
+<table id="rsGridData" role="grid" cellspacing="0" aria-describedby="rsGridData_info">
+<tbody>
+<tr role="row" data-row="2">
+<td>
+<div title="https://www.instagram.com/p/CpHHbGWunhI/"><a href="https://www.instagram.com/p/CpHHbGWunhI/" target="_blank" rel="noopener">https://www.instagram.com/p/CpHHbGWunhI/</a></div>
+</td>
+<td> </td>
+</tr>
+</tbody>
+</table>
+<p><br><br></p>
+<p></p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;">Le post a été publié par le compte Instagram avec le User.Name <strong>zendaya</strong>.</p>]]>
+- (b) <![CDATA[<p dir="ltr" style="text-align: left;">Il s'agit d'un post Instagram de type <strong>Album</strong>.</p>]]>
+- (c) <![CDATA[<p dir="ltr" style="text-align: left;">Il s'agit d'un post Instagram de type <strong>Video</strong>.</p>]]>
+- (d) <![CDATA[<p dir="ltr" style="text-align: left;">Le post a reçu des <strong>Views</strong>.</p>]]>
+- (e) <![CDATA[<p dir="ltr" style="text-align: left;">Zendaya est une actrice et chanteuse <strong>britannique</strong>.</p>]]>
+
+---
+
+### Question 37
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Cochez toutes les affirmations correctes concernant les <strong>statistiques descriptives</strong> !<br></p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;">L'objectif des statistiques descriptives est principalement d'analyser les relations causales entre les variables.<br></p>]]>
+- (b) <![CDATA[<p dir="ltr" style="text-align: left;">La partie descriptive d'une analyse statistique fournit généralement des indications descriptives telles que la taille de l'échantillon (n), les fréquences des variables catégorielles et les moyennes des variables numériques.<br></p>]]>
+- (c) <![CDATA[<p dir="ltr" style="text-align: left;">Les tests d'hypothèse, par exemple avec un test t, sont une étape courante des statistiques descriptives.<br></p>]]>
+- (d) <![CDATA[<p dir="ltr" style="text-align: left;">Les statistiques descriptives précèdent souvent les statistiques inférentielles dans une analyse de données quantitatives en sciences sociales.<br></p>]]>
+- (e) <![CDATA[<p dir="ltr" style="text-align: left;">Certaines visualisations de données, comme les histogrammes, se prêtent bien à la présentation de statistiques descriptives.<br></p>]]>
+
+---
+
+### Question 38
+
+<text><![CDATA[<p>Laquelle des hypothèses suivantes pourrait être testée dans un <strong>test t à deux échantillons</strong> ?</p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;">Les deux échantillons proviennent de populations avec la même moyenne.</p>]]>
+- (b) <![CDATA[<p dir="ltr" style="text-align: left;">Les deux échantillons proviennent de populations avec des moyennes différentes.</p>]]>
+- (c) <![CDATA[<p dir="ltr" style="text-align: left;">L'une des populations est beaucoup plus nombreuse que l'autre.</p>]]>
+- (d) <![CDATA[<p dir="ltr" style="text-align: left;">Les populations ont la même moyenne mais des variances très différentes.</p>]]>
+- (e) <![CDATA[<p dir="ltr" style="text-align: left;">Trois groupes d'humains sont de tailles moyennes très différentes.</p>]]>
+
+---
+
+### Question 39
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;"># Executez le code suivant et cochez toutes les réponses correctes</p><p dir="ltr">data(mtcars)</p><p dir="ltr">modele_1 &lt;- lm(formula = mpg ~ wt + qsec + am, data = mtcars)</p><p dir="ltr">summary(modele_1)</p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;">Ce modèle de régression pourrait être représenté visuellement par une ligne droite passant par un nuage de points.<br></p>]]>
+- (b) <![CDATA[<p dir="ltr" style="text-align: left;">mpg est la variable dépendante.<br></p>]]>
+- (c) <![CDATA[<p dir="ltr" style="text-align: left;">wt, qsec et am sont les variables indépendantes.<br></p>]]>
+- (d) <![CDATA[<p dir="ltr" style="text-align: left;">Toutes les variables x dans modele_1 sont significatives au niveau de 5%.<br></p>]]>
+- (e) <![CDATA[<p dir="ltr" style="text-align: left;">Toutes les autres réponses sont correctes.</p>]]>
+
+---
+
+### Question 40
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Cochez toutes les réponses correctes concernant le graphique suivant (source des données : questionnaire de l'exercice méthodes II) :&nbsp;</p><p dir="ltr" style="text-align: left;"><img src="@@PLUGINFILE@@/image.png" alt="" role="presentation" class="img-fluid"><br></p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;">L'histogramme montre que le nombre de frères et sœurs (variable <em>fraterie</em>) suit une loi normale.<br></p>]]>
+- (b) L'histogramme montre que la plupart des étudiant(e)s de la classe ont grandi dans des constellations familiales traditionnelles.
+- (c) <![CDATA[<p dir="ltr" style="text-align: left;">L'histogramme montre qu'il y a plus d'étudiant(e)s qui ont 3 frères et sœurs que d'étudiant(e)s qui sont des enfants uniques.<br></p>]]>
+- (d) <![CDATA[<p dir="ltr" style="text-align: left;">La constellation la plus fréquente est celle des étudiant(e)s ayant un seul frère ou une seule sœur.<br></p>]]>
+- (e) <![CDATA[<p dir="ltr" style="text-align: left;">Une personne ayant participé au questionnaire a indiqué qu'elle avait 7 frères et sœurs.<br></p>]]>
+
+---
+
+### Question 41
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Cochez toutes les propositions correctes relatives aux <strong>statistiques inférentielles</strong>.<br></p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;">Les statistiques inférentielles permettent de tirer des conclusions sur une population entière en se basant sur l'analyse d'un échantillon représentatif de cette population.<br></p>]]>
+- (b) <![CDATA[<p dir="ltr" style="text-align: left;">Si deux variables quantitatives, par exemple y et x, sont significativement corrélées, il existe toujours une relation de cause à effet entre ces deux variables.<br></p>]]>
+- (c) <![CDATA[<p dir="ltr" style="text-align: left;">L'échantillonnage aléatoire est une méthode de sélection au hasard d'un sous-groupe de participants dans une population, où chaque membre a une chance égale d'être choisi, offrant ainsi une représentation fiable de la population entière.<br></p>]]>
+- (d) <![CDATA[<p dir="ltr" style="text-align: left;">Un échantillon de 100 femmes suisses d'une taille moyenne de 180 cm est représentatif de la distribution de taille des femmes en Suisse.<br></p>]]>
+- (e) <![CDATA[<p dir="ltr" style="text-align: left;">Les tests T, l'ANOVA et la régression linéaire peuvent être des techniques utiles dans une analyse de statistiques inférentielles.<br></p>]]>
+
+---
+
+### Question 42
+
+<text><![CDATA[<p dir="ltr"></p><ul><li>Supposons que nous fassions un test t pour savoir si la taille moyenne d'un échantillon simulé de 100 joueuses de la NBA féminine sélectionnées au hasard est significativement différente de la taille moyenne de 100 hommes néerlandais sélectionnés au hasard.</li><li>La capture d'écran suivante montre le résultat du test t.</li><li>Cochez toutes les affirmations correctes concernant les résultats de ce test t !</li></ul><img src="@@PLUGINFILE@@/image.png" alt="" role="presentation" class="img-fluid"><br><p></p><p></p>]]></text>
+
+- (a) La joueuse de basket-ball moyenne de l'échantillon mesure 186,1539 cm.
+- (b) <![CDATA[<p dir="ltr" style="text-align: left;">La valeur p du test indique que la différence entre les tailles moyennes est statistiquement significative au niveau de 5 %.<br></p>]]>
+- (c) <![CDATA[<p dir="ltr" style="text-align: left;">L'hypothèse nulle du test t est qu'il n'y a pas de différence significative de taille entre les deux populations (joueuses WNBA et hommes néerlandais).<br></p>]]>
+- (d) <![CDATA[<p dir="ltr">Le test t indique que les hommes néerlandais sont significativement plus grands que les joueuses de basket-ball de la WNBA.</p><p><br></p>]]>
+- (e) <![CDATA[<p dir="ltr" style="text-align: left;">Les résultats du test t indiquent que dans les échantillons simulés, il n'y a pas de différences significatives entre les tailles moyennes des joueuses de basket et des hommes néerlandais.<br></p>]]>
+
+---
+
+### Question 43
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Que signifie une valeur p inférieure à 0,05 dans le contexte d'un test statistique ?<br></p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;">Il y a une probabilité de 5% que l'hypothèse nulle soit vraie.<br></p>]]>
+- (b) <![CDATA[<p dir="ltr" style="text-align: left;">Il y a moins de 5% de chances que les résultats observés soient dus au hasard.<br></p>]]>
+- (c) <![CDATA[<p dir="ltr">La probabilité que l'hypothèse nulle soit vraie est supérieure à 95%.</p>]]>
+- (d) <![CDATA[<p dir="ltr" style="text-align: left;">Les données ne suivent pas une loi normale.<br></p>]]>
+- (e) <![CDATA[Toutes les autres réponses sont incorrectes.&nbsp;]]>
+
+---
+
+### Question 44
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Quel type de visualisation de données est bien adapté pour afficher la relation entre deux variables numériques ? (Cochez toutes les réponses correctes)<br></p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;">Histogramme</p>]]>
+- (b) <![CDATA[<p dir="ltr" style="text-align: left;">Diagramme à barres</p>]]>
+- (c) <![CDATA[<p dir="ltr" style="text-align: left;">Boîte à moustaches</p>]]>
+- (d) <![CDATA[<p dir="ltr" style="text-align: left;">Nuage de points</p>]]>
+- (e) <![CDATA[<p dir="ltr" style="text-align: left;">Toutes les réponses sont incorrectes</p>]]>
+
+---
+
+### Question 45
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Cochez toutes les réponses correctes concernant les fonctions R&nbsp;<span><em>setwd()</em></span>&nbsp;et&nbsp;<span><span style=""><em>getwd()</em></span>.</span><br></p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;"><span style="font-size: 15px;">Avec la fonction <em>setwd()</em>, je peux définir un dossier sur mon ordinateur à partir duquel R lit et extrait des données.</span><br></p>]]>
+- (b) <![CDATA[<p dir="ltr" style="text-align: left;"><span style="font-size: 15px;">Les chemins d'accès aux dossiers que l'on doit spécifier comme arguments dans <em>setwd()</em> diffèrent généralement entre différents ordinateurs.</span><br></p>]]>
+- (c) <![CDATA[<p dir="ltr" style="text-align: left;">Vous ne pouvez pas utiliser R si vous ne spécifiez pas votre répertoire de travail.<br></p>]]>
+- (d) <![CDATA[<p dir="ltr" style="text-align: left;">Toutes les variables, matrices, jeux de données, etc. que je crée dans une session R sont enregistrés sous forme de fichiers dans mon répertoire de travail.<br></p>]]>
+- (e) <![CDATA[<p dir="ltr" style="text-align: left;"><span style="font-size: 15px;">Vous pouvez afficher votre répertoire de travail actuel dans une session R avec la fonction <em>getwd()</em>.</span><br></p>]]>
+
+---
+
+### Question 46
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;"></p><p dir="ltr"># Exécutez le code R suivant et cochez toutes les réponses correctes :&nbsp;</p><p dir="ltr"><br></p><p dir="ltr">a &lt;- c(1,22,8,-5)</p>print(a)<br><br>class(a)<br><p></p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;">a est un vecteur.<br></p>]]>
+- (b) <![CDATA[<p dir="ltr" style="text-align: left;">a est un objet R de type numérique.<br></p>]]>
+- (c) <![CDATA[<p dir="ltr" style="text-align: left;">Le code crée un objet dans le volet <em>Environment</em> dans RStudio.<br></p>]]>
+- (d) <![CDATA[<p dir="ltr" style="text-align: left;">le code utilise la fonction de concaténation <em>c()</em>.<br></p>]]>
+
+---
+
+### Question 47
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;"></p><p dir="ltr"># Exécutez le code R suivant pour répondre aux questions :&nbsp;</p><p dir="ltr"><br></p><p dir="ltr">vecteur2 &lt;- c(1,2,3,4,1000, 2000)</p><br><p></p>]]></text>
+
+- (a) <![CDATA[<p dir="ltr" style="text-align: left;">La valeur médiane de vecteur2 est égale à 3.5.</p>]]>
+- (b) <![CDATA[<p dir="ltr" style="text-align: left;">La valeur moyenne de vecteur2 est égale à 501.00.</p>]]>
+- (c) <![CDATA[<p dir="ltr" style="text-align: left;">vecteur2 a une longueur de 3010.</p>]]>
+- (d) <![CDATA[<p dir="ltr" style="text-align: left;">vecteur2 est un objet de classe numérique.</p>]]>
+- (e) <![CDATA[<p dir="ltr" style="text-align: left;">Aucunes des autres réponses n'est correcte.</p>]]>
+
+---
+
+### Question 48
+
+<text><![CDATA[<p dir="ltr"><span style="font-size: 15px;">#&nbsp;</span><span style="font-size: 15px;"><em>length()</em>&nbsp;(angl. "longeur") est une fonction de R qui permet de compter le nombre d'éléments d'un vecteur.&nbsp;</span></p><p dir="ltr"><span style="font-size: 15px;"># Utilisez cette fonction pour calculer la longueur du vecteur v2 que vous pouvez créer avec le code R qui suit et entrez le résultat ci-dessous.</span></p><p dir="ltr"><span style="font-size: 15px;"><br></span></p><p dir="ltr"><span style="font-size: 15px;">v2 &lt;-c(log10(100):501)</span></p><p dir="ltr"><br></p>]]></text>
+
+*(write your answer below)*
+
+---
+
+### Question 49
+
+<text><![CDATA[<p dir="ltr"># Calculez la valeur médiane du vecteur numérique suivant :&nbsp;</p><p dir="ltr"><span style="font-size: 0.9375rem;">vecteur1 &lt;- c(1,2,3,4,1000, 2000)</span><br></p><p dir="ltr"><br></p><p dir="ltr"><br></p><p dir="ltr"><br></p>]]></text>
+
+*(write your answer below)*
+
+---
+
+### Question 50
+
+<text><![CDATA[<p dir="ltr"><span style="font-size: 15px;">Calculez la valeur médiane d'un vecteur composé de nombres entiers consécutifs compris entre -66 et 702 et saisissez le résultat numérique dans le champ de réponse.</span></p><p dir="ltr"><br></p>]]></text>
+
+*(write your answer below)*
+
+---
+
+### Question 51
+
+<text><![CDATA[<p dir="ltr"><span style="font-size: 15px;">Calculez la valeur médiane d'un vecteur composé de nombres entiers consécutifs compris entre -66 et 136 et saisissez le résultat numérique dans le champ de réponse.</span></p><p dir="ltr"><br></p>]]></text>
+
+*(write your answer below)*
+
+---
+
+### Question 52
+
+<text><![CDATA[<p dir="ltr"><span style="font-size: 15px;">Calculez la valeur médiane d'un vecteur composé de nombres entiers consécutifs compris entre -58 et 136 et saisissez le résultat numérique dans le champ de réponse.</span></p><p dir="ltr"><br></p>]]></text>
+
+*(write your answer below)*
+
+---
+
+### Question 53
+
+<text><![CDATA[<p dir="ltr"><span style="font-size: 15px;">Calculez la valeur médiane d'un vecteur composé de nombres entiers consécutifs compris entre -58 et 264 et saisissez le résultat numérique dans le champ de réponse.</span></p><p dir="ltr"><br></p>]]></text>
+
+*(write your answer below)*
+
+---
+
+### Question 54
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Quel est le prix en USD du diamant le moins cher dans le jeu de données diamonds ? (Donnez une valeur numérique comme réponse sans unités, etc.).<br></p>]]></text>
+
+*(write your answer below)*
+
+---
+
+### Question 55
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Quel est le prix médian en USD des diamants dans le jeu de données diamonds (arrondi au dollar entier)?<br></p>]]></text>
+
+*(write your answer below)*
+
+---
+
+### Question 56
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Quel est le prix en USD du diamant le plus cher dans le jeu de données diamonds ? (Donnez une valeur numérique comme réponse sans unités, etc.).<br></p>]]></text>
+
+*(write your answer below)*
+
+---
+
+### Question 57
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Quelle est la longueur du pétale le plus court dans le jeu de données iris ? (saisissez simplement la valeur numérique, sans indiquer d'unités, etc.)<br></p>]]></text>
+
+*(write your answer below)*
+
+---
+
+### Question 58
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Quelle est la longueur du pétale le plus long dans le jeu de données iris ? (saisissez simplement la valeur numérique, sans indiquer d'unités, etc.)<br></p>]]></text>
+
+*(write your answer below)*
+
+---
+
+### Question 59
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Quelle est la longueur du sépale le plus court dans le jeu de données iris ? (saisissez simplement la valeur numérique, sans indiquer d'unités, etc.)<br></p>]]></text>
+
+*(write your answer below)*
+
+---
+
+### Question 60
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Quelle est la longueur du sépale le plus long dans le jeu de données iris ? (saisissez simplement la valeur numérique, sans indiquer d'unités, etc.)<br></p>]]></text>
+
+*(write your answer below)*
+
+---
+
+### Question 61
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Combien de chevaux-vapeur (angl. "gross horse power") a la Chrysler Imperial dans le jeu de données mtcars ?<br></p>]]></text>
+
+*(write your answer below)*
+
+---
+
+### Question 62
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Combien de chevaux-vapeur (angl. "gross horse power") a la Maserati Bora dans le jeu de données mtcars ?<br></p>]]></text>
+
+*(write your answer below)*
+
+---
+
+### Question 63
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Combien de chevaux-vapeur (angl. "gross horse power") a la Pontiac Firebird dans le jeu de données mtcars ?<br></p>]]></text>
+
+*(write your answer below)*
+
+---
+
+### Question 64
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Combien de chevaux-vapeur (angl. "gross horse power") a la Volvo 142E dans le jeu de données mtcars ?<br></p>]]></text>
+
+*(write your answer below)*
+
+---
+
+### Question 65
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Combien de posts Instagram de Rihanna (username = badgirlriri) sont contenus dans le jeu de données <strong>igposts.csv</strong> que nous avons vu en classe ?<br></p>]]></text>
+
+*(write your answer below)*
+
+---
+
+### Question 66
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Combien de posts Instagram de Selena Gomez (username = selenagomez) sont contenus dans le jeu de données <strong>igposts.csv</strong> que nous avons vu en classe ?</p>]]></text>
+
+*(write your answer below)*
+
+---
+
+### Question 67
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Combien de posts Instagram du type <strong>Album</strong> se trouvent dans le jeu de données igposts.csv que nous avons vu en classe ?<br></p>]]></text>
+
+*(write your answer below)*
+
+---
+
+### Question 68
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Combien de posts Instagram du type <strong>Album</strong> se trouvent dans le jeu de données igposts.csv que nous avons vu en classe ?</p>]]></text>
+
+*(write your answer below)*
+
+---
+
+### Question 69
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Combien de voitures du jeu de données <strong>mtcars</strong> présentent une valeur mpg d'au moins 20 ou plus ?</p>]]></text>
+
+*(write your answer below)*
+
+---
+
+### Question 70
+
+<text><![CDATA[<p dir="ltr">Veuillez importer le jeu de données <strong>reponses.csv</strong> dans RStudio et répondre à la question : <strong>Combien d'observations contient le jeu de données reponses.csv ?</strong></p><p dir="ltr"><span style="font-size: 0.9375rem;">(Le même fichier reponses.csv est utilisé pour toutes les questions de Problem Set 3 de votre groupe qui s'y rapportent. Vous ne devez donc charger le fichier qu'une seule fois dans RStudio).</span><br></p>]]></text>
+
+*(write your answer below)*
+
+---
+
+### Question 71
+
+<text><![CDATA[<p dir="ltr">Veuillez importer le jeu de données <strong>reponses.csv</strong> dans RStudio et répondre à la question : <span>Combien de <strong>variables</strong> contient le jeu de données reponses.csv ?</span></p><p dir="ltr"><span style="font-size: 0.9375rem;">(Le même fichier reponses.csv est utilisé pour toutes les questions de Problem Set 3 de votre groupe qui s'y rapportent. Vous ne devez donc charger le fichier qu'une seule fois dans RStudio).</span><br></p>]]></text>
+
+*(write your answer below)*
+
+---
+
+### Question 72
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;"></p><p dir="ltr">Veuillez importer le jeu de données&nbsp;<strong>reponses.csv</strong>&nbsp;dans RStudio et répondre à la question :&nbsp;<strong>En ce qui concerne la variable "genre" : combien de femmes y a-t-il dans ce jeu de données ?</strong></p><p dir="ltr"><span>(Le même fichier reponses.csv est utilisé pour toutes les questions de Problem Set 3 de votre groupe qui s'y rapportent. Vous ne devez donc charger le fichier qu'une seule fois dans RStudio).</span></p><br><p></p>]]></text>
+
+*(write your answer below)*
+
+---
+
+### Question 73
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;"></p><p dir="ltr">Veuillez importer le jeu de données&nbsp;<strong>reponses.csv</strong>&nbsp;dans RStudio et répondre à la question :&nbsp;<span>En ce qui concerne la variable "genre" : combien d'<strong>hommes</strong> y a-t-il dans ce jeu de données ?</span></p><p dir="ltr"><span>(Le même fichier reponses.csv est utilisé pour toutes les questions de Problem Set 3 de votre groupe qui s'y rapportent. Vous ne devez donc charger le fichier qu'une seule fois dans RStudio).</span></p><br><p></p>]]></text>
+
+*(write your answer below)*
+
+---
+
+### Question 74
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Quel est le poids moyen en grammes des pingouins du jeu de données penguins ?&nbsp;(Veuillez arrondir au gramme).<br></p>]]></text>
+
+*(write your answer below)*
+
+---
+
+### Question 75
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Quel est le poids moyen en grammes des pingouins <strong>femelles</strong> dans le jeu de données penguins ? (Veuillez arrondir au gramme).<br></p>]]></text>
+
+*(write your answer below)*
+
+---
+
+### Question 76
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;"></p>Dans le jeu de données <strong>reponses_socio.csv</strong>, de combien de minutes les étudiant(e)s <strong>possédant un passeport suisse</strong> ont-ils besoin en moyenne pour se rendre à l'université ? (arrondir à la minute entière)]]></text>
+
+*(write your answer below)*
+
+---
+
+### Question 77
+
+<text><![CDATA[<p dir="ltr"><span style="font-size: 15px;"># Exécutez le code R suivant pour créer <em>v1</em>. Ensuite, avec votre propre code, calculez la variance de <em>v1</em>.</span></p><p dir="ltr"><span style="font-size: 15px;">v1&nbsp;&lt;- c(1:104)</span></p><p dir="ltr"><br></p>]]></text>
+
+*(write your answer below)*
+
+---
+
+### Question 78
+
+<text><![CDATA[<p dir="ltr"><span style="font-size: 15px;"># Exécutez le code R suivant pour créer <em>v1</em>. Ensuite, avec votre propre code, calculez la variance de <em>v1</em>.</span></p><p dir="ltr"><span style="font-size: 15px;">v1&nbsp;&lt;- c(6:104)</span></p><p dir="ltr"><br></p>]]></text>
+
+*(write your answer below)*
+
+---
+
+### Question 79
+
+<text><![CDATA[<p dir="ltr"><span style="font-size: 15px;"># Exécutez le code R suivant pour créer <em>v1</em>. Ensuite, avec votre propre code, calculez la variance de <em>v1</em>.</span></p><p dir="ltr"><span style="font-size: 15px;">v1&nbsp;&lt;- c(6:109)</span></p><p dir="ltr"><br></p>]]></text>
+
+*(write your answer below)*
+
+---
+
+### Question 80
+
+<text><![CDATA[<p dir="ltr"><span style="font-size: 15px;"># Exécutez le code R suivant pour créer <em>v1</em>. Ensuite, avec votre propre code, calculez la variance de <em>v1</em>.</span></p><p dir="ltr"><span style="font-size: 15px;">v1&nbsp;&lt;- c(11:205)</span></p><p dir="ltr"><br></p>]]></text>
+
+*(write your answer below)*
+
+---
+
+### Question 81
+
+<text><![CDATA[<p dir="ltr">Quel est le <strong>User.Name</strong> du compte Instagram ayant le plus de Followers.at.Posting qui a publié des posts dans le jeu de données igposts.csv que nous avons vu en classe ?</p><p dir="ltr">(Veuillez insérer le User.Name exact, sans modifier la casse et sans insérer d'espacement, etc.)</p>]]></text>
+
+*(write your answer below)*
+
+---
+
+### Question 82
+
+<text><![CDATA[<p dir="ltr">Quel est le <strong>User.Name</strong> du compte Instagram qui a publié le post qui a reçu <strong>le plus grand nombre </strong>de <strong>Views</strong> dans le jeu de données <strong>igposts.csv</strong> que nous avons vu en classe ?</p>
+<p dir="ltr">(Veuillez insérer le User.Name exact, sans modifier la casse et sans insérer d'espacement, etc.)</p>]]></text>
+
+*(write your answer below)*
+
+---
+
+### Question 83
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Dans le jeu de données <strong>reponses_socio.csv</strong>, quel <strong>genre</strong> a le <strong>trajet moyen</strong> le plus court en minutes pour se rendre à l'université ?&nbsp;</p><p dir="ltr" style="text-align: left;">(veuillez taper le genre exactement comme il est mentionné dans le jeu de données).<br></p>]]></text>
+
+*(write your answer below)*
+
+---
+
+### Question 84
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;"></p><p _d-id="383"># Le code R suivant ouvre une page d'aide dans Rstudio lorsqu'il est exécuté : </p><p _d-id="384"><br _d-id="380"></p><p _d-id="385">?typeof()</p><p></p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 85
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Dans R, la fonction c() peut être utilisée pour concaténer des éléments afin de créer des vecteurs.<br></p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 86
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">le # permet d'insérer des commentaires dans le script, sans que cela ait des conséquences sur mon codage.</p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 87
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">En statistique et en méthodes quantitatives en science sociales, c'est une convention de présenter les données dans des tableaux avec les unités statistiques (observations, cas, participants, etc.) en lignes et les variables en colonnes.<br></p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 88
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Le terme CSV désigne un&nbsp;<span style="font-size: 0.9375rem;">format de texte ouvert permettant de représenter des données tabulaires
+sous forme de valeurs séparées par des virgules.</span></p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 89
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">En général, je peux enregistrer les données issues de ma session R sur mon ordinateur (par exemple, un data frame que j'ai créée) sous la forme de fichiers CSV.<br></p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 90
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Les objets stockés dans l'environnement ne sont généralement stockés que temporairement pour la session R en cours.<br></p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 91
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;"><span style="font-size: 15px;">La variable <em>genre</em>, par exemple pour les participants à une enquête, est généralement utilisée comme facteur hiérarchique dans R.</span><br></p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 92
+
+<text><![CDATA[<p dir="ltr"># Le code R suivant charge le paquet <em>tidyverse</em> pour une session R en cours seulement si ce paquet a été préalablement installé sur votre ordinateur :</p><p dir="ltr"><br></p><p dir="ltr">library(tidyverse)</p><p dir="ltr"><br></p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 93
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;"></p><p _d-id="122738"># Le code suivant crée une matrice de dimension 5 x 10 :</p><p _d-id="122739"><br _d-id="122731"></p><p _d-id="122740">matrice1 &lt;- matrix(c(5:10), nrow = 5, ncol = 10)</p><br><p></p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 94
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;"># Le code suivant crée une variable textuelle lorsqu'il est exécuté :<br></p><p dir="ltr" style="text-align: left;"><span style="font-size: 0.9375rem;"><br></span></p><p dir="ltr" style="text-align: left;"><span style="font-size: 0.9375rem;">monstre &lt;- "vampire"</span><br></p><p dir="ltr" style="text-align: left;"><span style="font-size: 0.9375rem;"><br></span></p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 95
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">#&nbsp;Les deux lignes de code suivantes créent exactement la même variable lorsqu'elles sont exécutées :</p><p dir="ltr" style="text-align: left;"><br></p><p dir="ltr" style="text-align: left;">a &lt;- "Université de Fribourg"</p><p dir="ltr" style="text-align: left;">a = "Université de Fribourg"</p><p dir="ltr" style="text-align: left;"><br></p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 96
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Dans R, l'opérateur d'affectation (<em>&lt;-</em>)&nbsp; peut être utilisé pour créer des objets, tels que des simples variables à un élément, des vecteurs, des matrices et des data frames.<br></p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 97
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Une visualisation des données peut servir à l'analyse exploratoire des données.<br></p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 98
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">la fonction <strong>as.factor()</strong> peut être utilisée pour transformer des variables textuelles et numériques en facteurs.</p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 99
+
+<text>Un boxplot peut être utilisé pour visualiser la distribution, la moyenne, les déciles et les valeurs extrêmes d'un ensemble de données.</text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 100
+
+<text><![CDATA[<p dir="ltr"># Le code suivant crée un histogramme qui indique une loi normale :</p><p dir="ltr">ggplot(data=diamonds, aes(x=price)) +&nbsp;<span style="font-size: 0.9375rem;">geom_histogram(binwidth = 600, fill="steelblue", color="black") +&nbsp;</span><span style="font-size: 0.9375rem;">labs(title = "Histogramme des prix dans le jeu de données diamonds",&nbsp;</span><span style="font-size: 0.9375rem;">subtitle = "n = 53 940 observations",</span><span style="font-size: 0.9375rem;">&nbsp; x = "Prix en USD",&nbsp;</span><span style="font-size: 0.9375rem;">y = "Fréquence") +</span><span style="font-size: 0.9375rem;">&nbsp; theme_minimal()</span></p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 101
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;"><span>&nbsp;La couche <strong>geom_smooth(method = lm)</strong>
+peut être utilisé pour ajouter une ligne de régression à un
+nuage de points dans ggplot2.</span><br></p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 102
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">ggplot2 est un paquet R qui fait partie du tidyverse.<br></p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 103
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">ggthemes est un paquet R qui fait partie du tidyverse.<br></p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 104
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Le graphique suivant montre une simulation d'un million de tailles aléatoires d'hommes en Suisse, réalisée avec la fonction rnorm(). Il illustre le fait que plus le nombre de simulations est élevé, plus une loi normale est approchée avec précision.<br></p><p dir="ltr" style="text-align: left;"><img src="@@PLUGINFILE@@/4ee764d7-ce09-44b2-9990-97c0187a6f7c.png" alt="histogramme de simulation de tailles d'hommes" width="2042" height="1201" class="img-fluid atto_image_button_text-bottom"><br></p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 105
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Un fichier CSV stocke des données textuelles dans lesquelles les valeurs sont généralement séparées par des espaces. </p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 106
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Lors de l'importation de fichiers CSV dans RStudio, il est important de savoir si les séparateurs décimaux des valeurs numériques sont des points (par ex. 4.5) ou des virgules (par ex. 4,5).<br></p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 107
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Dans le jeu de données igposts.csv, l'actrice de Bollywood Kiara Advani (Account = KIARA) présente le ratio de commentaires par follower le plus élevé de tous les comptes Instagram du jeu de données.<br></p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 108
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Dans le jeu de données igposts.csv, la variable "<strong>Views</strong>" désigne le nombre de fois qu'un post Instagram a été vu par les utilisateurs.<br></p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 109
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">L'unité statistique (ou unité d'analyse) du jeu de données igposts.csv sont les comptes Instagram de célébrités telles que Cristiano Ronaldo et Kendall Jenner.<br></p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 110
+
+<text><![CDATA[<p>Exécutez le code R suivant pour savoir si l'affirmation suivante est vraie ou fausse :</p>
+<p>Le modèle de voiture Toyota Corolla est le plus économe en carburant par rapport à son poids dans le jeu de données mtcars.</p>
+<p></p>
+<p># Code R :</p>
+<p>data(mtcars)</p>
+<p></p>
+<p>mtcars %&gt;% <span style="font-size: 0.9375rem;">select(mpg, wt) %&gt;% </span><span style="font-size: 0.9375rem;">mutate(mpg_par_livre = mpg/wt) %&gt;% </span><span style="font-size: 0.9375rem;">arrange(desc(mpg_par_livre))</span></p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 111
+
+<text><![CDATA[Dans le code R suivant, l'argument <strong>na.strings = "#N/A"</strong> indique à RStudio comment les valeurs manquantes sont désignées dans le fichier CSV importé.<br><br># Code R en question :<br><br><p dir="ltr" style="text-align: left;"><span id="cb154-3" style="font-size: 0.9375rem;">igposts &lt;- read.csv("/Users/domus_julian/Documents/GitHub/intro-a-R/code/igposts.csv",</span><span style="font-size: 0.9375rem;">
+</span><span id="cb154-4" style="font-size: 0.9375rem;"><a href="https://julesaberlin.github.io/intro-a-R/#cb154-4" aria-hidden="true" tabindex="-1"></a>    encoding = "UTF-8", na.strings = "#N/A")</span><br></p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 112
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Avec des échantillons de grande taille, même des différences (apparemment) faibles entre les moyennes de deux groupes peuvent devenir statistiquement significatives (par exemple, la taille moyenne des hommes dans deux pays différents).<br></p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 113
+
+<text><![CDATA[<p dir="ltr"># Le code suivant fournit des statistiques déscriptives du jeu de données mtcars :</p><p dir="ltr">data(mtcars)</p><p dir="ltr">summary(mtcars)</p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 114
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">En raison des lois de la physique, on peut raisonnablement supposer que les voitures plus lourdes consomment généralement plus de carburant par kilomètre que les voitures plus légères. En d'autres termes, nous pouvons supposer qu'il existe <strong>une relation de cause à effet</strong> entre le poids du véhicule et l'efficacité énergétique.<br></p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 115
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Le <strong>R carré</strong> d'un modèle de régression linéaire indique le pourcentage de la variabilité de la variable dépendante (y) qui peut être expliquée par la variabilité des variables indépendantes (x1, x2, etc.).<br></p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 116
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Dans le jeu de données <strong>reponses_socio.csv</strong>, en moyenne, les étudiants <strong>sans</strong> passeport suisse ont besoin de moins de temps pour se rendre à l'université que leurs camarades suisses.</p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 117
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Les statistiques descriptives révèlent souvent des informations et des tendances intéressantes dans les données, même avant l'application de statistiques inférentielles.<br></p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 118
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Dans la capture d'écran suivante de RStudio, le script R se trouve dans le volet B :</p><p dir="ltr" style="text-align: left;"><img src="@@PLUGINFILE@@/image.png" alt="" role="presentation" class="img-fluid"><br></p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 119
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">En général, la syntaxe des commandes R n'est pas sensible à la casse, c'est à dire aux lettres majuscules et minuscules.</p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 120
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Le logiciel RStudio, comme R, est un langage de programmation open source.</p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 121
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">RStudio Desktop est un logiciel, dit environnement de développement, qui offre une interface utilisateur graphique permettant d'utiliser R, un langage de programmation.<br></p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 122
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;"><span style="font-size: 15px;">Si vous disposez d'un échantillon de 100 T-shirts et que chaque T-shirt est soit petit, soit moyen, soit grand, la variable <em>taille de T-shirt</em> peut être considérée comme une variable catégorielle ordinale.</span><br></p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 123
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;"><span style="font-size: 15px;">En statistique et en méthodes quantitatives des sciences sociales, il est de convention de placer chaque observation dans une colonne différente d'un tableau de données.</span><br></p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 124
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;">Le <strong>tidyverse</strong>, contraction de <em>tidy</em> et de <em>universe</em>, est une collection de paquets R (angl. "R packages") open source.</p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+
+### Question 125
+
+<text><![CDATA[<p dir="ltr" style="text-align: left;"></p><p dir="ltr"># Le code R suivant crée un vecteur avec 10 éléments numériques lorsqu'il est exécuté :</p><p dir="ltr"><br></p><p dir="ltr">n &lt;- "079 123 45 67"</p><br><p></p>]]></text>
+
+- (a) true
+- (b) false
+
+---
+

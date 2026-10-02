@@ -1,0 +1,449 @@
+---
+title: "Chapitre 3 : Exercises"
+format:
+  html:
+    extensions:
+      - fenced_divs
+---
+
+### Question 1 22
+
+::: {.question}
+Exécutez le code R suivant et cochez toutes les réponses correctes :
+
+```r
+a <- c(0:15)
+print(a)
+```
+
+
+::: {.choices}
+
+* [ ] a) `print(a)` est une fonction qui affiche l’objet `a` dans la console.
+* [ ] b) Au lieu d’utiliser `print(a)`, on pourrait simplement afficher l’objet `a` en exécutant son nom `a`.
+* [ ] c) La fonction `print()` dans R sert à imprimer le code R sur papier avec l’imprimante.
+* [ ] d) Dans cet exemple de code, `a` est une fonction R.
+* [ ] e) Dans cet exemple de code, un vecteur nommé `c` est créé.
+  
+
+### Question 2 122
+
+Si vous disposez d’un échantillon de 100 T-shirts et que chaque T-shirt est soit petit, soit moyen, soit grand, la variable taille de T-shirt peut être considérée comme une variable catégorielle ordinale.
+
+::: {.choices}
+
+* [ ] a) Vrai
+* [ ] b) Faux
+  
+
+### Question 3 50
+
+Calculez la valeur médiane d’un vecteur composé de nombres entiers consécutifs compris entre -66 et 702 et saisissez le résultat numérique dans le champ de réponse.
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%"></textarea>
+:::
+
+### Question 4 120
+
+Le logiciel RStudio, comme R, est un langage de programmation open source.
+
+::: {.choices}
+
+* [ ] a) Vrai
+* [ ] b) Faux
+
+### Question 5 8
+
+::: {.question}
+Exécutez le code R suivant et cochez toutes les réponses correctes :
+
+```r
+name    <- c("Manny", "Sid", "Diego", "Ellie", "Peaches", "Scrat", "Rudy", "Buck")
+species <- c("mammoth", "sloth", "sabertooth", "mammoth", "mammoth", "squirrel", "dinosaur", "weasel")
+female  <- c(FALSE, FALSE, FALSE, TRUE, TRUE, FALSE, FALSE, FALSE)
+age     <- c(30, 20, 35, 25, 7, 4, 100, 28)
+weight  <- c(5000, 80, 400, 4000, 1000, 1, 10000, 3)
+
+ice_age_df <- data.frame(name, species, female, age, weight)
+ice_age_df
+```
+
+
+
+::: {.choices}
+
+* [ ] a) La colonne `female` (fr. "femelle") du jeu de données `ice_age_df` est de type logique (logical).
+* [ ] b) Les unités statistiques du jeu de données `ice_age_df` sont les noms, les espèces, le genre (femelle), le poids et l’âge des animaux de l’ère glaciaire.
+* [ ] c) L’unité statistique du jeu de données `ice_age_df` est un animal de l’âge de glace, avec n = 8 observations.
+* [ ] d) Le jeu de données `ice_age_df` contient des informations sur trois mammouths différents.
+* [ ] e) Buck, l’écureuil, pèse 1 kg.
+  
+
+### Question 6 87
+
+En statistique et en méthodes quantitatives en science sociales, c’est une convention de présenter les données dans des tableaux avec les unités statistiques (observations, cas, participants, etc.) en lignes et les variables en colonnes.
+
+::: {.choices}
+
+* [ ] a) Vrai
+* [ ] b) Faux
+ 
+
+### Question 7 86
+
+Le `#` permet d’insérer des commentaires dans le script, sans que cela ait des conséquences sur mon codage.
+
+::: {.choices}
+
+* [ ] a) Vrai
+* [ ] b) Faux
+  
+
+### Question 8
+
+::: {.question}
+Exécutez le code R suivant et cochez toutes les réponses correctes :
+
+```r
+name    <- c("Manny", "Sid", "Diego", "Ellie", "Peaches", "Scrat", "Rudy", "Buck")
+species <- c("mammoth", "sloth", "sabertooth", "mammoth", "mammoth", "squirrel", "dinosaur", "weasel")
+female  <- c(FALSE, FALSE, FALSE, TRUE, TRUE, FALSE, FALSE, FALSE)
+age     <- c(30, 20, 35, 25, 7, 4, 100, 28)
+weight  <- c(5000, 80, 400, 4000, 1000, 1, 10000, 3)
+
+ice_age_df <- data.frame(name, species, female, age, weight)
+print(ice_age_df)
+```
+
+
+
+
+### Question 9 94
+
+Le code suivant crée une variable textuelle lorsqu’il est exécuté :
+
+```r
+monstre <- "vampire"
+```
+
+::: {.choices}
+
+* [ ] a) Vrai
+* [ ] b) Faux
+ 
+
+### Question 10 123
+
+En statistique et en méthodes quantitatives des sciences sociales, il est de convention de placer chaque observation dans une colonne différente d’un tableau de données.
+
+::: {.choices}
+
+* [ ] a) Vrai
+* [ ] b) Faux
+  
+
+### Question 11 118
+
+Dans la capture d’écran suivante de RStudio, le script R se trouve dans le volet B :
+
+```{r echo=FALSE, out.width="60%"}
+knitr::include_graphics("problemset_1_images/ch_1_question_11.png")
+```
+
+::: {.choices}
+
+* [ ] a) Vrai
+* [ ] b) Faux
+
+
+### Question 12 48
+
+`length()` (angl. “length”) est une fonction de R qui permet de compter le nombre d’éléments d’un vecteur.
+Utilisez cette fonction pour calculer la longueur du vecteur `v2` que vous pouvez créer avec le code R qui suit et entrez le résultat ci-dessous.
+
+```r
+v2 <- c(log10(100):501)
+```
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+### Question 13 96
+
+Dans R, l’opérateur d’affectation (`<-`) peut être utilisé pour créer des objets, tels que des simples variables à un élément, des vecteurs, des matrices et des data frames.
+
+::: {.choices}
+
+* [ ] a) Vrai
+* [ ] b) Faux
+  
+
+### Question 14 45
+
+::: {.question}
+Cochez toutes les réponses correctes concernant les fonctions R `setwd()` et `getwd()`.
+
+
+::: {.choices}
+
+* [ ] a) Avec la fonction `setwd()`, je peux définir un dossier sur mon ordinateur à partir duquel R lit et extrait des données.
+* [ ] b) Les chemins d’accès aux dossiers que l’on doit spécifier comme arguments dans `setwd()` diffèrent généralement entre différents ordinateurs.
+* [ ] c) Vous ne pouvez pas utiliser R si vous ne spécifiez pas votre répertoire de travail.
+* [ ] d) Toutes les variables, matrices, jeux de données, etc. que je crée dans une session R sont enregistrées sous forme de fichiers dans mon répertoire de travail.
+* [ ] e) Vous pouvez afficher votre répertoire de travail actuel dans une session R avec la fonction `getwd()`.
+  
+
+### Question 15 77
+
+Exécutez le code R suivant pour créer `v1`. Ensuite, avec votre propre code, calculez la variance de `v1`.
+
+```r
+v1 <- c(1:104)
+```
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+### Question 16 91
+
+La variable genre, par exemple pour les participants à une enquête, est généralement utilisée comme facteur hiérarchique dans R.
+
+::: {.choices}
+
+* [ ] a) Vrai
+* [ ] b) Faux
+
+
+### Question 17 85
+
+Dans R, la fonction `c()` peut être utilisée pour concaténer des éléments afin de créer des vecteurs.
+
+::: {.choices}
+
+* [ ] a) Vrai
+* [ ] b) Faux
+  
+
+### Question 18 11
+
+::: {.question}
+Exécutez le code R suivant et cochez toutes les réponses correctes :
+
+```r
+m1 <- matrix(c(1:25), nrow = 5, byrow = TRUE)
+print(m1)
+```
+
+
+
+::: {.choices}
+
+* [ ] a) `m1` est une matrice de dimension 5 × 5 (5 lignes et 5 colonnes).
+* [ ] b) Dans le code R ci-dessus, l’argument `byrow = TRUE` spécifie que les valeurs de la matrice `m1` sont remplies par ligne.
+* [ ] c) `m1` est une matrice de type textuel.
+* [ ] d) `m1` est une matrice à 24 éléments.
+* [ ] e) Le code R ci-dessus ne fonctionne pas et génère un message d’erreur.
+  
+
+### Question 19 46
+
+::: {.question}
+Exécutez le code R suivant et cochez toutes les réponses correctes :
+
+```r
+a <- c(1, 22, 8, -5)
+print(a)
+class(a)
+```
+
+::: {.choices}
+
+* [ ] a) `a` est un vecteur.
+* [ ] b) `a` est un objet R de type numérique.
+* [ ] c) Le code crée un objet dans le volet Environment dans RStudio.
+* [ ] d) Le code utilise la fonction de concaténation `c()`.
+  
+
+### Question 20 17
+
+::: {.question}
+Exécutez le code suivant et cochez toutes les réponses correctes :
+
+```r
+n <- "079 123 45 67"
+print(n)
+class(n)
+```
+
+
+
+::: {.choices}
+
+* [ ] a) Le code crée un objet numérique avec 10 éléments.
+* [ ] b) `n` est une variable de type textuelle.
+* [ ] c) `n` est une variable avec un élément.
+* [ ] d) Si l’on a créé correctement `n` comme décrit ci-dessus et que l’on exécute `n * 2`, on obtient un message d’erreur.
+* [ ] e) Dans R, il n’est jamais utile de produire des numéros sous forme de texte.
+
+
+---
+## Questions avancées
+
+### Question 1
+
+::: {.question}
+Écrivez une expression R vectorisée pour calculer la somme des nombres pairs de 1 à 100. Quel résultat obtenez-vous et pourquoi ?
+:::
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+### Question 2
+
+::: {.question}
+On considère `v <- seq(from = 0, to = 1, length.out = 11)` :
+
+1. Que renvoie `v[5]` ? 
+2. Comparez cette séquence à `c(0, 0.1, 0.2, …, 1)` — sont-elles identiques ? Justifiez.
+:::
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+### Question 3
+
+::: {.question}
+Créez un vecteur logique de longueur 20 alternant `TRUE`, `FALSE`, … (débute par `TRUE`) :
+
+1. Sans boucle ? 
+2. Extraire positions impaires ?
+:::
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+### Question 4
+
+::: {.question}
+Construisez un data frame `df` avec :
+
+* `A` = 1:5 
+* `B` = carrés 1:5 
+  Puis commande pour l’élément \[4,2].
+  \:::
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+### Question 5
+
+::: {.question}
+
+```r
+tailles <- factor(c("S","M","L","M","S"),
+                   order=TRUE,
+                   levels=c("S","M","L"))
+```
+
+1. Convertir en numérique (`S→1`,`M→2`,`L→3`). 
+2. Pièges de `as.numeric(tailles)` sans précautions.
+:::
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+### Question 6
+
+::: {.question}
+
+```r
+m <- matrix(1:25, nrow=5, byrow=FALSE)
+```
+
+1. Somme colonne 3 sans boucle ? 
+2. Sous-matrice lignes 2–4 & colonnes 1 & 5 ?
+:::
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+### Question 7
+
+::: {.question}
+Quelle différence entre `class()` et `typeof()` ? Donnez un exemple.
+:::
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+### Question 8
+
+::: {.question}
+
+```r
+x <- c(2,4,NA,8,10)
+```
+
+1. Variance sans `NA` ? 
+2. Rôle de `na.rm` ?
+:::
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+### Question 9
+
+::: {.question}
+En une ligne, utilisez `getwd()` et `setwd()` pour passer au dossier parent.
+:::
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+### Question 10
+
+::: {.question}
+Soit `df` avec une colonne `X` :
+Ajoutez `Y = (X - mean(X)) / sd(X)` en base R.
+:::
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::

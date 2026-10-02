@@ -1,0 +1,411 @@
+---
+title: "Chapitre 13 : Exercises"
+format:
+  html:
+    extensions:
+      - fenced_divs
+---
+
+
+### Question 1 39
+
+::: {.question}
+Exécutez le code suivant et cochez toutes les réponses correctes :
+
+```r
+data(mtcars)
+modele_1 <- lm(formula = mpg ~ wt + qsec + am, data = mtcars)
+summary(modele_1)
+```
+
+
+
+::: {.choices}
+
+* [ ] a) Ce modèle de régression pourrait être représenté visuellement par une ligne droite passant par un nuage de points.
+* [ ] b) mpg est la variable dépendante.
+* [ ] c) wt, qsec et am sont les variables indépendantes.
+* [ ] d) Toutes les variables x dans modele_1 sont significatives au niveau de 5 %.
+* [ ] e) Toutes les autres réponses sont correctes.
+  
+
+### Question 2 40
+
+::: {.question}
+Cochez toutes les réponses correctes concernant le graphique suivant (source des données : questionnaire de l’exercice méthodes II) :
+
+```{r echo=FALSE, out.width="60%"}
+knitr:: include_graphics("problemset_4_images/ch_4_question_2.png")
+```
+:::
+
+::: {.choices}
+
+* [ ] a) L’histogramme montre que le nombre de frères et sœurs (variable *fraterie*) suit une loi normale.
+* [ ] b) L’histogramme montre que la plupart des étudiant(e)s de la classe ont grandi dans des constellations familiales traditionnelles.
+* [ ] c) L’histogramme montre qu’il y a plus d’étudiant(e)s qui ont 3 frères et sœurs que d’étudiant(e)s qui sont des enfants uniques.
+* [ ] d) La constellation la plus fréquente est celle des étudiant(e)s ayant un seul frère ou une seule sœur.
+* [ ] e) Une personne ayant participé au questionnaire a indiqué qu’elle avait 7 frères et sœurs.
+  
+
+### Question 3 76
+
+Dans le jeu de données **reponses_socio.csv**, de combien de minutes les étudiant(e)s **possédant un passeport suisse** ont-ils besoin en moyenne pour se rendre à l’université ? (arrondir à la minute entière)
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+### Question 4 74
+
+Quel est le poids moyen en grammes des pingouins du jeu de données **penguins** ? (Veuillez arrondir au gramme.)
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+### Question 5 114
+
+En raison des lois de la physique, on peut raisonnablement supposer que les voitures plus lourdes consomment généralement plus de carburant par kilomètre que les voitures plus légères. En d’autres termes, nous pouvons supposer qu’il existe **une relation de cause à effet** entre le poids du véhicule et l’efficacité énergétique.
+
+::: {.choices}
+
+* [ ] a) Vrai
+* [ ] b) Faux
+  
+
+### Question 6 37
+
+Cochez toutes les affirmations correctes concernant les **statistiques descriptives** !
+
+::: {.choices}
+
+* [ ] a) L’objectif des statistiques descriptives est principalement d’analyser les relations causales entre les variables.
+* [ ] b) La partie descriptive d’une analyse statistique fournit généralement des indications descriptives telles que la taille de l’échantillon (n), les fréquences des variables catégorielles et les moyennes des variables numériques.
+* [ ] c) Les tests d’hypothèse, par exemple avec un test t, sont une étape courante des statistiques descriptives.
+* [ ] d) Les statistiques descriptives précèdent souvent les statistiques inférentielles dans une analyse de données quantitatives en sciences sociales.
+* [ ] e) Certaines visualisations de données, comme les histogrammes, se prêtent bien à la présentation de statistiques descriptives.
+  
+
+### Question 7 43
+
+Que signifie une valeur p inférieure à 0,05 dans le contexte d’un test statistique ?
+
+::: {.choices}
+
+* [ ] a) Il y a une probabilité de 5 % que l’hypothèse nulle soit vraie.
+* [ ] b) Il y a moins de 5 % de chances que les résultats observés soient dus au hasard.
+* [ ] c) La probabilité que l’hypothèse nulle soit vraie est supérieure à 95 %.
+* [ ] d) Les données ne suivent pas une loi normale.
+* [ ] e) Toutes les autres réponses sont incorrectes.
+  
+
+### Question 8 112
+
+Avec des échantillons de grande taille, même des différences (apparemment) faibles entre les moyennes de deux groupes peuvent devenir statistiquement significatives (par exemple, la taille moyenne des hommes dans deux pays différents).
+
+::: {.choices}
+
+* [ ] a) Vrai
+* [ ] b) Faux
+  
+
+### Question 9 38
+
+Laquelle des hypothèses suivantes pourrait être testée dans un **test t à deux échantillons** ?
+
+::: {.choices}
+
+* [ ] a) Les deux échantillons proviennent de populations avec la même moyenne.
+* [ ] b) Les deux échantillons proviennent de populations avec des moyennes différentes.
+* [ ] c) L’une des populations est beaucoup plus nombreuse que l’autre.
+* [ ] d) Les populations ont la même moyenne mais des variances très différentes.
+* [ ] e) Trois groupes d’humains sont de tailles moyennes très différentes.
+  
+
+### Question 10 3
+
+Vous avez effectué un test t à un échantillon et obtenu une statistique t de 4.0869 avec 49 degrés de liberté et une p-value de 0.0001618. Quelle conclusion pouvez-vous en tirer au niveau de signification de 5 % ?
+
+::: {.choices}
+
+* [ ] a) Ne pas rejeter l’hypothèse nulle (H0).
+* [ ] b) Rejeter l’hypothèse nulle (H0).
+* [ ] c) Il n’y a pas assez d’informations pour conclure.
+* [ ] d) Augmenter la taille de l’échantillon.
+* [ ] e) Aucune des autres réponses n’est correcte.
+  
+
+### Question 11 83
+
+Dans le jeu de données **reponses_socio.csv**, quel **genre** a le **trajet moyen** le plus court en minutes pour se rendre à l’université ? (veuillez taper le genre exactement comme il est mentionné dans le jeu de données)
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+### Question 12 23
+
+Cochez toutes les réponses correctes concernant le graphique suivant :
+
+```{r echo=FALSE, out.width="60%"}
+knitr:: include_graphics("problemset_4_images/ch_4_question_12.png")
+```
+
+::: {.choices}
+
+* [ ] a) La ligne noire épaisse du milieu des boxplots indique la longueur moyenne des nageoires pour chaque espèce de pingouins.
+* [ ] b) Au moins un pingouin Adélie de l’échantillon a une nageoire plus longue qu’au moins un pingouin Gentoo.
+* [ ] c) Les boxplots nous indiquent qu’il existe des différences statistiquement significatives dans la longueur des nageoires entre les trois espèces de pingouins.
+* [ ] d) Sur la seule base des boxplots, nous ne pouvons pas savoir si les différences de longueur des nageoires des différentes espèces de pingouins sont statistiquement significatives (nous pourrions faire une ANOVA pour le savoir).
+* [ ] e) Les boxplots indiquent qu’il y a deux valeurs extrêmes (outliers) dans l’ensemble de données.
+  
+
+### Question 13 113
+
+Le code suivant fournit des statistiques descriptives du jeu de données `mtcars` :
+
+```r
+data(mtcars)
+summary(mtcars)
+```
+
+::: {.choices}
+
+* [ ] a) Vrai
+* [ ] b) Faux
+  
+
+### Question 14 41
+
+Cochez toutes les propositions correctes relatives aux **statistiques inférentielles** :
+
+::: {.choices}
+
+* [ ] a) Les statistiques inférentielles permettent de tirer des conclusions sur une population entière en se basant sur l’analyse d’un échantillon représentatif.
+* [ ] b) Si deux variables quantitatives, par exemple y et x, sont significativement corrélées, il existe toujours une relation de cause à effet entre ces deux variables.
+* [ ] c) L’échantillonnage aléatoire est une méthode de sélection au hasard d’un sous-groupe, offrant une représentation fiable de la population.
+* [ ] d) Un échantillon de 100 femmes suisses d’une taille moyenne de 180 cm est représentatif de la distribution de taille des femmes en Suisse.
+* [ ] e) Les tests t, l’ANOVA et la régression linéaire peuvent être utiles dans une analyse en statistique inférentielle.
+  
+
+### Question 15 115
+
+Le **R carré** d’un modèle de régression linéaire indique le pourcentage de la variabilité de la variable dépendante qui peut être expliquée par les variables indépendantes.
+
+::: {.choices}
+
+* [ ] a) Vrai
+* [ ] b) Faux
+  
+
+### Question 16 117
+
+Les statistiques descriptives révèlent souvent des informations et des tendances intéressantes dans les données, même avant l’application de statistiques inférentielles.
+
+::: {.choices}
+
+* [ ] a) Vrai
+* [ ] b) Faux
+  
+
+### Question 17 75
+
+Quel est le poids moyen en grammes des pingouins **femelles** dans le jeu de données `penguins` ? (Veuillez arrondir au gramme.)
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+### Question 18 117
+
+::: {.question}
+Dans le jeu de données **reponses_socio.csv**, en moyenne, les étudiants **sans** passeport suisse ont besoin de moins de temps pour se rendre à l’université que leurs camarades suisses.
+
+
+::: {.choices}
+
+* [ ] a) Vrai
+* [ ] b) Faux
+  
+
+### Question 19 42
+
+::: {.question}
+Supposons que nous fassions un test t pour savoir si la taille moyenne d’un échantillon simulé de 100 joueuses de la WNBA est significativement différente de la taille moyenne de 100 hommes néerlandais. Cochez toutes les affirmations correctes concernant les résultats de ce test t :
+
+```{r echo=FALSE, out.width="60%"}
+knitr:: include_graphics("problemset_4_images/ch_4_question_19.png")
+```
+
+::: {.choices}
+
+* [ ] a) La joueuse moyenne mesure 186,1539 cm.
+* [ ] b) La valeur p indique que la différence est statistiquement significative au niveau de 5 %.
+* [ ] c) L’hypothèse nulle est qu’il n’y a pas de différence significative de taille entre les deux populations.
+* [ ] d) Le test t indique que les hommes néerlandais sont significativement plus grands que les joueuses de la WNBA.
+* [ ] e) Les résultats indiquent qu’il n’y a pas de différence significative entre les tailles moyennes.
+  
+
+### Question 20 44
+
+Quel type de visualisation de données est bien adapté pour afficher la relation entre deux variables numériques ? (Cochez toutes les réponses correctes)
+
+::: {.choices}
+
+* [ ] a) Histogramme
+* [ ] b) Diagramme à barres
+* [ ] c) Boîte à moustaches
+* [ ] d) Nuage de points
+* [ ] e) Toutes les réponses sont incorrectes
+
+---
+## Questions avancées
+
+### Question 1
+
+::: {.question}
+Expliquez la différence entre statistiques descriptives et statistiques inférentielles, en illustrant avec des exemples issus des jeux de données `reponses_socio.csv` et `mtcars`.
+:::
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+
+
+### Question 2
+
+::: {.question}
+Vous souhaitez tester si le poids moyen des pingouins mâles et femelles (jeu `penguins`) diffère significativement. Proposez le code R complet pour réaliser un test t approprié et interpréter les résultats.
+:::
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+
+
+### Question 3
+
+::: {.question}
+Dans un modèle de régression linéaire simple avec `lm(mpg ~ wt, data = mtcars)`, interprétez les coefficients obtenus, le R² et la valeur p, ainsi que leur signification statistique.
+:::
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+
+
+### Question 4
+
+::: {.question}
+Expliquez le concept d’ANOVA et proposez un exemple de code R utilisant `aov()` pour comparer la consommation (`mpg`) selon le nombre de cylindres (`cyl`) dans `mtcars`. Comment interpréter les résultats ?
+:::
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+
+
+### Question 5
+
+::: {.question}
+En statistique inférentielle, qu’est-ce qu’une valeur p et comment la met-on en relation avec un seuil de signification de 5 % pour prendre des décisions ? Illustrer avec un test t ou ANOVA.
+:::
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+
+
+### Question 6
+
+::: {.question}
+Décrivez les conditions d’application d’un test t à deux échantillons indépendants et expliquez comment vérifier l’homogénéité des variances avant de l’utiliser.
+:::
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+
+
+### Question 7
+
+::: {.question}
+Proposez un script R complet pour effectuer une ANOVA à un facteur sur `mpg` selon `gear` dans `mtcars`, suivi d’un test post-hoc Tukey, et expliquez comment lire la sortie.
+:::
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+
+
+### Question 8
+
+::: {.question}
+Qu’est-ce que le R² ajusté dans un modèle de régression multiple (ex. `lm(mpg ~ wt + qsec + am, data = mtcars)`), et pourquoi est-il préférable d’utiliser R² ajusté plutôt que R² simple ?
+:::
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+
+
+### Question 9
+
+::: {.question}
+Décrivez le rôle des degrés de liberté dans un test t et dans une régression linéaire. Comment se calculent-ils dans `t.test()` et `summary(lm())` ?
+:::
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+
+
+### Question 10
+
+::: {.question}
+Vous utilisez `summary(reponses_socio)` pour obtenir des statistiques descriptives. Proposez un code `dplyr` pour calculer n, moyenne, médiane, écart-type et quartiles pour la variable `TempsTrajet` selon `genre`.
+:::
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+  

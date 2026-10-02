@@ -1,0 +1,499 @@
+---
+title: "Chapitre 9 : Exercises"
+format:
+  html:
+    extensions:
+      - fenced_divs
+---
+
+### Question 1 66
+
+Combien de posts Instagram de Selena Gomez (username = selenagomez) sont contenus dans le jeu de données **igposts.csv** que nous avons vu en classe ?
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+### Question 2 69
+
+Combien de voitures du jeu de données **mtcars** présentent une valeur mpg d’au moins 20 ou plus ?
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+### Question 3 108
+
+::: {.question}
+Dans le jeu de données igposts.csv, la variable **Views** désigne le nombre de fois qu’un post Instagram a été vu par les utilisateurs.
+
+
+::: {.choices}
+
+* [ ] a) Vrai
+* [ ] b) Faux
+  
+
+### Question 4 109
+
+::: {.question}
+L’unité statistique (ou unité d’analyse) du jeu de données igposts.csv sont les comptes Instagram de célébrités telles que Cristiano Ronaldo et Kendall Jenner.
+
+
+::: {.choices}
+
+* [ ] a) Vrai
+* [ ] b) Faux
+  
+
+### Question 5 1
+
+Associez les photos suivantes aux comptes Instagram qui les ont publiées (toutes les photos proviennent des 10 premières publications selon `Total.Interactions` dans `igposts.csv`).
+
+Pour chaque image, sélectionnez le bon compte :
+
+<div>
+  <img src="problemset_3_images/ch_3_question_5_picture_1.png" style="max-width:200px;"><br>
+  <select id="q5-1">
+    <option value="">– sélectionnez –</option>
+    <option value="A">Jin of BTS</option>
+    <option value="B">Selena Gomez</option>
+    <option value="C">Cristiano Ronaldo</option>
+    <option value="D">KIARA</option>
+    <option value="E">Leo Messi</option>
+  </select>
+</div>
+
+<div>
+  <img src="problemset_3_images/ch_3_question_5_picture_2.png" style="max-width:200px;"><br>
+  <select id="q5-2">
+    <option value="">– sélectionnez –</option>
+    <option value="A">Jin of BTS</option>
+    <option value="B">Selena Gomez</option>
+    <option value="C">Cristiano Ronaldo</option>
+    <option value="D">KIARA</option>
+    <option value="E">Leo Messi</option>
+  </select>
+</div>
+
+<div>
+  <img src="problemset_3_images/ch_3_question_5_picture_3.png" style="max-width:200px;"><br>
+  <select id="q5-3">
+    <option value="">– sélectionnez –</option>
+    <option value="A">Jin of BTS</option>
+    <option value="B">Selena Gomez</option>
+    <option value="C">Cristiano Ronaldo</option>
+    <option value="D">KIARA</option>
+    <option value="E">Leo Messi</option>
+  </select>
+</div>
+
+<div>
+  <img src="problemset_3_images/ch_3_question_5_picture_4.png" style="max-width:200px;"><br>
+  <select id="q5-4">
+    <option value="">– sélectionnez –</option>
+    <option value="A">Jin of BTS</option>
+    <option value="B">Selena Gomez</option>
+    <option value="C">Cristiano Ronaldo</option>
+    <option value="D">KIARA</option>
+    <option value="E">Leo Messi</option>
+  </select>
+</div>
+
+<div>
+  <img src="problemset_3_images/ch_3_question_5_picture_5.png" style="max-width:200px;"><br>
+  <select id="q5-5">
+    <option value="">– sélectionnez –</option>
+    <option value="A">Jin of BTS</option>
+    <option value="B">Selena Gomez</option>
+    <option value="C">Cristiano Ronaldo</option>
+    <option value="D">KIARA</option>
+    <option value="E">Leo Messi</option>
+  </select>
+</div>
+
+<div id="ps3-fb5"></div>
+
+
+### Question 6 111
+
+::: {.question}
+Dans le code R suivant, l’argument **na.strings = "#N/A"** indique à RStudio comment les valeurs manquantes sont désignées dans le fichier CSV importé.
+
+```r
+igposts <- read.csv("/path/to/igposts.csv", 
+encoding = "UTF-8", na.strings = "#N/A")
+```
+
+
+
+::: {.choices}
+
+* [ ] a) Vrai
+* [ ] b) Faux
+  
+
+### Question 7 36
+
+::: {.question}
+Cliquez sur l’URL du post Instagram suivant qui fait partie de igposts.csv et cochez toutes les réponses correctes : [https://www.instagram.com/p/CpHHbGWunhI/](https://www.instagram.com/p/CpHHbGWunhI/)
+
+
+::: {.choices}
+
+* [ ] a) Le post a été publié par le compte Instagram avec le User.Name **zendaya**.
+* [ ] b) Il s’agit d’un post Instagram de type **Album**.
+* [ ] c) Il s’agit d’un post Instagram de type **Video**.
+* [ ] d) Le post a reçu des **Views**.
+* [ ] e) Zendaya est une actrice et chanteuse **britannique**.
+  
+
+### Question 8 73
+
+Veuillez importer le jeu de données **reponses.csv** dans RStudio et répondre à la question : En ce qui concerne la variable **genre** : combien d’**hommes** y a-t-il dans ce jeu de données ? (Le même fichier **reponses.csv** est utilisé pour toutes les questions de Problem Set 3 de votre groupe. Vous ne devez donc charger le fichier qu’une seule fois dans RStudio.)
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+### Question 9 105
+
+::: {.question}
+Un fichier CSV stocke des données textuelles dans lesquelles les valeurs sont généralement séparées par des espaces.
+
+
+::: {.choices}
+
+* [ ] a) Vrai
+* [ ] b) Faux
+  
+
+### Question 10 71
+
+Veuillez importer le jeu de données **reponses.csv** dans RStudio et répondre à la question : Combien de **variables** contient le jeu de données **reponses.csv** ? (Le même fichier `reponses.csv` est utilisé pour toutes les questions de Problem Set 3.)
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+### Question 11 110
+
+::: {.question}
+Exécutez le code R suivant pour savoir si l’affirmation suivante est vraie ou fausse : Le modèle de voiture Toyota Corolla est le plus économe en carburant par rapport à son poids dans le jeu de données `mtcars`.
+
+```r
+data(mtcars)
+mtcars %>% select(mpg, wt) %>% 
+mutate(mpg_par_livre = mpg/ wt) %>%
+arrange(desc(mpg_par_livre))
+```
+
+
+
+::: {.choices}
+
+* [ ] a) Vrai
+* [ ] b) Faux
+  
+
+### Question 12 32
+
+::: {.question}
+Exécutez le code R suivant et cochez toutes les réponses correctes :
+
+```r
+data(diamonds)
+diamonds %>% group_by(clarity) %>%
+summarize(n = n(), prix_moyen = mean(price))
+```
+
+
+
+::: {.choices}
+
+* [ ] a) La sortie indique les prix moyens en USD des diamants par niveau de pureté.
+* [ ] b) En moyenne, les diamants du niveau de pureté le plus élevé coûtent 1790 USD.
+* [ ] c) Il y a le même nombre de diamants pour chaque niveau de pureté.
+* [ ] d) `n = n()` compte le nombre d’observations par niveau de pureté.
+* [ ] e) `group_by(clarity)` regroupe les diamants par pureté.
+  
+
+### Question 13 2
+
+Quel est le rôle principal de l’opérateur **%>%** dans `dplyr` ?
+
+* [ ] a) Importer des données.
+* [ ] b) Assigner des variables.
+* [ ] c) Créer des séquences de fonctions pour simplifier le code.
+* [ ] d) Convertir des types de données.
+* [ ] e) Aucune des autres réponses n’est correcte.
+
+### Question 14 35
+
+::: {.question}
+Exécutez le code R suivant et cochez toutes les réponses correctes :
+
+```r
+data(women)
+women %>% summarize(n = n(), 
+taille_moyenne_cm = mean(height * 2.54),
+poids_moyen_kg = mean(weight * 0.4536))
+```
+
+
+
+::: {.choices}
+
+* [ ] a) `women` est un data frame.
+* [ ] b) `n()` compte les observations.
+* [ ] c) La conversion `height * 2.54` calcule la taille moyenne en cm.
+* [ ] d) La conversion `weight * 0.4536` calcule le poids moyen en kg.
+* [ ] e) Les résultats s’affichent dans la console.
+  
+
+### Question 15 81
+
+Quel est le **User.Name** du compte Instagram qui a publié le post qui a reçu le plus grand nombre de **Views** dans **igposts.csv** ?
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+### Question 16 107
+
+::: {.question}
+Dans igposts.csv, l’actrice Kiara Advani (Account = KIARA) présente le ratio de commentaires par follower le plus élevé.
+
+
+::: {.choices}
+
+* [ ] a) Vrai
+* [ ] b) Faux
+  
+
+### Question 17 106
+
+::: {.question}
+Lors de l’importation de fichiers CSV dans RStudio, il est important de savoir si les séparateurs décimaux sont des points (4.5) ou des virgules (4,5).
+
+
+::: {.choices}
+
+* [ ] a) Vrai
+* [ ] b) Faux
+  
+
+### Question 18 34
+
+::: {.question}
+Exécutez le code R suivant et cochez toutes les réponses correctes :
+
+```r
+taille_f <- rnorm(500, mean = 164.7, sd = 5.6) %>% 
+as.data.frame()
+taille_f %>% count(taille_f <= 160)
+```
+
+
+::: {.choices}
+
+* [ ] a) `count(taille_f <= 160)` compte les femmes ≤ 160 cm et > 160 cm.
+* [ ] b) `count()` est utile pour compter les observations selon un critère.
+* [ ] c) Les résultats varient à chaque exécution car `rnorm()` est aléatoire.
+* [ ] d) `taille_f` est un data frame.
+* [ ] e) `taille_f` comporte 500 lignes.
+  
+
+### Question 19 67
+
+Combien de posts Instagram du type **Album** se trouvent dans igposts.csv ?
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+### Question 20 33
+
+::: {.question}
+Exécutez le code R suivant et cochez toutes les réponses correctes :
+
+```r
+data(mtcars)
+mtcars %>% arrange(mpg)
+```
+
+
+
+::: {.choices}
+
+* [ ] a) `arrange(mpg)` trie par mpg croissant.
+* [ ] b) `arrange(mpg)` trie par mpg décroissant.
+* [ ] c) Plus le mpg est élevé, plus la voiture parcourt loin par gallon.
+* [ ] d) Le code modifie `mtcars` dans l’environnement.
+* [ ] e) La Cadillac Fleetwood est la plus efficace.
+
+---
+## Questions avancées
+
+### Question 1
+
+::: {.question}
+Expliquez comment la fonction `read.csv()` peut être combinée avec d'autres options utiles pour importer correctement un fichier avec des valeurs manquantes, un encodage spécifique, et une première ligne d'en-têtes.
+:::
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+
+
+### Question 2
+
+::: {.question}
+Vous importez un fichier CSV contenant des données sur des utilisateurs. Quelle commande utiliseriez-vous pour vérifier le nombre d'observations par catégorie dans la colonne **genre** et ensuite les ordonner de la plus fréquente à la moins fréquente ? Expliquez en commentant chaque étape.
+:::
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+
+
+### Question 3
+
+::: {.question}
+Expliquez la différence entre les fonctions `filter()` et `select()` de `dplyr` avec un exemple clair pour chacune sur le jeu de données `mtcars`.
+:::
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+
+
+### Question 4
+
+::: {.question}
+Voici un extrait de code :
+
+```r
+data(iris)
+iris %>% mutate(Rapport = Sepal.Length / Sepal.Width) %>% arrange(desc(Rapport))
+```
+
+Qu'affiche ce code, et comment l'interpréteriez-vous ? Quel type de situation réelle pourrait motiver une telle transformation ?
+:::
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+
+
+### Question 5
+
+::: {.question}
+Donnez un exemple complet de chaîne d'opérations `dplyr` qui :
+
+1. Charge les données `mtcars`
+2. Crée une nouvelle variable calculant le rapport `hp / wt`
+3. Filtre les voitures avec un rapport supérieur à 40
+4. Trie le résultat par ce rapport, de façon décroissante
+   :::
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+
+
+### Question 6
+
+::: {.question}
+Le fichier `reponses.csv` contient une colonne `age`. Proposez un code qui permet de regrouper les répondants en trois catégories d'âge : "jeune" (≤25), "adulte" (26-50), et "senior" (>50), puis d'afficher un graphique en barres de la répartition.
+:::
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+
+
+### Question 7
+
+::: {.question}
+Quelle est la différence entre `mutate()` et `summarize()` dans `dplyr` ? Donnez un exemple pratique de chacun, en expliquant ce que le code produit.
+:::
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+
+
+### Question 8
+
+::: {.question}
+Dans le cadre d'une analyse de réseaux sociaux, on souhaite savoir quel post Instagram a le meilleur ratio **Likes / Followers**. Quel code proposeriez-vous pour calculer ce ratio dans un jeu de données `igposts` et identifier le top 3 ?
+:::
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+
+
+### Question 9
+
+::: {.question}
+Vous voulez combiner les fonctions `filter()`, `mutate()` et `summarize()` dans une chaîne logique pour analyser le jeu de données `diamonds`. L'objectif est de calculer la moyenne du prix des diamants de type "Ideal" de plus de 1 carat. Écrivez le code correspondant.
+:::
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+
+
+
+### Question 10
+
+::: {.question}
+Expliquez à quoi sert la fonction `group_by()` dans le contexte de l'analyse de données avec `dplyr`. Donnez un exemple dans lequel vous regroupez un jeu de données `reponses` par genre, puis vous calculez l'âge moyen pour chaque groupe.
+:::
+
+::: {.answer}
+
+<textarea rows="1" style="width:100%">Écrivez votre réponse ici</textarea>
+
+:::
+

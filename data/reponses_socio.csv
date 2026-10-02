@@ -1,0 +1,75 @@
+"naissance","genre","permis","suisse","origine","fraterie","domicile","trajet","note_ecole","note_uni"
+2003,"Femme","Non","Oui","Afrique",1,"Genève",5,5,5.5
+1999,"Homme","Oui","Non","Europe",1,"Fribourg",10,4.8,4
+2002,"Femme","Non","Oui","Europe",1,"Genève",10,NA,4.9
+1999,"Femme","Oui","Oui","Europe",1,"Fribourg",20,4.8,5.1
+2002,"Homme","Oui","Oui","Europe",2,"Bâle-Ville",5,5,4.5
+2002,"Homme","Oui","Oui","Europe",3,"Fribourg",25,5,5.2
+2000,"Femme","Oui","Oui","Europe",1,"Fribourg",40,4.4,4.5
+2002,"Femme","Oui","Non","Europe",4,"Fribourg",15,4.5,5.2
+1999,"Femme","Oui","Oui","Europe",1,"Fribourg",40,4.1,4.5
+2002,"Femme","Oui","Non","Europe",3,"Fribourg",25,6,5.2
+1986,"Femme","Oui","Oui","Europe",5,"Fribourg",15,5.5,4.8
+2003,"Femme","Non","Oui","Europe",2,"Neuchâtel",60,4.7,5
+2005,"Autre","Oui","Oui","Europe",1,"Vaud",3,4.2,4.7
+2003,"Femme","Non","Oui","Europe",2,"Neuchâtel",180,4.9,5
+2002,"Homme","Oui","Oui","Europe",1,"Fribourg",80,4,4.6
+2003,"Femme","Oui","Oui","Europe",1,"Vaud",3,4.6,4.7
+2001,"Femme","Oui","Oui","Europe",7,"Genève",60,6,4.8
+2003,"Femme","Oui","Oui","Europe",4,"Fribourg",95,4.8,4.8
+2002,"Femme","Oui","Oui","Europe",4,"Fribourg",5,4.5,5
+2002,"Femme","Oui","Oui","Europe",1,"Valais",8,4.5,4.7
+2002,"Femme","Oui","Oui","Europe",2,"Valais",75,5.1,5.2
+2003,"Homme","Oui","Oui","Amérique (Nord et Sud et Caraïbes)",1,"Tessin",15,4.4,4.5
+2001,"Homme","Oui","Oui","Europe",1,"Fribourg",25,5,4.9
+2003,"Femme","Oui","Oui","Europe",2,"Fribourg",20,4.6,4.5
+2001,"Femme","Oui","Oui","Europe",1,"Fribourg",13,4.6,5
+2002,"Femme","Oui","Oui","Europe",2,"Vaud",10,4.5,4.9
+2004,"Femme","Oui","Oui","Europe",1,"Vaud",3,4.8,4.5
+2001,"Femme","Non","Oui","Europe",1,"Genève",5,5,4.6
+2002,"Femme","Oui","Oui","Europe",3,"Genève",15,4.5,4.5
+2003,"Femme","Oui","Oui","Amérique (Nord et Sud et Caraïbes)",1,"Vaud",3,4.5,NA
+1998,"Femme","Oui","Oui","Europe",2,"Berne",60,4.4,4.4
+2002,"Femme","Oui","Oui","Europe",0,"Fribourg",35,4.5,4
+2001,"Homme","Oui","Oui","Europe",1,"Fribourg",40,4.5,4.5
+2002,"Homme","Non","Oui","Europe",1,"Fribourg",25,4.5,4.5
+2002,"Femme","Oui","Oui","Europe",4,"Fribourg",15,5,4.8
+1998,"Femme","Oui","Oui","Europe",1,"Fribourg",75,4.1,NA
+2002,"Homme","Oui","Oui","Europe",1,"Valais",60,4.2,4.5
+1986,"Femme","Oui","Oui","Europe",4,"Fribourg",20,5.1,5
+2003,"Femme","Non","Non","Europe",1,"Vaud",90,4.8,5.2
+1999,"Femme","Oui","Non","Europe",1,"Fribourg",30,4.3,4.9
+2003,"Femme","Oui","Non","Europe",4,"Fribourg",15,5,4.7
+2002,"Femme","Oui","Oui","Europe",1,"Berne",60,5,4.8
+2005,"Femme","Oui","Oui","Europe",1,"Fribourg",35,NA,4.4
+2003,"Femme","Oui","Oui","Europe",2,"Vaud",90,5.1,5.2
+1999,"Femme","Oui","Oui","Europe",1,"Fribourg",20,4.5,4.5
+1999,"Femme","Oui","Oui","Europe",2,"Valais",75,1,4.6
+1998,"Femme","Oui","Oui","Amérique (Nord et Sud et Caraïbes)",1,"Berne",80,4.7,4.7
+2001,"Femme","Oui","Oui","Europe",1,"Fribourg",20,4.6,4.5
+2000,"Femme","Non","Oui","Europe",1,"Genève",5,5.1,5.3
+2003,"Femme","Oui","Oui","Europe",1,"Vaud",10,4.8,5.5
+2001,"Autre","Oui","Oui","Europe",1,"Berne",80,4.3,4.5
+2002,"Femme","Oui","Oui","Europe",0,"Fribourg",20,NA,4.7
+2004,"Femme","Oui","Oui","Europe",0,"Fribourg",5,4.6,5.2
+2004,"Femme","Non","Oui","Europe",2,"Vaud",75,5,4.8
+2002,"Femme","Oui","Oui","Europe",2,"Valais",90,5.1,5
+2000,"Femme","Oui","Oui","Europe",2,"Fribourg",15,5,5
+2003,"Femme","Oui","Oui","Amérique (Nord et Sud et Caraïbes)",2,"Fribourg",25,4.6,5.2
+2001,"Femme","Oui","Oui","Amérique (Nord et Sud et Caraïbes)",2,"Fribourg",20,4.9,5
+2002,"Femme","Oui","Non","Europe",1,"Fribourg",20,5,5.2
+2004,"Homme","Non","Oui","Amérique (Nord et Sud et Caraïbes)",2,"Vaud",120,4.5,4.6
+2005,"Femme","Oui","Oui","Europe",2,"Fribourg",15,4.6,4.7
+2003,"Homme","Non","Oui","Europe",1,"Fribourg",30,4.8,5.2
+1996,"Femme","Oui","Oui","Amérique (Nord et Sud et Caraïbes)",5,"Fribourg",60,4.3,4.4
+2003,"Femme","Oui","Oui","Europe",2,"Vaud",75,5,4.9
+2001,"Femme","Oui","Oui","Europe",0,"Jura",80,5.3,4.8
+2003,"Femme","Oui","Oui","Afrique",1,"Tessin",5,4.5,4.2
+1999,"Femme","Oui","Oui","Europe",1,"Fribourg",6,4.2,5.3
+2003,"Femme","Oui","Oui","Europe",1,"Vaud",10,4.6,4.5
+2001,"Homme","Non","Oui","Europe",1,"Fribourg",25,4.2,5.3
+2002,"Femme","Non","Oui","Europe",1,"Neuchâtel",60,5,5
+2004,"Femme","Oui","Non","Europe",2,"Vaud",90,5,5.2
+2002,"Femme","Oui","Oui","Europe",3,"Vaud",5,5,4.8
+2003,"Femme","Oui","Oui","Europe",4,"Fribourg",5,4.9,4.7
+2003,"Femme","Non","Oui","Europe",1,"Vaud",90,5.1,5.2

@@ -1,0 +1,283 @@
+# Session 10 \| Statistiques descriptives
+
+```{r}
+#| include: false
+source("_common.R")
+```
+
+**Sujet : La statistique descriptive**
+
+::: {.callout-note icon="true"}
+## À noter
+
+La **statistique descriptive** est généralement la première étape d'une
+analyse statistique. Elle aide à comprendre le jeu de données et ses
+caractéristiques à un niveau descriptif.
+
+Il ne s'agit donc **pas** d'analyser des **relations de cause à effet**
+(c'est en effet le rôle de la *statistique inférentielle*).
+
+Les mesures suivantes font souvent partie des statistiques descriptives
+(souvent appelés *summary statistics* en anglais) et sont utilisées pour
+une première analyse des variables de type numérique d'un jeu de
+données.
+
+-   La taille de l'échantillon (nombre d'observations *n*)
+
+-   Les mesures de tendance centrale (moyenne, médiane, mode)
+
+-   Les mesures de dispersion (étendue, variance, écart-type, kurtosis,
+    etc.)
+
+-   Les mesure de position (percentiles, quartiles)
+
+Ces mesure permettent d'obtenir une première idée de la structure d'un
+jeu de données. Elles permettent également d'identifier des valeurs
+extrêmes (angl. *outliers*) qui peuvent jouer un rôle important dans un
+jeu de données.
+
+Des mesures concernant les **variables catégorielles** peuvent également
+faire partie d'une analyse déscriptive, notamment :
+
+-   La fréquence de chaque catégories (p. ex. combien de participant-e-s
+    à un questionnaire sont des femmes ?)
+-   La répartition des différentes catégories (p. ex. quel est le
+    pourcentage de femmes dans l'échantillon ?)
+:::
+
+Dans la a mise en œuvre d'une analyse statistique, par exemple dans un
+travail scientifique, les statistiques descriptives sont souvent
+présentées sous deux formats :
+
+-   des **tableaux** pour les mesures telles que la taille de
+    l'échantillon, les moyennes, etc. Souvent aussi pour différentes
+    catégories, p. ex. hommes et femmes.
+
+-   des **graphiques** pour la visualisation de distributions, par
+    exemple des histogrammes, et des répartitions de variables
+    catégorielles, par exemple par le biais de diagrammes à barres.
+
+Lorsque l'on veut représenter des statistiques descriptives dans R, il
+est souvent utile de combiner les deux paquets R `dplyr` et `ggplot2`.
+C'est une bonne nouvelle, car nous avons déjà examiné les principaux
+codes R nécessaires pour utiliser ces deux paquets dans ce cours.
+
+Pour nous entraîner à nouveau, cette fois avec nos propres données, nous
+allons procéder ci-dessous à une analyse descriptive des réponses au
+questionnaire (version de 2024) !
+
+::: {.callout-note icon="true"}
+## Données synthétiques
+
+Pour protéger les étudiant·es qui ont répondu au questionnaire, le fichier
+`reponses_socio.csv` publié sur ce site est une **copie synthétique** des
+réponses : il contient les mêmes variables, avec des distributions et des
+relations semblables, mais aucune ligne ne correspond à une vraie personne.
+Les résultats ci-dessous peuvent donc différer de ceux présentés en cours.
+:::
+
+Vous verrez donc par la suite comment ce que nous avons appris jusqu'à
+présent dans le cours peut être combiné de manière utile.
+
+## Analyse des réponses au questionnaire, 1ère partie (stats déscriptives)
+
+Veuillez ouvrir un nouveau script R et charger les paquets `tidyverse`
+et `ggthemes`. Ensuite, vous pouvez définir votre répértoire de
+travaille.
+
+Vous pouvez ensuite télécharger le fichier `reponses_socio.csv` depuis
+la page Moodle du cours (matériel de la 10ème session) et le sauvegarder
+dans votre répértoire de travail.
+
+![Paramètres pour l'importation du fichier
+`reponses_socio.csv`.](../images/Screenshot%202024-05-01%20at%2009.09.22.png)
+
+```{r}
+#| echo: true
+#| output: true
+#| warning: false
+
+# Script session 10
+
+library(tidyverse)
+library(ggthemes)
+
+# vous devez modifier les fonctions setwd() et read.csv() pour correspondre à votre ordinateur
+# (ou lire le fichier directement depuis le site du cours, comme ici) :
+# setwd("~/Documents/exercices_methodes_2")
+
+reponses_socio <- read.csv("https://julesaberlin.github.io/intro-a-R/data/reponses_socio.csv", encoding="UTF-8", stringsAsFactors=TRUE)
+
+# Contrôle, si ça a marché
+str(reponses_socio)
+
+# Une formidable fonction pour analyser les stats déscriptives : summary()
+summary(reponses_socio)
+
+# Abordons maintenant quelques questions plus spécifiques auxquelles nous pouvons répondre à l'aide de statistiques descriptives
+
+
+# 1. Trajet pour arriver à l'université
+#*****************************************
+
+# histogramme très basique
+ggplot(data = reponses_socio,
+       mapping = aes(x=trajet)) +
+  geom_histogram(binwidth = 10)
+
+# plus sophistiqué
+ggplot(data = reponses_socio,
+       mapping = aes(x=trajet)) +
+  geom_histogram(binwidth = 10, 
+                 fill = "steelblue",
+                     color = "black") +
+  labs(title = "Trajets en minutes des étudiant-e-s pour arriver à l'UniFR",
+       subtitle = "Questionnaire avec n = 74 participant-e-s",
+       x = "Trajet en minutes",
+       y = "Fréquence") +
+  theme_minimal()
+
+
+# 2. histogramme des années de naissance
+#*****************************************
+
+ggplot(data = reponses_socio,
+       mapping = aes(x=naissance)) +
+  geom_histogram(binwidth = 1, fill = "lightgreen", color = "black") +
+  labs(title = "Années de naissance",
+       subtitle = "n = 74 répondants à un questionnaire",
+       x = "Année de naissance",
+       y = "Fréquence")+
+  theme_minimal()
+
+
+# 3. diagramme à barres des genres
+#*****************************************
+
+ggplot(data = reponses_socio,
+       mapping = aes(x=genre, 
+             fill=genre)) +
+  geom_bar()
+
+# graphique plus sophistiquée
+
+# changer d'abord l'ordre des catégories (commençant avec la plus fréquente)
+
+ordre = c("Femme", "Homme", "Autre")
+
+# Puis combiner dplyr avec ggplot2 !
+reponses_socio %>% 
+  select(genre) %>% 
+  mutate(genre = factor(genre, levels = ordre)) %>% 
+  arrange(genre) %>% 
+ggplot(aes(x=genre, fill=genre)) +
+  geom_bar(show.legend = FALSE) +
+  labs(title = "Répartition des genres",
+       subtitle = "n = 74 répondants à un questionnaire",
+       x = "Genre",
+       y = "Fréquence",
+       legend = "") +
+  theme_minimal()
+
+
+# 4. Moyennes des notes
+#*****************************************
+
+mean(reponses_socio$note_ecole, na.rm = TRUE)
+
+mean(reponses_socio$note_uni, na.rm = TRUE)
+
+min(reponses_socio$note_uni, na.rm = TRUE)
+
+min(reponses_socio$note_ecole, na.rm = TRUE)
+
+reponses_socio %>% 
+  select(note_ecole,note_uni, genre) %>% 
+  group_by(genre) %>% 
+  filter(note_ecole > 3.99,
+         note_uni > 0.99) %>% 
+  summarize(n = n(), note_ecole_moyenne = mean(note_ecole),
+            note_uni_moyenne = mean(note_uni))
+
+# Visualisation de la relation entre note_ecole et note_uni
+reponses_socio %>% 
+  select(note_ecole,note_uni) %>% 
+  filter(note_ecole > 3.99,
+         note_uni > 0.99) %>% 
+ggplot(aes(x=note_uni, y=note_ecole)) +
+         geom_point() +
+  geom_smooth(method = "lm")
+
+
+# 5. Permis de conduire
+#*****************************************
+
+table(reponses_socio$permis)
+
+table(reponses_socio$suisse)
+
+reponses_socio %>% 
+  select(permis, suisse) %>% 
+  filter(permis !="N/A") %>% 
+  group_by(suisse,permis) %>% 
+  summarize(n = n())
+```
+
+## La fonction `write.csv()`
+
+Avec R, vous ne pouvez pas seulement lire des données au format CSV
+(entrée de données ; avec des fonctions telles que `read.csv()`), mais
+vous pouvez également créer des fichiers CSV à partir de votre session
+en cours (sortie de données), notamment avec la fonction `write.csv()` !
+
+La syntaxe de la fonction nécessite comme arguments le nom du data frame
+que vous voulez sauvegarder comme CSV ainsi que le chemin du fichier sur
+votre ordinateur qui inclut le nom que vous voulez donner au ficher CSV
+: `write.csv(nom_df, "chemin_du_fichier/nom_du_ficher.csv")`
+
+```{r}
+# Voici un exemple avec du code (recréons le tableau avec les animaux de Ice Age !)
+
+name <- c("Manny", "Sid", "Diego", "Ellie", 
+          "Peaches", "Scrat", "Rudy", "Buck")
+
+species <- c("mammoth", "sloth", "sabertooth", "mammoth", 
+             "mammoth", "squirrel", "dinosaur", "weasel")
+
+female <- c(FALSE, FALSE, FALSE, TRUE, 
+            TRUE, FALSE, FALSE, FALSE)
+
+age <- c(30, 20, 35, 25, 
+         7, 4, 100, 28)
+
+weight <- c(5000, 80, 400, 4000, 
+            1000, 1, 10000, 3)
+
+ice_age_df <- data.frame(name, species, female, age, weight)
+
+print(ice_age_df)
+
+# Maintenant, notre but est de créer un ficher CSV qui contient les données du data frame ice_age_df
+```
+
+```{r}
+#| eval: false
+# Il faut adapter le chemin du fichier suivant pour qu'il marche sur votre ordinateur :
+
+write.csv(ice_age_df, file = "~/Documents/exercices_methodes_2/ice_age_df.csv")
+```
+
+Si tout a bien marché, vous devrez maintenant avoir un ficher CSV, nommé
+`ice_age_df.csv`dans votre répértoire de travail !
+
+## Exercices
+
+Choisissez *Vrai* ou *Faux*, cochez une réponse ou tapez un nombre : la couleur indique tout de suite si votre réponse est correcte. Cliquez sur **Explication** pour voir la correction.
+
+```{r}
+#| echo: false
+#| results: asis
+#| message: false
+#| warning: false
+exercices(session = 10)
+```

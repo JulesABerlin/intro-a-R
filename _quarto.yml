@@ -46,7 +46,7 @@ execute:
 
 format:
   html:
-    theme: cosmo
+    theme: [cosmo, theme.scss]
     toc: true
     toc-depth: 2
     number-sections: false

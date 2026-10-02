@@ -185,6 +185,13 @@ diamonds %>%
 
 # Avec un prix par diamant de 5063 USD en moyenne, la catégorie de pureté SI2 est la plus chère dans diamonds.
 ```
+
+**Attention** : cela ne veut pas dire qu'une pureté plus faible rend un
+diamant plus cher. Les diamants SI2 sont en moyenne plus **lourds**
+(1,08 carat, contre 0,51 pour la pureté maximale IF), et le poids
+influence fortement le prix. Comparez avec
+`diamonds %>% group_by(clarity) %>% summarize(mean(carat))`. C'est un
+exemple de **variable confondante**.
 :::
 
 ### 8 : mtcars V
@@ -257,6 +264,10 @@ diamonds %>%
 
 # En moyenne, les diamants de la meilleure qualité de taille (Ideal) ne sont pas les plus chers dans diamonds.
 ```
+
+Ici aussi, le poids joue un rôle : même **par carat**, les gros diamants
+coûtent plus cher, et les diamants de taille *Ideal* sont en moyenne plus
+petits (0,70 carat) que les *Premium* (0,89 carat).
 :::
 
 ### 11 : igposts I

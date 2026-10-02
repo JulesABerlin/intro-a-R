@@ -10,6 +10,8 @@ project:
     - data/*
 
 lang: fr
+language:
+  title-block-author-single: "Auteur"
 
 book:
   title: "Exercices Méthodes II"
@@ -17,7 +19,6 @@ book:
   author:
     - name: Julian Maitra
       orcid: 0000-0003-3989-5158
-      email: julian.maitra@unifr.ch
       affiliation:
         - name: Université de Fribourg
           url: https://www.unifr.ch/home/en/

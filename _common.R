@@ -22,6 +22,8 @@ vf <- function(x) {
 #   exercices(session = 2)       questions de la session 2 (sans les variantes)
 #   exercices(problem_set = 1)   les questions du Problem Set 1
 # Les questions qui dépendent d'une image manquante (needs_image) sont omises.
+# Chaque question est numérotée « Question <chapitre>.<rang> » ; son ancre stable
+# (#q<ID>) reprend le numéro de la banque, pour des liens qui ne changent pas.
 exercices <- function(session = NULL, problem_set = NULL, variantes = FALSE,
                       fichier = "question-bank/questions.yml") {
   qs <- yaml::read_yaml(fichier)
@@ -32,12 +34,16 @@ exercices <- function(session = NULL, problem_set = NULL, variantes = FALSE,
   }
   qs <- Filter(garder, qs)
   ordre <- order(sapply(qs, `[[`, "session"), sapply(qs, `[[`, "id"))
-  for (i in seq_along(ordre)) afficher_question(qs[[ordre[i]]], i)
+  # Numéro du chapitre : la session, ou le chapitre de révision du Problem Set
+  chapitre <- if (!is.null(problem_set)) c(3, 6, 9, 13)[problem_set] else session
+  for (i in seq_along(ordre)) {
+    afficher_question(qs[[ordre[i]]], paste0(chapitre, ".", i))
+  }
   invisible(NULL)
 }
 
 afficher_question <- function(q, numero) {
-  cat("\n### Question ", numero, " [n° ", q$id, "]{.small .text-muted}\n\n", sep = "")
+  cat("\n### Question ", numero, " {#q", q$id, " .unnumbered}\n\n", sep = "")
   cat(q$stem, "\n\n", sep = "")
   if (!is.null(q$code)) cat("```r\n", q$code, "```\n\n", sep = "")
   if (!is.null(q$figure)) {
@@ -73,5 +79,6 @@ afficher_question <- function(q, numero) {
   # Une ligne « a) … » par paragraphe, sans que Pandoc en fasse une liste
   # (il renumérote les listes : « a) b) d) » deviendrait « a) b) c) »)
   explication <- gsub("(?m)^([a-e])\\)", "\n\\1\\\\)", q$explanation, perl = TRUE)
-  cat(webexercises::hide("Explication"), explication, webexercises::unhide(), sep = "")
+  reference <- paste0("\n\n[Réf. banque de questions : n° ", q$id, "]{.small .text-muted}\n")
+  cat(webexercises::hide("Explication"), explication, reference, webexercises::unhide(), sep = "")
 }

@@ -417,7 +417,7 @@
     e: 'Dans R, il n’est jamais utile de stocker des numéros sous forme de texte.'
   key: [b, c, d]
   explanation: |
-    Voir la question 17 : `n` est une chaîne de caractères à un élément, et `n * 2` produit une erreur.
+    Les guillemets font de `n` une chaîne de caractères à un élément : ce n’est pas un nombre, et `n * 2` produit une erreur.
   uses_data: ~
 
 - id: 19
@@ -437,7 +437,7 @@
     e: 'Dans R, il n’est jamais utile de stocker des numéros sous forme de texte.'
   key: [b, c, d]
   explanation: |
-    Voir la question 17 : `n` est une chaîne de caractères à un élément, et `n * 2` produit une erreur.
+    Les guillemets font de `n` une chaîne de caractères à un élément : ce n’est pas un nombre, et `n * 2` produit une erreur.
   uses_data: ~
 
 - id: 20
@@ -457,7 +457,7 @@
     e: 'Dans R, il n’est jamais utile de stocker des numéros sous forme de texte.'
   key: [b, c, d]
   explanation: |
-    Voir la question 17 : `n` est une chaîne de caractères à un élément, et `n * 2` produit une erreur.
+    Les guillemets font de `n` une chaîne de caractères à un élément : ce n’est pas un nombre, et `n * 2` produit une erreur.
   uses_data: ~
 
 - id: 21

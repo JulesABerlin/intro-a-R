@@ -74,7 +74,7 @@ exercices(problem_set = 1)
 
 Ces questions ouvertes n'ont pas de correction automatique. Essayez d'abord dans RStudio, puis comparez avec la solution proposée.
 
-### Question A1
+### Question 3.A1 {#question-a1 .unnumbered}
 
 Écrivez une expression R vectorisée pour calculer la somme des nombres pairs de 1 à 100. Quel résultat obtenez-vous ?
 
@@ -90,7 +90,7 @@ sum(x[x %% 2 == 0])
 Les 50 nombres pairs de 2 à 100 ont une moyenne de 51, d'où 50 × 51 = 2550. Aucune boucle n'est nécessaire, car `seq()`, `%%` et `sum()` opèrent sur tout le vecteur.
 `r unhide()`
 
-### Question A2
+### Question 3.A2 {#question-a2 .unnumbered}
 
 On considère `v <- seq(from = 0, to = 1, length.out = 11)`.
 
@@ -111,7 +111,7 @@ Les valeurs sont « les mêmes » à l'œil, mais certains nombres décimaux com
 Pour comparer des nombres décimaux, utilisez `all.equal()` plutôt que `==` ou `identical()`.
 `r unhide()`
 
-### Question A3
+### Question 3.A3 {#question-a3 .unnumbered}
 
 Créez un vecteur logique de longueur 20 alternant `TRUE`, `FALSE`, … (en commençant par `TRUE`), sans boucle. Puis extrayez les éléments situés aux positions impaires.
 
@@ -126,7 +126,7 @@ x[c(TRUE, FALSE)]       # astuce : le vecteur logique est recyclé
 `rep()` répète un motif. Pour l'extraction, un vecteur d'indices (`seq()`) ou un vecteur logique recyclé fonctionnent tous les deux.
 `r unhide()`
 
-### Question A4
+### Question 3.A4 {#question-a4 .unnumbered}
 
 Construisez un data frame `df` avec une colonne `A` contenant les nombres de 1 à 5 et une colonne `B` contenant leurs carrés. Quelle commande renvoie l'élément de la 4ᵉ ligne et de la 2ᵉ colonne, et quelle est sa valeur ?
 
@@ -140,7 +140,7 @@ df$B[4]       # équivalent
 ```
 `r unhide()`
 
-### Question A5
+### Question 3.A5 {#question-a5 .unnumbered}
 
 ```r
 tailles <- factor(c("S", "M", "L", "M", "S"),
@@ -165,7 +165,7 @@ as.numeric(as.character(f))    # 10 5 20
 ```
 `r unhide()`
 
-### Question A6
+### Question 3.A6 {#question-a6 .unnumbered}
 
 ```r
 m <- matrix(1:25, nrow = 5, byrow = FALSE)
@@ -185,7 +185,7 @@ m[2:4, c(1, 5)]
 ```
 `r unhide()`
 
-### Question A7
+### Question 3.A7 {#question-a7 .unnumbered}
 
 Quelle est la différence entre `class()` et `typeof()` ? Donnez un exemple.
 
@@ -202,7 +202,7 @@ typeof(f)    # "integer" (les codes internes)
 ```
 `r unhide()`
 
-### Question A8
+### Question 3.A8 {#question-a8 .unnumbered}
 
 ```r
 x <- c(2, 4, NA, 8, 10)
@@ -219,7 +219,7 @@ var(x, na.rm = TRUE)  # 13.33333
 Par défaut, toute valeur `NA` « contamine » le résultat. `na.rm = TRUE` (*NA remove*) demande à la fonction d'écarter les valeurs manquantes avant le calcul. Le même argument existe pour `mean()`, `sum()`, `sd()`, `median()`, etc.
 `r unhide()`
 
-### Question A9
+### Question 3.A9 {#question-a9 .unnumbered}
 
 En une ligne, utilisez `getwd()` et `setwd()` pour passer au dossier parent du répertoire de travail actuel.
 
@@ -232,7 +232,7 @@ setwd("..")
 `dirname()` retire le dernier élément d'un chemin. `".."` désigne le dossier parent dans tous les systèmes d'exploitation.
 `r unhide()`
 
-### Question A10
+### Question 3.A10 {#question-a10 .unnumbered}
 
 Soit un data frame `df` avec une colonne numérique `X`. Ajoutez en base R une colonne `Y` qui contient les valeurs standardisées de `X`, soit `Y = (X − moyenne(X)) / écart-type(X)`.
 

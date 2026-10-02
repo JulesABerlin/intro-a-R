@@ -932,16 +932,16 @@
     c: 'L’histogramme montre qu’il y a plus d’étudiant·es qui ont 3 frères et sœurs que d’étudiant·es qui sont enfants uniques.'
     d: 'La constellation la plus fréquente est celle des étudiant·es ayant un seul frère ou une seule sœur.'
     e: 'Une personne ayant participé au questionnaire a indiqué qu’elle avait 7 frères et sœurs.'
-  key: [d, e]
+  key: [c, d]
   explanation: |
     a) Le nombre de frères et sœurs est une variable de comptage asymétrique, pas une loi normale.
     b) Un histogramme du nombre de frères et sœurs ne dit rien sur la forme des familles.
-    c) Les deux barres ont la même hauteur : 4 étudiant·es ont 3 frères et sœurs, et 4 sont enfants uniques.
-    d) La barre la plus haute est celle d’un frère ou d’une sœur (38 étudiant·es).
-    e) La barre isolée à droite correspond à une personne avec 7 frères et sœurs.
+    c) 7 étudiant·es ont 3 frères et sœurs, contre 5 enfants uniques.
+    d) La barre la plus haute est celle d’un frère ou d’une sœur (33 étudiant·es).
+    e) Personne n’indique 7 frères et sœurs : le maximum est de 5.
     Vérifiez avec `table(reponses_socio$fraterie)`.
   uses_data: reponses_socio.csv
-  note: 'Corrigé Moodle (données réelles) : c, d, e. Recalculé avec les données synthétiques : d, e.'
+  note: 'Corrigé Moodle (données réelles) : c, d, e. Recalculé avec les données synthétiques : c, d.'
 
 - id: 41
   session: 11
@@ -1389,22 +1389,22 @@
   session: 10
   type: numeric
   stem: 'Importez le jeu de données `reponses_socio.csv` dans RStudio. Pour la variable `genre` : combien de **femmes** y a-t-il dans ce jeu de données ?'
-  key: 60
+  key: 51
   explanation: |
     `table(reponses_socio$genre)` ou `reponses_socio %>% count(genre)`.
   uses_data: reponses_socio.csv
-  note: 'Corrigé Moodle (données réelles) : 56. Recalculé avec les données synthétiques : 60.'
+  note: 'Corrigé Moodle (données réelles) : 56. Recalculé avec les données synthétiques : 51.'
 
 - id: 73
   session: 10
   problem_sets: [3]
   type: numeric
   stem: 'Importez le jeu de données `reponses_socio.csv` dans RStudio. Pour la variable `genre` : combien d’**hommes** y a-t-il dans ce jeu de données ?'
-  key: 12
+  key: 17
   explanation: |
     `table(reponses_socio$genre)` ou `reponses_socio %>% count(genre)`.
   uses_data: reponses_socio.csv
-  note: 'Corrigé Moodle (données réelles) : 16. Recalculé avec les données synthétiques : 12.'
+  note: 'Corrigé Moodle (données réelles) : 16. Recalculé avec les données synthétiques : 17.'
 
 - id: 74
   session: 12
@@ -1440,16 +1440,16 @@
   problem_sets: [4]
   type: numeric
   stem: 'Dans le jeu de données `reponses_socio.csv`, combien de minutes les étudiant·es **possédant un passeport suisse** mettent-ils en moyenne pour se rendre à l’université ? Arrondissez à la minute.'
-  key: 38
+  key: 34
   explanation: |
     ```r
     reponses_socio %>%
       group_by(suisse) %>%
       summarize(trajet_moyen = mean(trajet))
     ```
-    Pour `suisse == "Oui"`, la moyenne vaut 37,56 minutes, soit 38 une fois arrondie.
+    Pour `suisse == "Oui"`, la moyenne vaut 33,52 minutes, soit 34 une fois arrondie.
   uses_data: reponses_socio.csv
-  note: 'Corrigé Moodle (données réelles) : 37. Recalculé avec les données synthétiques : 38.'
+  note: 'Corrigé Moodle (données réelles) : 37. Recalculé avec les données synthétiques : 34.'
 
 - id: 77
   session: 2
@@ -1539,7 +1539,7 @@
   stem: |
     Dans le jeu de données `reponses_socio.csv`, quel **genre** a le **trajet moyen** le plus
     court pour se rendre à l’université ? (Tapez le genre exactement comme il figure dans les données.)
-  key: Femme
+  key: Homme
   explanation: |
     ```r
     reponses_socio %>%
@@ -1547,9 +1547,9 @@
       summarize(trajet_moyen = mean(trajet)) %>%
       arrange(trajet_moyen)
     ```
-    `arrange()` trie par ordre croissant : la première ligne, `Femme` (37,2 minutes), a le trajet moyen le plus court.
+    `arrange()` trie par ordre croissant : la première ligne, `Homme` (20,6 minutes), a le trajet moyen le plus court.
   uses_data: reponses_socio.csv
-  note: 'Corrigé Moodle (données réelles) : Autre. Recalculé avec les données synthétiques : Femme.'
+  note: 'Corrigé Moodle (données réelles) : Autre. Recalculé avec les données synthétiques : Homme.'
 
 - id: 84
   session: 1
@@ -1934,12 +1934,12 @@
       group_by(suisse) %>%
       summarize(trajet_moyen = mean(trajet))
     ```
-    Les étudiant·es sans passeport suisse mettent en moyenne 36,9 minutes, contre 37,6 pour les Suisses·ses.
-    La différence est minime : avec seulement 8 personnes sans passeport suisse, elle pourrait facilement être due au hasard.
+    Les étudiant·es sans passeport suisse mettent en moyenne 21,5 minutes, contre 33,5 pour les Suisses·ses.
+    Attention : le groupe sans passeport suisse ne compte que 10 personnes. Pour savoir si une telle différence est due au hasard, il faudrait un test (session 11).
   uses_data: reponses_socio.csv
   note: >-
     Corrigé Moodle (données réelles) : Faux. La réécriture du PS4 l’étiquette à tort
-    « 117 » (question 18). Recalculé avec les données synthétiques : Vrai (36,9 contre 37,6 minutes).
+    « 117 » (question 18). Recalculé avec les données synthétiques : Vrai (21,5 contre 33,5 minutes).
 
 - id: 117
   session: 10

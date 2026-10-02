@@ -29,8 +29,10 @@ données.
 
 -   Les mesures de tendance centrale (moyenne, médiane, mode)
 
--   Les mesures de dispersion (étendue, variance, écart-type, kurtosis,
-    etc.)
+-   Les mesures de dispersion (étendue, écart interquartile, variance,
+    écart-type)
+
+-   Les mesures de forme (asymétrie, *kurtosis*)
 
 -   Les mesure de position (percentiles, quartiles)
 
@@ -204,20 +206,23 @@ min(reponses_socio$note_uni, na.rm = TRUE)
 
 min(reponses_socio$note_ecole, na.rm = TRUE)
 
+# On exclut les réponses sans note (valeurs manquantes, NA) ; sans ce
+# filtre, mean() renverrait NA pour les groupes concernés
 reponses_socio %>% 
   select(note_ecole,note_uni, genre) %>% 
   group_by(genre) %>% 
-  filter(note_ecole > 3.99,
-         note_uni > 0.99) %>% 
+  filter(!is.na(note_ecole),
+         !is.na(note_uni)) %>% 
   summarize(n = n(), note_ecole_moyenne = mean(note_ecole),
             note_uni_moyenne = mean(note_uni))
 
 # Visualisation de la relation entre note_ecole et note_uni
+# (la note d'école vient avant la note à l'université : elle va sur l'axe x)
 reponses_socio %>% 
   select(note_ecole,note_uni) %>% 
-  filter(note_ecole > 3.99,
-         note_uni > 0.99) %>% 
-ggplot(aes(x=note_uni, y=note_ecole)) +
+  filter(!is.na(note_ecole),
+         !is.na(note_uni)) %>% 
+ggplot(aes(x=note_ecole, y=note_uni)) +
          geom_point() +
   geom_smooth(method = "lm")
 
@@ -231,7 +236,7 @@ table(reponses_socio$suisse)
 
 reponses_socio %>% 
   select(permis, suisse) %>% 
-  filter(permis !="N/A") %>% 
+  filter(!is.na(permis)) %>% 
   group_by(suisse,permis) %>% 
   summarize(n = n())
 ```

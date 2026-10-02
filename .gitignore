@@ -63,5 +63,5 @@ raw_data/
 # Moodle exports and drafts of the question bank (kept locally, not published)
 /question-bank/source/
 
-# Internal data protection audit (points to where real data remains)
-/review/rights-audit.md
+# Internal review notes (audit, fact-check): kept locally, not published
+/review/

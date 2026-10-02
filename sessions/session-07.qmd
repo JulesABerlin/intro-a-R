@@ -152,10 +152,10 @@ manuellement pour le comprendre d'avantage (comme nous l'avons fait avec
 ::: {.callout-caution collapse="false"}
 ## Attention
 
--   Vous ne devez pas ouvrir les fichiers CSV avec des autres logiciels
-    avant de les importer dans RStudio (par ex. avec Excel), car cela a
-    souvent pour conséquence de modifier automatiquement le format du
-    fichier CSV, ce qui entraîne ensuite des erreurs.
+-   N'enregistrez pas un fichier CSV après l'avoir ouvert dans Excel
+    (ou un autre tableur) : Excel peut modifier les dates, les zéros
+    initiaux, le séparateur ou l'encodage, ce qui entraîne ensuite des
+    erreurs dans R.
 
 -   Vous devriez enregistrer le fichier CSV directement dans votre
     répertoire de travail sans l'ouvrir, puis l'importer dans RStudio à
@@ -243,8 +243,9 @@ Vous pouvez créer le pipe `%>%` avec les raccourcis clavier suivants :
 
 -   Sur **MacOS** : <kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>M</kbd>
 
-De plus, vous pouvez aussi utiliser `|>` comme opérateur pipe altérnatif
-(équivalent à `%>%`).
+De plus, vous pouvez aussi utiliser le pipe natif de R, `|>` (depuis
+R 4.1). Il fonctionne sans paquet et s'utilise de la même façon que
+`%>%` dans les cas simples.
 :::
 
 Vous pouvez déjà constater que travailler avec des jeux de données du

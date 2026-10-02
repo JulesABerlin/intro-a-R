@@ -188,11 +188,9 @@ agricole, faisant de lui une figure pivotale de la science du 20e
 siècle.
 :::
 
-<a title="Diego Mariano, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Flores_de_%C3%8Dris.png"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flores_de_%C3%8Dris.png/512px-Flores_de_%C3%8Dris.png" alt="Flores de Íris" width="512"/></a>
-
-Il y a des statistiques sur trois espèces d'iris dans le jeu de données
-[Source :
-wikimedia.org](https://commons.wikimedia.org/wiki/File:Flores_de_Íris.png)
+![Il y a des statistiques sur trois espèces d'iris dans le jeu de données.
+Photo : Diego Mariano, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/),
+via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Flores_de_%C3%8Dris.png).](../images/iris-especes.png){width="512" fig-alt="Fleurs de trois espèces d'iris"}
 
 Dans l'apprentissage de R, ce jeu de données est souvent utilisé pour
 illustrer diverses techniques d'analyse de données, y compris le
@@ -280,10 +278,9 @@ min(mtcars$mpg)
 max(mtcars$mpg)
 ```
 
-<a title="Jeremy from Sydney, Australia, CC BY 2.0 &lt;https://creativecommons.org/licenses/by/2.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:1974_Toyota_Corolla_(KE20)_L_2-door_sedan_(20538771443).jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/1974_Toyota_Corolla_%28KE20%29_L_2-door_sedan_%2820538771443%29.jpg/512px-1974_Toyota_Corolla_%28KE20%29_L_2-door_sedan_%2820538771443%29.jpg" alt="1974 Toyota Corolla (KE20) L 2-door sedan (20538771443)" width="512"/></a>
-
-Un des modèles de mtcars : Le Toyota Corolla de 1974. [Source :
-wikimedia.org](https://commons.wikimedia.org/wiki/File:1974_Toyota_Corolla_(KE20)_L_2-door_sedan_(20538771443).jpg)
+![Un des modèles de mtcars : la Toyota Corolla de 1974.
+Photo : Jeremy from Sydney, Australia, [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/),
+via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:1974_Toyota_Corolla_(KE20)_L_2-door_sedan_(20538771443).jpg).](../images/toyota-corolla-1974.jpg){width="512" fig-alt="Toyota Corolla deux portes de 1974"}
 
 ### le jeu de données `diamonds`
 
@@ -291,10 +288,9 @@ C'est maintenant à vous d'explorer ce jeu de données avec du code !
 
 Utilisez également `?diamonds()` !
 
-<a title="Jerry Cone, Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Diamond-1128734.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Diamond-1128734.jpg/512px-Diamond-1128734.jpg" alt="Diamond-1128734" width="512"/></a>
-
-Qu'est-ce qui définit le prix d'un diamant ? [Source :
-wikimedia.org](https://commons.wikimedia.org/wiki/File:Diamond-1128734.jpg)
+![Qu'est-ce qui définit le prix d'un diamant ?
+Photo : Jerry Cone, domaine public,
+via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Diamond-1128734.jpg).](../images/diamant.jpg){width="512" fig-alt="Un diamant taillé"}
 
 ## Introduction aux visualisations avec `ggplot2`
 

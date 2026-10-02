@@ -228,8 +228,9 @@ textuel, logique).
 Créons un data frame avec la fonction `data.frame()` maintenant. Nous
 appelons ce type d'objets désormais un **jeu de données**.
 
-![Le film Âge de glace [Source :
-wikimedia.org](https://en.wikipedia.org/wiki/File:Ice_Age_Dawn_of_the_Dinosaurs_theatrical_poster.jpg)](https://upload.wikimedia.org/wikipedia/en/2/24/Ice_Age_Dawn_of_the_Dinosaurs_theatrical_poster.jpg)
+Nos exemples reprennent les personnages du film d'animation
+[*L'Âge de glace 3 : Le Temps des dinosaures*](https://fr.wikipedia.org/wiki/L%27%C3%82ge_de_glace_3_:_Le_Temps_des_dinosaures)
+(2009).
 
 ```{r}
 #| echo: true

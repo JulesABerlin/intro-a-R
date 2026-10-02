@@ -1,4 +1,4 @@
-# Session 12 \| Statistiques inférentielles II
+# Statistiques inférentielles II
 
 ```{r}
 #| include: false
@@ -654,7 +654,7 @@ beaucoup sont très pertinents pour les sciences sociales et pour vos
     avancées que vous pourrez utiliser plus tard, par exemple pendant
     votre travail de bachelor, pour vos analyses empiriques.
 
-## Exercices
+## Exercices {.unnumbered}
 
 Choisissez *Vrai* ou *Faux*, cochez une réponse ou tapez un nombre : la couleur indique tout de suite si votre réponse est correcte. Cliquez sur **Explication** pour voir la correction.
 

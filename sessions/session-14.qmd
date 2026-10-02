@@ -1,4 +1,4 @@
-# Session 14 (en auto-apprentissage)
+# Auto-apprentissage
 
 ```{r}
 #| include: false

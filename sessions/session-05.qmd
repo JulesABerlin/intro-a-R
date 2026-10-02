@@ -1,4 +1,4 @@
-# Session 5 \| Visualisations II
+# Visualisations II
 
 ```{r}
 #| include: false
@@ -512,7 +512,7 @@ par exemple.
         délais recevra un **bonus de 2 points dans le Problem Set 4**
         (10% des points).
 
-## Exercices
+## Exercices {.unnumbered}
 
 Choisissez *Vrai* ou *Faux*, cochez une réponse ou tapez un nombre : la couleur indique tout de suite si votre réponse est correcte. Cliquez sur **Explication** pour voir la correction.
 

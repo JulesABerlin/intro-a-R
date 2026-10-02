@@ -1,4 +1,4 @@
-# Session 8 \| Manipuler les données II
+# Manipuler les données II
 
 ```{r}
 #| include: false
@@ -495,7 +495,7 @@ igposts %>%
 [URL du post Instagram de Karol
 G](https://www.instagram.com/p/ComtUDjrPAD/)
 
-## Exercices
+## Exercices {.unnumbered}
 
 Choisissez *Vrai* ou *Faux*, cochez une réponse ou tapez un nombre : la couleur indique tout de suite si votre réponse est correcte. Cliquez sur **Explication** pour voir la correction.
 

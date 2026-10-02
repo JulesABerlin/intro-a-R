@@ -1,4 +1,4 @@
-# Session 11 \| Statistiques inférentielles I
+# Statistiques inférentielles I
 
 ```{r}
 #| include: false
@@ -377,7 +377,7 @@ en ligne pertinents pour votre problématique spécifique.
     de Datacamp
     (2024)](https://www.datacamp.com/tutorial/t-tests-r-tutorial).
 
-## Exercices
+## Exercices {.unnumbered}
 
 Choisissez *Vrai* ou *Faux*, cochez une réponse ou tapez un nombre : la couleur indique tout de suite si votre réponse est correcte. Cliquez sur **Explication** pour voir la correction.
 

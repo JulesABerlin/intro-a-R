@@ -25,7 +25,7 @@ solution modèle.
 
 ## Exercices avec solutions
 
-### 0 : Préparez-vous pour l'exercice
+### Préparez-vous pour l'exercice
 
 -   Commencez en ouvrant un nouveau script R.
 
@@ -35,7 +35,7 @@ solution modèle.
 
 -   Chargez le paquet tidyverse avec `library(tidyverse)`.
 
-### 1 : mtcars I
+### Exercice 1 : mtcars I {#mtcars-i}
 
 -   Affichez la structure de `mtcars`avec `str(mtcars)`.
 -   Sélectionnez ensuite les colonnes `mpg` et `cyl` de `mtcars` avec
@@ -54,7 +54,7 @@ mtcars %>%
 ```
 :::
 
-### 2 : mtcars II
+### Exercice 2 : mtcars II {#mtcars-ii}
 
 -   Filtrez mtcars pour `mpg >= 25` !
 
@@ -74,7 +74,7 @@ mtcars %>%
 ```
 :::
 
-### 3 : mtcars III
+### Exercice 3 : mtcars III {#mtcars-iii}
 
 -   Triez `mtcars` par `mpg` dans l'ordre décroissant !
 
@@ -89,7 +89,7 @@ mtcars %>%
 ```
 :::
 
-### 4 : mtcars IV
+### Exercice 4 : mtcars IV {#mtcars-iv}
 
 -   Créez une nouvelle variable (colonne) dans mtcars, nommé `mpg_wt`,
     définie comme le nombre de `mpg` par unité de poids (`wt`) !
@@ -120,7 +120,7 @@ mtcars_v2 %>%
 ```
 :::
 
-### 5 : diamonds I
+### Exercice 5 : diamonds I {#diamonds-i}
 
 -   Affichez encore une fois `str(diamonds)` !
 -   Utilisez des verbes `dplyr`pour compter le nombre de diamants dans
@@ -145,7 +145,7 @@ diamonds %>%
 ```
 :::
 
-### 6 : diamonds II
+### Exercice 6 : diamonds II {#diamonds-ii}
 
 -   Calculez le prix moyen en USD des diamants dans `diamonds` !
 
@@ -164,7 +164,7 @@ mean(diamonds$price)
 ```
 :::
 
-### 7 : diamonds III
+### Exercice 7 : diamonds III {#diamonds-iii}
 
 -   Calculez le prix moyen en USD des diamants des différentes
     catégories de pureté (`clarity`) dans `diamonds` !
@@ -194,7 +194,7 @@ influence fortement le prix. Comparez avec
 exemple de **variable confondante**.
 :::
 
-### 8 : mtcars V
+### Exercice 8 : mtcars V {#mtcars-v}
 
 -   Regroupez mtcars par `gear`, puis, à l'aide de `summarize()`,
     calculez `n`, la médiane et la variance de mpg.
@@ -213,7 +213,7 @@ mtcars %>%
 ```
 :::
 
-### 9 : iris I
+### Exercice 9 : iris I {#iris-i}
 
 -   Sélectionner `Petal.Length`, `Petal.Width`, et `Species` dans
     `iris`.
@@ -241,7 +241,7 @@ iris %>%
 ```
 :::
 
-### 10 : diamonds IV
+### Exercice 10 : diamonds IV {#diamonds-iv}
 
 -   Utilisez les verbes de `dplyr` pour calculer la moyenne des prix en
     USD par carat dans `diamonds`.
@@ -270,7 +270,7 @@ coûtent plus cher, et les diamants de taille *Ideal* sont en moyenne plus
 petits (0,70 carat) que les *Premium* (0,89 carat).
 :::
 
-### 11 : igposts I
+### Exercice 11 : igposts I {#igposts-i}
 
 -   Chargez le jeu de données `igposts`que nous avons vu pendant session
     7.  
@@ -304,7 +304,7 @@ str(igposts)
 ```
 :::
 
-### 12 : igposts II
+### Exercice 12 : igposts II {#igposts-ii}
 
 -   Utilisez `dplyr` pour trouver le nombre `n`de posts Instagram
     regroupés par compte des influenceurs dans `igposts`.
@@ -324,7 +324,7 @@ igposts %>%
 ```
 :::
 
-### 13 : igposts III
+### Exercice 13 : igposts III {#igposts-iii}
 
 -   Utilisez `dplyr` pour calculer le nombre moyen de `Likes`,
     `Comments`et `Views`par compte (`Account`) des influenceurs dans
@@ -346,7 +346,7 @@ igposts %>%
 ```
 :::
 
-### 14 : igposts IV
+### Exercice 14 : igposts IV {#igposts-iv}
 
 -   Utilisez `dplyr` pour afficher les variables `Account`, `Likes` et
     `URL` des 5 posts dans `igposts` qui ont reçu le plus de `Likes`.
@@ -372,7 +372,7 @@ igposts %>%
 [URL Instagram du post de Leo
 Messi](https://www.instagram.com/p/CpLxnFlNJZn/)
 
-### 15 : igposts V
+### Exercice 15 : igposts V {#igposts-v}
 
 -   Faites la même chose que dans la question 14, mais maintenant pour
     les `Comments` au lieu des `Likes` !
@@ -397,9 +397,9 @@ igposts %>%
 [URL du post Instagram de Selena
 Gomez](https://www.instagram.com/p/Co_P7YgrrFO/)
 
-### 16 : igposts VI
+### Exercice 16 : igposts VI {#igposts-vi}
 
--   Faites la même chose que dans les questions 14 et 15, mais
+-   Faites la même chose que dans les exercices 14 et 15, mais
     maintenant pour les `Views` (à noter : Dans Instagram, la métrique
     `Views`désigne les **video views** uniquement ) !
 -   Allez voir l'URL du post avec le plus de `Views` : De quoi s'agit-il
@@ -423,7 +423,7 @@ igposts %>%
 [URL du post Instagram de Kendall
 Jenner](https://www.instagram.com/p/CoYqX0hr1jr/)
 
-### 17 : igposts VII
+### Exercice 17 : igposts VII {#igposts-vii}
 
 -   Utilisez dplyr pour créer une nouvelle colonne :
     `Likes_par_Follower` (définie comme `Likes` divisé par
@@ -447,7 +447,7 @@ igposts %>%
 [URL du post Instagram de Anastasia
 Karanikolaou](https://www.instagram.com/p/CoptMRoJtUD/)
 
-### 18 : igposts VIII
+### Exercice 18 : igposts VIII {#igposts-viii}
 
 -   Faites la même chose qu'à la question 17, mais cette fois créez la
     variable `Comments_par_Follower`.
@@ -470,9 +470,9 @@ igposts %>%
 [URL du post Instagram de
 KIARA](https://www.instagram.com/p/CoXmBSLvj7A/)
 
-### 19 : igposts IX
+### Exercice 19 : igposts IX {#igposts-ix}
 
--   Faites la même chose que dans les questions 17 et 18, mais cette
+-   Faites la même chose que dans les exercices 17 et 18, mais cette
     fois pour `Views_par_Follower` (ne calculez cette variable que pour
     les posts qui ont reçu plus de 0 vues).
 

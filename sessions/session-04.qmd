@@ -154,7 +154,7 @@ Vous pouvez afficher les jeux de données qui sont actuellement
 accéssible sur votre ordinateur avec la commande `data().`
 :::
 
-### le jeu de données `iris`
+### Le jeu de données `iris`
 
 Le jeu de données `iris` est un ensemble de données célèbre qui contient
 les mesures en centimètres des variables longueur et largeur du sépale,
@@ -230,7 +230,7 @@ Vous pouvez consulter la documentation pour beaucoup de jeux de données
 avec un point d'interrogation : `?iris()`.
 :::
 
-### le jeu de données `mtcars`
+### Le jeu de données `mtcars`
 
 Utilisez le script suivant pour analyser `mtcars`(lisez également la
 documentation avec `?mtcars`) !
@@ -281,7 +281,7 @@ max(mtcars$mpg)
 Photo : Jeremy from Sydney, Australia, [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/),
 via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:1974_Toyota_Corolla_(KE20)_L_2-door_sedan_(20538771443).jpg).](../images/toyota-corolla-1974.jpg){width="512" fig-alt="Toyota Corolla deux portes de 1974"}
 
-### le jeu de données `diamonds`
+### Le jeu de données `diamonds`
 
 C'est maintenant à vous d'explorer ce jeu de données avec du code !
 
@@ -420,7 +420,7 @@ Maintenant il s'agit d'interpréter le graphique. Que nous dit-il sur la
 relation entre prix et carats des diamants ? Quel rôle joue la variable
 *pureté* (`clarity`)?
 
-### Devoir pour Session 5
+## Devoir pour Session 5 {.unnumbered}
 
 -   Exécutez toutes les sections de code de la session 4 sur votre
     ordinateur.

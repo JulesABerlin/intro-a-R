@@ -504,7 +504,7 @@ ordinateur. Avec `setwd()`, le code cesse de fonctionner dès qu'il est
 déplacé sur un autre ordinateur.
 :::
 
-### Devoir pour Session 3 (Problem Set 1)
+## Devoir pour Session 3 (Problem Set 1) {.unnumbered}
 
 -   **Problem Set 1**
 

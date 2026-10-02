@@ -477,7 +477,7 @@ igposts %>%
             mean_Comments = mean(Comments)) 
 ```
 
-### Devoir pour Session 8 et infos questionnaire
+## Devoir pour Session 8 et infos questionnaire {.unnumbered}
 
 -   Assurez-vous que vous pouvez charger correctement le fichier de
     données igposts.csv dans votre session R active.

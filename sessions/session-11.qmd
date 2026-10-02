@@ -44,7 +44,7 @@ ou non l'hypothèse nulle, et de généraliser prudemment les conclusions à
 la population entière. Ceci nous permet de contribuer à la création de
 nouvelles connaissance dans notre domaine de recherche
 
-## le test t
+## Le test t
 
 ::: {.callout-note icon="true"}
 ## À noter

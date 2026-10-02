@@ -405,7 +405,7 @@ La vidéo YouTube suivante de StatQuest, un créateur de contenus qui
 explique très bien lest concepts statistiques (en anglais), décrit
 comment interpréter les résultats d'une regression linéaire dans R :
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/u1cc1r_Y7M0?si=TBPst3RY5jKWxIyu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/u1cc1r_Y7M0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 
 </iframe>
 
@@ -613,19 +613,19 @@ beaucoup sont très pertinents pour les sciences sociales et pour vos
 études en général, p. ex. :
 
 -   [Linear Regression, Clearly
-    Explained!!!](https://youtu.be/nk2CQITm_eo?si=rtNUDxVBeq6D7xkr)
+    Explained!!!](https://youtu.be/nk2CQITm_eo)
 -   [Multiple Regression in R,
-    Step-by-Step!!!](https://youtu.be/mno47Jn4gaU?si=PDMYDHu1ANTV70V2)
+    Step-by-Step!!!](https://youtu.be/mno47Jn4gaU)
 -   [The Normal Distribution, Clearly
-    Explained!!!](https://youtu.be/rzFX5NWojp0?si=A10LmX2WJ1mbN46c)
+    Explained!!!](https://youtu.be/rzFX5NWojp0)
 -   [p-values: What they are and how to interpret
-    them](https://youtu.be/vemZtEM63GY?si=SO9AOuuRMhDch-yk)
+    them](https://youtu.be/vemZtEM63GY)
 -   [R-squared, Clearly
-    Explained!!!](https://youtu.be/2AQKmw14mHM?si=gN5HL80pFAi_R0CM)
+    Explained!!!](https://youtu.be/2AQKmw14mHM)
 -   [Hypothesis Testing and The Null Hypothesis, Clearly
-    Explained!!!](https://youtu.be/0oc49DyA3hU?si=gH4KNuhTOYtnGoZU)
+    Explained!!!](https://youtu.be/0oc49DyA3hU)
 -   [Logistic Regression in R, Clearly
-    Explained!!!](https://youtu.be/C4N3_XJJ-jU?si=2MPycgEfuUTQMaRa)
+    Explained!!!](https://youtu.be/C4N3_XJJ-jU)
 
 ### Devoir pour Session 13 (Problem Set 4) et infos sur la session 14
 

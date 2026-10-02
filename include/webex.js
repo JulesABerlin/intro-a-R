@@ -1,3 +1,5 @@
+<!-- webexercises (Dale Barr, Lisa DeBruine et Caspar J. Van Lissa), https://github.com/psyteachr/webexercises
+     Licence : CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0/ -->
 <script>
 
 /* update total correct if #webex-total_correct exists */

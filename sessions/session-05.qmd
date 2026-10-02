@@ -421,8 +421,8 @@ Le dataset `mtcars` en R, qui contient des données sur les
 caractéristiques de différents modèles de voitures, peut être utilisé
 pour illustrer l'utilisation de boxplots.
 
-Par exemple, pour visualiser la distribution de la consommation de
-carburant (`mpg`) des voitures en fonction du nombre de cylindres
+Par exemple, pour visualiser la distribution de l'efficacité
+énergétique (`mpg`, miles par gallon) des voitures en fonction du nombre de cylindres
 (`cyl`), on peut utiliser le code suivant :
 
 ```{r}
@@ -433,8 +433,8 @@ str(mtcars)
 Nous pouvons constater que la colonne `cyl` (cylindre) est stockée au
 format numérique.
 
-C'est un problème, car nous voulons comparer la consommation de
-carburant des voitures à 4, 6 ou 8 cylindres. Nous devons traiter
+C'est un problème, car nous voulons comparer l'efficacité énergétique
+(`mpg`) des voitures à 4, 6 ou 8 cylindres. Nous devons traiter
 chacune d'entre elles comme un sous-groupe distinct. Comment faire ?
 
 ```{r}
@@ -445,14 +445,14 @@ mtcars$cyl <- as.factor(mtcars$cyl)
 box1 <- ggplot(data = mtcars, 
           aes(x=cyl, y=mpg, fill = cyl)) + 
             geom_boxplot(alpha=0.2) + 
-              labs(title = "Consommation de carburant (mpg) par nombre de cylindres dans mtcars", x = "Nombre de cylindres", y = "Miles per gallon (mpg)")
+              labs(title = "Miles par gallon (mpg) selon le nombre de cylindres dans mtcars", x = "Nombre de cylindres", y = "Miles per gallon (mpg)")
 print(box1)
   
 ```
 
 Ce code génère un boxplot, `box1`, pour chaque groupe de cylindres dans
-le dataset `mtcars`, permettant de comparer facilement la consommation
-de carburant entre les voitures avec un différents nombres de cylindres.
+le dataset `mtcars`, permettant de comparer facilement l'efficacité
+énergétique (`mpg`) entre les voitures avec un différents nombres de cylindres.
 
 ::: {.callout-note icon="true"}
 ## À noter

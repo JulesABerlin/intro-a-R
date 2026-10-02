@@ -13,6 +13,8 @@ igposts <- read.csv("https://julesaberlin.github.io/intro-a-R/data/igposts.csv",
                     encoding = "UTF-8", na.strings = "#N/A")
 ```
 
+Merci à Franck Bleu, tuteur en méthodes quantitatives, pour sa contribution aux exercices ; voir [À propos](apropos.qmd).
+
 ```{=html}
 <script>
 // Redirige les anciens liens « index.html#session-… » (site d'une seule page)

@@ -360,7 +360,7 @@ des types, R les convertit sans prévenir vers le type le plus général
 `"1" "a" "TRUE"`.
 :::
 
-### Devoir pour Session 2
+## Devoir pour Session 2 {.unnumbered}
 
 -   Si ce n'est pas encore fait : Installez R et RStudio sur votre
     ordinateur.

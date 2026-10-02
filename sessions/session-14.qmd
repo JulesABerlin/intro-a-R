@@ -10,7 +10,7 @@ communication**
 
 Voici des étapes clés pour devenir un·e utilisateur·trice avancé·e de R.
 
-### Pratique régulière
+## Pratique régulière
 
 -   Il est essentiel de pratiquer régulièrement pour devenir plus à
     l'aise avec R.
@@ -18,7 +18,7 @@ Voici des étapes clés pour devenir un·e utilisateur·trice avancé·e de R.
 -   Intégrez l'utilisation de R dans vos projets académiques et
     personnels autant que possible.
 
-### Application académique
+## Application académique
 
 -   Demandez aux enseignant-e-s d'autres cours si vous pouvez utiliser R
     dans leurs cours.
@@ -29,7 +29,7 @@ Voici des étapes clés pour devenir un·e utilisateur·trice avancé·e de R.
 -   Collaborez avec d'autres étudiant-e-s utilisateurs·trices de R sur
     des projets de recherche en groupe à l'université.
 
-### MOOC
+## MOOC
 
 Pour répéter et approfondir vos connaissances en R, des **MOOC**
 (massive open online courses) sont disponibles gratuitement en tant
@@ -54,7 +54,7 @@ Si vous payez entre 50 et 200 USD, il est également possible de valider
 de tels MOOC avec un certificat. Ces certificats peuvent notamment être
 reliés à LinkedIn et y être affichés.
 
-### Tutoriels sur Youtube
+## Tutoriels sur YouTube
 
 Il existe également de nombreux tutoriels R sur Youtube. Il peut s'agir
 de cours R complets de différents niveaux ou de courtes vidéos montrant
@@ -82,7 +82,7 @@ de visualisation).
     computing** (by Barton Poulson, 2h comprehensive general R
     introduction) : <https://www.youtube.com/watch?v=_V8eKsto3Ug>
 
-### Intelligence artificielle pour coder
+## Intelligence artificielle pour coder
 
 Utiliser l'intelligence artificielle générative pour coder. Jouez avec,
 demandez simplement du code R pour faire certaines choses. Ces
@@ -93,7 +93,7 @@ copier et coller directement dans RStudio !
 
 -   [Le Chat de Mistral](https://chat.mistral.ai/chat)
 
-### Communautés en Ligne
+## Communautés en ligne
 
 Participez à des communautés en ligne pour rester connecté·e avec les
 dernières tendances et partager vos connaissances :
@@ -104,7 +104,7 @@ dernières tendances et partager vos connaissances :
 -   [Kaggle](https://www.kaggle.com) : Une plateforme pour le machine
     learning et l'analyse de données
 
-### Lecture spécialisée
+## Lecture spécialisée
 
 Approfondissez vos connaissances en R avec des livres numérique
 open-source :
@@ -125,7 +125,7 @@ open-source :
     l’Université
     Laval : <https://cran.r-project.org/doc/contrib/Goulet_introduction_programmation_R.pdf>
 
-### Valorisation des Compétences
+## Valorisation des compétences
 
 -   Mettez en avant vos compétences en programmation R dans votre CV et
     sur LinkedIn, notamment les certificats obtenus via des MOOCs.
@@ -133,7 +133,7 @@ open-source :
 Ces conseils vous aideront à utiliser efficacement R dans le domaine des
 sciences de la communication et à développer une expertise approfondie.
 
-### Au revoir et à bientôt
+## Au revoir et à bientôt
 
 Ainsi se termine ce cours et donc l'introduction à R dans le cadre des
 Exercices Méthodes II du [Bachelor en sciences de la communication à

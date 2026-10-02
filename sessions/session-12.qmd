@@ -312,7 +312,7 @@ La syntaxe de base de la fonction `lm()` est la suivante :
     régression doit utiliser en tant qu'entrée contenant les variables
     mentionnées dans la formule.
 
-### Exemple 1 : La régression linéaire à une variable avec `mtcars`
+### Exemple 2 : La régression linéaire à une variable avec `mtcars` {#exemple-1-la-régression-linéaire-à-une-variable-avec-mtcars}
 
 Voici un exemple d'utilisation de la fonction `lm()` avec le jeu de
 données `mtcars` : `lm(mpg ~ wt, data = mtcars)`
@@ -489,7 +489,7 @@ pas tout à fait linéaire (on pourrait essayer `mpg ~ wt + I(wt^2)` ou
 Imperial) s'écartent nettement du modèle. Pour un modèle simple
 d'illustration, cela reste acceptable.
 
-### Exemple 2 : La régression linéaire multiple avec `mtcars`
+### Exemple 3 : La régression linéaire multiple avec `mtcars` {#exemple-2-la-régression-linéaire-multiple-avec-mtcars}
 
 Pouvons-nous encore améliorer `modele_1` qui prédit `mpg` dans le jeu de
 données mtcars ? Une possibilité évidente est d'inclure d'autres
@@ -545,7 +545,7 @@ elle ne sert pas à comparer des modèles.
 Une question est alors : **comment choisir le meilleur modèle de
 regression ?**
 
-### Exemple 3 : La régression par étape avec `mtcars`
+### Exemple 4 : La régression par étape avec `mtcars` {#exemple-3-la-régression-par-étape-avec-mtcars}
 
 Une possible solution est d'utiliser ce qu'on appelle **la régression
 par étape**. C'est une méthode d'ajustement des modèles de régression
@@ -642,7 +642,7 @@ beaucoup sont très pertinents pour les sciences sociales et pour vos
 -   [Logistic Regression in R, Clearly
     Explained!!!](https://youtu.be/C4N3_XJJ-jU)
 
-### Devoir pour Session 13 (Problem Set 4) et infos sur la session 14
+## Devoir pour Session 13 (Problem Set 4) et infos sur la session 14 {.unnumbered}
 
 -   La semaine prochaine, les 22 et 23 mai, **le Problem Set 4** aura
     lieu pendant la session 13. Son contenu sera axé sur les

@@ -22,7 +22,7 @@ library(tidyverse)
 library(ggthemes)
 ```
 
-## 1. Les nuages de points (angl. *scatter plots*)
+## Les nuages de points (angl. *scatter plots*)
 
 Commençons par le **nuage de points**, que nous avons déjà vu lors de la
 dernière session, lorsque nous avons visualisé la relation entre les
@@ -116,7 +116,7 @@ globale peut s'inverser lorsqu'on tient compte d'une variable de groupe
 Cette constatation est un exemple d'analyse exploratoire des données,
 rendue possible par les possibilités de visualisation de `ggplot2`.
 
-## 2. Les diagrammes à barres
+## Les diagrammes à barres
 
 ::: {.callout-note icon="true"}
 ## À noter
@@ -191,7 +191,7 @@ pour créer un nouvel objet,`db2`, qui visualise la fréquence des types
 de qualité de couleur (`color`) dans le jeu de données `diamonds` sous
 la forme d'un diagramme à barres !
 
-## 3. Les histogrammes
+## Les histogrammes
 
 ::: {.callout-note icon="true"}
 ## À noter
@@ -345,7 +345,7 @@ visualisation. Pour cette tâche, vous pouvez supposer que les hommes en
 Suisse ont une taille moyenne (`mean`) de 177,4 cm avec un écart-type
 (`sd`) de 6,1 cm.
 
-## 4. Les boîtes à moustaches (angl. *boxplots*)
+## Les boîtes à moustaches (angl. *boxplots*)
 
 ::: {.callout-note icon="true"}
 ## À noter
@@ -471,7 +471,7 @@ voitures à 8 cylindres qui sont relativement efficaces en termes de
 consommation de carburant, surpassant quelques voitures à 6 cylindres,
 par exemple.
 
-### Devoir pour Session 6 (Problem Set 2)
+## Devoir pour Session 6 (Problem Set 2) {.unnumbered}
 
 -   **Problem Set 2**
 

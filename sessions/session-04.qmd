@@ -139,16 +139,15 @@ immédiatement commencer l'analyse et la visualisation des données.
 Par conséquent, vous pouvez facilement trouver des ressources
 supplémentaires et des exemples de code à leur sujet.
 
-Dans ce qui suit, nous allons explorer quatre jeux de données classiques
+Dans ce qui suit, nous allons explorer trois jeux de données classiques
 de ce type :
 
--   `iris`
+-   `iris` et `mtcars`, fournis avec R ;
 
--   `mtcars`
+-   `diamonds`, fourni avec le paquet `ggplot2`.
 
--   `diamonds`
-
--   `palmerpenguins`
+Nous verrons un quatrième jeu de données, `penguins` (paquet
+`palmerpenguins`), en session 12.
 
 ::: {.callout-tip title="Astuce"}
 Vous pouvez afficher les jeux de données qui sont actuellement
@@ -165,9 +164,9 @@ total (50 pour chaque espèce).
 
 Le jeu de données a été rendu célèbre par le statisticien et biologiste
 britannique **Ronald Fisher** dans un article scientifique de 1936 qui
-avait beaucoup d'influence dans le domaine des statistiques. Les données
-d'iris eux-même ont été récolté par le botaniste Edgar Anderson en 1935
-sur la péninsule de Gaspésie au Québéc, Canada.
+avait beaucoup d'influence dans le domaine des statistiques. Les mesures
+ont été publiées par le botaniste Edgar Anderson (1935) ; deux des trois
+espèces proviennent de la péninsule de Gaspé (Québec, Canada).
 
 ::: {.callout-caution collapse="true"}
 ## Plus sur Ronald Fisher
@@ -302,9 +301,10 @@ visualisation de données très populaire dans R. Il a été conçu pour
 faciliter la création de graphiques complexes et multicouches avec une
 syntaxe cohérente et consistante nommée *grammar of graphics*.
 
-*ggplot2* est donc un acronyme formé à partir des mots *grammar of
-graphics plots* (français : *grammaire des graphiques*). Le "2" dans
-ggplot2 indique simplement la deuxième génération de ce paquet R.
+Le « gg » de *ggplot2* signifie *grammar of graphics* (français :
+*grammaire des graphiques* ; Wilkinson, 2005), une théorie que Hadley
+Wickham a implémentée dans R ; le « 2 » distingue le paquet de sa
+première version, `ggplot`.
 
 Avec `ggplot2`, les utilisateurs peuvent construire des graphiques de
 manière incrémentale en ajoutant des couches, ce qui le rend flexible

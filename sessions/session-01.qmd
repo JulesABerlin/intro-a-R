@@ -148,10 +148,10 @@ volet **environnement** en haut à droite de RStudio.
 ::: {.callout-note icon="true"}
 ## À noter
 
-En général, la programmation R parle aussi d'**objets**, ou de
-**structures de données**, que vous pouvez créer. C'est pourquoi R est
-également appelé **langage de programmation orienté objet**. Les
-variables à un élément sont des objets très simples. Au cours de ce
+En R, tout ce que l'on manipule (une valeur, un vecteur, un tableau, une
+fonction) est un **objet** qui porte un nom. On parle aussi de
+**structures de données**. Les variables à un élément sont des objets
+très simples. Au cours de ce
 cours, nous découvrirons d'autres types d'objets.
 :::
 
@@ -321,7 +321,7 @@ d'entrée sont également appelés les **arguments** de la fonction.
 Prenons l'exemple de la fonction `c()` qui crée des vecteurs :
 
 -   les arguments de cette fonction doivent être insérés entre les
-    crochets sous la forme de valeurs séparées par des virgules (pour
+    **parenthèses** sous la forme de valeurs séparées par des virgules (pour
     chaque élément du vecteur).
 
 -   Un vecteur à deux éléments : `c(2, 4)`

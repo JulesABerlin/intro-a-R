@@ -69,11 +69,13 @@ questionnaire (version de 2024) !
 ::: {.callout-note icon="true"}
 ## Données synthétiques
 
-Pour protéger les étudiant·es qui ont répondu au questionnaire, le fichier
-`reponses_socio.csv` publié sur ce site est une **copie synthétique** des
-réponses : il contient les mêmes variables, avec des distributions et des
-relations semblables, mais aucune ligne ne correspond à une vraie personne.
-Les résultats ci-dessous peuvent donc différer de ceux présentés en cours.
+Le fichier `reponses_socio.csv` utilisé sur ce site est **synthétique** : ses
+données ont été simulées à partir du questionnaire d'une classe, et il ne
+contient **aucune personne réelle**. Il a les mêmes variables que le
+questionnaire, avec des distributions et des relations semblables. Pour
+protéger les participant·es, les valeurs rares ont été regroupées (p. ex.
+« Autre canton »). Les résultats ci-dessous peuvent donc différer de ceux
+présentés en cours.
 :::
 
 Vous verrez donc par la suite comment ce que nous avons appris jusqu'à
@@ -89,8 +91,16 @@ Vous pouvez ensuite télécharger le fichier `reponses_socio.csv` depuis
 la page Moodle du cours (matériel de la 10ème session) et le sauvegarder
 dans votre répértoire de travail.
 
-![Paramètres pour l'importation du fichier
-`reponses_socio.csv`.](../images/Screenshot%202024-05-01%20at%2009.09.22.png)
+Si vous importez le fichier avec *Import Dataset → From Text (base)…*, utilisez
+les paramètres suivants :
+
+-   *Name* : `reponses_socio`
+-   *Encoding* : `UTF-8`
+-   *Heading* : `Yes`
+-   *Row names* : `Automatic`
+-   *Separator* : `Comma` ; *Decimal* : `Period` ; *Quote* : `Double (")`
+-   *na.strings* : `NA`
+-   *Strings as factors* : coché
 
 ```{r}
 #| echo: true

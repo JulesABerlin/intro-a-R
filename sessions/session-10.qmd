@@ -44,7 +44,7 @@ jeu de données.
 Des mesures concernant les **variables catégorielles** peuvent également
 faire partie d'une analyse déscriptive, notamment :
 
--   La fréquence de chaque catégories (p. ex. combien de participant-e-s
+-   La fréquence de chaque catégories (p. ex. combien de participant·es
     à un questionnaire sont des femmes ?)
 -   La répartition des différentes catégories (p. ex. quel est le
     pourcentage de femmes dans l'échantillon ?)
@@ -69,7 +69,7 @@ codes R nécessaires pour utiliser ces deux paquets dans ce cours.
 
 Pour nous entraîner à nouveau, cette fois avec nos propres données, nous
 allons procéder ci-dessous à une analyse descriptive des réponses au
-questionnaire (version de 2024) !
+questionnaire rempli par les étudiant·es du cours !
 
 ::: {.callout-note icon="true"}
 ## Données synthétiques
@@ -89,12 +89,10 @@ présent dans le cours peut être combiné de manière utile.
 ## Analyse des réponses au questionnaire, 1ère partie (stats déscriptives)
 
 Veuillez ouvrir un nouveau script R et charger les paquets `tidyverse`
-et `ggthemes`. Ensuite, vous pouvez définir votre répértoire de
-travaille.
-
-Vous pouvez ensuite télécharger le fichier `reponses_socio.csv` depuis
-la page Moodle du cours (matériel de la 10ème session) et le sauvegarder
-dans votre répértoire de travail.
+et `ggthemes`. Téléchargez ensuite le fichier
+[`reponses_socio.csv`](../data/reponses_socio.csv) dans votre répertoire de
+travail, ou lisez-le directement depuis le site comme dans le code
+ci-dessous.
 
 Si vous importez le fichier avec *Import Dataset → From Text (base)…*, utilisez
 les paramètres suivants :
@@ -146,8 +144,8 @@ ggplot(data = reponses_socio,
   geom_histogram(binwidth = 10, 
                  fill = "steelblue",
                      color = "black") +
-  labs(title = "Trajets en minutes des étudiant-e-s pour arriver à l'UniFR",
-       subtitle = "Questionnaire avec n = 74 participant-e-s",
+  labs(title = "Trajets en minutes des étudiant·es pour arriver à l'UniFR",
+       subtitle = "Questionnaire avec n = 74 participant·es",
        x = "Trajet en minutes",
        y = "Fréquence") +
   theme_minimal()
@@ -286,7 +284,7 @@ write.csv(ice_age_df, file = "~/Documents/exercices_methodes_2/ice_age_df.csv")
 ```
 
 Si tout a bien marché, vous devrez maintenant avoir un ficher CSV, nommé
-`ice_age_df.csv`dans votre répértoire de travail !
+`ice_age_df.csv`dans votre répertoire de travail !
 
 ## Exercices {.unnumbered}
 

@@ -1,22 +1,19 @@
-# Problem Set 2 (révision)
+# Révision 2 : visualisation
 
 ```{r}
 #| include: false
 source("_common.R")
 ```
 
-Les résultats du **Problem Set 2** (bonnes réponses, échelle des notes)
-sont accéssibles sur la page Moodle de l'exercice.
+Dans le cours, le **Problem Set 2** était un test de 30 minutes sur Moodle portant sur
+les chapitres 4 et 5. Les questions ci-dessous en reprennent le contenu, avec la
+correction et une explication pour chaque réponse.
 
-Voici l'histogramme des points obtenus par n = 65 étudiant-e-s qui ont
-participé au Problem Set 2 le 26 et 27 mars 2025.
+::: {.callout-note collapse="true"}
+## Résultats de l'édition 2025 du cours
 
--   Le nombre maximal de points était de 20, il fallait 10 pour passer
-    le test.
-
--   La moyenne des points obtenus était de 12.7 (note = 4.5).
-
--   56 étudiant-e-s (86%) ont réussi Problem Set 2.
+65 étudiant·es ont passé ce test (20 points au maximum, 10 pour réussir).
+La moyenne était de 12,8 points et 86 % des étudiant·es l'ont réussi.
 
 ```{r}
 #| echo: false
@@ -24,7 +21,6 @@ participé au Problem Set 2 le 26 et 27 mars 2025.
 #| warning: false
 # script pour faire un histogramme des points obtenus dans le Problem Set 2
 # cours : Exercices Méthodes II
-# date : 27/28 mars 2024
 # auteur : Julian Maitra
 
 library(ggplot2)
@@ -45,7 +41,7 @@ hist_ps_2 <-ggplot(points_ps_2,
   geom_histogram(binwidth = 1, color="black", fill="white") +
   labs(title = "Histogramme des points obtenus dans le PS 2", # labs() permet de définir plusieurs labels en même temps (titre, axes, etc.)
        subtitle = "n = 65 résultats de test", 
-       caption = "Source des données : Moodle") +       
+       caption = "Source : Problem Set 2, édition 2025") +       
   xlab("Points obtenus") +                             
   ylab("Fréquence") + 
   theme_minimal() +
@@ -56,6 +52,7 @@ hist_ps_2 <-ggplot(points_ps_2,
              color="red",  linewidth=1, linetype="dashed")
 hist_ps_2
 ```
+:::
 
 ## Exercices de révision {.unnumbered}
 

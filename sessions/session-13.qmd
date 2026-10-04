@@ -1,31 +1,19 @@
-# Problem Set 4 (révision)
+# Révision 4 : statistiques
 
 ```{r}
 #| include: false
 source("_common.R")
 ```
 
-Les résultats du **Problem Set 4** (bonnes réponses, échelle des notes)
-du SP 2025 sont accéssibles sur la page Moodle de l'exercice.
+Dans le cours, le **Problem Set 4** était un test sur Moodle portant sur
+les chapitres 10 à 12. Les questions ci-dessous en reprennent le contenu, avec la
+correction et une explication pour chaque réponse.
 
-::: {.callout-important title="Important"}
-**Spécificité du Problem Set 4** : les étudiant-e-s qui ont répondu dans
-les temps au questionnaire sur l'utilisation des médias se voient
-attribuer 2 points bonus supplémentaires à leur score dans le Problem
-Set 4. Ces 2 points bonus, obtenus par une majorité d'étudiant-e-s, sont
-pris en compte pour le calcul final de la note du cours (ils ne sont
-toutefois pas comptabilisés dans l'histogramme ci-dessous).
-:::
+::: {.callout-note collapse="true"}
+## Résultats de l'édition 2025 du cours
 
-Voici l'histogramme des points obtenus par n = 56 étudiant-e-s qui ont
-participé au Problem Set 4 le 22 et 28 mai 2025 dans trois groupes (A, B et C).
-
--   Le nombre maximal de points était de 20, il fallait 10 pour passer
-    le test.
-
--   La moyenne des points obtenus était de 11. (note = 4.25).
-
--   39 étudiant-e-s (69.6%) ont réussi Problem Set 4.
+56 étudiant·es ont passé ce test (20 points au maximum, 10 pour réussir).
+La moyenne était de 11,0 points et 70 % des étudiant·es l'ont réussi.
 
 ```{r}
 #| echo: false
@@ -33,7 +21,6 @@ participé au Problem Set 4 le 22 et 28 mai 2025 dans trois groupes (A, B et C).
 #| warning: false
 # script pour faire un histogramme des points obtenus dans le Problem Set 4
 # cours : Exercices Méthodes II
-# date : 22/28 mai 2025
 # auteur : Julian Maitra
 
 library(tidyverse)
@@ -56,7 +43,7 @@ hist_ps_4 <-ggplot(points_ps_4,
   geom_histogram(binwidth = 1, color="black", fill="white") +
   labs(title = "Histogramme des points obtenus dans le PS 4", # labs() permet de définir plusieurs labels en même temps (titre, axes, etc.)
        subtitle = "n = 56 résultats de test", 
-       caption = "Source des données : Moodle") +       
+       caption = "Source : Problem Set 4, édition 2025") +       
   xlab("Points obtenus") +                             
   ylab("Fréquence") + 
   theme_minimal() +
@@ -67,6 +54,7 @@ hist_ps_4 <-ggplot(points_ps_4,
              color="red",  linewidth=1, linetype="dashed")
 hist_ps_4
 ```
+:::
 
 ## Exercices de révision {.unnumbered}
 

@@ -1,4 +1,4 @@
-# Introduction
+# Premiers pas avec R
 
 ```{r}
 #| include: false
@@ -7,10 +7,9 @@ source("_common.R")
 
 **Sujet : Bienvenue, pourquoi R ? et commandes de base I**
 
-Bienvenue dans la première leçon du cours **Exercices Méthode II** du
-Bachelor en sciences de la communication à l'Université de Fribourg !
-
-Sur cette page Github, je vous guiderai dans vos premiers pas avec R.
+Bienvenue ! Ce premier chapitre vous guide dans vos premiers pas avec R :
+installer les logiciels, découvrir l'interface RStudio et écrire vos
+premières lignes de code.
 
 ::: {.callout-note icon="true"}
 ## À noter
@@ -360,7 +359,7 @@ des types, R les convertit sans prévenir vers le type le plus général
 `"1" "a" "TRUE"`.
 :::
 
-## Devoir pour Session 2 {.unnumbered}
+## À faire avant de continuer {#devoir-pour-session-2 .unnumbered}
 
 -   Si ce n'est pas encore fait : Installez R et RStudio sur votre
     ordinateur.

@@ -1,4 +1,4 @@
-# Statistiques inférentielles II
+# Statistiques inférentielles II : ANOVA et régression
 
 ```{r}
 #| include: false
@@ -641,18 +641,6 @@ beaucoup sont très pertinents pour les sciences sociales et pour vos
     Explained!!!](https://youtu.be/0oc49DyA3hU)
 -   [Logistic Regression in R, Clearly
     Explained!!!](https://youtu.be/C4N3_XJJ-jU)
-
-## Devoir pour Session 13 (Problem Set 4) et infos sur la session 14 {.unnumbered}
-
--   La semaine prochaine, les 22 et 23 mai, **le Problem Set 4** aura
-    lieu pendant la session 13. Son contenu sera axé sur les
-    statistiques descriptives et inférentielles (contenu des sessions
-    10, 11 et 12).
--   Attention, **la session 14 du 29 et 30 mai 2024 sera une session en
-    auto-apprentissage !** Il n'y a donc pas d'enseignement en classe à
-    Fribourg.La session 14 vous fournira surtout des ressources R plus
-    avancées que vous pourrez utiliser plus tard, par exemple pendant
-    votre travail de bachelor, pour vos analyses empiriques.
 
 ## Exercices {.unnumbered}
 

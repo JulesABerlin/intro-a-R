@@ -27,12 +27,15 @@ en ouvrant une *issue* sur [GitHub](https://github.com/julesaberlin/intro-a-R/is
 
 | Élément | Où | Auteur·e | Licence |
 |---|---|---|---|
-| Photo de trois espèces d'iris | Session 4 | Diego Mariano, via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Flores_de_%C3%8Dris.png) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
-| Photo d'une Toyota Corolla de 1974 | Session 4 | Jeremy from Sydney, Australia, via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:1974_Toyota_Corolla_(KE20)_L_2-door_sedan_(20538771443).jpg) | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) |
-| Photo d'un diamant | Session 4 | Jerry Cone, via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Diamond-1128734.jpg) | Domaine public |
-| Logo du paquet palmerpenguins | Session 12 | Allison Horst ([palmerpenguins](https://allisonhorst.github.io/palmerpenguins/)) | [CC0](https://creativecommons.org/publicdomain/zero/1.0/) |
+| Photo de trois espèces d'iris | Chapitre 4 | Diego Mariano, via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Flores_de_%C3%8Dris.png) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| Photo d'une Toyota Corolla de 1974 | Chapitre 4 | Jeremy from Sydney, Australia, via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:1974_Toyota_Corolla_(KE20)_L_2-door_sedan_(20538771443).jpg) | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) |
+| Photo d'un diamant | Chapitre 4 | Jerry Cone, via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Diamond-1128734.jpg) | Domaine public |
+| Logo du paquet palmerpenguins | Chapitre 12 | Allison Horst ([palmerpenguins](https://allisonhorst.github.io/palmerpenguins/)) | [CC0](https://creativecommons.org/publicdomain/zero/1.0/) |
 | Exercices interactifs (`webex.css`, `webex.js`) | Toutes les pages | Dale Barr, Lisa DeBruine et Caspar J. Van Lissa ([webexercises](https://github.com/psyteachr/webexercises)) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
-| Jeux de données intégrés à R (`iris`, `mtcars`, `women`, `diamonds`, `mpg`, `penguins`) | Sessions 4 à 13 | Voir la page d'aide de chaque jeu de données (p. ex. `?iris`) | Licences de R et des paquets concernés |
+| Jeux de données intégrés à R (`iris`, `mtcars`, `women`, `diamonds`, `mpg`, `penguins`) | Chapitres 4 à 13 | Voir la page d'aide de chaque jeu de données (p. ex. `?iris`) | Licences de R et des paquets concernés |
+| Captures d'écran de RStudio (volets ; importation d'un fichier CSV) | Chapitres 1 et 7 | Julian Maitra ; captures d'écran de RStudio Desktop © Posit Software, PBC | Logiciel sous licence AGPL v3 ; exclues de la licence CC du site |
+
+Posit, RStudio, and Shiny are trademarks of Posit Software, PBC, all rights reserved, and may be registered in the United States Patent and Trademark Office and in other countries.
 
 ## Données
 
@@ -46,7 +49,8 @@ en ouvrant une *issue* sur [GitHub](https://github.com/julesaberlin/intro-a-R/is
     l'outil de Meta pour l'analyse de contenus publics. Il ne contient que des
     métriques publiques et le lien vers chaque post ; le texte des légendes a
     été retiré. Les photos et textes des posts restent la propriété de leurs
-    auteur·es.
+    auteur·es. Le site renvoie aux posts par des liens et n'intègre aucun
+    contenu d'Instagram.
 -   Les fichiers **`points_*.csv`** contiennent les points obtenus aux Problem
     Sets, sans aucun identifiant.
 

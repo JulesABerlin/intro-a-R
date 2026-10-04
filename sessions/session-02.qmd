@@ -129,7 +129,7 @@ questionnaire
 ```
 
 Dans ce modèle, l'unité statistique de ce jeu de données est la personne
-qui a répondue au questionnaire (un participant). Chaque ligne
+qui a répondu au questionnaire (un participant). Chaque ligne
 correspond donc à une personne différente. Les variables, en revanche,
 sont les différentes questions qui ont été enregistrées pour chaque
 participant.
@@ -138,8 +138,8 @@ Regardons maintenant quelques objets R sous forme de tableau :
 
 ## Les matrices
 
-Les **matrices** sont des objets plutôt mathématique. Elles doivent
-notamment être composé de données de même type, c'est à dire numérique,
+Les **matrices** sont des objets plutôt mathématiques. Elles doivent
+notamment être composées de données de même type, c'est à dire numérique,
 textuel, logique, etc.
 
 On peut créer des objets matriciels avec la commande **`matrix()`**,
@@ -175,7 +175,7 @@ print(m2)
 ::: {.callout-note icon="true"}
 ## À noter
 
-Si vous ne spécifier pas tous les arguments d'une fonction, R va tenter
+Si vous ne spécifiez pas tous les arguments d'une fonction, R va tenter
 d'utiliser des arguments par défauts.
 :::
 
@@ -274,7 +274,7 @@ print(ice_age_df)
 ### Quelques fonctions utiles pour analyser les data frames
 
 Il existe plusieurs **fonctions utiles** dans R qui vous permettent
-d'analyser les propriétés de jex de données de type data frame (et
+d'analyser les propriétés de jeux de données de type data frame (et
 d'autres types d'objets R), comme p. ex. :
 
 -   `dim()` : Retourne les dimensions d'un jeu de données - le nombre de
@@ -387,7 +387,7 @@ Un autre type de variable clé dans R est ce que l'on appelle les
 Les facteurs sont des variables qui prennent un nombre limité de valeurs
 différentes (appelées *levels* dans R).
 
-Il existe deux sous-type de facteurs :
+Il existe deux sous-types de facteurs :
 
 -   Les **facteurs nominaux** (sans ordre) : toutes les catégories sont
     équivalentes les unes aux autres. Il n'y a pas de hiérarchisation.
@@ -395,7 +395,7 @@ Il existe deux sous-type de facteurs :
     -   Exemples : le genre et l'appartenance à un parti politique
 
 -   Les **facteurs ordinaux** (avec un ordre): il y a un ordre ou une
-    hiérarchie spécifié parmi les catégories (p. ex. des niveaux tels
+    hiérarchie spécifiée parmi les catégories (p. ex. des niveaux tels
     que *faible*, *moyen*, *élevé*).
 
     -   Exemples : niveau d'éducation, cohortes d'âge

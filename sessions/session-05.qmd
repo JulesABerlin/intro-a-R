@@ -38,7 +38,7 @@ X et l'autre sur l'axe des Y.
 
 Ce type de graphique est idéal pour l'analyse exploratoire de données,
 permettant d'observer les relations entre les variables, de détecter des
-tendances, des regroupements, des valeurs êxtremes (angl. *outliers*) ou
+tendances, des regroupements, des valeurs extrêmes (angl. *outliers*) ou
 de vérifier des hypothèses de corrélation.
 
 Dans la fonction `ggplot()`, un scatter plot est créé avec la couche
@@ -225,7 +225,7 @@ L'histogramme est particulièrement utile pour :
     distribution de données.
 
 Avec `ggplot2` en R, créer un histogramme se fait avec la couche
-géometrique `geom_histogram()`. Par défaut, `geom_histogram()` découpe
+géométrique `geom_histogram()`. Par défaut, `geom_histogram()` découpe
 les données en 30 intervalles (angl. *bins*) et affiche un message
 invitant à choisir une meilleure valeur. On peut fixer la largeur des
 intervalles avec l'argument `binwidth` (p. ex.
@@ -339,7 +339,7 @@ ggplot2 !
 
 Reprenez le code que nous avons utilisé pour créer `taille_f` et `hist1`
 et modifiez-le pour créer une nouvelle simulation de taille d'hommes,
-`taille_h`, et un nouveau histogramme qui montre sa distribution,
+`taille_h`, et un nouvel histogramme qui montre sa distribution,
 `hist2`. Jouez avec les paramètres `binwidth`et la couleur de votre
 visualisation. Pour cette tâche, vous pouvez supposer que les hommes en
 Suisse ont une taille moyenne (`mean`) de 177,4 cm avec un écart-type
@@ -368,7 +368,7 @@ a pas de valeurs extrêmes.
 
 Ces diagrammes permettent d'identifier rapidement la médiane, l'étendue
 interquartile (angl. *interquartile range* = *IQR*) et les valeurs
-êxtremes potentielles. Ils sont particulièrement utiles pour comparer
+extrêmes potentielles. Ils sont particulièrement utiles pour comparer
 les distributions entre plusieurs groupes ou variables.
 :::
 
@@ -452,7 +452,7 @@ print(box1)
 
 Ce code génère un boxplot, `box1`, pour chaque groupe de cylindres dans
 le dataset `mtcars`, permettant de comparer facilement l'efficacité
-énergétique (`mpg`) entre les voitures avec un différents nombres de cylindres.
+énergétique (`mpg`) entre les voitures avec des nombres de cylindres différents.
 
 ::: {.callout-note icon="true"}
 ## À noter

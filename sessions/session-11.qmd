@@ -18,7 +18,7 @@ trois méthodes de statistiques inférentielles couramment utilisées :
 
 Mais d'abord, il faut répondre à la question suivante :
 
-## C'est quoi la statistique inférentielle ?
+## Qu'est-ce que la statistique inférentielle ? {#cest-quoi-la-statistique-inférentielle}
 
 ::: {.callout-note icon="true"}
 ## À noter
@@ -37,12 +37,12 @@ diffèrent selon le genre (variable x). Une relation **causale** ne peut
 être conclue que si le dispositif le permet (p. ex. une expérience).
 
 En général, pour analyser de telles relations, nous formulons souvent
-des hypothèses basées sur des théories ou des suppositions tiré de la
+des hypothèses basées sur des théories ou des suppositions tirées de la
 littérature d'un domaine de recherche, que nous pouvons ensuite tester
 sur notre échantillon. Les résultats obtenus nous permettent de rejeter
 ou non l'hypothèse nulle, et de généraliser prudemment les conclusions à
 la population entière. Ceci nous permet de contribuer à la création de
-nouvelles connaissance dans notre domaine de recherche
+nouvelles connaissances dans notre domaine de recherche
 
 ## Le test t
 

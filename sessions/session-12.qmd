@@ -14,7 +14,7 @@ linéaire)**
 ## À noter
 
 L'analyse de la variance (abbrégée **ANOVA**) est un ensemble de modèles
-statistiques et de procédures d'estimation associées utilisés pour
+statistiques et de procédures d'estimation associées utilisées pour
 analyser les différences entre les moyennes. L'ANOVA a été développée
 par le statisticien britannique [Ronald Fisher
 (1890-1962)](https://fr.wikipedia.org/wiki/Ronald_Aylmer_Fisher).
@@ -107,7 +107,7 @@ et le sexe des manchots.
         expliquer et
 
     -   `species` est notre variable catégorielle qui indique à quelle
-        espèces de manchots (Adelie, Chinstrap et Gentoo) chaque
+        espèce de manchots (Adelie, Chinstrap et Gentoo) chaque
         observation de `flipper_length_mm` appartient.
 
 ```{r}
@@ -213,8 +213,8 @@ une ou plusieurs **variables explicatives (x1, x2, etc.)**.
     **variables indépendantes** ou **prédicteurs** et, en anglais,
     **input variables**, **predictor variables**.
 
-Nous parlons de régression linéaire **simple**, si il y a seulement une
-variable explicative x et de régression linéaire **multiple** si il y a
+Nous parlons de régression linéaire **simple**, s'il y a seulement une
+variable explicative x et de régression linéaire **multiple** s'il y a
 plus d'une variable explicative, p. ex. x1, x2, x3, etc.
 :::
 
@@ -246,7 +246,7 @@ d'applications possibles :
         de vente (y) et la taille de la maison en mètres carrés (x).
         Vous pouvez maintenant adapter un modèle de régression à vos
         données et l'utiliser pour prédire les prix de vente attendus
-        des maisons actuellement sur le marché en fonction de leurs
+        des maisons actuellement sur le marché en fonction de leur
         superficie (x), que vous connaissez.
 
 Notez qu'un modèle de régression linéaire, comme tout modèle, est
@@ -560,7 +560,7 @@ sélections sur les valeurs AIC (critère d'information d'Akaike).
     `mpg` en utilisant toutes les autres variables de l'ensemble de
     données `mtcars`.
 
--   A partir de ce « modèle complet », la procédure retire (et
+-   À partir de ce « modèle complet », la procédure retire (et
     éventuellement réintroduit) des variables une à une, tant que cela
     fait **baisser l'AIC**.
 
@@ -618,7 +618,7 @@ par(mfrow=c(2,2))
 plot(stepwise_model)
 ```
 
-Les graphiques de diagnostic sont acceptable pour notre modèle !
+Les graphiques de diagnostic sont acceptables pour notre modèle !
 
 ### Ressources pour aller plus loin
 

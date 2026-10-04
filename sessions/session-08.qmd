@@ -29,7 +29,7 @@ solution modèle.
 
 -   Commencez en ouvrant un nouveau script R.
 
--   Nommez le `script_session_8` et sauvegardez le sur votre ordinateur.
+-   Nommez-le `script_session_8` et sauvegardez-le sur votre ordinateur.
     (Définissez votre répertoire de travail avec `setwd()` et
     sauvegardez le code de la console dans le script).
 
@@ -94,7 +94,7 @@ mtcars %>%
 -   Créez une nouvelle variable (colonne) dans mtcars, nommé `mpg_wt`,
     définie comme le nombre de `mpg` par unité de poids (`wt`) !
 
--   Sauvegardez la vérsion modifiée de `mtcars` avec l'opérateur
+-   Sauvegardez la version modifiée de `mtcars` avec l'opérateur
     d'affectation sous l'objet `mtcars_v2`.
 
 -   Affichez la nouvelle colonne `mpg_wt` de `mtcars_v2` en la triant
@@ -276,7 +276,7 @@ petits (0,70 carat) que les *Premium* (0,89 carat).
     7.  
 -   Si nécessaire, téléchargez-le à nouveau depuis le
     [site](../data/igposts.csv) et sauvegardez-le dans le dossier de votre ordinateur que vous avez
-    définit comme répertoire de travail.
+    défini comme répertoire de travail.
 -   Si nécessaire, transformez encore une fois les colonnes
     `igposts$Account`, `igposts$User.Name`et `igposts$Type` en variables
     catégorielles avec `as.factor()`.
@@ -330,7 +330,7 @@ igposts %>%
     `Comments`et `Views`par compte (`Account`) des influenceurs dans
     `igposts`.
 -   Triez-les par ordre décroissant de la moyenne des `Likes`.
--   Affichez les top 10.
+-   Affichez le top 10.
 
 ::: {.callout-caution collapse="true"}
 ### Solution

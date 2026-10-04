@@ -288,7 +288,7 @@ petits (0,70 carat) que les *Premium* (0,89 carat).
 #| echo: true
 #| output: true
 # Vous pouvez copier-coller le code que nous avons utilisé la dernière fois (modifiez-le pour votre ordi) :
-igposts <- read.csv("https://julesaberlin.github.io/intro-a-R/data/igposts.csv", encoding="UTF-8", na.strings="#N/A")
+igposts <- read.csv("https://julesaberlin.github.io/intro-a-R/data/igposts.csv", encoding="UTF-8")
 
 # Appliquez encore une fois les transformations de variables, si nécessaire :
 

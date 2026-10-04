@@ -181,7 +181,7 @@ x
 
 Par exemple, essayez d'exécuter ce qui suit : `y + z`
 
-Pourquoi cela crée une erreur ? Réponse : les variables `y` et `z` n'on
+Pourquoi cela crée une erreur ? Réponse : les variables `y` et `z` n'ont
 pas encore été définies !
 
 Pour éliminer l'erreur, nous devons donc définir `y` et `z`.
@@ -299,7 +299,7 @@ Vous pouvez créer des vecteurs avec l'opérateur d'affectation `<-` et la
 v1 <- c(1, 2, 3)
 ```
 
-Vous pouvez afficher la valeur de `v1` en tappant son nom et l'exécutant
+Vous pouvez afficher la valeur de `v1` en tapant son nom et l'exécutant
 :
 
 ```{r}
@@ -325,7 +325,7 @@ Prenons l'exemple de la fonction `c()` qui crée des vecteurs :
 
 -   Un vecteur à trois éléments : `c(3, 6, 9)`
 
-Maintenant, regardons encores quelques exemples de vecteurs de
+Maintenant, regardons encore quelques exemples de vecteurs de
 **différents types** :
 
 ```{r}

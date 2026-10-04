@@ -87,7 +87,7 @@ messages d'erreur.
 :::
 
 Certains paquets ont des documentations auxquelles vous pouvez accéder
-grâce au point d'interrogation. Ces infos sont affichés dans le volet
+grâce au point d'interrogation. Ces infos sont affichées dans le volet
 *Output* sous l'onglet *Help*.
 
 -   `?ggplot2`
@@ -103,7 +103,7 @@ vous renvoient vers d'autres livres, tutoriels, cours, etc., p. ex. :
 
 -   [Documentation officielle de `dplyr`](https://dplyr.tidyverse.org)
 
--   [Exemples de graphiques crées avec les différents designs de
+-   [Exemples de graphiques créés avec les différents designs de
     `ggthemes`](https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/)
 
 Vous pouvez vérifier quels paquets sont **actuellement installés sur
@@ -151,14 +151,14 @@ Nous verrons un quatrième jeu de données, `penguins` (paquet
 
 ::: {.callout-tip title="Astuce"}
 Vous pouvez afficher les jeux de données qui sont actuellement
-accessible sur votre ordinateur avec la commande `data().`
+accessibles sur votre ordinateur avec la commande `data().`
 :::
 
 ### Le jeu de données `iris`
 
 Le jeu de données `iris` est un ensemble de données célèbre qui contient
 les mesures en centimètres des variables longueur et largeur du sépale,
-ainsi que longueur et largeur du pétale, pour trois expèces de fleurs
+ainsi que longueur et largeur du pétale, pour trois espèces de fleurs
 d'iris (Setosa, Virginica et Versicolor). Il y a 150 observations en
 total (50 pour chaque espèce).
 
@@ -183,7 +183,7 @@ fossé entre la génétique mendélienne et l'évolution darwinienne. Il est
 considéré comme l'un des architectes principaux de la synthèse
 néo-darwinienne. Son influence s'étend au-delà de la statistique et de
 la génétique aux domaines plus larges de la biologie et de la recherche
-agricole, faisant de lui une figure pivotale de la science du 20e
+agricole, faisant de lui une figure clé de la science du 20e
 siècle.
 :::
 
@@ -316,13 +316,13 @@ complexes.
 
 Le tableau suivant décrit les couches d'un graphique ggplot :
 
-| Couche | Déscription/Variables | Obligatoire ? |
+| Couche | Description/Variables | Obligatoire ? |
 |------------------------|:-----------------------|:----------------------:|
 | *data* | le jeu de données que nous voulons visualiser | oui |
 | *aesthetics* | le *mapping* de nos variables : axes *x* et *y*, *color*, *fill*, *alpha*, *line width*, etc. | oui |
 | *geometries* | le type visuel du graphique : *point*, *line*, *histogram*, *bar*, *boxplot* | oui |
 | *themes* | Le design du graphique | non |
-| Autres couches optionelles : *facets*, *statistics*, *coordinates* | Pour des visualisations plus complexes | non |
+| Autres couches optionnelles : *facets*, *statistics*, *coordinates* | Pour des visualisations plus complexes | non |
 
 : Les couches d'un graphique ggplot
 

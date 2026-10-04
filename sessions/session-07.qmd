@@ -22,9 +22,9 @@ cette fin, nous examinerons également certaines transformations de types
 de variables et un nouvel opérateur, le `%>%` (angl. "pipe"; trad.
 franç. "tuyau"), qui est très utile pour les manipulations de données.
 
-## Lire des données auf format CSV dans RStudio
+## Lire des données au format CSV dans RStudio {#lire-des-données-auf-format-csv-dans-rstudio}
 
-Par la suite, nous alons appliquer `dplyr` pour manipuler les données
+Par la suite, nous allons appliquer `dplyr` pour manipuler les données
 d'un jeu de données concret : un fichier CSV nommé `igposts.csv`. Ce
 fichier contient des posts Instagram de célébritées qui ont reçu
 beaucoup d'interactions d'utilisateurs. Pour cette application, il faut
@@ -62,7 +62,7 @@ désigne les noms des colonnes) :
 
 Avant l'importation de fichier CSV dans RStudio (et comme déjà vu pleins
 de fois dans le cours 😉), il faut d'abord charger les paquets
-nécessaire avec `library()` et définir son répertoire de travail (vous
+nécessaires avec `library()` et définir son répertoire de travail (vous
 devez adapter les paramètres de `setwd()` pour qu'il marche sur votre
 ordinateur) :
 
@@ -80,12 +80,12 @@ suivre le processus suivant :
     (clic droit → « Enregistrer le lien sous… »).
 
 2.  Stockez le fichier `igposts.csv` dans le dossier que vous avez
-    définit comme répertoire de travail.
+    défini comme répertoire de travail.
 
 3.  Ensuite, vous utilisez le menu intéractif dans RStudio : File -\>
     Import Dataset -\> From Text (base)... et choisissez `igposts.csv`.
 
-4.  Une fenêtre avec des paramètre apparait, que vous pouvez remplir de
+4.  Une fenêtre avec des paramètres apparaît, que vous pouvez remplir de
     la manière suivante :
 
     ![Importer un fichier CSV dans RStudio. Capture d'écran de RStudio Desktop (Posit Software, PBC).](../images/import-igposts.png){fig-alt="Fenêtre Import Dataset de RStudio avec les paramètres d'importation du fichier igposts.csv"}
@@ -135,7 +135,7 @@ str(igposts)
 
 Cela nous montre qu'il s'agit d'un data frame avec 100 observations et
 11 variables. Chaque ligne représente un post Instagram d'une célébrité
-(unité statistique) et chaque colonnes une variable différente associé à
+(unité statistique) et chaque colonne une variable différente associée à
 ce post.
 
 Notez que les variables sont soit de type textuel (chr = "character"; p.
@@ -144,7 +144,7 @@ numérique (int = "integer"; p. ex. `Total.Interactions` = la somme des
 `Likes`et `Comments` qu'un post a reçu).
 
 Vous pouvez aussi cliquer sur l'objet et explorer le tableau
-manuellement pour le comprendre d'avantage (comme nous l'avons fait avec
+manuellement pour le comprendre davantage (comme nous l'avons fait avec
 `mtcars`, etc.).
 
 ::: {.callout-caution collapse="false"}
@@ -170,7 +170,7 @@ manuellement pour le comprendre d'avantage (comme nous l'avons fait avec
 Avant de continuer avec `dplyr`, regardons encore deux éléments
 cruciales pour la manipulation de données avec R :
 
--   la transformation du types de variable (p. ex. de variables
+-   la transformation du type de variable (p. ex. de variables
     textuelles en facteurs)
 
 -   L'opérateur `%>%` (angl. "pipe"; trad. française "tuyau")
@@ -218,7 +218,7 @@ Nous allons voir par la suite, pourquoi ces factorisations sont utiles.
 ## L'opérateur `%>%`
 
 La fonction principale du pipe `%>%` : construire **une séquence de
-fonctions ("un tuyau")** qui est plus facile à comprendre et a lire dans
+fonctions ("un tuyau")** qui est plus facile à comprendre et à lire dans
 le code.
 
 ```{r}

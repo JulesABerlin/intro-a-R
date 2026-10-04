@@ -36,7 +36,7 @@ données.
 
 -   Les mesure de position (percentiles, quartiles)
 
-Ces mesure permettent d'obtenir une première idée de la structure d'un
+Ces mesures permettent d'obtenir une première idée de la structure d'un
 jeu de données. Elles permettent également d'identifier des valeurs
 extrêmes (angl. *outliers*) qui peuvent jouer un rôle important dans un
 jeu de données.
@@ -44,13 +44,13 @@ jeu de données.
 Des mesures concernant les **variables catégorielles** peuvent également
 faire partie d'une analyse déscriptive, notamment :
 
--   La fréquence de chaque catégories (p. ex. combien de participant·es
+-   La fréquence de chaque catégorie (p. ex. combien de participant·es
     à un questionnaire sont des femmes ?)
 -   La répartition des différentes catégories (p. ex. quel est le
     pourcentage de femmes dans l'échantillon ?)
 :::
 
-Dans la a mise en œuvre d'une analyse statistique, par exemple dans un
+Dans la mise en œuvre d'une analyse statistique, par exemple dans un
 travail scientifique, les statistiques descriptives sont souvent
 présentées sous deux formats :
 
@@ -86,7 +86,7 @@ présentés en cours.
 Vous verrez donc par la suite comment ce que nous avons appris jusqu'à
 présent dans le cours peut être combiné de manière utile.
 
-## Analyse des réponses au questionnaire, 1ère partie (stats déscriptives)
+## Analyse des réponses au questionnaire, 1re partie (stats descriptives) {#analyse-des-réponses-au-questionnaire-1ère-partie-stats-déscriptives}
 
 Veuillez ouvrir un nouveau script R et charger les paquets `tidyverse`
 et `ggthemes`. Téléchargez ensuite le fichier
@@ -248,7 +248,7 @@ en cours (sortie de données), notamment avec la fonction `write.csv()` !
 
 La syntaxe de la fonction nécessite comme arguments le nom du data frame
 que vous voulez sauvegarder comme CSV ainsi que le chemin du fichier sur
-votre ordinateur qui inclut le nom que vous voulez donner au ficher CSV
+votre ordinateur qui inclut le nom que vous voulez donner au fichier CSV
 : `write.csv(nom_df, "chemin_du_fichier/nom_du_ficher.csv")`
 
 ```{r}
@@ -283,7 +283,7 @@ print(ice_age_df)
 write.csv(ice_age_df, file = "~/Documents/exercices_methodes_2/ice_age_df.csv")
 ```
 
-Si tout a bien marché, vous devrez maintenant avoir un ficher CSV, nommé
+Si tout a bien marché, vous devrez maintenant avoir un fichier CSV, nommé
 `ice_age_df.csv`dans votre répertoire de travail !
 
 ## Exercices {.unnumbered}

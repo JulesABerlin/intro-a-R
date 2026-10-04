@@ -42,10 +42,7 @@ d'ouvrir R directement sur votre ordinateur par la suite.
 
 ## L'interface RStudio
 
-<!-- TODO (Jules) : ajouter ici votre propre capture d'écran de RStudio
-(sans données visibles), p. ex. :
-![Les quatre volets de RStudio.](../images/rstudio-volets.png){width="80%" fig-alt="Fenêtre de RStudio avec les volets source, console, environnement et fichiers"}
--->
+![Les quatre volets de RStudio. Capture d'écran de RStudio® Desktop (Posit Software, PBC), annotée par l'auteur.](../images/rstudio-volets.png){width="80%" fig-alt="Fenêtre de RStudio avec les volets source, console, environnement et output"}
 
 Pour une présentation détaillée de l'interface, voir la
 [documentation de Posit](https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html).

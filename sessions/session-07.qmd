@@ -112,10 +112,9 @@ suivre le processus suivant :
             est utilisé pour les décimales (et non la virgule "," comme
             c'est souvent le cas dans les documents en français).
 
-        -   **na.strings = #N/A** : Indique à RStudio que les cellules
-            vides dans le tableau, c'est à dire, les valeurs manquantes,
-            sont désignées par #N/A (cela peut être différent dans
-            d'autres fichiers CSV).
+        -   **na.strings = NA** : valeur par défaut. Ce fichier n'a pas
+            de valeurs manquantes ; dans d'autres fichiers (p. ex. exports
+            Excel), elles peuvent être codées autrement, p. ex. #N/A.
 
 5.  Finalement, vous pouvez copier et coller le code qui apparaît dans
     la console dans votre script R pour facilement recharger le fichier
@@ -124,7 +123,7 @@ suivre le processus suivant :
 ```{r}
 # Par exemple, en lisant le fichier directement depuis le site du cours :
 
-igposts <- read.csv("https://julesaberlin.github.io/intro-a-R/data/igposts.csv", encoding="UTF-8", na.strings="#N/A")
+igposts <- read.csv("https://julesaberlin.github.io/intro-a-R/data/igposts.csv", encoding="UTF-8")
  
 # Si tout a bien marché, l'objet igposts devrait apparaître dans votre environnement
 # Nous pouvons afficher la structure de igposts pour une première impression :

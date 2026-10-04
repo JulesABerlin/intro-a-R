@@ -32,7 +32,7 @@ peuvent être lus directement depuis le site, par exemple :
 
 ```r
 igposts <- read.csv("https://julesaberlin.github.io/intro-a-R/data/igposts.csv",
-                    encoding = "UTF-8", na.strings = "#N/A")
+                    encoding = "UTF-8")
 ```
 
 Merci à Franck Bleu, tuteur en méthodes quantitatives, pour sa contribution aux exercices ; voir [À propos](apropos.qmd).

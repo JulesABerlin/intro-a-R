@@ -1879,12 +1879,14 @@
   type: vf
   stem: 'Dans le code R suivant, l’argument `na.strings = "#N/A"` indique à R comment les valeurs manquantes sont désignées dans le fichier CSV importé.'
   code: |
-    igposts <- read.csv("https://julesaberlin.github.io/intro-a-R/data/igposts.csv",
-                        encoding = "UTF-8", na.strings = "#N/A")
+    donnees <- read.csv("donnees.csv", encoding = "UTF-8", na.strings = "#N/A")
   key: true
   explanation: |
-    Toutes les cellules contenant `#N/A` sont lues comme `NA`, la valeur manquante de R. Sans cet argument, une colonne numérique contenant `#N/A` serait lue comme du texte.
-  uses_data: igposts.csv
+    Toutes les cellules contenant `#N/A` sont lues comme `NA`, la valeur manquante de R. Sans cet argument, une colonne numérique contenant `#N/A` serait lue comme du texte. (Le fichier `igposts.csv` du cours n’a pas de valeurs manquantes : la valeur par défaut, `na.strings = "NA"`, suffit.)
+  uses_data: ~
+  note: >-
+    Exemple rendu générique (donnees.csv) : depuis le nettoyage, igposts.csv n’a plus
+    de valeurs manquantes ni de « #N/A ».
 
 - id: 112
   session: 11

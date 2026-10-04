@@ -5,7 +5,7 @@ directement dans R, p. ex. :
 
 ```r
 igposts <- read.csv("https://julesaberlin.github.io/intro-a-R/data/igposts.csv",
-                    encoding = "UTF-8", na.strings = "#N/A")
+                    encoding = "UTF-8")
 ```
 
 | Fichier | Contenu |

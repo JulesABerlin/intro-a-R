@@ -1,4 +1,4 @@
-# Paquets R, jeux de données intégrés, visualisations I
+# Paquets, jeux de données et premiers graphiques
 
 ```{r}
 #| include: false
@@ -60,9 +60,9 @@ paquets que vous voulez installer.
 :::
 
 Utilisez le code suivant pour installer les paquets R requis pour notre
-cours. Enlevez les croisillons, éxécutez le code avec
+cours. Enlevez les croisillons, exécutez le code avec
 `install.packages()` puis réajouter les croisillons pour éviter de
-réinstaller les paquets chaque fois que vous éxécutez le code dans votre
+réinstaller les paquets chaque fois que vous exécutez le code dans votre
 script ! Activer ensuite les paquets avec `library()`.
 
 ```{r}
@@ -151,7 +151,7 @@ Nous verrons un quatrième jeu de données, `penguins` (paquet
 
 ::: {.callout-tip title="Astuce"}
 Vous pouvez afficher les jeux de données qui sont actuellement
-accéssible sur votre ordinateur avec la commande `data().`
+accessible sur votre ordinateur avec la commande `data().`
 :::
 
 ### Le jeu de données `iris`
@@ -210,7 +210,7 @@ str(iris) # Informations sur la structure du jeu de données
 names(iris) # Affiche les noms des colonnes
 ```
 
-Regardons ce que ça donne après l'éxécution de chaque ligne de code :
+Regardons ce que ça donne après l'exécution de chaque ligne de code :
 
 ```{r}
 #| echo: true
@@ -420,7 +420,7 @@ Maintenant il s'agit d'interpréter le graphique. Que nous dit-il sur la
 relation entre prix et carats des diamants ? Quel rôle joue la variable
 *pureté* (`clarity`)?
 
-## Devoir pour Session 5 {.unnumbered}
+## À faire avant de continuer {#devoir-pour-session-5 .unnumbered}
 
 -   Exécutez toutes les sections de code de la session 4 sur votre
     ordinateur.

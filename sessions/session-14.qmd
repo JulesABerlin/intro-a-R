@@ -1,14 +1,11 @@
-# Auto-apprentissage
+# Pour aller plus loin
 
 ```{r}
 #| include: false
 source("_common.R")
 ```
 
-**Continuez à améliorer votre maîtrise de R en sciences de la
-communication**
-
-Voici des étapes clés pour devenir un·e utilisateur·trice avancé·e de R.
+Quelques pistes pour continuer à progresser avec R après cette introduction.
 
 ## Pratique régulière
 
@@ -20,13 +17,13 @@ Voici des étapes clés pour devenir un·e utilisateur·trice avancé·e de R.
 
 ## Application académique
 
--   Demandez aux enseignant-e-s d'autres cours si vous pouvez utiliser R
+-   Demandez aux enseignant·es d'autres cours si vous pouvez utiliser R
     dans leurs cours.
 
 -   Proposez d'utiliser R pour l'analyse de données dans vos travaux de
     séminaire et de Bachelor.
 
--   Collaborez avec d'autres étudiant-e-s utilisateurs·trices de R sur
+-   Collaborez avec d'autres étudiant·es utilisateurs·trices de R sur
     des projets de recherche en groupe à l'université.
 
 ## MOOC
@@ -39,15 +36,12 @@ qu'auditeur/auditrice (après inscription) :
     (4h): <https://www.datacamp.com/courses/free-introduction-to-r>
 
 2.  **Edx (Harvard)**: R Basics
-    (8-16h): <https://www.edx.org/course/data-science-r-basics>
+    (8-16h): <https://www.edx.org/learn/r-programming/harvard-university-data-science-r-basics>
 
 3.  **Edx (Stanford)**: R Programming Fundamentals
-    (12-18h): <https://www.edx.org/course/r-programming-fundamentals>
+    (12-18h): <https://www.edx.org/learn/r-programming/stanford-university-r-programming-fundamentals>
 
-4.  **Coursera**: Data Analysis with R Programming
-    (37h): <https://www.coursera.org/learn/data-analysis-r>
-
-5.  **Udacity**: Data Analysis with R (2
+4.  **Udacity**: Data Analysis with R (2
     months): <https://www.udacity.com/course/data-analysis-with-r--ud651>
 
 Si vous payez entre 50 et 200 USD, il est également possible de valider
@@ -84,14 +78,13 @@ de visualisation).
 
 ## Intelligence artificielle pour coder
 
-Utiliser l'intelligence artificielle générative pour coder. Jouez avec,
-demandez simplement du code R pour faire certaines choses. Ces
-interfaces peuvent vous fournir du code prêt à l'emploi, que vous pouvez
-copier et coller directement dans RStudio !
-
--   [ChatGPT](https://chatgpt.com)
-
--   [Le Chat de Mistral](https://chat.mistral.ai/chat)
+Les assistants d'intelligence artificielle générative peuvent proposer du
+code R, expliquer un message d'erreur ou commenter votre script.
+Utilisez-les comme un·e collègue à qui l'on pose des questions, pas comme
+un pilote automatique : exécutez le code proposé, vérifiez le résultat et
+assurez-vous de comprendre chaque ligne. Ces outils se trompent souvent
+avec assurance. Respectez aussi les règles de votre université sur l'usage
+de l'IA dans les travaux évalués.
 
 ## Communautés en ligne
 
@@ -110,7 +103,7 @@ Approfondissez vos connaissances en R avec des livres numérique
 open-source :
 
 -   **R for Data Science** \[anglais\] Une référence bien établie en
-    sciences des données avec R par Wickham & Grolemund (2023, 2e éd.) :
+    sciences des données avec R par Wickham, Çetinkaya-Rundel & Grolemund (2023, 2e éd.) :
     [https://r4ds.hadley.nz/](https://r4ds.hadley.nz)
 
 -   **R Cookbook** \[anglais\] Référence établie pour l'introduction,
@@ -118,12 +111,24 @@ open-source :
     2e éd.) : <https://rc2e.com/>
 
 -   **R Graphics Cookbook** \[anglais\] Ouvrage de référence pour
-    concevoir des graphiques attrayants avec R (2022, 2e éd.), by Chang
-    : <https://r-graphics.org/>
+    concevoir des graphiques attrayants avec R (2018, 2e éd.), de Winston
+    Chang : <https://r-graphics.org/>
 
--   **Introduction à la programmation R** par Goulet (2016, 5e éd.) de
-    l’Université
-    Laval : <https://cran.r-project.org/doc/contrib/Goulet_introduction_programmation_R.pdf>
+-   **Programmer avec R**, de Vincent Goulet (Université Laval) :
+    <https://vigou3.gitlab.io/programmer-avec-r/>
+
+-   **guide-R** \[français\] Guide pour l'analyse de données d'enquêtes
+    avec R, de Joseph Larmarange : <https://larmarange.github.io/guide-R/>
+
+-   **Introduction à R et au tidyverse** \[français\] de Julien Barnier :
+    <https://juba.github.io/tidyverse/>
+
+-   **utilitR** \[français\] Documentation collaborative de l'Insee :
+    <https://book.utilitr.org/>
+
+-   **Computational Analysis of Communication** \[anglais\] de van
+    Atteveldt, Trilling et Arcila Calderón (2022), pour aller vers les
+    méthodes computationnelles en communication : <https://cssbook.net/>
 
 ## Valorisation des compétences
 
@@ -133,22 +138,13 @@ open-source :
 Ces conseils vous aideront à utiliser efficacement R dans le domaine des
 sciences de la communication et à développer une expertise approfondie.
 
-## Au revoir et à bientôt
+## Le mot de la fin {#au-revoir-et-à-bientôt}
 
-Ainsi se termine ce cours et donc l'introduction à R dans le cadre des
-Exercices Méthodes II du [Bachelor en sciences de la communication à
-l'Université de
-Fribourg](https://www.unifr.ch/dcm/fr/etudes/bachelor/bachelor-fr-communication-medias/)
-!
+Ce chapitre clôt cette introduction à R. J'espère que vous y avez appris
+des techniques utiles pour vos études et vos projets ! 💪
 
-J'espère que vous avez appris beaucoup de choses, notamment des
-techniquesqui vous seront utiles pour la suite de vos études ! 💪 😎
+N'oubliez pas qu'au final, l'essentiel est de faire preuve de bon sens
+pour mettre des outils comme R au service de questions intéressantes en
+sciences de la communication. 😄
 
-Et n'oubliez pas qu'au final, il faut surtout faire preuve de bon sens
-pour comprendre comment des compétences comme la programmation R peuvent
-être utilisées au mieux pour étudier des phénomènes intéressants en
-sciences de la communication ! 😄
-
-*Julian Maitra, Fribourg, 30 mai 2024.*
-
-**FIN DU COURS**
+*Julian Maitra*

@@ -1,23 +1,19 @@
-# Problem Set 3 (révision)
+# Révision 3 : manipulation de données
 
 ```{r}
 #| include: false
 source("_common.R")
 ```
 
-Les résultats du **Problem Set 3** (bonnes réponses, échelle des notes)
-sont accéssibles sur la page Moodle de l'exercice.
+Dans le cours, le **Problem Set 3** était un test sur Moodle portant sur
+les chapitres 7 et 8. Les questions ci-dessous en reprennent le contenu, avec la
+correction et une explication pour chaque réponse.
 
-Voici l'histogramme des points obtenus par n = 64 étudiant-e-s qui ont
-participé au Problem Set 3 le 16 et 17 avril 2025 dans trois groupes (A,
-B, C).
+::: {.callout-note collapse="true"}
+## Résultats de l'édition 2025 du cours
 
--   Le nombre maximal de points était de 20, il fallait 10 pour passer
-    le test.
-
--   La moyenne des points obtenus était de 13.1 (note = 4.5).
-
--   58 étudiant-e-s (90.6%) ont réussi Problem Set 3.
+64 étudiant·es ont passé ce test (20 points au maximum, 10 pour réussir).
+La moyenne était de 13,1 points et 91 % des étudiant·es l'ont réussi.
 
 ```{r}
 #| echo: false
@@ -25,7 +21,6 @@ B, C).
 #| warning: false
 # script pour faire un histogramme des points obtenus dans le Problem Set 3
 # cours : Exercices Méthodes II
-# date : 16/17 avril 2025
 # auteur : Julian Maitra
 
 library(ggplot2)
@@ -46,7 +41,7 @@ hist_ps_3 <-ggplot(points_ps_3,
   geom_histogram(binwidth = 1, color="black", fill="white") +
   labs(title = "Histogramme des points obtenus dans le PS 3", 
        subtitle = "n = 64 résultats de test", 
-       caption = "Source des données : Moodle") +       
+       caption = "Source : Problem Set 3, édition 2025") +       
   xlab("Points obtenus") +                             
   ylab("Fréquence") + 
   theme_minimal() +
@@ -57,6 +52,7 @@ hist_ps_3 <-ggplot(points_ps_3,
              color="red",  linewidth=1, linetype="dashed")
 hist_ps_3
 ```
+:::
 
 ## Exercices de révision {.unnumbered}
 

@@ -1,8 +1,30 @@
 # Bienvenue {.unnumbered}
 
-Ce site réunit le matériel du cours **Exercices Méthodes II** du Bachelor
-en sciences de la communication de l'Université de Fribourg : une
-introduction pas à pas au langage R, organisée en un chapitre par session.
+Ce site propose une introduction pas à pas au langage R pour l'analyse de
+données en sciences sociales, et en particulier en sciences de la
+communication. Chaque chapitre combine des explications, du code à
+exécuter dans RStudio et des exercices interactifs avec corrections.
+
+::: {.callout-note}
+## Origine de ce site
+
+Ce matériel a été développé pour le cours **Exercices Méthodes II** du
+Bachelor en sciences de la communication de l'Université de Fribourg, que
+j'ai enseigné de 2023 à 2025. Il est aujourd'hui utilisé dans ce cours par
+Jérôme Chariatte, mais il s'adresse à toute personne qui souhaite apprendre
+R à son rythme.
+
+**Vous suivez le cours à Fribourg ?** Les informations pratiques (dates,
+Problem Sets, évaluation) se trouvent sur la page Moodle du cours.
+:::
+
+## Comment utiliser ce site {.unnumbered}
+
+-   Suivez les chapitres dans l'ordre : chacun s'appuie sur les précédents.
+-   Exécutez vous-même le code dans RStudio et modifiez-le : on apprend R
+    en l'utilisant.
+-   Testez-vous avec les exercices à la fin de chaque chapitre. Les
+    chapitres « Révision » reprennent les tests du cours.
 
 Les jeux de données utilisés dans le cours se trouvent dans le dossier
 [`data/`](https://github.com/julesaberlin/intro-a-R/tree/main/data) et

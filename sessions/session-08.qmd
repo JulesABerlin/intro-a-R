@@ -1,4 +1,4 @@
-# Manipuler les données II
+# Manipuler des données : exercices
 
 ```{r}
 #| include: false
@@ -10,7 +10,7 @@ library(tidyverse) # chargé par les étudiant·es (voir la consigne ci-dessous)
 
 L'objectif de la session 8 est de vous entraîner à résoudre de manière
 autonome des problèmes de manipulation de données à l'aide du code R et
-de vous préparer ainsi au Problem Set 3.
+de vous préparer ainsi avant le chapitre « Révision 3 ».
 
 Les exercices suivants se composent d'une question et d'une solution
 modèle sous forme de code R. Notez qu'en programmation R, il y a souvent
@@ -30,7 +30,7 @@ solution modèle.
 -   Commencez en ouvrant un nouveau script R.
 
 -   Nommez le `script_session_8` et sauvegardez le sur votre ordinateur.
-    (Définissez votre répértoire de travail avec `setwd()` et
+    (Définissez votre répertoire de travail avec `setwd()` et
     sauvegardez le code de la console dans le script).
 
 -   Chargez le paquet tidyverse avec `library(tidyverse)`.
@@ -274,9 +274,9 @@ petits (0,70 carat) que les *Premium* (0,89 carat).
 
 -   Chargez le jeu de données `igposts`que nous avons vu pendant session
     7.  
--   Si nécessaire, téléchargez le encore une fois depuis Moodle et
-    sauvegardez le dans le dossier de votre ordinateur que vous avez
-    définit comme répértoire de travail.
+-   Si nécessaire, téléchargez-le à nouveau depuis le
+    [site](../data/igposts.csv) et sauvegardez-le dans le dossier de votre ordinateur que vous avez
+    définit comme répertoire de travail.
 -   Si nécessaire, transformez encore une fois les colonnes
     `igposts$Account`, `igposts$User.Name`et `igposts$Type` en variables
     catégorielles avec `as.factor()`.

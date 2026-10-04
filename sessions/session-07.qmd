@@ -1,4 +1,4 @@
-# Manipuler les données I
+# Importer et manipuler des données
 
 ```{r}
 #| include: false
@@ -62,7 +62,7 @@ désigne les noms des colonnes) :
 
 Avant l'importation de fichier CSV dans RStudio (et comme déjà vu pleins
 de fois dans le cours 😉), il faut d'abord charger les paquets
-nécessaire avec `library()` et définir son répértoire de travail (vous
+nécessaire avec `library()` et définir son répertoire de travail (vous
 devez adapter les paramètres de `setwd()` pour qu'il marche sur votre
 ordinateur) :
 
@@ -76,12 +76,11 @@ library(tidyverse)
 Pour charger le jeu de données `igposts.csv` dans RStudio, vous pouvez
 suivre le processus suivant :
 
-1.  Vous téléchargez le fichier `igposts.csv` depuis le [site Moodle du
-    cours](https://moodle.unifr.ch/course/section.php?id=410649) (voir
-    matériel de la 7e session).
+1.  Téléchargez le fichier [`igposts.csv`](../data/igposts.csv)
+    (clic droit → « Enregistrer le lien sous… »).
 
 2.  Stockez le fichier `igposts.csv` dans le dossier que vous avez
-    définit comme répértoire de travail.
+    définit comme répertoire de travail.
 
 3.  Ensuite, vous utilisez le menu intéractif dans RStudio : File -\>
     Import Dataset -\> From Text (base)... et choisissez `igposts.csv`.
@@ -162,7 +161,7 @@ manuellement pour le comprendre d'avantage (comme nous l'avons fait avec
     l'aide du menu interactif.
 
 -   Vous devriez également éviter d'ouvrir le fichier CSV avec des
-    applications ou autres (p. ex. application Moodle), ce qui peut
+    applications ou autres (p. ex. une application mobile), ce qui peut
     également entraîner des erreurs.
 
 -   Il est préférable de télécharger les fichiers CSV avec des
@@ -364,14 +363,14 @@ df1 %>%
   filter(Account == "Cristiano Ronaldo", 
          Type == "Photo")
 
-# Filtrer à partir de valeurs numériques, p. ex. les posts avec au moins 10 millions d'intéractions :
+# Filtrer à partir de valeurs numériques, p. ex. les posts avec au moins 10 millions d'interactions :
 
 options(scipen=999) # Cette commande désactive la notation scientifique des nombres
 
 df1 %>% 
   filter(Total.Interactions >= 10000000)
 
-# Filtrer pour les posts de Selena Gomez avec au moins 10 millions d'intéractions :
+# Filtrer pour les posts de Selena Gomez avec au moins 10 millions d'interactions :
 
 df1 %>% 
   filter(Account == "Selena Gomez", 
@@ -386,13 +385,13 @@ df1 %>%
 
 df1 %>% arrange(Account) %>% head(10)
 
-# Trier par le nombre d'intéractions (ordre croissant)
+# Trier par le nombre d'interactions (ordre croissant)
 
 df1 %>% 
   arrange(Total.Interactions) %>% 
   head(10)
 
-# Trier par le nombre d'intéractions par follower (ordre décroissant)
+# Trier par le nombre d'interactions par follower (ordre décroissant)
 
 df1 %>% 
   arrange(desc(TI_par_Follower)) %>% 
@@ -411,7 +410,7 @@ df1 %>%
 
 df1 %>% summarize(sum_TI = sum(Total.Interactions)) 
 
-# Nous pouvons aussi calculer les moyennes des intéractions et de followers de tout les comptes qui ont publié les posts :
+# Nous pouvons aussi calculer les moyennes des interactions et de followers de tout les comptes qui ont publié les posts :
 
 df1 %>% 
   summarize(mean_TI = mean(Total.Interactions), 
@@ -477,28 +476,13 @@ igposts %>%
             mean_Comments = mean(Comments)) 
 ```
 
-## Devoir pour Session 8 et infos questionnaire {.unnumbered}
+## À faire avant de continuer {#devoir-pour-session-8-et-infos-questionnaire .unnumbered}
 
--   Assurez-vous que vous pouvez charger correctement le fichier de
-    données igposts.csv dans votre session R active.
--   Nous téléchargerons désormais régulièrement des fichiers CSV avec
-    des jeux de données, c'est pourquoi ce processus doit fonctionner
-    sur votre ordinateur portable. (Cela s'applique également aux
-    Problem Sets 3 et 4).
--   **Questionnaire** : Merci à toutes et tous les étudiant-e-s qui ont
-    rempli le questionnaire avant la date limite (31 mars 2025). Vous
-    recevrez 2 points bonus dans le Problem Set 4. Ceux-ci seront
-    ajoutés séparément à la fin du cours, lorsque la note finale sera
-    déterminée.
--   Nous commencerons bientôt à évaluer les données du questionnaire
-    dans l'exercice.
--   Si vous avez rencontré des difficultés lors des deux premiers
-    Problem Sets, assurez-vous que vous pouvez exécuter correctement sur
-    votre ordinateur portable tout le code R traité jusqu'à présent dans
-    le cours et que vous comprenez bien toutes les étapes. Nous vous
-    rappellons que tout le contenu de la page GitHub et de la page
-    Moodle du cours est pertinent pour les Problem Sets (pas seulement
-    ce qui a été discuté en classe).
+-   Vérifiez que vous savez importer `igposts.csv`, depuis votre
+    ordinateur ou directement depuis le site : les chapitres suivants
+    utilisent d'autres fichiers CSV.
+-   Si les exercices vous posent problème, refaites le code des chapitres
+    précédents et assurez-vous de comprendre chaque étape.
 
 ## Exercices {.unnumbered}
 

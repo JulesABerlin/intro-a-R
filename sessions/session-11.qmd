@@ -1,4 +1,4 @@
-# Statistiques inférentielles I
+# Statistiques inférentielles I : le test t
 
 ```{r}
 #| include: false
@@ -155,7 +155,7 @@ Voyons maintenant des exemples avec du code !
 ### Exemple 1 : test t à un échantillon
 
 **Problème** : Tester si la moyenne de QI d'un échantillon
-d'étudiant-e-s, qui est de 105, est différente de manière significative
+d'étudiant·es, qui est de 105, est différente de manière significative
 de la moyenne de la population, qui est de 100.
 
 -   L'**hypothèse nulle H0** (angl. *null hypothesis*) : la moyenne de
@@ -170,12 +170,12 @@ sens). Pour tester seulement si le QI est *plus élevé*, on ajouterait
 `alternative = "greater"` dans `t.test()`.
 
 À noter : dans le code qui suit, nous allons encore une fois utiliser la
-fonction `rnorm()` que nous avons vu en classe pour créer des valeurs
+fonction `rnorm()` que nous avons vue au chapitre 5 pour créer des valeurs
 "aléatoires" qui suivent une loi normale. Nous pouvons utiliser ces
 valeurs pour simuler notre problème.
 
 ```{r}
-# Générer des données d'échantillon avec n = 25 observations hypothétiques de QI d'étudiant-e-s.
+# Générer des données d'échantillon avec n = 25 observations hypothétiques de QI d'étudiant·es.
 # Nous simulons, avec rnorm() 25 observations qui suivent une loi normale avec une moyenne de 105 et un écart-type de 15
 set.seed(123)
 scores_qi <- rnorm(25, mean = 105, sd = 15)

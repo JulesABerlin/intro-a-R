@@ -31,20 +31,17 @@
   session: 7
   problem_sets: [3]
   type: text
-  stem: |
-    Associez les photos suivantes aux comptes Instagram qui les ont publiées
-    (toutes les photos proviennent des 10 premières publications selon
-    `Total.Interactions` dans `igposts.csv`).
-  key: [Jin of BTS, Selena Gomez, Cristiano Ronaldo, KIARA, Leo Messi]
+  stem: 'Quel compte (`User.Name`) a publié le post de `igposts.csv` ayant reçu le plus de `Total.Interactions` ?'
+  key: [leomessi, Leo Messi]
   explanation: |
-    Triez `igposts` par `Total.Interactions` décroissant, affichez les 10 premières
-    lignes et ouvrez les URL pour comparer les photos.
+    Triez `igposts` par `Total.Interactions` décroissant : le premier post est celui de leomessi (23 333 227 interactions). Ouvrez son URL pour voir de quoi il s’agit : <https://www.instagram.com/p/CpLxnFlNJZn/>
   uses_data: igposts.csv
-  needs_image: true
-  check: true
+  needs_image: false
   note: >-
-    Question d’association : les 5 captures d’écran (problemset_3_images/) manquent.
-    Clé = compte de la photo 1 à 5, dans l’ordre.
+    Remplace l’ancienne question d’association de photos (captures d’écran Instagram,
+    non reproduites pour des raisons de droits). Clé vérifiée dans R : leomessi,
+    23 333 227 interactions, sans ex aequo. Réponses acceptées : leomessi, Leo Messi
+    (casse ignorée).
 
 - id: 2
   session: 7
@@ -1963,17 +1960,22 @@
 - id: 118
   session: 1
   problem_sets: [1]
-  type: vf
-  stem: 'Dans la capture d’écran suivante de RStudio, le script R se trouve dans le volet B :'
-  key: false
+  type: mcq
+  stem: 'Dans quel volet de RStudio écrivez-vous et enregistrez-vous votre script R ?'
+  options:
+    a: 'Source'
+    b: 'Console'
+    c: 'Environnement'
+    d: 'Output'
+  key: a
   explanation: |
-    Le volet B n’est pas l’éditeur de script.
+    Le script s’écrit et s’enregistre dans le volet Source (en haut à gauche) ; la console affiche le code exécuté et les résultats.
   uses_data: ~
-  needs_image: true
-  check: true
+  needs_image: false
   note: >-
-    La capture d’écran (problemset_1_images/ch_1_question_11.png) manque : impossible de
-    nommer le bon volet dans l’explication.
+    Question à choix multiple sans image (l’ancienne version dépendait d’une capture
+    d’écran avec des volets A–D). Les noms des volets correspondent à la capture
+    d’écran de la session 1 (images/rstudio-volets.png).
 
 - id: 119
   session: 1

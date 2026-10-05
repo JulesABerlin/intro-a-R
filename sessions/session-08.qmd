@@ -327,7 +327,7 @@ igposts %>%
 ### Exercice 13 : igposts III {#igposts-iii}
 
 -   Utilisez `dplyr` pour calculer le nombre moyen de `Likes`,
-    `Comments`et `Views`par compte (`Account`) des influenceurs dans
+    `Comments`et `Reposts`par compte (`Account`) des influenceurs dans
     `igposts`.
 -   Triez-les par ordre décroissant de la moyenne des `Likes`.
 -   Affichez le top 10.
@@ -340,7 +340,7 @@ igposts %>%
 #| output: true
 igposts %>% 
   group_by(Account) %>% 
-  summarize(mean_Likes = mean(Likes), mean_Comments = mean(Comments), mean_Views = mean(Views)) %>% 
+  summarize(mean_Likes = mean(Likes), mean_Comments = mean(Comments), mean_Reposts = mean(Reposts)) %>% 
   arrange(desc(mean_Likes)) %>% 
   head(10)
 ```
@@ -365,7 +365,7 @@ igposts %>%
   arrange(desc(Likes)) %>% 
   head(5)
 
-# Le post Instagram le plus liké dans igposts est un post de type album de Leo Messi dans lequel il met en scène un prix qu'il a reçu de la FIFA.
+# Le post Instagram le plus liké dans igposts est un album publié par Leo Messi.
 ```
 :::
 
@@ -390,7 +390,7 @@ igposts %>%
   arrange(desc(Comments)) %>% 
   head(5)
 
-#Le post Instagram ayant reçu le plus de commentaires dans igposts est de type photo et a été publié par Selena Gomez. Il la représente en train de boire un cocktail et de flirter avec la caméra.
+#Le post Instagram ayant reçu le plus de commentaires dans igposts est de type photo et a été publié par Selena Gomez.
 ```
 :::
 
@@ -400,10 +400,10 @@ Gomez](https://www.instagram.com/p/Co_P7YgrrFO/)
 ### Exercice 16 : igposts VI {#igposts-vi}
 
 -   Faites la même chose que dans les exercices 14 et 15, mais
-    maintenant pour les `Views` (à noter : Dans Instagram, la métrique
-    `Views`désigne les **video views** uniquement ) !
--   Allez voir l'URL du post avec le plus de `Views` : De quoi s'agit-il
-    ?
+    maintenant pour les `Reposts` (nombre de reposts relevé le 5 octobre
+    2026 ; fonction introduite par Instagram en 2025) !
+-   Allez voir l'URL du post avec le plus de `Reposts` : De quoi
+    s'agit-il ?
 
 ::: {.callout-caution collapse="true"}
 ### Solution
@@ -412,22 +412,25 @@ Gomez](https://www.instagram.com/p/Co_P7YgrrFO/)
 #| echo: true
 #| output: true
 igposts %>% 
-  select(Account, Views, URL) %>% 
-  arrange(desc(Views)) %>% 
+  select(Account, Reposts, URL) %>% 
+  arrange(desc(Reposts)) %>% 
   head(5)
 
-#Le post Instagram qui a reçu le plus de Views (vidéos vues) dans igposts est un post d'album de Kendall Jenner dans lequel elle partage de courtes séquences de selfie d'elle-même, partageant un moment intime avec ses followers (le son ne semble plus fonctionner).
+#Le post Instagram ayant reçu le plus de Reposts dans igposts est une photo publiée par SUGA (agustd).
 ```
 :::
 
-[URL du post Instagram de Kendall
-Jenner](https://www.instagram.com/p/CoYqX0hr1jr/)
+[URL du post Instagram de
+SUGA](https://www.instagram.com/p/Copd1XvJT78/)
 
 ### Exercice 17 : igposts VII {#igposts-vii}
 
 -   Utilisez dplyr pour créer une nouvelle colonne :
     `Likes_par_Follower` (définie comme `Likes` divisé par
-    `Followers.at.Posting`).
+    `Followers.at.Observation`). Les followers ont été relevés le 5
+    octobre 2026 : ce ratio compare les posts à la taille actuelle des
+    comptes, ce n'est pas un taux d'engagement au moment de la
+    publication.
 -   Trouvez maintenant le post avec le plus grand nombre de
     `Likes_par_Follower` et naviguez jusqu'à son URL : que montre-t-il ?
 
@@ -436,11 +439,11 @@ Jenner](https://www.instagram.com/p/CoYqX0hr1jr/)
 
 ```{r}
 igposts %>% 
-  mutate(Likes_par_Follower = Likes/Followers.at.Posting) %>% select(Account, Likes_par_Follower, URL) %>% 
+  mutate(Likes_par_Follower = Likes/Followers.at.Observation) %>% select(Account, Likes_par_Follower, URL) %>% 
   arrange(desc(Likes_par_Follower)) %>% 
   head(5)
 
-#Le post Instagram qui a reçu le plus de Likes par follower dans igposts est un post de type album de Anastasia Karanikolaou, une amie de Kylie Jenner. Les photos montres les deux amies sur une place de basketball en faisant des grimaces.
+#Le post Instagram qui a reçu le plus de Likes par follower dans igposts est un album publié par Anastasia Karanikolaou.
 ```
 :::
 
@@ -459,11 +462,11 @@ Karanikolaou](https://www.instagram.com/p/CoptMRoJtUD/)
 #| echo: true
 #| output: true
 igposts %>% 
-  mutate(Comments_par_Follower = Comments/Followers.at.Posting) %>% select(Account, Comments_par_Follower, URL) %>% 
+  mutate(Comments_par_Follower = Comments/Followers.at.Observation) %>% select(Account, Comments_par_Follower, URL) %>% 
   arrange(desc(Comments_par_Follower)) %>% 
   head(5)
 
-#Le post Instagram qui a reçu le plus de commentaires par follower dans igposts est un post d'album de l'actrice indienne Kiara Advani avec des photos de son mariage.
+#Le post Instagram qui a reçu le plus de commentaires par follower dans igposts est un album publié par l'actrice indienne Kiara Advani.
 ```
 :::
 
@@ -473,8 +476,7 @@ KIARA](https://www.instagram.com/p/CoXmBSLvj7A/)
 ### Exercice 19 : igposts IX {#igposts-ix}
 
 -   Faites la même chose que dans les exercices 17 et 18, mais cette
-    fois pour `Views_par_Follower` (ne calculez cette variable que pour
-    les posts qui ont reçu plus de 0 vues).
+    fois pour `Reposts_par_Follower`.
 
 ::: {.callout-caution collapse="true"}
 ### Solution
@@ -483,17 +485,16 @@ KIARA](https://www.instagram.com/p/CoXmBSLvj7A/)
 #| echo: true
 #| output: true
 igposts %>% 
-  filter(Views > 0) %>% 
-  mutate(Views_par_Follower = Views/Followers.at.Posting) %>% select(Account, Views_par_Follower, URL) %>% 
-  arrange(desc(Views_par_Follower)) %>% 
+  mutate(Reposts_par_Follower = Reposts/Followers.at.Observation) %>% select(Account, Reposts_par_Follower, URL) %>% 
+  arrange(desc(Reposts_par_Follower)) %>% 
   head(5)
 
-#Le post Instagram qui a reçu le plus de views par follower est un album publié par la chanteuse colombienne Karol G. Le post montre des photos et une vidéo d'elle avec Rihanna.
+#Le post Instagram qui a reçu le plus de Reposts par follower est la même photo de SUGA (agustd) qu'à l'exercice 16.
 ```
 :::
 
-[URL du post Instagram de Karol
-G](https://www.instagram.com/p/ComtUDjrPAD/)
+[URL du post Instagram de
+SUGA](https://www.instagram.com/p/Copd1XvJT78/)
 
 ## Exercices {.unnumbered}
 

@@ -31,7 +31,7 @@
 ## Data audit
 - `reponses_socio.csv`: 74 students (birth year, gender, passport, origin, siblings, home town, commute, grades). Re-identification risk is high. → synthetic copy.
 - `points_PS_1–4.csv`: student number + group + points. → keep only points (and group).
-- `igposts.csv`: public celebrity posts (CrowdTangle export). Low risk; consider dropping the Description column.
+- `igposts.csv`: surviving posts of the 2023 sample, metrics re-observed on 5 Oct 2026 (provenance in `data/README.md`). The old row-level file is no longer used.
 - `reponses.csv` (PS3): not in the repo. Needed or must be replaced.
 - The old files remain in the git history. If they must disappear, rewrite the history (git filter-repo). Check with the UniFR data protection office.
 

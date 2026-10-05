@@ -30,6 +30,16 @@ fichier contient des posts Instagram de célébritées qui ont reçu
 beaucoup d'interactions d'utilisateurs. Pour cette application, il faut
 d'abord charger ce jeu de données dans notre session RStudio en cours.
 
+::: {.callout-note}
+## D'où viennent ces données ?
+
+`igposts.csv` reprend les posts d'un échantillon de février–mars 2023
+qui étaient encore publics le 5 octobre 2026. Les métriques (`Likes`,
+`Comments`, `Reposts`) et le nombre de followers ont été relevés à cette
+date : ils décrivent l'état des posts en 2026, pas au moment de leur
+publication. Voir [À propos](../apropos.qmd#données) pour les détails.
+:::
+
 ::: {.callout-note icon="true"}
 ## À noter
 
@@ -88,8 +98,6 @@ suivre le processus suivant :
 4.  Une fenêtre avec des paramètres apparaît, que vous pouvez remplir de
     la manière suivante :
 
-    ![Importer un fichier CSV dans RStudio. Capture d'écran de RStudio Desktop (Posit Software, PBC).](../images/import-igposts.png){fig-alt="Fenêtre Import Dataset de RStudio avec les paramètres d'importation du fichier igposts.csv"}
-
     -   Explications des paramètres :
 
         -   **Encoding = UTF-8** : Indique à RStudio d'utiliser
@@ -133,10 +141,11 @@ str(igposts)
 
 ## Explorez votre jeu de données importé
 
-Cela nous montre qu'il s'agit d'un data frame avec 100 observations et
-11 variables. Chaque ligne représente un post Instagram d'une célébrité
-(unité statistique) et chaque colonne une variable différente associée à
-ce post.
+Cela nous montre qu'il s'agit d'un data frame avec 84 observations et
+11 variables. Chaque ligne (unité statistique) représente une observation
+associant un post Instagram à un compte qui l'a publié ou co-publié : les
+84 lignes correspondent à 82 posts distincts provenant de 33 comptes.
+Chaque colonne est une variable différente associée à cette observation.
 
 Notez que les variables sont soit de type textuel (chr = "character"; p.
 ex. `Account`= le nom du compte Insta qui a publié le post), soit
@@ -194,7 +203,8 @@ métriques sur les posts Instagram, nous pouvons justement constater
 cela. Certes, certaines variables textuelles, telles que `URL` (le lien
 vers le post), sont tout à fait pertinentes. D'autres, en revanche, sont
 des catégories. La plus évidente est la variable `Type`, qui indique si
-un post Instagram est une photo, une vidéo ou un album. Factorisons
+un post Instagram est une photo ou un album (les deux catégories présentes
+dans `igposts`). Factorisons
 ci-dessous quelques-unes de ces variables catégorielles à l'aide de code
 :
 
@@ -305,12 +315,12 @@ Essayons maintenant d'appliquer tout cela avec du code et les données
 
 # Par exemple, nous pouvons extraire les quatres colonnes suivantes d'igposts (voir comment le pipe est utilisé) :
 
-igposts %>% select(Account, Type, Followers.at.Posting, Total.Interactions)
+igposts %>% select(Account, Type, Followers.at.Observation, Total.Interactions)
 
 # Avec les deux points dans la fonction select(), vous pouvez sélectionner plusieurs colonnes successives. Notez que cette fois-ci, nous affichons que les six premières lignes avec la fonction head() :
 
 igposts %>% 
-  select(Account:Views) %>% 
+  select(Account:Reposts) %>% 
   head()
 
 # Vous pouvez également créer un nouvel objet, df1, qui est essentiellement un data frame plus petit que igposts avec un sous-ensemble de variables (un tel data frame plus petit peut être plus utile à analyser et à afficher) :
@@ -318,7 +328,7 @@ igposts %>%
 df1 <- igposts %>% 
           select(Account, 
                  Type, 
-                 Followers.at.Posting, 
+                 Followers.at.Observation, 
                  Total.Interactions,
                  URL)
 
@@ -330,13 +340,13 @@ df1 <- igposts %>%
 
 # Par exemple, nous pouvons créer une nouvelle colonne qui compte le nombre d'interactions par follower :
 
-df1 %>% mutate(TI_par_Follower = Total.Interactions/Followers.at.Posting)
+df1 %>% mutate(TI_par_Follower = Total.Interactions/Followers.at.Observation)
 
 # Attention, sans opérateur <-, nous ne changeons pas l'objet df1 !
 # Pour ce faire et sauvegarder notre nouvelle colonne, nous pouvons écraser df1 avec une nouvelle vérsion de df1 :
 
 df1 <- df1 %>% 
-        mutate(TI_par_Follower = Total.Interactions/Followers.at.Posting)
+        mutate(TI_par_Follower = Total.Interactions/Followers.at.Observation)
 
 str(df1)
 ```
@@ -413,7 +423,7 @@ df1 %>% summarize(sum_TI = sum(Total.Interactions))
 
 df1 %>% 
   summarize(mean_TI = mean(Total.Interactions), 
-                  mean_Followers = mean(Followers.at.Posting)) 
+                  mean_Followers = mean(Followers.at.Observation)) 
 
 
 ###############################################################################
@@ -460,7 +470,7 @@ df1 %>%
 df1 %>% 
   group_by(Account) %>% 
   summarize(n = n(), 
-            mean_Followers = mean(Followers.at.Posting),
+            mean_Followers = mean(Followers.at.Observation),
             mean_TI = mean(Total.Interactions)) %>% 
   arrange(desc(n)) %>% 
   head(10)
@@ -470,7 +480,7 @@ df1 %>%
 igposts %>%
   group_by(Account) %>%
   filter(Account %in% c("Cristiano Ronaldo", "Leo Messi")) %>% 
-  summarize(n = n(), mean_Followers = mean(Followers.at.Posting),
+  summarize(n = n(), mean_Followers = mean(Followers.at.Observation),
             mean_Likes = mean(Likes),
             mean_Comments = mean(Comments)) 
 ```

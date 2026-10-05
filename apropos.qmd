@@ -33,7 +33,7 @@ en ouvrant une *issue* sur [GitHub](https://github.com/julesaberlin/intro-a-R/is
 | Logo du paquet palmerpenguins | Chapitre 12 | Allison Horst ([palmerpenguins](https://allisonhorst.github.io/palmerpenguins/)) | [CC0](https://creativecommons.org/publicdomain/zero/1.0/) |
 | Exercices interactifs (`webex.css`, `webex.js`) | Toutes les pages | Dale Barr, Lisa DeBruine et Caspar J. Van Lissa ([webexercises](https://github.com/psyteachr/webexercises)) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 | Jeux de données intégrés à R (`iris`, `mtcars`, `women`, `diamonds`, `mpg`, `penguins`) | Chapitres 4 à 13 | Voir la page d'aide de chaque jeu de données (p. ex. `?iris`) | Licences de R et des paquets concernés |
-| Captures d'écran de RStudio (volets ; importation d'un fichier CSV) | Chapitres 1 et 7 | Julian Maitra ; captures d'écran de RStudio Desktop © Posit Software, PBC | Logiciel sous licence AGPL v3 ; exclues de la licence CC du site |
+| Capture d'écran de RStudio (volets) | Chapitre 1 | Julian Maitra ; captures d'écran de RStudio Desktop © Posit Software, PBC | Logiciel sous licence AGPL v3 ; exclues de la licence CC du site |
 
 Posit, RStudio, and Shiny are trademarks of Posit Software, PBC, all rights reserved, and may be registered in the United States Patent and Trademark Office and in other countries.
 
@@ -44,11 +44,25 @@ Posit, RStudio, and Shiny are trademarks of Posit Software, PBC, all rights rese
     **aucune personne réelle**. Les valeurs rares ont été regroupées pour
     protéger les participant·es (voir la
     [description des données](https://github.com/julesaberlin/intro-a-R/blob/main/data/README.md)).
--   **`igposts.csv`** contient 100 posts Instagram publics de 38 comptes de
-    célébrités (février–mars 2023), issus d'un export de **CrowdTangle**,
-    l'outil de Meta pour l'analyse de contenus publics. Il ne contient que des
-    métriques publiques et le lien vers chaque post ; le texte des légendes a
-    été retiré. Les photos et textes des posts restent la propriété de leurs
+-   **`igposts.csv`** reprend les posts de l'échantillon Instagram initial de
+    février–mars 2023 qui étaient encore publiquement accessibles le 5 octobre
+    2026. L'échantillon initial avait été constitué en 2023 à partir de
+    CrowdTangle. Pour la version publique actuelle, les métriques `Likes`,
+    `Comments` et `Reposts` des posts encore disponibles ont été réobservées le
+    5 octobre 2026 à partir des pages Instagram publiques avec Zeeschuimer. Les
+    nombres de followers ont été relevés sur les profils publics le même jour
+    et sont arrondis selon l'affichage d'Instagram. Le fichier contient 84
+    observations compte–post correspondant à 82 posts distincts provenant de 33
+    comptes. Seize URL originales n'étaient plus disponibles et ont été exclues
+    sans être remplacées par des posts plus récents. Le fichier public ne
+    contient ni légendes, ni texte de commentaires, ni données brutes
+    Zeeschuimer.\
+    Les ratios par follower utilisent donc un instantané approximatif du nombre
+    de followers au 5 octobre 2026 et ne constituent pas des taux d'engagement
+    historiques au moment de la publication des posts. Les dates et heures sont
+    en UTC (l'ancien fichier les donnait avec 5 heures de retard) ; `Account` et
+    `User.Name` gardent les noms de 2023 (p. ex. `justinbieber`, aujourd'hui
+    `lilbieber`). Les photos et textes des posts restent la propriété de leurs
     auteur·es. Le site renvoie aux posts par des liens et n'intègre aucun
     contenu d'Instagram.
 -   Les fichiers **`points_*.csv`** contiennent les points obtenus aux Problem

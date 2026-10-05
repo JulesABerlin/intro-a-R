@@ -1,7 +1,8 @@
 # Crée les versions publiques des données d'étudiant·es (PLAN_book.md, étape 4).
 #
-# Entrées : les fichiers originaux, gardés hors du dépôt dans raw_data/
-#   (dossier exclu par .gitignore) :
+# Entrées : les fichiers originaux, gardés hors du dépôt, dans le sous-dossier
+#   raw_data/ d'un dossier privé (variable d'environnement INTRO_A_R_PRIVATE,
+#   par défaut ~/Documents/intro-a-R-private) :
 #   - raw_data/reponses_socio.csv  réponses au questionnaire (74 étudiant·es)
 #   - raw_data/points_PS_1.csv     points du Problem Set 1, avec le numéro d'étudiant·e
 #   - raw_data/points_ps_2.csv, points_ps_3.csv, points_ps_4.csv  points des PS 2 à 4
@@ -13,17 +14,19 @@
 #     des résultats réels (nombre d'étudiant·es par nombre de points)
 #
 # Ce script ne contient aucune valeur réelle : toutes les règles sont calculées
-# à partir des fichiers de raw_data/.
+# à partir des fichiers du dossier privé.
 #
 # À lancer depuis la racine du projet : Rscript data-raw/synthetiser_donnees.R
 
 library(synthpop)
 
+dossier_prive <- Sys.getenv("INTRO_A_R_PRIVATE", unset = "~/Documents/intro-a-R-private")
+
 k_min <- 3  # chaque valeur publiée doit être partagée par au moins 3 personnes
 
 # 1. Questionnaire -------------------------------------------------------------
 
-reel <- read.csv("raw_data/reponses_socio.csv", encoding = "UTF-8",
+reel <- read.csv(file.path(dossier_prive, "raw_data", "reponses_socio.csv"), encoding = "UTF-8",
                  stringsAsFactors = FALSE)
 reel <- reel[, names(reel) != "X"]  # colonne des noms de lignes
 
@@ -147,7 +150,7 @@ cat("Graine retenue :", choix$graine, "| S_pMSE :", round(choix$S_pMSE, 2), "\n"
 
 fichiers <- c("points_PS_1.csv", "points_ps_2.csv", "points_ps_3.csv", "points_ps_4.csv")
 for (i in 1:4) {
-  points <- read.csv(file.path("raw_data", fichiers[i]), encoding = "UTF-8")
+  points <- read.csv(file.path(dossier_prive, "raw_data", fichiers[i]), encoding = "UTF-8")
   points <- points[[ncol(points)]]
   if (i == 4) points <- points[points > 0]
   distribution <- as.data.frame(table(points), stringsAsFactors = FALSE)

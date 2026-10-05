@@ -10,7 +10,8 @@ exécuter dans RStudio et des exercices interactifs avec corrections.
 
 Ce matériel a été développé pour le cours **Exercices Méthodes II** du
 Bachelor en sciences de la communication de l'Université de Fribourg, que
-j'ai enseigné de 2023 à 2025.
+j'ai enseigné de 2023 à 2025. Il s'adresse à toute personne qui souhaite
+apprendre R à son rythme.
 :::
 
 ## Comment utiliser ce site {.unnumbered}

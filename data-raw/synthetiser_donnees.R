@@ -4,11 +4,13 @@
 #   (dossier exclu par .gitignore) :
 #   - raw_data/reponses_socio.csv  réponses au questionnaire (74 étudiant·es)
 #   - raw_data/points_PS_1.csv     points du Problem Set 1, avec le numéro d'étudiant·e
+#   - raw_data/points_ps_2.csv, points_ps_3.csv, points_ps_4.csv  points des PS 2 à 4
 #
 # Sorties :
 #   - data/reponses_socio.csv  copie synthétique : mêmes variables, distributions
 #     et relations semblables, mais aucune ligne ne correspond à une vraie personne
-#   - data/points_PS_1.csv     groupe et points seulement
+#   - data/distribution_ps_1.csv à distribution_ps_4.csv  distributions agrégées
+#     des résultats réels (nombre d'étudiant·es par nombre de points)
 #
 # Ce script ne contient aucune valeur réelle : toutes les règles sont calculées
 # à partir des fichiers de raw_data/.
@@ -138,8 +140,19 @@ cat("Graine retenue :", choix$graine, "| S_pMSE :", round(choix$S_pMSE, 2), "\n"
     "| recodées/originales", round(max(abs(cor_base - cor_reelle)), 2),
     "| synthétiques/originales", round(max(abs(correlations(synth) - cor_reelle)), 2), "\n")
 
-# 2. Points du Problem Set 1 -----------------------------------------------------
+# 2. Distributions des points des Problem Sets ----------------------------------
 
-points <- read.csv("raw_data/points_PS_1.csv", encoding = "UTF-8")
-write.csv(points[, c("groupe", "points")], "data/points_PS_1.csv",
-          row.names = FALSE, fileEncoding = "UTF-8")
+# Seules des distributions agrégées sont publiées : nombre d'étudiant·es (n) par
+# nombre de points, avec les mêmes filtres que les histogrammes (PS 4 : points > 0).
+
+fichiers <- c("points_PS_1.csv", "points_ps_2.csv", "points_ps_3.csv", "points_ps_4.csv")
+for (i in 1:4) {
+  points <- read.csv(file.path("raw_data", fichiers[i]), encoding = "UTF-8")
+  points <- points[[ncol(points)]]
+  if (i == 4) points <- points[points > 0]
+  distribution <- as.data.frame(table(points), stringsAsFactors = FALSE)
+  distribution$points <- as.numeric(distribution$points)
+  names(distribution)[2] <- "n"
+  write.csv(distribution, sprintf("data/distribution_ps_%d.csv", i),
+            row.names = FALSE, quote = FALSE, fileEncoding = "UTF-8")
+}

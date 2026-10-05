@@ -12,7 +12,7 @@ igposts <- read.csv("https://julesaberlin.github.io/intro-a-R/data/igposts.csv",
 |---|---|
 | `reponses_socio.csv` | **Données synthétiques** : 74 réponses simulées à partir du questionnaire d’une classe (sessions 10 et 13). Aucune personne réelle. |
 | `igposts.csv` | 84 observations compte–post (82 posts Instagram distincts de 33 comptes de célébrités, publiés entre le 7 février et le 5 mars 2023), métriques relevées le 5 octobre 2026 (sessions 7 à 9). Métriques et URL uniquement. |
-| `points_PS_1.csv`, `points_ps_2.csv`, `points_ps_3.csv`, `points_ps_4.csv` | Points obtenus aux Problem Sets (groupe et points seulement, sans identifiant). |
+| `distribution_ps_1.csv` à `distribution_ps_4.csv` | Distributions agrégées des résultats réels (nombre d’étudiant·es par nombre de points) aux Problem Sets 1 à 4 de l’édition 2025, colonnes `points` et `n` (sessions 3, 6, 9 et 13). Pour le PS 4, seuls les résultats supérieurs à 0 sont comptés. Les résultats individuels ne sont pas publiés. |
 | `ice_age_df.csv` | Le petit tableau des animaux de *L’Âge de glace* (session 10). |
 
 ## À propos de `igposts.csv`

@@ -34,13 +34,13 @@
   stem: 'Quel compte (`User.Name`) a publié le post de `igposts.csv` ayant reçu le plus de `Total.Interactions` ?'
   key: [leomessi, Leo Messi]
   explanation: |
-    Triez `igposts` par `Total.Interactions` décroissant : le premier post est celui de leomessi (23 333 227 interactions). Ouvrez son URL pour voir de quoi il s’agit : <https://www.instagram.com/p/CpLxnFlNJZn/>
+    Triez `igposts` par `Total.Interactions` décroissant : le premier post est celui de leomessi (22 626 965 interactions). Ouvrez son URL pour voir de quoi il s’agit : <https://www.instagram.com/p/CpLxnFlNJZn/>
   uses_data: igposts.csv
   needs_image: false
   note: >-
     Remplace l’ancienne question d’association de photos (captures d’écran Instagram,
     non reproduites pour des raisons de droits). Clé vérifiée dans R : leomessi,
-    23 333 227 interactions, sans ex aequo. Réponses acceptées : leomessi, Leo Messi
+    22 626 965 interactions, sans ex aequo (données relevées le 5 octobre 2026). Réponses acceptées : leomessi, Leo Messi
     (casse ignorée).
 
 - id: 2
@@ -845,13 +845,13 @@
     a: 'Le post a été publié par le compte Instagram dont le `User.Name` est **zendaya**.'
     b: 'Il s’agit d’un post Instagram de type **Album**.'
     c: 'Il s’agit d’un post Instagram de type **Video**.'
-    d: 'Le post a reçu des **Views**.'
+    d: 'Le post a reçu plus de **250 Reposts**.'
     e: 'Zendaya est une actrice et chanteuse **britannique**.'
   key: [a, b, d]
   explanation: |
     On peut aussi chercher le post dans les données :
-    `igposts %>% filter(grepl("CpHHbGWunhI", URL)) %>% select(User.Name, Type, Views)`.
-    Le post vient de **zendaya**, il est de type **Album** et compte environ 31 millions de vues.
+    `igposts %>% filter(grepl("CpHHbGWunhI", URL)) %>% select(User.Name, Type, Reposts)`.
+    Le post vient de **zendaya**, il est de type **Album** et compte 284 `Reposts`.
     e) Zendaya est américaine.
   uses_data: igposts.csv
 
@@ -1331,21 +1331,21 @@
   session: 8
   problem_sets: [3]
   type: numeric
-  stem: 'Combien de posts Instagram de type **Album** le jeu de données `igposts.csv` contient-il ?'
-  key: 73
+  stem: 'Combien d’observations (lignes) de type **Album** le jeu de données `igposts.csv` contient-il ?'
+  key: 60
   explanation: |
     ```r
     igposts %>% count(Type)
     ```
-    `count()` affiche le nombre de posts de chaque type : 73 albums.
+    `count()` affiche le nombre de lignes de chaque type : 60 albums. (Un album co-publié par deux comptes apparaît sur deux lignes : ces 60 lignes correspondent à 59 posts distincts.)
   uses_data: igposts.csv
 
 - id: 68
   session: 8
   variant_of: 67
   type: numeric
-  stem: 'Combien de posts Instagram de type **Album** le jeu de données `igposts.csv` contient-il ?'
-  key: 73
+  stem: 'Combien d’observations (lignes) de type **Album** le jeu de données `igposts.csv` contient-il ?'
+  key: 60
   explanation: |
     ```r
     igposts %>% count(Type)
@@ -1512,28 +1512,28 @@
   problem_sets: [3]
   type: text
   stem: |
-    Quel est le `User.Name` du compte Instagram ayant le plus de `Followers.at.Posting`
+    Quel est le `User.Name` du compte Instagram ayant le plus de `Followers.at.Observation`
     parmi les comptes du jeu de données `igposts.csv` ? (Tapez le `User.Name` exact.)
   key: cristiano
   explanation: |
     ```r
-    igposts %>% arrange(desc(Followers.at.Posting)) %>% select(User.Name) %>% head(1)
+    igposts %>% arrange(desc(Followers.at.Observation)) %>% select(User.Name) %>% head(1)
     ```
   uses_data: igposts.csv
   note: >-
-    La réécriture du PS3 (question 15) posait la question des Views (ID 82) avec le
-    corrigé de l’ID 81. Décision de Jules : le PS3 utilise l’ID 81 (Followers).
+    La réécriture du PS3 (question 15) posait l’ancienne question sur les vues (aujourd’hui
+    l’ID 82, sur les Reposts) avec le corrigé de l’ID 81. Décision de Jules : le PS3 utilise l’ID 81 (Followers).
 
 - id: 82
   session: 8
   type: text
   stem: |
     Quel est le `User.Name` du compte Instagram qui a publié le post ayant reçu le plus
-    grand nombre de `Views` dans le jeu de données `igposts.csv` ? (Tapez le `User.Name` exact.)
-  key: kendalljenner
+    grand nombre de `Reposts` dans le jeu de données `igposts.csv` ? (Tapez le `User.Name` exact.)
+  key: agustd
   explanation: |
     ```r
-    igposts %>% arrange(desc(Views)) %>% select(User.Name, Views) %>% head(1)
+    igposts %>% arrange(desc(Reposts)) %>% select(User.Name, Reposts) %>% head(1)
     ```
   uses_data: igposts.csv
 
@@ -1820,7 +1820,7 @@
   explanation: |
     ```r
     igposts %>%
-      mutate(ratio = Comments / Followers.at.Posting) %>%
+      mutate(ratio = Comments / Followers.at.Observation) %>%
       arrange(desc(ratio)) %>%
       select(Account, ratio) %>%
       head()
@@ -1832,14 +1832,14 @@
   session: 7
   problem_sets: [3]
   type: vf
-  stem: 'Dans le jeu de données `igposts.csv`, la variable `Views` désigne le nombre de fois qu’un post Instagram a été vu par les utilisateurs.'
+  stem: 'Dans `igposts.csv`, les valeurs de `Likes` correspondent au nombre de likes au moment de la publication des posts en 2023.'
   key: false
   explanation: |
-    `Views` compte les vues de **vidéos** : les 88 posts sans vidéo ont la valeur 0. Cela ne veut pas dire que personne ne les a vus : le nombre total d’affichages n’est pas dans les données.
+    Les métriques ont été relevées le 5 octobre 2026 sur les pages Instagram publiques : elles reflètent l'état des posts à cette date, pas en 2023.
   uses_data: igposts.csv
   note: >-
-    Vérifié dans igposts.csv : 88 posts avec Views = 0, 12 avec Views > 0 (tous des albums),
-    aucune valeur manquante. Cohérent avec la session 8 (Views = vues de vidéos).
+    Remplace l’ancienne question sur les vues (variable absente du fichier relevé en 2026).
+    Question de provenance, texte fourni par Jules.
 
 - id: 109
   session: 7
@@ -1848,7 +1848,7 @@
   stem: 'L’unité statistique (ou unité d’analyse) du jeu de données `igposts.csv` est le compte Instagram de célébrités telles que Cristiano Ronaldo et Kendall Jenner.'
   key: false
   explanation: |
-    Chaque ligne de `igposts` est un **post** Instagram : le jeu de données compte 100 posts publiés par 38 comptes. Un même compte apparaît donc sur plusieurs lignes.
+    L’unité n’est pas le compte Instagram : chaque ligne de `igposts` est une observation associant un **post** à un compte qui l’a publié ou co-publié. Le fichier contient 84 lignes correspondant à 82 posts distincts provenant de 33 comptes. Un même compte apparaît donc sur plusieurs lignes.
   uses_data: igposts.csv
 
 - id: 110

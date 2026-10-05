@@ -11,19 +11,43 @@ igposts <- read.csv("https://julesaberlin.github.io/intro-a-R/data/igposts.csv",
 | Fichier | Contenu |
 |---|---|
 | `reponses_socio.csv` | **Données synthétiques** : 74 réponses simulées à partir du questionnaire d’une classe (sessions 10 et 13). Aucune personne réelle. |
-| `igposts.csv` | 100 posts Instagram publics de 38 comptes de célébrités, publiés entre le 6 février et le 6 mars 2023 (sessions 7 et 8). Métriques publiques uniquement : la légende des posts (`Description`) a été retirée. |
+| `igposts.csv` | 84 observations compte–post (82 posts Instagram distincts de 33 comptes de célébrités, publiés entre le 7 février et le 5 mars 2023), métriques relevées le 5 octobre 2026 (sessions 7 à 9). Métriques et URL uniquement. |
 | `points_PS_1.csv`, `points_ps_2.csv`, `points_ps_3.csv`, `points_ps_4.csv` | Points obtenus aux Problem Sets (groupe et points seulement, sans identifiant). |
 | `ice_age_df.csv` | Le petit tableau des animaux de *L’Âge de glace* (session 10). |
 
 ## À propos de `igposts.csv`
 
-Les données proviennent d’un export de **CrowdTangle**, l’outil de Meta pour
-l’analyse de contenus publics sur Facebook et Instagram (fermé en août 2024).
-Elles ne contiennent que des métriques publiques (abonné·es, interactions,
-mentions « J’aime », commentaires, vues) et le lien vers chaque post. Le texte
-des légendes, qui mentionnait d’autres comptes, a été retiré. Les photos et
-textes des posts restent la propriété de leurs auteur·es ; ils ne sont pas
-reproduits ici.
+`igposts.csv` contient les observations encore accessibles de l’échantillon
+initial de posts Instagram publiés en février–mars 2023. L’échantillon initial
+avait été constitué en 2023 à partir de CrowdTangle. Pour la version publique
+actuelle, les métriques des posts encore disponibles ont été réobservées le
+5 octobre 2026 directement à partir de pages Instagram publiques avec
+[Zeeschuimer](https://github.com/digitalmethodsinitiative/zeeschuimer) ; les
+nombres de followers ont été relevés sur les profils publics le même jour. Le
+fichier contient 84 observations compte–post correspondant à 82 posts distincts
+de 33 comptes : deux posts co-publiés apparaissent une fois pour chacun des deux
+comptes. Seize URL originales n’étaient plus disponibles et ont été exclues sans
+remplacement. Le fichier public ne contient ni légendes, ni texte de
+commentaires, ni données brutes Zeeschuimer.
+
+Les nombres de followers sont arrondis selon l’affichage public d’Instagram ;
+les ratios par follower utilisent donc un instantané approximatif du nombre de
+followers au 5 octobre 2026 et ne constituent pas des taux d’engagement
+historiques au moment de la publication des posts.
+
+| Variable | Contenu |
+|---|---|
+| `Account`, `User.Name` | Nom et identifiant du compte tels qu’ils figuraient dans l’échantillon de 2023 (p. ex. `justinbieber`, aujourd’hui `lilbieber`) |
+| `Followers.at.Observation` | Nombre de followers affiché sur le profil le 5 octobre 2026 (arrondi) |
+| `Post.Created.Date`, `Post.Created.Time` | Date et heure de publication, en **UTC** (l’ancien fichier les donnait avec 5 heures de retard) |
+| `Type` | `Photo` ou `Album` |
+| `Likes`, `Comments` | Nombre de likes et de commentaires relevé le 5 octobre 2026 |
+| `Reposts` | Nombre de reposts relevé le 5 octobre 2026 (fonction introduite par Instagram en 2025) |
+| `Total.Interactions` | `Likes` + `Comments` |
+| `URL` | Lien vers le post |
+
+Les photos et textes des posts restent la propriété de leurs auteur·es ; ils ne
+sont pas reproduits ici.
 
 ## À propos de `reponses_socio.csv`
 

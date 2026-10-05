@@ -1,0 +1,1794 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>2&nbsp; Vecteurs, tableaux et facteurs – Exercices Méthodes II</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../sessions/session-03.html" rel="next">
+<link href="../sessions/session-01.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-fa9f328cd4a8f9b1bff39b312214e759.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Pas de résultats",
+    "search-matching-documents-text": "documents trouvés",
+    "search-copy-link-title": "Copier le lien vers la recherche",
+    "search-hide-matches-text": "Cacher les correspondances additionnelles",
+    "search-more-match-text": "correspondance de plus dans ce document",
+    "search-more-matches-text": "correspondances de plus dans ce document",
+    "search-clear-button-title": "Effacer",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Envoyer",
+    "search-label": "Recherche"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../include/webex.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sessions/session-02.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Vecteurs, tableaux et facteurs</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Recherche" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Exercices Méthodes II</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/julesaberlin/intro-a-R" title="Code source" class="quarto-navigation-tool px-1" aria-label="Code source"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Recherche"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bienvenue</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sessions/session-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Premiers pas avec R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sessions/session-02.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Vecteurs, tableaux et facteurs</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sessions/session-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Révision 1&nbsp;: bases de R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sessions/session-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Paquets, jeux de données et premiers graphiques</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sessions/session-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualiser des données avec ggplot2</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sessions/session-06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Révision 2&nbsp;: visualisation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sessions/session-07.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Importer et manipuler des données</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sessions/session-08.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Manipuler des données&nbsp;: exercices</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sessions/session-09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Révision 3&nbsp;: manipulation de données</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sessions/session-10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Statistiques descriptives</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sessions/session-11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Statistiques inférentielles I&nbsp;: le test t</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sessions/session-12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Statistiques inférentielles II&nbsp;: ANOVA et régression</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sessions/session-13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Révision 4&nbsp;: statistiques</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sessions/session-14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Pour aller plus loin</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../apropos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">À propos</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table des matières</h2>
+   
+  <ul class="collapse">
+  <li><a href="#répétition-rapide-de-session-1" id="toc-répétition-rapide-de-session-1" class="nav-link active" data-scroll-target="#répétition-rapide-de-session-1"><span class="header-section-number">2.1</span> Répétition rapide de session 1</a></li>
+  <li><a href="#données-en-forme-de-tableau" id="toc-données-en-forme-de-tableau" class="nav-link" data-scroll-target="#données-en-forme-de-tableau"><span class="header-section-number">2.2</span> Données en forme de tableau</a></li>
+  <li><a href="#les-matrices" id="toc-les-matrices" class="nav-link" data-scroll-target="#les-matrices"><span class="header-section-number">2.3</span> Les matrices</a></li>
+  <li><a href="#les-data-frames" id="toc-les-data-frames" class="nav-link" data-scroll-target="#les-data-frames"><span class="header-section-number">2.4</span> Les data frames</a></li>
+  <li><a href="#fonctions-statistiques-de-base" id="toc-fonctions-statistiques-de-base" class="nav-link" data-scroll-target="#fonctions-statistiques-de-base"><span class="header-section-number">2.5</span> Fonctions statistiques de base</a></li>
+  <li><a href="#les-facteurs" id="toc-les-facteurs" class="nav-link" data-scroll-target="#les-facteurs"><span class="header-section-number">2.6</span> Les facteurs</a></li>
+  <li><a href="#le-répértoire-de-travail" id="toc-le-répértoire-de-travail" class="nav-link" data-scroll-target="#le-répértoire-de-travail"><span class="header-section-number">2.7</span> Le répertoire de travail</a></li>
+  <li><a href="#devoir-pour-session-3-problem-set-1" id="toc-devoir-pour-session-3-problem-set-1" class="nav-link" data-scroll-target="#devoir-pour-session-3-problem-set-1">À faire avant de continuer</a></li>
+  <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices">Exercices</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Vecteurs, tableaux et facteurs</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="répétition-rapide-de-session-1" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="répétition-rapide-de-session-1"><span class="header-section-number">2.1</span> Répétition rapide de session 1</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Script de répétition</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Avez-vous compris comment R traite les différents types</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># de variables ?  Quelle est la différence entre a et b ?</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="st">"5"</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Comment afficher a et b ?</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Alternative : avec la fonction print(), qui augmente la</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># compréhension ultérieure du code</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Pourquoi le code suivant produit-il une erreur ?</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>a <span class="sc">*</span> b</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `a * b`:
+! non-numeric argument to binary operator</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Le code suivant corrige à nouveau l'erreur, pourquoi ?</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>a <span class="sc">*</span> b</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Vécteurs</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>v1</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Vous pouvez créez des nombres succesifs avec un colon :</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>v2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>v2</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>v3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"salut"</span>, <span class="st">"le"</span>, <span class="st">"pote"</span>)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>v4 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Astuce">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Astuce</span>Astuce
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Vous pouvez utiliser la fonction <code>class()</code> pour vérifier le type d’un objet, p.&nbsp;ex. (exécutez vous-même !) :</p>
+<ul>
+<li><p><code>class(c(1,2,3))</code></p></li>
+<li><p><code>class(c("Hello", "World"))</code></p></li>
+<li><p><code>class(c(TRUE,TRUE,FALSE))</code></p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="données-en-forme-de-tableau" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="données-en-forme-de-tableau"><span class="header-section-number">2.2</span> Données en forme de tableau</h2>
+<p>Les données sous forme de tableaux, avec des lignes et des colonnes, sont au cœur des méthodes quantitatives dans les sciences de la communication.</p>
+<p>Dans R, il existe plusieurs structures de données en format de tableau, notamment :</p>
+<ul>
+<li><p>Les <strong>matrices</strong></p></li>
+<li><p>Les <strong>data frames</strong></p></li>
+<li><p>D’autres types, tels que les <strong>tibbles</strong>, qui sont en fait des data frames adaptés à des paquets R spécifiques (nous traiterons ce sujet plus tard dans le cours).</p></li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled" title="Important">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Il est de convention qu’un tableau de données présente les <strong>unités statistiques</strong> par <strong>ligne</strong> (angl. <em>row</em>).</li>
+<li>Les <strong>variables</strong> ou caractéristiques de ces unités statistiques sont indiquées en conséquence par <strong>colonnes</strong> (angl. <em>column</em>).</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>À noter
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Selon le type de données, surtout en recherche empirique en sciences sociales dont font partie les sciences de la communication, les unités statistiques peuvent être :</p>
+<ul>
+<li><p>des <strong>participants</strong> à un questionnaire ou à une expérimentation</p></li>
+<li><p>des <strong>documents</strong> (p.&nbsp;ex. articles de presse, posts sur réseaux sociaux)</p></li>
+<li><p>des <strong>observations/ cas</strong> (p.&nbsp;ex. des profils sur réseaux sociaux, des entreprises médiatiques)</p></li>
+</ul>
+<p>Dans ces jeux de données, par convention, chaque ligne représente une unité statistique (ou un participant, un document, une observation), tandis que chaque colonne représente les variables qui ont été collectées pour chaque unité statistique.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>À noter
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La taille d’un jeu de données est indiquée par <strong>le nombre d’unités statistiques n</strong>.</p>
+<ul>
+<li>Par exemple, si 49 personnes ont répondu à un questionnaire, nous parlons donc d’un échantillon de n = 49 participants.</li>
+</ul>
+</div>
+</div>
+<p>Voici un modèle de la manière dont on devrait structurer les réponses à un questionnaire avec n participants et X questions :</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>          id  question_A  question_B  question_C etc.  question_X
+1 personne_1 réponse_a_A réponse_a_B réponse_a_C  ... réponse_a_X
+2 personne_2 réponse_a_A réponse_a_B réponse_a_C  ... réponse_a_X
+3 personne_3 réponse_a_A réponse_a_B réponse_a_C  ... réponse_a_X
+4       etc.         ...         ...         ...  ...         ...
+5 personne_n réponse_a_A réponse_a_B réponse_a_C  ... réponse_a_X</code></pre>
+</div>
+</div>
+<p>Dans ce modèle, l’unité statistique de ce jeu de données est la personne qui a répondu au questionnaire (un participant). Chaque ligne correspond donc à une personne différente. Les variables, en revanche, sont les différentes questions qui ont été enregistrées pour chaque participant.</p>
+<p>Regardons maintenant quelques objets R sous forme de tableau :</p>
+</section>
+<section id="les-matrices" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="les-matrices"><span class="header-section-number">2.3</span> Les matrices</h2>
+<p>Les <strong>matrices</strong> sont des objets plutôt mathématiques. Elles doivent notamment être composées de données de même type, c’est à dire numérique, textuel, logique, etc.</p>
+<p>On peut créer des objets matriciels avec la commande <strong><code>matrix()</code></strong>, avec les arguments suivants :</p>
+<ul>
+<li><p>un vecteur de valeurs (p.&nbsp;ex. <code>c(1,2,3,4,5,6)</code>)</p></li>
+<li><p>le nombre de lignes (<code>nrow=</code>),</p></li>
+<li><p>le nombre de colonnes (<code>ncol=</code>) et</p></li>
+<li><p>la <em>direction</em> de remplissage des valeurs, c’est-à-dire par lignes (<code>byrow = TRUE</code>) ou par colonnes (<code>byrow = FALSE</code>).</p></li>
+</ul>
+<p>Créons quelques matrices exemplaires avec du code R maintenant.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">byrow =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(m1)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>m2 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(m2)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Quelle est la différence entre m1 et m2 au niveau du code</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># ?</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>À noter
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Si vous ne spécifiez pas tous les arguments d’une fonction, R va tenter d’utiliser des arguments par défauts.</p>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># On peut p. ex. créer une matrice sans spécifier tout les</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># arguments de la fonction matrix()</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>m3 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>), <span class="at">nrow =</span> <span class="dv">5</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(m3)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2]
+[1,]    1    6
+[2,]    2    7
+[3,]    3    8
+[4,]    4    9
+[5,]    5   10</code></pre>
+</div>
+</div>
+<p>Vous pouvez extraire des éléments individuels ou des parties d’une matrice avec des <strong>parenthèses carrées <code>[]</code></strong> en spécifiant les lignes et les colonnes concernées.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Créons d'abord un matrice m4 avec 100 éléments :</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>m4 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>), <span class="at">nrow =</span> <span class="dv">10</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(m4)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
+ [1,]    1    2    3    4    5    6    7    8    9    10
+ [2,]   11   12   13   14   15   16   17   18   19    20
+ [3,]   21   22   23   24   25   26   27   28   29    30
+ [4,]   31   32   33   34   35   36   37   38   39    40
+ [5,]   41   42   43   44   45   46   47   48   49    50
+ [6,]   51   52   53   54   55   56   57   58   59    60
+ [7,]   61   62   63   64   65   66   67   68   69    70
+ [8,]   71   72   73   74   75   76   77   78   79    80
+ [9,]   81   82   83   84   85   86   87   88   89    90
+[10,]   91   92   93   94   95   96   97   98   99   100</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extraire le deuxième élément de la troisième ligne :</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>m4[<span class="dv">3</span>, <span class="dv">2</span>]</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 22</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extraire les cinq premiers éléments de la dixième ligne :</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>m4[<span class="dv">10</span>, <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)]</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 91 92 93 94 95</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extraire tous les éléments de la première ligne :</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>m4[<span class="dv">1</span>, ]</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extraire tous les éléments de la troisième colonne :</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>m4[, <span class="dv">3</span>]</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  3 13 23 33 43 53 63 73 83 93</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extraire la moitié inférieure de la matrice (lignes 6 à</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 10) :</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>m4[<span class="dv">6</span><span class="sc">:</span><span class="dv">10</span>, ]</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
+[1,]   51   52   53   54   55   56   57   58   59    60
+[2,]   61   62   63   64   65   66   67   68   69    70
+[3,]   71   72   73   74   75   76   77   78   79    80
+[4,]   81   82   83   84   85   86   87   88   89    90
+[5,]   91   92   93   94   95   96   97   98   99   100</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Et la moitié supérieure (lignes 1 à 5) :</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>m4[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, ]</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
+[1,]    1    2    3    4    5    6    7    8    9    10
+[2,]   11   12   13   14   15   16   17   18   19    20
+[3,]   21   22   23   24   25   26   27   28   29    30
+[4,]   31   32   33   34   35   36   37   38   39    40
+[5,]   41   42   43   44   45   46   47   48   49    50</code></pre>
+</div>
+</div>
+</section>
+<section id="les-data-frames" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="les-data-frames"><span class="header-section-number">2.4</span> Les data frames</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>À noter
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Les <strong>data frames</strong> (français : <em>cadre de données</em>) sont le type de donnée en forme tableau le plus commun dans R. Cette structure de donnée peut notamment être composé de données de différents types (numérique, textuel, logique).</p>
+</div>
+</div>
+<p>Créons un data frame avec la fonction <code>data.frame()</code> maintenant. Nous appelons ce type d’objets désormais un <strong>jeu de données</strong>.</p>
+<p>Nos exemples reprennent les personnages du film d’animation <a href="https://fr.wikipedia.org/wiki/L%27%C3%82ge_de_glace_3_:_Le_Temps_des_dinosaures"><em>L’Âge de glace 3 : Le Temps des dinosaures</em></a> (2009).</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Créons d'abord un vecteur textuel avec les noms de</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># certains animaux du film L'âge de glace.</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>name <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Manny"</span>, <span class="st">"Sid"</span>, <span class="st">"Diego"</span>, <span class="st">"Ellie"</span>, <span class="st">"Peaches"</span>, <span class="st">"Scrat"</span>,</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Rudy"</span>, <span class="st">"Buck"</span>)</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Un second vecteur textuel indique l'espèce de chaque</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co"># animal.</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>species <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"mammoth"</span>, <span class="st">"sloth"</span>, <span class="st">"sabertooth"</span>, <span class="st">"mammoth"</span>, <span class="st">"mammoth"</span>,</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"squirrel"</span>, <span class="st">"dinosaur"</span>, <span class="st">"weasel"</span>)</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Un troisième vecteur logique indique si chaque animal est</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="co"># une femelle</span></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>female <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>)</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Un quatrième vecteur numérique indique l'âge en années de</span></span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a><span class="co"># chaque animal.</span></span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">20</span>, <span class="dv">35</span>, <span class="dv">25</span>, <span class="dv">7</span>, <span class="dv">4</span>, <span class="dv">100</span>, <span class="dv">28</span>)</span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Un cinquième tableau numérique indique le poids en kg de</span></span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a><span class="co"># chaque animal.</span></span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>weight <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5000</span>, <span class="dv">80</span>, <span class="dv">400</span>, <span class="dv">4000</span>, <span class="dv">1000</span>, <span class="dv">1</span>, <span class="dv">10000</span>, <span class="dv">3</span>)</span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a><span class="co"># La fonction data.frame() permet d'utiliser les vecteurs</span></span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a><span class="co"># pour former un tableau de données.</span></span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a>ice_age_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(name, species, female, age, weight)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Nous pouvons afficher l’objet <code>ice_age_df</code> en exécutant son nom ou en utilisant la fonction <code>print()</code> :</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(ice_age_df)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     name    species female age weight
+1   Manny    mammoth  FALSE  30   5000
+2     Sid      sloth  FALSE  20     80
+3   Diego sabertooth  FALSE  35    400
+4   Ellie    mammoth   TRUE  25   4000
+5 Peaches    mammoth   TRUE   7   1000
+6   Scrat   squirrel  FALSE   4      1
+7    Rudy   dinosaur  FALSE 100  10000
+8    Buck     weasel  FALSE  28      3</code></pre>
+</div>
+</div>
+<section id="quelques-fonctions-utiles-pour-analyser-les-data-frames" class="level3">
+<h3 class="anchored" data-anchor-id="quelques-fonctions-utiles-pour-analyser-les-data-frames">Quelques fonctions utiles pour analyser les data frames</h3>
+<p>Il existe plusieurs <strong>fonctions utiles</strong> dans R qui vous permettent d’analyser les propriétés de jeux de données de type data frame (et d’autres types d’objets R), comme p.&nbsp;ex. :</p>
+<ul>
+<li><p><code>dim()</code> : Retourne les dimensions d’un jeu de données - le nombre de lignes et de colonnes.</p></li>
+<li><p><code>head()</code> : Affiche les six premières lignes du jeu de données.</p></li>
+<li><p><code>str()</code> : Fournit la structure du jeu de données, y compris</p>
+<ul>
+<li><p>le type de variable de chaque colonne,</p></li>
+<li><p>le nombre d’observations et</p></li>
+<li><p>les premières entrées de chaque colonne.</p>
+<p>C’est un moyen rapide de se faire une idée du contenu de votre jeu de données.</p></li>
+</ul></li>
+<li><p><code>summary()</code>: Donne un résumé du jeu de données, y compris des statistiques telles que</p>
+<ul>
+<li><p>la moyenne,</p></li>
+<li><p>la médiane,</p></li>
+<li><p>le minimum et le maximum pour les variables numériques, et</p></li>
+<li><p>les fréquences pour les variables factorielles.</p>
+<p>Cette fonction est utile pour obtenir rapidement une vue d’ensemble des statistiques.</p></li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Utilisons ces fonctions pour analyser l'objet ice_age_df</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(ice_age_df)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 8 5</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ice_age_df)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     name    species female age weight
+1   Manny    mammoth  FALSE  30   5000
+2     Sid      sloth  FALSE  20     80
+3   Diego sabertooth  FALSE  35    400
+4   Ellie    mammoth   TRUE  25   4000
+5 Peaches    mammoth   TRUE   7   1000
+6   Scrat   squirrel  FALSE   4      1</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(ice_age_df)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   8 obs. of  5 variables:
+ $ name   : chr  "Manny" "Sid" "Diego" "Ellie" ...
+ $ species: chr  "mammoth" "sloth" "sabertooth" "mammoth" ...
+ $ female : logi  FALSE FALSE FALSE TRUE TRUE FALSE ...
+ $ age    : num  30 20 35 25 7 4 100 28
+ $ weight : num  5000 80 400 4000 1000 1 10000 3</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ice_age_df)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        name        species     female             age        
+ Length   :8   Length   : 8   Mode :logical   Min.   :  4.00  
+ N.unique :8   N.unique : 6   FALSE:6         1st Qu.: 16.75  
+ N.blank  :0   N.blank  : 0   TRUE :2         Median : 26.50  
+ Min.nchar:3   Min.nchar: 5                   Mean   : 31.12  
+ Max.nchar:7   Max.nchar:10                   3rd Qu.: 31.25  
+                                              Max.   :100.00  
+     weight        
+ Min.   :    1.00  
+ 1st Qu.:   60.75  
+ Median :  700.00  
+ Mean   : 2560.50  
+ 3rd Qu.: 4250.00  
+ Max.   :10000.00  </code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Astuce">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Astuce</span>Astuce
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Une autre astuce utile consiste à utiliser le <strong><code>$</code></strong> pour <strong>extraire des colonnes spécifiques</strong> d’un jeu de données.</p>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># P. ex. :</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>ice_age_df<span class="sc">$</span>name</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Manny"   "Sid"     "Diego"   "Ellie"   "Peaches" "Scrat"   "Rudy"   
+[8] "Buck"   </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Essayez vous-même et extrayez d'autres colonnes de</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ice_age_df à l'aide du $ !</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+</section>
+<section id="fonctions-statistiques-de-base" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="fonctions-statistiques-de-base"><span class="header-section-number">2.5</span> Fonctions statistiques de base</h2>
+<p>Il existe dans R toute une palette de fonctions statistiques qui vous permettent d’évaluer principalement des données de type numérique. Quelques fonctions utiles pour les statistiques descriptives de base :</p>
+<ul>
+<li><p><code>mean()</code> : Calcule la moyenne arithmétique</p></li>
+<li><p><code>median()</code> : Calcule la médiane</p></li>
+<li><p><code>sd()</code> : Calcule l’écart-type (angl. <em>standard deviation</em>)</p></li>
+<li><p><code>var()</code> : Calcule la variance</p></li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>a1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">100</span>)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(a1)</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(a1)</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(a1)</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(a1)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 34.33333</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 56.8712</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3234.333</code></pre>
+</div>
+</div>
+</section>
+<section id="les-facteurs" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="les-facteurs"><span class="header-section-number">2.6</span> Les facteurs</h2>
+<p>Un autre type de variable clé dans R est ce que l’on appelle les <strong>facteurs</strong>, qui sont essentiellement des <strong>variables catégorielles</strong>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>À noter
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Les facteurs sont des variables qui prennent un nombre limité de valeurs différentes (appelées <em>levels</em> dans R).</p>
+<p>Il existe deux sous-types de facteurs :</p>
+<ul>
+<li><p>Les <strong>facteurs nominaux</strong> (sans ordre) : toutes les catégories sont équivalentes les unes aux autres. Il n’y a pas de hiérarchisation.</p>
+<ul>
+<li>Exemples : le genre et l’appartenance à un parti politique</li>
+</ul></li>
+<li><p>Les <strong>facteurs ordinaux</strong> (avec un ordre): il y a un ordre ou une hiérarchie spécifiée parmi les catégories (p.&nbsp;ex. des niveaux tels que <em>faible</em>, <em>moyen</em>, <em>élevé</em>).</p>
+<ul>
+<li>Exemples : niveau d’éducation, cohortes d’âge</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<p>Vous pouvez créer un facteur nominal à l’aide de la fonction <code>factor()</code> et vérifier ses catégories avec <code>levels()</code>. Voici un exemple :</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Créer un vecteur de données catégorielles, d'abord de</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="co"># type textuel</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>genre <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"homme"</span>, <span class="st">"femme"</span>, <span class="st">"femme"</span>, <span class="st">"femme"</span>, <span class="st">"homme"</span>)</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Le convertir ensuite en facteur</span></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>facteur_genre <span class="ot">&lt;-</span> <span class="fu">factor</span>(genre)</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Voir les niveaux du facteur genre</span></span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(facteur_genre)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "femme" "homme"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Imprimer le facteur (montre aussi les niveaux)</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(facteur_genre)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] homme femme femme femme homme
+Levels: femme homme</code></pre>
+</div>
+</div>
+<p>Et voici comment créer un facteur ordinal :</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Voici un vecteur textuel avec des tailles de T-shirt</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>tailles <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Small"</span>, <span class="st">"Medium"</span>, <span class="st">"Large"</span>, <span class="st">"Medium"</span>, <span class="st">"Small"</span>)</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="co"># On le transforme en facteur ordinal en spécifiant les</span></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="co"># arguments suivants :</span></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>tailles_facteur <span class="ot">&lt;-</span> <span class="fu">factor</span>(tailles, <span class="at">ordered =</span> <span class="cn">TRUE</span>, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Small"</span>,</span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Medium"</span>, <span class="st">"Large"</span>))</span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(tailles_facteur)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Small"  "Medium" "Large" </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(tailles_facteur)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] Small  Medium Large  Medium Small 
+Levels: Small &lt; Medium &lt; Large</code></pre>
+</div>
+</div>
+<p>Transformons maintenant la colonne <code>species</code> de notre jeu de données <code>ice_age_df</code> en facteur avec la fonction <code>as.factor()</code>:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vérifions d'abord la structure de l'objet ice_age_df :</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(ice_age_df)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   8 obs. of  5 variables:
+ $ name   : chr  "Manny" "Sid" "Diego" "Ellie" ...
+ $ species: chr  "mammoth" "sloth" "sabertooth" "mammoth" ...
+ $ female : logi  FALSE FALSE FALSE TRUE TRUE FALSE ...
+ $ age    : num  30 20 35 25 7 4 100 28
+ $ weight : num  5000 80 400 4000 1000 1 10000 3</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Transformation en facteur :</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>ice_age_df<span class="sc">$</span>species <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(ice_age_df<span class="sc">$</span>species)</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Vérifions encore une fois la structure de l'objet :</span></span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(ice_age_df)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   8 obs. of  5 variables:
+ $ name   : chr  "Manny" "Sid" "Diego" "Ellie" ...
+ $ species: Factor w/ 6 levels "dinosaur","mammoth",..: 2 4 3 2 2 5 1 6
+ $ female : logi  FALSE FALSE FALSE TRUE TRUE FALSE ...
+ $ age    : num  30 20 35 25 7 4 100 28
+ $ weight : num  5000 80 400 4000 1000 1 10000 3</code></pre>
+</div>
+</div>
+<p>C’est maintenant à vous de transformer la colonne <code>name</code> de <code>ice_age_df</code>en facteur !</p>
+</section>
+<section id="le-répértoire-de-travail" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="le-répértoire-de-travail"><span class="header-section-number">2.7</span> Le répertoire de travail</h2>
+<div class="callout callout-style-default callout-important callout-titled" title="Important">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Dans R, le <strong>répertoire de travail</strong> (angl. <em>working directory</em>) fait référence au dossier de votre ordinateur dans lequel R lit et enregistre les fichiers par défaut. Il s’agit d’un concept crucial dans la programmation R, car il détermine l’endroit où R recherche les fichiers à lire et l’endroit où il place les fichiers lorsque vous les enregistrez.</p>
+</div>
+</div>
+<p>Vous pouvez définir votre répertoire de travail avec la fonction <strong><code>setwd()</code></strong>.</p>
+<p>Une possibilité, c’est de le faire manuellement dans le volet <em>output</em> en bas à droite :</p>
+<ol type="1">
+<li>Naviguez sur l’onglet <strong>Files</strong></li>
+<li>Cliquez sur les trois petits points <strong>…</strong> tout à droite</li>
+<li>Choisissez un dossier sur votre ordinateur qui peut servir de répertoire de travail (vous devez peut-être en créer un d’abord et lui donner un nom utile, p.&nbsp;ex. “intro_R”)</li>
+<li>Cliquez ensuite sur la petite <strong>roue bleue</strong> (More) et choisissez <strong>Set as Working Directory</strong></li>
+<li>Vous pouvez ensuite copier et coller le code R qui définit le répertoire de travail depuis l’onglet de la console et l’inclure dans votre script R</li>
+</ol>
+<p>Par exemple, sous Windows&nbsp;: <code>setwd("C:/Users/votre_nom/Documents/intro_R")</code>&nbsp;; sous macOS&nbsp;: <code>setwd("~/Documents/intro_R")</code>. <strong>Attention</strong> : Ce code ne marche naturellement pas sur votre machine. Il faut l’adapter et inclure un chemin de fichier de votre ordinateur.</p>
+<p>Vous pouvez ensuite vérifier si le répertoire de travail a été correctement défini avec la fonction <code>getwd()</code></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Astuce</span>Bonne pratique : les projets RStudio
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Créez un <strong>projet RStudio</strong> (<em>File → New Project</em>) pour chaque travail. Le répertoire de travail est alors défini automatiquement sur le dossier du projet, et vos chemins de fichiers relatifs (p.&nbsp;ex. <code>read.csv("donnees.csv")</code>) restent valables sur n’importe quel ordinateur. Avec <code>setwd()</code>, le code cesse de fonctionner dès qu’il est déplacé sur un autre ordinateur.</p>
+</div>
+</div>
+</section>
+<section id="devoir-pour-session-3-problem-set-1" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="devoir-pour-session-3-problem-set-1">À faire avant de continuer</h2>
+<ul>
+<li>Refaites sur votre ordinateur tout le code des chapitres 1 et 2 et vérifiez qu’il s’exécute sans message d’erreur.</li>
+<li>Assurez-vous de comprendre ce que fait chaque ligne, pas seulement de pouvoir l’exécuter.</li>
+<li>Testez-vous avec les exercices ci-dessous, puis avec le chapitre « Révision 1 ».</li>
+</ul>
+</section>
+<section id="exercices" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="exercices">Exercices</h2>
+<p>Choisissez <em>Vrai</em> ou <em>Faux</em>, cochez une réponse ou tapez un nombre : la couleur indique tout de suite si votre réponse est correcte. Cliquez sur <strong>Explication</strong> pour voir la correction.</p>
+<section id="q4" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="q4">Question 2.1</h3>
+<p>Exécutez le code R suivant et jugez chaque proposition :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span><span class="sc">:</span><span class="dv">10</span>)</span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> a <span class="sc">*</span> b</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<ol type="a">
+<li><p>Les longueurs de <code>a</code> et <code>b</code> sont égales. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>Dans cet exemple de code, <code>c</code> ne peut être créé que si <code>a</code> et <code>b</code> sont créés avant. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p><code>length(a) &lt;= length(b)</code> <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>Dans cet exemple de code, le signe deux-points (<code>:</code>) crée des séquences de nombres entiers. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+</ol>
+<div class="webex-solution">
+<button>
+Explication
+</button>
+<p>a) <code>a</code> a 5 éléments, <code>b</code> en a 6 : les longueurs diffèrent (et <code>length(a) &lt;= length(b)</code> renvoie <code>TRUE</code>).</p>
+<p>b) R doit connaître <code>a</code> et <code>b</code> pour calculer <code>a * b</code>.</p>
+<p>d) <code>1:5</code> crée la suite 1, 2, 3, 4, 5. Remarque : comme les longueurs diffèrent, R « recycle » le vecteur le plus court et affiche un avertissement, mais <code>c</code> est quand même créé.</p>
+</div>
+</section>
+<section id="q6" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="q6">Question 2.2</h3>
+<p>Exécutez le code R suivant et jugez chaque proposition :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>nom <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Kim"</span>, <span class="st">"Claire"</span>, <span class="st">"Antoine"</span>, <span class="st">"Mathilde"</span>, <span class="st">"Ali"</span>, <span class="st">"Charlotte"</span>, <span class="st">"Tiger"</span>, <span class="st">"Sacha"</span>)</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>genre <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"non binaire"</span>, <span class="st">"femme"</span>, <span class="st">"homme"</span>, <span class="st">"femme"</span>, <span class="st">"homme"</span>, <span class="st">"femme"</span>, <span class="st">"homme"</span>, <span class="st">"homme"</span>),</span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">ordered =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>revenus_en_milles_chf <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">77</span>, <span class="dv">154</span>, <span class="dv">15</span>, <span class="dv">82</span>, <span class="dv">104</span>, <span class="dv">48</span>, <span class="dv">540</span>, <span class="dv">63</span>)</span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>classe_de_revenus <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"moyen"</span>, <span class="st">"haut"</span>, <span class="st">"très faible"</span>, <span class="st">"moyen"</span>, <span class="st">"haut"</span>, <span class="st">"faible"</span>, <span class="st">"très haut"</span>, <span class="st">"moyen"</span>),</span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>                            <span class="at">ordered =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a>                            <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"très faible"</span>, <span class="st">"faible"</span>, <span class="st">"moyen"</span>, <span class="st">"haut"</span>, <span class="st">"très haut"</span>))</span>
+<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a>revenus_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(nom, genre, revenus_en_milles_chf, classe_de_revenus)</span>
+<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a>revenus_df</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<ol type="a">
+<li><p>Ce data frame contient deux facteurs. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p><code>revenus_df$classe_de_revenus</code> est une variable catégorielle ordinale. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p><code>revenus_df$genre</code> est une variable catégorielle ordinale. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>Ce data frame contient des informations sur trois femmes et trois personnes ayant un haut revenu. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>Ce data frame contient des informations sur cinq classes de revenus différentes. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+</ol>
+<div class="webex-solution">
+<button>
+Explication
+</button>
+<p>a) <code>genre</code> et <code>classe_de_revenus</code> sont des facteurs (<code>factor()</code>). <code>nom</code> est une variable textuelle, qui sert d’identifiant.</p>
+<p>b) <code>classe_de_revenus</code> est un facteur ordonné (<code>ordered = TRUE</code>).</p>
+<p>c) <code>genre</code> est créé avec <code>ordered = FALSE</code> : il est nominal.</p>
+<p>d) Il y a bien trois femmes, mais seulement deux personnes dans la classe « haut ».</p>
+<p>e) Les cinq niveaux de <code>classe_de_revenus</code> apparaissent tous dans les données.</p>
+</div>
+</section>
+<section id="q8" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="q8">Question 2.3</h3>
+<p>Exécutez le code R suivant et jugez chaque proposition :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>name    <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Manny"</span>, <span class="st">"Sid"</span>, <span class="st">"Diego"</span>, <span class="st">"Ellie"</span>, <span class="st">"Peaches"</span>, <span class="st">"Scrat"</span>, <span class="st">"Rudy"</span>, <span class="st">"Buck"</span>)</span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>species <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"mammoth"</span>, <span class="st">"sloth"</span>, <span class="st">"sabertooth"</span>, <span class="st">"mammoth"</span>, <span class="st">"mammoth"</span>, <span class="st">"squirrel"</span>, <span class="st">"dinosaur"</span>, <span class="st">"weasel"</span>)</span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>female  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>)</span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>age     <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">20</span>, <span class="dv">35</span>, <span class="dv">25</span>, <span class="dv">7</span>, <span class="dv">4</span>, <span class="dv">100</span>, <span class="dv">28</span>)</span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>weight  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5000</span>, <span class="dv">80</span>, <span class="dv">400</span>, <span class="dv">4000</span>, <span class="dv">1000</span>, <span class="dv">1</span>, <span class="dv">10000</span>, <span class="dv">3</span>)</span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a>ice_age_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(name, species, female, age, weight)</span>
+<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a>ice_age_df</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<ol type="a">
+<li><p>La colonne <code>female</code> (fr. « femelle ») du jeu de données <code>ice_age_df</code> est de type logique (<em>logical</em>). <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>Les unités statistiques du jeu de données <code>ice_age_df</code> sont les noms, les espèces, le genre (femelle), le poids et l’âge des animaux de l’ère glaciaire. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>L’unité statistique du jeu de données <code>ice_age_df</code> est un animal de l’âge de glace, avec n = 8 observations. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>Le jeu de données <code>ice_age_df</code> contient des informations sur trois mammouths différents. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>Buck, l’écureuil, pèse 1 kg. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+</ol>
+<div class="webex-solution">
+<button>
+Explication
+</button>
+<p>a) <code>female</code> est créé à partir d’un vecteur de <code>TRUE</code>/<code>FALSE</code>, donc de type logique.</p>
+<p>b) Ce sont les <strong>variables</strong> (colonnes), pas les unités statistiques.</p>
+<p>c) Chaque ligne correspond à un animal, soit 8 observations.</p>
+<p>d) « mammoth » apparaît trois fois dans <code>species</code> (Manny, Ellie, Peaches).</p>
+<p>e) Buck est une belette (<em>weasel</em>) de 3 kg. C’est Scrat, l’écureuil, qui pèse 1 kg.</p>
+</div>
+</section>
+<section id="q9" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="q9">Question 2.4</h3>
+<p>Exécutez le code R suivant et jugez chaque proposition :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>name    <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Manny"</span>, <span class="st">"Sid"</span>, <span class="st">"Diego"</span>, <span class="st">"Ellie"</span>, <span class="st">"Peaches"</span>, <span class="st">"Scrat"</span>, <span class="st">"Rudy"</span>, <span class="st">"Buck"</span>)</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>species <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"mammoth"</span>, <span class="st">"sloth"</span>, <span class="st">"sabertooth"</span>, <span class="st">"mammoth"</span>, <span class="st">"mammoth"</span>, <span class="st">"squirrel"</span>, <span class="st">"dinosaur"</span>, <span class="st">"weasel"</span>)</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>female  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>)</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>age     <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">20</span>, <span class="dv">35</span>, <span class="dv">25</span>, <span class="dv">7</span>, <span class="dv">4</span>, <span class="dv">100</span>, <span class="dv">28</span>)</span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>weight  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5000</span>, <span class="dv">80</span>, <span class="dv">400</span>, <span class="dv">4000</span>, <span class="dv">1000</span>, <span class="dv">1</span>, <span class="dv">10000</span>, <span class="dv">3</span>)</span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a>ice_age_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(name, species, female, age, weight)</span>
+<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(ice_age_df)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<ol type="a">
+<li><p>Le code <code>ice_age_df$name</code> affiche les éléments de la colonne <code>name</code> du jeu de données <code>ice_age_df</code>. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>Le code <code>ice_age_df[, 2]</code> affiche les éléments de la deuxième colonne de <code>ice_age_df</code>. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>Les dimensions du jeu de données <code>ice_age_df</code> sont 8 × 5 (8 lignes et 5 colonnes). <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>L’objet <code>ice_age_df</code> est de type matrice (<em>matrix</em>). <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>Le code <code>mean(ice_age_df$age)</code> calcule la moyenne de la colonne <code>age</code> du jeu de données <code>ice_age_df</code>. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+</ol>
+<div class="webex-solution">
+<button>
+Explication
+</button>
+<p>a) et e) Le <code>$</code> extrait une colonne par son nom ; <code>mean()</code> en calcule la moyenne.</p>
+<p>b) Dans <code>[lignes, colonnes]</code>, laisser les lignes vides sélectionne toutes les lignes de la 2ᵉ colonne.</p>
+<p>c) <code>dim(ice_age_df)</code> renvoie <code>8 5</code>.</p>
+<p>d) <code>class(ice_age_df)</code> renvoie <code>"data.frame"</code> : contrairement à une matrice, un data frame peut contenir des colonnes de types différents.</p>
+</div>
+</section>
+<section id="q11" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="q11">Question 2.5</h3>
+<p>Exécutez le code R suivant et jugez chaque proposition :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">25</span>), <span class="at">nrow =</span> <span class="dv">5</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(m1)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<ol type="a">
+<li><p><code>m1</code> est une matrice de dimension 5 × 5 (5 lignes et 5 colonnes). <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>Dans le code R ci-dessus, l’argument <code>byrow = TRUE</code> spécifie que les valeurs de la matrice <code>m1</code> sont remplies par ligne. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p><code>m1</code> est une matrice de type textuel. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p><code>m1</code> est une matrice à 24 éléments. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>Le code R ci-dessus ne fonctionne pas et génère un message d’erreur. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+</ol>
+<div class="webex-solution">
+<button>
+Explication
+</button>
+<p>25 valeurs réparties sur 5 lignes donnent une matrice 5 × 5 de type numérique (<em>integer</em>), remplie ligne par ligne grâce à <code>byrow = TRUE</code>.</p>
+</div>
+</section>
+<section id="q45" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="q45">Question 2.6</h3>
+<p>Jugez chaque proposition concernant les fonctions R <code>setwd()</code> et <code>getwd()</code> :</p>
+<ol type="a">
+<li><p>Avec la fonction <code>setwd()</code>, je peux définir un dossier sur mon ordinateur à partir duquel R lit et extrait des données. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>Les chemins d’accès aux dossiers que l’on doit spécifier comme arguments dans <code>setwd()</code> diffèrent généralement entre différents ordinateurs. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>Vous ne pouvez pas utiliser R si vous ne spécifiez pas votre répertoire de travail. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>Toutes les variables, matrices, jeux de données, etc. que je crée dans une session R sont enregistrés sous forme de fichiers dans mon répertoire de travail. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>Vous pouvez afficher votre répertoire de travail actuel dans une session R avec la fonction <code>getwd()</code>. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+</ol>
+<div class="webex-solution">
+<button>
+Explication
+</button>
+<p>c) R a toujours un répertoire de travail par défaut : on peut l’utiliser sans appeler <code>setwd()</code>.</p>
+<p>d) Les objets vivent en mémoire (volet <em>Environment</em>). Ils ne sont écrits sur le disque que si on les exporte explicitement (p.&nbsp;ex. avec <code>write.csv()</code> ou <code>save()</code>).</p>
+</div>
+</section>
+<section id="q47" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="q47">Question 2.7</h3>
+<p>Exécutez le code R suivant et jugez chaque proposition :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>vecteur2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">1000</span>, <span class="dv">2000</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<ol type="a">
+<li><p>La valeur médiane de <code>vecteur2</code> est égale à 3.5. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>La valeur moyenne de <code>vecteur2</code> est égale à 501.00. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p><code>vecteur2</code> a une longueur de 3010. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p><code>vecteur2</code> est un objet de classe numérique. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+</ol>
+<div class="webex-solution">
+<button>
+Explication
+</button>
+<p>a) La médiane d’un nombre pair de valeurs est la moyenne des deux valeurs centrales : (3 + 4) / 2 = 3.5.</p>
+<p>b) <code>mean(vecteur2)</code> vaut 501.67.</p>
+<p>c) <code>length(vecteur2)</code> vaut 6 ; 3010 est la <strong>somme</strong> des éléments.</p>
+</div>
+</section>
+<section id="q48" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="q48">Question 2.8</h3>
+<p><code>length()</code> est une fonction de R qui permet de compter le nombre d’éléments d’un vecteur. Utilisez-la pour calculer la longueur du vecteur <code>v2</code> créé avec le code suivant :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>v2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">log10</span>(<span class="dv">100</span>)<span class="sc">:</span><span class="dv">501</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Réponse : <input class="webex-solveme nospaces" size="4" data-answer="[&quot;500&quot;]"></p>
+<div class="webex-solution">
+<button>
+Explication
+</button>
+<p><code>log10(100)</code> vaut 2, donc <code>v2</code> contient les entiers de 2 à 501, soit 501 − 2 + 1 = 500 éléments.</p>
+</div>
+</section>
+<section id="q49" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="q49">Question 2.9</h3>
+<p>Calculez la valeur médiane du vecteur numérique suivant :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>vecteur1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">1000</span>, <span class="dv">2000</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Réponse : <input class="webex-solveme nospaces" data-tol="0.001" size="4" data-answer="[&quot;3.5&quot;]"></p>
+<div class="webex-solution">
+<button>
+Explication
+</button>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(vecteur1)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Avec 6 valeurs, la médiane est la moyenne des 3ᵉ et 4ᵉ valeurs triées : (3 + 4) / 2 = 3.5. Les deux valeurs extrêmes (1000 et 2000) n’ont aucun effet sur la médiane, contrairement à la moyenne (501.67).</p>
+</div>
+</section>
+<section id="q50" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="q50">Question 2.10</h3>
+<p>Calculez la valeur médiane d’un vecteur composé de nombres entiers consécutifs compris entre −66 et 702.</p>
+<p>Réponse : <input class="webex-solveme nospaces" size="4" data-answer="[&quot;318&quot;]"></p>
+<div class="webex-solution">
+<button>
+Explication
+</button>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(<span class="sc">-</span><span class="dv">66</span><span class="sc">:</span><span class="dv">702</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p>La suite de −66 à 702 comporte 769 valeurs. La médiane est la 385ᵉ valeur, soit −66 + 384 = 318.</p>
+</div>
+</section>
+<section id="q77" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="q77">Question 2.11</h3>
+<p>Exécutez le code R suivant pour créer <code>v1</code>. Ensuite, avec votre propre code, calculez la variance de <code>v1</code>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">104</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Réponse : <input class="webex-solveme nospaces" size="4" data-answer="[&quot;910&quot;]"></p>
+<div class="webex-solution">
+<button>
+Explication
+</button>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(v1)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Pour les entiers de 1 à <em>n</em>, la variance (d’échantillon) vaut <em>n</em>(<em>n</em> + 1) / 12 = 104 × 105 / 12 = 910.</p>
+</div>
+</section>
+<section id="q87" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="q87">Question 2.12</h3>
+<p>En statistique et en méthodes quantitatives en sciences sociales, c’est une convention de présenter les données dans des tableaux avec les unités statistiques (observations, cas, participants, etc.) en lignes et les variables en colonnes.</p>
+<p><select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p>
+<div class="webex-solution">
+<button>
+Explication
+</button>
+<p>C’est la convention des données « tidy » : une ligne par observation, une colonne par variable.</p>
+</div>
+</section>
+<section id="q90" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="q90">Question 2.13</h3>
+<p>Les objets stockés dans l’environnement ne sont généralement stockés que temporairement, pour la session R en cours.</p>
+<p><select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p>
+<div class="webex-solution">
+<button>
+Explication
+</button>
+<p>Les objets vivent en mémoire et disparaissent quand on ferme R, sauf si on les exporte (p.&nbsp;ex. avec <code>write.csv()</code>). C’est pourquoi on garde tout son code dans un script : il permet de recréer les objets.</p>
+</div>
+</section>
+<section id="q91" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="q91">Question 2.14</h3>
+<p>La variable <em>genre</em>, par exemple pour les participant·es à une enquête, est généralement utilisée comme facteur hiérarchique (ordonné) dans R.</p>
+<p><select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p>
+<div class="webex-solution">
+<button>
+Explication
+</button>
+<p>Le genre est une variable <strong>nominale</strong> : ses modalités n’ont pas d’ordre. On l’encode donc comme facteur simple, pas comme facteur ordonné.</p>
+</div>
+</section>
+<section id="q93" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="q93">Question 2.15</h3>
+<p>Le code suivant crée une matrice de dimension 5 × 10 :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>matrice1 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">5</span><span class="sc">:</span><span class="dv">10</span>), <span class="at">nrow =</span> <span class="dv">5</span>, <span class="at">ncol =</span> <span class="dv">10</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p><select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p>
+<div class="webex-solution">
+<button>
+Explication
+</button>
+<p><code>nrow = 5</code> et <code>ncol = 10</code> fixent les dimensions ; <code>dim(matrice1)</code> renvoie <code>5 10</code>. Les 6 valeurs de <code>5:10</code> sont recyclées pour remplir les 50 cases. Comme 6 ne divise pas 5, R affiche un <strong>avertissement</strong>, mais la matrice est bien créée.</p>
+</div>
+</section>
+<section id="q122" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="q122">Question 2.16</h3>
+<p>Si vous disposez d’un échantillon de 100 T-shirts et que chaque T-shirt est soit petit, soit moyen, soit grand, la variable <em>taille de T-shirt</em> peut être considérée comme une variable catégorielle ordinale.</p>
+<p><select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p>
+<div class="webex-solution">
+<button>
+Explication
+</button>
+<p>Les modalités « petit », « moyen », « grand » sont des catégories qui ont un ordre naturel : il s’agit donc d’une variable ordinale (dans R, un facteur ordonné).</p>
+</div>
+</section>
+<section id="q123" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="q123">Question 2.17</h3>
+<p>En statistique et en méthodes quantitatives des sciences sociales, il est de convention de placer chaque observation dans une colonne différente d’un tableau de données.</p>
+<p><select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p>
+<div class="webex-solution">
+<button>
+Explication
+</button>
+<p>C’est l’inverse : les observations sont en <strong>lignes</strong>, les variables en colonnes.</p>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<!-- webexercises (Dale Barr, Lisa DeBruine et Caspar J. Van Lissa), https://github.com/psyteachr/webexercises
+     Licence : CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0/ -->
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  var t = document.getElementsByClassName("webex-total_correct");
+  for (var i = 0; i < t.length; i++) {
+    p = t[i].parentElement;
+    var correct = p.getElementsByClassName("webex-correct").length;
+    var solvemes = p.getElementsByClassName("webex-solveme").length;
+    var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
+    var selects = p.getElementsByClassName("webex-select").length;
+
+    t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* check answers */
+check_func = function() {
+  console.log("webex: check answers");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('unchecked')) {
+    cl.remove("unchecked");
+    this.innerHTML = "Hide Answers";
+  } else {
+    cl.add("unchecked");
+    this.innerHTML = "Show Answers";
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  var check_sections = document.getElementsByClassName("webex-check");
+  console.log("check:", check_sections.length);
+  for (var i = 0; i < check_sections.length; i++) {
+    check_sections[i].classList.add("unchecked");
+
+    let btn = document.createElement("button");
+    btn.innerHTML = "Show Answers";
+    btn.classList.add("webex-check-button");
+    btn.onclick = check_func;
+    check_sections[i].appendChild(btn);
+
+    let spn = document.createElement("span");
+    spn.classList.add("webex-total_correct");
+    check_sections[i].appendChild(spn);
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  update_total_correct();
+}
+
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copié");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copié");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/julesaberlin\.github\.io\/intro-a-R\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../sessions/session-01.html" class="pagination-link" aria-label="Premiers pas avec R">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Premiers pas avec R</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../sessions/session-03.html" class="pagination-link" aria-label="Révision 1&nbsp;: bases de R">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Révision 1&nbsp;: bases de R</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Textes et exercices : <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr">CC BY-NC-SA 4.0</a> · Code : MIT · Éléments de tiers : voir <a href="../apropos.html">À propos</a></p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

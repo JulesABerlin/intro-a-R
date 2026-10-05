@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>11&nbsp; Statistiques inférentielles I&nbsp;: le test t – Exercices Méthodes II</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../sessions/session-12.html" rel="next">
+<link href="../sessions/session-10.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-fa9f328cd4a8f9b1bff39b312214e759.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Pas de résultats",
+    "search-matching-documents-text": "documents trouvés",
+    "search-copy-link-title": "Copier le lien vers la recherche",
+    "search-hide-matches-text": "Cacher les correspondances additionnelles",
+    "search-more-match-text": "correspondance de plus dans ce document",
+    "search-more-matches-text": "correspondances de plus dans ce document",
+    "search-clear-button-title": "Effacer",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Envoyer",
+    "search-label": "Recherche"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../include/webex.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sessions/session-11.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Statistiques inférentielles I&nbsp;: le test t</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Recherche" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Exercices Méthodes II</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/julesaberlin/intro-a-R" title="Code source" class="quarto-navigation-tool px-1" aria-label="Code source"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Recherche"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bienvenue</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sessions/session-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Premiers pas avec R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sessions/session-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Vecteurs, tableaux et facteurs</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sessions/session-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Révision 1&nbsp;: bases de R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sessions/session-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Paquets, jeux de données et premiers graphiques</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sessions/session-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualiser des données avec ggplot2</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sessions/session-06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Révision 2&nbsp;: visualisation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sessions/session-07.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Importer et manipuler des données</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sessions/session-08.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Manipuler des données&nbsp;: exercices</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sessions/session-09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Révision 3&nbsp;: manipulation de données</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sessions/session-10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Statistiques descriptives</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sessions/session-11.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Statistiques inférentielles I&nbsp;: le test t</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sessions/session-12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Statistiques inférentielles II&nbsp;: ANOVA et régression</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sessions/session-13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Révision 4&nbsp;: statistiques</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sessions/session-14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Pour aller plus loin</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../apropos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">À propos</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table des matières</h2>
+   
+  <ul class="collapse">
+  <li><a href="#cest-quoi-la-statistique-inférentielle" id="toc-cest-quoi-la-statistique-inférentielle" class="nav-link active" data-scroll-target="#cest-quoi-la-statistique-inférentielle"><span class="header-section-number">11.1</span> Qu’est-ce que la statistique inférentielle&nbsp;?</a></li>
+  <li><a href="#le-test-t" id="toc-le-test-t" class="nav-link" data-scroll-target="#le-test-t"><span class="header-section-number">11.2</span> Le test t</a></li>
+  <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices">Exercices</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Statistiques inférentielles I&nbsp;: le test t</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><strong>Sujet : La statistique inférentielle, Partie 1 (tests t)</strong></p>
+<p>Dans cette et la prochaine session, nous allons nous concentrer sur trois méthodes de statistiques inférentielles couramment utilisées :</p>
+<ul>
+<li><p>Les <strong>tests t</strong> (angl. Student’s t-test)</p></li>
+<li><p>l’<strong>analyse de variance</strong> (angl. <strong>ANOVA</strong> = ANalysis Of VAriance)</p></li>
+<li><p>La <strong>régression linéaire</strong> (angl. linear regression).</p></li>
+</ul>
+<p>Mais d’abord, il faut répondre à la question suivante :</p>
+<section id="cest-quoi-la-statistique-inférentielle" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="cest-quoi-la-statistique-inférentielle"><span class="header-section-number">11.1</span> Qu’est-ce que la statistique inférentielle&nbsp;?</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>À noter
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Les statistiques inférentielles sont une branche des statistiques qui permet de tirer des conclusions générales sur une population entière en se basant sur l’analyse statistique d’un échantillon représentatif de cette population.</p>
+</div>
+</div>
+<p>En sciences sociales, les statistiques inférentielles sont souvent utilisées pour évaluer si une différence ou une association observée dans l’échantillon est susceptible d’exister aussi dans la population. Nous voulons savoir, par exemple, si les notes de maturité (variable y) diffèrent selon le genre (variable x). Une relation <strong>causale</strong> ne peut être conclue que si le dispositif le permet (p.&nbsp;ex. une expérience).</p>
+<p>En général, pour analyser de telles relations, nous formulons souvent des hypothèses basées sur des théories ou des suppositions tirées de la littérature d’un domaine de recherche, que nous pouvons ensuite tester sur notre échantillon. Les résultats obtenus nous permettent de rejeter ou non l’hypothèse nulle, et de généraliser prudemment les conclusions à la population entière. Ceci nous permet de contribuer à la création de nouvelles connaissances dans notre domaine de recherche</p>
+</section>
+<section id="le-test-t" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="le-test-t"><span class="header-section-number">11.2</span> Le test t</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>À noter
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Le test t est est un outil statistique qui permet d’évaluer les moyennes d’un ou deux échantillons à l’aide d’un test d’hypothèse. Il est aussi appelé test t de Student, car le statisticien qui l’a inventé au début du 20ème siècle, William Sealy Gosset, a publié sous le pseudonyme de “Student” (<a href="https://en.wikipedia.org/wiki/Student%27s_t-test">Wikipédia, 2024</a>).</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Mise en garde</span>Attention
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Pour effectuer un test t, il y a plusieurs hypothèses qui doivent être satisfaites :</p>
+<ol type="1">
+<li><strong>Les données sont continues</strong></li>
+<li><strong>L’échantillonnage est aléatoire</strong>
+<ul>
+<li>Les données de chaque échantillon ont été prélevées au hasard dans une population.</li>
+</ul></li>
+<li><strong>Indépendance</strong>
+<ul>
+<li>Les observations doivent être indépendantes les unes des autres. Cela signifie que la valeur d’une observation ne doit pas dépendre de la valeur d’une autre observation.</li>
+<li>Pour les tests t à deux échantillons, les échantillons doivent être indépendants. Si les échantillons ne sont pas indépendants, un test t pour échantillons appariés peut être approprié.</li>
+</ul></li>
+<li><strong>Normalité</strong>
+<ul>
+<li>Ce qui compte, c’est que la <strong>moyenne</strong> de l’échantillon suive approximativement une loi normale. C’est le cas si la variable étudiée est à peu près normale dans chaque groupe, ou si les échantillons sont assez grands (théorème central limite).</li>
+<li>Cette hypothèse est donc surtout importante pour les <strong>petits</strong> échantillons. Vérifiez-la plutôt visuellement (histogramme, <a href="https://fr.wikipedia.org/wiki/Droite_de_Henry">graphique Q-Q</a> avec <code>qqnorm()</code>) que par un test : un test de normalité comme Shapiro-Wilk (<code>shapiro.test()</code>) manque de puissance avec peu de données et signale des écarts sans importance avec beaucoup de données.</li>
+</ul></li>
+<li><strong>Homogénéité des variances (homoscédasticité)</strong>, uniquement pour le test t « classique » de Student (<code>var.equal = TRUE</code>)
+<ul>
+<li>Les variances des données dans chaque groupe sont similaires.</li>
+<li>La variante de Welch, utilisée par défaut dans R, n’exige pas cette hypothèse.</li>
+<li>Cette hypothèse peut être vérifiée à l’aide <a href="https://www.datanovia.com/en/lessons/homogeneity-of-variance-test-in-r/">du test de Levene ou du test de Bartlett</a>.</li>
+</ul></li>
+</ol>
+<p>En pratique, les tests t sont relativement robustes aux déviations de ces hypothèses, surtout si le nombre d’observations (n) de chaque échantillon est important.</p>
+<p>Néanmoins, si une ou plusieurs de ces hypothèses n’est pas satisfaite, alors des alternatives non paramétriques au test t peuvent être utilisées : <a href="https://fr.wikipedia.org/wiki/Test_de_Wilcoxon-Mann-Whitney">le test de Wilcoxon-Mann-Whitney</a> (<code>wilcox.test()</code>) pour deux groupes indépendants, ou <a href="https://fr.wikipedia.org/wiki/Test_des_rangs_sign%C3%A9s_de_Wilcoxon">le test des rangs signés de Wilcoxon</a> (<code>wilcox.test(..., paired = TRUE)</code>) pour un échantillon ou des données appariées. (Pour plus de deux groupes, l’équivalent non paramétrique de l’ANOVA est <a href="https://fr.wikipedia.org/wiki/Test_de_Kruskal-Wallis">le test de Kruskal-Wallis</a>, <code>kruskal.test()</code>.)</p>
+</div>
+</div>
+</div>
+<p>Dans R, le test t est effectué avec la fonction <code>t.test()</code>.</p>
+<p>Il existe <strong>trois types</strong> de tests t :</p>
+<ol type="1">
+<li><p><strong>Le test t à un échantillon</strong> (angl. <em>one sample t-test</em>) : pour évaluer si la moyenne d’un seul échantillon diffère de manière significative d’une valeur connue.</p>
+<ul>
+<li>Par exemple, si la moyenne des notes d’un groupe de 30 lycéens, qui est de 4.9, est significativement différente de 5.0 ou non.</li>
+</ul></li>
+<li><p><strong>Le test t à deux échantillons indépendants</strong> (angl. <em>two sample t-test</em>) : pour évaluer si les moyennes de deux échantillons indépendants diffèrent de manière significative. Par défaut, R effectue la variante de <strong>Welch</strong> (<em>Welch two sample t-test</em>), qui n’exige pas que les variances soient égales (<code>var.equal = FALSE</code>). Le test t « classique » de Student (<code>var.equal = TRUE</code>) suppose des variances égales.</p>
+<ul>
+<li>Par exemple, si la moyenne des notes de 30 lycéennes, qui est de 5.0, est significativement différente ou non de la moyenne des notes de 30 lycéens, qui est de 4.8.</li>
+</ul></li>
+<li><p><strong>Le test t pour échantillons appariés</strong> (angl. <em>paired t-test</em>) : pour comparer les moyennes de deux groupes qui sont liés ou appariés d’une certaine manière. Dans ce type de test, chaque participant est mesuré deux fois, une fois dans chaque groupe, ce qui permet de réduire les effets des variations individuelles.</p>
+<ul>
+<li><p>Par exemple, nous pourrions enregistrer la moyenne des notes d’une classe de 30 élèves avant et après un cours de soutien scolaire en ligne. Il y a donc deux mesures pour chaque élève. Le cours de soutien scolaire est dans ce cas un traitement.</p></li>
+<li><p>(à noter : nous n’allons pas traiter ce type de test t plus en détail dans l’exercice).</p></li>
+</ul></li>
+</ol>
+<p>Voyons maintenant des exemples avec du code !</p>
+<section id="exemple-1-test-t-à-un-échantillon" class="level3">
+<h3 class="anchored" data-anchor-id="exemple-1-test-t-à-un-échantillon">Exemple 1 : test t à un échantillon</h3>
+<p><strong>Problème</strong> : Tester si la moyenne de QI d’un échantillon d’étudiant·es, qui est de 105, est différente de manière significative de la moyenne de la population, qui est de 100.</p>
+<ul>
+<li><p>L’<strong>hypothèse nulle H0</strong> (angl. <em>null hypothesis</em>) : la moyenne de QI des étudiant·es dans la population est égale à 100 (μ = 100).</p></li>
+<li><p>L’<strong>hypothèse alternative H1</strong> (angl. <em>alternative hypothesis</em>) : elle est différente de 100 (μ ≠ 100).</p></li>
+</ul>
+<p>Les hypothèses portent sur la <strong>population</strong>, pas sur le résultat du test. Le test ci-dessous est bilatéral (il cherche un écart dans les deux sens). Pour tester seulement si le QI est <em>plus élevé</em>, on ajouterait <code>alternative = "greater"</code> dans <code>t.test()</code>.</p>
+<p>À noter : dans le code qui suit, nous allons encore une fois utiliser la fonction <code>rnorm()</code> que nous avons vue au chapitre 5 pour créer des valeurs “aléatoires” qui suivent une loi normale. Nous pouvons utiliser ces valeurs pour simuler notre problème.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Générer des données d'échantillon avec n = 25</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># observations hypothétiques de QI d'étudiant·es.  Nous</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># simulons, avec rnorm() 25 observations qui suivent une</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># loi normale avec une moyenne de 105 et un écart-type de</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 15</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>scores_qi <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">25</span>, <span class="at">mean =</span> <span class="dv">105</span>, <span class="at">sd =</span> <span class="dv">15</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Test t à un échantillon où il faut 2 arguments dans la</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># fonction t.test() : (1) les données à tester (scores_qi)</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># et (2) la valeur à laquelle on veut comparer les données</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># (mu = 100)</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>resultat_test_t <span class="ot">&lt;-</span> <span class="fu">t.test</span>(scores_qi, <span class="at">mu =</span> <span class="dv">100</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(resultat_test_t)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    One Sample t-test
+
+data:  scores_qi
+t = 1.5844, df = 24, p-value = 0.1262
+alternative hypothesis: true mean is not equal to 100
+95 percent confidence interval:
+  98.63817 110.36192
+sample estimates:
+mean of x 
+    104.5 </code></pre>
+</div>
+</div>
+<p>Il s’agit maintenant d’interpréter le résultat du test t dans R.</p>
+<ul>
+<li><p><strong>La statistique t</strong> quantifie la différence entre les moyennes des groupes par rapport à la variabilité de l’échantillon. Le signe de la statistique t indique si la moyenne de l’échantillon est supérieure (t positif) ou inférieure (t négatif) à la moyenne de la comparaison. L’ampleur reflète combien d’erreurs standard la différence est par rapport à zéro. En général, des valeurs absolues plus élevées suggèrent des preuves plus solides contre l’hypothèse nulle, ce qui se traduit par des valeurs p plus faibles.</p></li>
+<li><p><strong>df</strong> signifie “degrees of freedom”. Dans un test t, les degrés de liberté font référence au nombre de valeurs dans le calcul final d’une statistique qui sont libres de varier. Il s’agit d’une mesure de la quantité d’informations disponibles pour estimer le paramètre statistique.</p></li>
+<li><p>La <strong>valeur p</strong> (angl. p-value) est la probabilité d’observer un résultat aussi extrême que celui obtenu dans l’échantillon sous l’hypothèse nulle. Elle est utilisée pour déterminer si le résultat du test est statistiquement significatif en comparant sa valeur à un seuil de signification prédéfini (habituellement 5% = 0.05). La p-value est calculée à partir de la statistique de test t et des degrés de liberté associés à l’échantillon.</p></li>
+</ul>
+<p>La valeur p indique si l’écart observé est compatible avec H0. Mais regardez aussi la <strong>moyenne estimée</strong> et l’<strong>intervalle de confiance à 95 %</strong> affichés par <code>t.test()</code> : ils indiquent l’ampleur de la différence et sa précision.</p>
+<p>Dans notre cas, la valeur p (0,13) est supérieure au seuil α = 0,05 : <strong>nous ne rejetons pas H0</strong>. Les données sont compatibles avec une moyenne de 100 ; cela ne prouve pas que la moyenne <em>est</em> 100. L’intervalle de confiance à 95 % (de 98,6 à 110,4), qui contient 100, le montre aussi. Avec seulement 25 observations, le test manque peut-être simplement de puissance.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Regénérons encore une fois des données d'échantillon,</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># mais cette fois-ci avec n = 50 observations</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>scores_qi <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="at">mean =</span> <span class="dv">105</span>, <span class="at">sd =</span> <span class="dv">15</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Test t à un échantillon</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>resultat_test_t <span class="ot">&lt;-</span> <span class="fu">t.test</span>(scores_qi, <span class="at">mu =</span> <span class="dv">100</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(resultat_test_t)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    One Sample t-test
+
+data:  scores_qi
+t = 2.8085, df = 49, p-value = 0.007129
+alternative hypothesis: true mean is not equal to 100
+95 percent confidence interval:
+ 101.5691 109.4630
+sample estimates:
+mean of x 
+ 105.5161 </code></pre>
+</div>
+</div>
+<p>La valeur p est maintenant beaucoup plus petite. Si la vraie moyenne était 100, obtenir un écart aussi grand ou plus grand serait très improbable (p = 0,007). <strong>Nous rejetons H0</strong> au seuil de 5 %. La moyenne estimée (105,5) est supérieure à 100.</p>
+<p>À retenir : pour une même différence réelle, un <strong>échantillon plus grand</strong> donne au test plus de puissance.</p>
+</section>
+<section id="exercice-1" class="level3">
+<h3 class="anchored" data-anchor-id="exercice-1">Exercice 1</h3>
+<p>Selon l’étude <a href="https://doi.org/10.5167/uzh-251581">World Internet Project de l’Université de Zurich</a>, qui a évalué les données pour la Suisse, les personnes en Suisse ont passé en moyenne 5.6 heures en ligne en 2023. Chez les 20-29 ans, ce chiffre s’élève même à 7.9 heures en moyenne.</p>
+<p>Réalisez un test T en utilisant ces statistiques comme suit :</p>
+<ul>
+<li><p>Simulez avec <code>rnorm()</code>30 valeurs pour l’utilisation d’Internet en heures par jour pour le groupe d’âge 20-29 ans (<code>mean = 7.9, sd = 2</code>).</p></li>
+<li><p>Testez si la durée moyenne d’utilisation d’Internet en heures de votre échantillon simulé de 30 suisses de 20 à 29 ans se distingue significativement de la moyenne nationale (<code>mu = 5.6</code>).</p></li>
+</ul>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Mise en garde</span>Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Générons des données d'échantillon hypothétique avec n =</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 30 observations</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>usage_20_29 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean =</span> <span class="fl">7.9</span>, <span class="at">sd =</span> <span class="dv">2</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Test t à un échantillon</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>resultat_test_t <span class="ot">&lt;-</span> <span class="fu">t.test</span>(usage_20_29, <span class="at">mu =</span> <span class="fl">5.6</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(resultat_test_t)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    One Sample t-test
+
+data:  usage_20_29
+t = 6.1576, df = 29, p-value = 1.035e-06
+alternative hypothesis: true mean is not equal to 5.6
+95 percent confidence interval:
+ 7.073147 8.538438
+sample estimates:
+mean of x 
+ 7.805792 </code></pre>
+</div>
+</div>
+<p>La valeur p est très faible : des données comme celles-ci seraient très improbables si la moyenne des 20-29 ans était de 5,6 heures. Nous rejetons H0. La moyenne estimée de l’échantillon (7,8 heures) est supérieure à la moyenne nationale.</p>
+<p>(Les données étant simulées avec une moyenne de 7,9 heures, ce résultat était attendu.)</p>
+</div>
+</div>
+</div>
+</section>
+<section id="exemple-2-test-t-à-deux-échantillons" class="level3">
+<h3 class="anchored" data-anchor-id="exemple-2-test-t-à-deux-échantillons">Exemple 2 : test t à deux échantillons</h3>
+<p>Utilisons encore une fois la fonction <code>rnorm()</code>, mais maintenant pour simuler deux échantillons hypothétiques :</p>
+<ul>
+<li><p>Un échantillon de 5 tailles de femmes suisses</p></li>
+<li><p>Un échantillon de 5 tailles d’hommes suisses</p></li>
+</ul>
+<p>D’après l’Enquête suisse sur la santé 2017 (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9502675/">Staub et al., 2022</a>), que nous avons déjà vue en session 5, les femmes mesurent en moyenne 164,6 cm (écart-type 6,5 cm) et les hommes 177,0 cm (écart-type 7,1 cm). Dans la suite, nous utilisons des valeurs proches : une moyenne de 164.7 cm pour les femmes et de 177.4 cm pour les hommes, avec des écarts-types un peu plus petits de 5.6 cm et de 6.1 cm.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Données exemplaires :</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>tailles_f <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">5</span>, <span class="at">mean =</span> <span class="fl">164.7</span>, <span class="at">sd =</span> <span class="fl">5.6</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>tailles_h <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">5</span>, <span class="at">mean =</span> <span class="fl">177.4</span>, <span class="at">sd =</span> <span class="fl">6.1</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Two-sample t-test</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>t_test_two_sample <span class="ot">&lt;-</span> <span class="fu">t.test</span>(tailles_f, tailles_h)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(t_test_two_sample)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  tailles_f and tailles_h
+t = -3.0109, df = 6.8056, p-value = 0.02031
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -20.308039  -2.383283
+sample estimates:
+mean of x mean of y 
+ 165.7840  177.1297 </code></pre>
+</div>
+</div>
+<p>Avec <code>set.seed(123)</code>, la différence est significative (p ≈ 0,02) même avec <code>n = 5</code>, car l’écart entre hommes et femmes (environ 11 cm) est grand par rapport à la variabilité. Essayez d’autres graines : avec <code>set.seed(8)</code>, par exemple, la différence n’est plus significative (p ≈ 0,15). Avec des échantillons aussi petits, le résultat varie d’une simulation à l’autre. Avec <code>n = 20</code> ou <code>n = 100</code>, le test détecte la différence de manière beaucoup plus fiable.</p>
+</section>
+<section id="exercice-2" class="level3">
+<h3 class="anchored" data-anchor-id="exercice-2">Exercice 2</h3>
+<p>Supposons maintenant qu’un avion en provenance d’Amérique atterrisse à Genève-Cointrin. Il transporte une sélection de 24 joueuses de la Women’s NBA, la ligue professionnelle féminine de basket-ball aux États-Unis. Les joueuses de la WNBA mesurent en moyenne environ 1,83 à 1,85 m ; nous utilisons ici une valeur approximative de 184.5 cm.</p>
+<p>Testez si la taille moyenne de ces 24 joueuses diffère significativement de celle de 24 hommes suisses tirés au hasard. (Supposons que l’écart-type des joueuses est de 6.5 cm.)</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Mise en garde</span>Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Générons des données pour deux échantillons hypothétique</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># avec n = 24 observations chacun</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>tailles_f_WNBA <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">24</span>, <span class="at">mean =</span> <span class="fl">184.5</span>, <span class="at">sd =</span> <span class="fl">6.5</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>tailles_h <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">24</span>, <span class="at">mean =</span> <span class="fl">177.4</span>, <span class="at">sd =</span> <span class="fl">6.1</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Two-sample t-test</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>t_test_two_sample <span class="ot">&lt;-</span> <span class="fu">t.test</span>(tailles_f_WNBA, tailles_h)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(t_test_two_sample)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  tailles_f_WNBA and tailles_h
+t = 3.8971, df = 45.668, p-value = 0.0003162
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+  3.253468 10.207582
+sample estimates:
+mean of x mean of y 
+ 184.4436  177.7131 </code></pre>
+</div>
+</div>
+<p>La valeur p est très faible (p &lt; 0,001) : nous rejetons H0. Dans ces données, les joueuses sont en moyenne plus grandes que les hommes suisses (environ 184,4 cm contre 177,7 cm).</p>
+</div>
+</div>
+</div>
+<p>À noter : la fonction <code>t.test()</code>, comme on l’a utilisé dans ces exemples de code jusqu’à présent, utilise plusieurs paramètres par défaut, si nous ne les spécifions pas comme arguments dans la fonction. Voici quelques-un de ces paramètres, qu’on peut aussi visualiser avec <code>?t.test()</code> :</p>
+<pre><code>t.test(x, y = NULL,
+       alternative = c("two.sided", "less", "greater"),
+       mu = 0, paired = FALSE, var.equal = FALSE,
+       conf.level = 0.95, ...)</code></pre>
+<p>En fonction de votre problématique et de vos données, par exemple dans un travail de bachelor, il peut être nécessaire de spécifier explicitement certains de ces paramètres. Pour ce faire, il peut être utile de lire les pages d’aide de R et de rechercher d’autres documents en ligne pertinents pour votre problématique spécifique.</p>
+<ul>
+<li>Un tutoriel qui approfondit le test t dans R est par exemple <a href="https://www.datacamp.com/tutorial/t-tests-r-tutorial">celui de Datacamp (2024)</a>.</li>
+</ul>
+</section>
+</section>
+<section id="exercices" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="exercices">Exercices</h2>
+<p>Choisissez <em>Vrai</em> ou <em>Faux</em>, cochez une réponse ou tapez un nombre : la couleur indique tout de suite si votre réponse est correcte. Cliquez sur <strong>Explication</strong> pour voir la correction.</p>
+<section id="q3" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="q3">Question 11.1</h3>
+<p>Vous avez effectué un test t à un échantillon et obtenu une statistique t de 4.0869 avec 49 degrés de liberté et une valeur p de 0.0001618. Quelle conclusion pouvez-vous en tirer au niveau de signification de 5 % ?</p>
+<div id="radio_EVSYTVYNYW" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_EVSYTVYNYW" value=""> <span>Ne pas rejeter l’hypothèse nulle (H0).</span></label><label><input type="radio" autocomplete="off" name="radio_EVSYTVYNYW" value="answer"> <span>Rejeter l’hypothèse nulle (H0).</span></label><label><input type="radio" autocomplete="off" name="radio_EVSYTVYNYW" value=""> <span>Il n’y a pas assez d’informations pour conclure.</span></label><label><input type="radio" autocomplete="off" name="radio_EVSYTVYNYW" value=""> <span>Augmenter la taille de l’échantillon.</span></label><label><input type="radio" autocomplete="off" name="radio_EVSYTVYNYW" value=""> <span>Aucune des autres réponses n’est correcte.</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explication
+</button>
+<p>La valeur p (0.00016) est bien inférieure au seuil de 0.05 : on rejette H0. La moyenne de l’échantillon diffère significativement de la valeur testée.</p>
+</div>
+</section>
+<section id="q38" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="q38">Question 11.2</h3>
+<p>Lesquelles des hypothèses suivantes pourraient être testées dans un <strong>test t à deux échantillons</strong> ?</p>
+<ol type="a">
+<li><p>Les deux échantillons proviennent de populations avec la même moyenne. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>Les deux échantillons proviennent de populations avec des moyennes différentes. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>L’une des populations est beaucoup plus nombreuse que l’autre. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>Les populations ont la même moyenne mais des variances très différentes. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>Trois groupes d’humains sont de tailles moyennes très différentes. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+</ol>
+<div class="webex-solution">
+<button>
+Explication
+</button>
+<p>Le test t à deux échantillons compare <strong>deux moyennes</strong> : H0 « les moyennes sont égales » (a) contre H1 « elles diffèrent » (b). Il ne teste ni la taille des populations ni les variances. Pour comparer trois groupes, on utilise une ANOVA.</p>
+</div>
+</section>
+<section id="q41" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="q41">Question 11.3</h3>
+<p>Jugez chaque proposition relative aux <strong>statistiques inférentielles</strong> :</p>
+<ol type="a">
+<li><p>Les statistiques inférentielles permettent de tirer des conclusions sur une population entière en se basant sur l’analyse d’un échantillon représentatif de cette population. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>Si deux variables quantitatives, par exemple y et x, sont significativement corrélées, il existe toujours une relation de cause à effet entre ces deux variables. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>L’échantillonnage aléatoire est une méthode de sélection au hasard d’un sous-groupe de participants dans une population, où chaque membre a une chance égale d’être choisi, offrant ainsi une représentation fiable de la population entière. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>Un échantillon de 100 femmes suisses d’une taille moyenne de 180 cm est représentatif de la distribution de taille des femmes en Suisse. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>Les tests t, l’ANOVA et la régression linéaire peuvent être des techniques utiles dans une analyse de statistiques inférentielles. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+</ol>
+<div class="webex-solution">
+<button>
+Explication
+</button>
+<p>b) Corrélation n’est pas causalité : une troisième variable ou le hasard peuvent expliquer une corrélation.</p>
+<p>d) La taille moyenne des femmes en Suisse est d’environ 165 cm : un échantillon dont la moyenne est de 180 cm n’est manifestement pas représentatif.</p>
+</div>
+</section>
+<section id="q42" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="q42">Question 11.4</h3>
+<p>Supposons que nous fassions un test t pour savoir si la taille moyenne de 100 joueuses de la WNBA sélectionnées au hasard diffère de celle de 100 hommes néerlandais sélectionnés au hasard. Le code suivant simule les deux échantillons et effectue le test. Exécutez-le et jugez chaque affirmation.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2026</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>wnba <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="at">mean =</span> <span class="fl">184.5</span>, <span class="at">sd =</span> <span class="fl">6.5</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>pays_bas <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="at">mean =</span> <span class="fl">183.8</span>, <span class="at">sd =</span> <span class="fl">7.1</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(wnba, pays_bas)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<ol type="a">
+<li><p>Dans l’échantillon simulé, la joueuse de basket-ball moyenne mesure 183,86 cm. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>La valeur p du test indique que la différence entre les tailles moyennes est statistiquement significative au niveau de 5 %. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>L’hypothèse nulle du test t est que les moyennes des deux populations (joueuses de la WNBA et hommes néerlandais) sont égales. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>Le test t indique que les hommes néerlandais sont significativement plus grands que les joueuses de basket-ball de la WNBA. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>Les résultats du test t indiquent que, dans les échantillons simulés, il n’y a pas de différence significative entre les tailles moyennes des joueuses de basket et des hommes néerlandais. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+</ol>
+<div class="webex-solution">
+<button>
+Explication
+</button>
+<p>a) Sous <em>sample estimates</em>, <code>mean of x</code> (les joueuses) vaut 183,86 cm ; <code>mean of y</code> (les hommes néerlandais) vaut 184,66 cm.</p>
+<p>b), d) et e) La valeur p (0,40) est supérieure à 0,05 : on ne rejette pas H0. Dans l’échantillon, les hommes néerlandais sont un peu plus grands, mais cet écart de 0,8 cm n’est pas significatif ; l’intervalle de confiance à 95 % (de −2,66 à 1,06 cm) contient 0.</p>
+<p>c) Les hypothèses portent sur les populations : H0 postule que les deux moyennes sont égales (μ₁ = μ₂), H1 qu’elles diffèrent.</p>
+</div>
+</section>
+<section id="q43" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="q43">Question 11.5</h3>
+<p>Que signifie une valeur p inférieure à 0,05 dans le contexte d’un test statistique ?</p>
+<div id="radio_CHPLYNCNGC" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_CHPLYNCNGC" value=""> <span>Il y a une probabilité de 5 % que l’hypothèse nulle soit vraie.</span></label><label><input type="radio" autocomplete="off" name="radio_CHPLYNCNGC" value=""> <span>Il y a moins de 5 % de chances que les résultats observés soient dus au hasard.</span></label><label><input type="radio" autocomplete="off" name="radio_CHPLYNCNGC" value=""> <span>La probabilité que l’hypothèse nulle soit vraie est supérieure à 95 %.</span></label><label><input type="radio" autocomplete="off" name="radio_CHPLYNCNGC" value=""> <span>Les données ne suivent pas une loi normale.</span></label><label><input type="radio" autocomplete="off" name="radio_CHPLYNCNGC" value="answer"> <span>Toutes les autres réponses sont incorrectes.</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explication
+</button>
+<p>La valeur p est la probabilité d’observer des résultats au moins aussi extrêmes que ceux de l’échantillon <strong>si l’hypothèse nulle était vraie</strong>. Elle se calcule en supposant H0 vraie : ce n’est donc ni la probabilité que H0 soit vraie (a, c), ni la probabilité que les résultats soient « dus au hasard » (b). Cette dernière lecture est très répandue, mais elle inverse la condition : elle décrit P(H0 | données) au lieu de P(données | H0). La valeur p ne dit rien non plus sur la normalité des données (d).</p>
+</div>
+</section>
+<section id="q112" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="q112">Question 11.6</h3>
+<p>Avec des échantillons de grande taille, même des différences (apparemment) faibles entre les moyennes de deux groupes peuvent devenir statistiquement significatives (par exemple, la taille moyenne des hommes dans deux pays différents).</p>
+<p><select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p>
+<div class="webex-solution">
+<button>
+Explication
+</button>
+<p>L’erreur standard diminue quand la taille de l’échantillon augmente : avec de très grands échantillons, même une petite différence donne une valeur p très faible. « Significatif » ne veut donc pas dire « important ».</p>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<!-- webexercises (Dale Barr, Lisa DeBruine et Caspar J. Van Lissa), https://github.com/psyteachr/webexercises
+     Licence : CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0/ -->
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  var t = document.getElementsByClassName("webex-total_correct");
+  for (var i = 0; i < t.length; i++) {
+    p = t[i].parentElement;
+    var correct = p.getElementsByClassName("webex-correct").length;
+    var solvemes = p.getElementsByClassName("webex-solveme").length;
+    var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
+    var selects = p.getElementsByClassName("webex-select").length;
+
+    t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* check answers */
+check_func = function() {
+  console.log("webex: check answers");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('unchecked')) {
+    cl.remove("unchecked");
+    this.innerHTML = "Hide Answers";
+  } else {
+    cl.add("unchecked");
+    this.innerHTML = "Show Answers";
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  var check_sections = document.getElementsByClassName("webex-check");
+  console.log("check:", check_sections.length);
+  for (var i = 0; i < check_sections.length; i++) {
+    check_sections[i].classList.add("unchecked");
+
+    let btn = document.createElement("button");
+    btn.innerHTML = "Show Answers";
+    btn.classList.add("webex-check-button");
+    btn.onclick = check_func;
+    check_sections[i].appendChild(btn);
+
+    let spn = document.createElement("span");
+    spn.classList.add("webex-total_correct");
+    check_sections[i].appendChild(spn);
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  update_total_correct();
+}
+
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copié");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copié");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/julesaberlin\.github\.io\/intro-a-R\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../sessions/session-10.html" class="pagination-link" aria-label="Statistiques descriptives">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Statistiques descriptives</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../sessions/session-12.html" class="pagination-link" aria-label="Statistiques inférentielles II&nbsp;: ANOVA et régression">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Statistiques inférentielles II&nbsp;: ANOVA et régression</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Textes et exercices : <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr">CC BY-NC-SA 4.0</a> · Code : MIT · Éléments de tiers : voir <a href="../apropos.html">À propos</a></p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

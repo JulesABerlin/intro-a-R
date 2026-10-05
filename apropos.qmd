@@ -83,6 +83,4 @@ apprentissage de R.
 
 Je remercie également les étudiant·es des Exercices Méthodes II de
 l'Université de Fribourg (2023–2025), dont les questions, les erreurs
-fécondes et les retours ont façonné ce matériel au fil des semestres,
-ainsi que **Jérôme Chariatte**, qui assure aujourd'hui le cours et
-continue de faire vivre ces ressources.
+fécondes et les retours ont façonné ce matériel au fil des semestres.

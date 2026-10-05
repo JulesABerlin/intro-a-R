@@ -98,6 +98,8 @@ suivre le processus suivant :
 4.  Une fenêtre avec des paramètres apparaît, que vous pouvez remplir de
     la manière suivante :
 
+    ![Importer un fichier CSV dans RStudio. Capture d'écran de RStudio Desktop (Posit Software, PBC).](../images/import-igposts.png){fig-alt="Fenêtre Import Dataset de RStudio avec les paramètres d'importation du fichier igposts.csv"}
+
     -   Explications des paramètres :
 
         -   **Encoding = UTF-8** : Indique à RStudio d'utiliser

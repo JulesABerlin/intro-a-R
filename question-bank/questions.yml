@@ -586,8 +586,8 @@
   stem: 'Jugez chaque proposition concernant l’histogramme suivant des points obtenus au Problem Set 1 :'
   figure: |
     library(ggplot2)
-    points_ps_1 <- read.csv("https://julesaberlin.github.io/intro-a-R/data/points_PS_1.csv", encoding = "UTF-8")
-    ggplot(points_ps_1, aes(x = points)) +
+    distribution_ps_1 <- read.csv("https://julesaberlin.github.io/intro-a-R/data/distribution_ps_1.csv", encoding = "UTF-8")
+    ggplot(distribution_ps_1, aes(x = points, weight = n)) +
       geom_histogram(binwidth = 1, color = "black", fill = "white") +
       labs(x = "Points obtenus", y = "Fréquence") +
       theme_minimal()
@@ -603,7 +603,7 @@
     a) La barre la plus haute est à 14 points (le mode).
     b) et c) Un histogramme ne montre ni la médiane ni la moyenne exactes. Ici, la médiane vaut 14 et la moyenne 14,2.
     d) Une loi normale *centrée réduite* a une moyenne de 0 et un écart-type de 1 : ce n’est pas le cas de points compris entre 8 et 20.
-  uses_data: points_PS_1.csv
+  uses_data: distribution_ps_1.csv
 
 - id: 27
   session: 5

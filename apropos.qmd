@@ -65,8 +65,10 @@ Posit, RStudio, and Shiny are trademarks of Posit Software, PBC, all rights rese
     `lilbieber`). Les photos et textes des posts restent la propriété de leurs
     auteur·es. Le site renvoie aux posts par des liens et n'intègre aucun
     contenu d'Instagram.
--   Les fichiers **`points_*.csv`** contiennent les points obtenus aux Problem
-    Sets, sans aucun identifiant.
+-   Les fichiers **`distribution_ps_1.csv`** à **`distribution_ps_4.csv`**
+    contiennent les distributions agrégées des résultats réels (nombre
+    d'étudiant·es par nombre de points) aux Problem Sets. Les résultats
+    individuels ne sont pas publiés.
 
 ## Cookies et suivi
 

@@ -20,7 +20,7 @@
 - Open TODO: the Q10 screenshot (problemset_1_images/ch_1_question_11.png) is missing.
 
 ## Deployment plan
-- ~~Do NOT run `quarto publish` until `reponses_socio.csv` and the `points_*.csv` files are replaced (step 4).~~ Done on 2 Oct 2026: `data/` now holds the synthetic survey and points without student numbers, and `_freeze/` was rebuilt from them and committed.
+- ~~Do NOT run `quarto publish` until `reponses_socio.csv` and the score files are replaced (step 4).~~ Done on 2 Oct 2026: `data/` now holds the synthetic survey and (since 5 Oct 2026) aggregate score distributions, and `_freeze/` was rebuilt from them and committed.
 - The old single-page site files on `main` (`index.html`, `index_files/`, `index.pdf` and the other PDFs) still contain output from the real survey. Delete them once Pages serves the gh-pages branch, and decide with the data protection office whether to rewrite the git history.
 - Run `quarto publish gh-pages`. This pushes only the built site to the gh-pages branch; then switch the Pages source to gh-pages once.
 - Add a small redirect script so old `index.html#session-…` anchors land on the new chapter pages.
@@ -30,7 +30,7 @@
 
 ## Data audit
 - `reponses_socio.csv`: 74 students (birth year, gender, passport, origin, siblings, home town, commute, grades). Re-identification risk is high. → synthetic copy.
-- `points_PS_1–4.csv`: student number + group + points. → keep only points (and group).
+- Problem Set scores: only aggregate distributions are published (`distribution_ps_1–4.csv`: points, n). The row-level score files were removed on 5 Oct 2026.
 - `igposts.csv`: surviving posts of the 2023 sample, metrics re-observed on 5 Oct 2026 (provenance in `data/README.md`). The old row-level file is no longer used.
 - `reponses.csv` (PS3): not in the repo. Needed or must be replaced.
 - The old files remain in the git history. If they must disappear, rewrite the history (git filter-repo). Check with the UniFR data protection office.

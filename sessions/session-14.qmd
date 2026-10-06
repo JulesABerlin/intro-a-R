@@ -142,10 +142,10 @@ sciences de la communication et à développer une expertise approfondie.
 ## Le mot de la fin {#au-revoir-et-à-bientôt}
 
 Ce chapitre clôt cette introduction à R. J'espère que vous y avez appris
-des techniques utiles pour vos études et vos projets ! 💪
+des techniques utiles pour vos études et vos projets.
 
 N'oubliez pas qu'au final, l'essentiel est de faire preuve de bon sens
 pour mettre des outils comme R au service de questions intéressantes en
-sciences de la communication. 😄
+sciences de la communication.
 
 *Julian Maitra*

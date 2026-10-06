@@ -69,8 +69,7 @@ désigne les noms des colonnes) :
 | Nguyen  | Laetitia | 19  |
 :::
 
-Avant l'importation de fichier CSV dans RStudio (et comme déjà vu pleins
-de fois dans le cours 😉), il faut d'abord charger les packages
+Avant d'importer un fichier CSV dans RStudio, il faut d'abord charger les packages
 nécessaires avec `library()` et définir son répertoire de travail (vous
 devez adapter les paramètres de `setwd()` pour qu'il marche sur votre
 ordinateur) :

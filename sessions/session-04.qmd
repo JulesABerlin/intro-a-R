@@ -364,9 +364,9 @@ contient précisément ces variables.
 ggplot(data = diamonds)
 ```
 
-Notre graphique n'est pour l'instant qu'une zone grise ! Catastrophe ?
-Bien sûr que non 😀. Nous devons maintenant définir les autres
-paramètres de la fonction `ggplot()` !
+Notre graphique n'est pour l'instant qu'une zone grise : c'est normal.
+Nous devons maintenant définir les autres arguments de la fonction
+`ggplot()`.
 
 ```{r}
 # La deuxième couche, aesthetics, définit le mapping de nos variables sur les axes y et x

@@ -198,7 +198,7 @@ z <- 3
 y + z
 ```
 
-Maintenant ça marche ! 😀
+Maintenant, le code fonctionne.
 
 ::: {.callout-important title="Important"}
 -   Sachez aussi que si vous attribuez une nouvelle valeur à une

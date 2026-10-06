@@ -17,7 +17,7 @@ Ce chapitre reprend les chapitres 4 et 5 sous forme de questions.
 Beaucoup d'entre elles vous demandent de lire un graphique : décrivez
 d'abord ce que vous voyez, puis vérifiez avec le code.
 
-Dans le cours, le **Problem Set 2** était un test de 30 minutes sur Moodle portant sur
+Dans le cours, le **Problem Set 2** était un test sur Moodle portant sur
 les chapitres 4 et 5. Les questions ci-dessous en reprennent le contenu, avec la
 correction et une explication pour chaque réponse.
 

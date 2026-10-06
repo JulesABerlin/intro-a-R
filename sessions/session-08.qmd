@@ -33,11 +33,11 @@ solution modèle.
 
 ## Exercices avec solutions
 
-### Préparez-vous pour l'exercice
+### Préparez-vous {#préparez-vous-pour-lexercice}
 
 -   Commencez en ouvrant un nouveau script R.
 
--   Nommez-le `script_session_8` et sauvegardez-le sur votre ordinateur.
+-   Nommez-le `script_chapitre_8` et sauvegardez-le sur votre ordinateur.
     (Définissez votre répertoire de travail avec `setwd()` et
     sauvegardez le code de la console dans le script).
 
@@ -280,8 +280,8 @@ petits (0,70 carat) que les *Premium* (0,89 carat).
 
 ### Exercice 11 : igposts I {#igposts-i}
 
--   Chargez le jeu de données `igposts` que nous avons vu pendant session
-    7.  
+-   Chargez le jeu de données `igposts` du
+    [chapitre 7](session-07.qmd#lire-des-données-auf-format-csv-dans-rstudio).
 -   Si nécessaire, téléchargez-le à nouveau depuis le
     [site](../data/igposts.csv) et sauvegardez-le dans le dossier de votre ordinateur que vous avez
     défini comme répertoire de travail.
@@ -295,7 +295,7 @@ petits (0,70 carat) que les *Premium* (0,89 carat).
 ```{r}
 #| echo: true
 #| output: true
-# Vous pouvez copier-coller le code que nous avons utilisé la dernière fois (adaptez-le à votre ordinateur) :
+# Vous pouvez reprendre le code du chapitre 7 :
 igposts <- read.csv("https://julesaberlin.github.io/intro-a-R/data/igposts.csv", encoding="UTF-8")
 
 # Appliquez encore une fois les transformations de variables, si nécessaire :

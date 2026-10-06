@@ -147,8 +147,8 @@ Il existe **trois types** de tests t :
         scolaire en ligne. Il y a donc deux mesures pour chaque élève.
         Le cours de soutien scolaire est dans ce cas un traitement.
 
-    -   (à noter : nous n'allons pas traiter ce type de test t plus en
-        détail dans l'exercice).
+    -   Nous ne traitons pas ce type de test t plus en détail dans ce
+        chapitre.
 
 Voyons maintenant des exemples avec du code.
 
@@ -295,7 +295,7 @@ simuler deux échantillons hypothétiques :
 -   Un échantillon de 5 tailles d'hommes suisses
 
 D'après l'Enquête suisse sur la santé 2017 [@muller2022], que nous avons
-déjà vue en session 5, les femmes mesurent en moyenne 164,6 cm
+déjà vue au chapitre 5, les femmes mesurent en moyenne 164,6 cm
 (écart-type 6,5 cm) et les hommes 177,0 cm (écart-type 7,1 cm). Dans la
 suite, nous utilisons des valeurs proches : une moyenne de 164,7 cm pour
 les femmes et de 177,4 cm pour les hommes, avec des écarts-types un peu

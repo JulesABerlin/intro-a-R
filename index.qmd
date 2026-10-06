@@ -20,11 +20,11 @@ apprendre R à son rythme.
 -   Exécutez vous-même le code dans RStudio et modifiez-le : on apprend R
     en l'utilisant.
 -   Testez-vous avec les exercices à la fin de chaque chapitre. Les
-    chapitres « Révision » reprennent les tests du cours.
+    chapitres « Révision » reprennent les tests du cours d'origine.
 -   Sur ce site, les exercices sont interactifs ; dans la version PDF, les
     réponses se trouvent dans l'annexe « Corrigés ».
 
-Les jeux de données utilisés dans le cours se trouvent dans le dossier
+Les jeux de données utilisés dans ce livre se trouvent dans le dossier
 [`data/`](https://github.com/julesaberlin/intro-a-R/tree/main/data) et
 peuvent être lus directement depuis le site, par exemple :
 

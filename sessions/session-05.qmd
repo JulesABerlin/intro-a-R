@@ -33,9 +33,9 @@ library(ggthemes)
 
 ## Les nuages de points {#les-nuages-de-points-angl.-scatter-plots}
 
-Commençons par le **nuage de points**, que nous avons déjà vu lors de la
-dernière session, lorsque nous avons visualisé la relation entre les
-carats et les prix dans le jeu de données `diamonds`.
+Commençons par le **nuage de points**, que nous avons déjà vu au
+chapitre 4 pour représenter la relation entre le poids en carats et le
+prix des diamants.
 
 ::: {.callout-note title="Définition : nuage de points"}
 Un **nuage de points** (angl. *scatter plot*) est

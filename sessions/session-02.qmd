@@ -22,7 +22,7 @@ colonne par variable. Ce chapitre montre comment R représente ces
 tableaux, comment les décrire et comment coder des variables
 catégorielles.
 
-## Répétition rapide de session 1
+## Rappel du chapitre 1 {#répétition-rapide-de-session-1}
 
 ```{r}
 #| echo: true

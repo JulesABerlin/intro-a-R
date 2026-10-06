@@ -68,7 +68,7 @@ de visualisation).
 1.  **Introduction à R et RStudio (ft. mon chat radioactif) :** Tutoriel
     facile à comprendre en français d'environ 1h par le chercheur belge
     Nathan Uyttendaele (Il aborde certains aspects et logiciels que nous
-    ne traitons pas dans notre cours. Mais dans l'ensemble, c'est une
+    ne traitons pas dans ce livre. Mais dans l'ensemble, c'est une
     bonne introduction à R et RStudio pour débuter)
     : <https://www.youtube.com/watch?v=sav3Mbe0_DM> [@chatsceptique2020]
 

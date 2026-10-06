@@ -75,12 +75,11 @@ présentées sous deux formats :
 
 Lorsque l'on veut représenter des statistiques descriptives dans R, il
 est souvent utile de combiner les deux packages `dplyr` et `ggplot2`.
-C'est une bonne nouvelle, car nous avons déjà examiné les principaux
-codes R nécessaires pour utiliser ces deux packages dans ce cours.
+Vous connaissez déjà l'essentiel de ces deux packages (chapitres 4 à 8).
 
-Pour nous entraîner à nouveau, cette fois avec nos propres données, nous
-allons procéder ci-dessous à une analyse descriptive des réponses au
-questionnaire rempli par les étudiant·es du cours !
+Nous allons maintenant les appliquer à une analyse descriptive des
+réponses à un questionnaire rempli par des étudiant·es en sciences de la
+communication.
 
 ::: {.callout-caution title="Contexte : des données synthétiques" collapse="true"}
 Le fichier `reponses_socio.csv` utilisé sur ce site est **synthétique** : ses
@@ -88,14 +87,11 @@ données ont été simulées à partir du questionnaire d'une classe, et il ne
 contient **aucune personne réelle**. Il a les mêmes variables que le
 questionnaire, avec des distributions et des relations semblables. Pour
 protéger les participant·es, les valeurs rares ont été regroupées (p. ex.
-« Autre canton »). Les résultats ci-dessous peuvent donc différer de ceux
-présentés en cours.
+« Autre canton »). Les résultats peuvent donc différer légèrement de
+ceux des données originales.
 :::
 
-Vous verrez donc par la suite comment ce que nous avons appris jusqu'à
-présent dans le cours peut être combiné de manière utile.
-
-## Analyse des réponses au questionnaire, 1re partie (stats descriptives) {#analyse-des-réponses-au-questionnaire-1ère-partie-stats-déscriptives}
+## Analyse des réponses au questionnaire {#analyse-des-réponses-au-questionnaire-1ère-partie-stats-déscriptives}
 
 Veuillez ouvrir un nouveau script R et charger les packages `tidyverse`
 et `ggthemes`. Téléchargez ensuite le fichier
@@ -119,13 +115,13 @@ les paramètres suivants :
 #| output: true
 #| warning: false
 
-# Script session 10
+# Script du chapitre 10
 
 library(tidyverse)
 library(ggthemes)
 
 # vous devez modifier les fonctions setwd() et read.csv() pour correspondre à votre ordinateur
-# (ou lire le fichier directement depuis le site du cours, comme ici) :
+# (ou lire le fichier directement depuis le site du livre, comme ici) :
 # setwd("~/Documents/exercices_methodes_2")
 
 reponses_socio <- read.csv("https://julesaberlin.github.io/intro-a-R/data/reponses_socio.csv", encoding="UTF-8", stringsAsFactors=TRUE)
@@ -153,7 +149,7 @@ ggplot(data = reponses_socio,
   geom_histogram(binwidth = 10, 
                  fill = "steelblue",
                      color = "black") +
-  labs(title = "Trajets en minutes des étudiant·es pour arriver à l'UniFR",
+  labs(title = "Trajets en minutes des étudiant·es pour arriver à l'université",
        subtitle = "Questionnaire avec n = 74 participant·es",
        x = "Trajet en minutes",
        y = "Effectif") +

@@ -87,7 +87,7 @@ d'audience** ni de suivi. Il est hébergé par GitHub Pages ; GitHub peut
 enregistrer l'adresse IP des visiteurs (voir la
 [déclaration de confidentialité de GitHub](https://docs.github.com/fr/site-policy/privacy-policies/github-general-privacy-statement)).
 
-Seule la session 12 charge des ressources depuis d'autres serveurs : MathJax
+Seul le chapitre 12 charge des ressources depuis d'autres serveurs : MathJax
 (jsDelivr) et une bibliothèque de compatibilité (cdnjs) pour afficher les
 formules, ainsi qu'une vidéo YouTube intégrée en mode « confidentialité
 renforcée » (youtube-nocookie.com).

@@ -149,7 +149,7 @@ de ce type :
 -   `diamonds`, fourni avec le package `ggplot2` [@wickham2016].
 
 Nous verrons un quatrième jeu de données, `penguins` (package
-`palmerpenguins` ; @horst2020), en session 12.
+`palmerpenguins` ; @horst2020), au [chapitre 12](session-12.qmd).
 
 ::: {.callout-tip title="Astuce"}
 Vous pouvez afficher les jeux de données qui sont actuellement
@@ -431,7 +431,7 @@ nuage de points, diagramme en barres, histogramme et boîte à moustaches.
 
 ## À faire avant de continuer {#devoir-pour-session-5 .unnumbered}
 
--   Exécutez toutes les sections de code de la session 4 sur votre
+-   Exécutez toutes les sections de code de ce chapitre sur votre
     ordinateur.
 
 -   Entraînez-vous à ouvrir un nouveau script R, à définir un répertoire

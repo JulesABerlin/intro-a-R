@@ -125,7 +125,7 @@ suivre le processus suivant :
     CSV ultérieurement.
 
 ```{r}
-# Par exemple, en lisant le fichier directement depuis le site du cours :
+# Par exemple, en lisant le fichier directement depuis le site du livre :
 
 igposts <- read.csv("https://julesaberlin.github.io/intro-a-R/data/igposts.csv", encoding="UTF-8")
  

@@ -5,21 +5,21 @@
 source("_common.R")
 ```
 
-**Sujet : Manipuler les données (partie 1)**
+::: {.callout-important title="Objectifs d'apprentissage"}
+-   Importer un fichier CSV dans R et vérifier sa structure.
+-   Convertir une variable dans le type adapté (`as.numeric()`,
+    `as.factor()`).
+-   Enchaîner des opérations avec le pipe.
+-   Sélectionner, créer, filtrer, trier, résumer et compter des données
+    avec les verbes de `dplyr`.
+:::
 
-Le premier but de cette session est d'apprendre à importer des données
-dans RStudio à partir de **fichiers CSV** et de les stocker sous forme de
-tableau de données.
-
-Le deuxième but est de se familiariser avec `dplyr` (prononcé
-« dee-ply-er » en anglais), un package du tidyverse conçu pour
-manipuler les tableaux de données.
-
-Contrairement aux jeux de données d'exemple (tels que `diamonds`), la plupart des jeux de données du monde réel nécessitent des
-**transformations** avant de pouvoir être analysés et visualisés. À
-cette fin, nous verrons aussi comment changer le type d'une variable,
-ainsi qu'un nouvel opérateur, le pipe `%>%`, très utile pour enchaîner
-les manipulations.
+Les jeux de données d'exemple des chapitres 4 et 5 étaient prêts à
+l'emploi. Les données réelles arrivent sous forme de fichiers qu'il faut
+importer, vérifier et souvent transformer avant de pouvoir les analyser.
+Ce chapitre vous montre comment, à partir d'un échantillon de posts
+Instagram, avec le package `dplyr` (prononcé « dee-ply-er » en anglais)
+du tidyverse.
 
 ## Lire des données au format CSV dans RStudio {#lire-des-données-auf-format-csv-dans-rstudio}
 
@@ -479,6 +479,23 @@ igposts %>%
             mean_Likes = mean(Likes),
             mean_Comments = mean(Comments)) 
 ```
+
+::: {.callout-important title="En bref"}
+-   `read.csv()` importe un fichier CSV ; vérifiez toujours le résultat
+    avec `str()`.
+-   Une variable qui représente des catégories se convertit en facteur avec
+    `as.factor()`.
+-   Le pipe transmet le résultat de gauche comme premier argument de la
+    fonction de droite : `x %>% f()` équivaut à `f(x)`.
+-   `select()` et `mutate()` agissent sur les colonnes, `filter()` et
+    `arrange()` sur les lignes ; `summarize()`, `count()` et `group_by()`
+    résument les données, au besoin par groupe.
+-   Sans `<-`, un verbe de `dplyr` affiche un résultat mais ne modifie pas
+    le tableau.
+:::
+
+Le chapitre 8 vous propose une série d'exercices pour pratiquer ces
+verbes sur `mtcars`, `diamonds`, `iris` et `igposts`.
 
 ## À faire avant de continuer {#devoir-pour-session-8-et-infos-questionnaire .unnumbered}
 

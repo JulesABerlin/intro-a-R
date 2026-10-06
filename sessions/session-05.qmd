@@ -5,14 +5,23 @@
 source("_common.R")
 ```
 
-La session 5 a pour but d'approfondir les techniques de visualisation de
-données avec le package `ggplot2`, notamment la création des types de
-graphique suivants :
+::: {.callout-important title="Objectifs d'apprentissage"}
+-   Choisir un graphique adapté au type de la ou des variables à
+    représenter.
+-   Créer un nuage de points, un diagramme en barres, un histogramme et une
+    boîte à moustaches avec `ggplot2`.
+-   Personnaliser un graphique : couleurs (`color`, `fill`), transparence,
+    titres et thème.
+-   Simuler des données avec `rnorm()` et rendre la simulation
+    reproductible avec `set.seed()`.
+:::
 
-1.  Les nuages de points (angl. *scatter plots*)
-2.  Les diagrammes en barres (angl. *bar plots*)
-3.  Les histogrammes (angl. *histograms*)
-4.  Les boîtes à moustaches (angl. *box plots*)
+Au [chapitre 4](session-04.qmd#introduction-aux-visualisations-avec-ggplot2),
+vous avez construit un premier nuage de points avec `ggplot2`. Ce
+chapitre présente les quatre graphiques les plus utilisés en analyse de
+données (angl. *scatter plot*, *bar chart*, *histogram*, *boxplot*), et
+ce que chacun permet de voir : une relation, une répartition, une
+distribution ou une comparaison entre groupes.
 
 ```{r}
 #| warning: false
@@ -454,6 +463,23 @@ quelques intersections entre les groupes. C'est-à-dire qu'il y a des
 voitures à 8 cylindres qui sont relativement efficaces en termes de
 consommation de carburant, surpassant quelques voitures à 6 cylindres,
 par exemple.
+
+::: {.callout-important title="En bref"}
+-   Nuage de points : deux variables numériques ; diagramme en barres : une
+    variable catégorielle ; histogramme : la distribution d'une variable
+    numérique ; boîte à moustaches : une variable numérique comparée entre
+    groupes.
+-   `color` colore les points et les contours, `fill` remplit les surfaces.
+-   La largeur des intervalles (`binwidth`) change beaucoup l'aspect d'un
+    histogramme : essayez plusieurs valeurs.
+-   Une tendance d'ensemble peut s'inverser quand on distingue des groupes
+    (paradoxe de Simpson) : regardez aussi vos données par sous-groupe.
+-   `rnorm()` simule des valeurs suivant une loi normale ; `set.seed()` rend
+    la simulation reproductible.
+:::
+
+Le chapitre « Révision 2 » vous permet de tester vos connaissances sur
+les graphiques avant de passer à la manipulation de données.
 
 ## À faire avant de continuer {#devoir-pour-session-6-problem-set-2 .unnumbered}
 

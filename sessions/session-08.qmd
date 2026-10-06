@@ -6,11 +6,19 @@ source("_common.R")
 library(tidyverse) # chargé par les étudiant·es (voir la consigne ci-dessous)
 ```
 
-**Sujet : Manipuler les données (partie 2)**
+::: {.callout-important title="Objectifs d'apprentissage"}
+-   Traduire une question en une suite de verbes de `dplyr`.
+-   Combiner `group_by()` et `summarize()` pour comparer des groupes.
+-   Créer une variable dérivée (un rapport, p. ex. des likes par follower)
+    et interpréter le résultat.
+-   Repérer une variable confondante dans une comparaison de moyennes.
+:::
 
-L'objectif de la session 8 est de vous entraîner à résoudre de manière
-autonome des problèmes de manipulation de données à l'aide du code R et
-de vous préparer ainsi avant le chapitre « Révision 3 ».
+Au [chapitre 7](session-07.qmd#manipuler-les-données-avec-dplyr), vous
+avez découvert les verbes de `dplyr`. Ce chapitre est entièrement
+pratique : dix-neuf exercices vous demandent de répondre à des questions
+concrètes sur des jeux de données que vous connaissez déjà. Essayez
+chaque exercice dans votre propre script avant d'afficher la solution.
 
 Les exercices suivants se composent d'une question et d'une solution
 modèle sous forme de code R. Notez qu'en programmation R, il y a souvent
@@ -495,6 +503,21 @@ igposts %>%
 
 [URL du post Instagram de
 SUGA](https://www.instagram.com/p/Copd1XvJT78/)
+
+::: {.callout-important title="En bref"}
+-   Partez de la question, puis choisissez les verbes : quelles lignes
+    (`filter()`), quelles colonnes (`select()`), quel calcul (`mutate()`,
+    `summarize()`), quel ordre (`arrange()`) ?
+-   `group_by()` suivi de `summarize()` donne un résultat par groupe ; `n()`
+    compte les observations de chaque groupe.
+-   Une différence entre groupes peut venir d'une autre variable (ici le
+    poids des diamants) : c'est une variable confondante.
+-   Il existe souvent plusieurs solutions correctes ; l'essentiel est que
+    le résultat réponde à la question.
+:::
+
+Le chapitre « Révision 3 » vous permet de vérifier vos acquis sur
+l'importation et la manipulation de données.
 
 ## Exercices {.unnumbered}
 

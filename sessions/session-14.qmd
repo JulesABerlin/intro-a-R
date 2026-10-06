@@ -5,7 +5,17 @@
 source("_common.R")
 ```
 
-Quelques pistes pour continuer à progresser avec R après cette introduction.
+::: {.callout-important title="Objectifs d'apprentissage"}
+-   Choisir des ressources (livres, cours en ligne, vidéos) adaptées à
+    votre niveau pour continuer à apprendre R.
+-   Utiliser un assistant d'intelligence artificielle de manière critique
+    pour écrire du code R.
+-   Trouver de l'aide auprès des communautés en ligne.
+:::
+
+Vous avez parcouru les bases de R : importer, manipuler, représenter et
+analyser des données. Ce chapitre rassemble des pistes pour continuer à
+pratiquer et pour approfondir les sujets abordés dans ce livre.
 
 ## Pratique régulière
 
@@ -138,6 +148,15 @@ libres :
 
 Ces conseils vous aideront à utiliser efficacement R dans le domaine des
 sciences de la communication et à développer une expertise approfondie.
+
+::: {.callout-important title="En bref"}
+-   On progresse en R en l'utilisant régulièrement, de préférence pour ses
+    propres questions de recherche.
+-   Plusieurs livres gratuits en français prolongent celui-ci : *guide-R*,
+    *Introduction à R et au tidyverse*, *Programmer avec R* et *utilitR*.
+-   Les assistants d'IA peuvent aider, à condition de vérifier et de
+    comprendre le code qu'ils proposent.
+:::
 
 ## Le mot de la fin {#au-revoir-et-à-bientôt}
 

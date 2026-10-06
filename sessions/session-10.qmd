@@ -5,7 +5,20 @@
 source("_common.R")
 ```
 
-**Sujet : La statistique descriptive**
+::: {.callout-important title="Objectifs d'apprentissage"}
+-   Distinguer la statistique descriptive de la statistique inférentielle.
+-   Résumer une variable numérique (moyenne, médiane, écart-type) et une
+    variable catégorielle (effectifs, proportions).
+-   Combiner `dplyr` et `ggplot2` pour décrire des données réelles, au
+    besoin par groupe.
+-   Enregistrer un tableau de données dans un fichier CSV avec
+    `write.csv()`.
+:::
+
+Vous savez maintenant importer, transformer et représenter des données.
+Ce chapitre réunit ces outils pour une première analyse complète : la
+description des réponses à un questionnaire. La statistique descriptive
+est presque toujours la première étape d'une analyse, avant tout test.
 
 ::: {.callout-note title="Définition : statistique descriptive"}
 La **statistique descriptive** est généralement la première étape d'une
@@ -281,6 +294,22 @@ write.csv(ice_age_df, file = "~/Documents/exercices_methodes_2/ice_age_df.csv")
 
 Si tout a bien marché, vous devriez maintenant avoir un fichier CSV, nommé
 `ice_age_df.csv` dans votre répertoire de travail.
+
+::: {.callout-important title="En bref"}
+-   La statistique descriptive résume l'échantillon ; seule, elle ne permet
+    ni de généraliser à la population ni de conclure à une relation de
+    cause à effet.
+-   Pour une variable numérique : n, moyenne, médiane, écart-type, minimum
+    et maximum, et un histogramme.
+-   Pour une variable catégorielle : effectifs et proportions (`table()`,
+    `count()`), et un diagramme en barres.
+-   `group_by()` suivi de `summarize()` décrit une variable par groupe ;
+    pensez aux valeurs manquantes (`na.rm = TRUE`).
+-   `write.csv()` enregistre un tableau de données dans un fichier CSV.
+:::
+
+Les différences observées dans l'échantillon existent-elles aussi dans
+la population ? Le chapitre 11 aborde cette question avec le test t.
 
 ## Exercices {.unnumbered}
 

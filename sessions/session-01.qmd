@@ -5,11 +5,18 @@
 source("_common.R")
 ```
 
-**Sujet : Bienvenue, pourquoi R ? et commandes de base I**
+::: {.callout-important title="Objectifs d'apprentissage"}
+-   Installer R et RStudio et vous repérer dans les quatre volets de RStudio.
+-   Écrire du code dans un script, l'exécuter et le commenter.
+-   Créer des objets avec l'opérateur d'affectation `<-` et distinguer les
+    types numérique, caractère et logique.
+-   Créer des vecteurs avec la fonction `c()`.
+:::
 
-Bienvenue ! Ce premier chapitre vous guide dans vos premiers pas avec R :
-installer les logiciels, découvrir l'interface RStudio et écrire vos
-premières lignes de code.
+Bienvenue ! Ce premier chapitre vous fait faire vos premiers pas avec R.
+Après avoir installé R et RStudio, vous écrirez vos premières lignes de
+code : des calculs, des objets et des vecteurs. Tout le reste du livre
+s'appuie sur ces briques de base.
 
 ::: {.callout-note title="Définition : R"}
 **R** est un langage de programmation et un environnement logiciel pour
@@ -345,6 +352,23 @@ des types, R les convertit sans prévenir vers le type le plus général
 (logique → numérique → texte) : `c(1, "a", TRUE)` donne
 `"1" "a" "TRUE"`.
 :::
+
+::: {.callout-important title="En bref"}
+-   R est le langage ; RStudio est l'environnement de travail (IDE) dans
+    lequel on l'utilise.
+-   On écrit le code dans un script (volet **Source**) et on l'exécute
+    avec <kbd>Ctrl</kbd> + <kbd>Entrée</kbd> (<kbd>Cmd</kbd> +
+    <kbd>Entrée</kbd> sur macOS) ; le résultat s'affiche dans la console.
+-   `<-` stocke une valeur dans un objet ; une nouvelle affectation
+    remplace l'ancienne valeur.
+-   Une valeur est numérique, une chaîne de caractères (entre guillemets)
+    ou logique (`TRUE`/`FALSE`).
+-   `c()` combine plusieurs valeurs en un vecteur, qui ne contient qu'un
+    seul type de données.
+:::
+
+Au chapitre suivant, vous rassemblerez plusieurs vecteurs dans un
+tableau : la forme sous laquelle on analyse presque toutes les données.
 
 ## À faire avant de continuer {#devoir-pour-session-2 .unnumbered}
 

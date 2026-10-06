@@ -5,6 +5,23 @@
 source("_common.R")
 ```
 
+::: {.callout-important title="Objectifs d'apprentissage"}
+-   Créer une matrice et un tableau de données, et en extraire des
+    valeurs, des lignes ou des colonnes.
+-   Décrire un tableau de données et résumer une variable numérique
+    (moyenne, médiane, écart-type).
+-   Représenter une variable catégorielle par un facteur.
+-   Expliquer ce qu'est le répertoire de travail et travailler dans un
+    projet RStudio.
+:::
+
+Au [chapitre 1](session-01.qmd), vous avez créé des objets et des
+vecteurs. Les données que l'on analyse se présentent pourtant presque
+toujours sous forme de tableau : une ligne par unité statistique, une
+colonne par variable. Ce chapitre montre comment R représente ces
+tableaux, comment les décrire et comment coder des variables
+catégorielles.
+
 ## Répétition rapide de session 1
 
 ```{r}
@@ -489,6 +506,25 @@ du projet, et vos chemins de fichiers relatifs (p. ex.
 ordinateur. Avec `setwd()`, le code cesse de fonctionner dès qu'il est
 déplacé sur un autre ordinateur.
 :::
+
+::: {.callout-important title="En bref"}
+-   Dans un tableau de données, chaque ligne est une observation et chaque
+    colonne une variable ; une matrice ne contient qu'un seul type, alors
+    que les colonnes d'un tableau de données peuvent être de types
+    différents.
+-   On extrait des éléments avec des crochets `[lignes, colonnes]` et une
+    colonne avec `$`.
+-   `dim()`, `head()`, `str()` et `summary()` donnent une première vue d'un
+    tableau ; `mean()`, `median()`, `sd()` et `var()` résument une
+    variable numérique.
+-   Un facteur représente une variable catégorielle ; un facteur ordonné
+    (`ordered = TRUE`) conserve l'ordre de ses niveaux.
+-   Le répertoire de travail est le dossier où R cherche et enregistre vos
+    fichiers ; un projet RStudio le définit pour vous.
+:::
+
+Avant d'aller plus loin, le chapitre « Révision 1 » vous permet de
+vérifier que ces bases sont acquises.
 
 ## À faire avant de continuer {#devoir-pour-session-3-problem-set-1 .unnumbered}
 

@@ -5,14 +5,20 @@
 source("_common.R")
 ```
 
-La session 4 a pour but d'introduire trois éléments fondamentaux en
-analyse de données avec R :
+::: {.callout-important title="Objectifs d'apprentissage"}
+-   Installer un package une fois et le charger à chaque session.
+-   Explorer un jeu de données d'exemple (`iris`, `mtcars`, `diamonds`) et
+    consulter sa documentation.
+-   Construire un graphique `ggplot2` à partir de données, d'esthétiques et
+    d'une géométrie.
+-   Décrire ce que montre un nuage de points.
+:::
 
-1.  Installer et charger des **packages R** sur son ordinateur
-2.  Utiliser des **jeux de données d'exemple** pour s'entraîner à
-    l'analyse de données
-3.  Apprendre à utiliser le package `ggplot2` pour créer des
-    visualisations de données
+Jusqu'ici, vous avez utilisé les fonctions de base de R et des données
+saisies à la main. Ce chapitre élargit votre boîte à outils : les
+packages ajoutent des fonctions à R, les jeux de données d'exemple
+permettent de s'exercer sur de vraies données, et le package `ggplot2`
+sert à les représenter graphiquement.
 
 ## Les packages R {#les-paquets-r}
 
@@ -408,6 +414,20 @@ ggplot(data = diamonds,
 Maintenant il s'agit d'interpréter le graphique. Que nous dit-il sur la
 relation entre prix et carats des diamants ? Quel rôle joue la variable
 *pureté* (`clarity`) ?
+
+::: {.callout-important title="En bref"}
+-   `install.packages("nom")` installe un package (une fois par
+    ordinateur) ; `library(nom)` le charge (à chaque session).
+-   Le tidyverse est une collection de packages, dont `ggplot2` et `dplyr`.
+-   `?nom` affiche la documentation d'une fonction ou d'un jeu de données :
+    lisez-la avant d'analyser des données.
+-   Un graphique `ggplot2` réunit des données (`ggplot(data = …)`), des
+    esthétiques (`aes()`) et au moins une géométrie (`geom_point()`),
+    reliées par `+`.
+:::
+
+Le chapitre 5 approfondit `ggplot2` avec quatre types de graphiques :
+nuage de points, diagramme en barres, histogramme et boîte à moustaches.
 
 ## À faire avant de continuer {#devoir-pour-session-5 .unnumbered}
 

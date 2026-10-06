@@ -5,6 +5,18 @@
 source("_common.R")
 ```
 
+::: {.callout-important title="Objectifs d'apprentissage"}
+-   Vérifier que vous savez importer un fichier CSV et contrôler sa
+    structure.
+-   Vérifier que vous savez répondre à une question à l'aide des verbes de
+    `dplyr`.
+-   Repérer, grâce aux explications, les notions à revoir.
+:::
+
+Ce chapitre reprend les chapitres 7 et 8. La plupart des questions vous
+demandent d'exécuter du code sur `igposts.csv`, `mtcars` ou `diamonds` :
+gardez RStudio ouvert à côté.
+
 Dans le cours, le **Problem Set 3** était un test sur Moodle portant sur
 les chapitres 7 et 8. Les questions ci-dessous en reprennent le contenu, avec la
 correction et une explication pour chaque réponse.
@@ -51,6 +63,20 @@ hist_ps_3 <-ggplot(distribution_ps_3,
 hist_ps_3
 ```
 :::
+
+::: {.callout-important title="En bref"}
+-   Si l'importation échoue, relisez « Lire des données au format CSV » au
+    [chapitre 7](session-07.qmd#lire-des-données-auf-format-csv-dans-rstudio) :
+    séparateur, séparateur décimal, encodage.
+-   Si vos résultats diffèrent de la correction, vérifiez d'abord vos
+    conditions de `filter()` (`>` ou `>=`) et l'ordre de tri (`desc()`).
+-   Pour les questions par groupe, relisez `group_by()` et `summarize()`
+    aux chapitres [7](session-07.qmd#résumer-compter-et-regrouper-avec-summarize-count-et-group_by)
+    et [8](session-08.qmd).
+:::
+
+Les chapitres 10 à 12 utilisent ces outils pour décrire des données,
+puis pour tester des hypothèses.
 
 ## Exercices de révision {.unnumbered}
 

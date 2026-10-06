@@ -5,18 +5,23 @@
 source("_common.R")
 ```
 
-**Sujet : La statistique inférentielle, Partie 1 (tests t)**
+::: {.callout-important title="Objectifs d'apprentissage"}
+-   Expliquer ce qu'un test statistique permet de conclure sur une
+    population, et ce qu'il ne permet pas de conclure.
+-   Formuler une hypothèse nulle et une hypothèse alternative.
+-   Réaliser un test t à un échantillon et à deux échantillons avec
+    `t.test()`.
+-   Interpréter la valeur p et l'intervalle de confiance, et le rôle de la
+    taille de l'échantillon.
+:::
 
-Dans cette et la prochaine session, nous allons nous concentrer sur
-trois méthodes de statistique inférentielle couramment utilisées :
-
--   les **tests t** (angl. *Student's t-test*) ;
-
--   l'**analyse de la variance** (angl. *analysis of variance*, ANOVA) ;
-
--   la **régression linéaire** (angl. *linear regression*).
-
-Mais d'abord, il faut répondre à la question suivante :
+Au [chapitre 10](session-10.qmd), vous avez décrit un échantillon. La
+statistique inférentielle se demande si ce que l'on observe dans un
+échantillon vaut aussi pour la population dont il est tiré. Ce chapitre
+et le suivant présentent trois méthodes courantes : les **tests t**
+(angl. *Student's t-test*), l'**analyse de la variance** (ANOVA) et la
+**régression linéaire**. Nous commençons par le raisonnement des tests,
+à travers le test t, qui compare des moyennes.
 
 ## Qu'est-ce que la statistique inférentielle ? {#cest-quoi-la-statistique-inférentielle}
 
@@ -369,6 +374,25 @@ en ligne pertinents pour votre problématique spécifique.
 
 -   Un tutoriel qui approfondit le test t dans R est par exemple [celui
     de DataCamp](https://www.datacamp.com/tutorial/t-tests-r-tutorial).
+
+::: {.callout-important title="En bref"}
+-   Un test porte sur la population : il oppose une hypothèse nulle H0
+    (p. ex. « les moyennes sont égales ») à une hypothèse alternative H1
+    (« elles diffèrent »).
+-   La valeur p est la probabilité d'obtenir un résultat au moins aussi
+    extrême que celui observé si H0 était vraie ; si elle est inférieure
+    au seuil α (souvent 0,05), on rejette H0.
+-   Ne pas rejeter H0 ne prouve pas que H0 est vraie ; regardez aussi la
+    moyenne estimée et l'intervalle de confiance.
+-   `t.test(x, mu = …)` compare une moyenne à une valeur, `t.test(x, y)`
+    compare deux moyennes (variante de Welch par défaut).
+-   Avec plus d'observations, le test détecte plus facilement une même
+    différence ; « significatif » ne veut pas dire « important ».
+:::
+
+Le test t compare au plus deux moyennes. Le chapitre 12 étend ce
+raisonnement à plusieurs groupes avec l'ANOVA, puis à des variables
+explicatives numériques avec la régression linéaire.
 
 ## Exercices {.unnumbered}
 

@@ -5,6 +5,18 @@
 source("_common.R")
 ```
 
+::: {.callout-important title="Objectifs d'apprentissage"}
+-   Vérifier que vous savez installer et charger un package et explorer un
+    jeu de données d'exemple.
+-   Vérifier que vous savez construire et lire les quatre graphiques des
+    chapitres 4 et 5.
+-   Repérer, grâce aux explications, les notions à revoir.
+:::
+
+Ce chapitre reprend les chapitres 4 et 5 sous forme de questions.
+Beaucoup d'entre elles vous demandent de lire un graphique : décrivez
+d'abord ce que vous voyez, puis vérifiez avec le code.
+
 Dans le cours, le **Problem Set 2** était un test de 30 minutes sur Moodle portant sur
 les chapitres 4 et 5. Les questions ci-dessous en reprennent le contenu, avec la
 correction et une explication pour chaque réponse.
@@ -51,6 +63,20 @@ hist_ps_2 <-ggplot(distribution_ps_2,
 hist_ps_2
 ```
 :::
+
+::: {.callout-important title="En bref"}
+-   Si vous hésitez entre `install.packages()` et `library()`, relisez
+    « Les packages R » au [chapitre 4](session-04.qmd#les-paquets-r).
+-   Si vous confondez esthétiques, géométries et thèmes, relisez
+    l'introduction à `ggplot2` au
+    [chapitre 4](session-04.qmd#introduction-aux-visualisations-avec-ggplot2).
+-   Si la lecture d'un histogramme ou d'une boîte à moustaches vous pose
+    problème, relisez les sections correspondantes du
+    [chapitre 5](session-05.qmd#les-histogrammes).
+:::
+
+Au chapitre 7, vous importerez votre premier fichier de données et
+apprendrez à le transformer avec `dplyr`.
 
 ## Exercices de révision {.unnumbered}
 

@@ -5,8 +5,20 @@
 source("_common.R")
 ```
 
-**Sujet : La statistique inférentielle, Partie 2 (ANOVA et régression
-linéaire)**
+::: {.callout-important title="Objectifs d'apprentissage"}
+-   Comparer les moyennes de plus de deux groupes avec une ANOVA
+    (`aov()`) et des comparaisons deux à deux (`TukeyHSD()`).
+-   Ajuster une régression linéaire simple et multiple avec `lm()`.
+-   Interpréter les coefficients, leurs valeurs p et le R² d'un modèle.
+-   Vérifier les conditions d'application d'une régression à l'aide des
+    graphiques de diagnostic.
+:::
+
+Au [chapitre 11](session-11.qmd), le test t vous a permis de comparer
+deux moyennes. Ce chapitre présente deux méthodes plus générales :
+l'ANOVA, qui compare plusieurs groupes, et la régression linéaire, qui
+décrit comment une variable numérique varie en fonction d'une ou de
+plusieurs autres.
 
 ## L'analyse de la variance (ANOVA)
 
@@ -618,6 +630,24 @@ beaucoup sont très pertinents pour les sciences sociales et pour vos
     Explained!!!](https://youtu.be/0oc49DyA3hU) [@statquest2020hypothesis]
 -   [Logistic Regression in R, Clearly
     Explained!!!!](https://youtu.be/C4N3_XJJ-jU) [@statquest2018logistic]
+
+::: {.callout-important title="En bref"}
+-   L'ANOVA teste si au moins une moyenne diffère des autres ;
+    `TukeyHSD()` indique lesquelles.
+-   `lm(y ~ x1 + x2, data = …)` ajuste une régression ; chaque coefficient
+    indique de combien y varie en moyenne lorsque x augmente d'une unité,
+    les autres variables restant constantes.
+-   Le R² indique la part de la variance de y que le modèle reproduit ; le
+    R² ajusté et `anova()` permettent de comparer des modèles.
+-   Les graphiques de diagnostic (`plot(modele)`) servent à vérifier la
+    linéarité, la normalité des résidus et l'homogénéité de leur
+    variance.
+-   Une régression décrit une association ; une interprétation causale
+    demande un dispositif adapté ou des arguments supplémentaires.
+:::
+
+Le chapitre « Révision 4 » reprend les chapitres 10 à 12 et clôt la
+partie statistique du livre.
 
 ## Exercices {.unnumbered}
 

@@ -5,6 +5,17 @@
 source("_common.R")
 ```
 
+::: {.callout-important title="Objectifs d'apprentissage"}
+-   Vérifier que vous savez décrire des données avec `dplyr` et `ggplot2`.
+-   Vérifier que vous savez choisir, réaliser et interpréter un test t,
+    une ANOVA ou une régression linéaire.
+-   Repérer, grâce aux explications, les notions à revoir.
+:::
+
+Ce dernier chapitre de révision reprend les chapitres 10 à 12. Les
+questions mêlent calculs dans R et interprétation : lisez attentivement
+les sorties de `t.test()`, `aov()` et `summary()`.
+
 Dans le cours, le **Problem Set 4** était un test sur Moodle portant sur
 les chapitres 10 à 12. Les questions ci-dessous en reprennent le contenu, avec la
 correction et une explication pour chaque réponse.
@@ -51,6 +62,20 @@ hist_ps_4 <-ggplot(distribution_ps_4,
 hist_ps_4
 ```
 :::
+
+::: {.callout-important title="En bref"}
+-   Si la différence entre statistique descriptive et inférentielle reste
+    floue, relisez le début des chapitres [10](session-10.qmd) et
+    [11](session-11.qmd).
+-   Pour l'interprétation de la valeur p, relisez « Exemple 1 : test t à
+    un échantillon » au
+    [chapitre 11](session-11.qmd#exemple-1-test-t-à-un-échantillon).
+-   Pour les coefficients et le R², relisez « La régression linéaire avec
+    `lm()` » au [chapitre 12](session-12.qmd#la-régression-linéaire-avec-lm).
+:::
+
+Le dernier chapitre propose des pistes pour continuer à progresser
+avec R.
 
 ## Exercices de révision {.unnumbered}
 

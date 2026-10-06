@@ -6,6 +6,19 @@ source("_common.R")
 library(webexercises)
 ```
 
+::: {.callout-important title="Objectifs d'apprentissage"}
+-   Vérifier que vous maîtrisez les notions des chapitres 1 et 2 : objets,
+    types, vecteurs, matrices, tableaux de données et facteurs.
+-   Repérer, grâce aux explications, les notions à revoir.
+-   S'exercer sur des problèmes plus ouverts avec les questions avancées
+    (facultatif).
+:::
+
+Ce chapitre ne présente pas de nouvelle notion : il reprend les
+chapitres 1 et 2 sous forme de questions. Répondez sans relire les chapitres,
+puis lisez l'explication de chaque réponse, surtout lorsque vous vous
+êtes trompé·e.
+
 Dans le cours, le **Problem Set 1** était un test de 30 minutes sur Moodle portant sur
 les chapitres 1 et 2. Les questions ci-dessous en reprennent le contenu, avec la
 correction et une explication pour chaque réponse.
@@ -52,6 +65,22 @@ hist_ps_1 <-ggplot(distribution_ps_1,
 hist_ps_1
 ```
 :::
+
+::: {.callout-important title="En bref"}
+-   Si les types de données ou les vecteurs vous posent problème, relisez
+    la fin du [chapitre 1](session-01.qmd#les-différents-types-de-variable-numériques-textuelles-et-logique).
+-   Si l'extraction avec `[ ]` ou `$` vous pose problème, relisez « Les
+    matrices » et « Les tableaux de données » au
+    [chapitre 2](session-02.qmd#les-matrices).
+-   Si les facteurs restent flous, relisez « Les facteurs » au
+    [chapitre 2](session-02.qmd#les-facteurs).
+-   Les questions avancées présentent des fonctions utiles (`seq()`,
+    `rep()`, `all.equal()`, l'argument `na.rm`) que vous retrouverez plus
+    loin.
+:::
+
+Au chapitre 4, vous installerez vos premiers packages et créerez vos
+premiers graphiques.
 
 ## Exercices de révision {.unnumbered}
 

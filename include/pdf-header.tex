@@ -44,6 +44,15 @@
   \definecolor{quarto-callout-caution-color}{HTML}{6C757D}%
   \definecolor{quarto-callout-caution-color-frame}{HTML}{ADB5BD}}
 
+% Pas de titre isolé en bas de page : avant chaque titre de section, on
+% exige assez de place pour le titre et quelques lignes de texte ; sinon,
+% le titre passe à la page suivante.
+\usepackage{needspace}
+\usepackage{etoolbox}
+\pretocmd{\section}{\Needspace{8\baselineskip}}{}{\typeout{AVERTISSEMENT : needspace non appliqué à section}}
+\pretocmd{\subsection}{\Needspace{6\baselineskip}}{}{\typeout{AVERTISSEMENT : needspace non appliqué à subsection}}
+\pretocmd{\subsubsection}{\Needspace{5\baselineskip}}{}{\typeout{AVERTISSEMENT : needspace non appliqué à subsubsection}}
+
 % Plus de souplesse pour couper les lignes avant un long code en ligne.
 \setlength{\emergencystretch}{3em}
 

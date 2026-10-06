@@ -30,7 +30,7 @@ catégorielles.
 #| error: true
 # Script de répétition
 
-# Avez-vous compris comment R traite les différents types de variables ?
+# Avez-vous compris comment R traite les différents types d'objets ?
 # Quelle est la différence entre a et b ?
 
 a <- 5

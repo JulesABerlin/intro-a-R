@@ -24,7 +24,7 @@ et le suivant présentent trois méthodes courantes : les **tests t**
 **régression linéaire**. Nous commençons par le raisonnement des tests,
 à travers le test t, qui compare des moyennes.
 
-## Qu'est-ce que la statistique inférentielle ? {#cest-quoi-la-statistique-inférentielle}
+## La statistique inférentielle {#cest-quoi-la-statistique-inférentielle}
 
 ::: {.callout-note title="Définition : statistique inférentielle"}
 La statistique inférentielle est la branche de la statistique qui

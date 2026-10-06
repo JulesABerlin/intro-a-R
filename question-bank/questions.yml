@@ -1879,7 +1879,7 @@
     donnees <- read.csv("donnees.csv", encoding = "UTF-8", na.strings = "#N/A")
   key: true
   explanation: |
-    Toutes les cellules contenant `#N/A` sont lues comme `NA`, la valeur manquante de R. Sans cet argument, une colonne numérique contenant `#N/A` serait lue comme du texte. (Le fichier `igposts.csv` du cours n’a pas de valeurs manquantes : la valeur par défaut, `na.strings = "NA"`, suffit.)
+    Toutes les cellules contenant `#N/A` sont lues comme `NA`, la valeur manquante de R. Sans cet argument, une colonne numérique contenant `#N/A` serait lue comme du texte. (Le fichier `igposts.csv` du livre n’a pas de valeurs manquantes : la valeur par défaut, `na.strings = "NA"`, suffit.)
   uses_data: ~
   note: >-
     Exemple rendu générique (donnees.csv) : depuis le nettoyage, igposts.csv n’a plus

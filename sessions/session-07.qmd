@@ -138,7 +138,7 @@ fenêtre d'importation) convertirait directement toutes les colonnes de
 texte en facteurs ; nous le faisons plus loin colonne par colonne, avec
 `as.factor()`.
 
-## Explorez votre jeu de données importé
+## Explorer un jeu de données importé {#explorez-votre-jeu-de-données-importé}
 
 Cela nous montre qu'il s'agit d'un tableau de données avec 84 observations et
 11 variables. Chaque ligne (unité statistique) représente une observation
@@ -203,8 +203,7 @@ vers le post), sont tout à fait pertinentes. D'autres, en revanche, sont
 des catégories. La plus évidente est la variable `Type`, qui indique si
 un post Instagram est une photo ou un album (les deux catégories présentes
 dans `igposts`). Factorisons
-ci-dessous quelques-unes de ces variables catégorielles à l'aide de code
-:
+ci-dessous quelques-unes de ces variables catégorielles :
 
 ```{r}
 # Transformons les colonnes "Account", "User.Name" et "Type" en facteurs :

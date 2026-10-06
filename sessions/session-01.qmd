@@ -120,7 +120,7 @@ clavier suivants :
 -   Sur **macOS** : <kbd>Cmd</kbd> + <kbd>Entrée</kbd>
 :::
 
-## Commenter votre code avec un `#`
+## Commenter son code avec `#` {#commenter-votre-code-avec-un}
 
 C'est une bonne pratique de **commenter** son code R. Les commentaires
 expliquent ce que fait le code et facilitent l'utilisation ultérieure et
@@ -322,8 +322,8 @@ Vous pouvez créer des vecteurs avec l'opérateur d'affectation `<-` et la
 v1 <- c(1, 2, 3)
 ```
 
-Vous pouvez afficher la valeur de `v1` en tapant son nom et l'exécutant
-:
+Vous pouvez afficher la valeur de `v1` en tapant son nom et en
+l'exécutant :
 
 ```{r}
 #| echo: true
@@ -391,11 +391,11 @@ tableau : la forme sous laquelle on analyse presque toutes les données.
 
 ## À faire avant de continuer {#devoir-pour-session-2 .unnumbered}
 
--   Si ce n'est pas encore fait : Installez R et RStudio sur votre
+-   Si ce n'est pas encore fait : installez R et RStudio sur votre
     ordinateur.
 
--   Lisez ensuite encore une fois ce script et exécutez toutes les
-    sections de code sur votre ordinateur.
+-   Relisez ensuite ce chapitre et exécutez toutes les sections de code
+    sur votre ordinateur.
 
 -   Essayez de résoudre vous-même les éventuels messages d'erreur en
     adaptant le code.

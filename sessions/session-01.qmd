@@ -94,7 +94,8 @@ Le résultat s'affiche alors dans le volet **Console** :
 
 Notez que le nombre entre crochets indique la **position du premier
 élément** affiché sur cette ligne. Ici, il n'y a qu'un élément, donc
-`[1]`. Essayez `1:30` pour voir la différence.
+`[1]`. Essayez `1:30` pour voir la différence : le deux-points `:`
+crée la suite des nombres entiers de 1 à 30.
 
 Voici quelques autres calculs simples, suivi de leurs résultats :
 
@@ -170,7 +171,11 @@ clavier suivants :
 ## Objets à un seul élément {#variables-à-élément-unique}
 
 Vous pouvez **afficher** la valeur d'un objet que vous avez créé, tel
-que `x`, en tapant son nom et en l'exécutant.
+que `x`, en tapant son nom et en l'exécutant, ou avec la fonction
+`print()` : `print(x)`.
+
+R distingue les majuscules des minuscules : `x` et `X` sont deux objets
+différents, et `Mean()` n'existe pas, contrairement à `mean()`.
 
 ```{r}
 #| echo: true
@@ -257,6 +262,11 @@ e <- TRUE
 f <- FALSE
 ```
 
+La fonction `class()` indique le type d'un objet : `class(a)` renvoie
+`"numeric"`, `class(c)` renvoie `"character"` et `class(e)` renvoie
+`"logical"`. On peut aussi convertir un type en un autre, p. ex. une
+chaîne de caractères en nombre avec `as.numeric("7")`.
+
 Les valeurs logiques sont utiles pour coder des **catégories
 binaires**.
 
@@ -284,6 +294,18 @@ Claire <- TRUE
 
 ## Les vecteurs : plusieurs éléments {#variables-à-plusieurs-éléments-vecteurs}
 
+::: {.callout-note title="Définition : fonction"}
+En R, une **fonction** effectue une tâche à partir des valeurs qu'on lui
+transmet entre parenthèses, ses **arguments** (on dit aussi
+*paramètres*), et renvoie un résultat.
+:::
+
+::: {.callout-tip title="Astuce"}
+Pour afficher l'aide d'une fonction, tapez un point d'interrogation
+suivi de son nom, p. ex. `?mean`. La page s'affiche dans le volet
+**Output**, onglet **Help**.
+:::
+
 Un **vecteur** est une suite de valeurs du même type. Les objets à un
 élément créés jusqu'ici sont en fait des vecteurs de longueur 1 ; on
 crée des vecteurs plus longs, qui contiennent **plusieurs** éléments,
@@ -308,11 +330,8 @@ Vous pouvez afficher la valeur de `v1` en tapant son nom et l'exécutant
 v1 
 ```
 
-::: {.callout-note title="Définition : fonction"}
-En R, une **fonction** effectue une tâche à partir des valeurs qu'on lui
-transmet entre parenthèses, ses **arguments** (on dit aussi
-*paramètres*), et renvoie un résultat.
-:::
+La fonction `length()` donne le nombre d'éléments d'un vecteur :
+`length(v1)` renvoie 3.
 
 Prenons l'exemple de la fonction `c()` qui crée des vecteurs :
 

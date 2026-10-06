@@ -80,7 +80,10 @@ np1 + geom_smooth(method = lm)
 ```
 
 Que nous indique la ligne de régression ? En principe, elle indique une
-corrélation légèrement négative entre les variables `Sepal.Length` et
+corrélation légèrement négative (deux variables sont **corrélées** si
+elles varient ensemble : positivement si elles augmentent ensemble,
+négativement si l'une diminue quand l'autre augmente) entre les
+variables `Sepal.Length` et
 `Sepal.Width` (la zone grise autour de la ligne bleue est
 l'intervalle de confiance à 95 % de la droite de régression ; la
 régression linéaire est présentée au
@@ -284,7 +287,7 @@ taille_f <- rnorm(500, mean = 164.7, sd = 5.6)
 
 head(taille_f)
 
-# stocker taille_f comme objet de type "data.frame"
+# ggplot() a besoin d'un tableau de données : as.data.frame() convertit le vecteur
 taille_f <- as.data.frame(taille_f)
 
 # visualiser taille_f avec un histogramme basique

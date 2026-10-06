@@ -271,6 +271,11 @@ maintenant manipuler les données avec le package `dplyr`.
 
 ## Manipuler les données avec `dplyr`
 
+Les verbes de `dplyr` renvoient souvent un **tibble** : une version
+moderne du tableau de données, qui s'affiche de façon plus compacte dans
+la console (première ligne `# A tibble: …`, type de chaque colonne sous
+son nom). On l'utilise exactement comme un tableau de données.
+
 Le package `dplyr` est basé sur une logique de *verbes* pour les
 différents types de manipulation de données, notamment :
 
@@ -350,6 +355,21 @@ str(df1)
 ```
 
 ## Manipulation de lignes avec `filter()` et `arrange()`
+
+Pour filtrer des lignes, on écrit des conditions avec des **opérateurs
+de comparaison** ; chaque condition vaut `TRUE` ou `FALSE` pour chaque
+ligne :
+
+| Opérateur | Signification |
+|:---:|:---|
+| `==` | égal à |
+| `!=` | différent de |
+| `>`, `>=` | strictement supérieur, supérieur ou égal à |
+| `<`, `<=` | strictement inférieur, inférieur ou égal à |
+| `%in%` | appartient à (p. ex. `Account %in% c("Leo Messi", "Selena Gomez")`) |
+| `!` | négation (p. ex. `!is.na(x)` : x n'est pas manquant) |
+
+: Opérateurs de comparaison
 
 ```{r}
 #| echo: true

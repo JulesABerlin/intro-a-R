@@ -52,7 +52,8 @@ un ou plusieurs facteurs.
 
 -   Elle prend en entrée une formule qui précise la variable à expliquer et
     les facteurs (variables catégorielles explicatives), ainsi qu'un tableau de données contenant les
-    données. Syntaxe : `aov(formula, data)`
+    données. Syntaxe : `aov(formula, data)`. La formule
+    `y ~ x` se lit « y en fonction de x ».
 
 -   La fonction `aov()` renvoie un objet de classe *aov* qui contient
     les résultats de l'analyse de variance, y compris
@@ -383,8 +384,8 @@ variable explicative `wt`. Regardons le résultat plus en détail :
     en tenant compte du nombre de variables explicatives ; il est
     toujours inférieur ou égal au R². Comme il pénalise les variables
     supplémentaires, le R² ajusté est un critère utile pour comparer des
-    modèles ayant un nombre différent de variables, parmi d'autres (AIC,
-    théorie, validation sur d'autres données).
+    modèles ayant un nombre différent de variables, parmi d'autres (AIC, présenté
+    plus bas ; théorie ; validation sur d'autres données).
 
 -   Enfin, `F-statistic` teste l'hypothèse nulle selon laquelle le
     coefficient de régression est égal à zéro. Ici, la valeur p associée

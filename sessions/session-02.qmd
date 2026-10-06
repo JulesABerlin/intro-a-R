@@ -196,6 +196,10 @@ m3 <- matrix(c(1:10), nrow = 5)
 print(m3)
 ```
 
+Si le vecteur de valeurs est plus court que la matrice, R le **recycle**,
+c'est-à-dire qu'il le répète pour remplir toutes les cases. Lorsque sa
+longueur ne divise pas le nombre de cases, R affiche un avertissement.
+
 Vous pouvez extraire des éléments individuels ou des parties d'une
 matrice avec des **crochets `[ ]`** en spécifiant les lignes
 et les colonnes concernées.
@@ -383,6 +387,11 @@ sd(a1)
 
 var(a1)
 ```
+
+Si un vecteur contient une **valeur manquante** (`NA`, pour *Not
+Available*), ces fonctions renvoient `NA`. L'argument `na.rm = TRUE`
+(*NA remove*) exclut les valeurs manquantes du calcul :
+`mean(c(1, NA, 3), na.rm = TRUE)` renvoie 2.
 
 ## Les facteurs
 

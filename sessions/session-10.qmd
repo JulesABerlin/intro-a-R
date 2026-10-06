@@ -224,6 +224,7 @@ ggplot(aes(x=note_ecole, y=note_uni)) +
 # 5. Permis de conduire
 #*****************************************
 
+# table() compte les effectifs de chaque modalité
 table(reponses_socio$permis)
 
 table(reponses_socio$suisse)

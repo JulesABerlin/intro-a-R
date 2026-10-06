@@ -43,7 +43,8 @@ En général, pour analyser de telles relations, nous formulons souvent
 des hypothèses basées sur des théories ou des suppositions tirées de la
 littérature d'un domaine de recherche, que nous pouvons ensuite tester
 sur notre échantillon. Les résultats obtenus nous permettent de rejeter
-ou non l'hypothèse nulle, et de généraliser prudemment les conclusions à
+ou non l'hypothèse nulle (en général « pas de différence » ou « pas
+d'effet », voir plus bas), et de généraliser prudemment les conclusions à
 la population entière. Ceci nous permet de contribuer à la création de
 nouvelles connaissances dans notre domaine de recherche
 
@@ -192,8 +193,9 @@ Il s'agit maintenant d'interpréter le résultat du test t dans R.
     groupes par rapport à la variabilité de l'échantillon. Le signe de
     la statistique t indique si la moyenne de l'échantillon est
     supérieure (t positif) ou inférieure (t négatif) à la moyenne de la
-    comparaison. L'ampleur reflète combien d'erreurs types la
-    différence est par rapport à zéro. En général, des valeurs absolues
+    comparaison. L'ampleur indique de combien d'erreurs types la
+    différence s'écarte de zéro (l'erreur type mesure la précision de
+    la moyenne estimée ; elle diminue quand n augmente). En général, des valeurs absolues
     plus élevées suggèrent des preuves plus solides contre l'hypothèse
     nulle, ce qui se traduit par des valeurs p plus faibles.
 
@@ -221,7 +223,8 @@ Dans notre cas, la valeur p (0,13) est supérieure au seuil α = 0,05 :
 moyenne de 100 ; cela ne prouve pas que la moyenne *est* 100.
 L'intervalle de confiance à 95 % (de 98,6 à 110,4), qui contient 100, le
 montre aussi. Avec seulement 25 observations, le test manque peut-être
-simplement de puissance.
+simplement de puissance, c'est-à-dire de chances de détecter une
+différence qui existe réellement.
 
 ```{r}
 # Regénérons encore une fois des données d'échantillon, mais cette fois-ci avec n = 50 observations 

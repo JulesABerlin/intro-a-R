@@ -23,6 +23,8 @@ apprendre R à son rythme.
     chapitres « Révision » reprennent les tests du cours d'origine.
 -   Sur ce site, les exercices sont interactifs ; dans la version PDF, les
     réponses se trouvent dans l'annexe « Corrigés ».
+-   Les termes de R et de statistique sont définis dans l'annexe
+    [« Lexique »](lexique.qmd).
 
 Les jeux de données utilisés dans ce livre se trouvent dans le dossier
 [`data/`](https://github.com/julesaberlin/intro-a-R/tree/main/data) et

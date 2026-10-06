@@ -1,0 +1,245 @@
+# Lexique {#sec-lexique}
+
+Ce lexique réunit les principaux termes de R et de statistique utilisés
+dans ce livre. Les équivalents anglais, utiles pour chercher de l'aide en
+ligne, sont indiqués entre parenthèses.
+
+**affectation** (opérateur `<-`)
+:   Stocke le résultat de l'expression de droite dans l'objet nommé à gauche, p. ex. `x <- 5`. Si l'objet existe déjà, son contenu est remplacé.
+
+**AIC** (critère d'information d'Akaike)
+:   Mesure qui équilibre l'ajustement d'un modèle et son nombre de paramètres ; entre deux modèles, on préfère celui dont l'AIC est le plus faible.
+
+**ANOVA** (analyse de la variance)
+:   Test qui compare les moyennes de trois groupes ou plus en comparant la variabilité entre les groupes à la variabilité à l'intérieur des groupes ; en R, `aov()`.
+
+**argument**
+:   Valeur que l'on transmet à une fonction entre ses parenthèses, p. ex. `na.rm = TRUE` dans `mean(x, na.rm = TRUE)`.
+
+**boîte à moustaches** (angl. *boxplot*)
+:   Graphique qui résume une distribution par la médiane, les quartiles Q1 et Q3 (la boîte) et des moustaches qui s'étendent jusqu'aux valeurs situées à moins de 1,5 écart interquartile de la boîte ; les points au-delà sont des valeurs extrêmes.
+
+**chaîne de caractères** (type `character`)
+:   Texte écrit entre guillemets, p. ex. `"chat"`.
+
+**commentaire**
+:   Texte qui suit un croisillon `#` sur une ligne ; R l'ignore.
+
+**conditions d'application**
+:   Conditions que les données doivent remplir pour qu'un test soit valide (indépendance, normalité, etc.).
+
+**console**
+:   Volet de RStudio où R exécute les commandes et affiche les résultats.
+
+**corrélation**
+:   Lien entre deux variables numériques qui varient ensemble : positive si elles augmentent ensemble, négative si l'une diminue quand l'autre augmente. Une corrélation ne prouve pas une relation de cause à effet.
+
+**couche**
+:   Élément ajouté au graphique avec `+`, en général une géométrie.
+
+**crochets** (`[ ]`)
+:   Opérateur qui extrait des éléments d'un vecteur, d'une matrice ou d'un tableau de données, p. ex. `m[3, 2]` (indexation).
+
+**CSV** (angl. *comma-separated values*)
+:   Fichier texte qui contient un tableau, une ligne par observation, les valeurs étant séparées par des virgules (ou des points-virgules).
+
+**degrés de liberté**
+:   Nombre de valeurs libres de varier dans le calcul d'une statistique ; R l'indique (`df`) avec chaque test.
+
+**diagramme en barres**
+:   Graphique qui représente l'effectif (ou la proportion) de chaque modalité d'une variable catégorielle par une barre.
+
+**écart interquartile**
+:   Q3 − Q1.
+
+**écart-type**
+:   Racine carrée de la variance, dans l'unité des données.
+
+**échantillon**
+:   Partie de la population que l'on observe.
+
+**effectif**
+:   Nombre d'observations dans une catégorie ou un intervalle.
+
+**encodage**
+:   Manière dont les caractères (accents compris) sont codés dans un fichier ; UTF-8 est la norme recommandée.
+
+**erreur type**
+:   Écart-type d'une estimation (p. ex. d'une moyenne) ; elle diminue quand n augmente.
+
+**esthétique** (angl. *aesthetic*)
+:   Propriété visuelle d'un graphique (position x ou y, couleur, remplissage, taille…) que l'on relie à une variable avec `aes()`.
+
+**facteur**
+:   Objet R qui représente une variable catégorielle ; il stocke les valeurs et la liste des **niveaux** possibles.
+
+**facteur ordonné**
+:   Facteur dont les niveaux ont un ordre (`ordered = TRUE`), pour une variable ordinale.
+
+**fonction**
+:   Objet R qui effectue une tâche à partir des valeurs qu'on lui donne (ses arguments) et renvoie un résultat. On l'appelle avec son nom suivi de parenthèses : `mean(x)`.
+
+**fréquence (relative)**
+:   Effectif divisé par le nombre total d'observations (souvent en %).
+
+**géométrie**
+:   Forme qui représente les données (points, barres, boîtes…), ajoutée avec une fonction `geom_*()`.
+
+**graine** (`set.seed()`)
+:   Nombre de départ du générateur de nombres aléatoires ; avec la même graine, on obtient les mêmes valeurs « aléatoires ».
+
+**histogramme**
+:   Graphique de la distribution d'une variable numérique ; on découpe les valeurs en intervalles (classes) et la hauteur de chaque barre indique l'effectif de l'intervalle.
+
+**hypothèse alternative (H1)**
+:   Ce que l'on retient si l'on rejette H0.
+
+**hypothèse nulle (H0)**
+:   Hypothèse sur la population que le test met à l'épreuve, en général « pas de différence » ou « pas d'effet ».
+
+**intervalle de confiance à 95 %**
+:   Intervalle calculé à partir de l'échantillon qui, avec cette méthode, contient la vraie valeur de la population dans 95 % des échantillons possibles.
+
+**jeu de données**
+:   Ensemble de données sur un sujet (p. ex. `iris`, `igposts.csv`), que l'on stocke dans R sous forme de tableau de données.
+
+**logique / booléen** (type `logical`)
+:   Valeur `TRUE` (vrai) ou `FALSE` (faux).
+
+**loi normale**
+:   Distribution en forme de cloche, symétrique autour de sa moyenne et définie par sa moyenne et son écart-type ; **centrée réduite** si la moyenne vaut 0 et l'écart-type 1.
+
+**matrice**
+:   Tableau à deux dimensions (lignes × colonnes) dont toutes les valeurs sont du même type.
+
+**médiane**
+:   Valeur qui sépare les observations triées en deux moitiés.
+
+**moyenne** (arithmétique)
+:   Somme des valeurs divisée par leur nombre.
+
+**n**
+:   Nombre d'observations (taille de l'échantillon).
+
+**nuage de points**
+:   Graphique où chaque observation est un point dont la position est donnée par deux variables numériques (x et y).
+
+**numérique** (type `numeric`)
+:   Nombre, entier ou décimal (le séparateur décimal est le point).
+
+**objet**
+:   Tout ce que l'on crée et nomme dans R (valeur, vecteur, tableau de données, graphique, fonction…). Un objet existe dans l'environnement tant que la session est ouverte.
+
+**observation**
+:   Ligne d'un tableau de données, qui décrit une unité.
+
+**observation influente**
+:   Observation qui pèse fortement sur les coefficients d'un modèle de régression : les résultats changent nettement si on l'exclut.
+
+**ordonnée à l'origine**
+:   Valeur prédite de y quand toutes les variables explicatives valent 0 (`(Intercept)` dans R).
+
+**package** (ou *extension*)
+:   Ensemble de fonctions, de données et de documentation qui ajoute des fonctionnalités à R. On l'installe une fois (`install.packages()`), puis on le charge à chaque session (`library()`).
+
+**pipe** (`%>%` ou `|>`)
+:   Opérateur qui transmet le résultat placé à sa gauche comme premier argument de la fonction à sa droite ; il permet d'enchaîner les étapes dans l'ordre où on les lit.
+
+**population**
+:   Ensemble de toutes les unités sur lesquelles porte une question.
+
+**projet RStudio**
+:   Dossier de travail associé à un fichier `.Rproj` ; à son ouverture, RStudio en fait le répertoire de travail.
+
+**quartiles** (Q1, Q2, Q3)
+:   Valeurs qui séparent les observations triées en quatre parts égales.
+
+**R**
+:   Langage de programmation et environnement logiciel libre pour l'analyse statistique, la visualisation de données et le calcul scientifique.
+
+**R² (coefficient de détermination)**
+:   Part de la variance de y que le modèle reproduit, entre 0 et 1.
+
+**recyclage**
+:   Lorsque deux vecteurs n'ont pas la même longueur, R répète le plus court pour les combiner ; il affiche un avertissement si la longueur du plus long n'est pas un multiple de celle du plus court.
+
+**régression linéaire**
+:   Modèle qui décrit la variable à expliquer (y) comme une fonction linéaire d'une (simple) ou plusieurs (multiple) variables explicatives (x).
+
+**répertoire de travail** (angl. *working directory*)
+:   Dossier dans lequel R cherche et enregistre les fichiers lorsqu'on donne un chemin relatif ; `getwd()` l'affiche.
+
+**résidu**
+:   Écart entre la valeur observée et la valeur prédite par le modèle.
+
+**RStudio**
+:   Environnement de développement intégré (IDE) qui facilite le travail avec R ; il réunit un éditeur de scripts, la console, l'environnement et d'autres outils. R doit être installé séparément.
+
+**script**
+:   Fichier texte (extension `.R`) qui contient le code R et ses commentaires, et permet de refaire une analyse.
+
+**sélection pas à pas** (angl. *stepwise selection*)
+:   Procédure automatique qui ajoute (sélection ascendante) ou retire (sélection descendante) des variables explicatives d'un modèle, p. ex. selon l'AIC ; en R, `step()`.
+
+**seuil de signification (α)**
+:   Valeur fixée avant le test (souvent 0,05) ; si p < α, on rejette H0.
+
+**statistique descriptive**
+:   Résumé des données de l'échantillon (effectifs, moyennes, graphiques).
+
+**statistique inférentielle**
+:   Méthodes qui permettent de généraliser de l'échantillon à la population, avec une marge d'incertitude.
+
+**tableau de données** (angl. *data frame*)
+:   Objet R à deux dimensions où chaque ligne est une observation et chaque colonne une variable ; toutes les valeurs d'une colonne sont du même type, mais les colonnes peuvent être de types différents.
+
+**test t** (de Student)
+:   Test qui compare une moyenne à une valeur de référence (test à un échantillon) ou deux moyennes (échantillons indépendants ou appariés). Dans R, `t.test()` applique par défaut la variante de Welch, qui n'exige pas des variances égales.
+
+**thème**
+:   Apparence générale d'un graphique (fond, police, grille), sans lien avec les données.
+
+**tibble**
+:   Variante moderne du tableau de données, utilisée par les packages du tidyverse ; elle s'affiche de façon plus compacte dans la console.
+
+**tidyverse**
+:   Collection de packages conçus pour fonctionner ensemble (dont `ggplot2` et `dplyr`) ; on les charge tous avec `library(tidyverse)`.
+
+**unité statistique** (ou unité d'observation)
+:   Entité sur laquelle on mesure les variables (une personne, un post, un pays).
+
+**valeur extrême** (angl. *outlier*)
+:   Valeur très éloignée des autres ; dans une boîte à moustaches, valeur située à plus de 1,5 écart interquartile de la boîte. À ne pas confondre avec une valeur aberrante, qui résulte d'une erreur.
+
+**valeur manquante** (`NA`, *Not Available*)
+:   Valeur absente ; tout calcul qui l'inclut donne `NA`, sauf si on l'exclut, p. ex. avec `na.rm = TRUE`.
+
+**valeur p** (angl. *p-value*)
+:   Probabilité d'obtenir un résultat au moins aussi extrême que celui observé **si H0 était vraie**.
+
+**valeur par défaut**
+:   Valeur qu'un argument prend si on ne le précise pas.
+
+**variable**
+:   Caractéristique mesurée sur chaque unité statistique ; dans un tableau de données, une colonne.
+
+**variable à expliquer** (ou dépendante)
+:   Variable y que le modèle décrit.
+
+**variable catégorielle** (ou qualitative)
+:   Variable dont les valeurs sont des catégories (modalités) ; **nominale** sans ordre (genre, parti), **ordinale** avec ordre (niveau d'éducation).
+
+**variable explicative** (ou indépendante, prédicteur)
+:   Variable x utilisée pour décrire y.
+
+**variance**
+:   Moyenne des carrés des écarts à la moyenne (R divise par n − 1).
+
+**vecteur**
+:   Objet de base de R, suite ordonnée de valeurs du même type (nombres, textes ou valeurs logiques) ; on le crée p. ex. avec `c()`.
+
+**verbe** (`dplyr`)
+:   Fonction de `dplyr` qui effectue une opération simple sur un tableau de données : `select()`, `filter()`, `mutate()`, `arrange()`, `summarize()`, etc.
+
+**volet** (angl. *pane*)
+:   L'une des quatre zones de la fenêtre de RStudio (Source, Console, Environment, Output).

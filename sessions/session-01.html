@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Premiers pas avec R – Exercices Méthodes II</title>
+<title>1&nbsp; Premiers pas avec R – Introduction à R pour les sciences de la communication</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -58,7 +58,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -79,7 +99,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-fa9f328cd4a8f9b1bff39b312214e759.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-8b9bfa8f06f8d75c827c202792a57b06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -136,9 +156,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Exercices Méthodes II</a> 
+      <a href="../">Introduction à R pour les sciences de la communication</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/julesaberlin/intro-a-R" title="Code source" class="quarto-navigation-tool px-1" aria-label="Code source"><i class="bi bi-github"></i></a>
+    <a href="../intro-a-R.pdf" title="Télécharger PDF" class="quarto-navigation-tool px-1" aria-label="Télécharger PDF"><i class="bi bi-file-pdf"></i></a>
 </div>
     </div>
       </div>
@@ -245,6 +266,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">À propos</span></a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Annexes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../corriges.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Corrigés</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Références</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -309,8 +353,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="1.1" class="anchored" data-anchor-id="installer-les-logiciels-r-et-rstudio"><span class="header-section-number">1.1</span> Installer les logiciels R et RStudio</h2>
 <p>Pour utiliser R sur votre ordinateur portable, vous devez d’abord installer les deux logiciels suivants :</p>
 <ol type="1">
-<li>le langage de programmation <a href="https://cran.r-project.org">R</a></li>
-<li>l’interface <a href="https://posit.co/download/rstudio-desktop/">RStudio</a></li>
+<li>le langage de programmation <a href="https://cran.r-project.org">R</a> <span class="citation" data-cites="r2026">(<a href="../references.html#ref-r2026" role="doc-biblioref">R Core Team, 2026</a>)</span></li>
+<li>l’interface <a href="https://posit.co/download/rstudio-desktop/">RStudio</a> <span class="citation" data-cites="rstudio2026">(<a href="../references.html#ref-rstudio2026" role="doc-biblioref">Posit team, 2026</a>)</span></li>
 </ol>
 <p>Notez que nous n’écrirons le code R que dans RStudio, l’interface. Le langage de programmation R doit d’abord être installé, mais il fonctionnera ensuite en arrière-plan. Il n’est donc pas nécessaire d’ouvrir R directement sur votre ordinateur par la suite.</p>
 </section>
@@ -848,8 +892,8 @@ Explication
 <section id="q118" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q118">Question 1.13</h3>
 <p>Dans quel volet de RStudio écrivez-vous et enregistrez-vous votre script R&nbsp;?</p>
-<div id="radio_MPTZBIGCQU" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_MPTZBIGCQU" value="answer"> <span>Source</span></label><label><input type="radio" autocomplete="off" name="radio_MPTZBIGCQU" value=""> <span>Console</span></label><label><input type="radio" autocomplete="off" name="radio_MPTZBIGCQU" value=""> <span>Environnement</span></label><label><input type="radio" autocomplete="off" name="radio_MPTZBIGCQU" value=""> <span>Output</span></label>
+<div id="radio_FTOJGRYQRJ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_FTOJGRYQRJ" value="answer"> <span>Source</span></label><label><input type="radio" autocomplete="off" name="radio_FTOJGRYQRJ" value=""> <span>Console</span></label><label><input type="radio" autocomplete="off" name="radio_FTOJGRYQRJ" value=""> <span>Environnement</span></label><label><input type="radio" autocomplete="off" name="radio_FTOJGRYQRJ" value=""> <span>Output</span></label>
 </div>
 <div class="webex-solution">
 <button>
@@ -904,6 +948,14 @@ Explication
 </div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-rstudio2026" class="csl-entry" role="listitem">
+Posit team. (2026). <em><span>RStudio</span>: Integrated development environment for <span>R</span></em> (Version 2026.09.0+174) [Logiciel]. Posit Software, PBC. <a href="https://posit.co/">https://posit.co/</a>
+</div>
+<div id="ref-r2026" class="csl-entry" role="listitem">
+R Core Team. (2026). <em>R: A language and environment for statistical computing</em> (Version 4.6.1) [Logiciel]. R Foundation for Statistical Computing. <a href="https://doi.org/10.32614/R.manuals">https://doi.org/10.32614/R.manuals</a>
+</div>
+</div>
 </section>
 </section>
 

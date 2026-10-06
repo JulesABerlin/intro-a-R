@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>11&nbsp; Statistiques inférentielles I&nbsp;: le test t – Exercices Méthodes II</title>
+<title>11&nbsp; Statistiques inférentielles I&nbsp;: le test t – Introduction à R pour les sciences de la communication</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -58,7 +58,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -79,7 +99,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-fa9f328cd4a8f9b1bff39b312214e759.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-8b9bfa8f06f8d75c827c202792a57b06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -136,9 +156,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Exercices Méthodes II</a> 
+      <a href="../">Introduction à R pour les sciences de la communication</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/julesaberlin/intro-a-R" title="Code source" class="quarto-navigation-tool px-1" aria-label="Code source"><i class="bi bi-github"></i></a>
+    <a href="../intro-a-R.pdf" title="Télécharger PDF" class="quarto-navigation-tool px-1" aria-label="Télécharger PDF"><i class="bi bi-file-pdf"></i></a>
 </div>
     </div>
       </div>
@@ -245,6 +266,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">À propos</span></a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Annexes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../corriges.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Corrigés</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Références</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -457,7 +501,7 @@ mean of x
 </section>
 <section id="exercice-1" class="level3">
 <h3 class="anchored" data-anchor-id="exercice-1">Exercice 1</h3>
-<p>Selon l’étude <a href="https://doi.org/10.5167/uzh-251581">World Internet Project de l’Université de Zurich</a>, qui a évalué les données pour la Suisse, les personnes en Suisse ont passé en moyenne 5.6 heures en ligne en 2023. Chez les 20-29 ans, ce chiffre s’élève même à 7.9 heures en moyenne.</p>
+<p>Selon l’étude <a href="https://doi.org/10.5167/uzh-251581">World Internet Project de l’Université de Zurich</a> <span class="citation" data-cites="latzer2023">(<a href="../references.html#ref-latzer2023" role="doc-biblioref">Latzer et al., 2023</a>)</span>, qui a évalué les données pour la Suisse, les personnes en Suisse ont passé en moyenne 5.6 heures en ligne en 2023. Chez les 20-29 ans, ce chiffre s’élève même à 7.9 heures en moyenne.</p>
 <p>Réalisez un test T en utilisant ces statistiques comme suit :</p>
 <ul>
 <li><p>Simulez avec <code>rnorm()</code>30 valeurs pour l’utilisation d’Internet en heures par jour pour le groupe d’âge 20-29 ans (<code>mean = 7.9, sd = 2</code>).</p></li>
@@ -692,6 +736,11 @@ Explication
 </div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-latzer2023" class="csl-entry" role="listitem">
+Latzer, M., Festic, N., Kappeler, K., &amp; Odermatt, C. M. (2023). <em>Internetanwendungen und deren Nutzung in der <span>Schweiz</span> 2023</em>. Universität Zürich. <a href="https://doi.org/10.5167/uzh-251581">https://doi.org/10.5167/uzh-251581</a>
+</div>
+</div>
 </section>
 </section>
 

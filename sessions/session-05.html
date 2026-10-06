@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Visualiser des données avec ggplot2 – Exercices Méthodes II</title>
+<title>5&nbsp; Visualiser des données avec ggplot2 – Introduction à R pour les sciences de la communication</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -58,7 +58,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -79,7 +99,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-fa9f328cd4a8f9b1bff39b312214e759.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-8b9bfa8f06f8d75c827c202792a57b06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -136,9 +156,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Exercices Méthodes II</a> 
+      <a href="../">Introduction à R pour les sciences de la communication</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/julesaberlin/intro-a-R" title="Code source" class="quarto-navigation-tool px-1" aria-label="Code source"><i class="bi bi-github"></i></a>
+    <a href="../intro-a-R.pdf" title="Télécharger PDF" class="quarto-navigation-tool px-1" aria-label="Télécharger PDF"><i class="bi bi-file-pdf"></i></a>
 </div>
     </div>
       </div>
@@ -245,6 +266,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">À propos</span></a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Annexes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../corriges.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Corrigés</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Références</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -345,7 +389,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>Que nous indique la ligne de régression ? En principe, elle indique une correlation légèrement négative entre les variables <code>Sepal.Length</code>et <code>Sepal.Width</code> ! (la zone grise autour de la ligne bleue est l’intervalle de confiance à 95 % de la droite de régression).</p>
+<p>Que nous indique la ligne de régression ? En principe, elle indique une correlation légèrement négative entre les variables <code>Sepal.Length</code> et <code>Sepal.Width</code> ! (la zone grise autour de la ligne bleue est l’intervalle de confiance à 95 % de la droite de régression).</p>
 <p>Cela signifie que les iris dont les sépales sont plus longs ont tendance à avoir des sépales un peu moins larges ! Gardez cette constatation à l’esprit pour les étapes de codage suivantes.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ecrasons np1 en changeant un peu le code. Découvrez</span></span>
@@ -482,7 +526,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>l’écart-type <code>sd</code> de la distribution des valeurs aléatoires</p></li>
 </ul>
 <p>Notez que par défaut, la fonction utilise <code>mean = 0</code> et <code>sd = 1</code>, ce qui correspond à une <strong>loi normale centrée réduite</strong> (angl. <em>standard normal distribution</em>).</p>
-<p>Utilisez aussi <code>?rnorm()</code>pour accéder à plus d’infos.</p>
+<p>Utilisez aussi <code>?rnorm()</code> pour accéder à plus d’infos.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Astuce">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -498,7 +542,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Dans le code R suivant, nous utilisons <code>rnorm()</code> pour simuler les distributions des tailles des hommes et des femmes en Suisse.</p>
-<p>D’après l’Enquête suisse sur la santé 2017 (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9502675/">Staub et al., 2022</a>), les femmes mesurent en moyenne 164,6 cm (écart-type 6,5 cm) et les hommes 177,0 cm (écart-type 7,1 cm). Dans la suite, nous utilisons des valeurs proches : une moyenne de 164.7 cm pour les femmes et de 177.4 cm pour les hommes, avec des écarts-types un peu plus petits de 5.6 cm et de 6.1 cm.</p>
+<p>D’après l’Enquête suisse sur la santé 2017 <span class="citation" data-cites="muller2022">(<a href="../references.html#ref-muller2022" role="doc-biblioref">Müller et al., 2022</a>)</span>, les femmes mesurent en moyenne 164,6 cm (écart-type 6,5 cm) et les hommes 177,0 cm (écart-type 7,1 cm). Dans la suite, nous utilisons des valeurs proches : une moyenne de 164.7 cm pour les femmes et de 177.4 cm pour les hommes, avec des écarts-types un peu plus petits de 5.6 cm et de 6.1 cm.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulation de tailles de femmes en Suisse Créer 500</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># valeurs aléatoires de taille (moyenne = 164.7 et</span></span>
@@ -587,15 +631,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Un élément clé des visualisations de données est la <strong>couleur</strong>. Le document PDF suivant, créé par Ying Wei de l’Université de Columbia à New York, montre et liste les noms des couleurs dans R. Vous pouvez copier-coller le nom d’une couleur et l’utiliser dans votre graphique ggplot2 !</p>
-<ul>
-<li><a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf">Colors in R</a></li>
-</ul>
+<p>Un élément clé des visualisations de données est la <strong>couleur</strong>. R connaît 657 noms de couleurs : la fonction <code>colors()</code> les liste, et vous pouvez utiliser chacun de ces noms dans ggplot2 (p.&nbsp;ex. <code>fill = "steelblue"</code>). Pour un aperçu visuel, voir <em>Colors in R</em> <span class="citation" data-cites="brown_colors">(<a href="../references.html#ref-brown_colors" role="doc-biblioref">Brown, 2021</a>)</span>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">colors</span>(), <span class="dv">20</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "white"         "aliceblue"     "antiquewhite"  "antiquewhite1"
+ [5] "antiquewhite2" "antiquewhite3" "antiquewhite4" "aquamarine"   
+ [9] "aquamarine1"   "aquamarine2"   "aquamarine3"   "aquamarine4"  
+[13] "azure"         "azure1"        "azure2"        "azure3"       
+[17] "azure4"        "beige"         "bisque"        "bisque1"      </code></pre>
+</div>
+</div>
 </div>
 </div>
 <section id="cest-maintenant-à-vous-de-jouer-1" class="level3">
 <h3 class="anchored" data-anchor-id="cest-maintenant-à-vous-de-jouer-1">C’est maintenant à vous de jouer !</h3>
-<p>Reprenez le code que nous avons utilisé pour créer <code>taille_f</code> et <code>hist1</code> et modifiez-le pour créer une nouvelle simulation de taille d’hommes, <code>taille_h</code>, et un nouvel histogramme qui montre sa distribution, <code>hist2</code>. Jouez avec les paramètres <code>binwidth</code>et la couleur de votre visualisation. Pour cette tâche, vous pouvez supposer que les hommes en Suisse ont une taille moyenne (<code>mean</code>) de 177,4 cm avec un écart-type (<code>sd</code>) de 6,1 cm.</p>
+<p>Reprenez le code que nous avons utilisé pour créer <code>taille_f</code> et <code>hist1</code> et modifiez-le pour créer une nouvelle simulation de taille d’hommes, <code>taille_h</code>, et un nouvel histogramme qui montre sa distribution, <code>hist2</code>. Jouez avec les paramètres <code>binwidth</code> et la couleur de votre visualisation. Pour cette tâche, vous pouvez supposer que les hommes en Suisse ont une taille moyenne (<code>mean</code>) de 177,4 cm avec un écart-type (<code>sd</code>) de 6,1 cm.</p>
 </section>
 </section>
 <section id="les-boîtes-à-moustaches-angl.-boxplots" class="level2" data-number="5.4">
@@ -626,7 +677,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="session-05_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="session-05_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -634,9 +685,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Le dataset <code>mtcars</code> en R, qui contient des données sur les caractéristiques de différents modèles de voitures, peut être utilisé pour illustrer l’utilisation de boxplots.</p>
 <p>Par exemple, pour visualiser la distribution de l’efficacité énergétique (<code>mpg</code>, miles par gallon) des voitures en fonction du nombre de cylindres (<code>cyl</code>), on peut utiliser le code suivant :</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Avant de créer le boxplot, vérifions d'abord la structure</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># de mtcars :</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(mtcars)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Avant de créer le boxplot, vérifions d'abord la structure</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># de mtcars :</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(mtcars)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>'data.frame':   32 obs. of  11 variables:
  $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
@@ -655,18 +706,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Nous pouvons constater que la colonne <code>cyl</code> (cylindre) est stockée au format numérique.</p>
 <p>C’est un problème, car nous voulons comparer l’efficacité énergétique (<code>mpg</code>) des voitures à 4, 6 ou 8 cylindres. Nous devons traiter chacune d’entre elles comme un sous-groupe distinct. Comment faire ?</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Transformons donc cyl en facteur</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>mtcars<span class="sc">$</span>cyl <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(mtcars<span class="sc">$</span>cyl)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Et maintenant nous pouvons construire notre boxplot</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>box1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> mtcars, <span class="fu">aes</span>(<span class="at">x =</span> cyl, <span class="at">y =</span> mpg, <span class="at">fill =</span> cyl)) <span class="sc">+</span></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Miles par gallon (mpg) selon le nombre de cylindres dans mtcars"</span>,</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Nombre de cylindres"</span>, <span class="at">y =</span> <span class="st">"Miles per gallon (mpg)"</span>)</span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(box1)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Transformons donc cyl en facteur</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>mtcars<span class="sc">$</span>cyl <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(mtcars<span class="sc">$</span>cyl)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Et maintenant nous pouvons construire notre boxplot</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>box1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> mtcars, <span class="fu">aes</span>(<span class="at">x =</span> cyl, <span class="at">y =</span> mpg, <span class="at">fill =</span> cyl)) <span class="sc">+</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Miles par gallon (mpg) selon le nombre de cylindres dans mtcars"</span>,</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Nombre de cylindres"</span>, <span class="at">y =</span> <span class="st">"Miles per gallon (mpg)"</span>)</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(box1)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="session-05_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="session-05_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -700,7 +751,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="q26" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q26">Question 5.1</h3>
 <p>Jugez chaque proposition concernant l’histogramme suivant des points obtenus au Problem Set 1 :</p>
-<p><img src="session-05_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
+<p><img src="session-05_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
 <ol type="a">
 <li><p>Les étudiant·es ont obtenu le plus fréquemment 13 points dans le Problem Set 1. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
 <li><p>Le graphique montre qu’en médiane, 16 points ont été obtenus dans le Problem Set 1. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
@@ -735,7 +786,7 @@ Explication
 <section id="q28" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q28">Question 5.3</h3>
 <p>Jugez chaque proposition concernant le graphique suivant, créé avec le jeu de données <code>mpg</code> (inclus dans le paquet <code>ggplot2</code>) :</p>
-<p><img src="session-05_files/figure-html/unnamed-chunk-13-2.png" class="img-fluid" width="672"></p>
+<p><img src="session-05_files/figure-html/unnamed-chunk-14-2.png" class="img-fluid" width="672"></p>
 <ol type="a">
 <li><p>La ligne de régression indique que la corrélation entre la taille du moteur et l’efficacité du carburant est négative. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Les données présentées proviennent du jeu de données <code>mtcars</code>. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
@@ -756,10 +807,10 @@ Explication
 <section id="q29" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q29">Question 5.4</h3>
 <p>Exécutez le code R suivant et jugez chaque proposition :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(mpg, wt)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(g)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(mpg, wt)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(g)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <ol type="a">
 <li><p><code>g</code> est un objet stocké dans le volet <em>Environment</em> de RStudio. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Le graphique <code>g</code> affiche une relation entre le poids des voitures (<code>wt</code>) et leur efficacité énergétique (<code>mpg</code>, miles par gallon). <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
@@ -780,15 +831,15 @@ Explication
 <section id="q30" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q30">Question 5.5</h3>
 <p>Exécutez le code R suivant et jugez chaque proposition :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Transformations :</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>mtcars<span class="sc">$</span>cyl <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(mtcars<span class="sc">$</span>cyl)</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>mtcars<span class="sc">$</span>gear <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(mtcars<span class="sc">$</span>gear)</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Diagramme à barres :</span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> cyl, <span class="at">fill =</span> gear)) <span class="sc">+</span></span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribution of cylinders and gears in mtcars"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Transformations :</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>mtcars<span class="sc">$</span>cyl <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(mtcars<span class="sc">$</span>cyl)</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>mtcars<span class="sc">$</span>gear <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(mtcars<span class="sc">$</span>gear)</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Diagramme à barres :</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> cyl, <span class="at">fill =</span> gear)) <span class="sc">+</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribution of cylinders and gears in mtcars"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <ol type="a">
 <li><p>Ce code produit un diagramme à barres représentant le nombre de voitures par nombre de cylindres. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>La couleur des barres est déterminée par le nombre de vitesses (<code>gear</code>). <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
@@ -810,7 +861,7 @@ Explication
 <section id="q31" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q31">Question 5.6</h3>
 <p>Exécutez le code R suivant et jugez chaque proposition :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">1000</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">1000</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <ol type="a">
 <li><p>Ce code génère 1000 valeurs « aléatoires » qui se rapprochent d’une loi normale centrée réduite (<em>standard normal distribution</em>). <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Ce code génère un message d’erreur, car il y a des arguments manquants dans la fonction <code>rnorm()</code>. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
@@ -867,13 +918,13 @@ Explication
 <section id="q100" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q100">Question 5.10</h3>
 <p>Le code suivant crée un histogramme qui indique une loi normale :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> diamonds, <span class="fu">aes</span>(<span class="at">x =</span> price)) <span class="sc">+</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">600</span>, <span class="at">fill =</span> <span class="st">"steelblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Histogramme des prix dans le jeu de données diamonds"</span>,</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"n = 53 940 observations"</span>,</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Prix en USD"</span>, <span class="at">y =</span> <span class="st">"Fréquence"</span>) <span class="sc">+</span></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> diamonds, <span class="fu">aes</span>(<span class="at">x =</span> price)) <span class="sc">+</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">600</span>, <span class="at">fill =</span> <span class="st">"steelblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Histogramme des prix dans le jeu de données diamonds"</span>,</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"n = 53 940 observations"</span>,</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Prix en USD"</span>, <span class="at">y =</span> <span class="st">"Fréquence"</span>) <span class="sc">+</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p><select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p>
 <div class="webex-solution">
 <button>
@@ -896,7 +947,7 @@ Explication
 <section id="q104" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q104">Question 5.12</h3>
 <p>Le graphique suivant montre une simulation d’un million de tailles aléatoires d’hommes en Suisse, réalisée avec la fonction <code>rnorm()</code>. Il illustre le fait que plus le nombre de simulations est élevé, plus une loi normale est approchée avec précision.</p>
-<p><img src="session-05_files/figure-html/unnamed-chunk-13-3.png" class="img-fluid" width="672"></p>
+<p><img src="session-05_files/figure-html/unnamed-chunk-14-3.png" class="img-fluid" width="672"></p>
 <p><select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p>
 <div class="webex-solution">
 <button>
@@ -906,6 +957,14 @@ Explication
 </div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-brown_colors" class="csl-entry" role="listitem">
+Brown, K. W. (2021, 23 janvier). <em>Colors in <span>R</span></em>. RPubs. <a href="https://rpubs.com/kylewbrown/r-colors">https://rpubs.com/kylewbrown/r-colors</a>
+</div>
+<div id="ref-muller2022" class="csl-entry" role="listitem">
+Müller, S.-M., Floris, J., Rohrmann, S., Staub, K., &amp; Matthes, K. L. (2022). Body height among adult male and female <span>Swiss</span> <span>Health</span> <span>Survey</span> participants in 2017: Trends by birth years and associations with self-reported health status and life satisfaction. <em>Preventive Medicine Reports</em>, <em>29</em>, 101980. <a href="https://doi.org/10.1016/j.pmedr.2022.101980">https://doi.org/10.1016/j.pmedr.2022.101980</a>
+</div>
+</div>
 </section>
 </section>
 

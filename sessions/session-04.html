@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; Paquets, jeux de données et premiers graphiques – Exercices Méthodes II</title>
+<title>4&nbsp; Paquets, jeux de données et premiers graphiques – Introduction à R pour les sciences de la communication</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -58,7 +58,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -79,7 +99,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-fa9f328cd4a8f9b1bff39b312214e759.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-8b9bfa8f06f8d75c827c202792a57b06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -136,9 +156,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Exercices Méthodes II</a> 
+      <a href="../">Introduction à R pour les sciences de la communication</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/julesaberlin/intro-a-R" title="Code source" class="quarto-navigation-tool px-1" aria-label="Code source"><i class="bi bi-github"></i></a>
+    <a href="../intro-a-R.pdf" title="Télécharger PDF" class="quarto-navigation-tool px-1" aria-label="Télécharger PDF"><i class="bi bi-file-pdf"></i></a>
 </div>
     </div>
       </div>
@@ -245,6 +266,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">À propos</span></a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Annexes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../corriges.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Corrigés</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Références</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -310,12 +354,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Notez que la plupart des paquets R doit être installé séparément, normalement depuis le site <a href="http://cran.r-project.org">Comprehensive R Archive Network (CRAN)</a>. Dans ce cours, nous nous concentrerons sur deux paquets célèbres :</p>
 <ul>
-<li><p><code>ggplot2</code> pour créer des <strong>visualisations de données</strong></p></li>
-<li><p><code>dplyr</code> pour <strong>manipuler les jeux de données</strong></p></li>
+<li><p><code>ggplot2</code> pour créer des <strong>visualisations de données</strong> <span class="citation" data-cites="wickham2016">(<a href="../references.html#ref-wickham2016" role="doc-biblioref">Wickham, 2016</a>)</span></p></li>
+<li><p><code>dplyr</code> pour <strong>manipuler les jeux de données</strong> <span class="citation" data-cites="dplyr2026">(<a href="../references.html#ref-dplyr2026" role="doc-biblioref">Wickham et al., 2026</a>)</span></p></li>
 </ul>
-<p>Tous deux font partie du <a href="https://www.tidyverse.org">tidyverse</a>, une collection de paquets conçus pour la science des données. Nous utiliserons également le paquet suivant :</p>
+<p>Tous deux font partie du <a href="https://www.tidyverse.org">tidyverse</a>, une collection de paquets conçus pour la science des données <span class="citation" data-cites="wickham2019">(<a href="../references.html#ref-wickham2019" role="doc-biblioref">Wickham et al., 2019</a>)</span>. Nous utiliserons également le paquet suivant :</p>
 <ul>
-<li><code>ggthemes</code> pour <strong>augmenter le design des graphiques</strong></li>
+<li><code>ggthemes</code> pour <strong>augmenter le design des graphiques</strong> <span class="citation" data-cites="ggthemes2026">(<a href="../references.html#ref-ggthemes2026" role="doc-biblioref">Arnold, 2026</a>)</span></li>
 </ul>
 <p>Pour utiliser un paquet R sur votre ordinateur, il faut :</p>
 <ol type="1">
@@ -388,9 +432,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Dans ce qui suit, nous allons explorer trois jeux de données classiques de ce type :</p>
 <ul>
 <li><p><code>iris</code> et <code>mtcars</code>, fournis avec R ;</p></li>
-<li><p><code>diamonds</code>, fourni avec le paquet <code>ggplot2</code>.</p></li>
+<li><p><code>diamonds</code>, fourni avec le paquet <code>ggplot2</code> <span class="citation" data-cites="wickham2016">(<a href="../references.html#ref-wickham2016" role="doc-biblioref">Wickham, 2016</a>)</span>.</p></li>
 </ul>
-<p>Nous verrons un quatrième jeu de données, <code>penguins</code> (paquet <code>palmerpenguins</code>), en session 12.</p>
+<p>Nous verrons un quatrième jeu de données, <code>penguins</code> (paquet <code>palmerpenguins</code> ; <span class="citation" data-cites="horst2020">Horst et al. (<a href="../references.html#ref-horst2020" role="doc-biblioref">2020</a>)</span>), en session 12.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Astuce">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -407,7 +451,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="le-jeu-de-données-iris" class="level3">
 <h3 class="anchored" data-anchor-id="le-jeu-de-données-iris">Le jeu de données <code>iris</code></h3>
 <p>Le jeu de données <code>iris</code> est un ensemble de données célèbre qui contient les mesures en centimètres des variables longueur et largeur du sépale, ainsi que longueur et largeur du pétale, pour trois espèces de fleurs d’iris (Setosa, Virginica et Versicolor). Il y a 150 observations en total (50 pour chaque espèce).</p>
-<p>Le jeu de données a été rendu célèbre par le statisticien et biologiste britannique <strong>Ronald Fisher</strong> dans un article scientifique de 1936 qui avait beaucoup d’influence dans le domaine des statistiques. Les mesures ont été publiées par le botaniste Edgar Anderson (1935) ; deux des trois espèces proviennent de la péninsule de Gaspé (Québec, Canada).</p>
+<p>Le jeu de données a été rendu célèbre par le statisticien et biologiste britannique <strong>Ronald Fisher</strong> dans un article scientifique de 1936 qui avait beaucoup d’influence dans le domaine des statistiques <span class="citation" data-cites="fisher1936">(<a href="../references.html#ref-fisher1936" role="doc-biblioref">Fisher, 1936</a>)</span>. Les mesures ont été publiées par le botaniste Edgar Anderson <span class="citation" data-cites="anderson1935">(<a href="../references.html#ref-anderson1935" role="doc-biblioref">1935</a>)</span> ; deux des trois espèces proviennent de la péninsule de Gaspé (Québec, Canada).</p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -487,7 +531,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="le-jeu-de-données-mtcars" class="level3">
 <h3 class="anchored" data-anchor-id="le-jeu-de-données-mtcars">Le jeu de données <code>mtcars</code></h3>
-<p>Utilisez le script suivant pour analyser <code>mtcars</code>(lisez également la documentation avec <code>?mtcars</code>) !</p>
+<p>Utilisez le script suivant pour analyser <code>mtcars</code> (lisez également la documentation avec <code>?mtcars</code>) ! Les données proviennent de <span class="citation" data-cites="henderson1981">Henderson &amp; Velleman (<a href="../references.html#ref-henderson1981" role="doc-biblioref">1981</a>)</span>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Chargez le jeu de données mtcars. Il devrait apparaître</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># dans l'environnement</span></span>
@@ -894,6 +938,32 @@ Explication
 </div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-anderson1935" class="csl-entry" role="listitem">
+Anderson, E. (1935). The irises of the <span>Gaspé</span> <span>Peninsula</span>. <em>Bulletin of the American Iris Society</em>, <em>59</em>, 2–5.
+</div>
+<div id="ref-ggthemes2026" class="csl-entry" role="listitem">
+Arnold, J. B. (2026). <em><span>ggthemes</span>: Extra themes, scales and geoms for ’ggplot2’</em> (Version 6.0.0) [Paquet R]. CRAN. <a href="https://doi.org/10.32614/CRAN.package.ggthemes">https://doi.org/10.32614/CRAN.package.ggthemes</a>
+</div>
+<div id="ref-fisher1936" class="csl-entry" role="listitem">
+Fisher, R. A. (1936). The use of multiple measurements in taxonomic problems. <em>Annals of Eugenics</em>, <em>7</em>(2), 179–188. <a href="https://doi.org/10.1111/j.1469-1809.1936.tb02137.x">https://doi.org/10.1111/j.1469-1809.1936.tb02137.x</a>
+</div>
+<div id="ref-henderson1981" class="csl-entry" role="listitem">
+Henderson, H. V., &amp; Velleman, P. F. (1981). Building multiple regression models interactively. <em>Biometrics</em>, <em>37</em>(2), 391–411. <a href="https://doi.org/10.2307/2530428">https://doi.org/10.2307/2530428</a>
+</div>
+<div id="ref-horst2020" class="csl-entry" role="listitem">
+Horst, A. M., Hill, A. P., &amp; Gorman, K. B. (2020). <em><span>palmerpenguins</span>: <span>Palmer</span> <span>Archipelago</span> (<span>Antarctica</span>) penguin data</em> (Version 0.1.0) [Paquet R]. Zenodo. <a href="https://doi.org/10.5281/zenodo.3960218">https://doi.org/10.5281/zenodo.3960218</a>
+</div>
+<div id="ref-wickham2016" class="csl-entry" role="listitem">
+Wickham, H. (2016). <em><span>ggplot2</span>: Elegant graphics for data analysis</em>. Springer. <a href="https://doi.org/10.1007/978-3-319-24277-4">https://doi.org/10.1007/978-3-319-24277-4</a>
+</div>
+<div id="ref-wickham2019" class="csl-entry" role="listitem">
+Wickham, H., Averick, M., Bryan, J., Chang, W., McGowan, L. D., François, R., Grolemund, G., Hayes, A., Henry, L., Hester, J., Kuhn, M., Pedersen, T. L., Miller, E., Bache, S. M., Müller, K., Ooms, J., Robinson, D., Seidel, D. P., Spinu, V., … Yutani, H. (2019). Welcome to the <span>tidyverse</span>. <em>Journal of Open Source Software</em>, <em>4</em>(43), 1686. <a href="https://doi.org/10.21105/joss.01686">https://doi.org/10.21105/joss.01686</a>
+</div>
+<div id="ref-dplyr2026" class="csl-entry" role="listitem">
+Wickham, H., François, R., Henry, L., Müller, K., &amp; Vaughan, D. (2026). <em><span>dplyr</span>: A grammar of data manipulation</em> (Version 1.2.1) [Paquet R]. CRAN. <a href="https://doi.org/10.32614/CRAN.package.dplyr">https://doi.org/10.32614/CRAN.package.dplyr</a>
+</div>
+</div>
 </section>
 </section>
 

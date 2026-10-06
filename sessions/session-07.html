@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; Importer et manipuler des données – Exercices Méthodes II</title>
+<title>7&nbsp; Importer et manipuler des données – Introduction à R pour les sciences de la communication</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -79,7 +79,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-fa9f328cd4a8f9b1bff39b312214e759.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-8b9bfa8f06f8d75c827c202792a57b06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -136,9 +136,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Exercices Méthodes II</a> 
+      <a href="../">Introduction à R pour les sciences de la communication</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/julesaberlin/intro-a-R" title="Code source" class="quarto-navigation-tool px-1" aria-label="Code source"><i class="bi bi-github"></i></a>
+    <a href="../intro-a-R.pdf" title="Télécharger PDF" class="quarto-navigation-tool px-1" aria-label="Télécharger PDF"><i class="bi bi-file-pdf"></i></a>
 </div>
     </div>
       </div>
@@ -245,6 +246,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">À propos</span></a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Annexes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../corriges.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Corrigés</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Références</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -260,7 +284,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#la-transformation-du-type-de-variable" id="toc-la-transformation-du-type-de-variable" class="nav-link" data-scroll-target="#la-transformation-du-type-de-variable"><span class="header-section-number">7.3</span> La transformation du type de variable</a></li>
   <li><a href="#lopérateur" id="toc-lopérateur" class="nav-link" data-scroll-target="#lopérateur"><span class="header-section-number">7.4</span> L’opérateur <code>%&gt;%</code></a></li>
   <li><a href="#manipuler-les-données-avec-dplyr" id="toc-manipuler-les-données-avec-dplyr" class="nav-link" data-scroll-target="#manipuler-les-données-avec-dplyr"><span class="header-section-number">7.5</span> Manipuler les données avec <code>dplyr</code></a></li>
-  <li><a href="#manipulation-de-colonnes-selectet-mutate" id="toc-manipulation-de-colonnes-selectet-mutate" class="nav-link" data-scroll-target="#manipulation-de-colonnes-selectet-mutate"><span class="header-section-number">7.6</span> Manipulation de colonnes : <code>select()</code>et <code>mutate()</code></a></li>
+  <li><a href="#manipulation-de-colonnes-selectet-mutate" id="toc-manipulation-de-colonnes-selectet-mutate" class="nav-link" data-scroll-target="#manipulation-de-colonnes-selectet-mutate"><span class="header-section-number">7.6</span> Manipulation de colonnes : <code>select()</code> et <code>mutate()</code></a></li>
   <li><a href="#manipulation-de-lignes-avec-filter-et-arrange" id="toc-manipulation-de-lignes-avec-filter-et-arrange" class="nav-link" data-scroll-target="#manipulation-de-lignes-avec-filter-et-arrange"><span class="header-section-number">7.7</span> Manipulation de lignes avec <code>filter()</code> et <code>arrange()</code></a></li>
   <li><a href="#résumer-compter-et-regrouper-avec-summarize-count-et-group_by" id="toc-résumer-compter-et-regrouper-avec-summarize-count-et-group_by" class="nav-link" data-scroll-target="#résumer-compter-et-regrouper-avec-summarize-count-et-group_by"><span class="header-section-number">7.8</span> Résumer, compter et regrouper avec <code>summarize()</code>, <code>count()</code> et <code>group_by()</code></a></li>
   <li><a href="#devoir-pour-session-8-et-infos-questionnaire" id="toc-devoir-pour-session-8-et-infos-questionnaire" class="nav-link" data-scroll-target="#devoir-pour-session-8-et-infos-questionnaire">À faire avant de continuer</a></li>
@@ -292,8 +316,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p><strong>Sujet : Manipuler les données (partie 1)</strong></p>
 <p>Le premier but de cette session est d’apprendre à importer des données dans RStudio à partir de <strong>fichiers CSV</strong> et de les stocker en forme de data frame (format tabulaire).</p>
-<p>Le deuxième but est de se familiariser avec <code>dplyr</code> (prononcé “dee-ply-er” en anglais), un paquet du <code>tidyverse</code> conçu pour manipuler les données en forme de data frame.</p>
-<p>Contrairement aux jeux de données intégrés à R (tels que <code>diamonds</code>, etc.), la plupart des jeux de données du monde réel nécessitent des <strong>transformations</strong> avant de pouvoir être analysés et visualisés. À cette fin, nous examinerons également certaines transformations de types de variables et un nouvel opérateur, le <code>%&gt;%</code> (angl. “pipe”; trad. franç. “tuyau”), qui est très utile pour les manipulations de données.</p>
+<p>Le deuxième but est de se familiariser avec <code>dplyr</code> (prononcé « dee-ply-er » en anglais), un paquet du <code>tidyverse</code> conçu pour manipuler les données en forme de data frame.</p>
+<p>Contrairement aux jeux de données intégrés à R (tels que <code>diamonds</code>, etc.), la plupart des jeux de données du monde réel nécessitent des <strong>transformations</strong> avant de pouvoir être analysés et visualisés. À cette fin, nous examinerons également certaines transformations de types de variables et un nouvel opérateur, le <code>%&gt;%</code> (angl. « pipe »; trad. franç. « tuyau »), qui est très utile pour les manipulations de données.</p>
 <section id="lire-des-données-auf-format-csv-dans-rstudio" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="lire-des-données-auf-format-csv-dans-rstudio"><span class="header-section-number">7.1</span> Lire des données au format CSV dans RStudio</h2>
 <p>Par la suite, nous allons appliquer <code>dplyr</code> pour manipuler les données d’un jeu de données concret : un fichier CSV nommé <code>igposts.csv</code>. Ce fichier contient des posts Instagram de célébritées qui ont reçu beaucoup d’interactions d’utilisateurs. Pour cette application, il faut d’abord charger ce jeu de données dans notre session RStudio en cours.</p>
@@ -392,8 +416,8 @@ Nguyen, Laetitia, 19<br>
 <ul>
 <li><p><strong>Encoding = UTF-8</strong> : Indique à RStudio d’utiliser <a href="https://fr.wikipedia.org/wiki/UTF-8">l’encodage de caractères UTF-8</a> (qui est un standard très répandu), ce qui est important pour lire correctement toutes les lettres (notamment les caractères avec des accents : é, ä, ê, etc.).</p></li>
 <li><p><strong>Heading = YES</strong> : Indique à RStudio que la première ligne du fichier CSV contient les noms des colonnes.</p></li>
-<li><p><strong>Separator = Comma</strong> : Indique à RStudio que les valeurs du tableau sont séparées par des virgules “,” (attention, certains documents francophones utilisent le point-virgule “;” à la place de la virgule, ce qu’il faudrait tenir en compte, si c’était le cas).</p></li>
-<li><p><strong>Decimal = Period</strong> : Indique à RStudio que le point “.” est utilisé pour les décimales (et non la virgule “,” comme c’est souvent le cas dans les documents en français).</p></li>
+<li><p><strong>Separator = Comma</strong> : Indique à RStudio que les valeurs du tableau sont séparées par des virgules « , » (attention, certains documents francophones utilisent le point-virgule « ; » à la place de la virgule, ce qu’il faudrait tenir en compte, si c’était le cas).</p></li>
+<li><p><strong>Decimal = Period</strong> : Indique à RStudio que le point « . » est utilisé pour les décimales (et non la virgule « , » comme c’est souvent le cas dans les documents en français).</p></li>
 <li><p><strong>na.strings = NA</strong>&nbsp;: valeur par défaut. Ce fichier n’a pas de valeurs manquantes&nbsp;; dans d’autres fichiers (p.&nbsp;ex. exports Excel), elles peuvent être codées autrement, p.&nbsp;ex. #N/A.</p></li>
 </ul></li>
 </ul></li>
@@ -430,7 +454,7 @@ Nguyen, Laetitia, 19<br>
 <section id="explorez-votre-jeu-de-données-importé" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="explorez-votre-jeu-de-données-importé"><span class="header-section-number">7.2</span> Explorez votre jeu de données importé</h2>
 <p>Cela nous montre qu’il s’agit d’un data frame avec 84 observations et 11 variables. Chaque ligne (unité statistique) représente une observation associant un post Instagram à un compte qui l’a publié ou co-publié : les 84 lignes correspondent à 82 posts distincts provenant de 33 comptes. Chaque colonne est une variable différente associée à cette observation.</p>
-<p>Notez que les variables sont soit de type textuel (chr = “character”; p. ex. <code>Account</code>= le nom du compte Insta qui a publié le post), soit numérique (int = “integer”; p.&nbsp;ex. <code>Total.Interactions</code> = la somme des <code>Likes</code>et <code>Comments</code> qu’un post a reçu).</p>
+<p>Notez que les variables sont soit de type textuel (chr = « character »; p. ex. <code>Account</code>= le nom du compte Insta qui a publié le post), soit numérique (int = « integer »; p.&nbsp;ex. <code>Total.Interactions</code> = la somme des <code>Likes</code> et <code>Comments</code> qu’un post a reçu).</p>
 <p>Vous pouvez aussi cliquer sur l’objet et explorer le tableau manuellement pour le comprendre davantage (comme nous l’avons fait avec <code>mtcars</code>, etc.).</p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
@@ -453,10 +477,10 @@ Nguyen, Laetitia, 19<br>
 </div>
 </div>
 </div>
-<p>Avant de continuer avec <code>dplyr</code>, regardons encore deux éléments cruciales pour la manipulation de données avec R :</p>
+<p>Avant de continuer avec <code>dplyr</code>, regardons encore deux éléments cruciaux pour la manipulation de données avec R :</p>
 <ul>
 <li><p>la transformation du type de variable (p.&nbsp;ex. de variables textuelles en facteurs)</p></li>
-<li><p>L’opérateur <code>%&gt;%</code> (angl. “pipe”; trad. française “tuyau”)</p></li>
+<li><p>L’opérateur <code>%&gt;%</code> (angl. « pipe »; trad. française « tuyau »)</p></li>
 </ul>
 </section>
 <section id="la-transformation-du-type-de-variable" class="level2" data-number="7.3">
@@ -496,7 +520,7 @@ Nguyen, Laetitia, 19<br>
 </section>
 <section id="lopérateur" class="level2" data-number="7.4">
 <h2 data-number="7.4" class="anchored" data-anchor-id="lopérateur"><span class="header-section-number">7.4</span> L’opérateur <code>%&gt;%</code></h2>
-<p>La fonction principale du pipe <code>%&gt;%</code> : construire <strong>une séquence de fonctions (“un tuyau”)</strong> qui est plus facile à comprendre et à lire dans le code.</p>
+<p>La fonction principale du pipe <code>%&gt;%</code> : construire <strong>une séquence de fonctions (« un tuyau »)</strong> qui est plus facile à comprendre et à lire dans le code.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Par exemple, regardez la fonction suivante : quel est le</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># problème ?</span></span>
@@ -564,7 +588,7 @@ Nguyen, Laetitia, 19<br>
 <p>Essayons maintenant d’appliquer tout cela avec du code et les données <code>igposts</code> pour comprendre ce que ça veut dire en pratique !</p>
 </section>
 <section id="manipulation-de-colonnes-selectet-mutate" class="level2" data-number="7.6">
-<h2 data-number="7.6" class="anchored" data-anchor-id="manipulation-de-colonnes-selectet-mutate"><span class="header-section-number">7.6</span> Manipulation de colonnes : <code>select()</code>et <code>mutate()</code></h2>
+<h2 data-number="7.6" class="anchored" data-anchor-id="manipulation-de-colonnes-selectet-mutate"><span class="header-section-number">7.6</span> Manipulation de colonnes : <code>select()</code> et <code>mutate()</code></h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># select() : fonction pour extraire une ou plusieurs</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># colonnes d'un data frame</span></span>
@@ -801,8 +825,8 @@ Explication
 <section id="q2" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q2">Question 7.2</h3>
 <p>Quel est le rôle principal de l’opérateur <code>%&gt;%</code> dans <code>dplyr</code> ?</p>
-<div id="radio_IBCMUGJQRS" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_IBCMUGJQRS" value=""> <span>Importer des données.</span></label><label><input type="radio" autocomplete="off" name="radio_IBCMUGJQRS" value=""> <span>Assigner des variables.</span></label><label><input type="radio" autocomplete="off" name="radio_IBCMUGJQRS" value="answer"> <span>Créer des séquences de fonctions pour simplifier le code.</span></label><label><input type="radio" autocomplete="off" name="radio_IBCMUGJQRS" value=""> <span>Convertir des types de données.</span></label><label><input type="radio" autocomplete="off" name="radio_IBCMUGJQRS" value=""> <span>Aucune des autres réponses n’est correcte.</span></label>
+<div id="radio_IFQFJYGRHY" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_IFQFJYGRHY" value=""> <span>Importer des données.</span></label><label><input type="radio" autocomplete="off" name="radio_IFQFJYGRHY" value=""> <span>Assigner des variables.</span></label><label><input type="radio" autocomplete="off" name="radio_IFQFJYGRHY" value="answer"> <span>Créer des séquences de fonctions pour simplifier le code.</span></label><label><input type="radio" autocomplete="off" name="radio_IFQFJYGRHY" value=""> <span>Convertir des types de données.</span></label><label><input type="radio" autocomplete="off" name="radio_IFQFJYGRHY" value=""> <span>Aucune des autres réponses n’est correcte.</span></label>
 </div>
 <div class="webex-solution">
 <button>

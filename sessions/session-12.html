@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>12&nbsp; Statistiques inférentielles II&nbsp;: ANOVA et régression – Exercices Méthodes II</title>
+<title>12&nbsp; Statistiques inférentielles II&nbsp;: ANOVA et régression – Introduction à R pour les sciences de la communication</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -58,7 +58,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -79,7 +99,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-fa9f328cd4a8f9b1bff39b312214e759.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-8b9bfa8f06f8d75c827c202792a57b06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -165,9 +185,10 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Exercices Méthodes II</a> 
+      <a href="../">Introduction à R pour les sciences de la communication</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/julesaberlin/intro-a-R" title="Code source" class="quarto-navigation-tool px-1" aria-label="Code source"><i class="bi bi-github"></i></a>
+    <a href="../intro-a-R.pdf" title="Télécharger PDF" class="quarto-navigation-tool px-1" aria-label="Télécharger PDF"><i class="bi bi-file-pdf"></i></a>
 </div>
     </div>
       </div>
@@ -274,6 +295,29 @@ window.Quarto = {
  <span class="menu-text">À propos</span></a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Annexes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../corriges.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Corrigés</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Références</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -369,10 +413,11 @@ window.Quarto = {
 <figcaption>Logo du paquet <a href="https://allisonhorst.github.io/palmerpenguins/index.html">palmerpenguins</a>. Illustration : Allison Horst, <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>.</figcaption>
 </figure>
 </div>
-<p>Pour cet exemple, il faut télécharger le paquet R <code>palmerpenguins</code>. Celui-ci contient un jeu de données avec des informations sur trois espèces de manchots (Adélie, à jugulaire et papou ; en anglais Adelie, Chinstrap et Gentoo) qui vivent dans l’archipel de Palmer en Antarctique.</p>
-<p>Les données ont été collectées entre 2007 et 2009 et comprennent des mesures telles que la longueur du bec (<code>bill_length_mm</code>), la longueur des nageoires (<code>flipper_length_mm</code>), le poids corporel (<code>body_mass_g</code>) et le sexe des manchots.</p>
+<p>Pour cet exemple, il faut télécharger le paquet R <code>palmerpenguins</code> <span class="citation" data-cites="horst2020">(<a href="../references.html#ref-horst2020" role="doc-biblioref">Horst et al., 2020</a>)</span>. Celui-ci contient un jeu de données avec des informations sur trois espèces de manchots (Adélie, à jugulaire et papou ; en anglais Adelie, Chinstrap et Gentoo) qui vivent dans l’archipel de Palmer en Antarctique.</p>
+<p>Les données ont été collectées entre 2007 et 2009 <span class="citation" data-cites="gorman2014">(<a href="../references.html#ref-gorman2014" role="doc-biblioref">Gorman et al., 2014</a>)</span> et comprennent des mesures telles que la longueur du bec (<code>bill_length_mm</code>), la longueur des nageoires (<code>flipper_length_mm</code>), le poids corporel (<code>body_mass_g</code>) et le sexe des manchots.</p>
 <ul>
-<li><p>Utilisez le code suivant pour la première installation du paquet : <code>install.packages("palmerpenguins")</code></p></li>
+<li><p>Utilisez le code suivant pour la première installation du paquet :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"palmerpenguins"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Après l’installation, il suffit d’activer le paquet avec <code>library(palmerpenguins)</code></p></li>
 <li><p>Il est toujours recommandé de comprendre un nouveau jeu de données au niveau déscriptif, utilisez donc <code>?palmerpenguins</code> et naviguez un peu sur <a href="https://allisonhorst.github.io/palmerpenguins/">le site des créatrices de ce paquet R</a> !</p></li>
 <li><p>Le <strong>but de notre ANOVA</strong> est de déterminer si les différences de longueur moyenne des nageoires <code>flipper_length_mm</code> entre les trois espèces de manchots sont statistiquement significatives.</p>
@@ -382,7 +427,7 @@ window.Quarto = {
 </ul></li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.2.1     ✔ readr     2.2.0
@@ -395,7 +440,7 @@ window.Quarto = {
 ✖ dplyr::lag()    masks stats::lag()
 ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
 Attaching package: 'palmerpenguins'
@@ -404,8 +449,8 @@ The following objects are masked from 'package:datasets':
 
     penguins, penguins_raw</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Explorez d'abord un peu la structure du jeu de données</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(penguins)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Explorez d'abord un peu la structure du jeu de données</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(penguins)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>tibble [344 × 8] (S3: tbl_df/tbl/data.frame)
  $ species          : Factor w/ 3 levels "Adelie","Chinstrap",..: 1 1 1 1 1 1 1 1 1 1 ...
@@ -417,9 +462,9 @@ The following objects are masked from 'package:datasets':
  $ sex              : Factor w/ 2 levels "female","male": 2 1 1 NA 1 2 1 2 NA NA ...
  $ year             : int [1:344] 2007 2007 2007 2007 2007 2007 2007 2007 2007 2007 ...</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualisez les distributions de flipper length avec des</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># boxplots</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> flipper_length_mm)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualisez les distributions de flipper length avec des</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># boxplots</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> flipper_length_mm)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Removed 2 rows containing non-finite outside the scale range
 (`stat_boxplot()`).</code></pre>
@@ -431,13 +476,13 @@ The following objects are masked from 'package:datasets':
 </figure>
 </div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Comme alternative, vous pouvez aussi créez un histogramme</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># plus avancé pour comparer flipper length par espèce</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">fill =</span> species),</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">position =</span> <span class="st">"identity"</span>, <span class="at">bins =</span> <span class="dv">30</span>) <span class="sc">+</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"darkorange"</span>, <span class="st">"darkorchid"</span>,</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"cyan4"</span>)) <span class="sc">+</span> <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Histograms of flipper length by penguin species"</span>,</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"n = 344 ; data source : palmerpenguin R package"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Comme alternative, vous pouvez aussi créez un histogramme</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># plus avancé pour comparer flipper length par espèce</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">fill =</span> species),</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">position =</span> <span class="st">"identity"</span>, <span class="at">bins =</span> <span class="dv">30</span>) <span class="sc">+</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"darkorange"</span>, <span class="st">"darkorchid"</span>,</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"cyan4"</span>)) <span class="sc">+</span> <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Histograms of flipper length by penguin species"</span>,</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"n = 344 ; data source : palmerpenguin R package"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Removed 2 rows containing non-finite outside the scale range
 (`stat_bin()`).</code></pre>
@@ -449,12 +494,12 @@ The following objects are masked from 'package:datasets':
 </figure>
 </div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculs des variances de flipper length avec dplyr par</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># espèce de manchot, pour vérifier si l'hypothèse des</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># variances similaire entre groupes est satisfaite :</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">var_fl =</span> <span class="fu">var</span>(flipper_length_mm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculs des variances de flipper length avec dplyr par</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># espèce de manchot, pour vérifier si l'hypothèse des</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># variances similaire entre groupes est satisfaite :</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">var_fl =</span> <span class="fu">var</span>(flipper_length_mm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
   species   var_fl
@@ -463,9 +508,9 @@ The following objects are masked from 'package:datasets':
 2 Chinstrap   50.9
 3 Gentoo      42.1</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA avec aov()</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>anova_1 <span class="ot">&lt;-</span> <span class="fu">aov</span>(flipper_length_mm <span class="sc">~</span> species, <span class="at">data =</span> penguins)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(anova_1)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA avec aov()</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>anova_1 <span class="ot">&lt;-</span> <span class="fu">aov</span>(flipper_length_mm <span class="sc">~</span> species, <span class="at">data =</span> penguins)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(anova_1)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>             Df Sum Sq Mean Sq F value Pr(&gt;F)    
 species       2  52473   26237   594.8 &lt;2e-16 ***
@@ -474,9 +519,9 @@ Residuals   339  14953      44
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 2 observations deleted due to missingness</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># à noter, avec TukeyHSD() nous pouvons vérifier d'avantage</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># les différences entre chaque paire d'espèces :</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD</span>(anova_1)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># à noter, avec TukeyHSD() nous pouvons vérifier d'avantage</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># les différences entre chaque paire d'espèces :</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD</span>(anova_1)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Tukey multiple comparisons of means
     95% family-wise confidence level
@@ -489,7 +534,7 @@ Chinstrap-Adelie  5.869887  3.586583  8.153191     0
 Gentoo-Adelie    27.233349 25.334376 29.132323     0
 Gentoo-Chinstrap 21.363462 19.000841 23.726084     0</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Nous pouvons rejeter H0 avec une grande certitude !</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Nous pouvons rejeter H0 avec une grande certitude !</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </section>
@@ -586,15 +631,15 @@ y = \beta_0 + \beta_1 x + \epsilon
 <li><p>Nous supposons qu’il s’agit d’une <strong>relation de cause à effet</strong>, car les lois de la physique nous apprennent que l’accélération et le déplacement d’objets plus lourds nécessitent une force et une énergie plus importantes. Par conséquent, nous supposons que les voitures plus lourdes consomment généralement plus d’énergie en forme de carburant que les voitures plus légères.</p></li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Charger le jeu de données mtcars</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajuster un modèle de régression linéaire avec mpg comme</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co"># variable dépendante et wt comme variable indépendante</span></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>modele_1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> wt, <span class="at">data =</span> mtcars)</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Afficher le résumé du modèle que nous pouvons interpréter</span></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modele_1)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Charger le jeu de données mtcars</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajuster un modèle de régression linéaire avec mpg comme</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co"># variable dépendante et wt comme variable indépendante</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>modele_1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> wt, <span class="at">data =</span> mtcars)</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Afficher le résumé du modèle que nous pouvons interpréter</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modele_1)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -629,20 +674,20 @@ F-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10</code></pre>
 <li><p>Le <em>Adjusted R-squared</em> est une mesure de la proportion de la variance de la variable dépendante qui est expliquée par les variables indépendantes dans un modèle de régression linéaire, tout en tenant compte du nombre de variables indépendantes dans le modèle. Il est calculé en ajustant le R-squared en fonction du nombre de variables indépendantes dans le modèle, et est toujours inférieur ou égal au R-squared. Comme il pénalise les variables supplémentaires, le R² ajusté est un critère utile pour comparer des modèles ayant un nombre différent de variables, parmi d’autres (AIC, théorie, validation sur d’autres données).</p></li>
 <li><p>Enfin, la <em>F-statistic</em> est utilisée pour tester l’hypothèse nulle que le coefficient de régression est égal à zéro. Dans ce cas, la valeur de p associée à la statistique F est très faible (&lt; 0,0000000001294), ce qui indique que l’hypothèse nulle peut être rejetée et que le modèle est significatif.</p></li>
 </ul>
-<p>La vidéo YouTube suivante de StatQuest, un créateur de contenus qui explique très bien lest concepts statistiques (en anglais), décrit comment interpréter les résultats d’une regression linéaire dans R :</p>
+<p>La vidéo YouTube suivante de StatQuest, un créateur de contenus qui explique très bien lest concepts statistiques (en anglais), décrit comment interpréter les résultats d’une regression linéaire dans R <span class="citation" data-cites="statquest2017lmr">(<a href="../references.html#ref-statquest2017lmr" role="doc-biblioref">StatQuest with Josh Starmer, 2017b</a>)</span> :</p>
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/u1cc1r_Y7M0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
 <p><strong>Les graphiques de diagnostic</strong></p>
 <p>Les graphiques de diagnostic (angl. diagnostic plots) sont des graphiques utilisés pour évaluer la qualité d’un modèle de régression linéaire et vérifier si les hypothèses du modèle sont satisfaites (p. ex. si les <strong>résidus</strong> suivent approximativement une loi normale).</p>
 <p>En utilisant la fonction <code>plot()</code> après avoir calculé un modèle de régression linéaire dans R, nous pouvons visualiser quatre types de plots diagnostiques :</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cette commande fait en sorte que les graphes de</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co"># diagnostic soient tous affichés en même temps, sur un</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co"># panneau 2 X 2 :</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Afficher ensuite les graphiques de diagnostic :</span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(modele_1)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cette commande fait en sorte que les graphes de</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># diagnostic soient tous affichés en même temps, sur un</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co"># panneau 2 X 2 :</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Afficher ensuite les graphiques de diagnostic :</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(modele_1)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -669,13 +714,13 @@ F-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10</code></pre>
 <p>Si nous vérifions à nouveau les variables de mtcars (par exemple, avec <code>?mtcars</code>), une autre variable nous saute aux yeux qui pourrait avoir un impact sur <code>mpg</code> : la variable <code>hp</code>, qui indique la puissance brute en chevaux des voitures.</p>
 <p>On peut supposer que les voitures avec plus de chevaux, c’est-à-dire avec des moteurs plus puissants, parcourent <strong>moins de miles par gallon</strong> que les voitures avec moins de <code>hp</code>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajuster un modèle de régression linéaire multiple avec</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># mpg comme variable dépendante et wt et hp comme variables</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co"># indépendantes</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>modele_2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> wt <span class="sc">+</span> hp, <span class="at">data =</span> mtcars)</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Afficher le résumé du modèle que nous pouvons interpréter</span></span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modele_2)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajuster un modèle de régression linéaire multiple avec</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># mpg comme variable dépendante et wt et hp comme variables</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co"># indépendantes</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>modele_2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> wt <span class="sc">+</span> hp, <span class="at">data =</span> mtcars)</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Afficher le résumé du modèle que nous pouvons interpréter</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modele_2)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -697,9 +742,9 @@ Residual standard error: 2.593 on 29 degrees of freedom
 Multiple R-squared:  0.8268,    Adjusted R-squared:  0.8148 
 F-statistic: 69.21 on 2 and 29 DF,  p-value: 9.109e-12</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Afficher les graphiques de diagnostic</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(modele_2)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Afficher les graphiques de diagnostic</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(modele_2)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -712,7 +757,7 @@ F-statistic: 69.21 on 2 and 29 DF,  p-value: 9.109e-12</code></pre>
 <p>Le R-carré de notre modèle a également augmenté pour atteindre 82,68% (R-carré ajusté à 81,48%), ce qui est une valeur très élevée. Cela signifie que <code>modele_2</code> peut effectivement expliquer une plus grande partie de la variabilité de <code>mpg</code> que <code>modele_1</code>.</p>
 <p>Pour comparer deux modèles emboîtés, on utilise <code>anova(modele_1, modele_2)</code> :</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(modele_1, modele_2)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(modele_1, modele_2)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Analysis of Variance Table
 
@@ -753,10 +798,10 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 <p>Voyons comment ça marche avec du code R !</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Créons le modèle complet avec toutes le variables de</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co"># mtcars (avec ~ .)</span></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>full_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> ., <span class="at">data =</span> mtcars)</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(full_model)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Créons le modèle complet avec toutes le variables de</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co"># mtcars (avec ~ .)</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>full_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> ., <span class="at">data =</span> mtcars)</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(full_model)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -786,11 +831,11 @@ Residual standard error: 2.65 on 21 degrees of freedom
 Multiple R-squared:  0.869, Adjusted R-squared:  0.8066 
 F-statistic: 13.93 on 10 and 21 DF,  p-value: 3.793e-07</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Nous utilisons la fonction step(), en commençant par le</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co"># modèle complet et en permettant à la fois la sélection en</span></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co"># amont et l'élimination en aval sur la base de l'AIC (avec</span></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co"># direction = 'both')</span></span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>stepwise_model <span class="ot">&lt;-</span> <span class="fu">step</span>(full_model, <span class="at">direction =</span> <span class="st">"both"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Nous utilisons la fonction step(), en commençant par le</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="co"># modèle complet et en permettant à la fois la sélection en</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co"># amont et l'élimination en aval sur la base de l'AIC (avec</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="co"># direction = 'both')</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>stepwise_model <span class="ot">&lt;-</span> <span class="fu">step</span>(full_model, <span class="at">direction =</span> <span class="st">"both"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Start:  AIC=70.9
 mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb
@@ -927,7 +972,7 @@ mpg ~ wt + qsec + am
 </ul>
 <p>Après avoir exécuté la régression par étape, le résumé de <code>stepwise_model</code> affiche les coefficients pour chaque variable explicative ainsi que des statistiques telles que le R-carré, la statistique F et les valeurs p pour les variables explicatives.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(stepwise_model)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(stepwise_model)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -953,8 +998,8 @@ F-statistic: 52.75 on 3 and 28 DF,  p-value: 1.21e-11</code></pre>
 </div>
 <p><strong>Graphiques de diagnostic</strong> : Après avoir choisi un modèle, il est utile de vérifier les graphiques des résidus pour valider les hypothèses d’homoscédasticité, de normalité et d’indépendance des résidus :</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(stepwise_model)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(stepwise_model)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -969,13 +1014,13 @@ F-statistic: 52.75 on 3 and 28 DF,  p-value: 1.21e-11</code></pre>
 <h3 class="anchored" data-anchor-id="ressources-pour-aller-plus-loin">Ressources pour aller plus loin</h3>
 <p>Je vous recommande de jeter un coup d’œil à d’autres vidéos YouTube de StatQuest qui expliquent clairement les concepts statistiques, dont beaucoup sont très pertinents pour les sciences sociales et pour vos études en général, p.&nbsp;ex. :</p>
 <ul>
-<li><a href="https://youtu.be/nk2CQITm_eo">Linear Regression, Clearly Explained!!!</a></li>
-<li><a href="https://youtu.be/mno47Jn4gaU">Multiple Regression in R, Step-by-Step!!!</a></li>
-<li><a href="https://youtu.be/rzFX5NWojp0">The Normal Distribution, Clearly Explained!!!</a></li>
-<li><a href="https://youtu.be/vemZtEM63GY">p-values: What they are and how to interpret them</a></li>
-<li><a href="https://youtu.be/2AQKmw14mHM">R-squared, Clearly Explained!!!</a></li>
-<li><a href="https://youtu.be/0oc49DyA3hU">Hypothesis Testing and The Null Hypothesis, Clearly Explained!!!</a></li>
-<li><a href="https://youtu.be/C4N3_XJJ-jU">Logistic Regression in R, Clearly Explained!!!</a></li>
+<li><a href="https://youtu.be/nk2CQITm_eo">Linear Regression, Clearly Explained!!!</a> <span class="citation" data-cites="statquest2017lm">(<a href="../references.html#ref-statquest2017lm" role="doc-biblioref">StatQuest with Josh Starmer, 2017a</a>)</span></li>
+<li><a href="https://youtu.be/mno47Jn4gaU">Multiple Regression in R, Step by Step!!!</a> <span class="citation" data-cites="statquest2022mlr">(<a href="../references.html#ref-statquest2022mlr" role="doc-biblioref">StatQuest with Josh Starmer, 2022</a>)</span></li>
+<li><a href="https://youtu.be/rzFX5NWojp0">The Normal Distribution, Clearly Explained!!!</a> <span class="citation" data-cites="statquest2017normal">(<a href="../references.html#ref-statquest2017normal" role="doc-biblioref">StatQuest with Josh Starmer, 2017c</a>)</span></li>
+<li><a href="https://youtu.be/vemZtEM63GY">p-values: What they are and how to interpret them</a> <span class="citation" data-cites="statquest2020pvalues">(<a href="../references.html#ref-statquest2020pvalues" role="doc-biblioref">StatQuest with Josh Starmer, 2020a</a>)</span></li>
+<li><a href="https://youtu.be/2AQKmw14mHM">R-squared, Clearly Explained!!!</a> <span class="citation" data-cites="statquest2015r2">(<a href="../references.html#ref-statquest2015r2" role="doc-biblioref">StatQuest with Josh Starmer, 2015</a>)</span></li>
+<li><a href="https://youtu.be/0oc49DyA3hU">Hypothesis Testing and The Null Hypothesis, Clearly Explained!!!</a> <span class="citation" data-cites="statquest2020hypothesis">(<a href="../references.html#ref-statquest2020hypothesis" role="doc-biblioref">StatQuest with Josh Starmer, 2020b</a>)</span></li>
+<li><a href="https://youtu.be/C4N3_XJJ-jU">Logistic Regression in R, Clearly Explained!!!!</a> <span class="citation" data-cites="statquest2018logistic">(<a href="../references.html#ref-statquest2018logistic" role="doc-biblioref">StatQuest with Josh Starmer, 2018</a>)</span></li>
 </ul>
 </section>
 </section>
@@ -1006,9 +1051,9 @@ Explication
 <section id="q39" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q39">Question 12.2</h3>
 <p>Exécutez le code suivant et jugez chaque proposition :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>modele_1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span> mpg <span class="sc">~</span> wt <span class="sc">+</span> qsec <span class="sc">+</span> am, <span class="at">data =</span> mtcars)</span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modele_1)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>modele_1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span> mpg <span class="sc">~</span> wt <span class="sc">+</span> qsec <span class="sc">+</span> am, <span class="at">data =</span> mtcars)</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modele_1)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <ol type="a">
 <li><p>Ce modèle de régression pourrait être représenté visuellement par une ligne droite passant par un nuage de points. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
 <li><p><code>mpg</code> est la variable dépendante. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
@@ -1032,8 +1077,8 @@ Explication
 <button>
 Explication
 </button>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(penguins<span class="sc">$</span>body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)   <span class="co"># 4201.754</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(penguins<span class="sc">$</span>body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)   <span class="co"># 4201.754</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Deux manchots n’ont pas de poids (<code>NA</code>) : sans <code>na.rm = TRUE</code>, le résultat est <code>NA</code>.</p>
 </div>
 </section>
@@ -1045,9 +1090,9 @@ Explication
 <button>
 Explication
 </button>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(sex <span class="sc">==</span> <span class="st">"female"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">poids_moyen =</span> <span class="fu">mean</span>(body_mass_g))   <span class="co"># 3862.273</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(sex <span class="sc">==</span> <span class="st">"female"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">poids_moyen =</span> <span class="fu">mean</span>(body_mass_g))   <span class="co"># 3862.273</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="q114" class="level3 unnumbered">
@@ -1073,6 +1118,38 @@ Explication
 </div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-gorman2014" class="csl-entry" role="listitem">
+Gorman, K. B., Williams, T. D., &amp; Fraser, W. R. (2014). Ecological sexual dimorphism and environmental variability within a community of <span>Antarctic</span> penguins (genus <em>Pygoscelis</em>). <em>PLoS ONE</em>, <em>9</em>(3), e90081. <a href="https://doi.org/10.1371/journal.pone.0090081">https://doi.org/10.1371/journal.pone.0090081</a>
+</div>
+<div id="ref-horst2020" class="csl-entry" role="listitem">
+Horst, A. M., Hill, A. P., &amp; Gorman, K. B. (2020). <em><span>palmerpenguins</span>: <span>Palmer</span> <span>Archipelago</span> (<span>Antarctica</span>) penguin data</em> (Version 0.1.0) [Paquet R]. Zenodo. <a href="https://doi.org/10.5281/zenodo.3960218">https://doi.org/10.5281/zenodo.3960218</a>
+</div>
+<div id="ref-statquest2015r2" class="csl-entry" role="listitem">
+StatQuest with Josh Starmer. (2015, 3 février). <em>R-squared, clearly explained!!!</em> [Vidéo]. YouTube. <a href="https://www.youtube.com/watch?v=2AQKmw14mHM">https://www.youtube.com/watch?v=2AQKmw14mHM</a>
+</div>
+<div id="ref-statquest2017lm" class="csl-entry" role="listitem">
+StatQuest with Josh Starmer. (2017a, 24 juillet). <em>Linear regression, clearly explained!!!</em> [Vidéo]. YouTube. <a href="https://www.youtube.com/watch?v=nk2CQITm_eo">https://www.youtube.com/watch?v=nk2CQITm_eo</a>
+</div>
+<div id="ref-statquest2017lmr" class="csl-entry" role="listitem">
+StatQuest with Josh Starmer. (2017b, 25 juillet). <em>Linear regression in <span>R</span>, step-by-step</em> [Vidéo]. YouTube. <a href="https://www.youtube.com/watch?v=u1cc1r_Y7M0">https://www.youtube.com/watch?v=u1cc1r_Y7M0</a>
+</div>
+<div id="ref-statquest2017normal" class="csl-entry" role="listitem">
+StatQuest with Josh Starmer. (2017c, 9 octobre). <em>The normal distribution, clearly explained!!!</em> [Vidéo]. YouTube. <a href="https://www.youtube.com/watch?v=rzFX5NWojp0">https://www.youtube.com/watch?v=rzFX5NWojp0</a>
+</div>
+<div id="ref-statquest2018logistic" class="csl-entry" role="listitem">
+StatQuest with Josh Starmer. (2018, 26 juillet). <em>Logistic regression in <span>R</span>, clearly explained!!!!</em> [Vidéo]. YouTube. <a href="https://www.youtube.com/watch?v=C4N3_XJJ-jU">https://www.youtube.com/watch?v=C4N3_XJJ-jU</a>
+</div>
+<div id="ref-statquest2020pvalues" class="csl-entry" role="listitem">
+StatQuest with Josh Starmer. (2020a, 22 mars). <em>p-values: What they are and how to interpret them</em> [Vidéo]. YouTube. <a href="https://www.youtube.com/watch?v=vemZtEM63GY">https://www.youtube.com/watch?v=vemZtEM63GY</a>
+</div>
+<div id="ref-statquest2020hypothesis" class="csl-entry" role="listitem">
+StatQuest with Josh Starmer. (2020b, 5 juillet). <em>Hypothesis testing and the null hypothesis, clearly explained!!!</em> [Vidéo]. YouTube. <a href="https://www.youtube.com/watch?v=0oc49DyA3hU">https://www.youtube.com/watch?v=0oc49DyA3hU</a>
+</div>
+<div id="ref-statquest2022mlr" class="csl-entry" role="listitem">
+StatQuest with Josh Starmer. (2022, 18 novembre). <em>Multiple regression in <span>R</span>, step by step!!!</em> [Vidéo]. YouTube. <a href="https://www.youtube.com/watch?v=mno47Jn4gaU">https://www.youtube.com/watch?v=mno47Jn4gaU</a>
+</div>
+</div>
 </section>
 </section>
 

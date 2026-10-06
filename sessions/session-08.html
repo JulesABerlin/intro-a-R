@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>8&nbsp; Manipuler des données&nbsp;: exercices – Exercices Méthodes II</title>
+<title>8&nbsp; Manipuler des données&nbsp;: exercices – Introduction à R pour les sciences de la communication</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -79,7 +79,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-fa9f328cd4a8f9b1bff39b312214e759.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-8b9bfa8f06f8d75c827c202792a57b06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -136,9 +136,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Exercices Méthodes II</a> 
+      <a href="../">Introduction à R pour les sciences de la communication</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/julesaberlin/intro-a-R" title="Code source" class="quarto-navigation-tool px-1" aria-label="Code source"><i class="bi bi-github"></i></a>
+    <a href="../intro-a-R.pdf" title="Télécharger PDF" class="quarto-navigation-tool px-1" aria-label="Télécharger PDF"><i class="bi bi-file-pdf"></i></a>
 </div>
     </div>
       </div>
@@ -245,6 +246,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">À propos</span></a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Annexes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../corriges.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Corrigés</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Références</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -311,7 +335,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="mtcars-i" class="level3">
 <h3 class="anchored" data-anchor-id="mtcars-i">Exercice 1 : mtcars I</h3>
 <ul>
-<li>Affichez la structure de <code>mtcars</code>avec <code>str(mtcars)</code>.</li>
+<li>Affichez la structure de <code>mtcars</code> avec <code>str(mtcars)</code>.</li>
 <li>Sélectionnez ensuite les colonnes <code>mpg</code> et <code>cyl</code> de <code>mtcars</code> avec <code>dplyr</code>.</li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
@@ -506,7 +530,7 @@ Lincoln Continental  1.917404</code></pre>
 <h3 class="anchored" data-anchor-id="diamonds-i">Exercice 5 : diamonds I</h3>
 <ul>
 <li>Affichez encore une fois <code>str(diamonds)</code> !</li>
-<li>Utilisez des verbes <code>dplyr</code>pour compter le nombre de diamants dans <code>diamonds</code>qui pèsent plus de 3 carats !</li>
+<li>Utilisez des verbes <code>dplyr</code> pour compter le nombre de diamants dans <code>diamonds</code> qui pèsent plus de 3 carats !</li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
@@ -760,12 +784,12 @@ Lincoln Continental  1.917404</code></pre>
 <section id="igposts-i" class="level3">
 <h3 class="anchored" data-anchor-id="igposts-i">Exercice 11 : igposts I</h3>
 <ul>
-<li>Chargez le jeu de données <code>igposts</code>que nous avons vu pendant session
+<li>Chargez le jeu de données <code>igposts</code> que nous avons vu pendant session
 <ol start="7" type="1">
 <li></li>
 </ol></li>
 <li>Si nécessaire, téléchargez-le à nouveau depuis le <a href="../data/igposts.csv">site</a> et sauvegardez-le dans le dossier de votre ordinateur que vous avez défini comme répertoire de travail.</li>
-<li>Si nécessaire, transformez encore une fois les colonnes <code>igposts$Account</code>, <code>igposts$User.Name</code>et <code>igposts$Type</code> en variables catégorielles avec <code>as.factor()</code>.</li>
+<li>Si nécessaire, transformez encore une fois les colonnes <code>igposts$Account</code>, <code>igposts$User.Name</code> et <code>igposts$Type</code> en variables catégorielles avec <code>as.factor()</code>.</li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
@@ -819,7 +843,7 @@ Lincoln Continental  1.917404</code></pre>
 <section id="igposts-ii" class="level3">
 <h3 class="anchored" data-anchor-id="igposts-ii">Exercice 12 : igposts II</h3>
 <ul>
-<li>Utilisez <code>dplyr</code> pour trouver le nombre <code>n</code>de posts Instagram regroupés par compte des influenceurs dans <code>igposts</code>.</li>
+<li>Utilisez <code>dplyr</code> pour trouver le nombre <code>n</code> de posts Instagram regroupés par compte des influenceurs dans <code>igposts</code>.</li>
 <li>Affichez les 10 premiers par ordre décroissant de <code>n</code>.</li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
@@ -863,7 +887,7 @@ Lincoln Continental  1.917404</code></pre>
 <section id="igposts-iii" class="level3">
 <h3 class="anchored" data-anchor-id="igposts-iii">Exercice 13 : igposts III</h3>
 <ul>
-<li>Utilisez <code>dplyr</code> pour calculer le nombre moyen de <code>Likes</code>, <code>Comments</code>et <code>Reposts</code>par compte (<code>Account</code>) des influenceurs dans <code>igposts</code>.</li>
+<li>Utilisez <code>dplyr</code> pour calculer le nombre moyen de <code>Likes</code>, <code>Comments</code> et <code>Reposts</code> par compte (<code>Account</code>) des influenceurs dans <code>igposts</code>.</li>
 <li>Triez-les par ordre décroissant de la moyenne des <code>Likes</code>.</li>
 <li>Affichez le top 10.</li>
 </ul>

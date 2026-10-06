@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>À propos – Exercices Méthodes II</title>
+<title>À propos – Introduction à R pour les sciences de la communication</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,7 +23,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -33,6 +53,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./corriges.html" rel="next">
 <link href="./sessions/session-14.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -43,7 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-fa9f328cd4a8f9b1bff39b312214e759.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-8b9bfa8f06f8d75c827c202792a57b06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -100,9 +121,10 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Exercices Méthodes II</a> 
+      <a href="./">Introduction à R pour les sciences de la communication</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/julesaberlin/intro-a-R" title="Code source" class="quarto-navigation-tool px-1" aria-label="Code source"><i class="bi bi-github"></i></a>
+    <a href="./intro-a-R.pdf" title="Télécharger PDF" class="quarto-navigation-tool px-1" aria-label="Télécharger PDF"><i class="bi bi-file-pdf"></i></a>
 </div>
     </div>
       </div>
@@ -209,6 +231,29 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">À propos</span></a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Annexes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./corriges.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Corrigés</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Références</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -222,6 +267,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#auteur-et-contact" id="toc-auteur-et-contact" class="nav-link active" data-scroll-target="#auteur-et-contact">Auteur et contact</a></li>
   <li><a href="#licences" id="toc-licences" class="nav-link" data-scroll-target="#licences">Licences</a></li>
   <li><a href="#données" id="toc-données" class="nav-link" data-scroll-target="#données">Données</a></li>
+  <li><a href="#outils" id="toc-outils" class="nav-link" data-scroll-target="#outils">Outils</a></li>
   <li><a href="#cookies-et-suivi" id="toc-cookies-et-suivi" class="nav-link" data-scroll-target="#cookies-et-suivi">Cookies et suivi</a></li>
   <li><a href="#intelligence-artificielle" id="toc-intelligence-artificielle" class="nav-link" data-scroll-target="#intelligence-artificielle">Intelligence artificielle</a></li>
   <li><a href="#remerciements" id="toc-remerciements" class="nav-link" data-scroll-target="#remerciements">Remerciements</a></li>
@@ -307,7 +353,7 @@ ORCID&nbsp;: <a href="https://orcid.org/0000-0003-3989-5158">0000-0003-3989-5158
 <tr class="even">
 <td>Jeux de données intégrés à R (<code>iris</code>, <code>mtcars</code>, <code>women</code>, <code>diamonds</code>, <code>mpg</code>, <code>penguins</code>)</td>
 <td>Chapitres 4 à 13</td>
-<td>Voir la page d’aide de chaque jeu de données (p.&nbsp;ex. <code>?iris</code>)</td>
+<td><code>iris</code> : <span class="citation" data-cites="fisher1936">Fisher (<a href="references.html#ref-fisher1936" role="doc-biblioref">1936</a>)</span> et <span class="citation" data-cites="anderson1935">Anderson (<a href="references.html#ref-anderson1935" role="doc-biblioref">1935</a>)</span> ; <code>mtcars</code> : <span class="citation" data-cites="henderson1981">Henderson &amp; Velleman (<a href="references.html#ref-henderson1981" role="doc-biblioref">1981</a>)</span> ; <code>women</code> : <span class="citation" data-cites="mcneil1977">McNeil (<a href="references.html#ref-mcneil1977" role="doc-biblioref">1977</a>)</span> ; <code>diamonds</code> : <span class="citation" data-cites="wickham2016">Wickham (<a href="references.html#ref-wickham2016" role="doc-biblioref">2016</a>)</span> ; <code>mpg</code> : <span class="citation" data-cites="epa_fueleconomy">U.S. Environmental Protection Agency (<a href="references.html#ref-epa_fueleconomy" role="doc-biblioref">s.d.</a>)</span> ; <code>penguins</code> : <span class="citation" data-cites="gorman2014">Gorman et al. (<a href="references.html#ref-gorman2014" role="doc-biblioref">2014</a>)</span> et <span class="citation" data-cites="horst2020">Horst et al. (<a href="references.html#ref-horst2020" role="doc-biblioref">2020</a>)</span>. Voir aussi la page d’aide de chaque jeu de données (p.&nbsp;ex. <code>?iris</code>)</td>
 <td>Licences de R et des paquets concernés</td>
 </tr>
 <tr class="odd">
@@ -324,13 +370,20 @@ ORCID&nbsp;: <a href="https://orcid.org/0000-0003-3989-5158">0000-0003-3989-5158
 <h2 class="anchored" data-anchor-id="données">Données</h2>
 <ul>
 <li><strong><code>reponses_socio.csv</code></strong> est un fichier <strong>synthétique</strong> : ses données ont été simulées à partir du questionnaire d’une classe, et il ne contient <strong>aucune personne réelle</strong>. Les valeurs rares ont été regroupées pour protéger les participant·es (voir la <a href="https://github.com/julesaberlin/intro-a-R/blob/main/data/README.md">description des données</a>).</li>
-<li><strong><code>igposts.csv</code></strong> reprend les posts de l’échantillon Instagram initial de février–mars 2023 qui étaient encore publiquement accessibles le 5 octobre
-<ol start="2026" type="1">
-<li>L’échantillon initial avait été constitué en 2023 à partir de CrowdTangle. Pour la version publique actuelle, les métriques <code>Likes</code>, <code>Comments</code> et <code>Reposts</code> des posts encore disponibles ont été réobservées le 5 octobre 2026 à partir des pages Instagram publiques avec Zeeschuimer. Les nombres de followers ont été relevés sur les profils publics le même jour et sont arrondis selon l’affichage d’Instagram. Le fichier contient 84 observations compte–post correspondant à 82 posts distincts provenant de 33 comptes. Seize URL originales n’étaient plus disponibles et ont été exclues sans être remplacées par des posts plus récents. Le fichier public ne contient ni légendes, ni texte de commentaires, ni données brutes Zeeschuimer.<br>
-Les ratios par follower utilisent donc un instantané approximatif du nombre de followers au 5 octobre 2026 et ne constituent pas des taux d’engagement historiques au moment de la publication des posts. Les dates et heures sont en UTC (l’ancien fichier les donnait avec 5 heures de retard) ; <code>Account</code> et <code>User.Name</code> gardent les noms de 2023 (p.&nbsp;ex. <code>justinbieber</code>, aujourd’hui <code>lilbieber</code>). Les photos et textes des posts restent la propriété de leurs auteur·es. Le site renvoie aux posts par des liens et n’intègre aucun contenu d’Instagram.</li>
-</ol></li>
+<li><strong><code>igposts.csv</code></strong> contient 84 observations compte–post (82 posts Instagram distincts de 33 comptes, publiés en février–mars 2023), avec leurs métriques et leurs URL uniquement.
+<ul>
+<li><strong>Origine</strong> : l’échantillon initial a été constitué en 2023 à partir de CrowdTangle <span class="citation" data-cites="crowdtangle2023">(<a href="references.html#ref-crowdtangle2023" role="doc-biblioref">CrowdTangle Team, 2023</a>)</span>. Seuls les posts encore publiquement accessibles le 5 octobre 2026 ont été gardés ; seize URL originales n’étaient plus disponibles et ont été exclues sans être remplacées par des posts plus récents.</li>
+<li><strong>Réobservation</strong> : les métriques <code>Likes</code>, <code>Comments</code> et <code>Reposts</code> ont été relevées le 5 octobre 2026 sur les pages Instagram publiques avec Zeeschuimer <span class="citation" data-cites="peeters2026">(<a href="references.html#ref-peeters2026" role="doc-biblioref">Peeters, 2026</a>)</span>.</li>
+<li><strong>Followers et heures</strong> : les nombres de followers sont un instantané du 5 octobre 2026, arrondi selon l’affichage d’Instagram. Les ratios par follower ne sont donc pas des taux d’engagement historiques. Les dates et heures sont en UTC (l’ancien fichier les donnait avec 5 heures de retard) ; <code>Account</code> et <code>User.Name</code> gardent les noms de 2023 (p.&nbsp;ex. <code>justinbieber</code>, aujourd’hui <code>lilbieber</code>).</li>
+<li><strong>Ce qui n’est pas publié</strong> : ni légendes, ni texte de commentaires, ni données brutes Zeeschuimer. Les photos et textes des posts restent la propriété de leurs auteur·es ; le site renvoie aux posts par des liens et n’intègre aucun contenu d’Instagram.</li>
+</ul>
+La méthode complète est décrite dans la <a href="https://github.com/julesaberlin/intro-a-R/blob/main/data/README.md">description des données</a>.</li>
 <li>Les fichiers <strong><code>distribution_ps_1.csv</code></strong> à <strong><code>distribution_ps_4.csv</code></strong> contiennent les distributions agrégées des résultats réels (nombre d’étudiant·es par nombre de points) aux Problem Sets. Les résultats individuels ne sont pas publiés.</li>
 </ul>
+</section>
+<section id="outils" class="level2">
+<h2 class="anchored" data-anchor-id="outils">Outils</h2>
+<p>Ce livre est écrit avec Quarto <span class="citation" data-cites="quarto2026">(<a href="references.html#ref-quarto2026" role="doc-biblioref">Allaire et al., 2026</a>)</span> et R <span class="citation" data-cites="r2026">(<a href="references.html#ref-r2026" role="doc-biblioref">R Core Team, 2026</a>)</span> ; le code est exécuté avec knitr <span class="citation" data-cites="knitr2026">(<a href="references.html#ref-knitr2026" role="doc-biblioref">Xie, 2026</a>)</span> et les exercices interactifs utilisent le paquet webexercises <span class="citation" data-cites="webexercises2026">(<a href="references.html#ref-webexercises2026" role="doc-biblioref">Barr et al., 2026</a>)</span>. La liste complète des sources se trouve dans les <a href="./references.html">Références</a>.</p>
 </section>
 <section id="cookies-et-suivi" class="level2">
 <h2 class="anchored" data-anchor-id="cookies-et-suivi">Cookies et suivi</h2>
@@ -347,6 +400,50 @@ Les ratios par follower utilisent donc un instantané approximatif du nombre de 
 <p>Je remercie également les étudiant·es des Exercices Méthodes II de l’Université de Fribourg (2023–2025), dont les questions, les erreurs fécondes et les retours ont façonné ce matériel au fil des semestres.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-quarto2026" class="csl-entry" role="listitem">
+Allaire, J. J., Teague, C., Scheidegger, C., Xie, Y., Dervieux, C., &amp; Woodhull, G. (2026). <em>Quarto</em> (Version 1.9.37) [Logiciel]. Zenodo. <a href="https://doi.org/10.5281/zenodo.5960048">https://doi.org/10.5281/zenodo.5960048</a>
+</div>
+<div id="ref-anderson1935" class="csl-entry" role="listitem">
+Anderson, E. (1935). The irises of the <span>Gaspé</span> <span>Peninsula</span>. <em>Bulletin of the American Iris Society</em>, <em>59</em>, 2–5.
+</div>
+<div id="ref-webexercises2026" class="csl-entry" role="listitem">
+Barr, D., DeBruine, L., &amp; Van Lissa, C. J. (2026). <em><span>webexercises</span>: Create interactive web exercises</em> (Version 1.2.0) [Paquet R]. CRAN. <a href="https://doi.org/10.32614/CRAN.package.webexercises">https://doi.org/10.32614/CRAN.package.webexercises</a>
+</div>
+<div id="ref-crowdtangle2023" class="csl-entry" role="listitem">
+CrowdTangle Team. (2023). <em>CrowdTangle</em> [Logiciel]. Facebook, Menlo Park, California, United States.<div class="csl-block">Outil fermé en 2024.</div>
+</div>
+<div id="ref-fisher1936" class="csl-entry" role="listitem">
+Fisher, R. A. (1936). The use of multiple measurements in taxonomic problems. <em>Annals of Eugenics</em>, <em>7</em>(2), 179–188. <a href="https://doi.org/10.1111/j.1469-1809.1936.tb02137.x">https://doi.org/10.1111/j.1469-1809.1936.tb02137.x</a>
+</div>
+<div id="ref-gorman2014" class="csl-entry" role="listitem">
+Gorman, K. B., Williams, T. D., &amp; Fraser, W. R. (2014). Ecological sexual dimorphism and environmental variability within a community of <span>Antarctic</span> penguins (genus <em>Pygoscelis</em>). <em>PLoS ONE</em>, <em>9</em>(3), e90081. <a href="https://doi.org/10.1371/journal.pone.0090081">https://doi.org/10.1371/journal.pone.0090081</a>
+</div>
+<div id="ref-henderson1981" class="csl-entry" role="listitem">
+Henderson, H. V., &amp; Velleman, P. F. (1981). Building multiple regression models interactively. <em>Biometrics</em>, <em>37</em>(2), 391–411. <a href="https://doi.org/10.2307/2530428">https://doi.org/10.2307/2530428</a>
+</div>
+<div id="ref-horst2020" class="csl-entry" role="listitem">
+Horst, A. M., Hill, A. P., &amp; Gorman, K. B. (2020). <em><span>palmerpenguins</span>: <span>Palmer</span> <span>Archipelago</span> (<span>Antarctica</span>) penguin data</em> (Version 0.1.0) [Paquet R]. Zenodo. <a href="https://doi.org/10.5281/zenodo.3960218">https://doi.org/10.5281/zenodo.3960218</a>
+</div>
+<div id="ref-mcneil1977" class="csl-entry" role="listitem">
+McNeil, D. R. (1977). <em>Interactive data analysis: A practical primer</em>. John Wiley &amp; Sons.
+</div>
+<div id="ref-peeters2026" class="csl-entry" role="listitem">
+Peeters, S. (2026). <em>Zeeschuimer</em> (Version 1.14.3) [Logiciel]. Zenodo. <a href="https://doi.org/10.5281/zenodo.22660960">https://doi.org/10.5281/zenodo.22660960</a>
+</div>
+<div id="ref-r2026" class="csl-entry" role="listitem">
+R Core Team. (2026). <em>R: A language and environment for statistical computing</em> (Version 4.6.1) [Logiciel]. R Foundation for Statistical Computing. <a href="https://doi.org/10.32614/R.manuals">https://doi.org/10.32614/R.manuals</a>
+</div>
+<div id="ref-epa_fueleconomy" class="csl-entry" role="listitem">
+U.S. Environmental Protection Agency. (s.d.). <em>fueleconomy.gov</em>. Consulté le 6 octobre 2026, à l’adresse <a href="https://fueleconomy.gov/">https://fueleconomy.gov/</a><div class="csl-block">Source des données <span>mpg</span> du paquet ggplot2.</div>
+</div>
+<div id="ref-wickham2016" class="csl-entry" role="listitem">
+Wickham, H. (2016). <em><span>ggplot2</span>: Elegant graphics for data analysis</em>. Springer. <a href="https://doi.org/10.1007/978-3-319-24277-4">https://doi.org/10.1007/978-3-319-24277-4</a>
+</div>
+<div id="ref-knitr2026" class="csl-entry" role="listitem">
+Xie, Y. (2026). <em><span>knitr</span>: A general-purpose package for dynamic report generation in <span>R</span></em> (Version 1.52) [Paquet R]. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -965,6 +1062,9 @@ window.onload = function() {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./corriges.html" class="pagination-link" aria-label="Corrigés">
+        <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Corrigés</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

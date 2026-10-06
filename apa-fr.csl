@@ -198,7 +198,11 @@
     <group delimiter=" ">
       <choose>
         <if is-numeric="edition">
-          <number form="ordinal" variable="edition"/>
+          <!-- Adaptation française (intro-a-R) : « 2e éd. », e en exposant -->
+          <group>
+            <number form="numeric" variable="edition"/>
+            <text value="e" vertical-align="sup"/>
+          </group>
           <label form="short" variable="edition"/>
         </if>
         <else>

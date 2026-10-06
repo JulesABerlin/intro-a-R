@@ -39,3 +39,8 @@
 
 % Micro-typographie : aide à éviter les lignes qui débordent.
 \usepackage{microtype}
+
+% Références : pas d'espace automatique avant « : » (babel-french), pour que
+% les titres anglais gardent leur ponctuation d'origine (« Data science: »).
+% Les titres français du .bib ont déjà l'espace saisie (« guide-R : … »).
+\AddToHook{env/CSLReferences/begin}{\NoAutoSpacing}

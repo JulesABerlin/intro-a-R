@@ -12,15 +12,15 @@ dans RStudio à partir de **fichiers CSV** et de les stocker en forme de
 data frame (format tabulaire).
 
 Le deuxième but est de se familiariser avec `dplyr` (prononcé
-"dee-ply-er" en anglais), un paquet du `tidyverse` conçu pour manipuler
+« dee-ply-er » en anglais), un paquet du `tidyverse` conçu pour manipuler
 les données en forme de data frame.
 
 Contrairement aux jeux de données intégrés à R (tels que `diamonds`,
 etc.), la plupart des jeux de données du monde réel nécessitent des
 **transformations** avant de pouvoir être analysés et visualisés. À
 cette fin, nous examinerons également certaines transformations de types
-de variables et un nouvel opérateur, le `%>%` (angl. "pipe"; trad.
-franç. "tuyau"), qui est très utile pour les manipulations de données.
+de variables et un nouvel opérateur, le `%>%` (angl. « pipe »; trad.
+franç. « tuyau »), qui est très utile pour les manipulations de données.
 
 ## Lire des données au format CSV dans RStudio {#lire-des-données-auf-format-csv-dans-rstudio}
 
@@ -113,13 +113,13 @@ suivre le processus suivant :
             du fichier CSV contient les noms des colonnes.
 
         -   **Separator = Comma** : Indique à RStudio que les valeurs du
-            tableau sont séparées par des virgules "," (attention,
+            tableau sont séparées par des virgules « , » (attention,
             certains documents francophones utilisent le point-virgule
-            ";" à la place de la virgule, ce qu'il faudrait tenir en
+            « ; » à la place de la virgule, ce qu'il faudrait tenir en
             compte, si c'était le cas).
 
-        -   **Decimal = Period** : Indique à RStudio que le point "."
-            est utilisé pour les décimales (et non la virgule "," comme
+        -   **Decimal = Period** : Indique à RStudio que le point « . »
+            est utilisé pour les décimales (et non la virgule « , » comme
             c'est souvent le cas dans les documents en français).
 
         -   **na.strings = NA** : valeur par défaut. Ce fichier n'a pas
@@ -149,9 +149,9 @@ associant un post Instagram à un compte qui l'a publié ou co-publié : les
 84 lignes correspondent à 82 posts distincts provenant de 33 comptes.
 Chaque colonne est une variable différente associée à cette observation.
 
-Notez que les variables sont soit de type textuel (chr = "character"; p.
+Notez que les variables sont soit de type textuel (chr = « character »; p.
 ex. `Account`= le nom du compte Insta qui a publié le post), soit
-numérique (int = "integer"; p. ex. `Total.Interactions` = la somme des
+numérique (int = « integer »; p. ex. `Total.Interactions` = la somme des
 `Likes` et `Comments` qu'un post a reçu).
 
 Vous pouvez aussi cliquer sur l'objet et explorer le tableau
@@ -179,12 +179,12 @@ manuellement pour le comprendre davantage (comme nous l'avons fait avec
 :::
 
 Avant de continuer avec `dplyr`, regardons encore deux éléments
-cruciales pour la manipulation de données avec R :
+cruciaux pour la manipulation de données avec R :
 
 -   la transformation du type de variable (p. ex. de variables
     textuelles en facteurs)
 
--   L'opérateur `%>%` (angl. "pipe"; trad. française "tuyau")
+-   L'opérateur `%>%` (angl. « pipe »; trad. française « tuyau »)
 
 ## La transformation du type de variable
 
@@ -230,7 +230,7 @@ Nous allons voir par la suite, pourquoi ces factorisations sont utiles.
 ## L'opérateur `%>%`
 
 La fonction principale du pipe `%>%` : construire **une séquence de
-fonctions ("un tuyau")** qui est plus facile à comprendre et à lire dans
+fonctions (« un tuyau »)** qui est plus facile à comprendre et à lire dans
 le code.
 
 ```{r}

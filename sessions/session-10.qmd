@@ -93,22 +93,14 @@ ceux des données originales.
 
 ## Analyse des réponses au questionnaire {#analyse-des-réponses-au-questionnaire-1ère-partie-stats-déscriptives}
 
-Veuillez ouvrir un nouveau script R et charger les packages `tidyverse`
-et `ggthemes`. Téléchargez ensuite le fichier
-[`reponses_socio.csv`](../data/reponses_socio.csv) dans votre répertoire de
-travail, ou lisez-le directement depuis le site comme dans le code
-ci-dessous.
-
-Si vous importez le fichier avec **File → Import Dataset → From Text (base)…**, utilisez
-les paramètres suivants :
-
--   **Name** : `reponses_socio`
--   **Encoding** : `UTF-8`
--   **Heading** : `Yes`
--   **Row names** : `Automatic`
--   **Separator** : `Comma` ; **Decimal** : `Period` ; **Quote** : `Double (")`
--   **na.strings** : `NA`
--   **Strings as factors** : coché
+Ouvrez votre projet RStudio et un nouveau script, puis chargez les
+packages `tidyverse` et `ggthemes`. Importez le fichier
+[`reponses_socio.csv`](../data/reponses_socio.csv) comme `igposts.csv`
+au [chapitre 7](session-07.qmd#lire-des-données-auf-format-csv-dans-rstudio),
+ou lisez-le directement depuis le site comme dans le code ci-dessous.
+Une seule différence : ajoutez l'argument `stringsAsFactors = TRUE` (case
+**Strings as factors** de la fenêtre d'importation), qui convertit les
+colonnes de texte en facteurs.
 
 ```{r}
 #| echo: true
@@ -120,9 +112,8 @@ les paramètres suivants :
 library(tidyverse)
 library(ggthemes)
 
-# vous devez modifier les fonctions setwd() et read.csv() pour correspondre à votre ordinateur
-# (ou lire le fichier directement depuis le site du livre, comme ici) :
-# setwd("~/Documents/exercices_methodes_2")
+# Lecture depuis le site du livre ; si le fichier est dans le dossier de
+# votre projet : read.csv("reponses_socio.csv", encoding = "UTF-8", stringsAsFactors = TRUE)
 
 reponses_socio <- read.csv("https://julesaberlin.github.io/intro-a-R/data/reponses_socio.csv", encoding="UTF-8", stringsAsFactors=TRUE)
 
@@ -251,10 +242,9 @@ Avec R, vous ne pouvez pas seulement lire des données au format CSV
 vous pouvez également créer des fichiers CSV à partir de votre session
 en cours (sortie de données), notamment avec la fonction `write.csv()`.
 
-La syntaxe de la fonction nécessite comme arguments le nom du tableau de données
-que vous voulez enregistrer comme CSV ainsi que le chemin du fichier sur
-votre ordinateur qui inclut le nom que vous voulez donner au fichier CSV
-: `write.csv(nom_df, "chemin_du_fichier/nom_du_fichier.csv")`
+La fonction prend comme arguments le tableau de données à enregistrer
+et le nom du fichier CSV, éventuellement précédé d'un chemin relatif au
+dossier du projet : `write.csv(nom_df, "nom_du_fichier.csv")`.
 
 ```{r}
 # Exemple : recréons le tableau des animaux de L'Âge de glace (chapitre 2)
@@ -283,9 +273,9 @@ print(ice_age_df)
 
 ```{r}
 #| eval: false
-# Il faut adapter le chemin du fichier suivant pour qu'il marche sur votre ordinateur :
+# Enregistre le fichier dans le répertoire de travail (le dossier du projet) :
 
-write.csv(ice_age_df, file = "~/Documents/exercices_methodes_2/ice_age_df.csv")
+write.csv(ice_age_df, file = "ice_age_df.csv")
 ```
 
 Si tout a bien marché, vous devriez maintenant avoir un fichier CSV, nommé

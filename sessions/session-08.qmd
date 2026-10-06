@@ -35,11 +35,10 @@ solution modèle.
 
 ### Préparez-vous {#préparez-vous-pour-lexercice}
 
--   Commencez en ouvrant un nouveau script R.
+-   Ouvrez votre projet RStudio et créez un nouveau script R.
 
--   Nommez-le `script_chapitre_8` et sauvegardez-le sur votre ordinateur.
-    (Définissez votre répertoire de travail avec `setwd()` et
-    sauvegardez le code de la console dans le script).
+-   Nommez-le `script_chapitre_8` et enregistrez-le dans le dossier du
+    projet.
 
 -   Chargez le package tidyverse avec `library(tidyverse)`.
 
@@ -283,8 +282,8 @@ petits (0,70 carat) que les *Premium* (0,89 carat).
 -   Chargez le jeu de données `igposts` du
     [chapitre 7](session-07.qmd#lire-des-données-auf-format-csv-dans-rstudio).
 -   Si nécessaire, téléchargez-le à nouveau depuis le
-    [site](../data/igposts.csv) et sauvegardez-le dans le dossier de votre ordinateur que vous avez
-    défini comme répertoire de travail.
+    [site](../data/igposts.csv) et enregistrez-le dans le dossier de votre
+    projet RStudio.
 -   Si nécessaire, transformez encore une fois les colonnes
     `igposts$Account`, `igposts$User.Name` et `igposts$Type` en variables
     catégorielles avec `as.factor()`.

@@ -84,7 +84,8 @@ mesures telles que la longueur du bec (`bill_length_mm`), la longueur
 des nageoires (`flipper_length_mm`), le poids corporel (`body_mass_g`)
 et le sexe des manchots.
 
--   Utilisez le code suivant pour la première installation du package :
+-   Installez le package une fois (voir le
+    [chapitre 4](session-04.qmd#les-paquets-r)) :
 
     ```r
     install.packages("palmerpenguins")

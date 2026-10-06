@@ -25,8 +25,7 @@ distribution ou une comparaison entre groupes.
 
 ```{r}
 #| warning: false
-# N'oubliez pas de charger les packages tidyverse et ggthemes.
-# Exécutez le code suivant pour le faire :
+# Chargez les packages tidyverse et ggthemes (voir le chapitre 4) :
 library(tidyverse)
 library(ggthemes)
 ```
@@ -83,7 +82,9 @@ np1 + geom_smooth(method = lm)
 Que nous indique la ligne de régression ? En principe, elle indique une
 corrélation légèrement négative entre les variables `Sepal.Length` et
 `Sepal.Width` (la zone grise autour de la ligne bleue est
-l'intervalle de confiance à 95 % de la droite de régression).
+l'intervalle de confiance à 95 % de la droite de régression ; la
+régression linéaire est présentée au
+[chapitre 12](session-12.qmd#la-régression-linéaire-avec-lm)).
 
 Cela signifie que les iris dont les sépales sont plus longs ont tendance
 à avoir des sépales un peu moins larges. Gardez cette constatation à
@@ -433,7 +434,7 @@ C'est un problème, car nous voulons comparer l'efficacité énergétique
 chacune d'entre elles comme un sous-groupe distinct. Comment faire ?
 
 ```{r}
-# Transformons donc cyl en facteur
+# Transformons donc cyl en facteur (voir le chapitre 2)
 mtcars$cyl <- as.factor(mtcars$cyl)
 
 # Et maintenant nous pouvons construire notre boxplot

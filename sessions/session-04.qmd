@@ -197,32 +197,20 @@ clustering, la classification et la visualisation.
 
 Explorons un peu le jeu de données `iris` avec du code :
 
-```{r}
-#| echo: true
-#| output: false
-
-dim(iris) # Affiche le nombre de lignes et de colonnes
-
-head(iris) # Affiche les six premières lignes
-
-str(iris) # Informations sur la structure du jeu de données
-
-names(iris) # Affiche les noms des colonnes
-```
-
-Regardons ce que ça donne après l'exécution de chaque ligne de code :
+Les fonctions du [chapitre 2](session-02.qmd#quelques-fonctions-utiles-pour-analyser-les-data-frames)
+s'appliquent à tout tableau de données :
 
 ```{r}
 #| echo: true
 #| output: true
 
-dim(iris) 
+dim(iris) # nombre de lignes et de colonnes
 
-head(iris) 
+head(iris) # les six premières lignes
 
-str(iris) 
+str(iris) # structure du jeu de données
 
-names(iris) 
+names(iris) # noms des colonnes
 ```
 
 ::: {.callout-tip title="Astuce"}
@@ -434,9 +422,8 @@ nuage de points, diagramme en barres, histogramme et boîte à moustaches.
 -   Exécutez toutes les sections de code de ce chapitre sur votre
     ordinateur.
 
--   Entraînez-vous à ouvrir un nouveau script R, à définir un répertoire
-    de travail et à enregistrer le script dans un dossier sur votre
-    ordinateur.
+-   Entraînez-vous à ouvrir votre projet RStudio, à y créer un nouveau
+    script R et à l'enregistrer dans le dossier du projet.
 
 -   Assurez-vous que le package `tidyverse` est installé correctement
     sur votre ordinateur.

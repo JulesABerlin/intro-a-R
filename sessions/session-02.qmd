@@ -473,38 +473,38 @@ programmation R, car il détermine l'endroit où R recherche les fichiers
 enregistrez.
 :::
 
-Vous pouvez définir votre répertoire de travail avec la fonction
-**`setwd()`**.
+Lorsque vous lisez un fichier en donnant seulement son nom, p. ex.
+`read.csv("donnees.csv")` (voir le [chapitre 7](session-07.qmd)), R le
+cherche dans le répertoire de travail. La fonction `getwd()` affiche le
+répertoire de travail actuel :
 
-Une possibilité, c'est de le faire manuellement dans le volet *output*
-en bas à droite :
+```r
+getwd()
+```
 
-1.  Naviguez sur l'onglet **Files**
-2.  Cliquez sur les trois petits points **...** tout à droite
-3.  Choisissez un dossier sur votre ordinateur qui peut servir de
-    répertoire de travail (vous devez peut-être en créer un d'abord et
-    lui donner un nom utile, p. ex. "intro_R")
-4.  Cliquez ensuite sur la petite **roue bleue** (More) et choisissez
-    **Set as Working Directory**
-5.  Vous pouvez ensuite copier et coller le code R qui définit le
-    répertoire de travail depuis l'onglet de la console et l'inclure
-    dans votre script R
+### Travailler dans un projet RStudio {#projets-rstudio}
 
-Par exemple, sous Windows : `setwd("C:/Users/votre_nom/Documents/intro_R")` ;
-sous macOS : `setwd("~/Documents/intro_R")`.
-**Attention** : Ce code ne marche naturellement pas sur votre machine.
-Il faut l'adapter et inclure un chemin de fichier de votre ordinateur.
+La manière la plus simple et la plus sûre de choisir son répertoire de
+travail est de créer un **projet RStudio** pour chaque travail, p. ex.
+un projet `intro_R` pour suivre ce livre :
 
-Vous pouvez ensuite vérifier si le répertoire de travail a été
-correctement défini avec la fonction `getwd()`
+1.  Menu **File → New Project… → New Directory → New Project**.
+2.  Donnez un nom au projet (p. ex. `intro_R`), choisissez où le créer
+    sur votre ordinateur, puis cliquez sur **Create Project**.
+3.  Pour reprendre votre travail plus tard, ouvrez le fichier
+    `intro_R.Rproj` ou utilisez **File → Open Project…**.
 
-::: {.callout-tip title="Astuce"}
-Créez un **projet RStudio** (**File → New Project…**) pour chaque travail.
-Le répertoire de travail est alors défini automatiquement sur le dossier
-du projet, et vos chemins de fichiers relatifs (p. ex.
-`read.csv("donnees.csv")`) restent valables sur n'importe quel
-ordinateur. Avec `setwd()`, le code cesse de fonctionner dès qu'il est
-déplacé sur un autre ordinateur.
+À l'ouverture du projet, RStudio fait de son dossier le répertoire de
+travail. Rangez-y vos scripts et vos données : les chemins relatifs
+comme `read.csv("donnees.csv")` fonctionnent alors sur n'importe quel
+ordinateur, sans rien adapter.
+
+::: {.callout-warning title="Attention"}
+Vous rencontrerez souvent la fonction `setwd()`, qui change le
+répertoire de travail, p. ex. `setwd("~/Documents/intro_R")`. Évitez de
+l'écrire dans vos scripts : le chemin n'existe que sur votre ordinateur,
+et le script cesse de fonctionner ailleurs. Utilisez plutôt un projet
+RStudio.
 :::
 
 ::: {.callout-important title="En bref"}

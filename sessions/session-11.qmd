@@ -294,12 +294,10 @@ simuler deux échantillons hypothétiques :
 
 -   Un échantillon de 5 tailles d'hommes suisses
 
-D'après l'Enquête suisse sur la santé 2017 [@muller2022], que nous avons
-déjà vue au chapitre 5, les femmes mesurent en moyenne 164,6 cm
-(écart-type 6,5 cm) et les hommes 177,0 cm (écart-type 7,1 cm). Dans la
-suite, nous utilisons des valeurs proches : une moyenne de 164,7 cm pour
-les femmes et de 177,4 cm pour les hommes, avec des écarts-types un peu
-plus petits de 5,6 cm et de 6,1 cm.
+Nous reprenons les valeurs du [chapitre 5](session-05.qmd#les-histogrammes),
+tirées de l'Enquête suisse sur la santé 2017 [@muller2022] : une moyenne
+de 164,7 cm (écart-type 5,6 cm) pour les femmes et de 177,4 cm
+(écart-type 6,1 cm) pour les hommes.
 
 ```{r}
 # Données exemplaires :

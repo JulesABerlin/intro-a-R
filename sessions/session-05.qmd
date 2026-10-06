@@ -75,15 +75,15 @@ np1 + geom_smooth(method = lm)
 
 Que nous indique la ligne de régression ? En principe, elle indique une
 corrélation légèrement négative entre les variables `Sepal.Length` et
-`Sepal.Width` ! (la zone grise autour de la ligne bleue est
+`Sepal.Width` (la zone grise autour de la ligne bleue est
 l'intervalle de confiance à 95 % de la droite de régression).
 
 Cela signifie que les iris dont les sépales sont plus longs ont tendance
-à avoir des sépales un peu moins larges ! Gardez cette constatation à
+à avoir des sépales un peu moins larges. Gardez cette constatation à
 l'esprit pour les étapes de codage suivantes.
 
 ```{r}
-# Écrasons np1 en changeant un peu le code. Découvrez vous-même ce qui a changé dans le code !
+# Écrasons np1 en changeant un peu le code. Repérez ce qui a changé dans le code.
 np1 <- ggplot(iris, 
                aes(x=Sepal.Length, y=Sepal.Width, color = Species)) +
   geom_point() +
@@ -98,7 +98,7 @@ moins aléatoire, ce qui permet de voir des groupes de points appartenant
 à l'une ou l'autre espèce (angl. *cluster*).
 
 Maintenant, ajoutons à nouveau une couche `geom_smooth()` à l'objet
-`np1` !
+`np1` :
 
 ```{r}
 #| warning: false
@@ -181,7 +181,7 @@ diagrammes en barres.
 Si vous voulez ajouter de la couleur à une surface, vous devez utiliser
 l'argument `fill = "xyz"`. L'argument `color = "xyz"` que nous avons
 utilisé pour ajouter de la couleur aux nuages de points ne fera
-qu'ajouter de la couleur à la ligne autour de la surface !
+que colorer le contour de la surface.
 :::
 
 ### C'est maintenant à vous de jouer !
@@ -189,7 +189,7 @@ qu'ajouter de la couleur à la ligne autour de la surface !
 Reprenez le code que nous avons utilisé pour créer `db1` et modifiez-le
 pour créer un nouvel objet,`db2`, qui représente les effectifs des
 qualités de couleur (`color`) dans le jeu de données `diamonds` sous
-la forme d'un diagramme en barres !
+la forme d'un diagramme en barres.
 
 ## Les histogrammes
 

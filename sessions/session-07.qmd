@@ -26,7 +26,7 @@ les manipulations.
 Par la suite, nous allons appliquer `dplyr` pour manipuler les données
 d'un jeu de données concret : un fichier CSV nommé `igposts.csv`. Ce
 fichier contient des posts Instagram de célébrités qui ont reçu
-beaucoup d'interactions d'utilisateurs. Pour cette application, il faut
+beaucoup d'interactions. Pour cette application, il faut
 d'abord charger ce jeu de données dans notre session RStudio en cours.
 
 ::: {.callout-note}
@@ -262,7 +262,7 @@ monde réel, tels que le jeu de données Instagram `igposts`, nécessite un
 travail préparatoire substantiel. Mais rassurez-vous et ne vous
 découragez pas, plus vous pratiquez, plus cela devient facile et,
 bientôt, vous serez en mesure de charger facilement des jeux de
-données dans RStudio ! Par ailleurs : il est normal de rencontrer des
+données dans RStudio. Par ailleurs, il est normal de rencontrer des
 messages d'erreur. C'est une partie essentielle du processus
 d'apprentissage que de les surmonter en bricolant et en jouant avec vos
 données et votre code R jusqu'à ce que vous puissiez le faire
@@ -305,7 +305,7 @@ différents types de manipulation de données, notamment :
         une ou plusieurs catégories.
 
 Essayons maintenant d'appliquer tout cela avec du code et les données
-`igposts` pour comprendre ce que ça veut dire en pratique !
+`igposts` pour voir ce que cela donne en pratique.
 
 ## Manipulation de colonnes : `select()` et `mutate()` {#manipulation-de-colonnes-selectet-mutate}
 
@@ -343,7 +343,7 @@ df1 <- igposts %>%
 
 df1 %>% mutate(TI_par_Follower = Total.Interactions/Followers.at.Observation)
 
-# Attention, sans opérateur <-, nous ne changeons pas l'objet df1 !
+# Attention : sans l'opérateur <-, l'objet df1 n'est pas modifié.
 # Pour ce faire et sauvegarder notre nouvelle colonne, nous pouvons écraser df1 avec une nouvelle version de df1 :
 
 df1 <- df1 %>% 

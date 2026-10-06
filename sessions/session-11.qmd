@@ -150,7 +150,7 @@ Il existe **trois types** de tests t :
     -   (à noter : nous n'allons pas traiter ce type de test t plus en
         détail dans l'exercice).
 
-Voyons maintenant des exemples avec du code !
+Voyons maintenant des exemples avec du code.
 
 ### Exemple 1 : test t à un échantillon
 
@@ -256,7 +256,7 @@ Réalisez un test t en utilisant ces statistiques comme suit :
     (`mean = 7.9, sd = 2`).
 
 -   Testez si la durée moyenne d'utilisation d'Internet en heures de
-    votre échantillon simulé de 30 suisses de 20 à 29 ans se distingue
+    votre échantillon simulé de 30 personnes de 20 à 29 ans vivant en Suisse se distingue
     significativement de la moyenne nationale (`mu = 5.6`).
 
 ::: {.callout-caution collapse="true"}

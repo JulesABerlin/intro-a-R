@@ -360,7 +360,7 @@
     number <- "7"
   options:
     a: 'Le code `number^2` donne 36 comme résultat dans la console.'
-    b: 'Le code `number <- as.numeric(number)` ne change rien à ma variable.'
+    b: 'Le code `number <- as.numeric(number)` ne modifie pas l’objet `number`.'
     c: '`number` peut être utilisé dans la fonction `c()` afin de créer un vecteur.'
     d: '`length(number)` donne une erreur.'
     e: 'Le code `as.numeric(number)^2` donne 36 comme résultat dans la console.'
@@ -950,7 +950,7 @@
   options:
     a: 'Les statistiques inférentielles permettent de tirer des conclusions sur une population entière en se basant sur l’analyse d’un échantillon représentatif de cette population.'
     b: 'Si deux variables quantitatives, par exemple y et x, sont significativement corrélées, il existe toujours une relation de cause à effet entre ces deux variables.'
-    c: 'L’échantillonnage aléatoire est une méthode de sélection au hasard d’un sous-groupe de participants dans une population, où chaque membre a une chance égale d’être choisi, offrant ainsi une représentation fiable de la population entière.'
+    c: 'L’échantillonnage aléatoire est une méthode de sélection au hasard d’un sous-groupe de participant·es dans une population, où chaque membre a une chance égale d’être choisi, offrant ainsi une représentation fiable de la population entière.'
     d: 'Un échantillon de 100 femmes suisses d’une taille moyenne de 180 cm est représentatif de la distribution de taille des femmes en Suisse.'
     e: 'Les tests t, l’ANOVA et la régression linéaire peuvent être des techniques utiles dans une analyse de statistiques inférentielles.'
   key: [a, c, e]
@@ -1039,10 +1039,10 @@
   type: multi
   stem: 'Jugez chaque proposition concernant les fonctions R `setwd()` et `getwd()` :'
   options:
-    a: 'Avec la fonction `setwd()`, je peux définir un dossier sur mon ordinateur à partir duquel R lit et extrait des données.'
+    a: 'Avec la fonction `setwd()`, on peut définir le dossier de l’ordinateur dans lequel R lit et enregistre les fichiers.'
     b: 'Les chemins d’accès aux dossiers que l’on doit spécifier comme arguments dans `setwd()` diffèrent généralement entre différents ordinateurs.'
     c: 'Vous ne pouvez pas utiliser R si vous ne spécifiez pas votre répertoire de travail.'
-    d: 'Toutes les variables, matrices, jeux de données, etc. que je crée dans une session R sont enregistrés sous forme de fichiers dans mon répertoire de travail.'
+    d: 'Tous les objets (vecteurs, matrices, tableaux de données, etc.) créés dans une session R sont automatiquement enregistrés sous forme de fichiers dans le répertoire de travail.'
     e: 'Vous pouvez afficher votre répertoire de travail actuel dans une session R avec la fonction `getwd()`.'
   key: [a, b, e]
   explanation: |
@@ -1582,7 +1582,7 @@
   session: 1
   problem_sets: [1]
   type: vf
-  stem: 'Le `#` permet d’insérer des commentaires dans le script, sans que cela ait des conséquences sur mon codage.'
+  stem: 'Le `#` permet d’insérer des commentaires dans un script, sans effet sur l’exécution du code.'
   key: true
   explanation: |
     Tout ce qui suit `#` sur une ligne est ignoré par R lors de l’exécution.
@@ -1592,7 +1592,7 @@
   session: 2
   problem_sets: [1]
   type: vf
-  stem: 'En statistique et en méthodes quantitatives en sciences sociales, c’est une convention de présenter les données dans des tableaux avec les unités statistiques (observations, cas, participants, etc.) en lignes et les variables en colonnes.'
+  stem: 'En statistique et en méthodes quantitatives en sciences sociales, c’est une convention de présenter les données dans des tableaux avec les unités statistiques (personnes, documents, cas, etc.) en lignes et les variables en colonnes.'
   key: true
   explanation: |
     C’est la convention des données « tidy » : une ligne par observation, une colonne par variable.
@@ -1610,7 +1610,7 @@
 - id: 89
   session: 10
   type: vf
-  stem: 'En général, je peux enregistrer les données issues de ma session R sur mon ordinateur (par exemple, un data frame que j’ai créé) sous la forme de fichiers CSV.'
+  stem: 'En général, on peut enregistrer sous forme de fichier CSV des données créées dans une session R (p. ex. un tableau de données).'
   key: true
   explanation: |
     La fonction `write.csv()` écrit un tableau de données dans un fichier CSV, p. ex. `write.csv(ice_age_df, "ice_age_df.csv")`.
@@ -1940,7 +1940,7 @@
       group_by(suisse) %>%
       summarize(trajet_moyen = mean(trajet))
     ```
-    Les étudiant·es sans passeport suisse mettent en moyenne 21,5 minutes, contre 33,5 pour les Suisses·ses.
+    Les étudiant·es sans passeport suisse mettent en moyenne 21,5 minutes, contre 33,5 pour les titulaires d’un passeport suisse.
     Attention : le groupe sans passeport suisse ne compte que 10 personnes. Pour savoir si une telle différence est due au hasard, il faudrait un test (session 11).
   uses_data: reponses_socio.csv
   note: >-

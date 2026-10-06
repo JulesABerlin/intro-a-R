@@ -503,7 +503,7 @@ variables x, en plus de `wt`, dans notre modèle de régression pour
 prédire `mpg`.
 
 En d'autres termes, nous devrions effectuer une régression linéaire
-multiple !
+multiple.
 
 Si nous vérifions à nouveau les variables de mtcars (par exemple, avec
 `?mtcars`), une autre variable nous saute aux yeux qui pourrait avoir un
@@ -586,7 +586,7 @@ d'autres données. En recherche, on choisit plutôt les variables à partir
 de la théorie et de la question de recherche.
 :::
 
-Voyons comment ça marche avec du code R !
+Voyons comment cela fonctionne avec du code R.
 
 ```{r}
 # Créons le modèle complet avec toutes les variables de mtcars (avec ~ .)
@@ -623,11 +623,11 @@ par(mfrow=c(2,2))
 plot(stepwise_model)
 ```
 
-Les graphiques de diagnostic sont acceptables pour notre modèle !
+Les graphiques de diagnostic sont acceptables pour notre modèle.
 
 ### Ressources pour aller plus loin
 
-Je vous recommande de jeter un coup d'œil à d'autres vidéos YouTube de
+Nous vous recommandons aussi d'autres vidéos YouTube de
 StatQuest qui expliquent clairement les concepts statistiques, dont
 beaucoup sont très pertinents pour les sciences sociales et pour vos
 études en général, p. ex. :

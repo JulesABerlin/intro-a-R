@@ -158,7 +158,7 @@ ggplot(data = reponses_socio,
        mapping = aes(x=naissance)) +
   geom_histogram(binwidth = 1, fill = "lightgreen", color = "black") +
   labs(title = "Années de naissance",
-       subtitle = "n = 74 répondants à un questionnaire",
+       subtitle = "n = 74 personnes interrogées",
        x = "Année de naissance",
        y = "Effectif")+
   theme_minimal()
@@ -178,7 +178,7 @@ ggplot(data = reponses_socio,
 
 ordre = c("Femme", "Homme", "Autre")
 
-# Puis combiner dplyr avec ggplot2 !
+# Puis combiner dplyr avec ggplot2 :
 reponses_socio %>% 
   select(genre) %>% 
   mutate(genre = factor(genre, levels = ordre)) %>% 
@@ -186,7 +186,7 @@ reponses_socio %>%
 ggplot(aes(x=genre, fill=genre)) +
   geom_bar(show.legend = FALSE) +
   labs(title = "Répartition des genres",
-       subtitle = "n = 74 répondants à un questionnaire",
+       subtitle = "n = 74 personnes interrogées",
        x = "Genre",
        y = "Effectif",
        legend = "") +
@@ -244,7 +244,7 @@ reponses_socio %>%
 Avec R, vous ne pouvez pas seulement lire des données au format CSV
 (entrée de données ; avec des fonctions telles que `read.csv()`), mais
 vous pouvez également créer des fichiers CSV à partir de votre session
-en cours (sortie de données), notamment avec la fonction `write.csv()` !
+en cours (sortie de données), notamment avec la fonction `write.csv()`.
 
 La syntaxe de la fonction nécessite comme arguments le nom du tableau de données
 que vous voulez enregistrer comme CSV ainsi que le chemin du fichier sur
@@ -252,7 +252,7 @@ votre ordinateur qui inclut le nom que vous voulez donner au fichier CSV
 : `write.csv(nom_df, "chemin_du_fichier/nom_du_fichier.csv")`
 
 ```{r}
-# Voici un exemple avec du code (recréons le tableau avec les animaux de Ice Age !)
+# Exemple : recréons le tableau des animaux de L'Âge de glace (chapitre 2)
 
 name <- c("Manny", "Sid", "Diego", "Ellie", 
           "Peaches", "Scrat", "Rudy", "Buck")
@@ -284,7 +284,7 @@ write.csv(ice_age_df, file = "~/Documents/exercices_methodes_2/ice_age_df.csv")
 ```
 
 Si tout a bien marché, vous devriez maintenant avoir un fichier CSV, nommé
-`ice_age_df.csv` dans votre répertoire de travail !
+`ice_age_df.csv` dans votre répertoire de travail.
 
 ## Exercices {.unnumbered}
 

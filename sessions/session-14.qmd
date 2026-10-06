@@ -23,14 +23,14 @@ Quelques pistes pour continuer à progresser avec R après cette introduction.
 -   Proposez d'utiliser R pour l'analyse de données dans vos travaux de
     séminaire et de Bachelor.
 
--   Collaborez avec d'autres étudiant·es utilisateurs·trices de R sur
-    des projets de recherche en groupe à l'université.
+-   Collaborez avec d'autres étudiant·es qui utilisent R sur des
+    projets de recherche en groupe à l'université.
 
 ## MOOC
 
 Pour répéter et approfondir vos connaissances en R, des **MOOC**
-(massive open online courses) sont disponibles gratuitement en tant
-qu'auditeur/auditrice (après inscription) :
+(angl. *massive open online courses*) sont accessibles gratuitement,
+sans certificat, après inscription :
 
 1.  **DataCamp** : Introduction to R Programming :
     <https://www.datacamp.com/courses/free-introduction-to-r> [@datacamp_intro_r]
@@ -59,7 +59,7 @@ de visualisation).
     facile à comprendre en français d'environ 1h par le chercheur belge
     Nathan Uyttendaele (Il aborde certains aspects et logiciels que nous
     ne traitons pas dans notre cours. Mais dans l'ensemble, c'est une
-    bonne introduction à R et RStudio pour les débutants)
+    bonne introduction à R et RStudio pour débuter)
     : <https://www.youtube.com/watch?v=sav3Mbe0_DM> [@chatsceptique2020]
 
 2.  **Introduction to R & RStudio and other videos on Data Analysis with
@@ -91,11 +91,11 @@ de l'IA dans les travaux évalués.
 Participez à des communautés en ligne pour rester connecté·e avec les
 dernières tendances et partager vos connaissances :
 
--   [GitHub](https://github.com) : Le réseau social des développeurs
--   [Stack Overflow](https://stackoverflow.com) : Un forum d'entraide
-    pour programmeurs
--   [Kaggle](https://www.kaggle.com) : Une plateforme pour le machine
-    learning et l'analyse de données
+-   [GitHub](https://github.com) : plateforme d'hébergement et de partage de code
+-   [Stack Overflow](https://stackoverflow.com) : forum d'entraide
+    pour la programmation
+-   [Kaggle](https://www.kaggle.com) : plateforme d'apprentissage
+    automatique et d'analyse de données
 
 ## Lecture spécialisée
 

@@ -16,15 +16,15 @@ premières lignes de code.
 
 **R** est un langage de programmation et un environnement logiciel pour
 l'analyse statistique, la visualisation de données et le calcul
-scientifique. Il est largement utilisé par les statisticiens, les
-chercheurs en sciences des données et de plus en plus en sciences
-sociales y compris en sciences de la communication.
+scientifique. Il est largement utilisé en statistique, en science des
+données et, de plus en plus, en sciences sociales, y compris en
+sciences de la communication.
 
 R est idéal pour la manipulation, l'analyse, la modélisation et la
 visualisation de données. C'est un logiciel libre et open source, ce qui
 signifie qu'il est gratuit à utiliser, modifier et distribuer. Il
-dispose d'une grande communauté d'utilisateurs et de développeurs qui
-contribuent à son développement et à sa maintenance.
+s'appuie sur une grande communauté de personnes qui l'utilisent, le
+développent et l'entretiennent.
 :::
 
 ## Installer les logiciels R et RStudio
@@ -184,7 +184,7 @@ x
 Par exemple, essayez d'exécuter ce qui suit : `y + z`
 
 Pourquoi cela crée une erreur ? Réponse : les variables `y` et `z` n'ont
-pas encore été définies !
+pas encore été définis.
 
 Pour éliminer l'erreur, nous devons donc définir `y` et `z`.
 
@@ -202,7 +202,7 @@ Maintenant, le code fonctionne.
 
 ::: {.callout-important title="Important"}
 -   Sachez aussi que si vous attribuez une nouvelle valeur à une
-    variable existante, l'ancienne valeur sera écrasée !
+    variable existante, l'ancienne valeur est écrasée.
 :::
 
 ```{r}
@@ -237,7 +237,7 @@ Dans R, il existe différents types de variables :
 
 ```{r}
 #| echo: true
-# Regardons quelques exemples avec du code ! (faut tout exécuter !)
+# Quelques exemples (exécutez toutes les lignes) :
 
 # variables numériques :
 a <- 100
@@ -295,7 +295,7 @@ Vous pouvez créer des vecteurs avec l'opérateur d'affectation `<-` et la
 
 ```{r}
 #| echo: true
-# Voici quelques exemples avec du code ! (faut tout exécuter !)
+# Quelques exemples (exécutez toutes les lignes) :
 
 # un vecteur numérique (notez qu'il faut toujours séparer les valeurs avec des virgules)
 v1 <- c(1, 2, 3)

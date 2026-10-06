@@ -330,7 +330,7 @@ des colonnes spécifiques** d'un tableau de données.
 # P. ex. :
 ice_age_df$name
 
-# Essayez vous-même et extrayez d'autres colonnes de ice_age_df à l'aide du $ !
+# Essayez vous-même : extrayez d'autres colonnes de ice_age_df avec $.
 ```
 
 ## Fonctions statistiques de base
@@ -452,7 +452,7 @@ str(ice_age_df)
 ```
 
 C'est maintenant à vous de transformer la colonne `name` de
-`ice_age_df` en facteur !
+`ice_age_df` en facteur.
 
 ## Le répertoire de travail {#le-répértoire-de-travail}
 

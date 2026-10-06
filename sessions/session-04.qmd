@@ -193,7 +193,7 @@ Dans l'apprentissage de R, ce jeu de données est souvent utilisé pour
 illustrer diverses techniques d'analyse de données, y compris le
 clustering, la classification et la visualisation.
 
-Explorons un peu le jeu de données `iris` avec du code !
+Explorons un peu le jeu de données `iris` avec du code :
 
 ```{r}
 #| echo: true
@@ -231,7 +231,7 @@ avec un point d'interrogation : `?iris`.
 ### Le jeu de données `mtcars`
 
 Utilisez le script suivant pour analyser `mtcars` (lisez également la
-documentation avec `?mtcars`) ! Les données proviennent de
+documentation avec `?mtcars`). Les données proviennent de
 @henderson1981.
 
 ```{r}
@@ -282,7 +282,7 @@ via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:1974_Toyota_Coro
 
 ### Le jeu de données `diamonds`
 
-C'est maintenant à vous d'explorer ce jeu de données avec du code !
+C'est maintenant à vous d'explorer ce jeu de données avec du code.
 
 Utilisez également `?diamonds`.
 
@@ -305,7 +305,7 @@ graphiques ; @wilkinson2005), une théorie que Hadley
 Wickham a implémentée dans R ; le « 2 » distingue le package de sa
 première version, `ggplot`.
 
-Avec `ggplot2`, les utilisateurs peuvent construire des graphiques de
+Avec `ggplot2`, on peut construire des graphiques de
 manière incrémentale en ajoutant des couches, ce qui le rend flexible
 pour une large gamme de besoins graphiques. Cela permet de créer des
 visualisations hautement personnalisables et esthétiquement attrayantes,
@@ -333,7 +333,7 @@ pour créer le graphique).
 
 Le but dans cet exemple est de visualiser le jeu de données `diamonds`
 pour comprendre la relation entre les variables `price` (prix) et
-`carat` (poids) des diamants dans le jeu de données !
+`carat` (poids) des diamants dans le jeu de données.
 
 ::: {.callout-note icon="true"}
 ## À noter
@@ -375,7 +375,7 @@ ggplot(data = diamonds,
 ```
 
 La zone grise a maintenant reçu des unités pour ses axes x (`carat`) et
-y (`price`). Mais il n'y a toujours pas de données affichées !
+y (`price`). Mais il n'y a toujours pas de données affichées.
 
 ```{r}
 # La troisième couche, geometries, définit le type visuel de notre graphique
@@ -384,12 +384,9 @@ ggplot(data = diamonds,
   geom_point()
 ```
 
-Ouf, si vous avez exécuté le dernier code, vous avez maintenant 53 940
-points de données affichés dans votre graphique ! Car il y a tant
-d'observations dans le jeu de données `diamonds`.
-
-Bon courage si vous avez un vieil ordinateur, cela peut prendre un
-certain temps avant que R ne produise le graphique...
+Le graphique affiche maintenant 53\ 940 points, un par diamant du jeu de
+données `diamonds`. Sur un ordinateur ancien, il peut mettre un certain
+temps à s'afficher.
 
 Mais jetons un coup d'œil au graphique. Qu'est-ce qui saute aux yeux,
 pouvez-vous déjà identifier des tendances ?

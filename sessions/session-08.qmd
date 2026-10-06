@@ -56,7 +56,7 @@ mtcars %>%
 
 ### Exercice 2 : mtcars II {#mtcars-ii}
 
--   Filtrez mtcars pour `mpg >= 25` !
+-   Filtrez `mtcars` pour `mpg >= 25`.
 
 -   Combien de modèles de voitures dans `mtcars` répondent à ce critère
     ?
@@ -76,7 +76,7 @@ mtcars %>%
 
 ### Exercice 3 : mtcars III {#mtcars-iii}
 
--   Triez `mtcars` par `mpg` dans l'ordre décroissant !
+-   Triez `mtcars` par `mpg` dans l'ordre décroissant.
 
 ::: {.callout-caution collapse="true"}
 ### Solution
@@ -92,13 +92,13 @@ mtcars %>%
 ### Exercice 4 : mtcars IV {#mtcars-iv}
 
 -   Créez une nouvelle variable (colonne) dans mtcars, nommée `mpg_wt`,
-    définie comme le nombre de `mpg` par unité de poids (`wt`) !
+    définie comme le nombre de `mpg` par unité de poids (`wt`).
 
 -   Sauvegardez la version modifiée de `mtcars` avec l'opérateur
     d'affectation sous l'objet `mtcars_v2`.
 
 -   Affichez la nouvelle colonne `mpg_wt` de `mtcars_v2` en la triant
-    par ordre décroissant !
+    par ordre décroissant.
 
 -   Quel modèle de voiture de `mtcars` est le plus économe en carburant
     par rapport à son poids ?
@@ -122,9 +122,9 @@ mtcars_v2 %>%
 
 ### Exercice 5 : diamonds I {#diamonds-i}
 
--   Affichez encore une fois `str(diamonds)` !
+-   Affichez encore une fois `str(diamonds)`.
 -   Utilisez des verbes `dplyr` pour compter le nombre de diamants dans
-    `diamonds` qui pèsent plus de 3 carats !
+    `diamonds` qui pèsent plus de 3 carats.
 
 ::: {.callout-caution collapse="true"}
 ### Solution
@@ -147,7 +147,7 @@ diamonds %>%
 
 ### Exercice 6 : diamonds II {#diamonds-ii}
 
--   Calculez le prix moyen en USD des diamants dans `diamonds` !
+-   Calculez le prix moyen en USD des diamants dans `diamonds`.
 
 ::: {.callout-caution collapse="true"}
 ### Solution
@@ -167,7 +167,7 @@ mean(diamonds$price)
 ### Exercice 7 : diamonds III {#diamonds-iii}
 
 -   Calculez le prix moyen en USD des diamants des différentes
-    catégories de pureté (`clarity`) dans `diamonds` !
+    catégories de pureté (`clarity`) dans `diamonds`.
 -   Triez le résultat par ordre décroissant des prix moyens
 -   Quelle catégorie de pureté est la plus chère en moyenne dans
     `diamonds` ?
@@ -287,7 +287,7 @@ petits (0,70 carat) que les *Premium* (0,89 carat).
 ```{r}
 #| echo: true
 #| output: true
-# Vous pouvez copier-coller le code que nous avons utilisé la dernière fois (modifiez-le pour votre ordi) :
+# Vous pouvez copier-coller le code que nous avons utilisé la dernière fois (adaptez-le à votre ordinateur) :
 igposts <- read.csv("https://julesaberlin.github.io/intro-a-R/data/igposts.csv", encoding="UTF-8")
 
 # Appliquez encore une fois les transformations de variables, si nécessaire :
@@ -375,7 +375,7 @@ Messi](https://www.instagram.com/p/CpLxnFlNJZn/)
 ### Exercice 15 : igposts V {#igposts-v}
 
 -   Faites la même chose que dans la question 14, mais maintenant pour
-    les `Comments` au lieu des `Likes` !
+    les `Comments` au lieu des `Likes`.
 -   Allez voir l'URL du post avec le plus de `Comments` : De quoi
     s'agit-il ?
 
@@ -401,7 +401,7 @@ Gomez](https://www.instagram.com/p/Co_P7YgrrFO/)
 
 -   Faites la même chose que dans les exercices 14 et 15, mais
     maintenant pour les `Reposts` (nombre de reposts relevé le 5 octobre
-    2026 ; fonction introduite par Instagram en 2025) !
+    2026 ; fonction introduite par Instagram en 2025).
 -   Allez voir l'URL du post avec le plus de `Reposts` : De quoi
     s'agit-il ?
 

@@ -325,10 +325,10 @@ print(hist1)
 ```
 
 ::: {.callout-tip title="Astuce"}
-Un élément clé des visualisations de données est la couleur. R connaît
+Un élément clé des visualisations de données est la **couleur**. R connaît
 657 noms de couleurs : la fonction `colors()` les liste, et vous pouvez
 utiliser chacun de ces noms dans ggplot2 (p. ex. `fill = "steelblue"`).
-Pour un aperçu visuel, voir Colors in R [@brown_colors].
+Pour un aperçu visuel, voir *Colors in R* [@brown_colors].
 
 ```{r}
 head(colors(), 20)

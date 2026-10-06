@@ -325,13 +325,14 @@ print(hist1)
 ```
 
 ::: {.callout-tip title="Astuce"}
-Un élément clé des visualisations de données est la **couleur**. Le
-document PDF suivant, créé par Ying Wei de l'Université de Columbia à
-New York, montre et liste les noms des couleurs dans R. Vous pouvez
-copier-coller le nom d'une couleur et l'utiliser dans votre graphique
-ggplot2 !
+Un élément clé des visualisations de données est la couleur. R connaît
+657 noms de couleurs : la fonction `colors()` les liste, et vous pouvez
+utiliser chacun de ces noms dans ggplot2 (p. ex. `fill = "steelblue"`).
+Pour un aperçu visuel, voir Colors in R [@brown_colors].
 
--   [Colors in R](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf)
+```{r}
+head(colors(), 20)
+```
 :::
 
 ### C'est maintenant à vous de jouer !

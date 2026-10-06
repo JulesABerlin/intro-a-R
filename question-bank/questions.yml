@@ -84,7 +84,7 @@
 - id: 4
   session: 2
   type: multi
-  stem: 'Exécutez le code R suivant et jugez chaque proposition :'
+  stem: 'Exécutez le code suivant, puis jugez chaque proposition :'
   code: |
     a <- c(1:5)
     b <- c(5:10)
@@ -125,7 +125,7 @@
 - id: 6
   session: 2
   type: multi
-  stem: 'Exécutez le code R suivant et jugez chaque proposition :'
+  stem: 'Exécutez le code suivant, puis jugez chaque proposition :'
   code: |
     nom <- c("Kim", "Claire", "Antoine", "Mathilde", "Ali", "Charlotte", "Tiger", "Sacha")
     genre <- factor(c("non binaire", "femme", "homme", "femme", "homme", "femme", "homme", "homme"),
@@ -179,7 +179,7 @@
   session: 2
   problem_sets: [1]
   type: multi
-  stem: 'Exécutez le code R suivant et jugez chaque proposition :'
+  stem: 'Exécutez le code suivant, puis jugez chaque proposition :'
   code: |
     name    <- c("Manny", "Sid", "Diego", "Ellie", "Peaches", "Scrat", "Rudy", "Buck")
     species <- c("mammoth", "sloth", "sabertooth", "mammoth", "mammoth", "squirrel", "dinosaur", "weasel")
@@ -190,7 +190,7 @@
     ice_age_df <- data.frame(name, species, female, age, weight)
     ice_age_df
   options:
-    a: 'La colonne `female` (« femelle ») du jeu de données `ice_age_df` est de type logique (*logical*).'
+    a: 'La colonne `female` (« femelle ») du jeu de données `ice_age_df` est de type logique (`logical`).'
     b: 'Les unités statistiques du jeu de données `ice_age_df` sont les noms, les espèces, le genre (femelle), le poids et l’âge des animaux de l’ère glaciaire.'
     c: 'L’unité statistique du jeu de données `ice_age_df` est un animal de l’âge de glace, avec n = 8 observations.'
     d: 'Le jeu de données `ice_age_df` contient des informations sur trois mammouths différents.'
@@ -208,7 +208,7 @@
   session: 2
   problem_sets: [1]
   type: multi
-  stem: 'Exécutez le code R suivant et jugez chaque proposition :'
+  stem: 'Exécutez le code suivant, puis jugez chaque proposition :'
   code: |
     name    <- c("Manny", "Sid", "Diego", "Ellie", "Peaches", "Scrat", "Rudy", "Buck")
     species <- c("mammoth", "sloth", "sabertooth", "mammoth", "mammoth", "squirrel", "dinosaur", "weasel")
@@ -222,7 +222,7 @@
     a: 'Le code `ice_age_df$name` affiche les éléments de la colonne `name` du jeu de données `ice_age_df`.'
     b: 'Le code `ice_age_df[, 2]` affiche les éléments de la deuxième colonne de `ice_age_df`.'
     c: 'Les dimensions du jeu de données `ice_age_df` sont 8 × 5 (8 lignes et 5 colonnes).'
-    d: 'L’objet `ice_age_df` est de type matrice (*matrix*).'
+    d: 'L’objet `ice_age_df` est une matrice (`matrix`).'
     e: 'Le code `mean(ice_age_df$age)` calcule la moyenne de la colonne `age` du jeu de données `ice_age_df`.'
   key: [a, b, c, e]
   explanation: |
@@ -244,7 +244,7 @@
     b: 'Le jeu de données contient des observations de trois espèces d’iris différentes.'
     c: 'L’unité statistique du jeu de données est `Petal.Length` (longueur de pétale) des fleurs d’iris.'
     d: 'Les mesures ont été publiées par Edgar Anderson (1935).'
-    e: 'Toutes les autres réponses sont incorrectes.'
+    e: 'Aucune des autres réponses n’est correcte.'
   drop: [e]
   key: [a, b, d]
   explanation: |
@@ -258,7 +258,7 @@
   session: 2
   problem_sets: [1]
   type: multi
-  stem: 'Exécutez le code R suivant et jugez chaque proposition :'
+  stem: 'Exécutez le code suivant, puis jugez chaque proposition :'
   code: |
     m1 <- matrix(c(1:25), nrow = 5, byrow = TRUE)
     print(m1)
@@ -278,7 +278,7 @@
   session: 2
   variant_of: 11
   type: multi
-  stem: 'Exécutez le code R suivant et jugez chaque proposition :'
+  stem: 'Exécutez le code suivant, puis jugez chaque proposition :'
   code: |
     m1 <- matrix(c(1:36), nrow = 6, byrow = FALSE)
     print(m1)
@@ -298,7 +298,7 @@
   session: 2
   variant_of: 11
   type: multi
-  stem: 'Exécutez le code R suivant et jugez chaque proposition :'
+  stem: 'Exécutez le code suivant, puis jugez chaque proposition :'
   code: |
     m1 <- matrix(c(1:49), nrow = 7, byrow = FALSE)
     print(m1)
@@ -318,7 +318,7 @@
   session: 2
   variant_of: 11
   type: multi
-  stem: 'Exécutez le code R suivant et jugez chaque proposition :'
+  stem: 'Exécutez le code suivant, puis jugez chaque proposition :'
   code: |
     m1 <- matrix(c(1:64), nrow = 8, byrow = TRUE)
     print(m1)
@@ -355,7 +355,7 @@
 - id: 16
   session: 1
   type: multi
-  stem: 'Exécutez le code R suivant et jugez chaque proposition :'
+  stem: 'Exécutez le code suivant, puis jugez chaque proposition :'
   code: |
     number <- "7"
   options:
@@ -378,7 +378,7 @@
   session: 1
   problem_sets: [1]
   type: multi
-  stem: 'Exécutez le code suivant et jugez chaque proposition :'
+  stem: 'Exécutez le code suivant, puis jugez chaque proposition :'
   code: |
     n <- "079 123 45 67"
     print(n)
@@ -401,7 +401,7 @@
   session: 1
   variant_of: 17
   type: multi
-  stem: 'Exécutez le code suivant et jugez chaque proposition :'
+  stem: 'Exécutez le code suivant, puis jugez chaque proposition :'
   code: |
     n <- "076 666 88 44"
     print(n)
@@ -421,7 +421,7 @@
   session: 1
   variant_of: 17
   type: multi
-  stem: 'Exécutez le code suivant et jugez chaque proposition :'
+  stem: 'Exécutez le code suivant, puis jugez chaque proposition :'
   code: |
     n <- "076 333 77 55"
     print(n)
@@ -441,7 +441,7 @@
   session: 1
   variant_of: 17
   type: multi
-  stem: 'Exécutez le code suivant et jugez chaque proposition :'
+  stem: 'Exécutez le code suivant, puis jugez chaque proposition :'
   code: |
     n <- "078 123 77 55"
     print(n)
@@ -460,7 +460,7 @@
 - id: 21
   session: 1
   type: multi
-  stem: 'Exécutez le code suivant et jugez chaque proposition :'
+  stem: 'Exécutez le code suivant, puis jugez chaque proposition :'
   code: |
     a <- 66
     a <- 77
@@ -470,7 +470,7 @@
     b: 'Le code écrase deux fois l’objet `a`.'
     c: 'Le code génère une erreur, car il ne peut pas créer trois objets portant exactement le même nom.'
     d: 'Le code crée trois objets, tous nommés `a`, et les stocke simultanément dans l’environnement.'
-    e: 'Toutes les autres réponses sont incorrectes.'
+    e: 'Aucune des autres réponses n’est correcte.'
   drop: [e]
   key: [a, b]
   explanation: |
@@ -482,7 +482,7 @@
   session: 1
   problem_sets: [1]
   type: multi
-  stem: 'Exécutez le code R suivant et jugez chaque proposition :'
+  stem: 'Exécutez le code suivant, puis jugez chaque proposition :'
   code: |
     a <- c(0:15)
     print(a)
@@ -516,7 +516,7 @@
     b: 'Au moins un manchot Adélie de l’échantillon a une nageoire plus longue qu’au moins un manchot papou (Gentoo).'
     c: 'Les boîtes à moustaches nous indiquent qu’il existe des différences statistiquement significatives dans la longueur des nageoires entre les trois espèces de manchots.'
     d: 'Sur la seule base des boîtes à moustaches, nous ne pouvons pas savoir si les différences de longueur des nageoires des différentes espèces de manchots sont statistiquement significatives (nous pourrions faire une ANOVA pour le savoir).'
-    e: 'Les boîtes à moustaches indiquent qu’il y a deux valeurs extrêmes (*outliers*) dans le jeu de données.'
+    e: 'Les boîtes à moustaches indiquent qu’il y a deux valeurs extrêmes (angl. *outliers*) dans le jeu de données.'
   key: [b, d, e]
   explanation: |
     a) La ligne du milieu est la **médiane**, pas la moyenne.
@@ -583,7 +583,7 @@
   session: 5
   problem_sets: [2]
   type: multi
-  stem: 'Jugez chaque proposition concernant l’histogramme suivant des points obtenus au Problem Set 1 :'
+  stem: 'Jugez chaque proposition concernant l’histogramme suivant des points obtenus à un test du cours d’origine (fichier `distribution_ps_1.csv`) :'
   figure: |
     library(ggplot2)
     distribution_ps_1 <- read.csv("https://julesaberlin.github.io/intro-a-R/data/distribution_ps_1.csv", encoding = "UTF-8")
@@ -592,11 +592,11 @@
       labs(x = "Points obtenus", y = "Effectif") +
       theme_minimal()
   options:
-    a: 'Les étudiant·es ont obtenu le plus fréquemment 13 points dans le Problem Set 1.'
-    b: 'Le graphique montre qu’en médiane, 16 points ont été obtenus dans le Problem Set 1.'
-    c: 'Le graphique montre qu’en moyenne, 16 points ont été obtenus dans le Problem Set 1.'
-    d: 'L’histogramme montre que la distribution des points dans le Problem Set 1 suit une loi normale centrée réduite.'
-    e: 'Toutes les autres réponses sont incorrectes.'
+    a: 'Les étudiant·es ont obtenu le plus fréquemment 13 points à ce test.'
+    b: 'Le graphique montre qu’en médiane, 16 points ont été obtenus à ce test.'
+    c: 'Le graphique montre qu’en moyenne, 16 points ont été obtenus à ce test.'
+    d: 'L’histogramme montre que la distribution des points à ce test suit une loi normale centrée réduite.'
+    e: 'Aucune des autres réponses n’est correcte.'
   drop: [e]
   key: [e]
   explanation: |
@@ -615,7 +615,7 @@
     b: 'En ajustant l’argument `width`.'
     c: 'En modifiant l’argument `binwidth`.'
     d: 'En changeant l’argument `interval`.'
-    e: 'Toutes les réponses sont incorrectes.'
+    e: 'Aucune des autres réponses n’est correcte.'
   drop: [e]
   key: [a, c]
   explanation: |
@@ -655,7 +655,7 @@
   session: 5
   problem_sets: [2]
   type: multi
-  stem: 'Exécutez le code R suivant et jugez chaque proposition :'
+  stem: 'Exécutez le code suivant, puis jugez chaque proposition :'
   code: |
     library(ggplot2)
     data(mtcars)
@@ -679,7 +679,7 @@
   session: 5
   problem_sets: [2]
   type: multi
-  stem: 'Exécutez le code R suivant et jugez chaque proposition :'
+  stem: 'Exécutez le code suivant, puis jugez chaque proposition :'
   code: |
     library(ggplot2)
     data(mtcars)
@@ -709,11 +709,11 @@
   session: 5
   problem_sets: [2]
   type: multi
-  stem: 'Exécutez le code R suivant et jugez chaque proposition :'
+  stem: 'Exécutez le code suivant, puis jugez chaque proposition :'
   code: |
     rnorm(1000)
   options:
-    a: 'Ce code génère 1000 valeurs « aléatoires » qui se rapprochent d’une loi normale centrée réduite (*standard normal distribution*).'
+    a: 'Ce code génère 1000 valeurs « aléatoires » qui se rapprochent d’une loi normale centrée réduite (angl. *standard normal distribution*).'
     b: 'Ce code génère un message d’erreur, car il y a des arguments manquants dans la fonction `rnorm()`.'
     c: 'Ce code génère 1000 valeurs « aléatoires » qui se rapprochent d’une loi normale avec une moyenne = 1 et un écart-type = 0.'
     d: 'Ce code génère des valeurs numériques positives et négatives.'
@@ -727,9 +727,9 @@
 
 - id: 32
   session: 7
-  problem_sets: [2, 3]
+  problem_sets: [3]
   type: multi
-  stem: 'Exécutez le code R suivant et jugez chaque proposition :'
+  stem: 'Exécutez le code suivant, puis jugez chaque proposition :'
   code: |
     library(tidyverse)
     data(diamonds)
@@ -754,7 +754,7 @@
   session: 7
   problem_sets: [3]
   type: multi
-  stem: 'Exécutez le code R suivant et jugez chaque proposition :'
+  stem: 'Exécutez le code suivant, puis jugez chaque proposition :'
   code: |
     library(tidyverse)
     data(mtcars)
@@ -777,7 +777,7 @@
   problem_sets: [3]
   type: multi
   stem: |
-    Exécutez le code R suivant et jugez chaque proposition. La fonction `rnorm()` simule
+    Exécutez le code suivant, puis jugez chaque proposition. La fonction `rnorm()` simule
     des valeurs aléatoires qui se rapprochent d’une loi normale ; on suppose ici qu’il
     s’agit de tailles de femmes en Suisse (en cm).
   code: |
@@ -806,7 +806,7 @@
   problem_sets: [3]
   type: multi
   stem: |
-    Exécutez le code R suivant et jugez chaque proposition. Les unités américaines sont
+    Exécutez le code suivant, puis jugez chaque proposition. Les unités américaines sont
     converties : 1 pouce (*inch*) = 2,54 cm et 1 livre (*pound*) = 0,4536 kg.
   code: |
     library(tidyverse)
@@ -859,7 +859,7 @@
   session: 10
   problem_sets: [4]
   type: multi
-  stem: 'Jugez chaque affirmation concernant les **statistiques descriptives** :'
+  stem: 'Jugez chaque proposition concernant la **statistique descriptive** :'
   options:
     a: 'L’objectif des statistiques descriptives est principalement d’analyser les relations causales entre les variables.'
     b: 'La partie descriptive d’une analyse statistique fournit généralement des indications telles que la taille de l’échantillon (n), les effectifs des variables catégorielles et les moyennes des variables numériques.'
@@ -893,7 +893,7 @@
   session: 12
   problem_sets: [4]
   type: multi
-  stem: 'Exécutez le code suivant et jugez chaque proposition :'
+  stem: 'Exécutez le code suivant, puis jugez chaque proposition :'
   code: |
     data(mtcars)
     modele_1 <- lm(formula = mpg ~ wt + qsec + am, data = mtcars)
@@ -916,7 +916,7 @@
   session: 10
   problem_sets: [4]
   type: multi
-  stem: 'Jugez chaque proposition concernant l’histogramme suivant (source des données : questionnaire du cours) :'
+  stem: 'Jugez chaque proposition concernant l’histogramme suivant (données : `reponses_socio.csv`) :'
   figure: |
     library(ggplot2)
     reponses_socio <- read.csv("https://julesaberlin.github.io/intro-a-R/data/reponses_socio.csv", encoding = "UTF-8")
@@ -927,7 +927,7 @@
       theme_minimal()
   options:
     a: 'L’histogramme montre que le nombre de frères et sœurs (variable `fraterie`) suit une loi normale.'
-    b: 'L’histogramme montre que la plupart des étudiant·es de la classe ont grandi dans des constellations familiales traditionnelles.'
+    b: 'L’histogramme montre que la plupart des étudiant·es du jeu de données ont grandi dans des constellations familiales traditionnelles.'
     c: 'L’histogramme montre qu’il y a plus d’étudiant·es qui ont 3 frères et sœurs que d’étudiant·es qui sont enfants uniques.'
     d: 'La constellation la plus fréquente est celle des étudiant·es ayant un seul frère ou une seule sœur.'
     e: 'Une personne ayant participé au questionnaire a indiqué qu’elle avait 7 frères et sœurs.'
@@ -967,7 +967,7 @@
     Supposons que nous fassions un test t pour savoir si la taille moyenne de 100 joueuses
     de la WNBA sélectionnées au hasard diffère de celle de 100 hommes néerlandais sélectionnés
     au hasard. Le code suivant simule les deux échantillons et effectue le test.
-    Exécutez-le et jugez chaque affirmation.
+    Exécutez-le, puis jugez chaque proposition.
   code: |
     set.seed(2026)
     wnba <- rnorm(100, mean = 184.5, sd = 6.5)
@@ -1002,7 +1002,7 @@
     b: 'Il y a moins de 5 % de chances que les résultats observés soient dus au hasard.'
     c: 'La probabilité que l’hypothèse nulle soit vraie est supérieure à 95 %.'
     d: 'Les données ne suivent pas une loi normale.'
-    e: 'Toutes les autres réponses sont incorrectes.'
+    e: 'Aucune des autres réponses n’est correcte.'
   key: e
   explanation: |
     La valeur p est la probabilité d’observer des résultats au moins aussi extrêmes que ceux de
@@ -1024,7 +1024,7 @@
     b: 'Diagramme en barres'
     c: 'Boîte à moustaches'
     d: 'Nuage de points'
-    e: 'Toutes les réponses sont incorrectes'
+    e: 'Aucune des autres réponses n’est correcte.'
   drop: [e]
   key: [d]
   explanation: |
@@ -1054,7 +1054,7 @@
   session: 1
   problem_sets: [1]
   type: multi
-  stem: 'Exécutez le code R suivant et jugez chaque proposition :'
+  stem: 'Exécutez le code suivant, puis jugez chaque proposition :'
   code: |
     a <- c(1, 22, 8, -5)
     print(a)
@@ -1073,7 +1073,7 @@
 - id: 47
   session: 2
   type: multi
-  stem: 'Exécutez le code R suivant et jugez chaque proposition :'
+  stem: 'Exécutez le code suivant, puis jugez chaque proposition :'
   code: |
     vecteur2 <- c(1, 2, 3, 4, 1000, 2000)
   options:
@@ -1460,7 +1460,7 @@
   session: 2
   problem_sets: [1]
   type: numeric
-  stem: 'Exécutez le code R suivant pour créer `v1`. Ensuite, avec votre propre code, calculez la variance de `v1`.'
+  stem: 'Exécutez le code suivant pour créer `v1`. Ensuite, avec votre propre code, calculez la variance de `v1`.'
   code: |
     v1 <- c(1:104)
   key: 910
@@ -1475,7 +1475,7 @@
   session: 2
   variant_of: 77
   type: numeric
-  stem: 'Exécutez le code R suivant pour créer `v1`. Ensuite, avec votre propre code, calculez la variance de `v1`.'
+  stem: 'Exécutez le code suivant pour créer `v1`. Ensuite, avec votre propre code, calculez la variance de `v1`.'
   code: |
     v1 <- c(6:104)
   key: 825
@@ -1487,7 +1487,7 @@
   session: 2
   variant_of: 77
   type: numeric
-  stem: 'Exécutez le code R suivant pour créer `v1`. Ensuite, avec votre propre code, calculez la variance de `v1`.'
+  stem: 'Exécutez le code suivant pour créer `v1`. Ensuite, avec votre propre code, calculez la variance de `v1`.'
   code: |
     v1 <- c(6:109)
   key: 910
@@ -1499,7 +1499,7 @@
   session: 2
   variant_of: 77
   type: numeric
-  stem: 'Exécutez le code R suivant pour créer `v1`. Ensuite, avec votre propre code, calculez la variance de `v1`.'
+  stem: 'Exécutez le code suivant pour créer `v1`. Ensuite, avec votre propre code, calculez la variance de `v1`.'
   code: |
     v1 <- c(11:205)
   key: 3185
@@ -1856,7 +1856,7 @@
   problem_sets: [3]
   type: vf
   stem: |
-    Exécutez le code R suivant pour savoir si l’affirmation est vraie ou fausse :
+    Exécutez le code suivant pour savoir si l’affirmation est vraie ou fausse :
     la Toyota Corolla est le modèle de voiture le plus économe en carburant par rapport à son poids dans le jeu de données `mtcars`.
   code: |
     library(tidyverse)
@@ -1941,7 +1941,7 @@
       summarize(trajet_moyen = mean(trajet))
     ```
     Les étudiant·es sans passeport suisse mettent en moyenne 21,5 minutes, contre 33,5 pour les titulaires d’un passeport suisse.
-    Attention : le groupe sans passeport suisse ne compte que 10 personnes. Pour savoir si une telle différence est due au hasard, il faudrait un test (session 11).
+    Attention : le groupe sans passeport suisse ne compte que 10 personnes. Pour savoir si une telle différence est due au hasard, il faudrait un test (chapitre 11).
   uses_data: reponses_socio.csv
   note: >-
     La réécriture du PS4 l’étiquette à tort « 117 » (question 18). Corrigé recalculé

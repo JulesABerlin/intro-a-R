@@ -15,15 +15,17 @@ language:
   title-block-author-single: "Auteur"
 
 book:
-  title: "Exercices Méthodes II"
-  subtitle: "Introduction à R pour les sciences de la communication"
+  title: "Introduction à R pour les sciences de la communication"
+  subtitle: "Développé pour le cours Exercices Méthodes II (Université de Fribourg)"
   author:
     - name: Julian Maitra
       orcid: 0000-0003-3989-5158
       affiliation:
-        - name: Université de Fribourg
-          url: https://www.unifr.ch/home/en/
-  date: 2025-03-07
+        - name: Université de Fribourg (2023–2025)
+          url: https://www.unifr.ch/home/fr/
+        - name: Freie Universität Berlin
+          url: https://www.fu-berlin.de/
+  date: 2026-10-06
   site-url: https://julesaberlin.github.io/intro-a-R/
   repo-url: https://github.com/julesaberlin/intro-a-R
   page-footer:

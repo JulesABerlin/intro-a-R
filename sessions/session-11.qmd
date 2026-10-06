@@ -244,7 +244,7 @@ grand** donne au test plus de puissance.
 ### Exercice 1
 
 Selon l'étude [World Internet Project de l'Université de
-Zurich](https://doi.org/10.5167/uzh-251581), qui a évalué les données
+Zurich](https://doi.org/10.5167/uzh-251581) [@latzer2023], qui a évalué les données
 pour la Suisse, les personnes en Suisse ont passé en moyenne 5.6 heures
 en ligne en 2023. Chez les 20-29 ans, ce chiffre s'élève même à 7.9
 heures en moyenne.

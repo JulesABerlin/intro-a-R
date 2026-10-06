@@ -32,7 +32,7 @@ en ouvrant une *issue* sur [GitHub](https://github.com/julesaberlin/intro-a-R/is
 | Photo d'un diamant | Chapitre 4 | Jerry Cone, via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Diamond-1128734.jpg) | Domaine public |
 | Logo du paquet palmerpenguins | Chapitre 12 | Allison Horst ([palmerpenguins](https://allisonhorst.github.io/palmerpenguins/)) | [CC0](https://creativecommons.org/publicdomain/zero/1.0/) |
 | Exercices interactifs (`webex.css`, `webex.js`) | Toutes les pages | Dale Barr, Lisa DeBruine et Caspar J. Van Lissa ([webexercises](https://github.com/psyteachr/webexercises)) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
-| Jeux de données intégrés à R (`iris`, `mtcars`, `women`, `diamonds`, `mpg`, `penguins`) | Chapitres 4 à 13 | Voir la page d'aide de chaque jeu de données (p. ex. `?iris`) | Licences de R et des paquets concernés |
+| Jeux de données intégrés à R (`iris`, `mtcars`, `women`, `diamonds`, `mpg`, `penguins`) | Chapitres 4 à 13 | `iris` : @fisher1936 et @anderson1935 ; `mtcars` : @henderson1981 ; `women` : *The World Almanac and Book of Facts 1975*, d'après @mcneil1977 ; `diamonds` : @wickham2016 ; `mpg` : @epa_fueleconomy ; `penguins` : @gorman2014 et @horst2020. Voir aussi la page d'aide de chaque jeu de données (p. ex. `?iris`) | Licences de R et des paquets concernés |
 | Captures d'écran de RStudio (volets ; importation d'un fichier CSV) | Chapitres 1 et 7 | Julian Maitra ; captures d'écran de RStudio Desktop © Posit Software, PBC | Logiciel sous licence AGPL v3 ; exclues de la licence CC du site |
 
 Posit, RStudio, and Shiny are trademarks of Posit Software, PBC, all rights reserved, and may be registered in the United States Patent and Trademark Office and in other countries.
@@ -48,13 +48,13 @@ Posit, RStudio, and Shiny are trademarks of Posit Software, PBC, all rights rese
     Instagram distincts de 33 comptes, publiés en février–mars 2023), avec
     leurs métriques et leurs URL uniquement.
     -   **Origine** : l'échantillon initial a été constitué en 2023 à partir
-        de CrowdTangle. Seuls les posts encore publiquement accessibles le
+        de CrowdTangle [@crowdtangle2023]. Seuls les posts encore publiquement accessibles le
         5 octobre 2026 ont été gardés ; seize URL originales n'étaient plus
         disponibles et ont été exclues sans être remplacées par des posts plus
         récents.
     -   **Réobservation** : les métriques `Likes`, `Comments` et `Reposts` ont
         été relevées le 5 octobre 2026 sur les pages Instagram publiques avec
-        Zeeschuimer.
+        Zeeschuimer [@peeters2026].
     -   **Followers et heures** : les nombres de followers sont un instantané
         du 5 octobre 2026, arrondi selon l'affichage d'Instagram. Les ratios
         par follower ne sont donc pas des taux d'engagement historiques. Les
@@ -72,6 +72,13 @@ Posit, RStudio, and Shiny are trademarks of Posit Software, PBC, all rights rese
     contiennent les distributions agrégées des résultats réels (nombre
     d'étudiant·es par nombre de points) aux Problem Sets. Les résultats
     individuels ne sont pas publiés.
+
+## Outils
+
+Ce livre est écrit avec Quarto [@quarto2026] et R [@r2026] ; le code est
+exécuté avec knitr [@knitr2026] et les exercices interactifs utilisent le
+paquet webexercises [@webexercises2026]. La liste complète des sources se
+trouve dans les [Références](references.qmd).
 
 ## Cookies et suivi
 

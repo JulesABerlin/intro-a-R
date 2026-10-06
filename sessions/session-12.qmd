@@ -77,13 +77,14 @@ effets fixes et pour effectuer des analyses de variance.
 
 ![Logo du paquet [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/index.html). Illustration : Allison Horst, [CC0](https://creativecommons.org/publicdomain/zero/1.0/).](../images/palmerpenguins.png){width="200" fig-alt="Logo hexagonal du paquet palmerpenguins avec trois manchots"}
 
-Pour cet exemple, il faut télécharger le paquet R `palmerpenguins`.
+Pour cet exemple, il faut télécharger le paquet R `palmerpenguins`
+[@horst2020].
 Celui-ci contient un jeu de données avec des informations sur trois
 espèces de manchots (Adélie, à jugulaire et papou ; en anglais Adelie,
 Chinstrap et Gentoo) qui vivent dans
 l'archipel de Palmer en Antarctique.
 
-Les données ont été collectées entre 2007 et 2009 et comprennent des
+Les données ont été collectées entre 2007 et 2009 [@gorman2014] et comprennent des
 mesures telles que la longueur du bec (`bill_length_mm`), la longueur
 des nageoires (`flipper_length_mm`), le poids corporel (`body_mass_g`)
 et le sexe des manchots.
@@ -404,7 +405,8 @@ variable indépendante `wt`. Regardons le résultat plus en detail :
 
 La vidéo YouTube suivante de StatQuest, un créateur de contenus qui
 explique très bien lest concepts statistiques (en anglais), décrit
-comment interpréter les résultats d'une regression linéaire dans R :
+comment interpréter les résultats d'une regression linéaire dans R
+[@statquest2017lmr] :
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/u1cc1r_Y7M0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 
@@ -628,19 +630,19 @@ beaucoup sont très pertinents pour les sciences sociales et pour vos
 études en général, p. ex. :
 
 -   [Linear Regression, Clearly
-    Explained!!!](https://youtu.be/nk2CQITm_eo)
+    Explained!!!](https://youtu.be/nk2CQITm_eo) [@statquest2017lm]
 -   [Multiple Regression in R,
-    Step-by-Step!!!](https://youtu.be/mno47Jn4gaU)
+    Step by Step!!!](https://youtu.be/mno47Jn4gaU) [@statquest2022mlr]
 -   [The Normal Distribution, Clearly
-    Explained!!!](https://youtu.be/rzFX5NWojp0)
+    Explained!!!](https://youtu.be/rzFX5NWojp0) [@statquest2017normal]
 -   [p-values: What they are and how to interpret
-    them](https://youtu.be/vemZtEM63GY)
+    them](https://youtu.be/vemZtEM63GY) [@statquest2020pvalues]
 -   [R-squared, Clearly
-    Explained!!!](https://youtu.be/2AQKmw14mHM)
+    Explained!!!](https://youtu.be/2AQKmw14mHM) [@statquest2015r2]
 -   [Hypothesis Testing and The Null Hypothesis, Clearly
-    Explained!!!](https://youtu.be/0oc49DyA3hU)
+    Explained!!!](https://youtu.be/0oc49DyA3hU) [@statquest2020hypothesis]
 -   [Logistic Regression in R, Clearly
-    Explained!!!](https://youtu.be/C4N3_XJJ-jU)
+    Explained!!!!](https://youtu.be/C4N3_XJJ-jU) [@statquest2018logistic]
 
 ## Exercices {.unnumbered}
 

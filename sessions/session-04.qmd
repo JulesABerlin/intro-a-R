@@ -37,15 +37,15 @@ normalement depuis le site [Comprehensive R Archive Network
 (CRAN)](http://cran.r-project.org). Dans ce cours, nous nous
 concentrerons sur deux paquets célèbres :
 
--   `ggplot2` pour créer des **visualisations de données**
+-   `ggplot2` pour créer des **visualisations de données** [@wickham2016]
 
--   `dplyr` pour **manipuler les jeux de données**
+-   `dplyr` pour **manipuler les jeux de données** [@dplyr2026]
 
 Tous deux font partie du [tidyverse](https://www.tidyverse.org), une
-collection de paquets conçus pour la science des données. Nous
+collection de paquets conçus pour la science des données [@wickham2019]. Nous
 utiliserons également le paquet suivant :
 
--   `ggthemes` pour **augmenter le design des graphiques**
+-   `ggthemes` pour **augmenter le design des graphiques** [@ggthemes2026]
 
 Pour utiliser un paquet R sur votre ordinateur, il faut :
 
@@ -144,10 +144,10 @@ de ce type :
 
 -   `iris` et `mtcars`, fournis avec R ;
 
--   `diamonds`, fourni avec le paquet `ggplot2`.
+-   `diamonds`, fourni avec le paquet `ggplot2` [@wickham2016].
 
 Nous verrons un quatrième jeu de données, `penguins` (paquet
-`palmerpenguins`), en session 12.
+`palmerpenguins` ; @horst2020), en session 12.
 
 ::: {.callout-tip title="Astuce"}
 Vous pouvez afficher les jeux de données qui sont actuellement
@@ -164,8 +164,8 @@ total (50 pour chaque espèce).
 
 Le jeu de données a été rendu célèbre par le statisticien et biologiste
 britannique **Ronald Fisher** dans un article scientifique de 1936 qui
-avait beaucoup d'influence dans le domaine des statistiques. Les mesures
-ont été publiées par le botaniste Edgar Anderson (1935) ; deux des trois
+avait beaucoup d'influence dans le domaine des statistiques [@fisher1936]. Les mesures
+ont été publiées par le botaniste Edgar Anderson [-@anderson1935] ; deux des trois
 espèces proviennent de la péninsule de Gaspé (Québec, Canada).
 
 ::: {.callout-caution collapse="true"}
@@ -232,8 +232,9 @@ avec un point d'interrogation : `?iris()`.
 
 ### Le jeu de données `mtcars`
 
-Utilisez le script suivant pour analyser `mtcars`(lisez également la
-documentation avec `?mtcars`) !
+Utilisez le script suivant pour analyser `mtcars` (lisez également la
+documentation avec `?mtcars`) ! Les données proviennent de
+@henderson1981.
 
 ```{r}
 #| warning: false

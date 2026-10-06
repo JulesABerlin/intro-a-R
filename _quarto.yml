@@ -6,6 +6,7 @@ project:
     - index.qmd
     - sessions/*.qmd
     - apropos.qmd
+    - references.qmd
   resources:
     - data/*
 
@@ -46,6 +47,10 @@ book:
     - sessions/session-13.qmd
     - sessions/session-14.qmd
     - apropos.qmd
+    - references.qmd
+
+bibliography: references.bib
+csl: apa-fr.csl
 
 execute:
   freeze: auto

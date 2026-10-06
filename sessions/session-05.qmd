@@ -267,8 +267,7 @@ reproductibilité des résultats.
 Dans le code R suivant, nous utilisons `rnorm()` pour simuler les
 distributions des tailles des hommes et des femmes en Suisse.
 
-D'après l'Enquête suisse sur la santé 2017 ([Staub et al.,
-2022](https://pmc.ncbi.nlm.nih.gov/articles/PMC9502675/)), les femmes
+D'après l'Enquête suisse sur la santé 2017 [@muller2022], les femmes
 mesurent en moyenne 164,6 cm (écart-type 6,5 cm) et les hommes 177,0 cm
 (écart-type 7,1 cm). Dans la suite, nous utilisons des valeurs proches :
 une moyenne de 164.7 cm pour les femmes et de 177.4 cm pour les hommes,

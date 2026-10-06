@@ -32,8 +32,8 @@ contribuent à son développement et à sa maintenance.
 Pour utiliser R sur votre ordinateur portable, vous devez d'abord
 installer les deux logiciels suivants :
 
-1.  le langage de programmation [R](https://cran.r-project.org)
-2.  l'interface [RStudio](https://posit.co/download/rstudio-desktop/)
+1.  le langage de programmation [R](https://cran.r-project.org) [@r2026]
+2.  l'interface [RStudio](https://posit.co/download/rstudio-desktop/) [@rstudio2026]
 
 Notez que nous n'écrirons le code R que dans RStudio, l'interface. Le
 langage de programmation R doit d'abord être installé, mais il

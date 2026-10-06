@@ -1,0 +1,8 @@
+# Références {.unnumbered}
+
+Les références suivent les normes APA (7^e^ édition, adaptation
+française). Les vidéos, cours en ligne et outils sont accompagnés d'une
+courte note.
+
+::: {#refs}
+:::

@@ -28,9 +28,7 @@ Commençons par le **nuage de points**, que nous avons déjà vu lors de la
 dernière session, lorsque nous avons visualisé la relation entre les
 carats et les prix dans le jeu de données `diamonds`.
 
-::: {.callout-note icon="true"}
-## À noter
-
+::: {.callout-note title="Définition : nuage de points"}
 Un **nuage de points** (angl. *scatter plot*) est
 utilisé dans `ggplot2` pour représenter les valeurs de **deux variables
 numériques différentes** par des points, avec une variable sur l'axe des
@@ -118,9 +116,7 @@ rendue possible par les possibilités de visualisation de `ggplot2`.
 
 ## Les diagrammes en barres {#les-diagrammes-à-barres}
 
-::: {.callout-note icon="true"}
-## À noter
-
+::: {.callout-note title="Définition : diagramme en barres"}
 Les **diagrammes en barres** dans R avec `ggplot2` sont utilisés pour
 représenter visuellement des **données catégorielles**, permettant de
 comparer des quantités entre différentes catégories.
@@ -170,9 +166,7 @@ Que nous dit le graphique ? Il est intéressant de constater que dans le
 jeu de données `diamonds`, le niveau de qualité le plus élevé de la
 taille, à savoir `ideal`, est également le plus fréquent.
 
-::: {.callout-caution collapse="false"}
-## Attention
-
+::: {.callout-warning title="Attention"}
 Dans la fonction `ggplot()`, il y a une différence si vous voulez
 ajouter de la couleur aux points (qui ont mathématiquement zéro
 dimension) ou aux surfaces (qui ont deux dimensions), comme dans les
@@ -184,18 +178,16 @@ utilisé pour ajouter de la couleur aux nuages de points ne fera
 que colorer le contour de la surface.
 :::
 
-### C'est maintenant à vous de jouer !
+### À vous de jouer {#cest-maintenant-à-vous-de-jouer}
 
 Reprenez le code que nous avons utilisé pour créer `db1` et modifiez-le
-pour créer un nouvel objet,`db2`, qui représente les effectifs des
+pour créer un nouvel objet, `db2`, qui représente les effectifs des
 qualités de couleur (`color`) dans le jeu de données `diamonds` sous
 la forme d'un diagramme en barres.
 
 ## Les histogrammes
 
-::: {.callout-note icon="true"}
-## À noter
-
+::: {.callout-note title="Définition : histogramme"}
 Un **histogramme** est un type de graphique utilisé pour représenter
 **la distribution** d'**une variable numérique** à travers des barres.
 
@@ -332,7 +324,7 @@ head(colors(), 20)
 ```
 :::
 
-### C'est maintenant à vous de jouer !
+### À vous de jouer {#cest-maintenant-à-vous-de-jouer-1}
 
 Reprenez le code que nous avons utilisé pour créer `taille_f` et `hist1`
 et modifiez-le pour créer une nouvelle simulation de taille d'hommes,
@@ -344,9 +336,7 @@ Suisse ont une taille moyenne (`mean`) de 177,4 cm avec un écart-type
 
 ## Les boîtes à moustaches {#les-boîtes-à-moustaches-angl.-boxplots}
 
-::: {.callout-note icon="true"}
-## À noter
-
+::: {.callout-note title="Définition : boîte à moustaches"}
 Les **boîtes à moustaches** (angl. *boxplots*) représentent la
 distribution d'une variable numérique à l'aide de cinq valeurs clés :
 
@@ -450,9 +440,7 @@ Ce code crée un graphique, `box1`, avec une boîte à moustaches par
 groupe de cylindres du jeu de données `mtcars`, permettant de comparer facilement l'efficacité
 énergétique (`mpg`) entre les voitures avec des nombres de cylindres différents.
 
-::: {.callout-note icon="true"}
-## À noter
-
+::: {.callout-tip title="Astuce"}
 L'argument `alpha = 0.2` de `geom_boxplot()` rend les boîtes
 transparentes. En général, `alpha` peut être compris entre 0
 (totalement transparent) et 1 (non transparent). C'est un argument

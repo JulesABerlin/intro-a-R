@@ -7,9 +7,7 @@ source("_common.R")
 
 **Sujet : La statistique descriptive**
 
-::: {.callout-note icon="true"}
-## À noter
-
+::: {.callout-note title="Définition : statistique descriptive"}
 La **statistique descriptive** est généralement la première étape d'une
 analyse statistique. Elle aide à comprendre le jeu de données et ses
 caractéristiques à un niveau descriptif.
@@ -71,9 +69,7 @@ Pour nous entraîner à nouveau, cette fois avec nos propres données, nous
 allons procéder ci-dessous à une analyse descriptive des réponses au
 questionnaire rempli par les étudiant·es du cours !
 
-::: {.callout-note icon="true"}
-## Données synthétiques
-
+::: {.callout-caution title="Contexte : des données synthétiques" collapse="true"}
 Le fichier `reponses_socio.csv` utilisé sur ce site est **synthétique** : ses
 données ont été simulées à partir du questionnaire d'une classe, et il ne
 contient **aucune personne réelle**. Il a les mêmes variables que le

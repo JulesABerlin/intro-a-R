@@ -34,6 +34,16 @@
 \usepackage{newunicodechar}
 \newunicodechar{·}{\kern-.12em\symbol{"00B7}\kern-.12em}
 
+% Encadrés : mêmes couleurs que le site (theme.scss). « Objectifs
+% d'apprentissage » et « En bref » (important) en violet, « Pour aller plus
+% loin / Contexte » (caution) en gris. Quarto définit ses couleurs après cet
+% en-tête : on les redéfinit au début du document.
+\AtBeginDocument{%
+  \definecolor{quarto-callout-important-color}{HTML}{6F42C1}%
+  \definecolor{quarto-callout-important-color-frame}{HTML}{8C68CD}%
+  \definecolor{quarto-callout-caution-color}{HTML}{6C757D}%
+  \definecolor{quarto-callout-caution-color-frame}{HTML}{ADB5BD}}
+
 % Plus de souplesse pour couper les lignes avant un long code en ligne.
 \setlength{\emergencystretch}{3em}
 

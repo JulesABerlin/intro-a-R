@@ -9,9 +9,7 @@ Dans le cours, le **Problem Set 2** était un test de 30 minutes sur Moodle port
 les chapitres 4 et 5. Les questions ci-dessous en reprennent le contenu, avec la
 correction et une explication pour chaque réponse.
 
-::: {.callout-note collapse="true"}
-## Résultats de l'édition 2025 du cours
-
+::: {.callout-caution title="Contexte : résultats de l'édition 2025 du cours" collapse="true"}
 65 étudiant·es ont passé ce test (20 points au maximum, 10 pour réussir).
 La moyenne était de 12,8 points et 86 % des étudiant·es l'ont réussi.
 

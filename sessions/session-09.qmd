@@ -9,9 +9,7 @@ Dans le cours, le **Problem Set 3** était un test sur Moodle portant sur
 les chapitres 7 et 8. Les questions ci-dessous en reprennent le contenu, avec la
 correction et une explication pour chaque réponse.
 
-::: {.callout-note collapse="true"}
-## Résultats de l'édition 2025 du cours
-
+::: {.callout-caution title="Contexte : résultats de l'édition 2025 du cours" collapse="true"}
 64 étudiant·es ont passé ce test (20 points au maximum, 10 pour réussir).
 La moyenne était de 13,1 points et 91 % des étudiant·es l'ont réussi.
 

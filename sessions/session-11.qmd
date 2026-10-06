@@ -20,9 +20,7 @@ Mais d'abord, il faut répondre à la question suivante :
 
 ## Qu'est-ce que la statistique inférentielle ? {#cest-quoi-la-statistique-inférentielle}
 
-::: {.callout-note icon="true"}
-## À noter
-
+::: {.callout-note title="Définition : statistique inférentielle"}
 La statistique inférentielle est la branche de la statistique qui
 permet de tirer des conclusions générales sur une population entière en
 se basant sur l'analyse statistique d'un échantillon représentatif de
@@ -46,20 +44,17 @@ nouvelles connaissances dans notre domaine de recherche
 
 ## Le test t
 
-::: {.callout-note icon="true"}
-## À noter
-
-Le test t est un outil statistique qui permet d'évaluer les moyennes
-d'un ou deux échantillons à l'aide d'un test d'hypothèse. Il est aussi
-appelé test t de Student, car le statisticien qui l'a inventé au début
-du 20ème siècle, William Sealy Gosset, a publié sous le pseudonyme de
-"Student" ([Wikipédia,
-2024](https://en.wikipedia.org/wiki/Student%27s_t-test)).
+::: {.callout-note title="Définition : test t"}
+Le **test t** compare une moyenne à une valeur de référence, ou deux
+moyennes entre elles, en tenant compte de la variabilité des données et
+de la taille des échantillons. Il indique si l'écart observé est assez
+grand pour ne pas être attribué au seul hasard de l'échantillonnage. On
+l'appelle aussi *test t de Student* : William Sealy Gosset, qui l'a mis
+au point au début du XXe siècle, publiait sous le pseudonyme
+« Student ».
 :::
 
-::: {.callout-caution collapse="false"}
-## Attention
-
+::: {.callout-warning title="Attention : conditions d'application"}
 Pour qu'un test t soit valide, les données doivent remplir plusieurs
 **conditions d'application** :
 
@@ -169,8 +164,8 @@ test. Le test ci-dessous est bilatéral (il cherche un écart dans les deux
 sens). Pour tester seulement si le QI est *plus élevé*, on ajouterait
 `alternative = "greater"` dans `t.test()`.
 
-À noter : dans le code qui suit, nous allons encore une fois utiliser la
-fonction `rnorm()` que nous avons vue au chapitre 5 pour créer des valeurs
+Dans le code qui suit, nous utilisons à nouveau la fonction `rnorm()`,
+vue au [chapitre 5](session-05.qmd#les-histogrammes), pour créer des valeurs
 « aléatoires » qui suivent une loi normale. Nous pouvons utiliser ces
 valeurs pour simuler notre problème.
 
@@ -238,8 +233,9 @@ La valeur p est maintenant beaucoup plus petite. Si la vraie moyenne
 improbable (p = 0,007). **Nous rejetons H0** au seuil de 5 %. La moyenne
 estimée (105,5) est supérieure à 100.
 
-À retenir : pour une même différence réelle, un **échantillon plus
-grand** donne au test plus de puissance.
+Pour une même différence réelle, un **échantillon plus grand** donne
+donc au test plus de puissance, c'est-à-dire plus de chances de détecter
+cette différence.
 
 ### Exercice 1
 
@@ -353,8 +349,8 @@ données, les joueuses sont en moyenne plus grandes que les hommes suisses
 (environ 184,4 cm contre 177,7 cm).
 :::
 
-À noter : la fonction `t.test()`, comme nous l'avons utilisée dans ces exemples
-de code jusqu'à présent, utilise des valeurs par défaut pour les arguments
+La fonction `t.test()`, telle que nous l'avons utilisée jusqu'ici,
+utilise des valeurs par défaut pour les arguments
 que nous ne précisons pas. Voici quelques-uns de ces arguments, que l'on
 peut aussi consulter avec `?t.test` :
 

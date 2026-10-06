@@ -10,42 +10,26 @@ linéaire)**
 
 ## L'analyse de la variance (ANOVA)
 
-::: {.callout-note icon="true"}
-## À noter
+::: {.callout-note title="Définition : analyse de la variance (ANOVA)"}
+L'**analyse de la variance** (ANOVA) compare les moyennes d'une
+variable numérique entre trois groupes ou plus. Elle généralise ainsi
+le test t, qui compare au plus deux moyennes.
 
-L'analyse de la variance (abrégée **ANOVA**) est un ensemble de modèles
-statistiques et de procédures d'estimation associées utilisées pour
-analyser les différences entre les moyennes. L'ANOVA a été développée
-par le statisticien britannique [Ronald Fisher
-(1890–1962)](https://fr.wikipedia.org/wiki/Ronald_Aylmer_Fisher).
+Son principe consiste à décomposer la variabilité totale de la variable
+en deux parts : la variabilité **entre** les groupes (les moyennes des
+groupes diffèrent-elles ?) et la variabilité **à l'intérieur** des
+groupes (la dispersion autour de chaque moyenne). Si la première est
+grande par rapport à la seconde, la statistique F est élevée et la
+valeur p faible : on rejette l'hypothèse nulle selon laquelle toutes
+les moyennes sont égales.
 
-L'ANOVA permet d'étudier le comportement d'une variable quantitative à
-expliquer en fonction d'une ou de plusieurs variables catégorielles. 
-
-Dans sa forme la plus simple, l'ANOVA fournit un test statistique
-permettant de déterminer si deux moyennes de population ou plus sont
-égales, et généralise donc le test t au-delà de deux moyennes. En
-d'autres termes, l'ANOVA est utilisée pour tester si les différences
-entre deux ou plusieurs moyennes d'une variable quantitative à expliquer
-sont significatives ou si elles peuvent être attribuées au hasard.
-
-Le principe de l'ANOVA est basé sur la loi de la variance totale, selon
-laquelle la variance observée d'une variable particulière est divisée en
-composantes attribuables à différentes sources de variation, telles que
-la variation entre les groupes et la variation à l'intérieur des
-groupes.
-
-En fonction du nombre de facteurs et du nombre de niveaux dans chaque
-facteur, il existe différents types d'ANOVA, tels que l'ANOVA à un
-facteur, l'ANOVA à deux facteurs, etc.
-
-(Source : [Wikipédia,
-2024](https://en.wikipedia.org/wiki/Analysis_of_variance)).
+On appelle **facteur** la variable catégorielle qui définit les groupes :
+avec un facteur, on parle d'ANOVA à un facteur, avec deux, d'ANOVA à deux
+facteurs, etc. L'ANOVA a été développée par Ronald Fisher (voir le
+[chapitre 4](session-04.qmd#le-jeu-de-données-iris)).
 :::
 
-::: {.callout-caution collapse="false"}
-## Attention
-
+::: {.callout-warning title="Attention : conditions d'application"}
 Comme le test t, l'ANOVA repose sur des conditions d'application : l'indépendance des observations ; dans chaque groupe, une
 distribution à peu près normale (vérifiable sur les résidus du modèle) ;
 des variances semblables entre les groupes (homoscédasticité).
@@ -201,9 +185,7 @@ une relation causale : si des facteurs importants ne sont pas mesurés
 (p. ex. les capacités ou l'origine sociale), le coefficient de
 l'éducation peut être biaisé.
 
-::: {.callout-note icon="true"}
-## À noter
-
+::: {.callout-note title="Définition : régression linéaire"}
 La régression linéaire est une méthode statistique utilisée pour
 modéliser la relation linéaire entre une **variable à expliquer (y)** et
 une ou plusieurs **variables explicatives (x1, x2, etc.)**.
@@ -282,9 +264,7 @@ $$ où :
 
 -   $\epsilon$ est le terme d'erreur aléatoire
 
-::: {.callout-note icon="true"}
-## À noter
-
+::: {.callout-note title="Définition : droite de régression"}
 Si cela est trop abstrait pour certaines personnes : Nous pourrions
 également dire que, d'un point de vue pratique, l'objectif d'une
 régression linéaire simple est d'ajuster une ligne droite à un nuage de
@@ -414,7 +394,7 @@ Vidéo : *Linear Regression in R, Step-by-Step*,
 <https://www.youtube.com/watch?v=u1cc1r_Y7M0>.
 :::
 
-**Les graphiques de diagnostic**
+#### Les graphiques de diagnostic
 
 Les graphiques de diagnostic (angl. diagnostic plots) sont des
 graphiques utilisés pour évaluer la qualité d'un modèle de régression
@@ -422,8 +402,8 @@ linéaire et vérifier si ses conditions d'application sont remplies (p.
 ex. si les **résidus** suivent approximativement une loi normale).
 
 En utilisant la fonction `plot()` après avoir calculé un modèle de
-régression linéaire dans R, nous pouvons visualiser quatre types de
-plots diagnostiques :
+régression linéaire dans R, nous pouvons afficher quatre graphiques
+de diagnostic :
 
 ```{r}
 # Cette commande fait en sorte que les graphes de diagnostic soient tous affichés en même temps, sur un panneau 2 X 2 :
@@ -433,7 +413,7 @@ par(mfrow=c(2,2))
 plot(modele_1)
 ```
 
-**Explications des quatre graphiques diagnostiques** :
+#### Lire les quatre graphiques de diagnostic
 
 1.  `Residuals vs Fitted` : Ce graphique montre si les résidus (la
     distance entre les valeurs modélisées et observées) présentent des
@@ -568,9 +548,7 @@ sélections sur les valeurs AIC (critère d'information d'Akaike).
 -   R propose ainsi le modèle ayant l'AIC le plus faible **parmi ceux
     explorés**. Ce n'est pas forcément « le » meilleur modèle.
 
-::: {.callout-warning icon="true"}
-## Attention
-
+::: {.callout-warning title="Attention"}
 La sélection automatique pas à pas est pratique pour explorer, mais
 elle est **critiquée** : elle tend à surestimer la qualité du modèle
 (valeurs p et R² trop optimistes), et le modèle choisi peut changer avec
@@ -606,7 +584,9 @@ statistique F et les valeurs p pour les variables explicatives.
 summary(stepwise_model)
 ```
 
-**Graphiques de diagnostic** : Après avoir choisi un modèle, il est
+#### Graphiques de diagnostic
+
+Après avoir choisi un modèle, il est
 utile de vérifier les graphiques des résidus pour contrôler les conditions
 d'application : homoscédasticité, normalité et indépendance des résidus.
 

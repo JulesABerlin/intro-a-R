@@ -16,7 +16,7 @@ Les exercices suivants se composent d'une question et d'une solution
 modèle sous forme de code R. Notez qu'en programmation R, il y a souvent
 plusieurs solutions pour arriver à la réponse correcte.
 
-::: {.callout-tip title="Conseil"}
+::: {.callout-tip title="Astuce"}
 Pour un meilleur effet d'apprentissage : essayez d'abord de résoudre la
 question avec votre propre script R sans consulter immédiatement la
 solution modèle. Comparez ensuite votre propre code avec celui de la
@@ -186,7 +186,7 @@ diamonds %>%
 # Avec un prix par diamant de 5063 USD en moyenne, la catégorie de pureté SI2 est la plus chère dans diamonds.
 ```
 
-**Attention** : cela ne veut pas dire qu'une pureté plus faible rend un
+Cela ne veut pas dire qu'une pureté plus faible rend un
 diamant plus cher. Les diamants SI2 sont en moyenne plus **lourds**
 (1,08 carat, contre 0,51 pour la pureté maximale IF), et le poids
 influence fortement le prix. Comparez avec

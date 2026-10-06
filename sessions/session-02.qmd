@@ -72,16 +72,14 @@ notamment :
 -   Les **tibbles**, une version moderne du tableau de données, utilisée
     par les packages du tidyverse (voir chapitre 7).
 
-::: {.callout-important title="Important"}
+::: {.callout-note title="Définition : observations et variables"}
 -   Il est de convention qu'un tableau de données présente les **unités
     statistiques** par **ligne** (angl. *row*).
 -   Les **variables** ou caractéristiques de ces unités statistiques
     sont indiquées en conséquence par **colonnes** (angl. *column*).
 :::
 
-::: {.callout-note icon="true"}
-## À noter
-
+::: {.callout-note title="Définition : unité statistique"}
 Selon le type de données, surtout en recherche empirique en sciences
 sociales dont font partie les sciences de la communication, les unités
 statistiques peuvent être :
@@ -101,9 +99,7 @@ tandis que chaque colonne représente les variables qui ont été
 collectées pour chaque unité statistique.
 :::
 
-::: {.callout-note icon="true"}
-## À noter
-
+::: {.callout-note title="Définition : taille de l'échantillon (n)"}
 La taille d'un jeu de données est indiquée par **le nombre d'unités
 statistiques n**.
 
@@ -171,9 +167,7 @@ print(m2)
 
 ```
 
-::: {.callout-note icon="true"}
-## À noter
-
+::: {.callout-note title="Définition : valeur par défaut"}
 Si vous ne spécifiez pas tous les arguments d'une fonction, R utilise
 les valeurs par défaut de ces arguments.
 :::
@@ -218,9 +212,7 @@ m4[1:5, ]
 
 ## Les tableaux de données {#les-data-frames}
 
-::: {.callout-note icon="true"}
-## À noter
-
+::: {.callout-note title="Définition : tableau de données"}
 Le **tableau de données** (angl. *data frame*) est la structure en forme
 de tableau la plus courante dans R. Chaque ligne est une observation et
 chaque colonne une variable. Toutes les valeurs d'une colonne sont du
@@ -380,9 +372,7 @@ var(a1)
 Pour les variables catégorielles, R dispose d'un type d'objet
 particulier : les **facteurs**.
 
-::: {.callout-note icon="true"}
-## À noter
-
+::: {.callout-note title="Définition : variable catégorielle et facteur"}
 Une **variable catégorielle** ne prend qu'un nombre limité de valeurs,
 ses **modalités**. Elle peut être :
 
@@ -451,12 +441,13 @@ str(ice_age_df)
 
 ```
 
-C'est maintenant à vous de transformer la colonne `name` de
-`ice_age_df` en facteur.
+### À vous de jouer
+
+Transformez la colonne `name` de `ice_age_df` en facteur.
 
 ## Le répertoire de travail {#le-répértoire-de-travail}
 
-::: {.callout-important title="Important"}
+::: {.callout-note title="Définition : répertoire de travail"}
 Dans R, le **répertoire de travail** (angl. *working directory*) fait
 référence au dossier de votre ordinateur dans lequel R lit et enregistre
 les fichiers par défaut. Il s'agit d'un concept crucial dans la
@@ -490,9 +481,7 @@ Il faut l'adapter et inclure un chemin de fichier de votre ordinateur.
 Vous pouvez ensuite vérifier si le répertoire de travail a été
 correctement défini avec la fonction `getwd()`
 
-::: {.callout-tip}
-## Bonne pratique : les projets RStudio
-
+::: {.callout-tip title="Astuce"}
 Créez un **projet RStudio** (**File → New Project…**) pour chaque travail.
 Le répertoire de travail est alors défini automatiquement sur le dossier
 du projet, et vos chemins de fichiers relatifs (p. ex.

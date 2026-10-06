@@ -6,6 +6,12 @@ $web-font-path: false;
 $font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
   "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 
+// Encadrés : « Objectifs d'apprentissage » et « En bref » (important) dans
+// la couleur d'accent violette, « Pour aller plus loin / Contexte »
+// (caution) en gris neutre. Mêmes couleurs dans le PDF (pdf-header.tex).
+$callout-color-important: #6f42c1;
+$callout-color-caution: #6c757d;
+
 /*-- scss:rules --*/
 
 // Notes des références annotées (vidéos, cours en ligne, outils)

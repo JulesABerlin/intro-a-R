@@ -11,9 +11,7 @@ Bienvenue ! Ce premier chapitre vous guide dans vos premiers pas avec R :
 installer les logiciels, découvrir l'interface RStudio et écrire vos
 premières lignes de code.
 
-::: {.callout-note icon="true"}
-## À noter
-
+::: {.callout-note title="Définition : R"}
 **R** est un langage de programmation et un environnement logiciel pour
 l'analyse statistique, la visualisation de données et le calcul
 scientifique. Il est largement utilisé en statistique, en science des
@@ -144,9 +142,7 @@ Si vous exécutez ce code, un nouvel objet, `x`, apparaît dans le volet
 
 {{< pagebreak >}}
 
-::: {.callout-note icon="true"}
-## À noter
-
+::: {.callout-note title="Définition : objet"}
 En R, tout ce que l'on manipule (une valeur, un vecteur, un tableau, une
 fonction) est un **objet** qui porte un nom. Même une valeur isolée,
 comme `x <- 5`, est un objet : un vecteur de longueur 1. En programmation,
@@ -174,10 +170,10 @@ que `x`, en tapant son nom et en l'exécutant.
 x
 ```
 
-::: {.callout-important title="Important"}
--   Veillez toujours à exécuter le code qui crée un objet avant de
-    l'utiliser. Si l'objet n'existe pas encore, R affiche un message
-    d'erreur.
+::: {.callout-warning title="Attention"}
+Veillez toujours à exécuter le code qui crée un objet avant de
+l'utiliser. Si l'objet n'existe pas encore, R affiche un message
+d'erreur.
 :::
 
 Par exemple, essayez d'exécuter ce qui suit : `y + z`
@@ -199,10 +195,8 @@ y + z
 
 Maintenant, le code fonctionne.
 
-::: {.callout-important title="Important"}
--   Sachez aussi que si vous affectez une nouvelle valeur à un objet
-    existant, l'ancienne valeur est écrasée.
-:::
+Sachez aussi que si vous affectez une nouvelle valeur à un objet
+existant, l'ancienne valeur est écrasée.
 
 ```{r}
 #| echo: true
@@ -220,9 +214,7 @@ que `x` (valeur = 5).
 
 Cependant, ce n'est pas le seul type de données dans R.
 
-::: {.callout-note icon="true"}
-## À noter
-
+::: {.callout-note title="Définition : types de données"}
 Les trois types de données les plus courants dans R sont :
 
 -   les nombres, de type **numérique** (`numeric`) ;
@@ -309,9 +301,7 @@ Vous pouvez afficher la valeur de `v1` en tapant son nom et l'exécutant
 v1 
 ```
 
-::: {.callout-note icon="true"}
-## À noter
-
+::: {.callout-note title="Définition : fonction"}
 En R, une **fonction** effectue une tâche à partir des valeurs qu'on lui
 transmet entre parenthèses, ses **arguments** (on dit aussi
 *paramètres*), et renvoie un résultat.
@@ -349,9 +339,7 @@ femme <- c(TRUE, TRUE, TRUE, FALSE, TRUE)
 
 ```
 
-::: {.callout-caution collapse="false"}
-## Attention
-
+::: {.callout-warning title="Attention"}
 Un vecteur ne contient qu'**un seul type** de données. Si l'on mélange
 des types, R les convertit sans prévenir vers le type le plus général
 (logique → numérique → texte) : `c(1, "a", TRUE)` donne

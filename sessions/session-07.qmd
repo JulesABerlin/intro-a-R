@@ -29,9 +29,7 @@ fichier contient des posts Instagram de célébrités qui ont reçu
 beaucoup d'interactions. Pour cette application, il faut
 d'abord charger ce jeu de données dans notre session RStudio en cours.
 
-::: {.callout-note}
-## D'où viennent ces données ?
-
+::: {.callout-caution title="Contexte : d'où viennent ces données ?" collapse="true"}
 `igposts.csv` reprend les posts d'un échantillon de février–mars 2023
 qui étaient encore publics le 5 octobre 2026. Les métriques (`Likes`,
 `Comments`, `Reposts`) et le nombre de followers ont été relevés à cette
@@ -39,9 +37,7 @@ date : ils décrivent l'état des posts en 2026, pas au moment de leur
 publication. Voir [À propos](../apropos.qmd#données) pour les détails.
 :::
 
-::: {.callout-note icon="true"}
-## À noter
-
+::: {.callout-note title="Définition : fichier CSV"}
 Un fichier de type **CSV** (angl. *comma-separated values*) est un format
 textuel simple pour sauvegarder des données en forme de tableau, c'est à
 dire avec des valeurs organisées en lignes et en colonnes et séparées par
@@ -157,9 +153,7 @@ Vous pouvez aussi cliquer sur l'objet et explorer le tableau
 manuellement pour le comprendre davantage (comme nous l'avons fait avec
 `mtcars`, etc.).
 
-::: {.callout-caution collapse="false"}
-## Attention
-
+::: {.callout-warning title="Attention"}
 -   N'enregistrez pas un fichier CSV après l'avoir ouvert dans Excel
     (ou un autre tableur) : Excel peut modifier les dates, les zéros
     initiaux, le séparateur ou l'encodage, ce qui entraîne ensuite des

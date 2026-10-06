@@ -16,9 +16,7 @@ analyse de données avec R :
 
 ## Les packages R {#les-paquets-r}
 
-::: {.callout-note icon="true"}
-## À noter
-
+::: {.callout-note title="Définition : package"}
 Dans R, un **package** (on dit aussi *extension* ; parfois *paquet* ou
 *paquetage*) est un ensemble de fonctions, de données et de
 documentation dans un format bien défini.
@@ -77,7 +75,7 @@ library(ggthemes)
 `ggplot2` et `dplyr` sont installés avec le tidyverse : inutile de les
 installer séparément.
 
-::: {.callout-important title="Important"}
+::: {.callout-warning title="Attention"}
 Une fois installé, un package n'a pas besoin d'être réinstallé avec
 `install.packages()`. En revanche, vous devez **charger** chaque package
 dont vous avez besoin, à chaque nouvelle session, avec la fonction
@@ -166,9 +164,7 @@ avait beaucoup d'influence dans le domaine des statistiques [@fisher1936]. Les m
 ont été publiées par le botaniste Edgar Anderson [-@anderson1935] ; deux des trois
 espèces proviennent de la péninsule de Gaspé (Québec, Canada).
 
-::: {.callout-caution collapse="true"}
-## Plus sur Ronald Fisher
-
+::: {.callout-caution title="Pour aller plus loin : Ronald Fisher" collapse="true"}
 Ronald Fisher (1890–1962) était un statisticien, généticien et
 biologiste britannique qui a joué un rôle crucial dans le développement
 de la science statistique moderne. Il est connu pour son travail dans le
@@ -282,9 +278,10 @@ via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:1974_Toyota_Coro
 
 ### Le jeu de données `diamonds`
 
-C'est maintenant à vous d'explorer ce jeu de données avec du code.
+### À vous de jouer {#diamonds-à-vous}
 
-Utilisez également `?diamonds`.
+Explorez le jeu de données `diamonds` avec du code, et consultez sa
+documentation avec `?diamonds`.
 
 ![Qu'est-ce qui définit le prix d'un diamant ?
 Photo : Jerry Cone, domaine public,
@@ -292,9 +289,7 @@ via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Diamond-1128734.
 
 ## Introduction aux visualisations avec `ggplot2`
 
-::: {.callout-note icon="true"}
-## À noter
-
+::: {.callout-note title="Définition : `ggplot2`"}
 `ggplot2`, qui fait partie du tidyverse, est un package de
 visualisation de données très populaire dans R. Il a été conçu pour
 faciliter la création de graphiques, même complexes, avec une syntaxe
@@ -335,10 +330,8 @@ Le but dans cet exemple est de visualiser le jeu de données `diamonds`
 pour comprendre la relation entre les variables `price` (prix) et
 `carat` (poids) des diamants dans le jeu de données.
 
-::: {.callout-note icon="true"}
-## À noter
-
-Important : avant d'analyser un jeu de données, il faut toujours
+::: {.callout-tip title="Astuce"}
+Avant d'analyser un jeu de données, il faut toujours
 acquérir des **connaissances contextuelles** sur ce que les données
 représentent.
 

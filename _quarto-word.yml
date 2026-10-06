@@ -1,0 +1,19 @@
+# Profil « word » : copie du livre en .docx pour relire et corriger avec le
+# suivi des modifications. Le code est affiché mais pas exécuté (pas de
+# sorties). Les passages propres au HTML ou au PDF (blocs content-visible
+# unless-format) y figurent tous les deux. Le fichier est écrit dans _word/ (hors du site publié, ignoré
+# par git) :
+#   quarto render --profile word --to docx
+project:
+  output-dir: _word
+
+execute:
+  eval: false
+  freeze: false
+
+format:
+  docx:
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    number-depth: 2

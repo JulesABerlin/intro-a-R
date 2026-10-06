@@ -411,13 +411,13 @@ explique très bien lest concepts statistiques (en anglais), décrit
 comment interpréter les résultats d'une regression linéaire dans R
 [@statquest2017lmr] :
 
-::: {.content-visible when-format="html"}
+::: {.content-visible unless-format="pdf"}
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/u1cc1r_Y7M0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 
 </iframe>
 :::
 
-::: {.content-visible when-format="pdf"}
+::: {.content-visible unless-format="html"}
 Vidéo : *Linear Regression in R, Step-by-Step*,
 <https://www.youtube.com/watch?v=u1cc1r_Y7M0>.
 :::
@@ -656,11 +656,11 @@ beaucoup sont très pertinents pour les sciences sociales et pour vos
 
 ## Exercices {.unnumbered}
 
-::: {.content-visible when-format="html"}
+::: {.content-visible unless-format="pdf"}
 Choisissez *Vrai* ou *Faux*, cochez une réponse ou tapez un nombre : la couleur indique tout de suite si votre réponse est correcte. Cliquez sur **Explication** pour voir la correction.
 :::
 
-::: {.content-visible when-format="pdf"}
+::: {.content-visible unless-format="html"}
 Notez vos réponses, puis comparez-les avec l'annexe « Corrigés » à la fin du livre.
 :::
 

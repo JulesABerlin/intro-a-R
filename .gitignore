@@ -68,3 +68,6 @@ raw_data/
 
 # macOS Finder metadata
 .DS_Store
+
+# Copie Word du livre (profil « word ») : locale, hors du site publié
+/_word/

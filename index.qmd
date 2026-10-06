@@ -5,6 +5,10 @@ données en sciences sociales, et en particulier en sciences de la
 communication. Chaque chapitre combine des explications, du code à
 exécuter dans RStudio et des exercices interactifs avec corrections.
 
+::: {.content-visible when-format="html"}
+[📄 Télécharger le livre en PDF (avec corrigés en annexe)](intro-a-R.pdf){.btn .btn-primary .btn-lg role="button"}
+:::
+
 ::: {.callout-note}
 ## Origine de ce site
 
@@ -21,6 +25,8 @@ apprendre R à son rythme.
     en l'utilisant.
 -   Testez-vous avec les exercices à la fin de chaque chapitre. Les
     chapitres « Révision » reprennent les tests du cours.
+-   Sur ce site, les exercices sont interactifs ; dans la version PDF, les
+    réponses se trouvent dans l'annexe « Corrigés ».
 
 Les jeux de données utilisés dans le cours se trouvent dans le dossier
 [`data/`](https://github.com/julesaberlin/intro-a-R/tree/main/data) et

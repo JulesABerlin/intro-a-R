@@ -3,6 +3,7 @@
 ```{r}
 #| include: false
 source("_common.R")
+library(webexercises)
 ```
 
 ::: {.callout-important title="Objectifs d'apprentissage"}
@@ -263,8 +264,7 @@ Réalisez un test t en utilisant ces statistiques comme suit :
     votre échantillon simulé de 30 personnes de 20 à 29 ans vivant en Suisse se distingue
     significativement de la moyenne nationale (`mu = 5.6`).
 
-::: {.callout-caution collapse="true"}
-### Solution
+`r hide("Solution")`
 
 ```{r}
 #| echo: true
@@ -286,7 +286,8 @@ supérieure à la moyenne nationale.
 
 (Les données étant simulées avec une moyenne de 7,9 heures, ce résultat
 était attendu.)
-:::
+
+`r unhide()`
 
 ### Exemple 2 : test t à deux échantillons
 
@@ -334,8 +335,7 @@ Testez si la taille moyenne de ces 24 joueuses diffère significativement
 de celle de 24 hommes suisses tirés au hasard. (Supposons que
 l'écart-type des joueuses est de 6,5 cm.)
 
-::: {.callout-caution collapse="true"}
-### Solution
+`r hide("Solution")`
 
 ```{r}
 #| echo: true
@@ -353,7 +353,8 @@ print(t_test_two_sample)
 La valeur p est très faible (p < 0,001) : nous rejetons H0. Dans ces
 données, les joueuses sont en moyenne plus grandes que les hommes suisses
 (environ 184,4 cm contre 177,7 cm).
-:::
+
+`r unhide()`
 
 La fonction `t.test()`, telle que nous l'avons utilisée jusqu'ici,
 utilise des valeurs par défaut pour les arguments

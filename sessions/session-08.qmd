@@ -3,6 +3,7 @@
 ```{r}
 #| include: false
 source("_common.R")
+library(webexercises)
 library(tidyverse) # chargé par les étudiant·es (voir la consigne ci-dessous)
 ```
 
@@ -48,8 +49,7 @@ solution modèle.
 -   Sélectionnez ensuite les colonnes `mpg` et `cyl` de `mtcars` avec
     `dplyr`.
 
-::: {.callout-caution collapse="true"}
-### Solution
+`r hide("Solution")`
 
 ```{r}
 #| echo: true
@@ -59,7 +59,8 @@ str(mtcars)
 mtcars %>% 
   select(mpg,cyl)
 ```
-:::
+
+`r unhide()`
 
 ### Exercice 2 : mtcars II {#mtcars-ii}
 
@@ -68,8 +69,7 @@ mtcars %>%
 -   Combien de modèles de voitures dans `mtcars` répondent à ce critère
     ?
 
-::: {.callout-caution collapse="true"}
-### Solution
+`r hide("Solution")`
 
 ```{r}
 #| echo: true
@@ -79,14 +79,14 @@ mtcars %>%
 
 # Six modèles de voitures ont une valeur mpg d'au moins 25 dans mtcars.
 ```
-:::
+
+`r unhide()`
 
 ### Exercice 3 : mtcars III {#mtcars-iii}
 
 -   Triez `mtcars` par `mpg` dans l'ordre décroissant.
 
-::: {.callout-caution collapse="true"}
-### Solution
+`r hide("Solution")`
 
 ```{r}
 #| echo: true
@@ -94,7 +94,8 @@ mtcars %>%
 mtcars %>% 
   arrange(desc(mpg))
 ```
-:::
+
+`r unhide()`
 
 ### Exercice 4 : mtcars IV {#mtcars-iv}
 
@@ -110,8 +111,7 @@ mtcars %>%
 -   Quel modèle de voiture de `mtcars` est le plus économe en carburant
     par rapport à son poids ?
 
-::: {.callout-caution collapse="true"}
-### Solution
+`r hide("Solution")`
 
 ```{r}
 #| echo: true
@@ -125,7 +125,8 @@ mtcars_v2 %>%
 
 # Le Lotus Europa est le plus économe en carburant par rapport à son poids.
 ```
-:::
+
+`r unhide()`
 
 ### Exercice 5 : diamonds I {#diamonds-i}
 
@@ -133,8 +134,7 @@ mtcars_v2 %>%
 -   Utilisez des verbes `dplyr` pour compter le nombre de diamants dans
     `diamonds` qui pèsent plus de 3 carats.
 
-::: {.callout-caution collapse="true"}
-### Solution
+`r hide("Solution")`
 
 ```{r}
 #| echo: true
@@ -150,14 +150,14 @@ diamonds %>%
 
 # Le critère carat > 3 s'applique à 32 diamants dans diamonds.
 ```
-:::
+
+`r unhide()`
 
 ### Exercice 6 : diamonds II {#diamonds-ii}
 
 -   Calculez le prix moyen en USD des diamants dans `diamonds`.
 
-::: {.callout-caution collapse="true"}
-### Solution
+`r hide("Solution")`
 
 ```{r}
 #| echo: true
@@ -169,7 +169,8 @@ diamonds %>%
 
 mean(diamonds$price)
 ```
-:::
+
+`r unhide()`
 
 ### Exercice 7 : diamonds III {#diamonds-iii}
 
@@ -179,8 +180,7 @@ mean(diamonds$price)
 -   Quelle catégorie de pureté est la plus chère en moyenne dans
     `diamonds` ?
 
-::: {.callout-caution collapse="true"}
-### Solution
+`r hide("Solution")`
 
 ```{r}
 #| echo: true
@@ -199,15 +199,15 @@ diamant plus cher. Les diamants SI2 sont en moyenne plus **lourds**
 influence fortement le prix. Comparez avec
 `diamonds %>% group_by(clarity) %>% summarize(mean(carat))`. C'est un
 exemple de **variable confondante**.
-:::
+
+`r unhide()`
 
 ### Exercice 8 : mtcars V {#mtcars-v}
 
 -   Regroupez mtcars par `gear`, puis, à l'aide de `summarize()`,
     calculez `n`, la médiane et la variance de mpg.
 
-::: {.callout-caution collapse="true"}
-### Solution
+`r hide("Solution")`
 
 ```{r}
 #| echo: true
@@ -218,7 +218,8 @@ mtcars %>%
             median_mpg = median(mpg), 
             var_mpg = var(mpg))
 ```
-:::
+
+`r unhide()`
 
 ### Exercice 9 : iris I {#iris-i}
 
@@ -230,8 +231,7 @@ mtcars %>%
 -   Regroupez ensuite les données par espèce et utilisez `summarize()`
     pour calculer une nouvelle variable : `mean_Petal.Surface`.
 
-::: {.callout-caution collapse="true"}
-### Solution
+`r hide("Solution")`
 
 ```{r}
 #| echo: true
@@ -246,7 +246,8 @@ iris %>%
 
 # Les iris de l'espèce virginica ont les plus grandes surfaces de pétales (en moyenne).
 ```
-:::
+
+`r unhide()`
 
 ### Exercice 10 : diamonds IV {#diamonds-iv}
 
@@ -256,8 +257,7 @@ iris %>%
     `carat`, pour les différentes catégories de taille (`cut`).
 -   Montrez aussi `n`, le nombre de diamants par catégorie de taille.
 
-::: {.callout-caution collapse="true"}
-### Solution
+`r hide("Solution")`
 
 ```{r}
 #| echo: true
@@ -275,7 +275,8 @@ diamonds %>%
 Ici aussi, le poids joue un rôle : même **par carat**, les gros diamants
 coûtent plus cher, et les diamants de taille *Ideal* sont en moyenne plus
 petits (0,70 carat) que les *Premium* (0,89 carat).
-:::
+
+`r unhide()`
 
 ### Exercice 11 : igposts I {#igposts-i}
 
@@ -288,8 +289,7 @@ petits (0,70 carat) que les *Premium* (0,89 carat).
     `igposts$Account`, `igposts$User.Name` et `igposts$Type` en variables
     catégorielles avec `as.factor()`.
 
-::: {.callout-caution collapse="true"}
-### Solution
+`r hide("Solution")`
 
 ```{r}
 #| echo: true
@@ -309,7 +309,8 @@ igposts$Type <- as.factor(igposts$Type)
 
 str(igposts)
 ```
-:::
+
+`r unhide()`
 
 ### Exercice 12 : igposts II {#igposts-ii}
 
@@ -317,8 +318,7 @@ str(igposts)
     regroupés par compte des influenceurs dans `igposts`.
 -   Affichez les 10 premiers par ordre décroissant de `n`.
 
-::: {.callout-caution collapse="true"}
-### Solution
+`r hide("Solution")`
 
 ```{r}
 #| echo: true
@@ -329,7 +329,8 @@ igposts %>%
   arrange(desc(n)) %>% 
   head(10)
 ```
-:::
+
+`r unhide()`
 
 ### Exercice 13 : igposts III {#igposts-iii}
 
@@ -339,8 +340,7 @@ igposts %>%
 -   Triez-les par ordre décroissant de la moyenne des `Likes`.
 -   Affichez le top 10.
 
-::: {.callout-caution collapse="true"}
-### Solution
+`r hide("Solution")`
 
 ```{r}
 #| echo: true
@@ -351,7 +351,8 @@ igposts %>%
   arrange(desc(mean_Likes)) %>% 
   head(10)
 ```
-:::
+
+`r unhide()`
 
 ### Exercice 14 : igposts IV {#igposts-iv}
 
@@ -360,8 +361,7 @@ igposts %>%
 -   Allez voir l'URL du post avec le plus de `Likes` : De quoi s'agit-il
     ?
 
-::: {.callout-caution collapse="true"}
-### Solution
+`r hide("Solution")`
 
 ```{r}
 #| echo: true
@@ -374,7 +374,8 @@ igposts %>%
 
 # Le post Instagram le plus liké dans igposts est un album publié par Leo Messi.
 ```
-:::
+
+`r unhide()`
 
 [URL Instagram du post de Leo
 Messi](https://www.instagram.com/p/CpLxnFlNJZn/)
@@ -386,8 +387,7 @@ Messi](https://www.instagram.com/p/CpLxnFlNJZn/)
 -   Allez voir l'URL du post avec le plus de `Comments` : De quoi
     s'agit-il ?
 
-::: {.callout-caution collapse="true"}
-### Solution
+`r hide("Solution")`
 
 ```{r}
 #| echo: true
@@ -399,7 +399,8 @@ igposts %>%
 
 #Le post Instagram ayant reçu le plus de commentaires dans igposts est de type photo et a été publié par Selena Gomez.
 ```
-:::
+
+`r unhide()`
 
 [URL du post Instagram de Selena
 Gomez](https://www.instagram.com/p/Co_P7YgrrFO/)
@@ -412,8 +413,7 @@ Gomez](https://www.instagram.com/p/Co_P7YgrrFO/)
 -   Allez voir l'URL du post avec le plus de `Reposts` : De quoi
     s'agit-il ?
 
-::: {.callout-caution collapse="true"}
-### Solution
+`r hide("Solution")`
 
 ```{r}
 #| echo: true
@@ -425,7 +425,8 @@ igposts %>%
 
 #Le post Instagram ayant reçu le plus de Reposts dans igposts est une photo publiée par SUGA (agustd).
 ```
-:::
+
+`r unhide()`
 
 [URL du post Instagram de
 SUGA](https://www.instagram.com/p/Copd1XvJT78/)
@@ -441,8 +442,7 @@ SUGA](https://www.instagram.com/p/Copd1XvJT78/)
 -   Trouvez maintenant le post avec le plus grand nombre de
     `Likes_par_Follower` et naviguez jusqu'à son URL : que montre-t-il ?
 
-::: {.callout-caution collapse="true"}
-### Solution
+`r hide("Solution")`
 
 ```{r}
 igposts %>% 
@@ -452,7 +452,8 @@ igposts %>%
 
 #Le post Instagram qui a reçu le plus de Likes par follower dans igposts est un album publié par Anastasia Karanikolaou.
 ```
-:::
+
+`r unhide()`
 
 [URL du post Instagram de Anastasia
 Karanikolaou](https://www.instagram.com/p/CoptMRoJtUD/)
@@ -462,8 +463,7 @@ Karanikolaou](https://www.instagram.com/p/CoptMRoJtUD/)
 -   Faites la même chose qu'à la question 17, mais cette fois créez la
     variable `Comments_par_Follower`.
 
-::: {.callout-caution collapse="true"}
-### Solution
+`r hide("Solution")`
 
 ```{r}
 #| echo: true
@@ -475,7 +475,8 @@ igposts %>%
 
 #Le post Instagram qui a reçu le plus de commentaires par follower dans igposts est un album publié par l'actrice indienne Kiara Advani.
 ```
-:::
+
+`r unhide()`
 
 [URL du post Instagram de
 KIARA](https://www.instagram.com/p/CoXmBSLvj7A/)
@@ -485,8 +486,7 @@ KIARA](https://www.instagram.com/p/CoXmBSLvj7A/)
 -   Faites la même chose que dans les exercices 17 et 18, mais cette
     fois pour `Reposts_par_Follower`.
 
-::: {.callout-caution collapse="true"}
-### Solution
+`r hide("Solution")`
 
 ```{r}
 #| echo: true
@@ -498,7 +498,8 @@ igposts %>%
 
 #Le post Instagram qui a reçu le plus de Reposts par follower est la même photo de SUGA (agustd) qu'à l'exercice 16.
 ```
-:::
+
+`r unhide()`
 
 [URL du post Instagram de
 SUGA](https://www.instagram.com/p/Copd1XvJT78/)

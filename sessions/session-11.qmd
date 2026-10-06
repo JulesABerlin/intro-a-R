@@ -10,11 +10,11 @@ source("_common.R")
 Dans cette et la prochaine session, nous allons nous concentrer sur
 trois méthodes de statistique inférentielle couramment utilisées :
 
--   Les **tests t** (angl. Student's t-test)
+-   les **tests t** (angl. *Student's t-test*) ;
 
--   l'**analyse de variance** (angl. **ANOVA** = ANalysis Of VAriance)
+-   l'**analyse de la variance** (angl. *analysis of variance*, ANOVA) ;
 
--   La **régression linéaire** (angl. linear regression).
+-   la **régression linéaire** (angl. *linear regression*).
 
 Mais d'abord, il faut répondre à la question suivante :
 
@@ -122,7 +122,7 @@ Il existe **trois types** de tests t :
     significative d'une valeur connue.
 
     -   Par exemple, si la moyenne des notes d'un groupe de 30 lycéens,
-        qui est de 4.9, est significativement différente de 5.0 ou non.
+        qui est de 4,9, est significativement différente de 5,0 ou non.
 
 2.  **Le test t à deux échantillons indépendants** (angl. *two sample
     t-test*) : pour évaluer si les moyennes de deux échantillons
@@ -133,8 +133,8 @@ Il existe **trois types** de tests t :
     variances égales.
 
     -   Par exemple, si la moyenne des notes de 30 lycéennes, qui est de
-        5.0, est significativement différente ou non de la moyenne des
-        notes de 30 lycéens, qui est de 4.8.
+        5,0, est significativement différente ou non de la moyenne des
+        notes de 30 lycéens, qui est de 4,8.
 
 3.  **Le test t pour échantillons appariés** (angl. *paired t-test*) :
     pour comparer les moyennes de deux groupes qui sont liés ou appariés
@@ -171,7 +171,7 @@ sens). Pour tester seulement si le QI est *plus élevé*, on ajouterait
 
 À noter : dans le code qui suit, nous allons encore une fois utiliser la
 fonction `rnorm()` que nous avons vue au chapitre 5 pour créer des valeurs
-"aléatoires" qui suivent une loi normale. Nous pouvons utiliser ces
+« aléatoires » qui suivent une loi normale. Nous pouvons utiliser ces
 valeurs pour simuler notre problème.
 
 ```{r}
@@ -197,7 +197,7 @@ Il s'agit maintenant d'interpréter le résultat du test t dans R.
     plus élevées suggèrent des preuves plus solides contre l'hypothèse
     nulle, ce qui se traduit par des valeurs p plus faibles.
 
--   **df** signifie "degrees of freedom". Dans un test t, les degrés de
+-   `df` signifie *degrees of freedom* (degrés de liberté). Dans un test t, les degrés de
     liberté font référence au nombre de valeurs dans le calcul final
     d'une statistique qui sont libres de varier. Il s'agit d'une mesure
     de la quantité d'informations disponibles pour estimer le paramètre
@@ -207,7 +207,7 @@ Il s'agit maintenant d'interpréter le résultat du test t dans R.
     résultat au moins aussi extrême que celui obtenu dans l'échantillon sous
     l'hypothèse nulle. Elle est utilisée pour déterminer si le résultat
     du test est statistiquement significatif en comparant sa valeur à un
-    seuil de signification prédéfini (habituellement 5% = 0.05). La
+    seuil de signification prédéfini (habituellement 5 % = 0,05). La
     valeur p est calculée à partir de la statistique de test t et des
     degrés de liberté associés à l'échantillon.
 
@@ -245,14 +245,14 @@ grand** donne au test plus de puissance.
 
 Selon l'étude [World Internet Project de l'Université de
 Zurich](https://doi.org/10.5167/uzh-251581) [@latzer2023], qui a évalué les données
-pour la Suisse, les personnes en Suisse ont passé en moyenne 5.6 heures
-en ligne en 2023. Chez les 20-29 ans, ce chiffre s'élève même à 7.9
+pour la Suisse, les personnes en Suisse ont passé en moyenne 5,6 heures
+en ligne en 2023. Chez les 20–29 ans, ce chiffre s'élève même à 7,9
 heures en moyenne.
 
 Réalisez un test t en utilisant ces statistiques comme suit :
 
--   Simulez avec `rnorm()`30 valeurs pour l'utilisation d'Internet en
-    heures par jour pour le groupe d'âge 20-29 ans
+-   Simulez avec `rnorm()` 30 valeurs pour l'utilisation d'Internet en
+    heures par jour pour le groupe d'âge 20–29 ans
     (`mean = 7.9, sd = 2`).
 
 -   Testez si la durée moyenne d'utilisation d'Internet en heures de
@@ -276,7 +276,7 @@ print(resultat_test_t)
 ```
 
 La valeur p est très faible : des données comme celles-ci seraient très
-improbables si la moyenne des 20-29 ans était de 5,6 heures. Nous
+improbables si la moyenne des 20–29 ans était de 5,6 heures. Nous
 rejetons H0. La moyenne estimée de l'échantillon (7,8 heures) est
 supérieure à la moyenne nationale.
 
@@ -297,9 +297,9 @@ D'après l'Enquête suisse sur la santé 2017 ([Staub et al.,
 2022](https://pmc.ncbi.nlm.nih.gov/articles/PMC9502675/)), que nous avons
 déjà vue en session 5, les femmes mesurent en moyenne 164,6 cm
 (écart-type 6,5 cm) et les hommes 177,0 cm (écart-type 7,1 cm). Dans la
-suite, nous utilisons des valeurs proches : une moyenne de 164.7 cm pour
-les femmes et de 177.4 cm pour les hommes, avec des écarts-types un peu
-plus petits de 5.6 cm et de 6.1 cm.
+suite, nous utilisons des valeurs proches : une moyenne de 164,7 cm pour
+les femmes et de 177,4 cm pour les hommes, avec des écarts-types un peu
+plus petits de 5,6 cm et de 6,1 cm.
 
 ```{r}
 # Données exemplaires :
@@ -327,11 +327,11 @@ Supposons maintenant qu'un avion en provenance d'Amérique atterrisse à
 Genève-Cointrin. Il transporte une sélection de 24 joueuses de la
 Women's NBA, la ligue professionnelle féminine de basket-ball aux
 États-Unis. Les joueuses de la WNBA mesurent en moyenne environ
-1,83 à 1,85 m ; nous utilisons ici une valeur approximative de 184.5 cm.
+1,83 à 1,85 m ; nous utilisons ici une valeur approximative de 184,5 cm.
 
 Testez si la taille moyenne de ces 24 joueuses diffère significativement
 de celle de 24 hommes suisses tirés au hasard. (Supposons que
-l'écart-type des joueuses est de 6.5 cm.)
+l'écart-type des joueuses est de 6,5 cm.)
 
 ::: {.callout-caution collapse="true"}
 ### Solution
@@ -373,8 +373,7 @@ utile de lire les pages d'aide de R et de rechercher d'autres documents
 en ligne pertinents pour votre problématique spécifique.
 
 -   Un tutoriel qui approfondit le test t dans R est par exemple [celui
-    de Datacamp
-    (2024)](https://www.datacamp.com/tutorial/t-tests-r-tutorial).
+    de DataCamp](https://www.datacamp.com/tutorial/t-tests-r-tutorial).
 
 ## Exercices {.unnumbered}
 

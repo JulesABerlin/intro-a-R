@@ -32,16 +32,16 @@ Pour répéter et approfondir vos connaissances en R, des **MOOC**
 (massive open online courses) sont disponibles gratuitement en tant
 qu'auditeur/auditrice (après inscription) :
 
-1.  **Datacamp**: Introduction to R Programming :
+1.  **DataCamp** : Introduction to R Programming :
     <https://www.datacamp.com/courses/free-introduction-to-r> [@datacamp_intro_r]
 
-2.  **Edx (Harvard)**: R Basics :
+2.  **edX (Harvard)** : R Basics :
     <https://www.edx.org/learn/r-programming/harvard-university-data-science-r-basics> [@harvardx_r_basics]
 
-3.  **Edx (Stanford)**: R Programming Fundamentals :
+3.  **edX (Stanford)** : R Programming Fundamentals :
     <https://www.edx.org/learn/r-programming/stanford-university-r-programming-fundamentals> [@stanford_r_fundamentals]
 
-4.  **Udacity**: Data Analysis with R :
+4.  **Udacity** : Data Analysis with R :
     <https://www.udacity.com/course/data-analysis-with-r--ud651> [@udacity_data_analysis_r]
 
 Si vous payez entre 50 et 200 USD, il est également possible de valider
@@ -50,9 +50,9 @@ reliés à LinkedIn et y être affichés.
 
 ## Tutoriels sur YouTube
 
-Il existe également de nombreux tutoriels R sur Youtube. Il peut s'agir
+Il existe également de nombreux tutoriels R sur YouTube. Il peut s'agir
 de cours R complets de différents niveaux ou de courtes vidéos montrant
-comment utiliser une technique R particulière (par ex. un certain type
+comment utiliser une technique R particulière (p. ex. un certain type
 de visualisation).
 
 1.  **Introduction à R et RStudio (ft. mon chat radioactif) :** Tutoriel
@@ -92,7 +92,7 @@ Participez à des communautés en ligne pour rester connecté·e avec les
 dernières tendances et partager vos connaissances :
 
 -   [GitHub](https://github.com) : Le réseau social des développeurs
--   [Stackoverflow](https://stackoverflow.com) : Un forum d'entraide
+-   [Stack Overflow](https://stackoverflow.com) : Un forum d'entraide
     pour programmeurs
 -   [Kaggle](https://www.kaggle.com) : Une plateforme pour le machine
     learning et l'analyse de données

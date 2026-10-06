@@ -1,4 +1,4 @@
-# Visualiser des données avec ggplot2
+# Visualiser des données avec `ggplot2`
 
 ```{r}
 #| include: false
@@ -60,7 +60,7 @@ est utile.
 np1 <- ggplot(data = iris, 
                mapping = aes(x=Sepal.Length, y=Sepal.Width)) +
   geom_point() +
-  labs(title = "Sepal length and width in the iris dataset")
+  labs(title = "Longueur et largeur des sépales des iris")
 
 print(np1)
 ```
@@ -87,7 +87,7 @@ l'esprit pour les étapes de codage suivantes.
 np1 <- ggplot(iris, 
                aes(x=Sepal.Length, y=Sepal.Width, color = Species)) +
   geom_point() +
-  labs(title = "Sepal length and width in the iris dataset")
+  labs(title = "Longueur et largeur des sépales des iris")
 
 print(np1)
 ```
@@ -158,9 +158,9 @@ library(ggthemes)
 db1 <- ggplot(data = diamonds, 
        mapping = aes(x = cut, fill = cut)) + 
         geom_bar() +
-        labs(title = "Frequency of cut quality types in the diamonds dataset",
-             subtitle = "n = 53,940 diamonds",
-             x = "Cut Quality", y = "Count") +
+        labs(title = "Effectifs des qualités de taille des diamants",
+             subtitle = "n = 53 940 diamants",
+             x = "Qualité de la taille", y = "Effectif") +
         theme_minimal()
 
 print(db1)
@@ -199,17 +199,16 @@ la forme d'un diagramme en barres !
 Un **histogramme** est un type de graphique utilisé pour représenter
 **la distribution** d'**une variable numérique** à travers des barres.
 
-Un "histogramme sépare les valeurs possibles des données en classes ou
+« Un histogramme sépare les valeurs possibles des données en classes ou
 groupes. Pour chaque groupe, on construit un rectangle dont la base
 correspond aux valeurs de ce groupe et la hauteur correspond au nombre
 d'observations dans le groupe.
 
-L’histogramme a une apparence semblable au graphique à barres
+L'histogramme a une apparence semblable au graphique à barres
 verticales, mais il n'y a pas d'écart entre les barres.
 
-En règle générale, l'histogramme possède des barres d'une largeur égale"
-(Source : [Statistique Canada,
-2021).](https://www150.statcan.gc.ca/n1/edu/power-pouvoir/ch9/histo/5214822-fra.htm)
+En règle générale, l'histogramme possède des barres d'une largeur égale. »
+[@statcan2021]
 
 L'histogramme est particulièrement utile pour :
 
@@ -249,11 +248,11 @@ Notez que par défaut, la fonction utilise `mean = 0` et `sd = 1`, ce qui
 correspond à une **loi normale centrée réduite** (angl. *standard normal
 distribution*).
 
-Utilisez aussi `?rnorm()` pour accéder à plus d'infos.
+Consultez aussi `?rnorm` pour plus d'informations.
 
 ::: {.callout-tip title="Astuce"}
 La fonction `set.seed()` dans R est utilisée pour définir la graine
-(seed en anglais) du générateur de nombres aléatoires. La graine est un
+(angl. *seed*) du générateur de nombres aléatoires. La graine est un
 nombre entier qui sert de point de départ pour le générateur de nombres
 aléatoires.
 
@@ -270,14 +269,14 @@ distributions des tailles des hommes et des femmes en Suisse.
 D'après l'Enquête suisse sur la santé 2017 [@muller2022], les femmes
 mesurent en moyenne 164,6 cm (écart-type 6,5 cm) et les hommes 177,0 cm
 (écart-type 7,1 cm). Dans la suite, nous utilisons des valeurs proches :
-une moyenne de 164.7 cm pour les femmes et de 177.4 cm pour les hommes,
-avec des écarts-types un peu plus petits de 5.6 cm et de 6.1 cm.
+une moyenne de 164,7 cm pour les femmes et de 177,4 cm pour les hommes,
+avec des écarts-types un peu plus petits de 5,6 cm et de 6,1 cm.
 
 ```{r}
 #| warning: false
 # Simulation de tailles de femmes en Suisse
 # Créer 500 valeurs aléatoires de taille 
-# (moyenne = 164.7 et écart-type = 5.6) avec la fonction rnorm().
+# (moyenne = 164,7 et écart-type = 5,6) avec la fonction rnorm().
 set.seed(123)
 
 taille_f <- rnorm(500, mean = 164.7, sd = 5.6)
@@ -327,7 +326,7 @@ print(hist1)
 ::: {.callout-tip title="Astuce"}
 Un élément clé des visualisations de données est la **couleur**. R connaît
 657 noms de couleurs : la fonction `colors()` les liste, et vous pouvez
-utiliser chacun de ces noms dans ggplot2 (p. ex. `fill = "steelblue"`).
+utiliser chacun de ces noms dans `ggplot2` (p. ex. `fill = "steelblue"`).
 Pour un aperçu visuel, voir *Colors in R* [@brown_colors].
 
 ```{r}
@@ -355,7 +354,7 @@ distribution d'une variable numérique à l'aide de cinq valeurs clés :
 
 1.  l'extrémité de la moustache inférieure
 2.  le premier quartile (Q1 ; début de la boîte)
-3.  la médiane (Q2 ; ligne qui "coupe la boîte en deux")
+3.  la médiane (Q2 ; ligne qui « coupe la boîte en deux »)
 4.  le troisième quartile (Q3 ; fin de la boîte) et
 5.  l'extrémité de la moustache supérieure.
 
@@ -444,7 +443,7 @@ mtcars$cyl <- as.factor(mtcars$cyl)
 box1 <- ggplot(data = mtcars, 
           aes(x=cyl, y=mpg, fill = cyl)) + 
             geom_boxplot(alpha=0.2) + 
-              labs(title = "Miles par gallon (mpg) selon le nombre de cylindres dans mtcars", x = "Nombre de cylindres", y = "Miles per gallon (mpg)")
+              labs(title = "Miles par gallon (mpg) selon le nombre de cylindres dans mtcars", x = "Nombre de cylindres", y = "Miles par gallon (mpg)")
 print(box1)
   
 ```

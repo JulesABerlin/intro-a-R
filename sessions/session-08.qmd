@@ -235,7 +235,7 @@ iris %>%
   select(Petal.Length, Petal.Width, Species) %>%
   mutate(Petal.Surface = Petal.Length*Petal.Width) %>% 
   group_by(Species) %>% 
-  summarise(mean_Petal.Surface = mean(Petal.Surface))
+  summarize(mean_Petal.Surface = mean(Petal.Surface))
 
 # Les iris de l'espèce virginica ont les plus grandes surfaces de pétales (en moyenne).
 ```
@@ -425,7 +425,7 @@ SUGA](https://www.instagram.com/p/Copd1XvJT78/)
 
 ### Exercice 17 : igposts VII {#igposts-vii}
 
--   Utilisez dplyr pour créer une nouvelle colonne :
+-   Utilisez `dplyr` pour créer une nouvelle colonne :
     `Likes_par_Follower` (définie comme `Likes` divisé par
     `Followers.at.Observation`). Les followers ont été relevés le 5
     octobre 2026 : ce ratio compare les posts à la taille actuelle des

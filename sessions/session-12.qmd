@@ -17,7 +17,7 @@ L'analyse de la variance (abbrégée **ANOVA**) est un ensemble de modèles
 statistiques et de procédures d'estimation associées utilisées pour
 analyser les différences entre les moyennes. L'ANOVA a été développée
 par le statisticien britannique [Ronald Fisher
-(1890-1962)](https://fr.wikipedia.org/wiki/Ronald_Aylmer_Fisher).
+(1890–1962)](https://fr.wikipedia.org/wiki/Ronald_Aylmer_Fisher).
 
 L'ANOVA permet d'étudier le comportement d'une variable quantitative à
 expliquer en fonction d'une ou de plusieurs variables catégorielles. 
@@ -133,8 +133,9 @@ ggplot(data = penguins, aes(x = flipper_length_mm)) +
   geom_histogram(aes(fill = species), color = "black", alpha = 0.5, position = "identity", bins = 30) +
   scale_fill_manual(values = c("darkorange","darkorchid","cyan4")) +
   theme_minimal() +
-  labs(title = "Histograms of flipper length by penguin species",
-       subtitle = "n = 344 ; data source : palmerpenguin R package")
+  labs(title = "Longueur des nageoires selon l'espèce de manchot",
+       subtitle = "n = 344 ; source : package palmerpenguins",
+       x = "Longueur des nageoires (mm)", y = "Effectif", fill = "Espèce")
 
 # Calculs des variances de flipper length avec dplyr par espèce de manchot, pour vérifier si l'hypothèse des variances similaire entre groupes est satisfaite :
 penguins %>% 
@@ -313,7 +314,7 @@ La syntaxe de base de la fonction `lm()` est la suivante :
     régression doit utiliser en tant qu'entrée contenant les variables
     mentionnées dans la formule.
 
-### Exemple 2 : La régression linéaire à une variable avec `mtcars` {#exemple-1-la-régression-linéaire-à-une-variable-avec-mtcars}
+### Exemple 2 : la régression linéaire à une variable avec `mtcars` {#exemple-1-la-régression-linéaire-à-une-variable-avec-mtcars}
 
 Voici un exemple d'utilisation de la fonction `lm()` avec le jeu de
 données `mtcars` : `lm(mpg ~ wt, data = mtcars)`
@@ -350,23 +351,23 @@ Le résultat de la régression linéaire indique que le modèle linéaire
 variable explicative `wt`. Regardons le résultat plus en détail :
 
 -   Les coefficients du modèle sont présentés dans la section
-    *Coefficients*.
+    `Coefficients`.
 
     -   L'interception est estimée à 37,285 et le coefficient pour `wt`
         est estimé à -5,345. Cela signifie que pour chaque augmentation
         d'une unité de `wt`, la valeur prédite de `mpg` diminue de 5,345
-        unités en moyenne. En d'autres termes, pour chaque tranche de 1
-        000 livres (environ 454 kg) de plus, une voiture parcourt en
+        unités en moyenne. En d'autres termes, pour chaque tranche de 1000 livres
+        (environ 454 kg) de plus, une voiture parcourt en
         moyenne **5,3 miles de moins par gallon** (elle consomme donc
         davantage).
 
     -   La valeur de p (Pr(\>\|t\|)) pour le coefficient de `wt` est
-        très faible (\< 0,000000000129), ce qui indique que le
+        très faible (p < 0,001), ce qui indique que le
         coefficient est significativement différent de zéro et que la
         variable `wt` a un effet significatif sur la variable dépendante
         `mpg`.
 
--   La section *Residuals* indique les résidus minimaux, du premier
+-   La section `Residuals` indique les résidus minimaux, du premier
     quartile, de la médiane, du troisième quartile et maximaux. Ces
     valeurs peuvent être utilisées pour vérifier si les hypothèses du
     modèle sont satisfaites.
@@ -436,7 +437,7 @@ plot(modele_1)
 
 **Explications des quatre graphiques diagnostiques** :
 
-1.  **Residuals vs Fitted** : Ce graphique montre si les résidus (la
+1.  `Residuals vs Fitted` : Ce graphique montre si les résidus (la
     distance entre les valeurs modélisées et observées) présentent des
     tendances non linéaires. Il peut y avoir une relation non linéaire
     entre les variables explicatives x et la variable à expliquer y, et
@@ -447,13 +448,13 @@ plot(modele_1)
     c'est une bonne indication que vous n'avez pas de relations non
     linéaires.
 
-2.  **Q-Q Residuals** : Ce graphique montre si les résidus (les points)
+2.  `Q-Q Residuals` : Ce graphique montre si les résidus (les points)
     suivent une loi normale. Les résidus se situent-ils plus ou moins
     sur la ligne droite diagonale en pointillés ou s'en écartent-ils
     fortement ? C'est une bonne chose si les résidus sont bien alignés
     sur la ligne droite en pointillés.
 
-3.  **Scale-Location** : Ce graphique affiche les valeurs ajustées d'un
+3.  `Scale-Location` : Ce graphique affiche les valeurs ajustées d'un
     modèle de régression sur l'axe des abscisses et la racine carrée des
     résidus standardisés sur l'axe des ordonnées. C'est ainsi que vous
     pouvez vérifier l'hypothèse de variance égale (homoscédasticité).
@@ -461,7 +462,7 @@ plot(modele_1)
     horizontale avec des points répartis de manière égale (au hasard)
     autour d'elle.
 
-4.  **Residuals vs Leverage** : Ce graphique permet d'identifier les
+4.  `Residuals vs Leverage` : Ce graphique permet d'identifier les
     valeurs aberrantes influentes (valeurs extrêmes) dans les données
     qui peuvent affecter le modèle de régression linéaire. Toutes les
     valeurs aberrantes ne sont pas nécessairement influentes ; certaines
@@ -487,14 +488,14 @@ satisfaites, cela peut indiquer que le modèle n'est pas adéquat et
 qu'une transformation des données ou une sélection de variables
 différente peut être nécessaire.
 
-Dans le cas du modèle `modele_1` (`mpg ~ wt`), le graphique *Residuals
-vs Fitted* montre une légère courbure en forme de U : la relation n'est
+Dans le cas du modèle `modele_1` (`mpg ~ wt`), le graphique
+`Residuals vs Fitted` montre une légère courbure en forme de U : la relation n'est
 pas tout à fait linéaire (on pourrait essayer `mpg ~ wt + I(wt^2)` ou
 `log(mpg)`). Quelques voitures (Fiat 128, Toyota Corolla, Chrysler
 Imperial) s'écartent nettement du modèle. Pour un modèle simple
 d'illustration, cela reste acceptable.
 
-### Exemple 3 : La régression linéaire multiple avec `mtcars` {#exemple-2-la-régression-linéaire-multiple-avec-mtcars}
+### Exemple 3 : la régression linéaire multiple avec `mtcars` {#exemple-2-la-régression-linéaire-multiple-avec-mtcars}
 
 Pouvons-nous encore améliorer `modele_1` qui prédit `mpg` dans le jeu de
 données mtcars ? Une possibilité évidente est d'inclure d'autres

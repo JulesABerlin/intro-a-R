@@ -34,7 +34,7 @@
   stem: 'Quel compte (`User.Name`) a publié le post de `igposts.csv` ayant reçu le plus de `Total.Interactions` ?'
   key: [leomessi, Leo Messi]
   explanation: |
-    Triez `igposts` par `Total.Interactions` décroissant : le premier post est celui de leomessi (22 626 965 interactions). Ouvrez son URL pour voir de quoi il s’agit : <https://www.instagram.com/p/CpLxnFlNJZn/>
+    Triez `igposts` par `Total.Interactions` décroissant : le premier post est celui de leomessi (22\ 626\ 965 interactions). Ouvrez son URL pour voir de quoi il s’agit : <https://www.instagram.com/p/CpLxnFlNJZn/>
   uses_data: igposts.csv
   needs_image: false
   note: >-
@@ -67,7 +67,7 @@
   type: mcq
   stem: |
     Vous avez effectué un test t à un échantillon et obtenu une statistique t de
-    4.0869 avec 49 degrés de liberté et une valeur p de 0.0001618. Quelle conclusion
+    4,0869 avec 49 degrés de liberté et une valeur p de 0,0001618. Quelle conclusion
     pouvez-vous en tirer au seuil de signification de 5 % ?
   options:
     a: 'Ne pas rejeter l’hypothèse nulle (H0).'
@@ -77,7 +77,7 @@
     e: 'Aucune des autres réponses n’est correcte.'
   key: b
   explanation: |
-    La valeur p (0.00016) est bien inférieure au seuil de 0.05 : on rejette H0.
+    La valeur p (0,00016) est bien inférieure au seuil de 0,05 : on rejette H0.
     La moyenne de l’échantillon diffère significativement de la valeur testée.
   uses_data: ~
 
@@ -161,7 +161,7 @@
   type: multi
   stem: 'Jugez chaque proposition :'
   options:
-    a: 'Le package `ggplot2` est inclus dans `tidyverse`.'
+    a: 'Le package `ggplot2` est inclus dans le tidyverse.'
     b: 'Le package `ggplot` est à utiliser pour faire des graphiques avec une variable, tandis que le package `ggplot2` est utile pour voir graphiquement la corrélation entre deux variables.'
     c: 'Le responsable de `ggplot2` (qui maintient le package) est Thomas Lin Pedersen.'
     d: '`ggplot2` est très utile pour modifier des données.'
@@ -190,7 +190,7 @@
     ice_age_df <- data.frame(name, species, female, age, weight)
     ice_age_df
   options:
-    a: 'La colonne `female` (fr. « femelle ») du jeu de données `ice_age_df` est de type logique (*logical*).'
+    a: 'La colonne `female` (« femelle ») du jeu de données `ice_age_df` est de type logique (*logical*).'
     b: 'Les unités statistiques du jeu de données `ice_age_df` sont les noms, les espèces, le genre (femelle), le poids et l’âge des animaux de l’ère glaciaire.'
     c: 'L’unité statistique du jeu de données `ice_age_df` est un animal de l’âge de glace, avec n = 8 observations.'
     d: 'Le jeu de données `ice_age_df` contient des informations sur trois mammouths différents.'
@@ -548,8 +548,8 @@
   explanation: |
     a) Les couleurs du graphique représentent la **pureté** (`clarity`), pas la couleur des diamants (`color`).
     b) et c) Le nuage de points s’incurve vers le haut : le prix augmente plus vite que le carat.
-    d) Pour un même carat, les points des puretés élevées se situent plus haut. Parmi les diamants d’environ 1 carat, le prix médian passe de 2 808 USD (I1) à 9 764 USD (IF).
-    e) Le diamant le plus lourd (5,01 carats) coûte 18 018 USD, alors que le plus cher coûte 18 823 USD.
+    d) Pour un même carat, les points des puretés élevées se situent plus haut. Parmi les diamants d’environ 1 carat, le prix médian passe de 2808 USD (I1) à 9764 USD (IF).
+    e) Le diamant le plus lourd (5,01 carats) coûte 18\ 018 USD, alors que le plus cher coûte 18\ 823 USD.
   uses_data: ~
   note: >-
     d) reformulée (lecture du graphique « à carat égal », pas un effet causal) et vérifiée
@@ -747,7 +747,7 @@
   explanation: |
     a), d) et e) `group_by()` crée un groupe par pureté ; `summarize()` calcule ensuite, pour chaque groupe, le nombre de diamants (`n()`) et le prix moyen.
     b) 1790 est le **nombre** de diamants de pureté maximale (IF) ; leur prix moyen est d’environ 2865 USD.
-    c) Les effectifs varient de 741 (I1) à 13 065 (SI1).
+    c) Les effectifs varient de 741 (I1) à 13\ 065 (SI1).
   uses_data: ~
 
 - id: 33
@@ -981,7 +981,7 @@
     e: 'Les résultats du test t indiquent que, dans les échantillons simulés, il n’y a pas de différence significative entre les tailles moyennes des joueuses de basket et des hommes néerlandais.'
   key: [a, c, e]
   explanation: |
-    a) Sous *sample estimates*, `mean of x` (les joueuses) vaut 183,86 cm ; `mean of y` (les hommes néerlandais) vaut 184,66 cm.
+    a) Sous `sample estimates`, `mean of x` (les joueuses) vaut 183,86 cm ; `mean of y` (les hommes néerlandais) vaut 184,66 cm.
     b), d) et e) La valeur p (0,40) est supérieure à 0,05 : on ne rejette pas H0. Dans l’échantillon, les hommes néerlandais sont un peu plus grands, mais cet écart de 0,8 cm n’est pas significatif ; l’intervalle de confiance à 95 % (de −2,66 à 1,06 cm) contient 0.
     c) Les hypothèses portent sur les populations : H0 postule que les deux moyennes sont égales (μ₁ = μ₂), H1 qu’elles diffèrent.
   uses_data: ~
@@ -1077,16 +1077,16 @@
   code: |
     vecteur2 <- c(1, 2, 3, 4, 1000, 2000)
   options:
-    a: 'La valeur médiane de `vecteur2` est égale à 3.5.'
-    b: 'La valeur moyenne de `vecteur2` est égale à 501.00.'
+    a: 'La valeur médiane de `vecteur2` est égale à 3,5.'
+    b: 'La valeur moyenne de `vecteur2` est égale à 501,00.'
     c: '`vecteur2` a une longueur de 3010.'
     d: '`vecteur2` est un objet de classe numérique.'
     e: 'Aucune des autres réponses n’est correcte.'
   drop: [e]
   key: [a, d]
   explanation: |
-    a) La médiane d’un nombre pair de valeurs est la moyenne des deux valeurs centrales : (3 + 4) / 2 = 3.5.
-    b) `mean(vecteur2)` vaut 501.67.
+    a) La médiane d’un nombre pair de valeurs est la moyenne des deux valeurs centrales : (3 + 4) / 2 = 3,5.
+    b) `mean(vecteur2)` vaut 501,67.
     c) `length(vecteur2)` vaut 6 ; 3010 est la **somme** des éléments.
   uses_data: ~
 
@@ -1116,8 +1116,8 @@
     ```r
     median(vecteur1)
     ```
-    Avec 6 valeurs, la médiane est la moyenne des 3ᵉ et 4ᵉ valeurs triées : (3 + 4) / 2 = 3.5.
-    Les deux valeurs extrêmes (1000 et 2000) n’ont aucun effet sur la médiane, contrairement à la moyenne (501.67).
+    Avec 6 valeurs, la médiane est la moyenne des 3ᵉ et 4ᵉ valeurs triées : (3 + 4) / 2 = 3,5.
+    Les deux valeurs extrêmes (1000 et 2000) n’ont aucun effet sur la médiane, contrairement à la moyenne (501,67).
   uses_data: ~
 
 - id: 50
@@ -1754,7 +1754,7 @@
   session: 4
   problem_sets: [2]
   type: vf
-  stem: '`ggplot2` est un package R qui fait partie du `tidyverse`.'
+  stem: '`ggplot2` est un package R qui fait partie du tidyverse.'
   key: true
   explanation: |
     `tidyverse::tidyverse_packages()` liste les packages du tidyverse ; `ggplot2` en fait partie.
@@ -1763,7 +1763,7 @@
 - id: 103
   session: 4
   type: vf
-  stem: '`ggthemes` est un package R qui fait partie du `tidyverse`.'
+  stem: '`ggthemes` est un package R qui fait partie du tidyverse.'
   key: false
   explanation: |
     `ggthemes` complète `ggplot2` avec des thèmes supplémentaires, mais il ne fait pas partie du tidyverse : il faut l’installer et le charger séparément.
@@ -1925,7 +1925,7 @@
   stem: 'Le **R²** d’un modèle de régression linéaire indique le pourcentage de la variabilité de la variable à expliquer (y) qui peut être expliquée par la variabilité des variables explicatives (x1, x2, etc.).'
   key: true
   explanation: |
-    Un R² de 0,75 signifie que le modèle explique 75 % de la variance de y. On le lit dans `summary(modele)` (*Multiple R-squared*).
+    Un R² de 0,75 signifie que le modèle explique 75 % de la variance de y. On le lit dans `summary(modele)` (`Multiple R-squared`).
   uses_data: ~
 
 - id: 116

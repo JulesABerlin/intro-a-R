@@ -21,7 +21,7 @@ l'échantillon à la population (avec une marge d'incertitude). Établir une
 exemple une expérience randomisée.
 
 Les mesures suivantes font souvent partie des statistiques descriptives
-(souvent appelés *summary statistics* en anglais) et sont utilisées pour
+(angl. *summary statistics*) et sont utilisées pour
 une première analyse des variables de type numérique d'un jeu de
 données.
 
@@ -94,16 +94,16 @@ et `ggthemes`. Téléchargez ensuite le fichier
 travail, ou lisez-le directement depuis le site comme dans le code
 ci-dessous.
 
-Si vous importez le fichier avec *Import Dataset → From Text (base)…*, utilisez
+Si vous importez le fichier avec **File → Import Dataset → From Text (base)…**, utilisez
 les paramètres suivants :
 
--   *Name* : `reponses_socio`
--   *Encoding* : `UTF-8`
--   *Heading* : `Yes`
--   *Row names* : `Automatic`
--   *Separator* : `Comma` ; *Decimal* : `Period` ; *Quote* : `Double (")`
--   *na.strings* : `NA`
--   *Strings as factors* : coché
+-   **Name** : `reponses_socio`
+-   **Encoding** : `UTF-8`
+-   **Heading** : `Yes`
+-   **Row names** : `Automatic`
+-   **Separator** : `Comma` ; **Decimal** : `Period` ; **Quote** : `Double (")`
+-   **na.strings** : `NA`
+-   **Strings as factors** : coché
 
 ```{r}
 #| echo: true

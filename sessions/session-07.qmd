@@ -42,7 +42,7 @@ publication. Voir [À propos](../apropos.qmd#données) pour les détails.
 ::: {.callout-note icon="true"}
 ## À noter
 
-Un fichier de type **CSV** (angl. comma-separated values) est un format
+Un fichier de type **CSV** (angl. *comma-separated values*) est un format
 textuel simple pour sauvegarder des données en forme de tableau, c'est à
 dire avec des valeurs organisé par lignes et colonnes et séparées par
 virgules.
@@ -91,8 +91,8 @@ suivre le processus suivant :
 2.  Stockez le fichier `igposts.csv` dans le dossier que vous avez
     défini comme répertoire de travail.
 
-3.  Ensuite, vous utilisez le menu intéractif dans RStudio : File -\>
-    Import Dataset -\> From Text (base)... et choisissez `igposts.csv`.
+3.  Ensuite, utilisez le menu de RStudio **File → Import Dataset → From
+    Text (base)…** et choisissez `igposts.csv`.
 
 4.  Une fenêtre avec des paramètres apparaît, que vous pouvez remplir de
     la manière suivante :
@@ -249,10 +249,9 @@ c(1:100) %>% mean() %>% sqrt() %>% log()
 ::: {.callout-tip title="Astuce"}
 Vous pouvez créer le pipe `%>%` avec les raccourcis clavier suivants :
 
--   Sur **Windows** : <kbd>Control</kbd> + <kbd>Shift</kbd> +
-    <kbd>M</kbd>
+-   Sur **Windows** : <kbd>Ctrl</kbd> + <kbd>Maj</kbd> + <kbd>M</kbd>
 
--   Sur **MacOS** : <kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>M</kbd>
+-   Sur **macOS** : <kbd>Cmd</kbd> + <kbd>Maj</kbd> + <kbd>M</kbd>
 
 De plus, vous pouvez aussi utiliser le pipe natif de R, `|>` (depuis
 R 4.1). Il fonctionne sans package et s'utilise de la même façon que
@@ -361,7 +360,7 @@ str(df1)
 #| output: false
 # filter() : fonction pour filtrer les lignes selon un ou plusieurs critères
 
-# Pour filtrer pour une valeur spécifique d'une variable, p.ex. les posts de Cristiano Ronaldo : 
+# Pour filtrer pour une valeur spécifique d'une variable, p. ex. les posts de Cristiano Ronaldo : 
 
 df1 %>% filter(Account == "Cristiano Ronaldo")
 

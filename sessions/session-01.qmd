@@ -109,9 +109,9 @@ Pour exécuter le code R plus rapidement, vous pouvez placer votre
 curseur sur une ligne de code à exécuter et utiliser les raccourcis
 clavier suivants :
 
--   Sur **Windows** : <kbd>CTRL</kbd> + <kbd>Enter</kbd>
+-   Sur **Windows** : <kbd>Ctrl</kbd> + <kbd>Entrée</kbd>
 
--   Sur **MacOS** : <kbd>Command</kbd> + <kbd>Enter</kbd>
+-   Sur **macOS** : <kbd>Cmd</kbd> + <kbd>Entrée</kbd>
 :::
 
 ## Commenter votre code avec un `#`
@@ -160,7 +160,7 @@ clavier suivants :
 
 -   Sur **Windows** : <kbd>Alt</kbd> + <kbd>-</kbd>
 
--   Sur **MacOS** : <kbd>Option</kbd> + <kbd>-</kbd>
+-   Sur **macOS** : <kbd>Option</kbd> + <kbd>-</kbd>
 :::
 
 ## Variables à élément unique

@@ -292,7 +292,7 @@ R), p. ex. :
         C'est un moyen rapide de se faire une idée du contenu de votre
         jeu de données.
 
--   `summary()`: Donne un résumé du jeu de données, y compris des
+-   `summary()` : Donne un résumé du jeu de données, y compris des
     statistiques telles que
 
     -   la moyenne,
@@ -493,7 +493,7 @@ correctement défini avec la fonction `getwd()`
 ::: {.callout-tip}
 ## Bonne pratique : les projets RStudio
 
-Créez un **projet RStudio** (*File → New Project*) pour chaque travail.
+Créez un **projet RStudio** (**File → New Project…**) pour chaque travail.
 Le répertoire de travail est alors défini automatiquement sur le dossier
 du projet, et vos chemins de fichiers relatifs (p. ex.
 `read.csv("donnees.csv")`) restent valables sur n'importe quel

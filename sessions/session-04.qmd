@@ -125,7 +125,7 @@ Ces jeux de données présentent deux avantages principaux.
 1.  Il est facile d'y accéder et de les charger dans votre session
     RStudio, car ils sont fournis avec R ou avec certains packages.
 
-Cela les distingue fortement des données du "monde réel", comme les
+Cela les distingue fortement des données du « monde réel », comme les
 données de questionnaires ou de médias sociaux, qu'il faut souvent
 d'abord nettoyer et formater, puis importer dans RStudio sous forme de
 fichiers externes. Avec les jeux de données d'exemple, vous pouvez
@@ -169,7 +169,7 @@ espèces proviennent de la péninsule de Gaspé (Québec, Canada).
 ::: {.callout-caution collapse="true"}
 ## Plus sur Ronald Fisher
 
-Ronald Fisher (1890-1962) était un statisticien, généticien et
+Ronald Fisher (1890–1962) était un statisticien, généticien et
 biologiste britannique qui a joué un rôle crucial dans le développement
 de la science statistique moderne. Il est connu pour son travail dans le
 développement des fondements des méthodes statistiques, incluant
@@ -181,8 +181,8 @@ fossé entre la génétique mendélienne et l'évolution darwinienne. Il est
 considéré comme l'un des architectes principaux de la synthèse
 néo-darwinienne. Son influence s'étend au-delà de la statistique et de
 la génétique aux domaines plus larges de la biologie et de la recherche
-agricole, faisant de lui une figure clé de la science du 20e
-siècle.
+agricole, faisant de lui une figure clé de la science du
+XXe siècle.
 :::
 
 ![Il y a des statistiques sur trois espèces d'iris dans le jeu de données.
@@ -225,7 +225,7 @@ names(iris)
 
 ::: {.callout-tip title="Astuce"}
 Vous pouvez consulter la documentation pour beaucoup de jeux de données
-avec un point d'interrogation : `?iris()`.
+avec un point d'interrogation : `?iris`.
 :::
 
 ### Le jeu de données `mtcars`
@@ -284,7 +284,7 @@ via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:1974_Toyota_Coro
 
 C'est maintenant à vous d'explorer ce jeu de données avec du code !
 
-Utilisez également `?diamonds()` !
+Utilisez également `?diamonds`.
 
 ![Qu'est-ce qui définit le prix d'un diamant ?
 Photo : Jerry Cone, domaine public,
@@ -300,8 +300,8 @@ visualisation de données très populaire dans R. Il a été conçu pour
 faciliter la création de graphiques complexes et multicouches avec une
 syntaxe cohérente et consistante nommée *grammar of graphics*.
 
-Le « gg » de *ggplot2* signifie *grammar of graphics* (français :
-*grammaire des graphiques* ; Wilkinson, 2005), une théorie que Hadley
+Le « gg » de `ggplot2` signifie *grammar of graphics* (grammaire des
+graphiques ; @wilkinson2005), une théorie que Hadley
 Wickham a implémentée dans R ; le « 2 » distingue le package de sa
 première version, `ggplot`.
 
@@ -417,7 +417,7 @@ ggplot(data = diamonds,
 
 Maintenant il s'agit d'interpréter le graphique. Que nous dit-il sur la
 relation entre prix et carats des diamants ? Quel rôle joue la variable
-*pureté* (`clarity`)?
+*pureté* (`clarity`) ?
 
 ## À faire avant de continuer {#devoir-pour-session-5 .unnumbered}
 

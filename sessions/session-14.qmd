@@ -99,8 +99,8 @@ dernières tendances et partager vos connaissances :
 
 ## Lecture spécialisée
 
-Approfondissez vos connaissances en R avec des livres numérique
-open-source :
+Approfondissez vos connaissances en R avec des livres numériques
+libres :
 
 -   **R for Data Science** \[anglais\] Une référence bien établie en
     sciences des données avec R [@wickham2023] :

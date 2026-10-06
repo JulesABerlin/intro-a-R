@@ -91,7 +91,7 @@ mtcars %>%
 
 ### Exercice 4 : mtcars IV {#mtcars-iv}
 
--   Créez une nouvelle variable (colonne) dans mtcars, nommé `mpg_wt`,
+-   Créez une nouvelle variable (colonne) dans mtcars, nommée `mpg_wt`,
     définie comme le nombre de `mpg` par unité de poids (`wt`) !
 
 -   Sauvegardez la version modifiée de `mtcars` avec l'opérateur

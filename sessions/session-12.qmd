@@ -13,7 +13,7 @@ linéaire)**
 ::: {.callout-note icon="true"}
 ## À noter
 
-L'analyse de la variance (abbrégée **ANOVA**) est un ensemble de modèles
+L'analyse de la variance (abrégée **ANOVA**) est un ensemble de modèles
 statistiques et de procédures d'estimation associées utilisées pour
 analyser les différences entre les moyennes. L'ANOVA a été développée
 par le statisticien britannique [Ronald Fisher
@@ -137,7 +137,7 @@ ggplot(data = penguins, aes(x = flipper_length_mm)) +
        subtitle = "n = 344 ; source : package palmerpenguins",
        x = "Longueur des nageoires (mm)", y = "Effectif", fill = "Espèce")
 
-# Calculs des variances de flipper length avec dplyr par espèce de manchot, pour vérifier si l'hypothèse des variances similaire entre groupes est satisfaite :
+# Calculs des variances de flipper length avec dplyr par espèce de manchot, pour vérifier si l'hypothèse de variances similaires entre groupes est satisfaite :
 penguins %>% 
   group_by(species) %>% 
   summarize(var_fl = var(flipper_length_mm, na.rm = TRUE))
@@ -146,7 +146,7 @@ penguins %>%
 anova_1 <- aov(flipper_length_mm ~ species, data = penguins)
 summary(anova_1)
 
-# à noter, avec TukeyHSD() nous pouvons vérifier d'avantage les différences entre chaque paire d'espèces :
+# à noter, avec TukeyHSD() nous pouvons vérifier davantage les différences entre chaque paire d'espèces :
 TukeyHSD(anova_1)
 
 # Nous pouvons rejeter H0 avec une grande certitude !
@@ -401,8 +401,8 @@ variable explicative `wt`. Regardons le résultat plus en détail :
     l'hypothèse nulle, et le modèle est significatif.
 
 La vidéo YouTube suivante de StatQuest, un créateur de contenus qui
-explique très bien lest concepts statistiques (en anglais), décrit
-comment interpréter les résultats d'une regression linéaire dans R
+explique très bien les concepts statistiques (en anglais), décrit
+comment interpréter les résultats d'une régression linéaire dans R
 [@statquest2017lmr] :
 
 ::: {.content-visible unless-format="pdf"}
@@ -549,7 +549,7 @@ F de `summary()` teste seulement si le modèle explique quelque chose ;
 elle ne sert pas à comparer des modèles.
 
 Une question est alors : **comment choisir le meilleur modèle de
-regression ?**
+régression ?**
 
 ### Exemple 4 : la sélection pas à pas avec `mtcars` {#exemple-3-la-régression-par-étape-avec-mtcars}
 
@@ -589,7 +589,7 @@ de la théorie et de la question de recherche.
 Voyons comment ça marche avec du code R !
 
 ```{r}
-# Créons le modèle complet avec toutes le variables de mtcars (avec ~ .)
+# Créons le modèle complet avec toutes les variables de mtcars (avec ~ .)
 full_model <- lm(mpg ~ ., data = mtcars)
 summary(full_model)
 

@@ -199,7 +199,7 @@ Explorons un peu le jeu de données `iris` avec du code !
 #| echo: true
 #| output: false
 
-dim(iris) # Ceci affiche le nombre de lignes et de colonnes)
+dim(iris) # Affiche le nombre de lignes et de colonnes
 
 head(iris) # Affiche les six premières lignes
 
@@ -263,7 +263,7 @@ summary(mtcars)
 glimpse(mtcars) # glimpse() vient du tidyverse : il faut l'avoir chargé
 
 # Extraire la colonne mpg ("miles per gallon") avec le signe $
-# et calculer la moyenne, la médianne, le minimum et le maximum
+# et calculer la moyenne, la médiane, le minimum et le maximum
 
 mtcars$mpg
 
@@ -385,7 +385,7 @@ ggplot(data = diamonds,
 ```
 
 Ouf, si vous avez exécuté le dernier code, vous avez maintenant 53 940
-points de données affichées dans votre graphique ! Car il y a tant
+points de données affichés dans votre graphique ! Car il y a tant
 d'observations dans le jeu de données `diamonds`.
 
 Bon courage si vous avez un vieil ordinateur, cela peut prendre un
@@ -404,7 +404,7 @@ ggplot(data = diamonds,
 Vous avez remarqué ce qui a changé dans le code ?
 
 ```{r}
-# Ajoutons encore une couche optionnelle mais utile au graphique : labs() nous permet d'ajouter et de personnaliser des titres, sout-titres, titre d'axes, titres de légendes, etc. ! 
+# Ajoutons encore une couche optionnelle mais utile au graphique : labs() nous permet d'ajouter et de personnaliser des titres, sous-titres, titres d'axes, titres de légendes, etc. ! 
 ggplot(data = diamonds,
        mapping = aes(x = carat, y = price, color = clarity)) +
   geom_point() + 

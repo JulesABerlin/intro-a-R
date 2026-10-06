@@ -25,7 +25,7 @@ les manipulations.
 
 Par la suite, nous allons appliquer `dplyr` pour manipuler les données
 d'un jeu de données concret : un fichier CSV nommé `igposts.csv`. Ce
-fichier contient des posts Instagram de célébritées qui ont reçu
+fichier contient des posts Instagram de célébrités qui ont reçu
 beaucoup d'interactions d'utilisateurs. Pour cette application, il faut
 d'abord charger ce jeu de données dans notre session RStudio en cours.
 
@@ -44,8 +44,8 @@ publication. Voir [À propos](../apropos.qmd#données) pour les détails.
 
 Un fichier de type **CSV** (angl. *comma-separated values*) est un format
 textuel simple pour sauvegarder des données en forme de tableau, c'est à
-dire avec des valeurs organisé par lignes et colonnes et séparées par
-virgules.
+dire avec des valeurs organisées en lignes et en colonnes et séparées par
+des virgules.
 
 Le format CSV présente l'avantage d'être assez léger et compatible avec
 tous les systèmes d'exploitation. En outre, il est utile pour stocker
@@ -114,8 +114,8 @@ suivre le processus suivant :
         -   **Separator = Comma** : Indique à RStudio que les valeurs du
             tableau sont séparées par des virgules « , » (attention,
             certains documents francophones utilisent le point-virgule
-            « ; » à la place de la virgule, ce qu'il faudrait tenir en
-            compte, si c'était le cas).
+            « ; » à la place de la virgule, ce dont il faut alors tenir
+            compte).
 
         -   **Decimal = Period** : Indique à RStudio que le point « . »
             est utilisé pour les décimales (et non la virgule « , » comme
@@ -225,7 +225,7 @@ str(igposts)
 
 ```
 
-Nous allons voir par la suite, pourquoi ces factorisations sont utiles.
+Nous allons voir par la suite pourquoi ces factorisations sont utiles.
 
 ## L'opérateur `%>%`
 
@@ -241,7 +241,7 @@ log(sqrt(mean(c(1:100))))
 
 # Le problème est que cette fonction est imbriquée et, à cause de cela, difficile à lire
 
-# Avec le pipe, nous pouvons reécrire cette fonction comme ça et obtenir le même résultat après exécution du code :
+# Avec le pipe, nous pouvons réécrire cette fonction comme ça et obtenir le même résultat après exécution du code :
 
 c(1:100) %>% mean() %>% sqrt() %>% log()
 ```
@@ -315,7 +315,7 @@ Essayons maintenant d'appliquer tout cela avec du code et les données
 #| output: false
 # select() : fonction pour extraire une ou plusieurs colonnes d'un tableau de données
 
-# Par exemple, nous pouvons extraire les quatres colonnes suivantes d'igposts (voir comment le pipe est utilisé) :
+# Par exemple, nous pouvons extraire les quatre colonnes suivantes d'igposts (voir comment le pipe est utilisé) :
 
 igposts %>% select(Account, Type, Followers.at.Observation, Total.Interactions)
 
@@ -345,7 +345,7 @@ df1 <- igposts %>%
 df1 %>% mutate(TI_par_Follower = Total.Interactions/Followers.at.Observation)
 
 # Attention, sans opérateur <-, nous ne changeons pas l'objet df1 !
-# Pour ce faire et sauvegarder notre nouvelle colonne, nous pouvons écraser df1 avec une nouvelle vérsion de df1 :
+# Pour ce faire et sauvegarder notre nouvelle colonne, nous pouvons écraser df1 avec une nouvelle version de df1 :
 
 df1 <- df1 %>% 
         mutate(TI_par_Follower = Total.Interactions/Followers.at.Observation)
@@ -421,7 +421,7 @@ df1 %>%
 
 df1 %>% summarize(sum_TI = sum(Total.Interactions)) 
 
-# Nous pouvons aussi calculer les moyennes des interactions et de followers de tout les comptes qui ont publié les posts :
+# Nous pouvons aussi calculer les moyennes des interactions et de followers de tous les comptes qui ont publié les posts :
 
 df1 %>% 
   summarize(mean_TI = mean(Total.Interactions), 
@@ -433,17 +433,17 @@ df1 %>%
 
 # count() : fonction qui compte le nombre d'observations d'une ou plusieurs catégories
 
-# Compter l'occurence des types de posts Instagram (Photo et Album, dans ce cas) dans notre jeu de données :
+# Compter l'occurrence des types de posts Instagram (Photo et Album, dans ce cas) dans notre jeu de données :
 
 df1 %>% 
   count(Type)
 
-# Compter l'occurence des différents comptes dans notre jeu de données :
+# Compter l'occurrence des différents comptes dans notre jeu de données :
 
 df1 %>% 
   count(Account)
 
-# Compter l'occurence des différents comptes dans notre jeu de données en les triant par cette occurence de manière décroissante (avec arrange(-n)) :
+# Compter l'occurrence des différents comptes dans notre jeu de données en les triant par cette occurence de manière décroissante (avec arrange(-n)) :
 
 df1 %>% 
   count(Account) %>% 

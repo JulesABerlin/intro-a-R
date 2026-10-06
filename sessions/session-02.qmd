@@ -32,11 +32,11 @@ a*b
 b <- 5
 a*b
 
-# Vécteurs
+# Vecteurs
 v1 <- c(1,2,3,4)
 v1
 
-# Vous pouvez créez des nombres succesifs avec un colon :
+# Vous pouvez créer des nombres successifs avec le deux-points :
 v2 <- c(1:10)
 v2
 
@@ -174,12 +174,12 @@ print(m2)
 ::: {.callout-note icon="true"}
 ## À noter
 
-Si vous ne spécifiez pas tous les arguments d'une fonction, R va tenter
-d'utiliser des arguments par défauts.
+Si vous ne spécifiez pas tous les arguments d'une fonction, R utilise
+les valeurs par défaut de ces arguments.
 :::
 
 ```{r}
-# On peut p. ex. créer une matrice sans spécifier tout les arguments de la fonction matrix()
+# On peut p. ex. créer une matrice sans spécifier tous les arguments de la fonction matrix()
 m3 <- matrix(c(1:10), nrow = 5)
 
 print(m3)
@@ -192,7 +192,7 @@ et les colonnes concernées.
 ```{r}
 #| echo: true
 #| output: true
-# Créons d'abord un matrice m4 avec 100 éléments :
+# Créons d'abord une matrice m4 avec 100 éléments :
 m4 <-  matrix(c(1:100), nrow = 10, byrow = TRUE)
 print(m4)
 
@@ -242,7 +242,7 @@ Nos exemples reprennent les personnages du film d'animation
 name <- c("Manny", "Sid", "Diego", "Ellie", 
           "Peaches", "Scrat", "Rudy", "Buck")
 
-#Un second vecteur textuel indique l'espèce de chaque animal.
+# Un second vecteur textuel indique l'espèce de chaque animal.
 species <- c("mammoth", "sloth", "sabertooth", "mammoth", 
              "mammoth", "squirrel", "dinosaur", "weasel")
 
@@ -254,7 +254,7 @@ female <- c(FALSE, FALSE, FALSE, TRUE,
 age <- c(30, 20, 35, 25, 
          7, 4, 100, 28)
 
-# Un cinquième tableau numérique indique le poids en kg de chaque animal.
+# Un cinquième vecteur numérique indique le poids en kg de chaque animal.
 weight <- c(5000, 80, 400, 4000, 
             1000, 1, 10000, 3)
 

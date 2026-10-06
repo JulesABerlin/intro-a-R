@@ -77,7 +77,7 @@ l'insérer dans votre script :
 Une fois que nous avons écrit du code R dans le script, nous pouvons
 **l'exécuter** en le sélectionnant et en cliquant sur le bouton
 d'exécution situé au-dessus du volet source (le bouton d'exécution avec
-la flèche verte à qui montre à droite).
+la flèche verte qui pointe vers la droite).
 
 Le résultat s'affiche alors dans le volet **Console** :
 
@@ -117,7 +117,7 @@ clavier suivants :
 ## Commenter votre code avec un `#`
 
 C'est une bonne pratique de **commenter** son code R. Les commentaires
-expliquent ce que le code fait et facilite l'utilisation ultérieure et
+expliquent ce que fait le code et facilitent l'utilisation ultérieure et
 aussi le partage de code entre personnes (qui ne savent peut-être pas ce
 que vous vouliez faire avec votre code).
 
@@ -207,7 +207,7 @@ Maintenant ça marche ! 😀
 
 ```{r}
 #| echo: true
-# Notez que si vous exécutez toutes les lignes de code suivantes, la variable x se voit attribuer la dernière valeur exécutée : 4. Les valeurs 5 et 100 sont ecrasées lors de l'exécution du code.
+# Notez que si vous exécutez toutes les lignes de code suivantes, la variable x se voit attribuer la dernière valeur exécutée : 4. Les valeurs 5 et 100 sont écrasées lors de l'exécution du code.
 x <- 5
 x <- 100
 x <- 4
@@ -291,7 +291,7 @@ essentiel dans la programmation R. Il s'agit de variables comportant
 **plusieurs** éléments.
 
 Vous pouvez créer des vecteurs avec l'opérateur d'affectation `<-` et la
-**fonction de concatenation** `c()`.
+**fonction de concaténation** `c()`.
 
 ```{r}
 #| echo: true

@@ -42,7 +42,7 @@ extrêmes (angl. *outliers*) qui peuvent jouer un rôle important dans un
 jeu de données.
 
 Des mesures concernant les **variables catégorielles** peuvent également
-faire partie d'une analyse déscriptive, notamment :
+faire partie d'une analyse descriptive, notamment :
 
 -   L'effectif de chaque catégorie (p. ex. combien de participant·es
     à un questionnaire sont des femmes ?)
@@ -124,7 +124,7 @@ reponses_socio <- read.csv("https://julesaberlin.github.io/intro-a-R/data/repons
 # Contrôle, si ça a marché
 str(reponses_socio)
 
-# Une formidable fonction pour analyser les stats déscriptives : summary()
+# Une formidable fonction pour obtenir des statistiques descriptives : summary()
 summary(reponses_socio)
 
 # Abordons maintenant quelques questions plus spécifiques auxquelles nous pouvons répondre à l'aide de statistiques descriptives
@@ -172,7 +172,7 @@ ggplot(data = reponses_socio,
              fill=genre)) +
   geom_bar()
 
-# graphique plus sophistiquée
+# graphique plus sophistiqué
 
 # changer d'abord l'ordre des catégories (commençant avec la plus fréquente)
 
@@ -249,7 +249,7 @@ en cours (sortie de données), notamment avec la fonction `write.csv()` !
 La syntaxe de la fonction nécessite comme arguments le nom du tableau de données
 que vous voulez enregistrer comme CSV ainsi que le chemin du fichier sur
 votre ordinateur qui inclut le nom que vous voulez donner au fichier CSV
-: `write.csv(nom_df, "chemin_du_fichier/nom_du_ficher.csv")`
+: `write.csv(nom_df, "chemin_du_fichier/nom_du_fichier.csv")`
 
 ```{r}
 # Voici un exemple avec du code (recréons le tableau avec les animaux de Ice Age !)
@@ -273,7 +273,7 @@ ice_age_df <- data.frame(name, species, female, age, weight)
 
 print(ice_age_df)
 
-# Maintenant, notre but est de créer un ficher CSV qui contient les données du tableau de données ice_age_df
+# Maintenant, notre but est de créer un fichier CSV qui contient les données du tableau de données ice_age_df
 ```
 
 ```{r}
@@ -283,7 +283,7 @@ print(ice_age_df)
 write.csv(ice_age_df, file = "~/Documents/exercices_methodes_2/ice_age_df.csv")
 ```
 
-Si tout a bien marché, vous devrez maintenant avoir un fichier CSV, nommé
+Si tout a bien marché, vous devriez maintenant avoir un fichier CSV, nommé
 `ice_age_df.csv` dans votre répertoire de travail !
 
 ## Exercices {.unnumbered}

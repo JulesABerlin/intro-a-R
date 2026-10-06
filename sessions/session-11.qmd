@@ -49,7 +49,7 @@ nouvelles connaissances dans notre domaine de recherche
 ::: {.callout-note icon="true"}
 ## À noter
 
-Le test t est est un outil statistique qui permet d'évaluer les moyennes
+Le test t est un outil statistique qui permet d'évaluer les moyennes
 d'un ou deux échantillons à l'aide d'un test d'hypothèse. Il est aussi
 appelé test t de Student, car le statisticien qui l'a inventé au début
 du 20ème siècle, William Sealy Gosset, a publié sous le pseudonyme de
@@ -339,7 +339,7 @@ l'écart-type des joueuses est de 6,5 cm.)
 ```{r}
 #| echo: true
 #| output: true
-# Générons des données pour deux échantillons hypothétique avec n = 24 observations chacun
+# Générons des données pour deux échantillons hypothétiques avec n = 24 observations chacun
 set.seed(123)
 tailles_f_WNBA <- rnorm(24, mean = 184.5, sd = 6.5)
 tailles_h <- rnorm(24, mean = 177.4, sd = 6.1)
@@ -354,7 +354,7 @@ données, les joueuses sont en moyenne plus grandes que les hommes suisses
 (environ 184,4 cm contre 177,7 cm).
 :::
 
-À noter : la fonction `t.test()`, comme on l'a utilisé dans ces exemples
+À noter : la fonction `t.test()`, comme nous l'avons utilisée dans ces exemples
 de code jusqu'à présent, utilise des valeurs par défaut pour les arguments
 que nous ne précisons pas. Voici quelques-uns de ces arguments, que l'on
 peut aussi consulter avec `?t.test` :

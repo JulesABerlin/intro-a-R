@@ -74,7 +74,7 @@ np1 + geom_smooth(method = lm)
 ```
 
 Que nous indique la ligne de régression ? En principe, elle indique une
-correlation légèrement négative entre les variables `Sepal.Length` et
+corrélation légèrement négative entre les variables `Sepal.Length` et
 `Sepal.Width` ! (la zone grise autour de la ligne bleue est
 l'intervalle de confiance à 95 % de la droite de régression).
 
@@ -83,7 +83,7 @@ Cela signifie que les iris dont les sépales sont plus longs ont tendance
 l'esprit pour les étapes de codage suivantes.
 
 ```{r}
-# Ecrasons np1 en changeant un peu le code. Découvrez vous-même ce qui a changé dans le code !
+# Écrasons np1 en changeant un peu le code. Découvrez vous-même ce qui a changé dans le code !
 np1 <- ggplot(iris, 
                aes(x=Sepal.Length, y=Sepal.Width, color = Species)) +
   geom_point() +
@@ -136,7 +136,7 @@ Avec `ggplot2`, un diagramme en barres se crée avec la géométrie
 
 Par exemple, nous pouvons utiliser le code simple suivant pour comparer
 les effectifs des différentes qualités de taille (`cut`) dans le jeu de
-données `diamonds`. Cette-fois ci, nous sauvegardons et nommons le
+données `diamonds`. Cette fois-ci, nous sauvegardons et nommons le
 graphique `db1`.
 
 ```{r}
@@ -217,8 +217,7 @@ L'histogramme est particulièrement utile pour :
     elles ont des queues plus ou moins épaisses que la loi normale
     (*kurtosis*).
 -   **Détecter les valeurs extrêmes** : Identifier les données qui
-    s'écartent du reste de l'ensemble des données de manière
-    signifiante.
+    s'écartent nettement du reste des données.
 -   **Comparer des distributions** : Observer comment différentes
     sous-populations se comparent les unes aux autres en termes de
     distribution de données.

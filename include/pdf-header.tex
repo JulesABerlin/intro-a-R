@@ -1,0 +1,41 @@
+% En-tête LaTeX de la version PDF (moteur : LuaLaTeX).
+
+% Polices de secours pour les caractères absents des polices principales :
+% le coréen et les emoji de igposts.csv et du texte (polices de macOS).
+\directlua{luaotfload.add_fallback("secours", {
+  "AppleSDGothicNeo:mode=harf;",
+  "Apple Color Emoji:mode=harf;"
+})}
+\setmainfont{Latin Modern Roman}[RawFeature={fallback=secours}]
+\setsansfont{Latin Modern Sans}[RawFeature={fallback=secours}]
+\setmonofont{Menlo}[Scale=MatchLowercase, RawFeature={fallback=secours}]
+
+% Code et sorties : un peu plus petits, et les lignes trop longues passent à
+% la ligne au lieu de déborder de la page.
+\usepackage{fvextra}
+\fvset{fontsize=\small, breaklines=true, breakanywhere=true}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\},fontsize=\small,breaklines,breakanywhere}
+% Sorties de R (environnement verbatim) : redéfini au début du document,
+% après les paquets chargés par Quarto.
+\AtBeginDocument{%
+  \renewenvironment{verbatim}%
+    {\VerbatimEnvironment\begin{Verbatim}[fontsize=\small,breaklines,breakanywhere]}%
+    {\end{Verbatim}}}
+
+% Les URL longues peuvent être coupées.
+\usepackage{xurl}
+
+% Page de titre : affiliations sous le nom de l'auteur (KOMA-Script).
+\publishers{\normalsize Université de Fribourg (2023–2025)\\
+  Freie Universität Berlin}
+
+% Point médian de l'écriture inclusive (étudiant·es) : le glyphe de Latin
+% Modern est entouré de grands blancs ; on les resserre.
+\usepackage{newunicodechar}
+\newunicodechar{·}{\kern-.12em\symbol{"00B7}\kern-.12em}
+
+% Plus de souplesse pour couper les lignes avant un long code en ligne.
+\setlength{\emergencystretch}{3em}
+
+% Micro-typographie : aide à éviter les lignes qui débordent.
+\usepackage{microtype}

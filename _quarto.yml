@@ -6,6 +6,7 @@ project:
     - index.qmd
     - sessions/*.qmd
     - apropos.qmd
+    - corriges.qmd
     - references.qmd
   resources:
     - data/*
@@ -13,6 +14,7 @@ project:
 lang: fr
 language:
   title-block-author-single: "Auteur"
+  tools-download: "Télécharger"
 
 book:
   title: "Introduction à R pour les sciences de la communication"
@@ -26,6 +28,8 @@ book:
         - name: Freie Universität Berlin
           url: https://www.fu-berlin.de/
   date: 2026-10-06
+  output-file: intro-a-R
+  downloads: [pdf]
   site-url: https://julesaberlin.github.io/intro-a-R/
   repo-url: https://github.com/julesaberlin/intro-a-R
   page-footer:
@@ -49,10 +53,16 @@ book:
     - sessions/session-13.qmd
     - sessions/session-14.qmd
     - apropos.qmd
+  appendices:
+    - corriges.qmd
     - references.qmd
 
 bibliography: references.bib
 csl: apa-fr.csl
+
+# Version PDF : déplace les réponses des exercices dans l'annexe « Corrigés »
+filters:
+  - include/corriges.lua
 
 execute:
   freeze: auto
@@ -67,3 +77,14 @@ format:
     # ajouté par webexercises::add_to_quarto()
     css: include/webex.css
     include-after-body: include/webex.js
+  pdf:
+    pdf-engine: lualatex
+    date-format: long
+    documentclass: scrreprt
+    papersize: a4
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    number-depth: 2
+    fig-pos: "H"
+    include-in-header: include/pdf-header.tex

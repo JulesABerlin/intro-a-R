@@ -1,0 +1,16 @@
+# Corrigés {#sec-corriges}
+
+::: {.content-visible when-format="html"}
+Dans la version en ligne, la réponse et l'explication de chaque exercice
+s'affichent directement sous la question (bouton **Explication**). Cette
+annexe regroupe les corrigés dans la version PDF du livre.
+:::
+
+::: {.content-visible when-format="pdf"}
+Cette annexe donne les réponses et les explications des exercices,
+chapitre par chapitre. Les numéros reprennent ceux des questions : la
+« Question 3.1 » est la première question du chapitre 3.
+
+::: {#corriges}
+:::
+:::

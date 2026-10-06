@@ -74,7 +74,7 @@ np1 + geom_smooth(method = lm)
 ```
 
 Que nous indique la ligne de régression ? En principe, elle indique une
-correlation légèrement négative entre les variables `Sepal.Length`et
+correlation légèrement négative entre les variables `Sepal.Length` et
 `Sepal.Width` ! (la zone grise autour de la ligne bleue est
 l'intervalle de confiance à 95 % de la droite de régression).
 
@@ -249,7 +249,7 @@ Notez que par défaut, la fonction utilise `mean = 0` et `sd = 1`, ce qui
 correspond à une **loi normale centrée réduite** (angl. *standard normal
 distribution*).
 
-Utilisez aussi `?rnorm()`pour accéder à plus d'infos.
+Utilisez aussi `?rnorm()` pour accéder à plus d'infos.
 
 ::: {.callout-tip title="Astuce"}
 La fonction `set.seed()` dans R est utilisée pour définir la graine
@@ -339,7 +339,7 @@ ggplot2 !
 Reprenez le code que nous avons utilisé pour créer `taille_f` et `hist1`
 et modifiez-le pour créer une nouvelle simulation de taille d'hommes,
 `taille_h`, et un nouvel histogramme qui montre sa distribution,
-`hist2`. Jouez avec les paramètres `binwidth`et la couleur de votre
+`hist2`. Jouez avec les paramètres `binwidth` et la couleur de votre
 visualisation. Pour cette tâche, vous pouvez supposer que les hommes en
 Suisse ont une taille moyenne (`mean`) de 177,4 cm avec un écart-type
 (`sd`) de 6,1 cm.
@@ -479,7 +479,13 @@ par exemple.
 
 ## Exercices {.unnumbered}
 
+::: {.content-visible when-format="html"}
 Choisissez *Vrai* ou *Faux*, cochez une réponse ou tapez un nombre : la couleur indique tout de suite si votre réponse est correcte. Cliquez sur **Explication** pour voir la correction.
+:::
+
+::: {.content-visible when-format="pdf"}
+Notez vos réponses, puis comparez-les avec l'annexe « Corrigés » à la fin du livre.
+:::
 
 ```{r}
 #| echo: false

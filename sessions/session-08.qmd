@@ -37,7 +37,7 @@ solution modèle.
 
 ### Exercice 1 : mtcars I {#mtcars-i}
 
--   Affichez la structure de `mtcars`avec `str(mtcars)`.
+-   Affichez la structure de `mtcars` avec `str(mtcars)`.
 -   Sélectionnez ensuite les colonnes `mpg` et `cyl` de `mtcars` avec
     `dplyr`.
 
@@ -123,8 +123,8 @@ mtcars_v2 %>%
 ### Exercice 5 : diamonds I {#diamonds-i}
 
 -   Affichez encore une fois `str(diamonds)` !
--   Utilisez des verbes `dplyr`pour compter le nombre de diamants dans
-    `diamonds`qui pèsent plus de 3 carats !
+-   Utilisez des verbes `dplyr` pour compter le nombre de diamants dans
+    `diamonds` qui pèsent plus de 3 carats !
 
 ::: {.callout-caution collapse="true"}
 ### Solution
@@ -272,13 +272,13 @@ petits (0,70 carat) que les *Premium* (0,89 carat).
 
 ### Exercice 11 : igposts I {#igposts-i}
 
--   Chargez le jeu de données `igposts`que nous avons vu pendant session
+-   Chargez le jeu de données `igposts` que nous avons vu pendant session
     7.  
 -   Si nécessaire, téléchargez-le à nouveau depuis le
     [site](../data/igposts.csv) et sauvegardez-le dans le dossier de votre ordinateur que vous avez
     défini comme répertoire de travail.
 -   Si nécessaire, transformez encore une fois les colonnes
-    `igposts$Account`, `igposts$User.Name`et `igposts$Type` en variables
+    `igposts$Account`, `igposts$User.Name` et `igposts$Type` en variables
     catégorielles avec `as.factor()`.
 
 ::: {.callout-caution collapse="true"}
@@ -306,7 +306,7 @@ str(igposts)
 
 ### Exercice 12 : igposts II {#igposts-ii}
 
--   Utilisez `dplyr` pour trouver le nombre `n`de posts Instagram
+-   Utilisez `dplyr` pour trouver le nombre `n` de posts Instagram
     regroupés par compte des influenceurs dans `igposts`.
 -   Affichez les 10 premiers par ordre décroissant de `n`.
 
@@ -327,7 +327,7 @@ igposts %>%
 ### Exercice 13 : igposts III {#igposts-iii}
 
 -   Utilisez `dplyr` pour calculer le nombre moyen de `Likes`,
-    `Comments`et `Reposts`par compte (`Account`) des influenceurs dans
+    `Comments` et `Reposts` par compte (`Account`) des influenceurs dans
     `igposts`.
 -   Triez-les par ordre décroissant de la moyenne des `Likes`.
 -   Affichez le top 10.
@@ -498,7 +498,13 @@ SUGA](https://www.instagram.com/p/Copd1XvJT78/)
 
 ## Exercices {.unnumbered}
 
+::: {.content-visible when-format="html"}
 Choisissez *Vrai* ou *Faux*, cochez une réponse ou tapez un nombre : la couleur indique tout de suite si votre réponse est correcte. Cliquez sur **Explication** pour voir la correction.
+:::
+
+::: {.content-visible when-format="pdf"}
+Notez vos réponses, puis comparez-les avec l'annexe « Corrigés » à la fin du livre.
+:::
 
 ```{r}
 #| echo: false

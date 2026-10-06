@@ -8,7 +8,7 @@ source("_common.R")
 **Sujet : La statistique inférentielle, Partie 1 (tests t)**
 
 Dans cette et la prochaine session, nous allons nous concentrer sur
-trois méthodes de statistiques inférentielles couramment utilisées :
+trois méthodes de statistique inférentielle couramment utilisées :
 
 -   Les **tests t** (angl. Student's t-test)
 
@@ -23,14 +23,14 @@ Mais d'abord, il faut répondre à la question suivante :
 ::: {.callout-note icon="true"}
 ## À noter
 
-Les statistiques inférentielles sont une branche des statistiques qui
+La statistique inférentielle est la branche de la statistique qui
 permet de tirer des conclusions générales sur une population entière en
 se basant sur l'analyse statistique d'un échantillon représentatif de
 cette population.
 :::
 
-En sciences sociales, les statistiques inférentielles sont souvent
-utilisées pour évaluer si une différence ou une association observée dans
+En sciences sociales, la statistique inférentielle sert souvent à
+évaluer si une différence ou une association observée dans
 l'échantillon est susceptible d'exister aussi dans la population. Nous
 voulons savoir, par exemple, si les notes de maturité (variable y)
 diffèrent selon le genre (variable x). Une relation **causale** ne peut
@@ -192,7 +192,7 @@ Il s'agit maintenant d'interpréter le résultat du test t dans R.
     groupes par rapport à la variabilité de l'échantillon. Le signe de
     la statistique t indique si la moyenne de l'échantillon est
     supérieure (t positif) ou inférieure (t négatif) à la moyenne de la
-    comparaison. L'ampleur reflète combien d'erreurs standard la
+    comparaison. L'ampleur reflète combien d'erreurs types la
     différence est par rapport à zéro. En général, des valeurs absolues
     plus élevées suggèrent des preuves plus solides contre l'hypothèse
     nulle, ce qui se traduit par des valeurs p plus faibles.
@@ -203,12 +203,12 @@ Il s'agit maintenant d'interpréter le résultat du test t dans R.
     de la quantité d'informations disponibles pour estimer le paramètre
     statistique.
 
--   La **valeur p** (angl. p-value) est la probabilité d'observer un
-    résultat aussi extrême que celui obtenu dans l'échantillon sous
+-   La **valeur p** (angl. *p-value*) est la probabilité d'observer un
+    résultat au moins aussi extrême que celui obtenu dans l'échantillon sous
     l'hypothèse nulle. Elle est utilisée pour déterminer si le résultat
     du test est statistiquement significatif en comparant sa valeur à un
     seuil de signification prédéfini (habituellement 5% = 0.05). La
-    p-value est calculée à partir de la statistique de test t et des
+    valeur p est calculée à partir de la statistique de test t et des
     degrés de liberté associés à l'échantillon.
 
 La valeur p indique si l'écart observé est compatible avec H0. Mais
@@ -249,7 +249,7 @@ pour la Suisse, les personnes en Suisse ont passé en moyenne 5.6 heures
 en ligne en 2023. Chez les 20-29 ans, ce chiffre s'élève même à 7.9
 heures en moyenne.
 
-Réalisez un test T en utilisant ces statistiques comme suit :
+Réalisez un test t en utilisant ces statistiques comme suit :
 
 -   Simulez avec `rnorm()`30 valeurs pour l'utilisation d'Internet en
     heures par jour pour le groupe d'âge 20-29 ans
@@ -355,10 +355,9 @@ données, les joueuses sont en moyenne plus grandes que les hommes suisses
 :::
 
 À noter : la fonction `t.test()`, comme on l'a utilisé dans ces exemples
-de code jusqu'à présent, utilise plusieurs paramètres par défaut, si
-nous ne les spécifions pas comme arguments dans la fonction. Voici
-quelques-un de ces paramètres, qu'on peut aussi visualiser avec
-`?t.test()` :
+de code jusqu'à présent, utilise des valeurs par défaut pour les arguments
+que nous ne précisons pas. Voici quelques-uns de ces arguments, que l'on
+peut aussi consulter avec `?t.test` :
 
 ```         
 t.test(x, y = NULL,
@@ -369,7 +368,7 @@ t.test(x, y = NULL,
 
 En fonction de votre problématique et de vos données, par exemple dans
 un travail de bachelor, il peut être nécessaire de spécifier
-explicitement certains de ces paramètres. Pour ce faire, il peut être
+explicitement certains de ces arguments. Pour ce faire, il peut être
 utile de lire les pages d'aide de R et de rechercher d'autres documents
 en ligne pertinents pour votre problématique spécifique.
 

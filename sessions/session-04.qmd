@@ -1,4 +1,4 @@
-# Paquets, jeux de données et premiers graphiques
+# Packages, jeux de données et premiers graphiques
 
 ```{r}
 #| include: false
@@ -8,62 +8,61 @@ source("_common.R")
 La session 4 a pour but d'introduire trois éléments fondamentaux en
 analyse de données avec R :
 
-1.  Installer et charger des **paquets R** sur son ordinateur
-2.  Utiliser des **jeux de données intégrés en R** pour s'entraîner en
-    analyse de données
-3.  Apprendre à utiliser le paquet **ggplot2** pour créer des
+1.  Installer et charger des **packages R** sur son ordinateur
+2.  Utiliser des **jeux de données d'exemple** pour s'entraîner à
+    l'analyse de données
+3.  Apprendre à utiliser le package `ggplot2` pour créer des
     visualisations de données
 
-## Les paquets R
+## Les packages R {#les-paquets-r}
 
 ::: {.callout-note icon="true"}
 ## À noter
 
-Dans la programmation R, un **paquet** (angl. *package*) est un ensemble
-de fonctions, de données et de code compilé dans un format bien défini.
+Dans R, un **package** (on dit aussi *extension* ; parfois *paquet* ou
+*paquetage*) est un ensemble de fonctions, de données et de
+documentation dans un format bien défini.
 
-Les paquets étendent les fonctionnalités de R de base en fournissant des
+Les packages étendent les fonctionnalités de R de base en fournissant des
 outils supplémentaires pour l'analyse des données, la visualisation,
 l'apprentissage automatique, la modélisation statistique et beaucoup
 d'autres applications spécialisées.
 
-Les paquets R peuvent être développés par n'importe qui et partagés
-gratuitement avec d'autres (open source). Par conséquent, une grande
-multitude de paquets R sont disponibles.
+Les packages R peuvent être développés par n'importe qui et partagés
+gratuitement (open source). Il en existe donc un très grand nombre.
 :::
 
-Notez que la plupart des paquets R doit être installé séparément,
-normalement depuis le site [Comprehensive R Archive Network
-(CRAN)](http://cran.r-project.org). Dans ce cours, nous nous
-concentrerons sur deux paquets célèbres :
+La plupart des packages R doivent être installés séparément, en général
+depuis le [Comprehensive R Archive Network
+(CRAN)](https://cran.r-project.org). Dans ce livre, nous utiliserons
+surtout deux packages très répandus :
 
 -   `ggplot2` pour créer des **visualisations de données** [@wickham2016]
 
 -   `dplyr` pour **manipuler les jeux de données** [@dplyr2026]
 
 Tous deux font partie du [tidyverse](https://www.tidyverse.org), une
-collection de paquets conçus pour la science des données [@wickham2019]. Nous
-utiliserons également le paquet suivant :
+collection de packages conçus pour la science des données [@wickham2019]. Nous
+utiliserons également le package suivant :
 
--   `ggthemes` pour **augmenter le design des graphiques** [@ggthemes2026]
+-   `ggthemes` pour **enrichir l'apparence des graphiques** [@ggthemes2026]
 
-Pour utiliser un paquet R sur votre ordinateur, il faut :
+Pour utiliser un package R sur votre ordinateur, il faut :
 
-1.  D'abord **installer** le paquet en question avec la fonction
-    `install.packages()`. Cela peut durer quelques minutes.
-2.  Ensuite **activer** le paquet avec la fonction `library()`.
+1.  d'abord l'**installer** avec la fonction `install.packages()`, une
+    seule fois par ordinateur (cela peut durer quelques minutes) ;
+2.  puis le **charger** avec la fonction `library()`, à chaque session.
 
 ::: {.callout-tip title="Astuce"}
-Dans RStudio, on peut aussi installer les paquets via l'onglet **Tools**
-et le menu déroulant : Cliquez sur *Install Packages*... et cherchez les
-paquets que vous voulez installer.
+Dans RStudio, on peut aussi installer des packages avec le menu
+**Tools → Install Packages…**, puis en cherchant le nom du package.
 :::
 
-Utilisez le code suivant pour installer les paquets R requis pour notre
-cours. Enlevez les croisillons, exécutez le code avec
-`install.packages()` puis réajouter les croisillons pour éviter de
-réinstaller les paquets chaque fois que vous exécutez le code dans votre
-script ! Activer ensuite les paquets avec `library()`.
+Utilisez le code suivant pour installer les packages utilisés dans ce
+livre. Enlevez les croisillons `#`, exécutez les lignes
+`install.packages()`, puis remettez les croisillons : vous éviterez ainsi
+de réinstaller les packages chaque fois que vous exécutez votre script.
+Chargez ensuite les packages avec `library()`.
 
 ```{r}
 #| echo: true
@@ -75,27 +74,26 @@ library(tidyverse)
 library(ggthemes)
 ```
 
-À noter : `ggplot2` et `dplyr` sont installés avec le `tidyverse`, il ne
-faut donc plus les installer séparément.
+`ggplot2` et `dplyr` sont installés avec le tidyverse : inutile de les
+installer séparément.
 
 ::: {.callout-important title="Important"}
-Notez qu'une fois installé, vous n'avez pas besoin de le réinstaller les
-paquets à chaque fois avec `install.packages()`. Cependant, vous devez
-**activer** tous les paquets R que vous voulez utiliser dans une session
-avec la commande `library()`. Sans activation, vous allez recevoir des
-messages d'erreur.
+Une fois installé, un package n'a pas besoin d'être réinstallé avec
+`install.packages()`. En revanche, vous devez **charger** chaque package
+dont vous avez besoin, à chaque nouvelle session, avec la fonction
+`library()`. Sinon, R ne trouve pas ses fonctions et affiche un message
+d'erreur.
 :::
 
-Certains paquets ont des documentations auxquelles vous pouvez accéder
-grâce au point d'interrogation. Ces infos sont affichées dans le volet
-*Output* sous l'onglet *Help*.
+La documentation d'un package s'affiche avec le point d'interrogation,
+dans le volet **Output**, onglet **Help** :
 
 -   `?ggplot2`
 
 -   `?dplyr`
 
 En ligne, vous pouvez également trouver de nombreuses ressources qui
-expliquent en détail les fonctionnalités des différents paquets R et
+expliquent en détail les fonctionnalités des différents packages R et
 vous renvoient vers d'autres livres, tutoriels, cours, etc., p. ex. :
 
 -   [Documentation officielle de
@@ -106,7 +104,7 @@ vous renvoient vers d'autres livres, tutoriels, cours, etc., p. ex. :
 -   [Exemples de graphiques créés avec les différents designs de
     `ggthemes`](https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/)
 
-Vous pouvez vérifier quels paquets sont **actuellement installés sur
+Vous pouvez vérifier quels packages sont **actuellement installés sur
 votre ordinateur** avec la fonction `installed.packages()` (vous pouvez
 laisser vide l'espace entre parenthèses) :
 
@@ -116,21 +114,21 @@ laisser vide l'espace entre parenthèses) :
 installed.packages()
 ```
 
-## Les jeux de données intégrés
+## Les jeux de données d'exemple {#les-jeux-de-données-intégrés}
 
 Une excellente façon, et probablement la plus efficace, d'apprendre à
 utiliser R pour l'analyse de données consiste à travailler avec des
-**jeux de données intégrés dans R**.
+**jeux de données d'exemple**, fournis avec R ou avec un package.
 
-Ces jeux de données exemplaires présentent deux avantages principaux.
+Ces jeux de données présentent deux avantages principaux.
 
 1.  Il est facile d'y accéder et de les charger dans votre session
-    RStudio, car ils sont intégrés à R et à certains de ses paquets.
+    RStudio, car ils sont fournis avec R ou avec certains packages.
 
 Cela les distingue fortement des données du "monde réel", comme les
 données de questionnaires ou de médias sociaux, qu'il faut souvent
 d'abord nettoyer et formater, puis importer dans RStudio sous forme de
-fichiers externes. Avec les jeux de données intégrés, vous pouvez
+fichiers externes. Avec les jeux de données d'exemple, vous pouvez
 immédiatement commencer l'analyse et la visualisation des données.
 
 2.  Ces jeux de données ont prouvé leur utilité dans d'innombrables
@@ -144,19 +142,19 @@ de ce type :
 
 -   `iris` et `mtcars`, fournis avec R ;
 
--   `diamonds`, fourni avec le paquet `ggplot2` [@wickham2016].
+-   `diamonds`, fourni avec le package `ggplot2` [@wickham2016].
 
-Nous verrons un quatrième jeu de données, `penguins` (paquet
+Nous verrons un quatrième jeu de données, `penguins` (package
 `palmerpenguins` ; @horst2020), en session 12.
 
 ::: {.callout-tip title="Astuce"}
 Vous pouvez afficher les jeux de données qui sont actuellement
-accessibles sur votre ordinateur avec la commande `data().`
+accessibles sur votre ordinateur avec la fonction `data()`.
 :::
 
 ### Le jeu de données `iris`
 
-Le jeu de données `iris` est un ensemble de données célèbre qui contient
+Le jeu de données `iris` est un jeu de données célèbre qui contient
 les mesures en centimètres des variables longueur et largeur du sépale,
 ainsi que longueur et largeur du pétale, pour trois espèces de fleurs
 d'iris (Setosa, Virginica et Versicolor). Il y a 150 observations en
@@ -262,7 +260,7 @@ dim(mtcars)
 str(mtcars)
 summary(mtcars)
 
-glimpse(mtcars) # cette commande marche seulement si vous avez activé le tidyverse
+glimpse(mtcars) # glimpse() vient du tidyverse : il faut l'avoir chargé
 
 # Extraire la colonne mpg ("miles per gallon") avec le signe $
 # et calculer la moyenne, la médianne, le minimum et le maximum
@@ -297,21 +295,21 @@ via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Diamond-1128734.
 ::: {.callout-note icon="true"}
 ## À noter
 
-`ggplot2`, qui fait partie du `tidyverse`, est un paquet de
+`ggplot2`, qui fait partie du tidyverse, est un package de
 visualisation de données très populaire dans R. Il a été conçu pour
 faciliter la création de graphiques complexes et multicouches avec une
 syntaxe cohérente et consistante nommée *grammar of graphics*.
 
 Le « gg » de *ggplot2* signifie *grammar of graphics* (français :
 *grammaire des graphiques* ; Wilkinson, 2005), une théorie que Hadley
-Wickham a implémentée dans R ; le « 2 » distingue le paquet de sa
+Wickham a implémentée dans R ; le « 2 » distingue le package de sa
 première version, `ggplot`.
 
 Avec `ggplot2`, les utilisateurs peuvent construire des graphiques de
 manière incrémentale en ajoutant des couches, ce qui le rend flexible
 pour une large gamme de besoins graphiques. Cela permet de créer des
 visualisations hautement personnalisables et esthétiquement attrayantes,
-allant de simples diagrammes de dispersion à des figures multi-panneaux
+allant du simple nuage de points à des figures à plusieurs panneaux
 complexes.
 :::
 
@@ -340,7 +338,7 @@ pour comprendre la relation entre les variables `price` (prix) et
 ::: {.callout-note icon="true"}
 ## À noter
 
-Important : avant d'analyser un ensemble de données, il faut toujours
+Important : avant d'analyser un jeu de données, il faut toujours
 acquérir des **connaissances contextuelles** sur ce que les données
 représentent.
 
@@ -430,7 +428,7 @@ relation entre prix et carats des diamants ? Quel rôle joue la variable
     de travail et à enregistrer le script dans un dossier sur votre
     ordinateur.
 
--   Assurez-vous que le paquet R `tidyverse` est installé correctement
+-   Assurez-vous que le package `tidyverse` est installé correctement
     sur votre ordinateur.
 
 -   Utilisez le code R de manière autonome pour explorer le jeu de

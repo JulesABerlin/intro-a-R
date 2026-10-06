@@ -55,8 +55,8 @@ des variances semblables entre les groupes (homoscédasticité).
 Dans R, la **fonction `aov()`** est utilisée pour effectuer des ANOVAs à
 un ou plusieurs facteurs.
 
--   Elle prend en entrée une formule qui spécifie la variable réponse et
-    les facteurs explicatifs, ainsi qu'un data frame contenant les
+-   Elle prend en entrée une formule qui précise la variable à expliquer et
+    les facteurs (variables catégorielles explicatives), ainsi qu'un tableau de données contenant les
     données. Syntaxe : `aov(formula, data)`
 
 -   La fonction `aov()` renvoie un objet de classe *aov* qui contient
@@ -68,16 +68,16 @@ un ou plusieurs facteurs.
 
     -   les valeurs de F et
 
-    -   les valeurs de p pour chaque effet du modèle.
+    -   les valeurs p pour chaque effet du modèle.
 
 En résumé, `aov()` est utilisée pour ajuster des modèles linéaires à
 effets fixes et pour effectuer des analyses de variance.
 
 ### Exemple 1 : ANOVA avec le jeu de données `palmerpenguins`
 
-![Logo du paquet [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/index.html). Illustration : Allison Horst, [CC0](https://creativecommons.org/publicdomain/zero/1.0/).](../images/palmerpenguins.png){width="200" fig-alt="Logo hexagonal du paquet palmerpenguins avec trois manchots"}
+![Logo du package [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/index.html). Illustration : Allison Horst, [CC0](https://creativecommons.org/publicdomain/zero/1.0/).](../images/palmerpenguins.png){width="200" fig-alt="Logo hexagonal du paquet palmerpenguins avec trois manchots"}
 
-Pour cet exemple, il faut télécharger le paquet R `palmerpenguins`
+Pour cet exemple, il faut installer le package `palmerpenguins`
 [@horst2020].
 Celui-ci contient un jeu de données avec des informations sur trois
 espèces de manchots (Adélie, à jugulaire et papou ; en anglais Adelie,
@@ -89,19 +89,18 @@ mesures telles que la longueur du bec (`bill_length_mm`), la longueur
 des nageoires (`flipper_length_mm`), le poids corporel (`body_mass_g`)
 et le sexe des manchots.
 
--   Utilisez le code suivant pour la première installation du paquet :
+-   Utilisez le code suivant pour la première installation du package :
 
     ```r
     install.packages("palmerpenguins")
     ```
 
--   Après l'installation, il suffit d'activer le paquet avec
+-   Après l'installation, il suffit de charger le package avec
     `library(palmerpenguins)`
 
--   Il est toujours recommandé de comprendre un nouveau jeu de données
-    au niveau déscriptif, utilisez donc `?palmerpenguins` et naviguez un
-    peu sur [le site des créatrices de ce paquet
-    R](https://allisonhorst.github.io/palmerpenguins/) !
+-   Avant d'analyser un nouveau jeu de données, décrivez-le : consultez
+    `?penguins` et le [site des créatrices du
+    package](https://allisonhorst.github.io/palmerpenguins/).
 
 -   Le **but de notre ANOVA** est de déterminer si les différences de
     longueur moyenne des nageoires `flipper_length_mm` entre les trois
@@ -209,13 +208,11 @@ La régression linéaire est une méthode statistique utilisée pour
 modéliser la relation linéaire entre une **variable à expliquer (y)** et
 une ou plusieurs **variables explicatives (x1, x2, etc.)**.
 
--   La variable à expliquer, y, est parfois aussi appelée **variable
-    dépendante** ou **variable de réponse** et, en anglais, **output
-    variable**, **response variable**, **predicted variable**
+-   La variable à expliquer, y, est aussi appelée **variable
+    dépendante** (angl. *outcome* ou *response variable*).
 
--   Les variables explicatives, x, quant à eux, sont aussi appelées
-    **variables indépendantes** ou **prédicteurs** et, en anglais,
-    **input variables**, **predictor variables**.
+-   Les variables explicatives, x, sont aussi appelées **variables
+    indépendantes** ou **prédicteurs** (angl. *predictors*).
 
 Nous parlons de régression linéaire **simple**, s'il y a seulement une
 variable explicative x et de régression linéaire **multiple** s'il y a
@@ -240,12 +237,12 @@ d'applications possibles :
 -   **Prédiction** : Si nous disposons d'un échantillon représentatif de
     données contenant des observations des valeurs y et x, nous pouvons
     adapter un modèle de régression aux données. Par la suite, nous
-    pouvons utiliser le modèle de régression pour un nouvel ensemble de
+    pouvons utiliser le modèle de régression pour un nouveau jeu de
     données qui ne contient que des valeurs x et prédire les valeurs y
     correspondantes.
 
     -   Supposons par exemple que vous soyez un agent immobilier. Vous
-        disposez d'un ensemble de données de 200 ventes de maisons dans
+        disposez d'un jeu de données de 200 ventes de maisons dans
         une ville au cours des cinq derniers mois, qui contient le prix
         de vente (y) et la taille de la maison en mètres carrés (x).
         Vous pouvez maintenant adapter un modèle de régression à vos
@@ -301,7 +298,7 @@ la forme d'un nuage de points).
 La fonction **`lm()`** dans R est utilisée pour ajuster un modèle de
 régression linéaire. Elle est couramment utilisée dans le contexte de la
 régression linéaire pour étudier la relation entre une variable
-dépendante (`y`) et une ou plusieurs variables indépendantes (`x1`,
+à expliquer (`y`) et une ou plusieurs variables explicatives (`x1`,
 `x2`, etc.).
 
 La syntaxe de base de la fonction `lm()` est la suivante :
@@ -309,7 +306,7 @@ La syntaxe de base de la fonction `lm()` est la suivante :
 
 -   L'argument `formula` désigne une formule qui décrit le modèle à
     ajuster. Par exemple, `y ~ x1 + x2` signifie que la variable
-    dépendante y est modélisée en fonction des variables indépendantes
+    à expliquer y est modélisée en fonction des variables explicatives
     x1 et x2.
 
 -   L'argument `data` requiert l'indication du jeu de données que la
@@ -321,8 +318,8 @@ La syntaxe de base de la fonction `lm()` est la suivante :
 Voici un exemple d'utilisation de la fonction `lm()` avec le jeu de
 données `mtcars` : `lm(mpg ~ wt, data = mtcars)`
 
--   Notre but est de modéliser la relation entre la variable dépendante
-    `mpg` (miles per gallon) et la variable indépendante `wt` (weight).
+-   Notre but est de modéliser la relation entre la variable à expliquer
+    `mpg` (miles par gallon) et la variable explicative `wt` (poids).
 
 -   Notre **hypothèse** est qu'il existe une relation négative entre
     `wt` et `mpg` des véhicules dans `mtcars`. En d'autres termes, nous
@@ -341,7 +338,7 @@ données `mtcars` : `lm(mpg ~ wt, data = mtcars)`
 # Charger le jeu de données mtcars
 data(mtcars)
 
-# Ajuster un modèle de régression linéaire avec mpg comme variable dépendante et wt comme variable indépendante
+# Ajuster un modèle de régression linéaire avec mpg comme variable à expliquer et wt comme variable explicative
 modele_1 <- lm(mpg ~ wt, data = mtcars)
 
 # Afficher le résumé du modèle que nous pouvons interpréter
@@ -349,8 +346,8 @@ summary(modele_1)
 ```
 
 Le résultat de la régression linéaire indique que le modèle linéaire
-`modele_1` prédit la variable dépendante `mpg` en fonction de la
-variable indépendante `wt`. Regardons le résultat plus en detail :
+`modele_1` prédit la variable à expliquer `mpg` en fonction de la
+variable explicative `wt`. Regardons le résultat plus en détail :
 
 -   Les coefficients du modèle sont présentés dans la section
     *Coefficients*.
@@ -374,14 +371,14 @@ variable indépendante `wt`. Regardons le résultat plus en detail :
     valeurs peuvent être utilisées pour vérifier si les hypothèses du
     modèle sont satisfaites.
 
--   Le *Residual standard error* est l'écart type résiduel, qui mesure
-    l'écart entre les valeurs prédites et les valeurs réelles de la
-    variable dépendante. Plus cette valeur est faible, mieux le modèle
+-   `Residual standard error` est l'écart-type résiduel, qui mesure
+    l'écart entre les valeurs prédites et les valeurs observées de la
+    variable à expliquer. Plus cette valeur est faible, mieux le modèle
     s'adapte aux données. Dans ce cas, la valeur est de 3,046.
 
--   Le *Multiple R-squared* est le coefficient de détermination, qui
-    mesure la proportion de la variance de la variable dépendante
-    expliquée par la variable indépendante. Dans ce cas, le coefficient
+-   `Multiple R-squared` est le coefficient de détermination (R²), qui
+    mesure la proportion de la variance de la variable à expliquer
+    reproduite par la variable explicative. Dans ce cas, le coefficient
     de détermination est de 0,7528 : le poids rend compte d'environ
     75 % de la variance de `mpg` dans ces données (« expliquer » au sens
     statistique, pas causal). C'est une valeur élevée pour un modèle à
@@ -389,22 +386,18 @@ variable indépendante `wt`. Regardons le résultat plus en detail :
     données physiques comme celles-ci donnent souvent des R² élevés, les
     données d'enquêtes en sciences sociales beaucoup plus rarement.
 
--   Le *Adjusted R-squared* est une mesure de la proportion de la
-    variance de la variable dépendante qui est expliquée par les
-    variables indépendantes dans un modèle de régression linéaire, tout
-    en tenant compte du nombre de variables indépendantes dans le
-    modèle. Il est calculé en ajustant le R-squared en fonction du
-    nombre de variables indépendantes dans le modèle, et est toujours
-    inférieur ou égal au R-squared. Comme il pénalise les variables
+-   `Adjusted R-squared` (R² ajusté) mesure aussi la proportion de la
+    variance de la variable à expliquer reproduite par le modèle, mais
+    en tenant compte du nombre de variables explicatives ; il est
+    toujours inférieur ou égal au R². Comme il pénalise les variables
     supplémentaires, le R² ajusté est un critère utile pour comparer des
     modèles ayant un nombre différent de variables, parmi d'autres (AIC,
     théorie, validation sur d'autres données).
 
--   Enfin, la *F-statistic* est utilisée pour tester l'hypothèse nulle
-    que le coefficient de régression est égal à zéro. Dans ce cas, la
-    valeur de p associée à la statistique F est très faible (\<
-    0,0000000001294), ce qui indique que l'hypothèse nulle peut être
-    rejetée et que le modèle est significatif.
+-   Enfin, `F-statistic` teste l'hypothèse nulle selon laquelle le
+    coefficient de régression est égal à zéro. Ici, la valeur p associée
+    à la statistique F est très faible (p < 0,001) : on rejette
+    l'hypothèse nulle, et le modèle est significatif.
 
 La vidéo YouTube suivante de StatQuest, un créateur de contenus qui
 explique très bien lest concepts statistiques (en anglais), décrit
@@ -446,7 +439,7 @@ plot(modele_1)
 1.  **Residuals vs Fitted** : Ce graphique montre si les résidus (la
     distance entre les valeurs modélisées et observées) présentent des
     tendances non linéaires. Il peut y avoir une relation non linéaire
-    entre les variables explicatives x et une variable expliquée y, et
+    entre les variables explicatives x et la variable à expliquer y, et
     le schéma peut apparaître dans ce graphique si le modèle ne capture
     pas la relation non linéaire. Si vous trouvez des résidus plus ou
     moins uniformément répartis (approximés par la ligne rouge) autour
@@ -521,7 +514,7 @@ avec des moteurs plus puissants, parcourent **moins de miles par
 gallon** que les voitures avec moins de `hp`.
 
 ```{r}
-# Ajuster un modèle de régression linéaire multiple avec mpg comme variable dépendante et wt et hp comme variables indépendantes
+# Ajuster un modèle de régression linéaire multiple avec mpg comme variable à expliquer et wt et hp comme variables explicatives
 modele_2 <- lm(mpg ~ wt + hp, data = mtcars)
 
 # Afficher le résumé du modèle que nous pouvons interpréter
@@ -537,8 +530,8 @@ Les résultats montrent qu'en effet, la puissance en chevaux `hp` a
 effet significatif au niveau de 1% (mais pas au niveau de 0,1% comme
 pour `wt`).
 
-Le R-carré de notre modèle a également augmenté pour atteindre 82,68%
-(R-carré ajusté à 81,48%), ce qui est une valeur très élevée. Cela
+Le R² de notre modèle a également augmenté pour atteindre 82,68 %
+(R² ajusté : 81,48 %), une valeur très élevée. Cela
 signifie que `modele_2` peut effectivement expliquer une plus grande
 partie de la variabilité de `mpg` que `modele_1`.
 
@@ -557,19 +550,18 @@ elle ne sert pas à comparer des modèles.
 Une question est alors : **comment choisir le meilleur modèle de
 regression ?**
 
-### Exemple 4 : La régression par étape avec `mtcars` {#exemple-3-la-régression-par-étape-avec-mtcars}
+### Exemple 4 : la sélection pas à pas avec `mtcars` {#exemple-3-la-régression-par-étape-avec-mtcars}
 
-Une possible solution est d'utiliser ce qu'on appelle **la régression
-par étape**. C'est une méthode d'ajustement des modèles de régression
-dans laquelle le choix des variables prédictives est effectué par une
-procédure automatique.
+Une solution possible est la **sélection pas à pas** (angl.
+*stepwise selection*) : le choix des variables explicatives est effectué
+par une procédure automatique.
 
-Dans R, la régression par étapes peut être effectuée à l'aide de
+Dans R, la sélection pas à pas peut être effectuée à l'aide de
 différentes approches, notamment la fonction `step()`, qui base ses
 sélections sur les valeurs AIC (critère d'information d'Akaike).
 
--   Pour notre exemple de régression par étapes, nous allons prédire
-    `mpg` en utilisant toutes les autres variables de l'ensemble de
+-   Pour notre exemple de sélection pas à pas, nous allons prédire
+    `mpg` en utilisant toutes les autres variables du jeu de
     données `mtcars`.
 
 -   À partir de ce « modèle complet », la procédure retire (et
@@ -604,7 +596,7 @@ summary(full_model)
 stepwise_model <- step(full_model, direction = "both")
 ```
 
-Voici comment la régression par étape choisit le modèle retenu :
+Voici comment la sélection pas à pas choisit le modèle retenu :
 
 -   **AIC le plus faible** : le modèle ayant l'AIC le plus faible est
     généralement préféré car il suggère un meilleur ajustement du modèle
@@ -612,9 +604,9 @@ Voici comment la régression par étape choisit le modèle retenu :
     permet d'équilibrer l'adéquation et la complexité du modèle. Dans
     notre exemple, le modèle retenu est donc `mpg ~ wt + qsec + am`.
 
-Après avoir exécuté la régression par étape, le résumé de
+Après la sélection pas à pas, le résumé de
 `stepwise_model` affiche les coefficients pour chaque variable
-explicative ainsi que des statistiques telles que le R-carré, la
+explicative ainsi que des statistiques telles que le R², la
 statistique F et les valeurs p pour les variables explicatives.
 
 ```{r}

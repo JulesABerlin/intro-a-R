@@ -44,7 +44,7 @@ jeu de données.
 Des mesures concernant les **variables catégorielles** peuvent également
 faire partie d'une analyse déscriptive, notamment :
 
--   La fréquence de chaque catégorie (p. ex. combien de participant·es
+-   L'effectif de chaque catégorie (p. ex. combien de participant·es
     à un questionnaire sont des femmes ?)
 -   La répartition des différentes catégories (p. ex. quel est le
     pourcentage de femmes dans l'échantillon ?)
@@ -60,12 +60,12 @@ présentées sous deux formats :
 
 -   des **graphiques** pour la visualisation de distributions, par
     exemple des histogrammes, et des répartitions de variables
-    catégorielles, par exemple par le biais de diagrammes à barres.
+    catégorielles, par exemple par le biais de diagrammes en barres.
 
 Lorsque l'on veut représenter des statistiques descriptives dans R, il
-est souvent utile de combiner les deux paquets R `dplyr` et `ggplot2`.
+est souvent utile de combiner les deux packages `dplyr` et `ggplot2`.
 C'est une bonne nouvelle, car nous avons déjà examiné les principaux
-codes R nécessaires pour utiliser ces deux paquets dans ce cours.
+codes R nécessaires pour utiliser ces deux packages dans ce cours.
 
 Pour nous entraîner à nouveau, cette fois avec nos propres données, nous
 allons procéder ci-dessous à une analyse descriptive des réponses au
@@ -88,7 +88,7 @@ présent dans le cours peut être combiné de manière utile.
 
 ## Analyse des réponses au questionnaire, 1re partie (stats descriptives) {#analyse-des-réponses-au-questionnaire-1ère-partie-stats-déscriptives}
 
-Veuillez ouvrir un nouveau script R et charger les paquets `tidyverse`
+Veuillez ouvrir un nouveau script R et charger les packages `tidyverse`
 et `ggthemes`. Téléchargez ensuite le fichier
 [`reponses_socio.csv`](../data/reponses_socio.csv) dans votre répertoire de
 travail, ou lisez-le directement depuis le site comme dans le code
@@ -147,7 +147,7 @@ ggplot(data = reponses_socio,
   labs(title = "Trajets en minutes des étudiant·es pour arriver à l'UniFR",
        subtitle = "Questionnaire avec n = 74 participant·es",
        x = "Trajet en minutes",
-       y = "Fréquence") +
+       y = "Effectif") +
   theme_minimal()
 
 
@@ -160,11 +160,11 @@ ggplot(data = reponses_socio,
   labs(title = "Années de naissance",
        subtitle = "n = 74 répondants à un questionnaire",
        x = "Année de naissance",
-       y = "Fréquence")+
+       y = "Effectif")+
   theme_minimal()
 
 
-# 3. diagramme à barres des genres
+# 3. diagramme en barres des genres
 #*****************************************
 
 ggplot(data = reponses_socio,
@@ -188,7 +188,7 @@ ggplot(aes(x=genre, fill=genre)) +
   labs(title = "Répartition des genres",
        subtitle = "n = 74 répondants à un questionnaire",
        x = "Genre",
-       y = "Fréquence",
+       y = "Effectif",
        legend = "") +
   theme_minimal()
 
@@ -246,8 +246,8 @@ Avec R, vous ne pouvez pas seulement lire des données au format CSV
 vous pouvez également créer des fichiers CSV à partir de votre session
 en cours (sortie de données), notamment avec la fonction `write.csv()` !
 
-La syntaxe de la fonction nécessite comme arguments le nom du data frame
-que vous voulez sauvegarder comme CSV ainsi que le chemin du fichier sur
+La syntaxe de la fonction nécessite comme arguments le nom du tableau de données
+que vous voulez enregistrer comme CSV ainsi que le chemin du fichier sur
 votre ordinateur qui inclut le nom que vous voulez donner au fichier CSV
 : `write.csv(nom_df, "chemin_du_fichier/nom_du_ficher.csv")`
 
@@ -273,7 +273,7 @@ ice_age_df <- data.frame(name, species, female, age, weight)
 
 print(ice_age_df)
 
-# Maintenant, notre but est de créer un ficher CSV qui contient les données du data frame ice_age_df
+# Maintenant, notre but est de créer un ficher CSV qui contient les données du tableau de données ice_age_df
 ```
 
 ```{r}

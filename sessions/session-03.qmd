@@ -131,7 +131,7 @@ x[c(TRUE, FALSE)]       # astuce : le vecteur logique est recyclé
 
 ### Question 3.A4 {#question-a4 .unnumbered}
 
-Construisez un data frame `df` avec une colonne `A` contenant les nombres de 1 à 5 et une colonne `B` contenant leurs carrés. Quelle commande renvoie l'élément de la 4ᵉ ligne et de la 2ᵉ colonne, et quelle est sa valeur ?
+Construisez un tableau de données `df` avec une colonne `A` contenant les nombres de 1 à 5 et une colonne `B` contenant leurs carrés. Quelle commande renvoie l'élément de la 4ᵉ ligne et de la 2ᵉ colonne, et quelle est sa valeur ?
 
 Valeur : `r fitb(16, width = 4)`
 
@@ -197,7 +197,7 @@ Quelle est la différence entre `class()` et `typeof()` ? Donnez un exemple.
 ```r
 df <- data.frame(x = 1:3)
 class(df)    # "data.frame"
-typeof(df)   # "list"   (un data frame est une liste de colonnes)
+typeof(df)   # "list"   (un tableau de données est une liste de colonnes)
 
 f <- factor(c("a", "b"))
 class(f)     # "factor"
@@ -237,7 +237,7 @@ setwd("..")
 
 ### Question 3.A10 {#question-a10 .unnumbered}
 
-Soit un data frame `df` avec une colonne numérique `X`. Ajoutez en base R une colonne `Y` qui contient les valeurs standardisées de `X`, soit `Y = (X − moyenne(X)) / écart-type(X)`.
+Soit un tableau de données `df` avec une colonne numérique `X`. Ajoutez en base R une colonne `Y` qui contient les valeurs standardisées de `X`, soit `Y = (X − moyenne(X)) / écart-type(X)`.
 
 `r hide("Solution")`
 ```r

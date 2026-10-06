@@ -33,7 +33,7 @@ solution modèle.
     (Définissez votre répertoire de travail avec `setwd()` et
     sauvegardez le code de la console dans le script).
 
--   Chargez le paquet tidyverse avec `library(tidyverse)`.
+-   Chargez le package tidyverse avec `library(tidyverse)`.
 
 ### Exercice 1 : mtcars I {#mtcars-i}
 

@@ -50,7 +50,7 @@
   stem: 'Quel est le rôle principal de l’opérateur `%>%` dans `dplyr` ?'
   options:
     a: 'Importer des données.'
-    b: 'Assigner des variables.'
+    b: 'Affecter une valeur à un objet.'
     c: 'Créer des séquences de fonctions pour simplifier le code.'
     d: 'Convertir des types de données.'
     e: 'Aucune des autres réponses n’est correcte.'
@@ -68,7 +68,7 @@
   stem: |
     Vous avez effectué un test t à un échantillon et obtenu une statistique t de
     4.0869 avec 49 degrés de liberté et une valeur p de 0.0001618. Quelle conclusion
-    pouvez-vous en tirer au niveau de signification de 5 % ?
+    pouvez-vous en tirer au seuil de signification de 5 % ?
   options:
     a: 'Ne pas rejeter l’hypothèse nulle (H0).'
     b: 'Rejeter l’hypothèse nulle (H0).'
@@ -138,14 +138,14 @@
     revenus_df <- data.frame(nom, genre, revenus_en_milles_chf, classe_de_revenus)
     revenus_df
   options:
-    a: 'Ce data frame contient deux facteurs.'
+    a: 'Ce tableau de données contient deux facteurs.'
     b: '`revenus_df$classe_de_revenus` est une variable catégorielle ordinale.'
     c: '`revenus_df$genre` est une variable catégorielle ordinale.'
-    d: 'Ce data frame contient des informations sur trois femmes et trois personnes ayant un haut revenu.'
-    e: 'Ce data frame contient des informations sur cinq classes de revenus différentes.'
+    d: 'Ce tableau de données contient des informations sur trois femmes et trois personnes ayant un haut revenu.'
+    e: 'Ce tableau de données contient des informations sur cinq classes de revenus différentes.'
   key: [a, b, e]
   explanation: |
-    a) `genre` et `classe_de_revenus` sont des facteurs (`factor()`). `nom` est une variable textuelle, qui sert d’identifiant.
+    a) `genre` et `classe_de_revenus` sont des facteurs (`factor()`). `nom` est une variable de type caractère, qui sert d’identifiant.
     b) `classe_de_revenus` est un facteur ordonné (`ordered = TRUE`).
     c) `genre` est créé avec `ordered = FALSE` : il est nominal.
     d) Il y a bien trois femmes, mais seulement deux personnes dans la classe « haut ».
@@ -161,15 +161,15 @@
   type: multi
   stem: 'Jugez chaque proposition :'
   options:
-    a: 'Le paquet `ggplot2` est inclus dans `tidyverse`.'
-    b: 'Le paquet `ggplot` est à utiliser pour faire des graphiques avec une variable, tandis que le paquet `ggplot2` est utile pour voir graphiquement la corrélation entre deux variables.'
-    c: 'Le responsable de `ggplot2` (qui maintient le paquet) est Thomas Lin Pedersen.'
+    a: 'Le package `ggplot2` est inclus dans `tidyverse`.'
+    b: 'Le package `ggplot` est à utiliser pour faire des graphiques avec une variable, tandis que le package `ggplot2` est utile pour voir graphiquement la corrélation entre deux variables.'
+    c: 'Le responsable de `ggplot2` (qui maintient le package) est Thomas Lin Pedersen.'
     d: '`ggplot2` est très utile pour modifier des données.'
     e: '`ggplot2` construit des graphiques de manière incrémentale, en travaillant avec des couches.'
   key: [a, c, e]
   explanation: |
-    a) `ggplot2` fait partie des paquets chargés par `library(tidyverse)`.
-    b) Il n’existe pas de paquet `ggplot` distinct : `ggplot()` est la fonction principale de `ggplot2`.
+    a) `ggplot2` fait partie des packages chargés par `library(tidyverse)`.
+    b) Il n’existe pas de package `ggplot` distinct : `ggplot()` est la fonction principale de `ggplot2`.
     c) `packageDescription("ggplot2")$Maintainer` l’indique.
     d) Pour modifier des données, on utilise `dplyr` ; `ggplot2` sert à les visualiser.
     e) On ajoute les couches les unes aux autres avec `+`.
@@ -229,7 +229,7 @@
     a) et e) Le `$` extrait une colonne par son nom ; `mean()` en calcule la moyenne.
     b) Dans `[lignes, colonnes]`, laisser les lignes vides sélectionne toutes les lignes de la 2ᵉ colonne.
     c) `dim(ice_age_df)` renvoie `8 5`.
-    d) `class(ice_age_df)` renvoie `"data.frame"` : contrairement à une matrice, un data frame peut contenir des colonnes de types différents.
+    d) `class(ice_age_df)` renvoie `"data.frame"` : contrairement à une matrice, un tableau de données peut contenir des colonnes de types différents.
   uses_data: ~
   note: >-
     Dans exercise_problemset_1_final.qmd, la question 8 n’a ni ID ni propositions.
@@ -512,11 +512,11 @@
       labs(x = "Espèce", y = "Longueur des nageoires (mm)") +
       theme_minimal()
   options:
-    a: 'La ligne noire épaisse au milieu des boxplots indique la longueur moyenne des nageoires pour chaque espèce de manchots.'
+    a: 'La ligne noire épaisse au milieu des boîtes à moustaches indique la longueur moyenne des nageoires pour chaque espèce de manchots.'
     b: 'Au moins un manchot Adélie de l’échantillon a une nageoire plus longue qu’au moins un manchot papou (Gentoo).'
-    c: 'Les boxplots nous indiquent qu’il existe des différences statistiquement significatives dans la longueur des nageoires entre les trois espèces de manchots.'
-    d: 'Sur la seule base des boxplots, nous ne pouvons pas savoir si les différences de longueur des nageoires des différentes espèces de manchots sont statistiquement significatives (nous pourrions faire une ANOVA pour le savoir).'
-    e: 'Les boxplots indiquent qu’il y a deux valeurs extrêmes (*outliers*) dans l’ensemble de données.'
+    c: 'Les boîtes à moustaches nous indiquent qu’il existe des différences statistiquement significatives dans la longueur des nageoires entre les trois espèces de manchots.'
+    d: 'Sur la seule base des boîtes à moustaches, nous ne pouvons pas savoir si les différences de longueur des nageoires des différentes espèces de manchots sont statistiquement significatives (nous pourrions faire une ANOVA pour le savoir).'
+    e: 'Les boîtes à moustaches indiquent qu’il y a deux valeurs extrêmes (*outliers*) dans le jeu de données.'
   key: [b, d, e]
   explanation: |
     a) La ligne du milieu est la **médiane**, pas la moyenne.
@@ -565,7 +565,7 @@
     (*Data*, *Aesthetics*, *Geometries*, *Facets*, *Statistics*, *Coordinates*, *Theme*) :
   options:
     a: 'Pour créer un graphique ggplot2, il faut toujours définir les paramètres de toutes les couches les unes après les autres.'
-    b: 'La couche *Geometries* définit le type de graphique (par ex. nuage de points, diagramme à barres, boîtes à moustaches, etc.).'
+    b: 'La couche *Geometries* définit le type de graphique (par ex. nuage de points, diagramme en barres, boîtes à moustaches, etc.).'
     c: 'En général, on construit un graphique ggplot2 par couches en commençant par la couche *Data*.'
     d: 'La couche *Aesthetics* définit le design du graphique (par exemple, elle permet de générer le graphique dans le design du Wall Street Journal ou du magazine The Economist).'
     e: 'Les couches *Facets*, *Statistics*, *Coordinates* et *Theme* ne doivent pas obligatoirement être spécifiées dans le code, car R utilise pour celles-ci des paramètres standard prédéfinis.'
@@ -573,7 +573,7 @@
   explanation: |
     a) et e) Seules *Data*, *Aesthetics* et *Geometries* sont nécessaires ; les autres couches ont des valeurs par défaut.
     c) On commence par `ggplot(data = ...)`, puis on ajoute les couches.
-    d) *Aesthetics* (`aes()`) relie les variables aux axes, couleurs, tailles, etc. Le style « WSJ » ou « Economist » relève de la couche *Theme* (p. ex. `theme_wsj()` du paquet `ggthemes`).
+    d) *Aesthetics* (`aes()`) relie les variables aux axes, couleurs, tailles, etc. Le style « WSJ » ou « Economist » relève de la couche *Theme* (p. ex. `theme_wsj()` du package `ggthemes`).
   uses_data: ~
   note: >-
     L’image d’origine (schéma des couches) manque ; l’énoncé nomme maintenant les couches
@@ -627,7 +627,7 @@
   session: 5
   problem_sets: [2]
   type: multi
-  stem: 'Jugez chaque proposition concernant le graphique suivant, créé avec le jeu de données `mpg` (inclus dans le paquet `ggplot2`) :'
+  stem: 'Jugez chaque proposition concernant le graphique suivant, créé avec le jeu de données `mpg` (inclus dans le package `ggplot2`) :'
   figure: |
     library(ggplot2)
     ggplot(mpg, aes(x = displ, y = hwy)) +
@@ -662,7 +662,7 @@
     g <- ggplot(mtcars, aes(mpg, wt)) + geom_point()
     print(g)
   options:
-    a: '`g` est un objet stocké dans le volet *Environment* de RStudio.'
+    a: '`g` est un objet stocké dans le volet **Environment** de RStudio.'
     b: 'Le graphique `g` affiche une relation entre le poids des voitures (`wt`) et leur efficacité énergétique (`mpg`, miles par gallon).'
     c: 'Le code produit un histogramme.'
     d: 'Chaque point dans le graphique représente une voiture du jeu de données `mtcars`.'
@@ -691,7 +691,7 @@
       geom_bar() +
       labs(title = "Distribution of cylinders and gears in mtcars")
   options:
-    a: 'Ce code produit un diagramme à barres représentant le nombre de voitures par nombre de cylindres.'
+    a: 'Ce code produit un diagramme en barres représentant le nombre de voitures par nombre de cylindres.'
     b: 'La couleur des barres est déterminée par le nombre de vitesses (`gear`).'
     c: 'Les cylindres et les vitesses sont transformés en variables de type facteur.'
     d: 'Le graphique montre qu’il n’y a pas de voitures avec 8 cylindres et 4 vitesses dans `mtcars`.'
@@ -788,13 +788,13 @@
     a: 'La fonction `count(taille_f <= 160)` compte le nombre de valeurs inférieures ou égales à 160 (femmes de 160 cm ou moins) ainsi que celles supérieures à 160 (femmes de plus de 160 cm).'
     b: 'En général, la fonction `count()` de `dplyr` est utile pour compter le nombre d’observations d’un jeu de données qui correspondent à certains critères.'
     c: 'Si vous exécutez le code plusieurs fois de suite, vous obtiendrez toujours un résultat légèrement différent, car la fonction `rnorm()` génère des valeurs « aléatoires ».'
-    d: '`taille_f` est un objet de type *data frame* dans RStudio.'
+    d: '`taille_f` est un tableau de données (*data frame*).'
     e: '`taille_f` comporte 100 lignes (observations).'
   key: [a, b, c, d]
   explanation: |
     a) et b) Le critère `taille_f <= 160` vaut `TRUE` ou `FALSE` ; `count()` compte les lignes de chaque groupe.
     c) Chaque appel à `rnorm()` tire de nouvelles valeurs (sauf si l’on fixe `set.seed()`).
-    d) `as.data.frame()` transforme le vecteur en data frame.
+    d) `as.data.frame()` transforme le vecteur en tableau de données.
     e) `rnorm(500, ...)` crée 500 valeurs, donc 500 lignes, pas 100.
   uses_data: ~
   note: >-
@@ -900,15 +900,15 @@
     summary(modele_1)
   options:
     a: 'Ce modèle de régression pourrait être représenté visuellement par une ligne droite passant par un nuage de points.'
-    b: '`mpg` est la variable dépendante.'
-    c: '`wt`, `qsec` et `am` sont les variables indépendantes.'
-    d: 'Toutes les variables x de `modele_1` sont significatives au niveau de 5 %.'
+    b: '`mpg` est la variable à expliquer.'
+    c: '`wt`, `qsec` et `am` sont les variables explicatives.'
+    d: 'Toutes les variables x de `modele_1` sont significatives au seuil de 5 %.'
     e: 'Toutes les autres réponses sont correctes.'
   drop: [e]
   key: [b, c, d]
   explanation: |
-    a) Avec trois variables indépendantes, le modèle ne se résume pas à une droite dans un nuage de points à deux dimensions.
-    b) et c) Dans `y ~ x1 + x2 + x3`, la variable à gauche du `~` est la variable dépendante.
+    a) Avec trois variables explicatives, le modèle ne se résume pas à une droite dans un nuage de points à deux dimensions.
+    b) et c) Dans `y ~ x1 + x2 + x3`, la variable à gauche du `~` est la variable à expliquer.
     d) Les valeurs p de `wt` (< 0,001), `qsec` (< 0,001) et `am` (0,047) sont toutes inférieures à 0,05.
   uses_data: ~
 
@@ -975,7 +975,7 @@
     t.test(wnba, pays_bas)
   options:
     a: 'Dans l’échantillon simulé, la joueuse de basket-ball moyenne mesure 183,86 cm.'
-    b: 'La valeur p du test indique que la différence entre les tailles moyennes est statistiquement significative au niveau de 5 %.'
+    b: 'La valeur p du test indique que la différence entre les tailles moyennes est statistiquement significative au seuil de 5 %.'
     c: 'L’hypothèse nulle du test t est que les moyennes des deux populations (joueuses de la WNBA et hommes néerlandais) sont égales.'
     d: 'Le test t indique que les hommes néerlandais sont significativement plus grands que les joueuses de basket-ball de la WNBA.'
     e: 'Les résultats du test t indiquent que, dans les échantillons simulés, il n’y a pas de différence significative entre les tailles moyennes des joueuses de basket et des hommes néerlandais.'
@@ -1021,7 +1021,7 @@
   stem: 'Quels types de visualisation sont bien adaptés pour afficher la relation entre deux variables numériques ?'
   options:
     a: 'Histogramme'
-    b: 'Diagramme à barres'
+    b: 'Diagramme en barres'
     c: 'Boîte à moustaches'
     d: 'Nuage de points'
     e: 'Toutes les réponses sont incorrectes'
@@ -1029,7 +1029,7 @@
   key: [d]
   explanation: |
     Le nuage de points place une variable numérique sur chaque axe. L’histogramme montre la
-    distribution d’**une** variable numérique ; le diagramme à barres compte des catégories ;
+    distribution d’**une** variable numérique ; le diagramme en barres compte des catégories ;
     la boîte à moustaches compare une variable numérique entre catégories.
   uses_data: ~
 
@@ -1047,7 +1047,7 @@
   key: [a, b, e]
   explanation: |
     c) R a toujours un répertoire de travail par défaut : on peut l’utiliser sans appeler `setwd()`.
-    d) Les objets vivent en mémoire (volet *Environment*). Ils ne sont écrits sur le disque que si on les exporte explicitement (p. ex. avec `write.csv()` ou `save()`).
+    d) Les objets vivent en mémoire (volet **Environment**). Ils ne sont écrits sur le disque que si on les exporte explicitement (p. ex. avec `write.csv()` ou `save()`).
   uses_data: ~
 
 - id: 46
@@ -1062,7 +1062,7 @@
   options:
     a: '`a` est un vecteur.'
     b: '`a` est un objet R de type numérique.'
-    c: 'Le code crée un objet dans le volet *Environment* de RStudio.'
+    c: 'Le code crée un objet dans le volet **Environment** de RStudio.'
     d: 'Le code utilise la fonction de concaténation `c()`.'
   key: [a, b, c, d]
   explanation: |
@@ -1415,7 +1415,7 @@
   session: 12
   problem_sets: [4]
   type: numeric
-  stem: 'Quel est le poids moyen en grammes des manchots du jeu de données `penguins` (paquet `palmerpenguins`) ? Arrondissez au gramme.'
+  stem: 'Quel est le poids moyen en grammes des manchots du jeu de données `penguins` (package `palmerpenguins`) ? Arrondissez au gramme.'
   key: 4202
   explanation: |
     ```r
@@ -1613,7 +1613,7 @@
   stem: 'En général, je peux enregistrer les données issues de ma session R sur mon ordinateur (par exemple, un data frame que j’ai créé) sous la forme de fichiers CSV.'
   key: true
   explanation: |
-    La fonction `write.csv()` écrit un data frame dans un fichier CSV, p. ex. `write.csv(ice_age_df, "ice_age_df.csv")`.
+    La fonction `write.csv()` écrit un tableau de données dans un fichier CSV, p. ex. `write.csv(ice_age_df, "ice_age_df.csv")`.
   uses_data: ~
 
 - id: 90
@@ -1629,7 +1629,7 @@
   session: 2
   problem_sets: [1]
   type: vf
-  stem: 'La variable *genre*, par exemple pour les participant·es à une enquête, est généralement utilisée comme facteur hiérarchique (ordonné) dans R.'
+  stem: 'La variable *genre*, par exemple pour les participant·es à une enquête, est généralement utilisée comme facteur ordonné dans R.'
   key: false
   explanation: |
     Le genre est une variable **nominale** : ses modalités n’ont pas d’ordre. On l’encode donc comme facteur simple, pas comme facteur ordonné.
@@ -1638,12 +1638,12 @@
 - id: 92
   session: 4
   type: vf
-  stem: 'Le code R suivant charge le paquet `tidyverse` pour la session R en cours, à condition que ce paquet ait été préalablement installé sur votre ordinateur :'
+  stem: 'Le code R suivant charge le package `tidyverse` pour la session R en cours, à condition que ce package ait été préalablement installé sur votre ordinateur :'
   code: |
     library(tidyverse)
   key: true
   explanation: |
-    Un paquet s’installe une fois avec `install.packages("tidyverse")`, puis se charge à chaque session avec `library(tidyverse)`. Si le paquet n’est pas installé, `library()` renvoie une erreur.
+    Un package s’installe une fois avec `install.packages("tidyverse")`, puis se charge à chaque session avec `library(tidyverse)`. Si le package n’est pas installé, `library()` renvoie une erreur.
   uses_data: ~
 
 - id: 93
@@ -1686,10 +1686,10 @@
   session: 1
   problem_sets: [1]
   type: vf
-  stem: 'Dans R, l’opérateur d’affectation (`<-`) peut être utilisé pour créer des objets, tels que des variables à un élément, des vecteurs, des matrices et des data frames.'
+  stem: 'Dans R, l’opérateur d’affectation (`<-`) peut être utilisé pour créer des objets, tels que des variables à un élément, des vecteurs, des matrices et des tableaux de données.'
   key: true
   explanation: |
-    `<-` assigne n’importe quel objet R à un nom : scalaire, vecteur, matrice, data frame, liste, etc.
+    `<-` assigne n’importe quel objet R à un nom : scalaire, vecteur, matrice, tableau de données, liste, etc.
   uses_data: ~
 
 - id: 97
@@ -1706,7 +1706,7 @@
   session: 7
   problem_sets: [2]
   type: vf
-  stem: 'La fonction `as.factor()` peut être utilisée pour transformer des variables textuelles et numériques en facteurs.'
+  stem: 'La fonction `as.factor()` peut être utilisée pour transformer des vecteurs de type caractère ou numérique en facteurs.'
   key: true
   explanation: |
     `as.factor()` convertit un vecteur textuel ou numérique en facteur, p. ex. `mtcars$cyl <- as.factor(mtcars$cyl)`.
@@ -1716,10 +1716,10 @@
   session: 5
   problem_sets: [2]
   type: vf
-  stem: 'Un boxplot peut être utilisé pour visualiser la distribution, la moyenne, les déciles et les valeurs extrêmes d’un ensemble de données.'
+  stem: 'Une boîte à moustaches peut être utilisée pour visualiser la distribution, la moyenne, les déciles et les valeurs extrêmes d’une variable.'
   key: false
   explanation: |
-    Un boxplot montre la **médiane** et les **quartiles** (plus les moustaches et les valeurs extrêmes), pas la moyenne ni les déciles.
+    Une boîte à moustaches montre la **médiane** et les **quartiles** (plus les moustaches et les valeurs extrêmes), pas la moyenne ni les déciles.
   uses_data: ~
 
 - id: 100
@@ -1754,16 +1754,16 @@
   session: 4
   problem_sets: [2]
   type: vf
-  stem: '`ggplot2` est un paquet R qui fait partie du `tidyverse`.'
+  stem: '`ggplot2` est un package R qui fait partie du `tidyverse`.'
   key: true
   explanation: |
-    `tidyverse::tidyverse_packages()` liste les paquets du tidyverse ; `ggplot2` en fait partie.
+    `tidyverse::tidyverse_packages()` liste les packages du tidyverse ; `ggplot2` en fait partie.
   uses_data: ~
 
 - id: 103
   session: 4
   type: vf
-  stem: '`ggthemes` est un paquet R qui fait partie du `tidyverse`.'
+  stem: '`ggthemes` est un package R qui fait partie du `tidyverse`.'
   key: false
   explanation: |
     `ggthemes` complète `ggplot2` avec des thèmes supplémentaires, mais il ne fait pas partie du tidyverse : il faut l’installer et le charger séparément.
@@ -1892,7 +1892,7 @@
   stem: 'Avec des échantillons de grande taille, même des différences (apparemment) faibles entre les moyennes de deux groupes peuvent devenir statistiquement significatives (par exemple, la taille moyenne des hommes dans deux pays différents).'
   key: true
   explanation: |
-    L’erreur standard diminue quand la taille de l’échantillon augmente : avec de très grands échantillons, même une petite différence donne une valeur p très faible. « Significatif » ne veut donc pas dire « important ».
+    L’erreur type diminue quand la taille de l’échantillon augmente : avec de très grands échantillons, même une petite différence donne une valeur p très faible. « Significatif » ne veut donc pas dire « important ».
   uses_data: ~
 
 - id: 113
@@ -1922,7 +1922,7 @@
   session: 12
   problem_sets: [4]
   type: vf
-  stem: 'Le **R carré** d’un modèle de régression linéaire indique le pourcentage de la variabilité de la variable dépendante (y) qui peut être expliquée par la variabilité des variables indépendantes (x1, x2, etc.).'
+  stem: 'Le **R²** d’un modèle de régression linéaire indique le pourcentage de la variabilité de la variable à expliquer (y) qui peut être expliquée par la variabilité des variables explicatives (x1, x2, etc.).'
   key: true
   explanation: |
     Un R² de 0,75 signifie que le modèle explique 75 % de la variance de y. On le lit dans `summary(modele)` (*Multiple R-squared*).
@@ -1965,7 +1965,7 @@
   options:
     a: 'Source'
     b: 'Console'
-    c: 'Environnement'
+    c: 'Environment'
     d: 'Output'
   key: a
   explanation: |
@@ -2028,10 +2028,10 @@
 - id: 124
   session: 4
   type: vf
-  stem: 'Le **tidyverse**, contraction de *tidy* et de *universe*, est une collection de paquets R (*R packages*) open source.'
+  stem: 'Le **tidyverse**, contraction de *tidy* et de *universe*, est une collection de packages R open source.'
   key: true
   explanation: |
-    `library(tidyverse)` charge d’un coup plusieurs paquets conçus pour fonctionner ensemble, dont `ggplot2`, `dplyr`, `tidyr` et `readr`.
+    `library(tidyverse)` charge d’un coup plusieurs packages conçus pour fonctionner ensemble, dont `ggplot2`, `dplyr`, `tidyr` et `readr`.
   uses_data: ~
 
 - id: 125

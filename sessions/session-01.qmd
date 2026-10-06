@@ -33,11 +33,13 @@ Pour utiliser R sur votre ordinateur portable, vous devez d'abord
 installer les deux logiciels suivants :
 
 1.  le langage de programmation [R](https://cran.r-project.org) [@r2026]
-2.  l'interface [RStudio](https://posit.co/download/rstudio-desktop/) [@rstudio2026]
+2.  l'environnement de développement [RStudio](https://posit.co/download/rstudio-desktop/) [@rstudio2026]
 
-Notez que nous n'écrirons le code R que dans RStudio, l'interface. Le
-langage de programmation R doit d'abord être installé, mais il
-fonctionnera ensuite en arrière-plan. Il n'est donc pas nécessaire
+RStudio est un **environnement de développement intégré** (angl.
+*integrated development environment*, IDE) : il réunit dans une même
+fenêtre un éditeur de scripts, la console de R et d'autres outils. Nous
+écrirons le code R uniquement dans RStudio. Le langage R doit d'abord
+être installé, mais il fonctionnera ensuite en arrière-plan. Il n'est donc pas nécessaire
 d'ouvrir R directement sur votre ordinateur par la suite.
 
 ## L'interface RStudio
@@ -47,20 +49,21 @@ d'ouvrir R directement sur votre ordinateur par la suite.
 Pour une présentation détaillée de l'interface, voir la
 [documentation de Posit](https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html).
 
-Dans RStudio, il existe quatre volets différents :
+La fenêtre de RStudio est divisée en quatre volets (angl. *panes*) :
 
-1.  Le volet **source**
-2.  Le volet **console**
-3.  Le volet **environnement**
-4.  Le volet **output**
+1.  le volet **Source**, en haut à gauche ;
+2.  le volet **Console**, en bas à gauche ;
+3.  le volet **Environment** (environnement), en haut à droite ;
+4.  le volet **Output**, en bas à droite.
 
 ## Exécuter un script R
 
-Nous travaillons principalement dans le volet **source**, c'est là que
+Nous travaillons principalement dans le volet **Source** : c'est là que
 nous écrivons notre code.
 
-Vous pouvez ouvrir le volet source en créant un nouveau **R script**
-(cliquez sur le signe plus vert dans le coin supérieur gauche).
+Vous pouvez ouvrir le volet **Source** en créant un nouveau **script R**
+(menu **File → New File → R Script**, ou signe plus vert en haut à
+gauche).
 
 Vous pouvez réécrire ou copier-coller le calcul simple suivant et
 l'insérer dans votre script :
@@ -76,8 +79,7 @@ Une fois que nous avons écrit du code R dans le script, nous pouvons
 d'exécution situé au-dessus du volet source (le bouton d'exécution avec
 la flèche verte à qui montre à droite).
 
-C'est alors dans le volet de la **console** où le résultat va être
-affiché :
+Le résultat s'affiche alors dans le volet **Console** :
 
 ```{r}
 #| echo: false
@@ -310,9 +312,9 @@ v1
 ::: {.callout-note icon="true"}
 ## À noter
 
-En R, une **fonction** est un morceau de code conçu pour effectuer une
-tâche spécifique, souvent avec des paramètres variables. Ces paramètres
-d'entrée sont également appelés les **arguments** de la fonction.
+En R, une **fonction** effectue une tâche à partir des valeurs qu'on lui
+transmet entre parenthèses, ses **arguments** (on dit aussi
+*paramètres*), et renvoie un résultat.
 :::
 
 Prenons l'exemple de la fonction `c()` qui crée des vecteurs :

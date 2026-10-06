@@ -67,11 +67,10 @@ notamment :
 
 -   Les **matrices**
 
--   Les **data frames**
+-   Les **tableaux de données** (angl. *data frames*)
 
--   D'autres types, tels que les **tibbles**, qui sont en fait des data
-    frames adaptés à des paquets R spécifiques (nous traiterons ce sujet
-    plus tard dans le cours).
+-   Les **tibbles**, une version moderne du tableau de données, utilisée
+    par les packages du tidyverse (voir chapitre 7).
 
 ::: {.callout-important title="Important"}
 -   Il est de convention qu'un tableau de données présente les **unités
@@ -138,11 +137,11 @@ Regardons maintenant quelques objets R sous forme de tableau :
 
 ## Les matrices
 
-Les **matrices** sont des objets plutôt mathématiques. Elles doivent
-notamment être composées de données de même type, c'est à dire numérique,
-textuel, logique, etc.
+Les **matrices** sont des objets plutôt mathématiques. Toutes leurs
+valeurs doivent être du même type : uniquement des nombres, uniquement
+des chaînes de caractères ou uniquement des valeurs logiques.
 
-On peut créer des objets matriciels avec la commande **`matrix()`**,
+On peut créer des matrices avec la fonction **`matrix()`**,
 avec les arguments suivants :
 
 -   un vecteur de valeurs (p. ex. `c(1,2,3,4,5,6)`)
@@ -187,7 +186,7 @@ print(m3)
 ```
 
 Vous pouvez extraire des éléments individuels ou des parties d'une
-matrice avec des **parenthèses carrées `[]`** en spécifiant les lignes
+matrice avec des **crochets `[ ]`** en spécifiant les lignes
 et les colonnes concernées.
 
 ```{r}
@@ -217,19 +216,19 @@ m4[1:5, ]
 
 ```
 
-## Les data frames
+## Les tableaux de données {#les-data-frames}
 
 ::: {.callout-note icon="true"}
 ## À noter
 
-Les **data frames** (français : *cadre de données*) sont le type de
-donnée en forme tableau le plus commun dans R. Cette structure de donnée
-peut notamment être composé de données de différents types (numérique,
-textuel, logique).
+Le **tableau de données** (angl. *data frame*) est la structure en forme
+de tableau la plus courante dans R. Chaque ligne est une observation et
+chaque colonne une variable. Toutes les valeurs d'une colonne sont du
+même type, mais les colonnes peuvent être de types différents (nombres,
+chaînes de caractères, valeurs logiques).
 :::
 
-Créons un data frame avec la fonction `data.frame()` maintenant. Nous
-appelons ce type d'objets désormais un **jeu de données**.
+Créons maintenant un tableau de données avec la fonction `data.frame()`.
 
 Nos exemples reprennent les personnages du film d'animation
 [*L'Âge de glace 3 : Le Temps des dinosaures*](https://fr.wikipedia.org/wiki/L%27%C3%82ge_de_glace_3_:_Le_Temps_des_dinosaures)
@@ -271,11 +270,11 @@ utilisant la fonction `print()` :
 print(ice_age_df)
 ```
 
-### Quelques fonctions utiles pour analyser les data frames
+### Quelques fonctions utiles pour décrire un tableau de données {#quelques-fonctions-utiles-pour-analyser-les-data-frames}
 
 Il existe plusieurs **fonctions utiles** dans R qui vous permettent
-d'analyser les propriétés de jeux de données de type data frame (et
-d'autres types d'objets R), comme p. ex. :
+d'analyser les propriétés d'un tableau de données (et d'autres objets
+R), p. ex. :
 
 -   `dim()` : Retourne les dimensions d'un jeu de données - le nombre de
     lignes et de colonnes.
@@ -302,7 +301,7 @@ d'autres types d'objets R), comme p. ex. :
 
     -   le minimum et le maximum pour les variables numériques, et
 
-    -   les fréquences pour les variables factorielles.
+    -   les effectifs de chaque niveau pour les facteurs.
 
         Cette fonction est utile pour obtenir rapidement une vue
         d'ensemble des statistiques.
@@ -322,7 +321,7 @@ summary(ice_age_df)
 
 ::: {.callout-tip title="Astuce"}
 Une autre astuce utile consiste à utiliser le **`$`** pour **extraire
-des colonnes spécifiques** d'un jeu de données.
+des colonnes spécifiques** d'un tableau de données.
 :::
 
 ```{r}
@@ -378,31 +377,29 @@ var(a1)
 
 ## Les facteurs
 
-Un autre type de variable clé dans R est ce que l'on appelle les
-**facteurs**, qui sont essentiellement des **variables catégorielles**.
+Pour les variables catégorielles, R dispose d'un type d'objet
+particulier : les **facteurs**.
 
 ::: {.callout-note icon="true"}
 ## À noter
 
-Les facteurs sont des variables qui prennent un nombre limité de valeurs
-différentes (appelées *levels* dans R).
+Une **variable catégorielle** ne prend qu'un nombre limité de valeurs,
+ses **modalités**. Elle peut être :
 
-Il existe deux sous-types de facteurs :
+-   **nominale** (sans ordre) : les modalités sont équivalentes, sans
+    hiérarchie (p. ex. le genre, l'appartenance à un parti politique) ;
 
--   Les **facteurs nominaux** (sans ordre) : toutes les catégories sont
-    équivalentes les unes aux autres. Il n'y a pas de hiérarchisation.
+-   **ordinale** (avec un ordre) : les modalités sont ordonnées (p. ex.
+    le niveau d'éducation, des classes d'âge, ou *faible*, *moyen*,
+    *élevé*).
 
-    -   Exemples : le genre et l'appartenance à un parti politique
-
--   Les **facteurs ordinaux** (avec un ordre): il y a un ordre ou une
-    hiérarchie spécifiée parmi les catégories (p. ex. des niveaux tels
-    que *faible*, *moyen*, *élevé*).
-
-    -   Exemples : niveau d'éducation, cohortes d'âge
+Dans R, on représente une variable catégorielle par un **facteur**, dont
+les modalités sont appelées **niveaux** (angl. *levels*). Pour une
+variable ordinale, on crée un **facteur ordonné** (`ordered = TRUE`).
 :::
 
-Vous pouvez créer un facteur nominal à l'aide de la fonction `factor()`
-et vérifier ses catégories avec `levels()`. Voici un exemple :
+Vous pouvez créer un facteur à l'aide de la fonction `factor()` et
+afficher ses niveaux avec `levels()`. Voici un exemple :
 
 ```{r}
 #| echo: true
@@ -420,7 +417,7 @@ levels(facteur_genre)
 print(facteur_genre)
 ```
 
-Et voici comment créer un facteur ordinal :
+Et voici comment créer un facteur ordonné :
 
 ```{r}
 #| echo: true
@@ -428,7 +425,7 @@ Et voici comment créer un facteur ordinal :
 # Voici un vecteur textuel avec des tailles de T-shirt
 tailles <- c("Small", "Medium", "Large", "Medium", "Small")
 
-# On le transforme en facteur ordinal en spécifiant les arguments suivants :
+# On le transforme en facteur ordonné en spécifiant les arguments suivants :
 tailles_facteur <- factor(tailles, ordered = TRUE, levels = c("Small", "Medium", "Large"))
 
 levels(tailles_facteur)
@@ -437,8 +434,8 @@ print(tailles_facteur)
 
 ```
 
-Transformons maintenant la colonne `species` de notre jeu de données
-`ice_age_df` en facteur avec la fonction `as.factor()`:
+Transformons maintenant la colonne `species` de notre tableau de données
+`ice_age_df` en facteur avec la fonction `as.factor()` :
 
 ```{r}
 #| echo: true

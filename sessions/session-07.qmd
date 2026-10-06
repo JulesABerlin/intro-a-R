@@ -8,19 +8,18 @@ source("_common.R")
 **Sujet : Manipuler les données (partie 1)**
 
 Le premier but de cette session est d'apprendre à importer des données
-dans RStudio à partir de **fichiers CSV** et de les stocker en forme de
-data frame (format tabulaire).
+dans RStudio à partir de **fichiers CSV** et de les stocker sous forme de
+tableau de données.
 
 Le deuxième but est de se familiariser avec `dplyr` (prononcé
-« dee-ply-er » en anglais), un paquet du `tidyverse` conçu pour manipuler
-les données en forme de data frame.
+« dee-ply-er » en anglais), un package du tidyverse conçu pour
+manipuler les tableaux de données.
 
-Contrairement aux jeux de données intégrés à R (tels que `diamonds`,
-etc.), la plupart des jeux de données du monde réel nécessitent des
+Contrairement aux jeux de données d'exemple (tels que `diamonds`), la plupart des jeux de données du monde réel nécessitent des
 **transformations** avant de pouvoir être analysés et visualisés. À
-cette fin, nous examinerons également certaines transformations de types
-de variables et un nouvel opérateur, le `%>%` (angl. « pipe »; trad.
-franç. « tuyau »), qui est très utile pour les manipulations de données.
+cette fin, nous verrons aussi comment changer le type d'une variable,
+ainsi qu'un nouvel opérateur, le pipe `%>%`, très utile pour enchaîner
+les manipulations.
 
 ## Lire des données au format CSV dans RStudio {#lire-des-données-auf-format-csv-dans-rstudio}
 
@@ -71,7 +70,7 @@ désigne les noms des colonnes) :
 :::
 
 Avant l'importation de fichier CSV dans RStudio (et comme déjà vu pleins
-de fois dans le cours 😉), il faut d'abord charger les paquets
+de fois dans le cours 😉), il faut d'abord charger les packages
 nécessaires avec `library()` et définir son répertoire de travail (vous
 devez adapter les paramètres de `setwd()` pour qu'il marche sur votre
 ordinateur) :
@@ -143,16 +142,17 @@ str(igposts)
 
 ## Explorez votre jeu de données importé
 
-Cela nous montre qu'il s'agit d'un data frame avec 84 observations et
+Cela nous montre qu'il s'agit d'un tableau de données avec 84 observations et
 11 variables. Chaque ligne (unité statistique) représente une observation
 associant un post Instagram à un compte qui l'a publié ou co-publié : les
 84 lignes correspondent à 82 posts distincts provenant de 33 comptes.
 Chaque colonne est une variable différente associée à cette observation.
 
-Notez que les variables sont soit de type textuel (chr = « character »; p.
-ex. `Account`= le nom du compte Insta qui a publié le post), soit
-numérique (int = « integer »; p. ex. `Total.Interactions` = la somme des
-`Likes` et `Comments` qu'un post a reçu).
+Notez que les variables sont soit de type caractère (`chr`, pour
+*character* ; p. ex. `Account`, le nom du compte Instagram qui a publié
+le post), soit numérique (`int`, pour *integer* ; p. ex.
+`Total.Interactions`, la somme des `Likes` et des `Comments` qu'un post
+a reçus).
 
 Vous pouvez aussi cliquer sur l'objet et explorer le tableau
 manuellement pour le comprendre davantage (comme nous l'avons fait avec
@@ -181,10 +181,10 @@ manuellement pour le comprendre davantage (comme nous l'avons fait avec
 Avant de continuer avec `dplyr`, regardons encore deux éléments
 cruciaux pour la manipulation de données avec R :
 
--   la transformation du type de variable (p. ex. de variables
-    textuelles en facteurs)
+-   la transformation du type de variable (p. ex. de variables de
+    type caractère en facteurs) ;
 
--   L'opérateur `%>%` (angl. « pipe »; trad. française « tuyau »)
+-   le pipe `%>%`.
 
 ## La transformation du type de variable
 
@@ -192,7 +192,7 @@ Lorsque l'on analyse des jeux de données, on constate parfois que toutes
 les variables **ne sont pas enregistrées dans un format utile pour
 l'analyse**. Parfois, par exemple, les valeurs numériques sont
 enregistrées sous forme de texte. Il est alors utile de les transformer
-dans un format numérique (par exemple avec la fonction `as.numeric()`.
+dans un format numérique (par exemple avec la fonction `as.numeric()`).
 
 Mais il y a aussi le cas suivant : les variables sous forme de texte ne
 représentent pas simplement des textes, mais certaines **catégories**.
@@ -202,7 +202,7 @@ catégorielle, c'est-à-dire un facteur, à l'aide de la fonction
 
 Dans notre exemple de jeu de données `igposts`, qui contient des
 métriques sur les posts Instagram, nous pouvons justement constater
-cela. Certes, certaines variables textuelles, telles que `URL` (le lien
+cela. Certes, certaines variables de type caractère, telles que `URL` (le lien
 vers le post), sont tout à fait pertinentes. D'autres, en revanche, sont
 des catégories. La plus évidente est la variable `Type`, qui indique si
 un post Instagram est une photo ou un album (les deux catégories présentes
@@ -229,9 +229,10 @@ Nous allons voir par la suite, pourquoi ces factorisations sont utiles.
 
 ## L'opérateur `%>%`
 
-La fonction principale du pipe `%>%` : construire **une séquence de
-fonctions (« un tuyau »)** qui est plus facile à comprendre et à lire dans
-le code.
+Le pipe `%>%` transmet l'objet placé à sa gauche comme **premier
+argument** de la fonction placée à sa droite : `x %>% f(y)` équivaut à
+`f(x, y)`. On peut ainsi enchaîner plusieurs fonctions dans l'ordre où
+on les lit, au lieu de les imbriquer.
 
 ```{r}
 # Par exemple, regardez la fonction suivante : quel est le problème ?
@@ -254,7 +255,7 @@ Vous pouvez créer le pipe `%>%` avec les raccourcis clavier suivants :
 -   Sur **MacOS** : <kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>M</kbd>
 
 De plus, vous pouvez aussi utiliser le pipe natif de R, `|>` (depuis
-R 4.1). Il fonctionne sans paquet et s'utilise de la même façon que
+R 4.1). Il fonctionne sans package et s'utilise de la même façon que
 `%>%` dans les cas simples.
 :::
 
@@ -262,7 +263,7 @@ Vous pouvez déjà constater que travailler avec des jeux de données du
 monde réel, tels que le jeu de données Instagram `igposts`, nécessite un
 travail préparatoire substantiel. Mais rassurez-vous et ne vous
 découragez pas, plus vous pratiquez, plus cela devient facile et,
-bientôt, vous serez en mesure de charger facilement des ensembles de
+bientôt, vous serez en mesure de charger facilement des jeux de
 données dans RStudio ! Par ailleurs : il est normal de rencontrer des
 messages d'erreur. C'est une partie essentielle du processus
 d'apprentissage que de les surmonter en bricolant et en jouant avec vos
@@ -275,34 +276,34 @@ maintenant manipuler les données avec le package `dplyr`.
 
 ## Manipuler les données avec `dplyr`
 
-Le paquet `dplyr` est basé sur une logique de *verbes* pour les
+Le package `dplyr` est basé sur une logique de *verbes* pour les
 différents types de manipulation de données, notamment :
 
 -   Les verbes pour manipuler les données au niveau de **colonnes** :
 
-    -   `select()` : pour extraire une ou plusieurs colonnes d'un data
-        frame.
+    -   `select()` : pour extraire une ou plusieurs colonnes d'un tableau
+        de données.
 
     -   `mutate()` : pour créer une ou plusieurs nouvelles colonnes dans
-        un data frame.
+        un tableau de données.
 
 -   Les verbes pour manipuler les données au niveau de **lignes** :
 
-    -   `filter()` : pour filtrer les lignes d'un data frame selon un ou
+    -   `filter()` : pour filtrer les lignes d'un tableau de données selon un ou
         plusieurs critères.
 
-    -   `arrange()` : pour trier les lignes d'un data frame selon un ou
+    -   `arrange()` : pour trier les lignes d'un tableau de données selon un ou
         plusieurs critères.
 
 -   Les verbes pour **résumer, compter et regrouper** les données :
 
-    -   `summarize()` : pour réduire une ou plusieurs colonnes d'un data
-        frame en une seule ligne, notamment pour résumer des données.
+    -   `summarize()` : pour réduire une ou plusieurs colonnes d'un tableau
+        de données en une seule ligne, notamment pour résumer des données.
 
     -   `count()` : pour compter le nombre d'observations d'une ou
-        plusieurs catégories dans un data frame.
+        plusieurs catégories dans un tableau de données.
 
-    -   `group_by()` : pour regrouper des données d'un data frame selon
+    -   `group_by()` : pour regrouper des données d'un tableau de données selon
         une ou plusieurs catégories.
 
 Essayons maintenant d'appliquer tout cela avec du code et les données
@@ -313,7 +314,7 @@ Essayons maintenant d'appliquer tout cela avec du code et les données
 ```{r}
 #| echo: true
 #| output: false
-# select() : fonction pour extraire une ou plusieurs colonnes d'un data frame
+# select() : fonction pour extraire une ou plusieurs colonnes d'un tableau de données
 
 # Par exemple, nous pouvons extraire les quatres colonnes suivantes d'igposts (voir comment le pipe est utilisé) :
 
@@ -325,7 +326,7 @@ igposts %>%
   select(Account:Reposts) %>% 
   head()
 
-# Vous pouvez également créer un nouvel objet, df1, qui est essentiellement un data frame plus petit que igposts avec un sous-ensemble de variables (un tel data frame plus petit peut être plus utile à analyser et à afficher) :
+# Vous pouvez également créer un nouvel objet, df1, qui est essentiellement un tableau de données plus petit que igposts avec un sous-ensemble de variables (un tel data frame plus petit peut être plus utile à analyser et à afficher) :
   
 df1 <- igposts %>% 
           select(Account, 
@@ -338,7 +339,7 @@ df1 <- igposts %>%
 ###############################################################################
 
 
-# mutate() : fonction pour créer une ou plusieurs nouvelles colonnes dans un data frame
+# mutate() : fonction pour créer une ou plusieurs nouvelles colonnes dans un tableau de données
 
 # Par exemple, nous pouvons créer une nouvelle colonne qui compte le nombre d'interactions par follower :
 
@@ -392,7 +393,7 @@ df1 %>%
 
 # arrange() : fonction pour trier les lignes selon un ou plusieurs critères
 
-# Trier des valeurs/facteurs textuelles par ordre alphabétique :
+# Trier par ordre alphabétique (texte ou facteur) :
 
 df1 %>% arrange(Account) %>% head(10)
 
@@ -417,7 +418,7 @@ df1 %>%
 # summarize() : fonction qui réduit une ou plusieurs colonnes en une seule ligne, 
 # notamment pour résumer des données
 
-# Nous pouvons, par exemple, résumer la somme totale de Total.Interactions dans notre ensemble de données. Ce nombre est assez impressionnant et constitue une caractéristique importante de notre ensemble de données.
+# Nous pouvons, par exemple, résumer la somme totale de Total.Interactions dans notre jeu de données. Ce nombre est assez impressionnant et constitue une caractéristique importante de notre ensemble de données.
 
 df1 %>% summarize(sum_TI = sum(Total.Interactions)) 
 
@@ -443,7 +444,7 @@ df1 %>%
 df1 %>% 
   count(Account)
 
-# Compter l'occurence des différents comptes dans notre jeu de données en les triant par cette occurence de manière décroissante (avec le paramètre arrange(-n)) :
+# Compter l'occurence des différents comptes dans notre jeu de données en les triant par cette occurence de manière décroissante (avec arrange(-n)) :
 
 df1 %>% 
   count(Account) %>% 
@@ -460,14 +461,14 @@ df1 %>%
 
 df1 %>% group_by(Type) %>% summarize(mean_TI = mean(Total.Interactions)) 
 
-# En utilisant le paramètre n=n() dans la fonction summarize(), nous pouvons également compter le nombre d'observations dans chaque catégorie :
+# Avec n = n() dans la fonction summarize(), nous pouvons également compter le nombre d'observations dans chaque catégorie :
 
 df1 %>% 
   group_by(Type) %>% 
   summarize(n = n(), 
             mean_TI = mean(Total.Interactions)) 
 
-# Utilisons plusieurs verbes dplyr pour trouver les 10 comptes qui apparaissent le plus fréquemment dans nos ensembles de données de posts Instagram. Nous résumons également leur nombre moyen de followers et d'interactions.
+# Utilisons plusieurs verbes dplyr pour trouver les 10 comptes qui apparaissent le plus fréquemment dans notre jeu de données de posts Instagram. Nous résumons également leur nombre moyen de followers et d'interactions.
 
 df1 %>% 
   group_by(Account) %>% 

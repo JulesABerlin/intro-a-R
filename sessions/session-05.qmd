@@ -494,13 +494,7 @@ les graphiques avant de passer à la manipulation de données.
 
 ## Exercices {.unnumbered}
 
-::: {.content-visible unless-format="pdf"}
-Choisissez *Vrai* ou *Faux*, cochez une réponse ou tapez un nombre : la couleur indique tout de suite si votre réponse est correcte. Cliquez sur **Explication** pour voir la correction.
-:::
-
-::: {.content-visible unless-format="html"}
-Notez vos réponses, puis comparez-les avec l'annexe « Corrigés » à la fin du livre.
-:::
+{{< include ../include/_consignes-exercices.qmd >}}
 
 ```{r}
 #| echo: false

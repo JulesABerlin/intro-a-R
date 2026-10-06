@@ -46,8 +46,7 @@ facteur, l'ANOVA à deux facteurs, etc.
 ::: {.callout-caution collapse="false"}
 ## Attention
 
-Comme pour le test t, l'ANOVA nécessite certaines hypothèses concernant
-les données : l'indépendance des observations ; dans chaque groupe, une
+Comme le test t, l'ANOVA repose sur des conditions d'application : l'indépendance des observations ; dans chaque groupe, une
 distribution à peu près normale (vérifiable sur les résidus du modèle) ;
 des variances semblables entre les groupes (homoscédasticité).
 :::
@@ -137,7 +136,7 @@ ggplot(data = penguins, aes(x = flipper_length_mm)) +
        subtitle = "n = 344 ; source : package palmerpenguins",
        x = "Longueur des nageoires (mm)", y = "Effectif", fill = "Espèce")
 
-# Calculs des variances de flipper length avec dplyr par espèce de manchot, pour vérifier si l'hypothèse de variances similaires entre groupes est satisfaite :
+# Calculs des variances de flipper length avec dplyr par espèce de manchot, pour vérifier la condition de variances similaires entre groupes :
 penguins %>% 
   group_by(species) %>% 
   summarize(var_fl = var(flipper_length_mm, na.rm = TRUE))
@@ -149,7 +148,7 @@ summary(anova_1)
 # à noter, avec TukeyHSD() nous pouvons vérifier davantage les différences entre chaque paire d'espèces :
 TukeyHSD(anova_1)
 
-# Nous pouvons rejeter H0 avec une grande certitude !
+# La valeur p est très faible : on rejette H0 au seuil de 5 %.
 ```
 
 ## La régression linéaire avec `lm()`
@@ -353,7 +352,7 @@ variable explicative `wt`. Regardons le résultat plus en détail :
 -   Les coefficients du modèle sont présentés dans la section
     `Coefficients`.
 
-    -   L'interception est estimée à 37,285 et le coefficient pour `wt`
+    -   L'ordonnée à l'origine (`(Intercept)`) est estimée à 37,285 et le coefficient pour `wt`
         est estimé à -5,345. Cela signifie que pour chaque augmentation
         d'une unité de `wt`, la valeur prédite de `mpg` diminue de 5,345
         unités en moyenne. En d'autres termes, pour chaque tranche de 1000 livres
@@ -361,15 +360,14 @@ variable explicative `wt`. Regardons le résultat plus en détail :
         moyenne **5,3 miles de moins par gallon** (elle consomme donc
         davantage).
 
-    -   La valeur de p (Pr(\>\|t\|)) pour le coefficient de `wt` est
-        très faible (p < 0,001), ce qui indique que le
-        coefficient est significativement différent de zéro et que la
-        variable `wt` a un effet significatif sur la variable dépendante
+    -   La valeur p (`Pr(>|t|)`) du coefficient de `wt` est très faible
+        (p < 0,001) : le coefficient est significativement différent de
+        zéro, c'est-à-dire que `wt` est significativement associé à
         `mpg`.
 
 -   La section `Residuals` indique les résidus minimaux, du premier
     quartile, de la médiane, du troisième quartile et maximaux. Ces
-    valeurs peuvent être utilisées pour vérifier si les hypothèses du
+    valeurs peuvent être utilisées pour vérifier si les conditions d'application du
     modèle sont satisfaites.
 
 -   `Residual standard error` est l'écart-type résiduel, qui mesure
@@ -420,7 +418,7 @@ Vidéo : *Linear Regression in R, Step-by-Step*,
 
 Les graphiques de diagnostic (angl. diagnostic plots) sont des
 graphiques utilisés pour évaluer la qualité d'un modèle de régression
-linéaire et vérifier si les hypothèses du modèle sont satisfaites (p.
+linéaire et vérifier si ses conditions d'application sont remplies (p.
 ex. si les **résidus** suivent approximativement une loi normale).
 
 En utilisant la fonction `plot()` après avoir calculé un modèle de
@@ -457,34 +455,28 @@ plot(modele_1)
 3.  `Scale-Location` : Ce graphique affiche les valeurs ajustées d'un
     modèle de régression sur l'axe des abscisses et la racine carrée des
     résidus standardisés sur l'axe des ordonnées. C'est ainsi que vous
-    pouvez vérifier l'hypothèse de variance égale (homoscédasticité).
+    pouvez vérifier la condition de variance constante (homoscédasticité).
     C'est une bonne chose si vous voyez une ligne rouge plus ou moins
     horizontale avec des points répartis de manière égale (au hasard)
     autour d'elle.
 
-4.  `Residuals vs Leverage` : Ce graphique permet d'identifier les
-    valeurs aberrantes influentes (valeurs extrêmes) dans les données
-    qui peuvent affecter le modèle de régression linéaire. Toutes les
-    valeurs aberrantes ne sont pas nécessairement influentes ; certaines
-    peuvent ne pas avoir d'impact significatif sur le modèle de
-    régression, ce qui signifie que les résultats de l'analyse de
-    régression restent similaires, que ces cas soient inclus ou exclus.
-    Cependant, certaines valeurs aberrantes peuvent avoir une grande
-    influence et modifier les résultats si elles sont exclues, car elles
-    ne s'alignent pas sur la tendance générale. Dans ce graphique, nous
-    nous concentrons sur les valeurs aberrantes situées dans les coins
-    supérieurs ou inférieurs droits, en dehors des lignes pointillées,
-    qui indiquent des scores élevés de « distance de Cook ». Ces cas ont
-    un impact significatif sur les résultats de la régression et doivent
-    être notés.
+4.  `Residuals vs Leverage` : ce graphique permet d'identifier les
+    **observations influentes**, c'est-à-dire celles qui pèsent fortement
+    sur les coefficients du modèle. Une valeur extrême n'est pas
+    forcément influente : si les résultats restent semblables avec ou
+    sans elle, elle ne pose pas de problème. Une observation influente,
+    en revanche, modifie nettement les résultats lorsqu'on l'exclut.
+    Regardez les points situés dans les coins supérieur ou inférieur
+    droits, au-delà des lignes pointillées, qui signalent une « distance
+    de Cook » élevée : ces observations méritent d'être examinées.
 
 En examinant ces graphiques de diagnostic, nous pouvons évaluer si les
-hypothèses du modèle de régression linéaire sont satisfaites, telles que
+conditions d'application de la régression linéaire sont remplies :
 l'indépendance des résidus, l'homoscédasticité, la linéarité et la
 normalité des résidus.
 
-Si les graphiques de diagnostic montrent que les hypothèses ne sont pas
-satisfaites, cela peut indiquer que le modèle n'est pas adéquat et
+Si les graphiques de diagnostic montrent que ces conditions ne sont pas
+remplies, cela peut indiquer que le modèle n'est pas adéquat et
 qu'une transformation des données ou une sélection de variables
 différente peut être nécessaire.
 
@@ -526,10 +518,10 @@ par(mfrow=c(2,2))
 plot(modele_2)
 ```
 
-Les résultats montrent qu'en effet, la puissance en chevaux `hp` a
-également un effet négatif sur `mpg`. La valeur p de `hp` indique un
-effet significatif au niveau de 1% (mais pas au niveau de 0,1% comme
-pour `wt`).
+Les résultats montrent qu'en effet, la puissance en chevaux `hp` est
+elle aussi associée négativement à `mpg`. Son coefficient est
+significatif au seuil de 1 % (mais pas au seuil de 0,1 %, contrairement
+à celui de `wt`).
 
 Le R² de notre modèle a également augmenté pour atteindre 82,68 %
 (R² ajusté : 81,48 %), une valeur très élevée. Cela
@@ -593,7 +585,7 @@ Voyons comment cela fonctionne avec du code R.
 full_model <- lm(mpg ~ ., data = mtcars)
 summary(full_model)
 
-# Nous utilisons la fonction step(), en commençant par le modèle complet et en permettant à la fois la sélection en amont et l'élimination en aval sur la base de l'AIC (avec direction = "both")
+# step() part du modèle complet ; à chaque étape, il peut retirer une variable (sélection descendante) ou en réintroduire une (sélection ascendante), selon l'AIC (direction = "both")
 stepwise_model <- step(full_model, direction = "both")
 ```
 
@@ -615,8 +607,8 @@ summary(stepwise_model)
 ```
 
 **Graphiques de diagnostic** : Après avoir choisi un modèle, il est
-utile de vérifier les graphiques des résidus pour valider les hypothèses
-d'homoscédasticité, de normalité et d'indépendance des résidus :
+utile de vérifier les graphiques des résidus pour contrôler les conditions
+d'application : homoscédasticité, normalité et indépendance des résidus.
 
 ```{r}
 par(mfrow=c(2,2))

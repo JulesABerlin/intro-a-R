@@ -131,16 +131,16 @@ comme ceci :
 ## L'opérateur d'affectation `<-`
 
 L'opérateur d'affectation **`<-`** est un opérateur clé de la
-programmation R. Il permet d'attribuer des valeurs aux variables.
+programmation R : il stocke une valeur dans un objet nommé.
 
 ```{r}
 #| echo: true
-# Par exemple, nous pouvons attribuer la valeur 5 à la variable x :
+# Par exemple, nous stockons la valeur 5 dans l'objet x :
 x <- 5
 ```
 
-Si vous exécutez ce code, une nouvelle variable, `x`, sera créée dans le
-volet **environnement** en haut à droite de RStudio.
+Si vous exécutez ce code, un nouvel objet, `x`, apparaît dans le volet
+**Environment**, en haut à droite de RStudio.
 
 {{< pagebreak >}}
 
@@ -148,10 +148,11 @@ volet **environnement** en haut à droite de RStudio.
 ## À noter
 
 En R, tout ce que l'on manipule (une valeur, un vecteur, un tableau, une
-fonction) est un **objet** qui porte un nom. On parle aussi de
-**structures de données**. Les variables à un élément sont des objets
-très simples. Au cours de ce
-cours, nous découvrirons d'autres types d'objets.
+fonction) est un **objet** qui porte un nom. Même une valeur isolée,
+comme `x <- 5`, est un objet : un vecteur de longueur 1. En programmation,
+on appelle souvent ces objets des *variables* ; dans ce livre, le mot
+**variable** désigne toujours une variable statistique, c'est-à-dire une
+colonne d'un tableau de données (voir chapitre 2).
 :::
 
 ::: {.callout-tip title="Astuce"}
@@ -163,11 +164,10 @@ clavier suivants :
 -   Sur **macOS** : <kbd>Option</kbd> + <kbd>-</kbd>
 :::
 
-## Variables à élément unique
+## Objets à un seul élément {#variables-à-élément-unique}
 
-Vous pouvez **imprimer** (afficher) la valeur d'une variable que vous
-avez créée, telle que `x`, en tapant le nom de la variable et en
-l'exécutant.
+Vous pouvez **afficher** la valeur d'un objet que vous avez créé, tel
+que `x`, en tapant son nom et en l'exécutant.
 
 ```{r}
 #| echo: true
@@ -175,15 +175,14 @@ x
 ```
 
 ::: {.callout-important title="Important"}
--   Veillez toujours à exécuter votre code pour créer des variables
-    avant de les utiliser pour d'autres opérations. Si vous oubliez de
-    créer les variables en premier, vous obtiendrez une erreur comme
-    résultat.
+-   Veillez toujours à exécuter le code qui crée un objet avant de
+    l'utiliser. Si l'objet n'existe pas encore, R affiche un message
+    d'erreur.
 :::
 
 Par exemple, essayez d'exécuter ce qui suit : `y + z`
 
-Pourquoi cela crée une erreur ? Réponse : les variables `y` et `z` n'ont
+Pourquoi cela crée une erreur ? Réponse : les objets `y` et `z` n'ont
 pas encore été définis.
 
 Pour éliminer l'erreur, nous devons donc définir `y` et `z`.
@@ -201,66 +200,66 @@ y + z
 Maintenant, le code fonctionne.
 
 ::: {.callout-important title="Important"}
--   Sachez aussi que si vous attribuez une nouvelle valeur à une
-    variable existante, l'ancienne valeur est écrasée.
+-   Sachez aussi que si vous affectez une nouvelle valeur à un objet
+    existant, l'ancienne valeur est écrasée.
 :::
 
 ```{r}
 #| echo: true
-# Notez que si vous exécutez toutes les lignes de code suivantes, la variable x se voit attribuer la dernière valeur exécutée : 4. Les valeurs 5 et 100 sont écrasées lors de l'exécution du code.
+# Si vous exécutez toutes les lignes suivantes, l'objet x prend la dernière valeur affectée : 4. Les valeurs 5 et 100 sont écrasées lors de l'exécution du code.
 x <- 5
 x <- 100
 x <- 4
 x
 ```
 
-### Les différents types de variable : numériques, textuelles et logique
+### Les types de données : numérique, caractère et logique {#les-différents-types-de-variable-numériques-textuelles-et-logique}
 
-Jusqu'à présent, nous avons créé des variables de **type numérique**,
-telles que `x` (valeur = 5).
+Jusqu'à présent, nous avons créé des objets de **type numérique**, tels
+que `x` (valeur = 5).
 
-Cependant, ce n'est pas le seul type de variable dans R.
+Cependant, ce n'est pas le seul type de données dans R.
 
 ::: {.callout-note icon="true"}
 ## À noter
 
-Dans R, il existe différents types de variables :
+Les trois types de données les plus courants dans R sont :
 
--   les variables **numériques**
+-   les nombres, de type **numérique** (`numeric`) ;
 
--   les variables **textuelles**, également appelées *character strings*
-    (chaînes de caractères).
+-   les **chaînes de caractères** (type `character`), c'est-à-dire du
+    texte, toujours écrit entre guillemets ;
 
--   les variables **logiques** avec les valeurs TRUE et FALSE (VRAI et
-    FAUX)
+-   les valeurs **logiques** (type `logical`, on dit aussi
+    *booléennes*) : `TRUE` (vrai) et `FALSE` (faux).
 :::
 
 ```{r}
 #| echo: true
 # Quelques exemples (exécutez toutes les lignes) :
 
-# variables numériques :
+# nombres (type numérique) :
 a <- 100
 b <- 77
 
 age <- 21
 Insta_likes <- 1539
 
-# variables textuelles (toujours ajouter des guillemets !)
+# chaînes de caractères (toujours entre guillemets)
 c <- "chien"
 d <- "chat"
 
 Comm_TikTok <- "wsh"
 Moliere <- "il n’est rien d’égal au tabac : c’est la passion des honnêtes gens"
 
-# variables logiques :
+# valeurs logiques :
 
 e <- TRUE
 f <- FALSE
 ```
 
-Les variables logiques peuvent être utiles quand vous travaillez avec
-des **catégories binaires**.
+Les valeurs logiques sont utiles pour coder des **catégories
+binaires**.
 
 Par exemple : il est souvent utile de classer les personnes ayant
 répondu à un questionnaire en catégories binaires, telles que :
@@ -280,15 +279,16 @@ répondu à un questionnaire en catégories binaires, telles que :
 Marc <- FALSE
 Claire <- TRUE
 
-# Dans cet exemple, la variable logique indique si une personne est majeure (TRUE) ou pas (FALSE)
+# Dans cet exemple, la valeur logique indique si une personne est majeure (TRUE) ou non (FALSE)
 
 ```
 
-## Variables à plusieurs éléments : vecteurs
+## Les vecteurs : plusieurs éléments {#variables-à-plusieurs-éléments-vecteurs}
 
-Les **vecteurs** constituent un autre type de variable (ou type d'objet)
-essentiel dans la programmation R. Il s'agit de variables comportant
-**plusieurs** éléments.
+Un **vecteur** est une suite de valeurs du même type. Les objets à un
+élément créés jusqu'ici sont en fait des vecteurs de longueur 1 ; on
+crée des vecteurs plus longs, qui contiennent **plusieurs** éléments,
+avec la fonction `c()`.
 
 Vous pouvez créer des vecteurs avec l'opérateur d'affectation `<-` et la
 **fonction de concaténation** `c()`.
@@ -337,7 +337,7 @@ w <- c(-10, 100, 4, -88)
 
 likes_comments_shares <- c(513, 34, 102)
 
-# vecteurs textuels (toujours ajouter des guillemets pour chaque élément !)
+# vecteurs de chaînes de caractères (des guillemets pour chaque élément)
 animaux <- c("chat", "chien", "cheval", "chenille")
 
 Comm_Insta <- c("trop cool", "wsh", "c'est quoi ?")

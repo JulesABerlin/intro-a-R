@@ -311,8 +311,7 @@ hist1 <- ggplot(data = taille_f,
 
 print(hist1)
 
-# Ajouter des couches supplémentaires pour améliorer la visualisation
-# p. ex. des titres
+# Ajouter des titres et un thème pour améliorer la visualisation
 hist1 <- hist1 + labs(title = "Histogramme des tailles de femmes en Suisse",
                         subtitle = "Simulation basée sur 500 observations",
                         x = "Taille en cm",

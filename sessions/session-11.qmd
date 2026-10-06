@@ -60,8 +60,8 @@ du 20ème siècle, William Sealy Gosset, a publié sous le pseudonyme de
 ::: {.callout-caution collapse="false"}
 ## Attention
 
-Pour effectuer un test t, il y a plusieurs hypothèses qui doivent être
-satisfaites :
+Pour qu'un test t soit valide, les données doivent remplir plusieurs
+**conditions d'application** :
 
 1.  **Les données sont continues**
 2.  **L'échantillonnage est aléatoire**
@@ -79,7 +79,7 @@ satisfaites :
         approximativement une loi normale. C'est le cas si la variable
         étudiée est à peu près normale dans chaque groupe, ou si les
         échantillons sont assez grands (théorème central limite).
-    -   Cette hypothèse est donc surtout importante pour les **petits**
+    -   Cette condition est donc surtout importante pour les **petits**
         échantillons. Vérifiez-la plutôt visuellement (histogramme,
         [graphique Q-Q](https://fr.wikipedia.org/wiki/Droite_de_Henry)
         avec `qqnorm()`) que par un test : un test de normalité comme
@@ -90,16 +90,16 @@ satisfaites :
     le test t « classique » de Student (`var.equal = TRUE`)
     -   Les variances des données dans chaque groupe sont similaires.
     -   La variante de Welch, utilisée par défaut dans R, n'exige pas
-        cette hypothèse.
-    -   Cette hypothèse peut être vérifiée à l'aide [du test de Levene
+        cette condition.
+    -   Cette condition peut être vérifiée à l'aide [du test de Levene
         ou du test de
         Bartlett](https://www.datanovia.com/en/lessons/homogeneity-of-variance-test-in-r/).
 
-En pratique, les tests t sont relativement robustes aux déviations de
-ces hypothèses, surtout si le nombre d'observations (n) de chaque
+En pratique, les tests t sont relativement robustes aux écarts à ces
+conditions, surtout si le nombre d'observations (n) de chaque
 échantillon est important.
 
-Néanmoins, si une ou plusieurs de ces hypothèses n'est pas satisfaite,
+Néanmoins, si une ou plusieurs de ces conditions ne sont pas remplies,
 alors des alternatives non paramétriques au test t peuvent être
 utilisées : [le test de
 Wilcoxon-Mann-Whitney](https://fr.wikipedia.org/wiki/Test_de_Wilcoxon-Mann-Whitney)
@@ -293,8 +293,7 @@ simuler deux échantillons hypothétiques :
 
 -   Un échantillon de 5 tailles d'hommes suisses
 
-D'après l'Enquête suisse sur la santé 2017 ([Staub et al.,
-2022](https://pmc.ncbi.nlm.nih.gov/articles/PMC9502675/)), que nous avons
+D'après l'Enquête suisse sur la santé 2017 [@muller2022], que nous avons
 déjà vue en session 5, les femmes mesurent en moyenne 164,6 cm
 (écart-type 6,5 cm) et les hommes 177,0 cm (écart-type 7,1 cm). Dans la
 suite, nous utilisons des valeurs proches : une moyenne de 164,7 cm pour

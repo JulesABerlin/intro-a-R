@@ -86,16 +86,17 @@ Selon le type de données, surtout en recherche empirique en sciences
 sociales dont font partie les sciences de la communication, les unités
 statistiques peuvent être :
 
--   des **participants** à un questionnaire ou à une expérimentation
+-   des **personnes** (participant·es à un questionnaire ou à une
+    expérience)
 
 -   des **documents** (p. ex. articles de presse, posts sur réseaux
     sociaux)
 
--   des **observations/ cas** (p. ex. des profils sur réseaux sociaux,
-    des entreprises médiatiques)
+-   des **comptes** ou des **organisations** (p. ex. des profils sur les
+    réseaux sociaux, des entreprises médiatiques)
 
 Dans ces jeux de données, par convention, chaque ligne représente une
-unité statistique (ou un participant, un document, une observation),
+unité statistique (une personne, un document, un compte…),
 tandis que chaque colonne représente les variables qui ont été
 collectées pour chaque unité statistique.
 :::
@@ -107,11 +108,11 @@ La taille d'un jeu de données est indiquée par **le nombre d'unités
 statistiques n**.
 
 -   Par exemple, si 49 personnes ont répondu à un questionnaire, nous
-    parlons donc d'un échantillon de n = 49 participants.
+    parlons donc d'un échantillon de n = 49 participant·es.
 :::
 
 Voici un modèle de la manière dont on devrait structurer les réponses à
-un questionnaire avec n participants et X questions :
+un questionnaire avec n participant·es et X questions :
 
 ```{r}
 #| echo: false
@@ -128,10 +129,9 @@ questionnaire
 ```
 
 Dans ce modèle, l'unité statistique de ce jeu de données est la personne
-qui a répondu au questionnaire (un participant). Chaque ligne
-correspond donc à une personne différente. Les variables, en revanche,
-sont les différentes questions qui ont été enregistrées pour chaque
-participant.
+qui a répondu au questionnaire. Chaque ligne correspond donc à une
+personne différente. Les variables, en revanche, sont les différentes
+questions dont les réponses ont été enregistrées pour chaque personne.
 
 Regardons maintenant quelques objets R sous forme de tableau :
 

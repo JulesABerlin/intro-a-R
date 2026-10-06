@@ -297,37 +297,37 @@ via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Diamond-1128734.
 
 `ggplot2`, qui fait partie du tidyverse, est un package de
 visualisation de données très populaire dans R. Il a été conçu pour
-faciliter la création de graphiques complexes et multicouches avec une
-syntaxe cohérente et consistante nommée *grammar of graphics*.
+faciliter la création de graphiques, même complexes, avec une syntaxe
+cohérente fondée sur une théorie appelée *grammar of graphics*.
 
 Le « gg » de `ggplot2` signifie *grammar of graphics* (grammaire des
 graphiques ; @wilkinson2005), une théorie que Hadley
 Wickham a implémentée dans R ; le « 2 » distingue le package de sa
 première version, `ggplot`.
 
-Avec `ggplot2`, on peut construire des graphiques de
-manière incrémentale en ajoutant des couches, ce qui le rend flexible
+Avec `ggplot2`, on construit un graphique étape par étape, en ajoutant
+des éléments avec l'opérateur `+`, ce qui le rend flexible
 pour une large gamme de besoins graphiques. Cela permet de créer des
 visualisations hautement personnalisables et esthétiquement attrayantes,
 allant du simple nuage de points à des figures à plusieurs panneaux
 complexes.
 :::
 
-Le tableau suivant décrit les couches d'un graphique ggplot :
+Le tableau suivant décrit les composants d'un graphique `ggplot2` :
 
-| Couche | Description/Variables | Obligatoire ? |
+| Composant | Rôle | Obligatoire ? |
 |------------------------|:-----------------------|:----------------------:|
-| *data* | le jeu de données que nous voulons visualiser | oui |
-| *aesthetics* | le *mapping* de nos variables : axes *x* et *y*, *color*, *fill*, *alpha*, *line width*, etc. | oui |
-| *geometries* | le type visuel du graphique : *point*, *line*, *histogram*, *bar*, *boxplot* | oui |
-| *themes* | Le design du graphique | non |
-| Autres couches optionnelles : *facets*, *statistics*, *coordinates* | Pour des visualisations plus complexes | non |
+| Données (`data`) | le tableau de données à représenter | oui |
+| Esthétiques (`aes()`, angl. *aesthetics*) | la correspondance entre les variables et les propriétés visuelles : axes x et y, couleur (`color`), remplissage (`fill`), transparence (`alpha`), épaisseur des lignes (`linewidth`), etc. | oui |
+| Géométries (`geom_*()`) | la forme qui représente les données : points, lignes, barres, histogramme, boîtes à moustaches. Chaque géométrie ajoute une **couche** au graphique | oui |
+| Thème (`theme_*()`) | l'apparence générale du graphique (fond, police, grille) | non |
+| Facettes, statistiques, coordonnées, échelles | pour des graphiques plus complexes | non |
 
-: Les couches d'un graphique ggplot
+: Les composants d'un graphique `ggplot2`
 
 Pour comprendre comment cela fonctionne, voici un exemple de code dans
-lequel les différentes couches d'un graphique *ggplot* sont ajoutées
-étape par étape dans la fonction `ggplot()`. (Normalement, nous ne
+lequel les composants d'un graphique `ggplot2` sont ajoutés étape par
+étape. (Normalement, nous ne
 procéderions pas ainsi, mais utiliserions directement le code en entier
 pour créer le graphique).
 
@@ -360,7 +360,7 @@ contient précisément ces variables.
 :::
 
 ```{r}
-# La première couche, data, définit le jeu de données
+# On définit d'abord les données (data)
 ggplot(data = diamonds)
 ```
 
@@ -369,7 +369,7 @@ Nous devons maintenant définir les autres arguments de la fonction
 `ggplot()`.
 
 ```{r}
-# La deuxième couche, aesthetics, définit le mapping de nos variables sur les axes y et x
+# Puis les esthétiques : quelles variables vont sur les axes x et y
 ggplot(data = diamonds,
        mapping = aes(x = carat, y = price))
 ```
@@ -378,7 +378,7 @@ La zone grise a maintenant reçu des unités pour ses axes x (`carat`) et
 y (`price`). Mais il n'y a toujours pas de données affichées.
 
 ```{r}
-# La troisième couche, geometries, définit le type visuel de notre graphique
+# Enfin une géométrie, la forme qui représente les données (ici des points) : c'est la première couche du graphique
 ggplot(data = diamonds,
        mapping = aes(x = carat, y = price)) +
   geom_point()
@@ -401,7 +401,7 @@ ggplot(data = diamonds,
 Vous avez remarqué ce qui a changé dans le code ?
 
 ```{r}
-# Ajoutons encore une couche optionnelle mais utile au graphique : labs() nous permet d'ajouter et de personnaliser des titres, sous-titres, titres d'axes, titres de légendes, etc. ! 
+# Ajoutons des titres avec labs() : titre, sous-titre, titres des axes et de la légende
 ggplot(data = diamonds,
        mapping = aes(x = carat, y = price, color = clarity)) +
   geom_point() + 

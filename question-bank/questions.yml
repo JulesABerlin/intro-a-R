@@ -107,7 +107,7 @@
 - id: 5
   session: 1
   type: multi
-  stem: 'La fonction `class()` appliquée à une variable à un élément peut donner comme résultat :'
+  stem: 'La fonction `class()` appliquée à un objet à un seul élément peut donner comme résultat :'
   options:
     a: '`"numeric"`'
     b: '`"logical"`'
@@ -368,7 +368,7 @@
   explanation: |
     `number` contient le **texte** `"7"`.
     a) Un calcul sur du texte produit une erreur.
-    b) `as.numeric()` transforme le texte en nombre : la classe de `number` change.
+    b) `as.numeric()` transforme le texte en nombre : la classe de l’objet `number` change.
     c) `c(number, "8")` crée un vecteur textuel.
     d) `length(number)` renvoie 1.
     e) `as.numeric(number)^2` vaut 49, pas 36.
@@ -385,8 +385,8 @@
     class(n)
   options:
     a: 'Le code crée un objet numérique avec 10 éléments.'
-    b: '`n` est une variable de type textuel.'
-    c: '`n` est une variable avec un élément.'
+    b: '`n` est un objet de type caractère (`character`).'
+    c: '`n` est un objet à un seul élément.'
     d: 'Si l’on a créé correctement `n` comme décrit ci-dessus et que l’on exécute `n * 2`, on obtient un message d’erreur.'
     e: 'Dans R, il n’est jamais utile de stocker des numéros sous forme de texte.'
   key: [b, c, d]
@@ -408,8 +408,8 @@
     class(n)
   options:
     a: 'Le code crée un objet numérique avec 10 éléments.'
-    b: '`n` est une variable de type textuel.'
-    c: '`n` est une variable avec un élément.'
+    b: '`n` est un objet de type caractère (`character`).'
+    c: '`n` est un objet à un seul élément.'
     d: 'Si l’on a créé correctement `n` comme décrit ci-dessus et que l’on exécute `n * 2`, on obtient un message d’erreur.'
     e: 'Dans R, il n’est jamais utile de stocker des numéros sous forme de texte.'
   key: [b, c, d]
@@ -428,8 +428,8 @@
     class(n)
   options:
     a: 'Le code crée un objet numérique avec 10 éléments.'
-    b: '`n` est une variable de type textuel.'
-    c: '`n` est une variable avec un élément.'
+    b: '`n` est un objet de type caractère (`character`).'
+    c: '`n` est un objet à un seul élément.'
     d: 'Si l’on a créé correctement `n` comme décrit ci-dessus et que l’on exécute `n * 2`, on obtient un message d’erreur.'
     e: 'Dans R, il n’est jamais utile de stocker des numéros sous forme de texte.'
   key: [b, c, d]
@@ -448,8 +448,8 @@
     class(n)
   options:
     a: 'Le code crée un objet numérique avec 10 éléments.'
-    b: '`n` est une variable de type textuel.'
-    c: '`n` est une variable avec un élément.'
+    b: '`n` est un objet de type caractère (`character`).'
+    c: '`n` est un objet à un seul élément.'
     d: 'Si l’on a créé correctement `n` comme décrit ci-dessus et que l’on exécute `n * 2`, on obtient un message d’erreur.'
     e: 'Dans R, il n’est jamais utile de stocker des numéros sous forme de texte.'
   key: [b, c, d]
@@ -466,10 +466,10 @@
     a <- 77
     a <- 88
   options:
-    a: 'Ce code génère une variable, `a`, dont la valeur finale correspond à 88.'
-    b: 'Le code écrase deux fois la variable `a`.'
-    c: 'Le code génère une erreur, car il ne peut pas créer trois variables portant exactement le même nom.'
-    d: 'Le code crée trois variables, toutes nommées `a`, et les stocke simultanément dans l’environnement.'
+    a: 'Ce code crée un objet, `a`, dont la valeur finale est 88.'
+    b: 'Le code écrase deux fois l’objet `a`.'
+    c: 'Le code génère une erreur, car il ne peut pas créer trois objets portant exactement le même nom.'
+    d: 'Le code crée trois objets, tous nommés `a`, et les stocke simultanément dans l’environnement.'
     e: 'Toutes les autres réponses sont incorrectes.'
   drop: [e]
   key: [a, b]
@@ -561,19 +561,19 @@
   problem_sets: [2]
   type: multi
   stem: |
-    Jugez chaque proposition concernant les couches d’un graphique `ggplot2`
-    (*Data*, *Aesthetics*, *Geometries*, *Facets*, *Statistics*, *Coordinates*, *Theme*) :
+    Jugez chaque proposition concernant les composants d’un graphique `ggplot2`
+    (données, esthétiques, géométries, facettes, statistiques, coordonnées, thème) :
   options:
-    a: 'Pour créer un graphique ggplot2, il faut toujours définir les paramètres de toutes les couches les unes après les autres.'
-    b: 'La couche *Geometries* définit le type de graphique (par ex. nuage de points, diagramme en barres, boîtes à moustaches, etc.).'
-    c: 'En général, on construit un graphique ggplot2 par couches en commençant par la couche *Data*.'
-    d: 'La couche *Aesthetics* définit le design du graphique (par exemple, elle permet de générer le graphique dans le design du Wall Street Journal ou du magazine The Economist).'
-    e: 'Les couches *Facets*, *Statistics*, *Coordinates* et *Theme* ne doivent pas obligatoirement être spécifiées dans le code, car R utilise pour celles-ci des paramètres standard prédéfinis.'
+    a: 'Pour créer un graphique `ggplot2`, il faut toujours définir tous les composants, les uns après les autres.'
+    b: 'Les géométries définissent le type de graphique (p. ex. nuage de points, diagramme en barres, boîte à moustaches).'
+    c: 'En général, on construit un graphique `ggplot2` en commençant par les données.'
+    d: 'Les esthétiques définissent l’apparence générale du graphique (p. ex. le style du Wall Street Journal ou du magazine The Economist).'
+    e: 'Les facettes, les statistiques, les coordonnées et le thème ne doivent pas obligatoirement être spécifiés dans le code, car R utilise pour eux des valeurs par défaut.'
   key: [b, c, e]
   explanation: |
-    a) et e) Seules *Data*, *Aesthetics* et *Geometries* sont nécessaires ; les autres couches ont des valeurs par défaut.
-    c) On commence par `ggplot(data = ...)`, puis on ajoute les couches.
-    d) *Aesthetics* (`aes()`) relie les variables aux axes, couleurs, tailles, etc. Le style « WSJ » ou « Economist » relève de la couche *Theme* (p. ex. `theme_wsj()` du package `ggthemes`).
+    a) et e) Seuls les données, les esthétiques et au moins une géométrie sont nécessaires ; les autres composants ont des valeurs par défaut.
+    c) On commence par `ggplot(data = ...)`, puis on ajoute les autres éléments avec `+`. Chaque géométrie ajoute une couche.
+    d) Les esthétiques (`aes()`) relient les variables aux axes, couleurs, tailles, etc. Le style « WSJ » ou « Economist » relève du thème (p. ex. `theme_wsj()` du package `ggthemes`).
   uses_data: ~
   note: >-
     L’image d’origine (schéma des couches) manque ; l’énoncé nomme maintenant les couches
@@ -589,7 +589,7 @@
     distribution_ps_1 <- read.csv("https://julesaberlin.github.io/intro-a-R/data/distribution_ps_1.csv", encoding = "UTF-8")
     ggplot(distribution_ps_1, aes(x = points, weight = n)) +
       geom_histogram(binwidth = 1, color = "black", fill = "white") +
-      labs(x = "Points obtenus", y = "Fréquence") +
+      labs(x = "Points obtenus", y = "Effectif") +
       theme_minimal()
   options:
     a: 'Les étudiant·es ont obtenu le plus fréquemment 13 points dans le Problem Set 1.'
@@ -862,7 +862,7 @@
   stem: 'Jugez chaque affirmation concernant les **statistiques descriptives** :'
   options:
     a: 'L’objectif des statistiques descriptives est principalement d’analyser les relations causales entre les variables.'
-    b: 'La partie descriptive d’une analyse statistique fournit généralement des indications telles que la taille de l’échantillon (n), les fréquences des variables catégorielles et les moyennes des variables numériques.'
+    b: 'La partie descriptive d’une analyse statistique fournit généralement des indications telles que la taille de l’échantillon (n), les effectifs des variables catégorielles et les moyennes des variables numériques.'
     c: 'Les tests d’hypothèse, par exemple avec un test t, sont une étape courante des statistiques descriptives.'
     d: 'Les statistiques descriptives précèdent souvent les statistiques inférentielles dans une analyse de données quantitatives en sciences sociales.'
     e: 'Certaines visualisations de données, comme les histogrammes, se prêtent bien à la présentation de statistiques descriptives.'
@@ -923,7 +923,7 @@
     ggplot(reponses_socio, aes(x = fraterie)) +
       geom_histogram(binwidth = 1, color = "black", fill = "white") +
       scale_x_continuous(breaks = 0:10) +
-      labs(x = "Nombre de frères et sœurs", y = "Fréquence") +
+      labs(x = "Nombre de frères et sœurs", y = "Effectif") +
       theme_minimal()
   options:
     a: 'L’histogramme montre que le nombre de frères et sœurs (variable `fraterie`) suit une loi normale.'
@@ -1662,7 +1662,7 @@
   session: 1
   problem_sets: [1]
   type: vf
-  stem: 'Le code suivant crée une variable textuelle lorsqu’il est exécuté :'
+  stem: 'Le code suivant crée un objet de type caractère (une chaîne de caractères) lorsqu’il est exécuté :'
   code: |
     monstre <- "vampire"
   key: true
@@ -1673,7 +1673,7 @@
 - id: 95
   session: 1
   type: vf
-  stem: 'Les deux lignes de code suivantes créent exactement la même variable lorsqu’elles sont exécutées :'
+  stem: 'Les deux lignes de code suivantes créent exactement le même objet lorsqu’elles sont exécutées :'
   code: |
     a <- "Université de Fribourg"
     a = "Université de Fribourg"
@@ -1686,7 +1686,7 @@
   session: 1
   problem_sets: [1]
   type: vf
-  stem: 'Dans R, l’opérateur d’affectation (`<-`) peut être utilisé pour créer des objets, tels que des variables à un élément, des vecteurs, des matrices et des tableaux de données.'
+  stem: 'Dans R, l’opérateur d’affectation (`<-`) peut être utilisé pour créer des objets, tels que des objets à un seul élément, des vecteurs, des matrices et des tableaux de données.'
   key: true
   explanation: |
     `<-` assigne n’importe quel objet R à un nom : scalaire, vecteur, matrice, tableau de données, liste, etc.
@@ -1733,7 +1733,7 @@
       geom_histogram(binwidth = 600, fill = "steelblue", color = "black") +
       labs(title = "Histogramme des prix dans le jeu de données diamonds",
            subtitle = "n = 53 940 observations",
-           x = "Prix en USD", y = "Fréquence") +
+           x = "Prix en USD", y = "Effectif") +
       theme_minimal()
   key: false
   explanation: |
@@ -1783,7 +1783,7 @@
     taille_h <- data.frame(taille = rnorm(1000000, mean = 177.4, sd = 6.1))
     ggplot(taille_h, aes(x = taille)) +
       geom_histogram(binwidth = 1, fill = "steelblue", color = "black") +
-      labs(x = "Taille (cm)", y = "Fréquence") +
+      labs(x = "Taille (cm)", y = "Effectif") +
       theme_minimal()
   key: true
   explanation: |

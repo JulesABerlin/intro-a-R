@@ -60,9 +60,11 @@ book:
 bibliography: references.bib
 csl: apa-fr.csl
 
-# Version PDF : déplace les réponses des exercices dans l'annexe « Corrigés »
+# Version PDF : déplace les réponses des exercices dans l'annexe « Corrigés ».
+# Version HTML : espaces insécables avant « : ; ! ? % » et dans « ».
 filters:
   - include/corriges.lua
+  - include/espaces-insecables.lua
 
 execute:
   freeze: auto

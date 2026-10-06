@@ -34,7 +34,7 @@ solution modèle.
 
 ## Exercices avec solutions
 
-### Préparez-vous {#préparez-vous-pour-lexercice}
+### Préparation {#préparez-vous-pour-lexercice}
 
 -   Ouvrez votre projet RStudio et créez un nouveau script R.
 
@@ -84,7 +84,8 @@ mtcars %>%
 
 ### Exercice 3 : mtcars III {#mtcars-iii}
 
--   Triez `mtcars` par `mpg` dans l'ordre décroissant.
+-   Triez `mtcars` par `mpg` dans l'ordre décroissant et affichez les
+    dix premières lignes.
 
 `r hide("Solution")`
 
@@ -92,7 +93,8 @@ mtcars %>%
 #| echo: true
 #| output: true
 mtcars %>% 
-  arrange(desc(mpg))
+  arrange(desc(mpg)) %>% 
+  head(10)
 ```
 
 `r unhide()`
@@ -121,7 +123,8 @@ mtcars_v2 <- mtcars %>%
 
 mtcars_v2 %>% 
   select(mpg_wt) %>% 
-  arrange(desc(mpg_wt))
+  arrange(desc(mpg_wt)) %>% 
+  head(10)
 
 # Le Lotus Europa est le plus économe en carburant par rapport à son poids.
 ```

@@ -23,8 +23,8 @@ sert à les représenter graphiquement.
 ## Les packages R {#les-paquets-r}
 
 ::: {.callout-note title="Définition : package"}
-Dans R, un **package** (on dit aussi *extension* ; parfois *paquet* ou
-*paquetage*) est un ensemble de fonctions, de données et de
+Dans R, un **package** (on dit aussi *extension* ; en français parfois
+*paquet*) est un ensemble de fonctions, de données et de
 documentation dans un format bien défini.
 
 Les packages étendent les fonctionnalités de R de base en fournissant des
@@ -346,12 +346,15 @@ En anglais, on parle donc aussi des 4C. Le jeu de données `diamonds`
 contient précisément ces variables.
 :::
 
+Ce canevas vide est normal : aucune couche géométrique n'a encore été
+ajoutée.
+
 ```{r}
 # On définit d'abord les données (data)
 ggplot(data = diamonds)
 ```
 
-Notre graphique n'est pour l'instant qu'une zone grise : c'est normal.
+Notre graphique n'est pour l'instant qu'une zone grise.
 Nous devons maintenant définir les autres arguments de la fonction
 `ggplot()`.
 

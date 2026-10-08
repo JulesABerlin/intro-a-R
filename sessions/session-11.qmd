@@ -47,7 +47,7 @@ sur notre échantillon. Les résultats obtenus nous permettent de rejeter
 ou non l'hypothèse nulle (en général « pas de différence » ou « pas
 d'effet », voir plus bas), et de généraliser prudemment les conclusions à
 la population entière. Ceci nous permet de contribuer à la création de
-nouvelles connaissances dans notre domaine de recherche
+nouvelles connaissances dans notre domaine de recherche.
 
 ## Le test t
 

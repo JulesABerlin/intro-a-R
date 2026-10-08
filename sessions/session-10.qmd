@@ -82,7 +82,7 @@ réponses à un questionnaire rempli par des étudiant·es en sciences de la
 communication.
 
 ::: {.callout-caution title="Contexte : des données synthétiques" collapse="true"}
-Le fichier `reponses_socio.csv` utilisé sur ce site est **synthétique** : ses
+Le fichier `reponses_socio.csv` utilisé dans ce livre est **synthétique** : ses
 données ont été simulées à partir du questionnaire d'une classe, et il ne
 contient **aucune personne réelle**. Il a les mêmes variables que le
 questionnaire, avec des distributions et des relations semblables. Pour

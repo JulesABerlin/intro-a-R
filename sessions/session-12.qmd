@@ -71,7 +71,7 @@ effets fixes et pour effectuer des analyses de variance.
 
 ### Exemple 1 : ANOVA avec le jeu de données `palmerpenguins`
 
-![Logo du package [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/index.html). Illustration : Allison Horst, [CC0](https://creativecommons.org/publicdomain/zero/1.0/).](../images/palmerpenguins.png){width="200" fig-alt="Logo hexagonal du paquet palmerpenguins avec trois manchots"}
+![Logo du package [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/index.html). Illustration : Allison Horst, [CC0](https://creativecommons.org/publicdomain/zero/1.0/).](../images/palmerpenguins.png){width="200" fig-alt="Logo hexagonal du package palmerpenguins avec trois manchots"}
 
 Pour cet exemple, il faut installer le package `palmerpenguins`
 [@horst2020].
@@ -191,7 +191,7 @@ ces autres facteurs peuvent ne pas être disponibles ou être difficiles à
 mesurer.
 
 -   Et même si tous ces facteurs pouvaient être observés et contrôlés,
-    la relation entre le niveau d'éducation et le salaire sera toujours
+    la relation entre le niveau d'éducation et le salaire serait toujours
     soumise à un certain degré de hasard. Peut-être y a-t-il d'autres
     facteurs inconnus, ou peut-être y a-t-il simplement une fluctuation
     inexplicable du niveau de salaire entre tous les individus, même

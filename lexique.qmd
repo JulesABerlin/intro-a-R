@@ -194,7 +194,7 @@ ligne, sont indiqués entre parenthèses.
 :   Objet R à deux dimensions où chaque ligne est une observation et chaque colonne une variable ; toutes les valeurs d'une colonne sont du même type, mais les colonnes peuvent être de types différents.
 
 **test t** (de Student)
-:   Test qui compare une moyenne à une valeur de référence (test à un échantillon) ou deux moyennes (échantillons indépendants ou appariés). Dans R, `t.test()` applique par défaut la variante de Welch, qui n'exige pas des variances égales.
+:   Test qui compare une moyenne à une valeur de référence (test à un échantillon) ou deux moyennes (échantillons indépendants ou appariés). Dans R, `t.test()` applique par défaut la variante de Welch, qui n'exige pas de variances égales.
 
 **thème**
 :   Apparence générale d'un graphique (fond, police, grille), sans lien avec les données.

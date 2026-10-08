@@ -232,7 +232,7 @@ mtcars %>%
 
 ### Exercice 9 — Enchaîner select(), mutate(), group_by() et summarize() {#iris-i}
 
--   Sélectionner `Petal.Length`, `Petal.Width`, et `Species` dans
+-   Sélectionnez `Petal.Length`, `Petal.Width`, et `Species` dans
     `iris`.
 -   Ensuite, utilisez `mutate()` pour créer une nouvelle colonne,
     appelée `Petal.Surface`, qui est le produit de `Petal.Length` et

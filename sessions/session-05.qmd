@@ -57,7 +57,7 @@ les longueurs et les largeurs des sépales des iris (les variables
 
 Notez que, dans le code suivant, nous ne créons pas directement un
 graphique `ggplot` mais nous stockons le graphique comme un objet dans
-l'environnement, nommé `p1`, que nous pouvons ensuite afficher avec la
+l'environnement, nommé `np1`, que nous pouvons ensuite afficher avec la
 fonction `print()`. Nous verrons dans un instant pourquoi cette pratique
 est utile.
 
@@ -96,7 +96,7 @@ l'esprit pour les étapes de codage suivantes.
 ```{r}
 # Écrasons np1 en changeant un peu le code. Repérez ce qui a changé dans le code.
 np1 <- ggplot(iris, 
-               aes(x=Sepal.Length, y=Sepal.Width, color = Species)) +
+               aes(x=Sepal.Length, y=Sepal.Width, color = Species, shape = Species)) +
   geom_point() +
   labs(title = "Longueur et largeur des sépales des iris")
 
@@ -104,7 +104,9 @@ print(np1)
 ```
 
 Vous pouvez voir dans le graphique que nous pouvons maintenant
-différencier les trois espèces d'iris. La dispersion des points semble
+différencier les trois espèces d'iris, par la couleur et par la forme des
+points (la forme aide aussi les personnes qui distinguent mal les
+couleurs). La dispersion des points semble
 moins aléatoire, ce qui permet de voir des groupes de points appartenant
 à l'une ou l'autre espèce (angl. *cluster*).
 

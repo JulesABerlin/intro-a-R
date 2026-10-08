@@ -79,7 +79,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-8b9bfa8f06f8d75c827c202792a57b06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-683640b15476b5c31180ef45b94f76af.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -177,13 +177,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sessions/session-04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Paquets, jeux de données et premiers graphiques</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Packages, jeux de données et premiers graphiques</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sessions/session-05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualiser des données avec ggplot2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualiser des données avec <code>ggplot2</code></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -201,7 +201,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sessions/session-08.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Manipuler des données&nbsp;: exercices</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Manipuler des données&nbsp;: pratique guidée</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -263,6 +263,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../lexique.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Lexique</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Références</span></a>
   </div>
@@ -305,18 +311,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Dans le cours, le <strong>Problem Set 3</strong> était un test sur Moodle portant sur les chapitres 7 et 8. Les questions ci-dessous en reprennent le contenu, avec la correction et une explication pour chaque réponse.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout callout-style-default callout-important callout-titled" title="Objectifs d'apprentissage">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Résultats de l’édition 2025 du cours
+<span class="screen-reader-only">Important</span>Objectifs d’apprentissage
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Vérifier que vous savez importer un fichier CSV et contrôler sa structure.</li>
+<li>Vérifier que vous savez répondre à une question à l’aide des verbes de <code>dplyr</code>.</li>
+<li>Repérer, grâce aux explications, les notions à revoir.</li>
+</ul>
+</div>
+</div>
+<p>Ce chapitre reprend les chapitres 7 et 8. La plupart des questions vous demandent d’exécuter du code sur <code>igposts.csv</code>, <code>mtcars</code> ou <code>diamonds</code>&nbsp;: gardez RStudio ouvert à côté.</p>
+<p>Dans le cours, le <strong>Problem Set 3</strong> était un test sur Moodle portant sur les chapitres 7 et 8. Les questions ci-dessous en reprennent le contenu, avec la correction et une explication pour chaque réponse.</p>
+<div class="callout callout-style-default callout-caution callout-titled" title="Contexte : résultats de l'édition 2025 du cours">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Mise en garde</span>Contexte&nbsp;: résultats de l’édition 2025 du cours
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>64 étudiant·es ont passé ce test (20 points au maximum, 10 pour réussir). La moyenne était de 13,1 points et 91&nbsp;% des étudiant·es l’ont réussi.</p>
 <div class="cell">
@@ -331,36 +355,55 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-important callout-titled" title="En bref">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>En bref
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Si l’importation échoue, relisez « Lire des données au format CSV » au <a href="../sessions/session-07.html#lire-des-données-auf-format-csv-dans-rstudio">chapitre 7</a>&nbsp;: séparateur, séparateur décimal, encodage.</li>
+<li>Si vos résultats diffèrent de la correction, vérifiez d’abord vos conditions de <code>filter()</code> (<code>&gt;</code> ou <code>&gt;=</code>) et l’ordre de tri (<code>desc()</code>).</li>
+<li>Pour les questions par groupe, relisez <code>group_by()</code> et <code>summarize()</code> aux chapitres <a href="../sessions/session-07.html#résumer-compter-et-regrouper-avec-summarize-count-et-group_by">7</a> et <a href="../sessions/session-08.html">8</a>.</li>
+</ul>
+</div>
+</div>
+<p>Les chapitres 10 à 12 utilisent ces outils pour décrire des données, puis pour tester des hypothèses.</p>
 <section id="exercices-de-révision" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="exercices-de-révision">Exercices de révision</h2>
-<p>Ces questions reprennent le <strong>Problem Set 3</strong>. Choisissez <em>Vrai</em> ou <em>Faux</em>, cochez une réponse ou tapez un nombre : la couleur indique tout de suite si votre réponse est correcte. Cliquez sur <strong>Explication</strong> pour voir la correction.</p>
+<p>Ces questions reprennent le <strong>Problem Set 3</strong>.</p>
+<p>Choisissez <em>Vrai</em> ou <em>Faux</em>, cochez une réponse ou tapez un nombre&nbsp;: la couleur indique tout de suite si votre réponse est correcte. Cliquez sur <strong>Explication</strong> pour voir la correction.</p>
 <section id="q1" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q1">Question 9.1</h3>
 <p>Quel compte (<code>User.Name</code>) a publié le post de <code>igposts.csv</code> ayant reçu le plus de <code>Total.Interactions</code>&nbsp;?</p>
-<p>Réponse : <input class="webex-solveme nospaces ignorecase" size="9" data-answer="[&quot;leomessi&quot;,&quot;Leo Messi&quot;]"></p>
+<p>Réponse&nbsp;: <input class="webex-solveme nospaces ignorecase" size="9" data-answer="[&quot;leomessi&quot;,&quot;Leo Messi&quot;]"></p>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<p>Triez <code>igposts</code> par <code>Total.Interactions</code> décroissant&nbsp;: le premier post est celui de leomessi (22 626 965 interactions). Ouvrez son URL pour voir de quoi il s’agit&nbsp;: <a href="https://www.instagram.com/p/CpLxnFlNJZn/" class="uri">https://www.instagram.com/p/CpLxnFlNJZn/</a></p>
+<p>Triez <code>igposts</code> par <code>Total.Interactions</code> décroissant&nbsp;: le premier post est celui de leomessi (22&nbsp;626&nbsp;965 interactions). Ouvrez son URL pour voir de quoi il s’agit&nbsp;: <a href="https://www.instagram.com/p/CpLxnFlNJZn/" class="uri">https://www.instagram.com/p/CpLxnFlNJZn/</a></p>
 </div>
 </section>
 <section id="q2" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q2">Question 9.2</h3>
-<p>Quel est le rôle principal de l’opérateur <code>%&gt;%</code> dans <code>dplyr</code> ?</p>
-<div id="radio_RCJJZAKTJX" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_RCJJZAKTJX" value=""> <span>Importer des données.</span></label><label><input type="radio" autocomplete="off" name="radio_RCJJZAKTJX" value=""> <span>Assigner des variables.</span></label><label><input type="radio" autocomplete="off" name="radio_RCJJZAKTJX" value="answer"> <span>Créer des séquences de fonctions pour simplifier le code.</span></label><label><input type="radio" autocomplete="off" name="radio_RCJJZAKTJX" value=""> <span>Convertir des types de données.</span></label><label><input type="radio" autocomplete="off" name="radio_RCJJZAKTJX" value=""> <span>Aucune des autres réponses n’est correcte.</span></label>
+<p>Quel est le rôle principal de l’opérateur <code>%&gt;%</code> dans <code>dplyr</code> ?</p>
+<div id="radio_HMKHTHZZUM" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_HMKHTHZZUM" value=""> <span>Importer des données.</span></label><label><input type="radio" autocomplete="off" name="radio_HMKHTHZZUM" value=""> <span>Affecter une valeur à un objet.</span></label><label><input type="radio" autocomplete="off" name="radio_HMKHTHZZUM" value="answer"> <span>Créer des séquences de fonctions pour simplifier le code.</span></label><label><input type="radio" autocomplete="off" name="radio_HMKHTHZZUM" value=""> <span>Convertir des types de données.</span></label><label><input type="radio" autocomplete="off" name="radio_HMKHTHZZUM" value=""> <span>Aucune des autres réponses n’est correcte.</span></label>
 </div>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<p>Le <em>pipe</em> <code>%&gt;%</code> transmet le résultat d’une fonction comme premier argument de la suivante. On enchaîne ainsi les étapes de gauche à droite au lieu d’imbriquer les fonctions : <code>x %&gt;% f() %&gt;% g()</code> équivaut à <code>g(f(x))</code>.</p>
+<p>Le <em>pipe</em> <code>%&gt;%</code> transmet le résultat d’une fonction comme premier argument de la suivante. On enchaîne ainsi les étapes de gauche à droite au lieu d’imbriquer les fonctions&nbsp;: <code>x %&gt;% f() %&gt;% g()</code> équivaut à <code>g(f(x))</code>.</p>
 </div>
 </section>
 <section id="q32" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q32">Question 9.3</h3>
-<p>Exécutez le code R suivant et jugez chaque proposition :</p>
+<p>Exécutez le code suivant, puis jugez chaque proposition&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(diamonds)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -378,14 +421,14 @@ Explication
 <button>
 Explication
 </button>
-<p>a), d) et e) <code>group_by()</code> crée un groupe par pureté ; <code>summarize()</code> calcule ensuite, pour chaque groupe, le nombre de diamants (<code>n()</code>) et le prix moyen.</p>
-<p>b) 1790 est le <strong>nombre</strong> de diamants de pureté maximale (IF) ; leur prix moyen est d’environ 2865 USD.</p>
-<p>c) Les effectifs varient de 741 (I1) à 13 065 (SI1).</p>
+<p>a), d) et e) <code>group_by()</code> crée un groupe par pureté ; <code>summarize()</code> calcule ensuite, pour chaque groupe, le nombre de diamants (<code>n()</code>) et le prix moyen.</p>
+<p>b) 1790 est le <strong>nombre</strong> de diamants de pureté maximale (IF) ; leur prix moyen est d’environ 2865 USD.</p>
+<p>c) Les effectifs varient de 741 (I1) à 13&nbsp;065 (SI1).</p>
 </div>
 </section>
 <section id="q33" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q33">Question 9.4</h3>
-<p>Exécutez le code R suivant et jugez chaque proposition :</p>
+<p>Exécutez le code suivant, puis jugez chaque proposition&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(mpg)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
@@ -400,37 +443,37 @@ Explication
 <button>
 Explication
 </button>
-<p>a) et b) <code>arrange()</code> trie par ordre croissant ; pour l’ordre décroissant, on écrit <code>arrange(desc(mpg))</code>.</p>
-<p>d) Sans affectation (<code>&lt;-</code>), le résultat est seulement affiché : <code>mtcars</code> ne change pas.</p>
-<p>e) La Cadillac Fleetwood apparaît en <strong>premier</strong> : c’est l’une des voitures les moins efficaces (10,4 mpg).</p>
+<p>a) et b) <code>arrange()</code> trie par ordre croissant ; pour l’ordre décroissant, on écrit <code>arrange(desc(mpg))</code>.</p>
+<p>d) Sans affectation (<code>&lt;-</code>), le résultat est seulement affiché&nbsp;: <code>mtcars</code> ne change pas.</p>
+<p>e) La Cadillac Fleetwood apparaît en <strong>premier</strong>&nbsp;: c’est l’une des voitures les moins efficaces (10,4 mpg).</p>
 </div>
 </section>
 <section id="q34" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q34">Question 9.5</h3>
-<p>Exécutez le code R suivant et jugez chaque proposition. La fonction <code>rnorm()</code> simule des valeurs aléatoires qui se rapprochent d’une loi normale ; on suppose ici qu’il s’agit de tailles de femmes en Suisse (en cm).</p>
+<p>Exécutez le code suivant, puis jugez chaque proposition. La fonction <code>rnorm()</code> simule des valeurs aléatoires qui se rapprochent d’une loi normale ; on suppose ici qu’il s’agit de tailles de femmes en Suisse (en cm).</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>taille_f <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">500</span>, <span class="at">mean =</span> <span class="fl">164.7</span>, <span class="at">sd =</span> <span class="fl">5.6</span>) <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>()</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>taille_f <span class="sc">%&gt;%</span> <span class="fu">count</span>(taille_f <span class="sc">&lt;=</span> <span class="dv">160</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <ol type="a">
 <li><p>La fonction <code>count(taille_f &lt;= 160)</code> compte le nombre de valeurs inférieures ou égales à 160 (femmes de 160 cm ou moins) ainsi que celles supérieures à 160 (femmes de plus de 160 cm). <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>En général, la fonction <code>count()</code> de <code>dplyr</code> est utile pour compter le nombre d’observations d’un jeu de données qui correspondent à certains critères. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
-<li><p>Si vous exécutez le code plusieurs fois de suite, vous obtiendrez toujours un résultat légèrement différent, car la fonction <code>rnorm()</code> génère des valeurs « aléatoires ». <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
-<li><p><code>taille_f</code> est un objet de type <em>data frame</em> dans RStudio. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>Si vous exécutez le code plusieurs fois de suite, vous obtiendrez toujours un résultat légèrement différent, car la fonction <code>rnorm()</code> génère des valeurs « aléatoires ». <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p><code>taille_f</code> est un tableau de données (<em>data frame</em>). <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p><code>taille_f</code> comporte 100 lignes (observations). <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
 </ol>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<p>a) et b) Le critère <code>taille_f &lt;= 160</code> vaut <code>TRUE</code> ou <code>FALSE</code> ; <code>count()</code> compte les lignes de chaque groupe.</p>
+<p>a) et b) Le critère <code>taille_f &lt;= 160</code> vaut <code>TRUE</code> ou <code>FALSE</code> ; <code>count()</code> compte les lignes de chaque groupe.</p>
 <p>c) Chaque appel à <code>rnorm()</code> tire de nouvelles valeurs (sauf si l’on fixe <code>set.seed()</code>).</p>
-<p>d) <code>as.data.frame()</code> transforme le vecteur en data frame.</p>
+<p>d) <code>as.data.frame()</code> transforme le vecteur en tableau de données.</p>
 <p>e) <code>rnorm(500, ...)</code> crée 500 valeurs, donc 500 lignes, pas 100.</p>
 </div>
 </section>
 <section id="q36" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q36">Question 9.6</h3>
-<p>Ouvrez le post Instagram suivant, qui fait partie de <code>igposts.csv</code>, et jugez chaque proposition : <a href="https://www.instagram.com/p/CpHHbGWunhI/" class="uri">https://www.instagram.com/p/CpHHbGWunhI/</a></p>
+<p>Ouvrez le post Instagram suivant, qui fait partie de <code>igposts.csv</code>, et jugez chaque proposition&nbsp;: <a href="https://www.instagram.com/p/CpHHbGWunhI/" class="uri">https://www.instagram.com/p/CpHHbGWunhI/</a></p>
 <ol type="a">
 <li><p>Le post a été publié par le compte Instagram dont le <code>User.Name</code> est <strong>zendaya</strong>. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Il s’agit d’un post Instagram de type <strong>Album</strong>. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
@@ -442,7 +485,7 @@ Explication
 <button>
 Explication
 </button>
-<p>On peut aussi chercher le post dans les données : <code>igposts %&gt;% filter(grepl("CpHHbGWunhI", URL)) %&gt;% select(User.Name, Type, Reposts)</code>. Le post vient de <strong>zendaya</strong>, il est de type <strong>Album</strong> et compte 284 <code>Reposts</code>.</p>
+<p>On peut aussi chercher le post dans les données&nbsp;: <code>igposts %&gt;% filter(grepl("CpHHbGWunhI", URL)) %&gt;% select(User.Name, Type, Reposts)</code>. Le post vient de <strong>zendaya</strong>, il est de type <strong>Album</strong> et compte 284 <code>Reposts</code>.</p>
 <p>e) Zendaya est américaine.</p>
 </div>
 </section>
@@ -465,7 +508,7 @@ Explication
 <button>
 Explication
 </button>
-<p>Si le séparateur décimal est mal indiqué, les nombres sont lus comme du texte. L’argument <code>dec</code> de <code>read.csv()</code> le précise ; <code>read.csv2()</code> est prévu pour les fichiers avec virgule décimale et point-virgule comme séparateur.</p>
+<p>Si le séparateur décimal est mal indiqué, les nombres sont lus comme du texte. L’argument <code>dec</code> de <code>read.csv()</code> le précise ; <code>read.csv2()</code> est prévu pour les fichiers avec virgule décimale et point-virgule comme séparateur.</p>
 </div>
 </section>
 <section id="q108" class="level3 unnumbered">
@@ -476,7 +519,7 @@ Explication
 <button>
 Explication
 </button>
-<p>Les métriques ont été relevées le 5 octobre 2026 sur les pages Instagram publiques : elles reflètent l’état des posts à cette date, pas en 2023.</p>
+<p>Les métriques ont été relevées le 5 octobre 2026 sur les pages Instagram publiques&nbsp;: elles reflètent l’état des posts à cette date, pas en 2023.</p>
 </div>
 </section>
 <section id="q109" class="level3 unnumbered">
@@ -487,7 +530,7 @@ Explication
 <button>
 Explication
 </button>
-<p>L’unité n’est pas le compte Instagram : chaque ligne de <code>igposts</code> est une observation associant un <strong>post</strong> à un compte qui l’a publié ou co-publié. Le fichier contient 84 lignes correspondant à 82 posts distincts provenant de 33 comptes. Un même compte apparaît donc sur plusieurs lignes.</p>
+<p>L’unité n’est pas le compte Instagram&nbsp;: chaque ligne de <code>igposts</code> est une observation associant un <strong>post</strong> à un compte qui l’a publié ou co-publié. Le fichier contient 84 lignes correspondant à 82 posts distincts provenant de 33 comptes. Un même compte apparaît donc sur plusieurs lignes.</p>
 </div>
 </section>
 <section id="q111" class="level3 unnumbered">
@@ -499,12 +542,12 @@ Explication
 <button>
 Explication
 </button>
-<p>Toutes les cellules contenant <code>#N/A</code> sont lues comme <code>NA</code>, la valeur manquante de R. Sans cet argument, une colonne numérique contenant <code>#N/A</code> serait lue comme du texte. (Le fichier <code>igposts.csv</code> du cours n’a pas de valeurs manquantes : la valeur par défaut, <code>na.strings = "NA"</code>, suffit.)</p>
+<p>Toutes les cellules contenant <code>#N/A</code> sont lues comme <code>NA</code>, la valeur manquante de R. Sans cet argument, une colonne numérique contenant <code>#N/A</code> serait lue comme du texte. (Le fichier <code>igposts.csv</code> du livre n’a pas de valeurs manquantes&nbsp;: la valeur par défaut, <code>na.strings = "NA"</code>, suffit.)</p>
 </div>
 </section>
 <section id="q35" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q35">Question 9.12</h3>
-<p>Exécutez le code R suivant et jugez chaque proposition. Les unités américaines sont converties : 1 pouce (<em>inch</em>) = 2,54 cm et 1 livre (<em>pound</em>) = 0,4536 kg.</p>
+<p>Exécutez le code suivant, puis jugez chaque proposition. Les unités américaines sont converties&nbsp;: 1 pouce (<em>inch</em>) = 2,54 cm et 1 livre (<em>pound</em>) = 0,4536 kg.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(women)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(women)</span>
@@ -525,15 +568,15 @@ Explication
 </button>
 <p>a) La page d’aide <code>?women</code> indique des femmes âgées de <strong>30 à 39 ans</strong>.</p>
 <p>b) Le résumé donne 165,1 cm et 62,0 kg.</p>
-<p>c) Le jeu de données ne contient aucune femme européenne : aucune comparaison n’est possible.</p>
+<p>c) Le jeu de données ne contient aucune femme européenne&nbsp;: aucune comparaison n’est possible.</p>
 <p>d) <code>dim(women)</code> renvoie <code>15 2</code>.</p>
 <p>e) Les multiplications par 2,54 et 0,4536 font la conversion.</p>
 </div>
 </section>
 <section id="q66" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q66">Question 9.13</h3>
-<p>Combien de posts Instagram de Selena Gomez (<code>User.Name</code> = <code>selenagomez</code>) le jeu de données <code>igposts.csv</code> contient-il ?</p>
-<p>Réponse : <input class="webex-solveme nospaces" size="4" data-answer="[&quot;6&quot;]"></p>
+<p>Combien de posts Instagram de Selena Gomez (<code>User.Name</code> = <code>selenagomez</code>) le jeu de données <code>igposts.csv</code> contient-il ?</p>
+<p>Réponse&nbsp;: <input class="webex-solveme nospaces" size="4" data-answer="[&quot;6&quot;]"></p>
 <div class="webex-solution">
 <button>
 Explication
@@ -543,32 +586,32 @@ Explication
 </section>
 <section id="q67" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q67">Question 9.14</h3>
-<p>Combien d’observations (lignes) de type <strong>Album</strong> le jeu de données <code>igposts.csv</code> contient-il ?</p>
-<p>Réponse : <input class="webex-solveme nospaces" size="4" data-answer="[&quot;60&quot;]"></p>
+<p>Combien d’observations (lignes) de type <strong>Album</strong> le jeu de données <code>igposts.csv</code> contient-il ?</p>
+<p>Réponse&nbsp;: <input class="webex-solveme nospaces" size="4" data-answer="[&quot;60&quot;]"></p>
 <div class="webex-solution">
 <button>
 Explication
 </button>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>igposts <span class="sc">%&gt;%</span> <span class="fu">count</span>(Type)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<p><code>count()</code> affiche le nombre de lignes de chaque type : 60 albums. (Un album co-publié par deux comptes apparaît sur deux lignes : ces 60 lignes correspondent à 59 posts distincts.)</p>
+<p><code>count()</code> affiche le nombre de lignes de chaque type&nbsp;: 60 albums. (Un album co-publié par deux comptes apparaît sur deux lignes&nbsp;: ces 60 lignes correspondent à 59 posts distincts.)</p>
 </div>
 </section>
 <section id="q69" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q69">Question 9.15</h3>
-<p>Combien de voitures du jeu de données <code>mtcars</code> ont une valeur <code>mpg</code> d’au moins 20 ?</p>
-<p>Réponse : <input class="webex-solveme nospaces" size="4" data-answer="[&quot;14&quot;]"></p>
+<p>Combien de voitures du jeu de données <code>mtcars</code> ont une valeur <code>mpg</code> d’au moins 20 ?</p>
+<p>Réponse&nbsp;: <input class="webex-solveme nospaces" size="4" data-answer="[&quot;14&quot;]"></p>
 <div class="webex-solution">
 <button>
 Explication
 </button>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span> <span class="fu">filter</span>(mpg <span class="sc">&gt;=</span> <span class="dv">20</span>) <span class="sc">%&gt;%</span> <span class="fu">count</span>()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<p>« Au moins 20 » inclut 20 : on utilise <code>&gt;=</code>, pas <code>&gt;</code>.</p>
+<p>« Au moins 20 » inclut 20&nbsp;: on utilise <code>&gt;=</code>, pas <code>&gt;</code>.</p>
 </div>
 </section>
 <section id="q81" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q81">Question 9.16</h3>
-<p>Quel est le <code>User.Name</code> du compte Instagram ayant le plus de <code>Followers.at.Observation</code> parmi les comptes du jeu de données <code>igposts.csv</code> ? (Tapez le <code>User.Name</code> exact.)</p>
-<p>Réponse : <input class="webex-solveme nospaces ignorecase" size="9" data-answer="[&quot;cristiano&quot;]"></p>
+<p>Quel est le <code>User.Name</code> du compte Instagram ayant le plus de <code>Followers.at.Observation</code> parmi les comptes du jeu de données <code>igposts.csv</code> ? (Tapez le <code>User.Name</code> exact.)</p>
+<p>Réponse&nbsp;: <input class="webex-solveme nospaces ignorecase" size="9" data-answer="[&quot;cristiano&quot;]"></p>
 <div class="webex-solution">
 <button>
 Explication
@@ -594,7 +637,7 @@ Explication
 </section>
 <section id="q110" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q110">Question 9.18</h3>
-<p>Exécutez le code R suivant pour savoir si l’affirmation est vraie ou fausse : la Toyota Corolla est le modèle de voiture le plus économe en carburant par rapport à son poids dans le jeu de données <code>mtcars</code>.</p>
+<p>Exécutez le code suivant pour savoir si l’affirmation est vraie ou fausse&nbsp;: la Toyota Corolla est le modèle de voiture le plus économe en carburant par rapport à son poids dans le jeu de données <code>mtcars</code>.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
@@ -611,19 +654,19 @@ Explication
 </section>
 <section id="q71" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q71">Question 9.19</h3>
-<p>Importez le jeu de données <code>reponses_socio.csv</code> dans RStudio. Combien de <strong>variables</strong> contient-il ?</p>
-<p>Réponse : <input class="webex-solveme nospaces" size="4" data-answer="[&quot;10&quot;]"></p>
+<p>Importez le jeu de données <code>reponses_socio.csv</code> dans RStudio. Combien de <strong>variables</strong> contient-il ?</p>
+<p>Réponse&nbsp;: <input class="webex-solveme nospaces" size="4" data-answer="[&quot;10&quot;]"></p>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<p><code>ncol(reponses_socio)</code> ou <code>dim(reponses_socio)</code> : le nombre de colonnes correspond au nombre de variables (<code>naissance</code>, <code>genre</code>, <code>permis</code>, <code>suisse</code>, <code>origine</code>, <code>fraterie</code>, <code>domicile</code>, <code>trajet</code>, <code>note_ecole</code>, <code>note_uni</code>).</p>
+<p><code>ncol(reponses_socio)</code> ou <code>dim(reponses_socio)</code>&nbsp;: le nombre de colonnes correspond au nombre de variables (<code>naissance</code>, <code>genre</code>, <code>permis</code>, <code>suisse</code>, <code>origine</code>, <code>fraterie</code>, <code>domicile</code>, <code>trajet</code>, <code>note_ecole</code>, <code>note_uni</code>).</p>
 </div>
 </section>
 <section id="q73" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q73">Question 9.20</h3>
-<p>Importez le jeu de données <code>reponses_socio.csv</code> dans RStudio. Pour la variable <code>genre</code> : combien d’<strong>hommes</strong> y a-t-il dans ce jeu de données ?</p>
-<p>Réponse : <input class="webex-solveme nospaces" size="4" data-answer="[&quot;17&quot;]"></p>
+<p>Importez le jeu de données <code>reponses_socio.csv</code> dans RStudio. Pour la variable <code>genre</code>&nbsp;: combien d’<strong>hommes</strong> y a-t-il dans ce jeu de données ?</p>
+<p>Réponse&nbsp;: <input class="webex-solveme nospaces" size="4" data-answer="[&quot;17&quot;]"></p>
 <div class="webex-solution">
 <button>
 Explication
@@ -1246,8 +1289,8 @@ window.onload = function() {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../sessions/session-08.html" class="pagination-link" aria-label="Manipuler des données&nbsp;: exercices">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Manipuler des données&nbsp;: exercices</span></span>
+      <a href="../sessions/session-08.html" class="pagination-link" aria-label="Manipuler des données : pratique guidée">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Manipuler des données&nbsp;: pratique guidée</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
@@ -1263,7 +1306,7 @@ window.onload = function() {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>Textes et exercices : <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr">CC BY-NC-SA 4.0</a> · Code : MIT · Éléments de tiers : voir <a href="../apropos.html">À propos</a></p>
+<p>Textes et exercices&nbsp;: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr">CC BY-NC-SA 4.0</a> · Code&nbsp;: MIT · Éléments de tiers&nbsp;: voir <a href="../apropos.html">À propos</a></p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

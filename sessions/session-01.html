@@ -99,7 +99,7 @@ div.csl-indent {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-8b9bfa8f06f8d75c827c202792a57b06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-683640b15476b5c31180ef45b94f76af.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -197,13 +197,13 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sessions/session-04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Paquets, jeux de données et premiers graphiques</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Packages, jeux de données et premiers graphiques</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sessions/session-05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualiser des données avec ggplot2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualiser des données avec <code>ggplot2</code></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -221,7 +221,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sessions/session-08.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Manipuler des données&nbsp;: exercices</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Manipuler des données&nbsp;: pratique guidée</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -283,6 +283,12 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../lexique.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Lexique</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Références</span></a>
   </div>
@@ -302,12 +308,12 @@ div.csl-indent {
   <li><a href="#installer-les-logiciels-r-et-rstudio" id="toc-installer-les-logiciels-r-et-rstudio" class="nav-link active" data-scroll-target="#installer-les-logiciels-r-et-rstudio"><span class="header-section-number">1.1</span> Installer les logiciels R et RStudio</a></li>
   <li><a href="#linterface-rstudio" id="toc-linterface-rstudio" class="nav-link" data-scroll-target="#linterface-rstudio"><span class="header-section-number">1.2</span> L’interface RStudio</a></li>
   <li><a href="#exécuter-un-script-r" id="toc-exécuter-un-script-r" class="nav-link" data-scroll-target="#exécuter-un-script-r"><span class="header-section-number">1.3</span> Exécuter un script R</a></li>
-  <li><a href="#commenter-votre-code-avec-un" id="toc-commenter-votre-code-avec-un" class="nav-link" data-scroll-target="#commenter-votre-code-avec-un"><span class="header-section-number">1.4</span> Commenter votre code avec un <code>#</code></a></li>
+  <li><a href="#commenter-votre-code-avec-un" id="toc-commenter-votre-code-avec-un" class="nav-link" data-scroll-target="#commenter-votre-code-avec-un"><span class="header-section-number">1.4</span> Commenter son code avec <code>#</code></a></li>
   <li><a href="#lopérateur-daffectation--" id="toc-lopérateur-daffectation--" class="nav-link" data-scroll-target="#lopérateur-daffectation--"><span class="header-section-number">1.5</span> L’opérateur d’affectation <code>&lt;-</code></a></li>
-  <li><a href="#variables-à-élément-unique" id="toc-variables-à-élément-unique" class="nav-link" data-scroll-target="#variables-à-élément-unique"><span class="header-section-number">1.6</span> Variables à élément unique</a></li>
-  <li><a href="#variables-à-plusieurs-éléments-vecteurs" id="toc-variables-à-plusieurs-éléments-vecteurs" class="nav-link" data-scroll-target="#variables-à-plusieurs-éléments-vecteurs"><span class="header-section-number">1.7</span> Variables à plusieurs éléments : vecteurs</a></li>
+  <li><a href="#variables-à-élément-unique" id="toc-variables-à-élément-unique" class="nav-link" data-scroll-target="#variables-à-élément-unique"><span class="header-section-number">1.6</span> Objets à un seul élément</a></li>
+  <li><a href="#variables-à-plusieurs-éléments-vecteurs" id="toc-variables-à-plusieurs-éléments-vecteurs" class="nav-link" data-scroll-target="#variables-à-plusieurs-éléments-vecteurs"><span class="header-section-number">1.7</span> Les vecteurs&nbsp;: plusieurs éléments</a></li>
   <li><a href="#devoir-pour-session-2" id="toc-devoir-pour-session-2" class="nav-link" data-scroll-target="#devoir-pour-session-2">À faire avant de continuer</a></li>
-  <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices">Exercices</a></li>
+  <li><a href="#testez-vous" id="toc-testez-vous" class="nav-link" data-scroll-target="#testez-vous">Testez-vous</a></li>
   </ul>
 </nav>
     </div>
@@ -333,30 +339,47 @@ div.csl-indent {
 </header>
 
 
-<p><strong>Sujet : Bienvenue, pourquoi R ? et commandes de base I</strong></p>
-<p>Bienvenue&nbsp;! Ce premier chapitre vous guide dans vos premiers pas avec R&nbsp;: installer les logiciels, découvrir l’interface RStudio et écrire vos premières lignes de code.</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-default callout-important callout-titled" title="Objectifs d'apprentissage">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>À noter
+<span class="screen-reader-only">Important</span>Objectifs d’apprentissage
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>R</strong> est un langage de programmation et un environnement logiciel pour l’analyse statistique, la visualisation de données et le calcul scientifique. Il est largement utilisé par les statisticiens, les chercheurs en sciences des données et de plus en plus en sciences sociales y compris en sciences de la communication.</p>
-<p>R est idéal pour la manipulation, l’analyse, la modélisation et la visualisation de données. C’est un logiciel libre et open source, ce qui signifie qu’il est gratuit à utiliser, modifier et distribuer. Il dispose d’une grande communauté d’utilisateurs et de développeurs qui contribuent à son développement et à sa maintenance.</p>
+<ul>
+<li>Installer R et RStudio et vous repérer dans les quatre volets de RStudio.</li>
+<li>Écrire du code dans un script, l’exécuter et le commenter.</li>
+<li>Créer des objets avec l’opérateur d’affectation <code>&lt;-</code> et distinguer les types numérique, caractère et logique.</li>
+<li>Créer des vecteurs avec la fonction <code>c()</code>.</li>
+</ul>
+</div>
+</div>
+<p>Bienvenue ! Ce premier chapitre vous fait faire vos premiers pas avec R. Après avoir installé R et RStudio, vous écrirez vos premières lignes de code&nbsp;: des calculs, des objets et des vecteurs. Tout le reste du livre s’appuie sur ces briques de base.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Définition : R">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Définition&nbsp;: R
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>R</strong> est un langage de programmation et un environnement logiciel pour l’analyse statistique, la visualisation de données et le calcul scientifique. Il est largement utilisé en statistique, en science des données et, de plus en plus, en sciences sociales, y compris en sciences de la communication.</p>
+<p>R est idéal pour la manipulation, l’analyse, la modélisation et la visualisation de données. C’est un logiciel libre et open source, ce qui signifie qu’il est gratuit à utiliser, modifier et distribuer. Il s’appuie sur une grande communauté de personnes qui l’utilisent, le développent et l’entretiennent.</p>
 </div>
 </div>
 <section id="installer-les-logiciels-r-et-rstudio" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="installer-les-logiciels-r-et-rstudio"><span class="header-section-number">1.1</span> Installer les logiciels R et RStudio</h2>
-<p>Pour utiliser R sur votre ordinateur portable, vous devez d’abord installer les deux logiciels suivants :</p>
+<p>Pour utiliser R sur votre ordinateur portable, vous devez d’abord installer les deux logiciels suivants&nbsp;:</p>
 <ol type="1">
 <li>le langage de programmation <a href="https://cran.r-project.org">R</a> <span class="citation" data-cites="r2026">(<a href="../references.html#ref-r2026" role="doc-biblioref">R Core Team, 2026</a>)</span></li>
-<li>l’interface <a href="https://posit.co/download/rstudio-desktop/">RStudio</a> <span class="citation" data-cites="rstudio2026">(<a href="../references.html#ref-rstudio2026" role="doc-biblioref">Posit team, 2026</a>)</span></li>
+<li>l’environnement de développement <a href="https://posit.co/download/rstudio-desktop/">RStudio</a> <span class="citation" data-cites="rstudio2026">(<a href="../references.html#ref-rstudio2026" role="doc-biblioref">Posit team, 2026</a>)</span></li>
 </ol>
-<p>Notez que nous n’écrirons le code R que dans RStudio, l’interface. Le langage de programmation R doit d’abord être installé, mais il fonctionnera ensuite en arrière-plan. Il n’est donc pas nécessaire d’ouvrir R directement sur votre ordinateur par la suite.</p>
+<p>RStudio est un <strong>environnement de développement intégré</strong> (angl. <em>integrated development environment</em>, IDE)&nbsp;: il réunit dans une même fenêtre un éditeur de scripts, la console de R et d’autres outils. Nous écrirons le code R uniquement dans RStudio. Le langage R doit d’abord être installé, mais il fonctionnera ensuite en arrière-plan. Il n’est donc pas nécessaire d’ouvrir R directement sur votre ordinateur par la suite.</p>
 </section>
 <section id="linterface-rstudio" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="linterface-rstudio"><span class="header-section-number">1.2</span> L’interface RStudio</h2>
@@ -367,31 +390,31 @@ div.csl-indent {
 </figure>
 </div>
 <p>Pour une présentation détaillée de l’interface, voir la <a href="https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html">documentation de Posit</a>.</p>
-<p>Dans RStudio, il existe quatre volets différents :</p>
+<p>La fenêtre de RStudio est divisée en quatre volets (angl. <em>panes</em>)&nbsp;:</p>
 <ol type="1">
-<li>Le volet <strong>source</strong></li>
-<li>Le volet <strong>console</strong></li>
-<li>Le volet <strong>environnement</strong></li>
-<li>Le volet <strong>output</strong></li>
+<li>le volet <strong>Source</strong>, en haut à gauche ;</li>
+<li>le volet <strong>Console</strong>, en bas à gauche ;</li>
+<li>le volet <strong>Environment</strong> (environnement), en haut à droite ;</li>
+<li>le volet <strong>Output</strong>, en bas à droite.</li>
 </ol>
 </section>
 <section id="exécuter-un-script-r" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="exécuter-un-script-r"><span class="header-section-number">1.3</span> Exécuter un script R</h2>
-<p>Nous travaillons principalement dans le volet <strong>source</strong>, c’est là que nous écrivons notre code.</p>
-<p>Vous pouvez ouvrir le volet source en créant un nouveau <strong>R script</strong> (cliquez sur le signe plus vert dans le coin supérieur gauche).</p>
-<p>Vous pouvez réécrire ou copier-coller le calcul simple suivant et l’insérer dans votre script :</p>
+<p>Nous travaillons principalement dans le volet <strong>Source</strong>&nbsp;: c’est là que nous écrivons notre code.</p>
+<p>Vous pouvez ouvrir le volet <strong>Source</strong> en créant un nouveau <strong>script R</strong> (menu <strong>File → New File → R Script</strong>, ou signe plus vert en haut à gauche).</p>
+<p>Vous pouvez réécrire ou copier-coller le calcul simple suivant et l’insérer dans votre script&nbsp;:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> <span class="sc">+</span> <span class="dv">14</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>Une fois que nous avons écrit du code R dans le script, nous pouvons <strong>l’exécuter</strong> en le sélectionnant et en cliquant sur le bouton d’exécution situé au-dessus du volet source (le bouton d’exécution avec la flèche verte à qui montre à droite).</p>
-<p>C’est alors dans le volet de la <strong>console</strong> où le résultat va être affiché :</p>
+<p>Une fois que nous avons écrit du code R dans le script, nous pouvons <strong>l’exécuter</strong> en le sélectionnant et en cliquant sur le bouton d’exécution situé au-dessus du volet source (le bouton d’exécution avec la flèche verte qui pointe vers la droite).</p>
+<p>Le résultat s’affiche alors dans le volet <strong>Console</strong>&nbsp;:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 24</code></pre>
 </div>
 </div>
-<p>Notez que le nombre entre crochets indique la <strong>position du premier élément</strong> affiché sur cette ligne. Ici, il n’y a qu’un élément, donc <code>[1]</code>. Essayez <code>1:30</code> pour voir la différence.</p>
-<p>Voici quelques autres calculs simples, suivi de leurs résultats :</p>
+<p>Notez que le nombre entre crochets indique la <strong>position du premier élément</strong> affiché sur cette ligne. Ici, il n’y a qu’un élément, donc <code>[1]</code>. Essayez <code>1:30</code> pour voir la différence&nbsp;: le deux-points <code>:</code> crée la suite des nombres entiers de 1 à 30.</p>
+<p>Voici quelques autres calculs simples, suivis de leurs résultats&nbsp;:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">2</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -424,18 +447,18 @@ div.csl-indent {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Pour exécuter le code R plus rapidement, vous pouvez placer votre curseur sur une ligne de code à exécuter et utiliser les raccourcis clavier suivants :</p>
+<p>Pour exécuter le code R plus rapidement, vous pouvez placer votre curseur sur une ligne de code à exécuter et utiliser les raccourcis clavier suivants&nbsp;:</p>
 <ul>
-<li><p>Sur <strong>Windows</strong> : <kbd>CTRL</kbd> + <kbd>Enter</kbd></p></li>
-<li><p>Sur <strong>MacOS</strong> : <kbd>Command</kbd> + <kbd>Enter</kbd></p></li>
+<li><p>Sur <strong>Windows</strong>&nbsp;: <kbd>Ctrl</kbd> + <kbd>Entrée</kbd></p></li>
+<li><p>Sur <strong>macOS</strong>&nbsp;: <kbd>Cmd</kbd> + <kbd>Entrée</kbd></p></li>
 </ul>
 </div>
 </div>
 </section>
 <section id="commenter-votre-code-avec-un" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="commenter-votre-code-avec-un"><span class="header-section-number">1.4</span> Commenter votre code avec un <code>#</code></h2>
-<p>C’est une bonne pratique de <strong>commenter</strong> son code R. Les commentaires expliquent ce que le code fait et facilite l’utilisation ultérieure et aussi le partage de code entre personnes (qui ne savent peut-être pas ce que vous vouliez faire avec votre code).</p>
-<p>On commente en ajoutant un symbole <strong><code>#</code></strong> au début de la ligne de code, comme ceci :</p>
+<h2 data-number="1.4" class="anchored" data-anchor-id="commenter-votre-code-avec-un"><span class="header-section-number">1.4</span> Commenter son code avec <code>#</code></h2>
+<p>C’est une bonne pratique de <strong>commenter</strong> son code R. Les commentaires expliquent ce que fait le code et facilitent sa réutilisation et son partage entre personnes (qui ne savent peut-être pas ce que vous vouliez faire avec votre code).</p>
+<p>On commente en ajoutant un symbole <strong><code>#</code></strong> au début de la ligne de code, comme ceci&nbsp;:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ceci est un commentaire, et R l'ignorera lors de</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># l'exécution du script.</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
@@ -443,25 +466,24 @@ div.csl-indent {
 </section>
 <section id="lopérateur-daffectation--" class="level2" data-number="1.5">
 <h2 data-number="1.5" class="anchored" data-anchor-id="lopérateur-daffectation--"><span class="header-section-number">1.5</span> L’opérateur d’affectation <code>&lt;-</code></h2>
-<p>L’opérateur d’affectation <strong><code>&lt;-</code></strong> est un opérateur clé de la programmation R. Il permet d’attribuer des valeurs aux variables.</p>
+<p>L’opérateur d’affectation <strong><code>&lt;-</code></strong> est un opérateur clé de la programmation R&nbsp;: il stocke une valeur dans un objet nommé.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Par exemple, nous pouvons attribuer la valeur 5 à la</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># variable x :</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Par exemple, nous stockons la valeur 5 dans l'objet x :</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>Si vous exécutez ce code, une nouvelle variable, <code>x</code>, sera créée dans le volet <strong>environnement</strong> en haut à droite de RStudio.</p>
+<p>Si vous exécutez ce code, un nouvel objet, <code>x</code>, apparaît dans le volet <strong>Environment</strong>, en haut à droite de RStudio.</p>
 <div style="page-break-after: always;"></div>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-default callout-note callout-titled" title="Définition : objet">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>À noter
+<span class="screen-reader-only">Note</span>Définition&nbsp;: objet
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>En R, tout ce que l’on manipule (une valeur, un vecteur, un tableau, une fonction) est un <strong>objet</strong> qui porte un nom. On parle aussi de <strong>structures de données</strong>. Les variables à un élément sont des objets très simples. Au cours de ce cours, nous découvrirons d’autres types d’objets.</p>
+<p>En R, tout ce que l’on manipule (une valeur, un vecteur, un tableau, une fonction) est un <strong>objet</strong> qui porte un nom. Même une valeur isolée, comme <code>x &lt;- 5</code>, est un objet&nbsp;: un vecteur de longueur 1. En programmation, on appelle souvent ces objets des <em>variables</em> ; dans ce livre, le mot <strong>variable</strong> désigne toujours une variable statistique, c’est-à-dire une colonne d’un tableau de données (voir chapitre 2).</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Astuce">
@@ -474,40 +496,39 @@ div.csl-indent {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Vous pouvez créer l’opérateur d’affectation <code>&lt;-</code> avec les raccourcis clavier suivants :</p>
+<p>Vous pouvez créer l’opérateur d’affectation <code>&lt;-</code> avec les raccourcis clavier suivants&nbsp;:</p>
 <ul>
-<li><p>Sur <strong>Windows</strong> : <kbd>Alt</kbd> + <kbd>-</kbd></p></li>
-<li><p>Sur <strong>MacOS</strong> : <kbd>Option</kbd> + <kbd>-</kbd></p></li>
+<li><p>Sur <strong>Windows</strong>&nbsp;: <kbd>Alt</kbd> + <kbd>-</kbd></p></li>
+<li><p>Sur <strong>macOS</strong>&nbsp;: <kbd>Option</kbd> + <kbd>-</kbd></p></li>
 </ul>
 </div>
 </div>
 </section>
 <section id="variables-à-élément-unique" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="variables-à-élément-unique"><span class="header-section-number">1.6</span> Variables à élément unique</h2>
-<p>Vous pouvez <strong>imprimer</strong> (afficher) la valeur d’une variable que vous avez créée, telle que <code>x</code>, en tapant le nom de la variable et en l’exécutant.</p>
+<h2 data-number="1.6" class="anchored" data-anchor-id="variables-à-élément-unique"><span class="header-section-number">1.6</span> Objets à un seul élément</h2>
+<p>Vous pouvez <strong>afficher</strong> la valeur d’un objet que vous avez créé, tel que <code>x</code>, en tapant son nom et en l’exécutant, ou avec la fonction <code>print()</code>&nbsp;: <code>print(x)</code>.</p>
+<p>R distingue les majuscules des minuscules&nbsp;: <code>x</code> et <code>X</code> sont deux objets différents, et <code>Mean()</code> n’existe pas, contrairement à <code>mean()</code>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5</code></pre>
 </div>
 </div>
-<div class="callout callout-style-default callout-important callout-titled" title="Important">
+<div class="callout callout-style-default callout-warning callout-titled" title="Attention">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Important
+<span class="screen-reader-only">Avertissement</span>Attention
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ul>
-<li>Veillez toujours à exécuter votre code pour créer des variables avant de les utiliser pour d’autres opérations. Si vous oubliez de créer les variables en premier, vous obtiendrez une erreur comme résultat.</li>
-</ul>
+<p>Veillez toujours à exécuter le code qui crée un objet avant de l’utiliser. Si l’objet n’existe pas encore, R affiche un message d’erreur.</p>
 </div>
 </div>
-<p>Par exemple, essayez d’exécuter ce qui suit : <code>y + z</code></p>
-<p>Pourquoi cela crée une erreur ? Réponse : les variables <code>y</code> et <code>z</code> n’ont pas encore été définies !</p>
+<p>Par exemple, essayez d’exécuter ce qui suit&nbsp;: <code>y + z</code></p>
+<p>Pourquoi cela crée une erreur ? Réponse&nbsp;: les objets <code>y</code> et <code>z</code> n’ont pas encore été définis.</p>
 <p>Pour éliminer l’erreur, nous devons donc définir <code>y</code> et <code>z</code>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">7</span></span>
@@ -519,86 +540,70 @@ div.csl-indent {
 <pre><code>[1] 10</code></pre>
 </div>
 </div>
-<p>Maintenant ça marche ! 😀</p>
-<div class="callout callout-style-default callout-important callout-titled" title="Important">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>Sachez aussi que si vous attribuez une nouvelle valeur à une variable existante, l’ancienne valeur sera écrasée !</li>
-</ul>
-</div>
-</div>
+<p>Maintenant, le code fonctionne.</p>
+<p>Sachez aussi que si vous affectez une nouvelle valeur à un objet existant, l’ancienne valeur est écrasée.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Notez que si vous exécutez toutes les lignes de code</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># suivantes, la variable x se voit attribuer la dernière</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># valeur exécutée : 4. Les valeurs 5 et 100 sont ecrasées</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># lors de l'exécution du code.</span></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">100</span></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">4</span></span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Si vous exécutez toutes les lignes suivantes, l'objet x</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># prend la dernière valeur affectée : 4. Les valeurs 5 et</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 100 sont écrasées lors de l'exécution du code.</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4</code></pre>
 </div>
 </div>
 <section id="les-différents-types-de-variable-numériques-textuelles-et-logique" class="level3">
-<h3 class="anchored" data-anchor-id="les-différents-types-de-variable-numériques-textuelles-et-logique">Les différents types de variable : numériques, textuelles et logique</h3>
-<p>Jusqu’à présent, nous avons créé des variables de <strong>type numérique</strong>, telles que <code>x</code> (valeur = 5).</p>
-<p>Cependant, ce n’est pas le seul type de variable dans R.</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<h3 class="anchored" data-anchor-id="les-différents-types-de-variable-numériques-textuelles-et-logique">Les types de données&nbsp;: numérique, caractère et logique</h3>
+<p>Jusqu’à présent, nous avons créé des objets de <strong>type numérique</strong>, tels que <code>x</code> (valeur = 5).</p>
+<p>Cependant, ce n’est pas le seul type de données dans R.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Définition : types de données">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>À noter
+<span class="screen-reader-only">Note</span>Définition&nbsp;: types de données
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Dans R, il existe différents types de variables :</p>
+<p>Les trois types de données les plus courants dans R sont&nbsp;:</p>
 <ul>
-<li><p>les variables <strong>numériques</strong></p></li>
-<li><p>les variables <strong>textuelles</strong>, également appelées <em>character strings</em> (chaînes de caractères).</p></li>
-<li><p>les variables <strong>logiques</strong> avec les valeurs TRUE et FALSE (VRAI et FAUX)</p></li>
+<li><p>les nombres, de type <strong>numérique</strong> (<code>numeric</code>) ;</p></li>
+<li><p>les <strong>chaînes de caractères</strong> (type <code>character</code>), c’est-à-dire du texte, toujours écrit entre guillemets ;</p></li>
+<li><p>les valeurs <strong>logiques</strong> (type <code>logical</code>, on dit aussi <em>booléennes</em>)&nbsp;: <code>TRUE</code> (vrai) et <code>FALSE</code> (faux).</p></li>
 </ul>
 </div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Regardons quelques exemples avec du code ! (faut tout</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># exécuter !)</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># variables numériques :</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">100</span></span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">77</span></span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="dv">21</span></span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>Insta_likes <span class="ot">&lt;-</span> <span class="dv">1539</span></span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="co"># variables textuelles (toujours ajouter des guillemets !)</span></span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="st">"chien"</span></span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="st">"chat"</span></span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>Comm_TikTok <span class="ot">&lt;-</span> <span class="st">"wsh"</span></span>
-<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>Moliere <span class="ot">&lt;-</span> <span class="st">"il n’est rien d’égal au tabac : c’est la passion des honnêtes gens"</span></span>
-<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a><span class="co"># variables logiques :</span></span>
-<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>e <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
-<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Quelques exemples (exécutez toutes les lignes) :</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co"># nombres (type numérique) :</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">77</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="dv">21</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>Insta_likes <span class="ot">&lt;-</span> <span class="dv">1539</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="co"># chaînes de caractères (toujours entre guillemets)</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="st">"chien"</span></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="st">"chat"</span></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>Comm_TikTok <span class="ot">&lt;-</span> <span class="st">"wsh"</span></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>Moliere <span class="ot">&lt;-</span> <span class="st">"il n’est rien d’égal au tabac : c’est la passion des honnêtes gens"</span></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a><span class="co"># valeurs logiques :</span></span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>e <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>Les variables logiques peuvent être utiles quand vous travaillez avec des <strong>catégories binaires</strong>.</p>
-<p>Par exemple : il est souvent utile de classer les personnes ayant répondu à un questionnaire en catégories binaires, telles que :</p>
+<p>La fonction <code>class()</code> indique le type d’un objet&nbsp;: <code>class(a)</code> renvoie <code>"numeric"</code>, <code>class(c)</code> renvoie <code>"character"</code> et <code>class(e)</code> renvoie <code>"logical"</code>. On peut aussi convertir un type en un autre, p.&nbsp;ex. une chaîne de caractères en nombre avec <code>as.numeric("7")</code>.</p>
+<p>Les valeurs logiques sont utiles pour coder des <strong>catégories binaires</strong>.</p>
+<p>Par exemple&nbsp;: il est souvent utile de classer les personnes ayant répondu à un questionnaire en catégories binaires, telles que&nbsp;:</p>
 <ul>
-<li><p>homme/femme</p></li>
-<li><p>mineur/majeur</p></li>
-<li><p>conservateur/libéral</p></li>
+<li><p>majeur/mineur</p></li>
+<li><p>abonné/non abonné</p></li>
 <li><p>etc.</p></li>
 </ul>
 <div class="cell">
@@ -608,63 +613,71 @@ div.csl-indent {
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>Marc <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
 <span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>Claire <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
 <span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Dans cet exemple, la variable logique indique si une</span></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="co"># personne est majeure (TRUE) ou pas (FALSE)</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Dans cet exemple, la valeur logique indique si une</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="co"># personne est majeure (TRUE) ou non (FALSE)</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </section>
 <section id="variables-à-plusieurs-éléments-vecteurs" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="variables-à-plusieurs-éléments-vecteurs"><span class="header-section-number">1.7</span> Variables à plusieurs éléments : vecteurs</h2>
-<p>Les <strong>vecteurs</strong> constituent un autre type de variable (ou type d’objet) essentiel dans la programmation R. Il s’agit de variables comportant <strong>plusieurs</strong> éléments.</p>
-<p>Vous pouvez créer des vecteurs avec l’opérateur d’affectation <code>&lt;-</code> et la <strong>fonction de concatenation</strong> <code>c()</code>.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Voici quelques exemples avec du code ! (faut tout</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co"># exécuter !)</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co"># un vecteur numérique (notez qu'il faut toujours séparer</span></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="co"># les valeurs avec des virgules)</span></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<h2 data-number="1.7" class="anchored" data-anchor-id="variables-à-plusieurs-éléments-vecteurs"><span class="header-section-number">1.7</span> Les vecteurs&nbsp;: plusieurs éléments</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Définition : fonction">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<dl>
-<dt>Vous pouvez afficher la valeur de <code>v1</code> en tapant son nom et l’exécutant</dt>
-<dd>
-
-</dd>
-</dl>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Définition&nbsp;: fonction
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>En R, une <strong>fonction</strong> effectue une tâche à partir des valeurs qu’on lui transmet entre parenthèses, ses <strong>arguments</strong> (on dit aussi <em>paramètres</em>), et renvoie un résultat.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Astuce">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Astuce</span>Astuce
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Pour afficher l’aide d’une fonction, tapez un point d’interrogation suivi de son nom, p.&nbsp;ex. <code>?mean</code>. La page s’affiche dans le volet <strong>Output</strong>, onglet <strong>Help</strong>.</p>
+</div>
+</div>
+<p>Un <strong>vecteur</strong> est une suite de valeurs du même type. Les objets à un élément créés jusqu’ici sont en fait des vecteurs de longueur 1 ; on crée des vecteurs plus longs, qui contiennent <strong>plusieurs</strong> éléments, avec la fonction <code>c()</code>.</p>
+<p>Vous pouvez créer des vecteurs avec l’opérateur d’affectation <code>&lt;-</code> et la <strong>fonction de concaténation</strong> <code>c()</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Quelques exemples (exécutez toutes les lignes) :</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co"># un vecteur numérique (notez qu'il faut toujours séparer</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co"># les valeurs avec des virgules)</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Vous pouvez afficher la valeur de <code>v1</code> en tapant son nom et en l’exécutant&nbsp;:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>v1</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1 2 3</code></pre>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>À noter
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>En R, une <strong>fonction</strong> est un morceau de code conçu pour effectuer une tâche spécifique, souvent avec des paramètres variables. Ces paramètres d’entrée sont également appelés les <strong>arguments</strong> de la fonction.</p>
-</div>
-</div>
-<p>Prenons l’exemple de la fonction <code>c()</code> qui crée des vecteurs :</p>
+<p>La fonction <code>length()</code> donne le nombre d’éléments d’un vecteur&nbsp;: <code>length(v1)</code> renvoie 3.</p>
+<p>Prenons l’exemple de la fonction <code>c()</code> qui crée des vecteurs&nbsp;:</p>
 <ul>
 <li><p>les arguments de cette fonction doivent être insérés entre les <strong>parenthèses</strong> sous la forme de valeurs séparées par des virgules (pour chaque élément du vecteur).</p></li>
-<li><p>Un vecteur à deux éléments : <code>c(2, 4)</code></p></li>
-<li><p>Un vecteur à trois éléments : <code>c(3, 6, 9)</code></p></li>
+<li><p>Un vecteur à deux éléments&nbsp;: <code>c(2, 4)</code></p></li>
+<li><p>Un vecteur à trois éléments&nbsp;: <code>c(3, 6, 9)</code></p></li>
 </ul>
-<p>Maintenant, regardons encore quelques exemples de vecteurs de <strong>différents types</strong> :</p>
+<p>Maintenant, regardons encore quelques exemples de vecteurs de <strong>différents types</strong>&nbsp;:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># vecteurs numériques</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="dv">100</span>, <span class="dv">4</span>, <span class="sc">-</span><span class="dv">88</span>)</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>likes_comments_shares <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">513</span>, <span class="dv">34</span>, <span class="dv">102</span>)</span>
 <span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="co"># vecteurs textuels (toujours ajouter des guillemets pour</span></span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co"># chaque élément !)</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="co"># vecteurs de chaînes de caractères (des guillemets pour</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co"># chaque élément)</span></span>
 <span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>animaux <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"chat"</span>, <span class="st">"chien"</span>, <span class="st">"cheval"</span>, <span class="st">"chenille"</span>)</span>
 <span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>Comm_Insta <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"trop cool"</span>, <span class="st">"wsh"</span>, <span class="st">"c'est quoi ?"</span>)</span>
@@ -674,37 +687,55 @@ div.csl-indent {
 <span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a><span class="co"># vecteurs logiques :</span></span>
 <span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>femme <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout callout-style-default callout-warning callout-titled" title="Attention">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Mise en garde</span>Attention
+<span class="screen-reader-only">Avertissement</span>Attention
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p>Un vecteur ne contient qu’<strong>un seul type</strong> de données. Si l’on mélange des types, R les convertit sans prévenir vers le type le plus général (logique → numérique → texte) : <code>c(1, "a", TRUE)</code> donne <code>"1" "a" "TRUE"</code>.</p>
+<p>Un vecteur ne contient qu’<strong>un seul type</strong> de données. Si l’on mélange des types, R les convertit sans prévenir vers le type le plus général (logique → numérique → texte)&nbsp;: <code>c(1, "a", TRUE)</code> donne <code>"1" "a" "TRUE"</code>.</p>
 </div>
 </div>
+<div class="callout callout-style-default callout-important callout-titled" title="En bref">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>En bref
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>R est le langage ; RStudio est l’environnement de travail (IDE) dans lequel on l’utilise.</li>
+<li>On écrit le code dans un script (volet <strong>Source</strong>) et on l’exécute avec <kbd>Ctrl</kbd> + <kbd>Entrée</kbd> (<kbd>Cmd</kbd> + <kbd>Entrée</kbd> sur macOS) ; le résultat s’affiche dans la console.</li>
+<li><code>&lt;-</code> stocke une valeur dans un objet ; une nouvelle affectation remplace l’ancienne valeur.</li>
+<li>Une valeur est numérique, une chaîne de caractères (entre guillemets) ou logique (<code>TRUE</code>/<code>FALSE</code>).</li>
+<li><code>c()</code> combine plusieurs valeurs en un vecteur, qui ne contient qu’un seul type de données.</li>
+</ul>
+</div>
+</div>
+<p>Au chapitre suivant, vous rassemblerez plusieurs vecteurs dans un tableau&nbsp;: la forme sous laquelle on analyse presque toutes les données.</p>
 </section>
 <section id="devoir-pour-session-2" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="devoir-pour-session-2">À faire avant de continuer</h2>
 <ul>
-<li><p>Si ce n’est pas encore fait : Installez R et RStudio sur votre ordinateur.</p></li>
-<li><p>Lisez ensuite encore une fois ce script et exécutez toutes les sections de code sur votre ordinateur.</p></li>
+<li><p>Si ce n’est pas encore fait&nbsp;: installez R et RStudio sur votre ordinateur.</p></li>
+<li><p>Relisez ensuite ce chapitre et exécutez toutes les sections de code sur votre ordinateur.</p></li>
 <li><p>Essayez de résoudre vous-même les éventuels messages d’erreur en adaptant le code.</p></li>
 </ul>
 </section>
-<section id="exercices" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="exercices">Exercices</h2>
-<p>Choisissez <em>Vrai</em> ou <em>Faux</em>, cochez une réponse ou tapez un nombre : la couleur indique tout de suite si votre réponse est correcte. Cliquez sur <strong>Explication</strong> pour voir la correction.</p>
+<section id="testez-vous" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="testez-vous">Testez-vous</h2>
+<p><span id="exercices"></span></p>
+<p>Choisissez <em>Vrai</em> ou <em>Faux</em>, cochez une réponse ou tapez un nombre&nbsp;: la couleur indique tout de suite si votre réponse est correcte. Cliquez sur <strong>Explication</strong> pour voir la correction.</p>
 <section id="q5" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q5">Question 1.1</h3>
-<p>La fonction <code>class()</code> appliquée à une variable à un élément peut donner comme résultat :</p>
+<p>La fonction <code>class()</code> appliquée à un objet à un seul élément peut donner comme résultat&nbsp;:</p>
 <ol type="a">
 <li><p><code>"numeric"</code> <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p><code>"logical"</code> <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
@@ -720,11 +751,11 @@ Explication
 </section>
 <section id="q16" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q16">Question 1.2</h3>
-<p>Exécutez le code R suivant et jugez chaque proposition :</p>
+<p>Exécutez le code suivant, puis jugez chaque proposition&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>number <span class="ot">&lt;-</span> <span class="st">"7"</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <ol type="a">
 <li><p>Le code <code>number^2</code> donne 36 comme résultat dans la console. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
-<li><p>Le code <code>number &lt;- as.numeric(number)</code> ne change rien à ma variable. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>Le code <code>number &lt;- as.numeric(number)</code> ne modifie pas l’objet <code>number</code>. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
 <li><p><code>number</code> peut être utilisé dans la fonction <code>c()</code> afin de créer un vecteur. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p><code>length(number)</code> donne une erreur. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
 <li><p>Le code <code>as.numeric(number)^2</code> donne 36 comme résultat dans la console. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
@@ -735,7 +766,7 @@ Explication
 </button>
 <p><code>number</code> contient le <strong>texte</strong> <code>"7"</code>.</p>
 <p>a) Un calcul sur du texte produit une erreur.</p>
-<p>b) <code>as.numeric()</code> transforme le texte en nombre : la classe de <code>number</code> change.</p>
+<p>b) <code>as.numeric()</code> transforme le texte en nombre&nbsp;: la classe de l’objet <code>number</code> change.</p>
 <p>c) <code>c(number, "8")</code> crée un vecteur textuel.</p>
 <p>d) <code>length(number)</code> renvoie 1.</p>
 <p>e) <code>as.numeric(number)^2</code> vaut 49, pas 36.</p>
@@ -743,14 +774,14 @@ Explication
 </section>
 <section id="q17" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q17">Question 1.3</h3>
-<p>Exécutez le code suivant et jugez chaque proposition :</p>
+<p>Exécutez le code suivant, puis jugez chaque proposition&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="st">"079 123 45 67"</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(n)</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(n)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <ol type="a">
 <li><p>Le code crée un objet numérique avec 10 éléments. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
-<li><p><code>n</code> est une variable de type textuel. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
-<li><p><code>n</code> est une variable avec un élément. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p><code>n</code> est un objet de type caractère (<code>character</code>). <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p><code>n</code> est un objet à un seul élément. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Si l’on a créé correctement <code>n</code> comme décrit ci-dessus et que l’on exécute <code>n * 2</code>, on obtient un message d’erreur. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Dans R, il n’est jamais utile de stocker des numéros sous forme de texte. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
 </ol>
@@ -759,31 +790,31 @@ Explication
 Explication
 </button>
 <p>Les guillemets font de <code>n</code> une chaîne de caractères à <strong>un</strong> élément. Une opération arithmétique sur du texte (<code>n * 2</code>) produit une erreur.</p>
-<p>e) Stocker des numéros de téléphone, codes postaux ou identifiants en texte est souvent utile : on ne calcule pas avec eux, et les zéros initiaux sont conservés.</p>
+<p>e) Stocker des numéros de téléphone, codes postaux ou identifiants en texte est souvent utile&nbsp;: on ne calcule pas avec eux, et les zéros initiaux sont conservés.</p>
 </div>
 </section>
 <section id="q21" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q21">Question 1.4</h3>
-<p>Exécutez le code suivant et jugez chaque proposition :</p>
+<p>Exécutez le code suivant, puis jugez chaque proposition&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">66</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">77</span></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">88</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <ol type="a">
-<li><p>Ce code génère une variable, <code>a</code>, dont la valeur finale correspond à 88. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
-<li><p>Le code écrase deux fois la variable <code>a</code>. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
-<li><p>Le code génère une erreur, car il ne peut pas créer trois variables portant exactement le même nom. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
-<li><p>Le code crée trois variables, toutes nommées <code>a</code>, et les stocke simultanément dans l’environnement. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>Ce code crée un objet, <code>a</code>, dont la valeur finale est 88. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>Le code écrase deux fois l’objet <code>a</code>. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>Le code génère une erreur, car il ne peut pas créer trois objets portant exactement le même nom. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>Le code crée trois objets, tous nommés <code>a</code>, et les stocke simultanément dans l’environnement. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
 </ol>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<p>Chaque nouvelle affectation remplace l’ancienne valeur : il n’existe qu’un seul objet <code>a</code>, qui vaut 88 à la fin. R ne produit pas d’erreur lorsqu’on réutilise un nom.</p>
+<p>Chaque nouvelle affectation remplace l’ancienne valeur&nbsp;: il n’existe qu’un seul objet <code>a</code>, qui vaut 88 à la fin. R ne produit pas d’erreur lorsqu’on réutilise un nom.</p>
 </div>
 </section>
 <section id="q22" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q22">Question 1.5</h3>
-<p>Exécutez le code R suivant et jugez chaque proposition :</p>
+<p>Exécutez le code suivant, puis jugez chaque proposition&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">15</span>)</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(a)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <ol type="a">
@@ -797,38 +828,38 @@ Explication
 <button>
 Explication
 </button>
-<p><code>print(a)</code> affiche le contenu de l’objet <code>a</code> dans la console. En session interactive, taper simplement <code>a</code> a le même effet. <code>a</code> est un vecteur (pas une fonction), et <code>c()</code> est la fonction de concaténation qui le crée : aucun objet nommé <code>c</code> n’est créé.</p>
+<p><code>print(a)</code> affiche le contenu de l’objet <code>a</code> dans la console. En session interactive, taper simplement <code>a</code> a le même effet. <code>a</code> est un vecteur (pas une fonction), et <code>c()</code> est la fonction de concaténation qui le crée&nbsp;: aucun objet nommé <code>c</code> n’est créé.</p>
 </div>
 </section>
 <section id="q46" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q46">Question 1.6</h3>
-<p>Exécutez le code R suivant et jugez chaque proposition :</p>
+<p>Exécutez le code suivant, puis jugez chaque proposition&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">22</span>, <span class="dv">8</span>, <span class="sc">-</span><span class="dv">5</span>)</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(a)</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(a)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <ol type="a">
 <li><p><code>a</code> est un vecteur. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p><code>a</code> est un objet R de type numérique. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
-<li><p>Le code crée un objet dans le volet <em>Environment</em> de RStudio. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>Le code crée un objet dans le volet <strong>Environment</strong> de RStudio. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Le code utilise la fonction de concaténation <code>c()</code>. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 </ol>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<p>Toutes les propositions sont correctes : <code>c()</code> crée un vecteur numérique (<code>class(a)</code> renvoie <code>"numeric"</code>), et l’affectation <code>&lt;-</code> le place dans l’environnement.</p>
+<p>Toutes les propositions sont correctes&nbsp;: <code>c()</code> crée un vecteur numérique (<code>class(a)</code> renvoie <code>"numeric"</code>), et l’affectation <code>&lt;-</code> le place dans l’environnement.</p>
 </div>
 </section>
 <section id="q84" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q84">Question 1.7</h3>
-<p>Le code R suivant ouvre une page d’aide dans RStudio lorsqu’il est exécuté :</p>
+<p>Le code R suivant ouvre une page d’aide dans RStudio lorsqu’il est exécuté&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>?<span class="fu">typeof</span>()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p><select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<p>Le point d’interrogation ouvre l’aide de la fonction qui suit, avec ou sans parenthèses : <code>?typeof</code> et <code>?typeof()</code> affichent la même page. <code>help(typeof)</code> fait de même.</p>
+<p>Le point d’interrogation ouvre l’aide de la fonction qui suit, avec ou sans parenthèses&nbsp;: <code>?typeof</code> et <code>?typeof()</code> affichent la même page. <code>help(typeof)</code> fait de même.</p>
 </div>
 </section>
 <section id="q85" class="level3 unnumbered">
@@ -844,7 +875,7 @@ Explication
 </section>
 <section id="q86" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q86">Question 1.9</h3>
-<p>Le <code>#</code> permet d’insérer des commentaires dans le script, sans que cela ait des conséquences sur mon codage.</p>
+<p>Le <code>#</code> permet d’insérer des commentaires dans un script, sans effet sur l’exécution du code.</p>
 <p><select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p>
 <div class="webex-solution">
 <button>
@@ -855,19 +886,19 @@ Explication
 </section>
 <section id="q94" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q94">Question 1.10</h3>
-<p>Le code suivant crée une variable textuelle lorsqu’il est exécuté :</p>
+<p>Le code suivant crée un objet de type caractère (une chaîne de caractères) lorsqu’il est exécuté&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>monstre <span class="ot">&lt;-</span> <span class="st">"vampire"</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p><select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<p>Les guillemets font de <code>"vampire"</code> une chaîne de caractères : <code>class(monstre)</code> renvoie <code>"character"</code>.</p>
+<p>Les guillemets font de <code>"vampire"</code> une chaîne de caractères&nbsp;: <code>class(monstre)</code> renvoie <code>"character"</code>.</p>
 </div>
 </section>
 <section id="q95" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q95">Question 1.11</h3>
-<p>Les deux lignes de code suivantes créent exactement la même variable lorsqu’elles sont exécutées :</p>
+<p>Les deux lignes de code suivantes créent exactement le même objet lorsqu’elles sont exécutées&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="st">"Université de Fribourg"</span></span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>a <span class="ot">=</span> <span class="st">"Université de Fribourg"</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p><select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p>
@@ -880,20 +911,20 @@ Explication
 </section>
 <section id="q96" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q96">Question 1.12</h3>
-<p>Dans R, l’opérateur d’affectation (<code>&lt;-</code>) peut être utilisé pour créer des objets, tels que des variables à un élément, des vecteurs, des matrices et des data frames.</p>
+<p>Dans R, l’opérateur d’affectation (<code>&lt;-</code>) peut être utilisé pour créer des objets, tels que des objets à un seul élément, des vecteurs, des matrices et des tableaux de données.</p>
 <p><select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<p><code>&lt;-</code> assigne n’importe quel objet R à un nom : scalaire, vecteur, matrice, data frame, liste, etc.</p>
+<p><code>&lt;-</code> assigne n’importe quel objet R à un nom&nbsp;: scalaire, vecteur, matrice, tableau de données, liste, etc.</p>
 </div>
 </section>
 <section id="q118" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q118">Question 1.13</h3>
 <p>Dans quel volet de RStudio écrivez-vous et enregistrez-vous votre script R&nbsp;?</p>
-<div id="radio_FTOJGRYQRJ" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_FTOJGRYQRJ" value="answer"> <span>Source</span></label><label><input type="radio" autocomplete="off" name="radio_FTOJGRYQRJ" value=""> <span>Console</span></label><label><input type="radio" autocomplete="off" name="radio_FTOJGRYQRJ" value=""> <span>Environnement</span></label><label><input type="radio" autocomplete="off" name="radio_FTOJGRYQRJ" value=""> <span>Output</span></label>
+<div id="radio_DOCPZPQYIT" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_DOCPZPQYIT" value="answer"> <span>Source</span></label><label><input type="radio" autocomplete="off" name="radio_DOCPZPQYIT" value=""> <span>Console</span></label><label><input type="radio" autocomplete="off" name="radio_DOCPZPQYIT" value=""> <span>Environment</span></label><label><input type="radio" autocomplete="off" name="radio_DOCPZPQYIT" value=""> <span>Output</span></label>
 </div>
 <div class="webex-solution">
 <button>
@@ -910,7 +941,7 @@ Explication
 <button>
 Explication
 </button>
-<p>R <strong>est</strong> sensible à la casse : <code>Mean(x)</code> produit une erreur alors que <code>mean(x)</code> fonctionne, et <code>a</code> et <code>A</code> sont deux objets différents.</p>
+<p>R <strong>est</strong> sensible à la casse&nbsp;: <code>Mean(x)</code> produit une erreur alors que <code>mean(x)</code> fonctionne, et <code>a</code> et <code>A</code> sont deux objets différents.</p>
 </div>
 </section>
 <section id="q120" class="level3 unnumbered">
@@ -932,19 +963,19 @@ Explication
 <button>
 Explication
 </button>
-<p>RStudio est un IDE : il réunit éditeur de script, console, environnement et fenêtre de graphiques. R tourne en arrière-plan.</p>
+<p>RStudio est un IDE&nbsp;: il réunit éditeur de script, console, environnement et fenêtre de graphiques. R tourne en arrière-plan.</p>
 </div>
 </section>
 <section id="q125" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q125">Question 1.17</h3>
-<p>Le code R suivant crée un vecteur avec 10 éléments numériques lorsqu’il est exécuté :</p>
+<p>Le code R suivant crée un vecteur avec 10 éléments numériques lorsqu’il est exécuté&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="st">"079 123 45 67"</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p><select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<p>Les guillemets créent <strong>un seul</strong> élément de type texte : <code>length(n)</code> vaut 1 et <code>class(n)</code> renvoie <code>"character"</code>.</p>
+<p>Les guillemets créent <strong>un seul</strong> élément de type texte&nbsp;: <code>length(n)</code> vaut 1 et <code>class(n)</code> renvoie <code>"character"</code>.</p>
 </div>
 
 
@@ -1587,7 +1618,7 @@ window.onload = function() {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>Textes et exercices : <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr">CC BY-NC-SA 4.0</a> · Code : MIT · Éléments de tiers : voir <a href="../apropos.html">À propos</a></p>
+<p>Textes et exercices&nbsp;: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr">CC BY-NC-SA 4.0</a> · Code&nbsp;: MIT · Éléments de tiers&nbsp;: voir <a href="../apropos.html">À propos</a></p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

@@ -79,7 +79,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-8b9bfa8f06f8d75c827c202792a57b06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-683640b15476b5c31180ef45b94f76af.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -177,13 +177,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sessions/session-04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Paquets, jeux de données et premiers graphiques</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Packages, jeux de données et premiers graphiques</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sessions/session-05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualiser des données avec ggplot2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualiser des données avec <code>ggplot2</code></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -201,7 +201,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sessions/session-08.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Manipuler des données&nbsp;: exercices</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Manipuler des données&nbsp;: pratique guidée</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -263,6 +263,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../lexique.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Lexique</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Références</span></a>
   </div>
@@ -280,15 +286,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul class="collapse">
   <li><a href="#lire-des-données-auf-format-csv-dans-rstudio" id="toc-lire-des-données-auf-format-csv-dans-rstudio" class="nav-link active" data-scroll-target="#lire-des-données-auf-format-csv-dans-rstudio"><span class="header-section-number">7.1</span> Lire des données au format CSV dans RStudio</a></li>
-  <li><a href="#explorez-votre-jeu-de-données-importé" id="toc-explorez-votre-jeu-de-données-importé" class="nav-link" data-scroll-target="#explorez-votre-jeu-de-données-importé"><span class="header-section-number">7.2</span> Explorez votre jeu de données importé</a></li>
+  <li><a href="#explorez-votre-jeu-de-données-importé" id="toc-explorez-votre-jeu-de-données-importé" class="nav-link" data-scroll-target="#explorez-votre-jeu-de-données-importé"><span class="header-section-number">7.2</span> Explorer un jeu de données importé</a></li>
   <li><a href="#la-transformation-du-type-de-variable" id="toc-la-transformation-du-type-de-variable" class="nav-link" data-scroll-target="#la-transformation-du-type-de-variable"><span class="header-section-number">7.3</span> La transformation du type de variable</a></li>
   <li><a href="#lopérateur" id="toc-lopérateur" class="nav-link" data-scroll-target="#lopérateur"><span class="header-section-number">7.4</span> L’opérateur <code>%&gt;%</code></a></li>
   <li><a href="#manipuler-les-données-avec-dplyr" id="toc-manipuler-les-données-avec-dplyr" class="nav-link" data-scroll-target="#manipuler-les-données-avec-dplyr"><span class="header-section-number">7.5</span> Manipuler les données avec <code>dplyr</code></a></li>
-  <li><a href="#manipulation-de-colonnes-selectet-mutate" id="toc-manipulation-de-colonnes-selectet-mutate" class="nav-link" data-scroll-target="#manipulation-de-colonnes-selectet-mutate"><span class="header-section-number">7.6</span> Manipulation de colonnes : <code>select()</code> et <code>mutate()</code></a></li>
+  <li><a href="#manipulation-de-colonnes-selectet-mutate" id="toc-manipulation-de-colonnes-selectet-mutate" class="nav-link" data-scroll-target="#manipulation-de-colonnes-selectet-mutate"><span class="header-section-number">7.6</span> Manipulation de colonnes&nbsp;: <code>select()</code> et <code>mutate()</code></a></li>
   <li><a href="#manipulation-de-lignes-avec-filter-et-arrange" id="toc-manipulation-de-lignes-avec-filter-et-arrange" class="nav-link" data-scroll-target="#manipulation-de-lignes-avec-filter-et-arrange"><span class="header-section-number">7.7</span> Manipulation de lignes avec <code>filter()</code> et <code>arrange()</code></a></li>
   <li><a href="#résumer-compter-et-regrouper-avec-summarize-count-et-group_by" id="toc-résumer-compter-et-regrouper-avec-summarize-count-et-group_by" class="nav-link" data-scroll-target="#résumer-compter-et-regrouper-avec-summarize-count-et-group_by"><span class="header-section-number">7.8</span> Résumer, compter et regrouper avec <code>summarize()</code>, <code>count()</code> et <code>group_by()</code></a></li>
   <li><a href="#devoir-pour-session-8-et-infos-questionnaire" id="toc-devoir-pour-session-8-et-infos-questionnaire" class="nav-link" data-scroll-target="#devoir-pour-session-8-et-infos-questionnaire">À faire avant de continuer</a></li>
-  <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices">Exercices</a></li>
+  <li><a href="#testez-vous" id="toc-testez-vous" class="nav-link" data-scroll-target="#testez-vous">Testez-vous</a></li>
   </ul>
 </nav>
     </div>
@@ -314,45 +320,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><strong>Sujet : Manipuler les données (partie 1)</strong></p>
-<p>Le premier but de cette session est d’apprendre à importer des données dans RStudio à partir de <strong>fichiers CSV</strong> et de les stocker en forme de data frame (format tabulaire).</p>
-<p>Le deuxième but est de se familiariser avec <code>dplyr</code> (prononcé « dee-ply-er » en anglais), un paquet du <code>tidyverse</code> conçu pour manipuler les données en forme de data frame.</p>
-<p>Contrairement aux jeux de données intégrés à R (tels que <code>diamonds</code>, etc.), la plupart des jeux de données du monde réel nécessitent des <strong>transformations</strong> avant de pouvoir être analysés et visualisés. À cette fin, nous examinerons également certaines transformations de types de variables et un nouvel opérateur, le <code>%&gt;%</code> (angl. « pipe »; trad. franç. « tuyau »), qui est très utile pour les manipulations de données.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="Objectifs d'apprentissage">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Objectifs d’apprentissage
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Importer un fichier CSV dans R et vérifier sa structure.</li>
+<li>Convertir une variable dans le type adapté (<code>as.numeric()</code>, <code>as.factor()</code>).</li>
+<li>Enchaîner des opérations avec le pipe.</li>
+<li>Sélectionner, créer, filtrer, trier, résumer et compter des données avec les verbes de <code>dplyr</code>.</li>
+</ul>
+</div>
+</div>
+<p>Les jeux de données d’exemple des chapitres 4 et 5 étaient prêts à l’emploi. Les données réelles arrivent sous forme de fichiers qu’il faut importer, vérifier et souvent transformer avant de pouvoir les analyser. Ce chapitre montre comment importer puis transformer un fichier réel avec <code>dplyr</code> (prononcé « dee-ply-er » en anglais), un package du tidyverse, en prenant comme exemple un échantillon de posts Instagram.</p>
 <section id="lire-des-données-auf-format-csv-dans-rstudio" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="lire-des-données-auf-format-csv-dans-rstudio"><span class="header-section-number">7.1</span> Lire des données au format CSV dans RStudio</h2>
-<p>Par la suite, nous allons appliquer <code>dplyr</code> pour manipuler les données d’un jeu de données concret : un fichier CSV nommé <code>igposts.csv</code>. Ce fichier contient des posts Instagram de célébritées qui ont reçu beaucoup d’interactions d’utilisateurs. Pour cette application, il faut d’abord charger ce jeu de données dans notre session RStudio en cours.</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<p>Par la suite, nous allons appliquer <code>dplyr</code> pour manipuler les données d’un jeu de données concret&nbsp;: un fichier CSV nommé <code>igposts.csv</code>. Ce fichier contient des posts Instagram de célébrités qui ont reçu beaucoup d’interactions. Pour cette application, il faut d’abord charger ce jeu de données dans notre session RStudio en cours.</p>
+<div class="callout callout-style-default callout-caution callout-titled" title="Contexte : d'où viennent ces données ?">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Mise en garde</span>Contexte&nbsp;: d’où viennent ces données ?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>igposts.csv</code> reprend les posts d’un échantillon de février–mars 2023 qui étaient encore publics le 5 octobre 2026. Les métriques (<code>Likes</code>, <code>Comments</code>, <code>Reposts</code>) et le nombre de followers ont été relevés à cette date&nbsp;: ils décrivent l’état des posts en 2026, pas au moment de leur publication. Voir <a href="../apropos.html#données">À propos</a> pour les détails.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Définition : fichier CSV">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>D’où viennent ces données ?
+<span class="screen-reader-only">Note</span>Définition&nbsp;: fichier CSV
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><code>igposts.csv</code> reprend les posts d’un échantillon de février–mars 2023 qui étaient encore publics le 5 octobre 2026. Les métriques (<code>Likes</code>, <code>Comments</code>, <code>Reposts</code>) et le nombre de followers ont été relevés à cette date : ils décrivent l’état des posts en 2026, pas au moment de leur publication. Voir <a href="../apropos.html#données">À propos</a> pour les détails.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>À noter
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Un fichier de type <strong>CSV</strong> (angl. comma-separated values) est un format textuel simple pour sauvegarder des données en forme de tableau, c’est à dire avec des valeurs organisé par lignes et colonnes et séparées par virgules.</p>
+<p>Un fichier de type <strong>CSV</strong> (angl. <em>comma-separated values</em>) est un format textuel simple pour sauvegarder des données en forme de tableau, c’est-à-dire avec des valeurs organisées en lignes et en colonnes et séparées par des virgules.</p>
 <p>Le format CSV présente l’avantage d’être assez léger et compatible avec tous les systèmes d’exploitation. En outre, il est utile pour stocker des données quantitatives en sciences sociales, qui se présentent souvent sous forme de tableaux.</p>
-<p>Voici un exemple de format CSV simple :</p>
+<p>Voici un exemple de format CSV simple&nbsp;:</p>
 <p>nom, prénom, âge<br>
 Leclerc, Antoine, 53<br>
 Gomez, Hugo, 25<br>
 Nguyen, Laetitia, 19<br>
 </p>
-<p>Que nous pouvons afficher comme tableau (à noter que la première ligne désigne les noms des colonnes) :</p>
+<p>Que nous pouvons afficher comme tableau (à noter que la première ligne désigne les noms des colonnes)&nbsp;:</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -381,30 +405,16 @@ Nguyen, Laetitia, 19<br>
 </table>
 </div>
 </div>
-<p>Avant l’importation de fichier CSV dans RStudio (et comme déjà vu pleins de fois dans le cours 😉), il faut d’abord charger les paquets nécessaires avec <code>library()</code> et définir son répertoire de travail (vous devez adapter les paramètres de <code>setwd()</code> pour qu’il marche sur votre ordinateur) :</p>
+<p>Avant d’importer un fichier CSV, ouvrez votre projet RStudio (voir le <a href="../sessions/session-02.html#projets-rstudio">chapitre 2</a>) et chargez les packages nécessaires&nbsp;:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.2.1     ✔ readr     2.2.0
-✔ forcats   1.0.1     ✔ stringr   1.6.0
-✔ ggplot2   4.0.3     ✔ tibble    3.3.1
-✔ lubridate 1.9.5     ✔ tidyr     1.3.2
-✔ purrr     1.2.2     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Adaptez le chemin, puis enlevez le # :</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># setwd('~/Documents/exercices_methodes_2')</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Pour charger le jeu de données <code>igposts.csv</code> dans RStudio, vous pouvez suivre le processus suivant :</p>
+<p>Pour charger le jeu de données <code>igposts.csv</code> dans RStudio, vous pouvez suivre le processus suivant&nbsp;:</p>
 <ol type="1">
-<li><p>Téléchargez le fichier <a href="../data/igposts.csv"><code>igposts.csv</code></a> (clic droit → « Enregistrer le lien sous… »).</p></li>
-<li><p>Stockez le fichier <code>igposts.csv</code> dans le dossier que vous avez défini comme répertoire de travail.</p></li>
-<li><p>Ensuite, vous utilisez le menu intéractif dans RStudio : File -&gt; Import Dataset -&gt; From Text (base)… et choisissez <code>igposts.csv</code>.</p></li>
-<li><p>Une fenêtre avec des paramètres apparaît, que vous pouvez remplir de la manière suivante :</p>
+<li><p>Téléchargez le fichier <a href="../data/igposts.csv"><code>igposts.csv</code></a> (clic droit → « Enregistrer le lien sous… »).</p></li>
+<li><p>Enregistrez le fichier <code>igposts.csv</code> dans le dossier de votre projet RStudio.</p></li>
+<li><p>Ensuite, utilisez le menu de RStudio <strong>File → Import Dataset → From Text (base)…</strong> et choisissez <code>igposts.csv</code>.</p></li>
+<li><p>Une fenêtre avec des paramètres apparaît, que vous pouvez remplir de la manière suivante&nbsp;:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../images/import-igposts.png" class="img-fluid figure-img" alt="Fenêtre Import Dataset de RStudio avec les paramètres d'importation du fichier igposts.csv"></p>
@@ -412,29 +422,29 @@ Nguyen, Laetitia, 19<br>
 </figure>
 </div>
 <ul>
-<li><p>Explications des paramètres :</p>
+<li><p>Explications des paramètres&nbsp;:</p>
 <ul>
-<li><p><strong>Encoding = UTF-8</strong> : Indique à RStudio d’utiliser <a href="https://fr.wikipedia.org/wiki/UTF-8">l’encodage de caractères UTF-8</a> (qui est un standard très répandu), ce qui est important pour lire correctement toutes les lettres (notamment les caractères avec des accents : é, ä, ê, etc.).</p></li>
-<li><p><strong>Heading = YES</strong> : Indique à RStudio que la première ligne du fichier CSV contient les noms des colonnes.</p></li>
-<li><p><strong>Separator = Comma</strong> : Indique à RStudio que les valeurs du tableau sont séparées par des virgules « , » (attention, certains documents francophones utilisent le point-virgule « ; » à la place de la virgule, ce qu’il faudrait tenir en compte, si c’était le cas).</p></li>
-<li><p><strong>Decimal = Period</strong> : Indique à RStudio que le point « . » est utilisé pour les décimales (et non la virgule « , » comme c’est souvent le cas dans les documents en français).</p></li>
+<li><p><strong>Encoding = UTF-8</strong>&nbsp;: Indique à RStudio d’utiliser <a href="https://fr.wikipedia.org/wiki/UTF-8">l’encodage de caractères UTF-8</a> (qui est un standard très répandu), ce qui est important pour lire correctement toutes les lettres (notamment les caractères avec des accents&nbsp;: é, ä, ê, etc.).</p></li>
+<li><p><strong>Heading = YES</strong>&nbsp;: Indique à RStudio que la première ligne du fichier CSV contient les noms des colonnes.</p></li>
+<li><p><strong>Separator = Comma</strong>&nbsp;: Indique à RStudio que les valeurs du tableau sont séparées par des virgules « , » (attention, certains documents francophones utilisent le point-virgule « ; » à la place de la virgule, ce dont il faut alors tenir compte).</p></li>
+<li><p><strong>Decimal = Period</strong>&nbsp;: Indique à RStudio que le point « . » est utilisé pour les décimales (et non la virgule « , » comme c’est souvent le cas dans les documents en français).</p></li>
 <li><p><strong>na.strings = NA</strong>&nbsp;: valeur par défaut. Ce fichier n’a pas de valeurs manquantes&nbsp;; dans d’autres fichiers (p.&nbsp;ex. exports Excel), elles peuvent être codées autrement, p.&nbsp;ex. #N/A.</p></li>
 </ul></li>
 </ul></li>
 <li><p>Finalement, vous pouvez copier et coller le code qui apparaît dans la console dans votre script R pour facilement recharger le fichier CSV ultérieurement.</p></li>
 </ol>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Par exemple, en lisant le fichier directement depuis le</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># site du cours :</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>igposts <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://julesaberlin.github.io/intro-a-R/data/igposts.csv"</span>,</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">encoding =</span> <span class="st">"UTF-8"</span>)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Si tout a bien marché, l'objet igposts devrait apparaître</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># dans votre environnement Nous pouvons afficher la</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># structure de igposts pour une première impression :</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(igposts)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Par exemple, en lisant le fichier directement depuis le</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># site du livre :</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>igposts <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://julesaberlin.github.io/intro-a-R/data/igposts.csv"</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">encoding =</span> <span class="st">"UTF-8"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Si tout a bien marché, l'objet igposts devrait apparaître</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># dans votre environnement Nous pouvons afficher la</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># structure de igposts pour une première impression :</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(igposts)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>'data.frame':   84 obs. of  11 variables:
  $ Account                 : chr  "Leo Messi" "Selena Gomez" "KIARA" "Cristiano Ronaldo" ...
@@ -450,57 +460,55 @@ Nguyen, Laetitia, 19<br>
  $ URL                     : chr  "https://www.instagram.com/p/CpLxnFlNJZn/" "https://www.instagram.com/p/Co_P7YgrrFO/" "https://www.instagram.com/p/CoXmBSLvj7A/" "https://www.instagram.com/p/CodNx8BL1-X/" ...</code></pre>
 </div>
 </div>
+<p>Si le fichier se trouve dans le dossier de votre projet, il suffit d’indiquer son nom&nbsp;: <code>read.csv("igposts.csv", encoding = "UTF-8")</code>. L’argument <code>stringsAsFactors = TRUE</code> (case <strong>Strings as factors</strong> de la fenêtre d’importation) convertirait directement toutes les colonnes de texte en facteurs ; nous le faisons plus loin colonne par colonne, avec <code>as.factor()</code>.</p>
 </section>
 <section id="explorez-votre-jeu-de-données-importé" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="explorez-votre-jeu-de-données-importé"><span class="header-section-number">7.2</span> Explorez votre jeu de données importé</h2>
-<p>Cela nous montre qu’il s’agit d’un data frame avec 84 observations et 11 variables. Chaque ligne (unité statistique) représente une observation associant un post Instagram à un compte qui l’a publié ou co-publié : les 84 lignes correspondent à 82 posts distincts provenant de 33 comptes. Chaque colonne est une variable différente associée à cette observation.</p>
-<p>Notez que les variables sont soit de type textuel (chr = « character »; p. ex. <code>Account</code>= le nom du compte Insta qui a publié le post), soit numérique (int = « integer »; p.&nbsp;ex. <code>Total.Interactions</code> = la somme des <code>Likes</code> et <code>Comments</code> qu’un post a reçu).</p>
+<h2 data-number="7.2" class="anchored" data-anchor-id="explorez-votre-jeu-de-données-importé"><span class="header-section-number">7.2</span> Explorer un jeu de données importé</h2>
+<p>Cela nous montre qu’il s’agit d’un tableau de données avec 84 observations et 11 variables. Chaque ligne (unité statistique) représente une observation associant un post Instagram à un compte qui l’a publié ou co-publié&nbsp;: les 84 lignes correspondent à 82 posts distincts provenant de 33 comptes. Chaque colonne est une variable différente associée à cette observation.</p>
+<p>Notez que les variables sont soit de type caractère (<code>chr</code>, pour <em>character</em> ; p.&nbsp;ex. <code>Account</code>, le nom du compte Instagram qui a publié le post), soit numérique (<code>int</code>, pour <em>integer</em> ; p.&nbsp;ex. <code>Total.Interactions</code>, la somme des <code>Likes</code> et des <code>Comments</code> qu’un post a reçus).</p>
 <p>Vous pouvez aussi cliquer sur l’objet et explorer le tableau manuellement pour le comprendre davantage (comme nous l’avons fait avec <code>mtcars</code>, etc.).</p>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout callout-style-default callout-warning callout-titled" title="Attention">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Mise en garde</span>Attention
+<span class="screen-reader-only">Avertissement</span>Attention
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <ul>
-<li><p>N’enregistrez pas un fichier CSV après l’avoir ouvert dans Excel (ou un autre tableur) : Excel peut modifier les dates, les zéros initiaux, le séparateur ou l’encodage, ce qui entraîne ensuite des erreurs dans R.</p></li>
-<li><p>Vous devriez enregistrer le fichier CSV directement dans votre répertoire de travail sans l’ouvrir, puis l’importer dans RStudio à l’aide du menu interactif.</p></li>
+<li><p>Vous pouvez consulter un fichier CSV dans Excel (ou un autre tableur), mais ne l’enregistrez pas et ne l’exportez pas à nouveau&nbsp;: le tableur peut alors modifier le séparateur, l’encodage, les dates et les zéros initiaux, ce qui entraîne ensuite des erreurs dans R.</p></li>
+<li><p>Vous devriez enregistrer le fichier CSV directement dans votre répertoire de travail, puis l’importer dans RStudio à l’aide du menu interactif.</p></li>
 <li><p>Vous devriez également éviter d’ouvrir le fichier CSV avec des applications ou autres (p.&nbsp;ex. une application mobile), ce qui peut également entraîner des erreurs.</p></li>
 <li><p>Il est préférable de télécharger les fichiers CSV avec des navigateurs standard tels que Chrome ou Safari.</p></li>
 </ul>
 </div>
 </div>
-</div>
-<p>Avant de continuer avec <code>dplyr</code>, regardons encore deux éléments cruciaux pour la manipulation de données avec R :</p>
+<p>Avant de continuer avec <code>dplyr</code>, regardons encore deux éléments cruciaux pour la manipulation de données avec R&nbsp;:</p>
 <ul>
-<li><p>la transformation du type de variable (p.&nbsp;ex. de variables textuelles en facteurs)</p></li>
-<li><p>L’opérateur <code>%&gt;%</code> (angl. « pipe »; trad. française « tuyau »)</p></li>
+<li><p>la transformation du type de variable (p.&nbsp;ex. de variables de type caractère en facteurs) ;</p></li>
+<li><p>le pipe <code>%&gt;%</code>.</p></li>
 </ul>
 </section>
 <section id="la-transformation-du-type-de-variable" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="la-transformation-du-type-de-variable"><span class="header-section-number">7.3</span> La transformation du type de variable</h2>
-<p>Lorsque l’on analyse des jeux de données, on constate parfois que toutes les variables <strong>ne sont pas enregistrées dans un format utile pour l’analyse</strong>. Parfois, par exemple, les valeurs numériques sont enregistrées sous forme de texte. Il est alors utile de les transformer dans un format numérique (par exemple avec la fonction <code>as.numeric()</code>.</p>
-<p>Mais il y a aussi le cas suivant : les variables sous forme de texte ne représentent pas simplement des textes, mais certaines <strong>catégories</strong>. Dans ce cas, il est judicieux de les transformer en une variable catégorielle, c’est-à-dire un facteur, à l’aide de la fonction <code>as.factor()</code>.</p>
-<p>Dans notre exemple de jeu de données <code>igposts</code>, qui contient des métriques sur les posts Instagram, nous pouvons justement constater cela. Certes, certaines variables textuelles, telles que <code>URL</code> (le lien vers le post), sont tout à fait pertinentes. D’autres, en revanche, sont des catégories. La plus évidente est la variable <code>Type</code>, qui indique si un post Instagram est une photo ou un album (les deux catégories présentes dans <code>igposts</code>). Factorisons ci-dessous quelques-unes de ces variables catégorielles à l’aide de code :</p>
+<p>Lorsque l’on analyse des jeux de données, on constate parfois que toutes les variables <strong>ne sont pas enregistrées dans un format utile pour l’analyse</strong>. Parfois, par exemple, les valeurs numériques sont enregistrées sous forme de texte. Il est alors utile de les transformer dans un format numérique (par exemple avec la fonction <code>as.numeric()</code>).</p>
+<p>Mais il y a aussi le cas suivant&nbsp;: les variables sous forme de texte ne représentent pas simplement des textes, mais certaines <strong>catégories</strong>. Dans ce cas, il est judicieux de les transformer en une variable catégorielle, c’est-à-dire un facteur, à l’aide de la fonction <code>as.factor()</code>.</p>
+<p>Dans notre exemple de jeu de données <code>igposts</code>, qui contient des métriques sur les posts Instagram, nous pouvons justement constater cela. Certes, certaines variables de type caractère, telles que <code>URL</code> (le lien vers le post), sont tout à fait pertinentes. D’autres, en revanche, sont des catégories. La plus évidente est la variable <code>Type</code>, qui indique si un post Instagram est une photo ou un album (les deux catégories présentes dans <code>igposts</code>). Factorisons ci-dessous quelques-unes de ces variables catégorielles&nbsp;:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Transformons les colonnes 'Account', 'User.Name' et</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 'Type' en facteurs :</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>igposts<span class="sc">$</span>Account <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(igposts<span class="sc">$</span>Account)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>igposts<span class="sc">$</span>User.Name <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(igposts<span class="sc">$</span>User.Name)</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>igposts<span class="sc">$</span>Type <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(igposts<span class="sc">$</span>Type)</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Vérifier, si ça a marché :</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(igposts)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Transformons les colonnes 'Account', 'User.Name' et</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 'Type' en facteurs :</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>igposts<span class="sc">$</span>Account <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(igposts<span class="sc">$</span>Account)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>igposts<span class="sc">$</span>User.Name <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(igposts<span class="sc">$</span>User.Name)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>igposts<span class="sc">$</span>Type <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(igposts<span class="sc">$</span>Type)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Vérifier, si ça a marché :</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(igposts)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>'data.frame':   84 obs. of  11 variables:
  $ Account                 : Factor w/ 33 levels "Anastasia Karanikolaou",..: 20 26 17 6 6 6 12 30 26 6 ...
@@ -516,29 +524,29 @@ Nguyen, Laetitia, 19<br>
  $ URL                     : chr  "https://www.instagram.com/p/CpLxnFlNJZn/" "https://www.instagram.com/p/Co_P7YgrrFO/" "https://www.instagram.com/p/CoXmBSLvj7A/" "https://www.instagram.com/p/CodNx8BL1-X/" ...</code></pre>
 </div>
 </div>
-<p>Nous allons voir par la suite, pourquoi ces factorisations sont utiles.</p>
+<p>Nous allons voir par la suite pourquoi ces factorisations sont utiles.</p>
 </section>
 <section id="lopérateur" class="level2" data-number="7.4">
 <h2 data-number="7.4" class="anchored" data-anchor-id="lopérateur"><span class="header-section-number">7.4</span> L’opérateur <code>%&gt;%</code></h2>
-<p>La fonction principale du pipe <code>%&gt;%</code> : construire <strong>une séquence de fonctions (« un tuyau »)</strong> qui est plus facile à comprendre et à lire dans le code.</p>
+<p>Le pipe <code>%&gt;%</code> transmet l’objet placé à sa gauche comme <strong>premier argument</strong> de la fonction placée à sa droite&nbsp;: <code>x %&gt;% f(y)</code> équivaut à <code>f(x, y)</code>. On peut ainsi enchaîner plusieurs fonctions dans l’ordre où on les lit, au lieu de les imbriquer.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Par exemple, regardez la fonction suivante : quel est le</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># problème ?</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="fu">sqrt</span>(<span class="fu">mean</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>))))</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Par exemple, regardez la fonction suivante : quel est le</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># problème ?</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="fu">sqrt</span>(<span class="fu">mean</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>))))</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.960987</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Le problème est que cette fonction est imbriquée et, à</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># cause de cela, difficile à lire</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Avec le pipe, nous pouvons reécrire cette fonction comme</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># ça et obtenir le même résultat après exécution du code :</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mean</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sqrt</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">log</span>()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Le problème est que cette fonction est imbriquée et, à</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># cause de cela, difficile à lire</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Avec le pipe, nous pouvons réécrire cette fonction comme</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># ça et obtenir le même résultat après exécution du code :</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mean</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sqrt</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">log</span>()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.960987</code></pre>
 </div>
@@ -553,253 +561,314 @@ Nguyen, Laetitia, 19<br>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Vous pouvez créer le pipe <code>%&gt;%</code> avec les raccourcis clavier suivants :</p>
+<p>Vous pouvez créer le pipe <code>%&gt;%</code> avec les raccourcis clavier suivants&nbsp;:</p>
 <ul>
-<li><p>Sur <strong>Windows</strong> : <kbd>Control</kbd> + <kbd>Shift</kbd> + <kbd>M</kbd></p></li>
-<li><p>Sur <strong>MacOS</strong> : <kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>M</kbd></p></li>
+<li><p>Sur <strong>Windows</strong>&nbsp;: <kbd>Ctrl</kbd> + <kbd>Maj</kbd> + <kbd>M</kbd></p></li>
+<li><p>Sur <strong>macOS</strong>&nbsp;: <kbd>Cmd</kbd> + <kbd>Maj</kbd> + <kbd>M</kbd></p></li>
 </ul>
-<p>De plus, vous pouvez aussi utiliser le pipe natif de R, <code>|&gt;</code> (depuis R 4.1). Il fonctionne sans paquet et s’utilise de la même façon que <code>%&gt;%</code> dans les cas simples.</p>
+<p>De plus, vous pouvez aussi utiliser le pipe natif de R, <code>|&gt;</code> (depuis R 4.1). Il fonctionne sans package et s’utilise de la même façon que <code>%&gt;%</code> dans les cas simples.</p>
 </div>
 </div>
-<p>Vous pouvez déjà constater que travailler avec des jeux de données du monde réel, tels que le jeu de données Instagram <code>igposts</code>, nécessite un travail préparatoire substantiel. Mais rassurez-vous et ne vous découragez pas, plus vous pratiquez, plus cela devient facile et, bientôt, vous serez en mesure de charger facilement des ensembles de données dans RStudio ! Par ailleurs : il est normal de rencontrer des messages d’erreur. C’est une partie essentielle du processus d’apprentissage que de les surmonter en bricolant et en jouant avec vos données et votre code R jusqu’à ce que vous puissiez le faire fonctionner.</p>
+<p>Vous pouvez déjà constater que travailler avec des jeux de données du monde réel, tels que le jeu de données Instagram <code>igposts</code>, nécessite un travail préparatoire substantiel. Mais rassurez-vous et ne vous découragez pas, plus vous pratiquez, plus cela devient facile et, bientôt, vous serez en mesure de charger facilement des jeux de données dans RStudio. Par ailleurs, il est normal de rencontrer des messages d’erreur. C’est une partie essentielle du processus d’apprentissage que de les surmonter en bricolant et en jouant avec vos données et votre code R jusqu’à ce que vous puissiez le faire fonctionner.</p>
 <p>Après avoir chargé notre fichier CSV dans RStudio, appliqué des transformations et notre connaissance de l’opérateur pipe, nous pouvons maintenant manipuler les données avec le package <code>dplyr</code>.</p>
 </section>
 <section id="manipuler-les-données-avec-dplyr" class="level2" data-number="7.5">
 <h2 data-number="7.5" class="anchored" data-anchor-id="manipuler-les-données-avec-dplyr"><span class="header-section-number">7.5</span> Manipuler les données avec <code>dplyr</code></h2>
-<p>Le paquet <code>dplyr</code> est basé sur une logique de <em>verbes</em> pour les différents types de manipulation de données, notamment :</p>
+<p>Les verbes de <code>dplyr</code> renvoient souvent un <strong>tibble</strong>&nbsp;: une version moderne du tableau de données, qui s’affiche de façon plus compacte dans la console (première ligne <code># A tibble: …</code>, type de chaque colonne sous son nom). On l’utilise exactement comme un tableau de données.</p>
+<p>Le package <code>dplyr</code> est basé sur une logique de <em>verbes</em> pour les différents types de manipulation de données, notamment&nbsp;:</p>
 <ul>
-<li><p>Les verbes pour manipuler les données au niveau de <strong>colonnes</strong> :</p>
+<li><p>Les verbes pour manipuler les données au niveau de <strong>colonnes</strong>&nbsp;:</p>
 <ul>
-<li><p><code>select()</code> : pour extraire une ou plusieurs colonnes d’un data frame.</p></li>
-<li><p><code>mutate()</code> : pour créer une ou plusieurs nouvelles colonnes dans un data frame.</p></li>
+<li><p><code>select()</code>&nbsp;: pour extraire une ou plusieurs colonnes d’un tableau de données.</p></li>
+<li><p><code>mutate()</code>&nbsp;: pour créer une ou plusieurs nouvelles colonnes dans un tableau de données.</p></li>
 </ul></li>
-<li><p>Les verbes pour manipuler les données au niveau de <strong>lignes</strong> :</p>
+<li><p>Les verbes pour manipuler les données au niveau de <strong>lignes</strong>&nbsp;:</p>
 <ul>
-<li><p><code>filter()</code> : pour filtrer les lignes d’un data frame selon un ou plusieurs critères.</p></li>
-<li><p><code>arrange()</code> : pour trier les lignes d’un data frame selon un ou plusieurs critères.</p></li>
+<li><p><code>filter()</code>&nbsp;: pour filtrer les lignes d’un tableau de données selon un ou plusieurs critères.</p></li>
+<li><p><code>arrange()</code>&nbsp;: pour trier les lignes d’un tableau de données selon un ou plusieurs critères.</p></li>
 </ul></li>
-<li><p>Les verbes pour <strong>résumer, compter et regrouper</strong> les données :</p>
+<li><p>Les verbes pour <strong>résumer, compter et regrouper</strong> les données&nbsp;:</p>
 <ul>
-<li><p><code>summarize()</code> : pour réduire une ou plusieurs colonnes d’un data frame en une seule ligne, notamment pour résumer des données.</p></li>
-<li><p><code>count()</code> : pour compter le nombre d’observations d’une ou plusieurs catégories dans un data frame.</p></li>
-<li><p><code>group_by()</code> : pour regrouper des données d’un data frame selon une ou plusieurs catégories.</p></li>
+<li><p><code>summarize()</code>&nbsp;: pour réduire une ou plusieurs colonnes d’un tableau de données en une seule ligne, notamment pour résumer des données.</p></li>
+<li><p><code>count()</code>&nbsp;: pour compter le nombre d’observations d’une ou plusieurs catégories dans un tableau de données.</p></li>
+<li><p><code>group_by()</code>&nbsp;: pour regrouper des données d’un tableau de données selon une ou plusieurs catégories.</p></li>
 </ul></li>
 </ul>
-<p>Essayons maintenant d’appliquer tout cela avec du code et les données <code>igposts</code> pour comprendre ce que ça veut dire en pratique !</p>
+<p>Essayons maintenant d’appliquer tout cela avec du code et les données <code>igposts</code> pour voir ce que cela donne en pratique.</p>
 </section>
 <section id="manipulation-de-colonnes-selectet-mutate" class="level2" data-number="7.6">
-<h2 data-number="7.6" class="anchored" data-anchor-id="manipulation-de-colonnes-selectet-mutate"><span class="header-section-number">7.6</span> Manipulation de colonnes : <code>select()</code> et <code>mutate()</code></h2>
+<h2 data-number="7.6" class="anchored" data-anchor-id="manipulation-de-colonnes-selectet-mutate"><span class="header-section-number">7.6</span> Manipulation de colonnes&nbsp;: <code>select()</code> et <code>mutate()</code></h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># select() : fonction pour extraire une ou plusieurs</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># colonnes d'un data frame</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Par exemple, nous pouvons extraire les quatres colonnes</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># suivantes d'igposts (voir comment le pipe est utilisé) :</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>igposts <span class="sc">%&gt;%</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(Account, Type, Followers.at.Observation, Total.Interactions)</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Avec les deux points dans la fonction select(), vous</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co"># pouvez sélectionner plusieurs colonnes successives. Notez</span></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co"># que cette fois-ci, nous affichons que les six premières</span></span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co"># lignes avec la fonction head() :</span></span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>igposts <span class="sc">%&gt;%</span></span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(Account<span class="sc">:</span>Reposts) <span class="sc">%&gt;%</span></span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>()</span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Vous pouvez également créer un nouvel objet, df1, qui est</span></span>
-<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="co"># essentiellement un data frame plus petit que igposts avec</span></span>
-<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a><span class="co"># un sous-ensemble de variables (un tel data frame plus</span></span>
-<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a><span class="co"># petit peut être plus utile à analyser et à afficher) :</span></span>
-<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>df1 <span class="ot">&lt;-</span> igposts <span class="sc">%&gt;%</span></span>
-<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(Account, Type, Followers.at.Observation, Total.Interactions,</span>
-<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>        URL)</span>
-<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a><span class="do">###############################################################################</span></span>
-<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a><span class="co"># mutate() : fonction pour créer une ou plusieurs nouvelles</span></span>
-<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a><span class="co"># colonnes dans un data frame</span></span>
-<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Par exemple, nous pouvons créer une nouvelle colonne qui</span></span>
-<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a><span class="co"># compte le nombre d'interactions par follower :</span></span>
-<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
-<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">TI_par_Follower =</span> Total.Interactions<span class="sc">/</span>Followers.at.Observation)</span>
-<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a><span class="co"># Attention, sans opérateur &lt;-, nous ne changeons pas</span></span>
-<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a><span class="co"># l'objet df1 !  Pour ce faire et sauvegarder notre</span></span>
-<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a><span class="co"># nouvelle colonne, nous pouvons écraser df1 avec une</span></span>
-<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a><span class="co"># nouvelle vérsion de df1 :</span></span>
-<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a>df1 <span class="ot">&lt;-</span> df1 <span class="sc">%&gt;%</span></span>
-<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">TI_par_Follower =</span> Total.Interactions<span class="sc">/</span>Followers.at.Observation)</span>
-<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(df1)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># select() : fonction pour extraire une ou plusieurs</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># colonnes d'un tableau de données</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Par exemple, nous pouvons extraire les quatre colonnes</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># suivantes d'igposts (voir comment le pipe est utilisé) :</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>igposts <span class="sc">%&gt;%</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(Account, Type, Followers.at.Observation, Total.Interactions)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Avec les deux points dans la fonction select(), vous</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co"># pouvez sélectionner plusieurs colonnes successives. Notez</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="co"># que cette fois-ci, nous n'affichons que les six premières</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="co"># lignes avec la fonction head() :</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>igposts <span class="sc">%&gt;%</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(Account<span class="sc">:</span>Reposts) <span class="sc">%&gt;%</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>()</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Vous pouvez également créer un nouvel objet, df1, qui est</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a><span class="co"># essentiellement un tableau de données plus petit que</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a><span class="co"># igposts avec un sous-ensemble de variables (un tel data</span></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a><span class="co"># frame plus petit peut être plus utile à analyser et à</span></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a><span class="co"># afficher) :</span></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>df1 <span class="ot">&lt;-</span> igposts <span class="sc">%&gt;%</span></span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(Account, Type, Followers.at.Observation, Total.Interactions,</span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>        URL)</span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a><span class="do">###############################################################################</span></span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a><span class="co"># mutate() : fonction pour créer une ou plusieurs nouvelles</span></span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a><span class="co"># colonnes dans un tableau de données</span></span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Par exemple, nous pouvons créer une nouvelle colonne qui</span></span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a><span class="co"># compte le nombre d'interactions par follower :</span></span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">TI_par_Follower =</span> Total.Interactions<span class="sc">/</span>Followers.at.Observation)</span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Attention : sans l'opérateur &lt;-, l'objet df1 n'est pas</span></span>
+<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a><span class="co"># modifié.  Pour ce faire et sauvegarder notre nouvelle</span></span>
+<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a><span class="co"># colonne, nous pouvons écraser df1 avec une nouvelle</span></span>
+<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a><span class="co"># version de df1 :</span></span>
+<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a>df1 <span class="ot">&lt;-</span> df1 <span class="sc">%&gt;%</span></span>
+<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">TI_par_Follower =</span> Total.Interactions<span class="sc">/</span>Followers.at.Observation)</span>
+<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(df1)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="manipulation-de-lignes-avec-filter-et-arrange" class="level2" data-number="7.7">
 <h2 data-number="7.7" class="anchored" data-anchor-id="manipulation-de-lignes-avec-filter-et-arrange"><span class="header-section-number">7.7</span> Manipulation de lignes avec <code>filter()</code> et <code>arrange()</code></h2>
+<p>Pour filtrer des lignes, on écrit des conditions avec des <strong>opérateurs de comparaison</strong> ; chaque condition vaut <code>TRUE</code> ou <code>FALSE</code> pour chaque ligne&nbsp;:</p>
+<table class="caption-top table">
+<caption>Opérateurs de comparaison</caption>
+<colgroup>
+<col style="width: 55%">
+<col style="width: 44%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Opérateur</th>
+<th style="text-align: left;">Signification</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>==</code></td>
+<td style="text-align: left;">égal à</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>!=</code></td>
+<td style="text-align: left;">différent de</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>&gt;</code>, <code>&gt;=</code></td>
+<td style="text-align: left;">strictement supérieur, supérieur ou égal à</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>&lt;</code>, <code>&lt;=</code></td>
+<td style="text-align: left;">strictement inférieur, inférieur ou égal à</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>%in%</code></td>
+<td style="text-align: left;">appartient à (p.&nbsp;ex. <code>Account %in% c("Leo Messi", "Selena Gomez")</code>)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>!</code></td>
+<td style="text-align: left;">négation (p.&nbsp;ex. <code>!is.na(x)</code>&nbsp;: x n’est pas manquant)</td>
+</tr>
+</tbody>
+</table>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># filter() : fonction pour filtrer les lignes selon un ou</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># plusieurs critères</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Pour filtrer pour une valeur spécifique d'une variable,</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># p.ex. les posts de Cristiano Ronaldo :</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(Account <span class="sc">==</span> <span class="st">"Cristiano Ronaldo"</span>)</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Pour plusieurs valeurs spécifique de la même variable, p.</span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="co"># ex. les posts de Ronaldo et Messi :</span></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(Account <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Cristiano Ronaldo"</span>, <span class="st">"Leo Messi"</span>))</span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Pour plusieurs valeurs spécifiques de variables</span></span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="co"># différentes, p. ex. les posts de type Photo de Ronaldo :</span></span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(Account <span class="sc">==</span> <span class="st">"Cristiano Ronaldo"</span>, Type <span class="sc">==</span> <span class="st">"Photo"</span>)</span>
-<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Filtrer à partir de valeurs numériques, p. ex. les posts</span></span>
-<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="co"># avec au moins 10 millions d'interactions :</span></span>
-<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>)  <span class="co"># Cette commande désactive la notation scientifique des nombres</span></span>
-<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
-<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(Total.Interactions <span class="sc">&gt;=</span> <span class="fl">1e+07</span>)</span>
-<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Filtrer pour les posts de Selena Gomez avec au moins 10</span></span>
-<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a><span class="co"># millions d'interactions :</span></span>
-<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
-<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(Account <span class="sc">==</span> <span class="st">"Selena Gomez"</span>, Total.Interactions <span class="sc">&gt;=</span> <span class="fl">1e+07</span>)</span>
-<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a><span class="do">###############################################################################</span></span>
-<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a><span class="co"># arrange() : fonction pour trier les lignes selon un ou</span></span>
-<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a><span class="co"># plusieurs critères</span></span>
-<span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Trier des valeurs/facteurs textuelles par ordre</span></span>
-<span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a><span class="co"># alphabétique :</span></span>
-<span id="cb13-44"><a href="#cb13-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-45"><a href="#cb13-45" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
-<span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(Account) <span class="sc">%&gt;%</span></span>
-<span id="cb13-47"><a href="#cb13-47" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="dv">10</span>)</span>
-<span id="cb13-48"><a href="#cb13-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-49"><a href="#cb13-49" aria-hidden="true" tabindex="-1"></a><span class="co"># Trier par le nombre d'interactions (ordre croissant)</span></span>
-<span id="cb13-50"><a href="#cb13-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-51"><a href="#cb13-51" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
-<span id="cb13-52"><a href="#cb13-52" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(Total.Interactions) <span class="sc">%&gt;%</span></span>
-<span id="cb13-53"><a href="#cb13-53" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="dv">10</span>)</span>
-<span id="cb13-54"><a href="#cb13-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-55"><a href="#cb13-55" aria-hidden="true" tabindex="-1"></a><span class="co"># Trier par le nombre d'interactions par follower (ordre</span></span>
-<span id="cb13-56"><a href="#cb13-56" aria-hidden="true" tabindex="-1"></a><span class="co"># décroissant)</span></span>
-<span id="cb13-57"><a href="#cb13-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-58"><a href="#cb13-58" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
-<span id="cb13-59"><a href="#cb13-59" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(TI_par_Follower)) <span class="sc">%&gt;%</span></span>
-<span id="cb13-60"><a href="#cb13-60" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="dv">10</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># filter() : fonction pour filtrer les lignes selon un ou</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># plusieurs critères</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Pour filtrer pour une valeur spécifique d'une variable,</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># p. ex. les posts de Cristiano Ronaldo :</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(Account <span class="sc">==</span> <span class="st">"Cristiano Ronaldo"</span>)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Pour plusieurs valeurs spécifique de la même variable, p.</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="co"># ex. les posts de Ronaldo et Messi :</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(Account <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Cristiano Ronaldo"</span>, <span class="st">"Leo Messi"</span>))</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Pour plusieurs valeurs spécifiques de variables</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="co"># différentes, p. ex. les posts de type Photo de Ronaldo :</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(Account <span class="sc">==</span> <span class="st">"Cristiano Ronaldo"</span>, Type <span class="sc">==</span> <span class="st">"Photo"</span>)</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Filtrer à partir de valeurs numériques, p. ex. les posts</span></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a><span class="co"># avec au moins 10 millions d'interactions :</span></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>)  <span class="co"># Cette commande désactive la notation scientifique des nombres</span></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(Total.Interactions <span class="sc">&gt;=</span> <span class="fl">1e+07</span>)</span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Filtrer pour les posts de Selena Gomez avec au moins 10</span></span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a><span class="co"># millions d'interactions :</span></span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(Account <span class="sc">==</span> <span class="st">"Selena Gomez"</span>, Total.Interactions <span class="sc">&gt;=</span> <span class="fl">1e+07</span>)</span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a><span class="do">###############################################################################</span></span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a><span class="co"># arrange() : fonction pour trier les lignes selon un ou</span></span>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a><span class="co"># plusieurs critères</span></span>
+<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Trier par ordre alphabétique (texte ou facteur) :</span></span>
+<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
+<span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(Account) <span class="sc">%&gt;%</span></span>
+<span id="cb11-46"><a href="#cb11-46" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="dv">10</span>)</span>
+<span id="cb11-47"><a href="#cb11-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-48"><a href="#cb11-48" aria-hidden="true" tabindex="-1"></a><span class="co"># Trier par le nombre d'interactions (ordre croissant)</span></span>
+<span id="cb11-49"><a href="#cb11-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-50"><a href="#cb11-50" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
+<span id="cb11-51"><a href="#cb11-51" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(Total.Interactions) <span class="sc">%&gt;%</span></span>
+<span id="cb11-52"><a href="#cb11-52" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="dv">10</span>)</span>
+<span id="cb11-53"><a href="#cb11-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-54"><a href="#cb11-54" aria-hidden="true" tabindex="-1"></a><span class="co"># Trier par le nombre d'interactions par follower (ordre</span></span>
+<span id="cb11-55"><a href="#cb11-55" aria-hidden="true" tabindex="-1"></a><span class="co"># décroissant)</span></span>
+<span id="cb11-56"><a href="#cb11-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-57"><a href="#cb11-57" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
+<span id="cb11-58"><a href="#cb11-58" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(TI_par_Follower)) <span class="sc">%&gt;%</span></span>
+<span id="cb11-59"><a href="#cb11-59" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="dv">10</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="résumer-compter-et-regrouper-avec-summarize-count-et-group_by" class="level2" data-number="7.8">
 <h2 data-number="7.8" class="anchored" data-anchor-id="résumer-compter-et-regrouper-avec-summarize-count-et-group_by"><span class="header-section-number">7.8</span> Résumer, compter et regrouper avec <code>summarize()</code>, <code>count()</code> et <code>group_by()</code></h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># summarize() : fonction qui réduit une ou plusieurs</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># colonnes en une seule ligne, notamment pour résumer des</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># données</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Nous pouvons, par exemple, résumer la somme totale de</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Total.Interactions dans notre ensemble de données. Ce</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co"># nombre est assez impressionnant et constitue une</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co"># caractéristique importante de notre ensemble de données.</span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">sum_TI =</span> <span class="fu">sum</span>(Total.Interactions))</span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Nous pouvons aussi calculer les moyennes des interactions</span></span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="co"># et de followers de tout les comptes qui ont publié les</span></span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="co"># posts :</span></span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
-<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">mean_TI =</span> <span class="fu">mean</span>(Total.Interactions), <span class="at">mean_Followers =</span> <span class="fu">mean</span>(Followers.at.Observation))</span>
-<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a><span class="do">###############################################################################</span></span>
-<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a><span class="co"># count() : fonction qui compte le nombre d'observations</span></span>
-<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a><span class="co"># d'une ou plusieurs catégories</span></span>
-<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Compter l'occurence des types de posts Instagram (Photo</span></span>
-<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a><span class="co"># et Album, dans ce cas) dans notre jeu de données :</span></span>
-<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
-<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">count</span>(Type)</span>
-<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Compter l'occurence des différents comptes dans notre jeu</span></span>
-<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a><span class="co"># de données :</span></span>
-<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
-<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a>    <span class="fu">count</span>(Account)</span>
-<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Compter l'occurence des différents comptes dans notre jeu</span></span>
-<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a><span class="co"># de données en les triant par cette occurence de manière</span></span>
-<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a><span class="co"># décroissante (avec le paramètre arrange(-n)) :</span></span>
-<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
-<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a>    <span class="fu">count</span>(Account) <span class="sc">%&gt;%</span></span>
-<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(<span class="sc">-</span>n) <span class="sc">%&gt;%</span></span>
-<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="dv">10</span>)</span>
-<span id="cb14-47"><a href="#cb14-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-48"><a href="#cb14-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-49"><a href="#cb14-49" aria-hidden="true" tabindex="-1"></a><span class="do">###############################################################################</span></span>
-<span id="cb14-50"><a href="#cb14-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-51"><a href="#cb14-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-52"><a href="#cb14-52" aria-hidden="true" tabindex="-1"></a><span class="co"># group_by() : fonction qui regroupe des données selon une</span></span>
-<span id="cb14-53"><a href="#cb14-53" aria-hidden="true" tabindex="-1"></a><span class="co"># ou plusieurs catégories</span></span>
-<span id="cb14-54"><a href="#cb14-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-55"><a href="#cb14-55" aria-hidden="true" tabindex="-1"></a><span class="co"># Regroupement par type de post et comparaison du nombre</span></span>
-<span id="cb14-56"><a href="#cb14-56" aria-hidden="true" tabindex="-1"></a><span class="co"># moyen d'interactions par type de post :</span></span>
-<span id="cb14-57"><a href="#cb14-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-58"><a href="#cb14-58" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
-<span id="cb14-59"><a href="#cb14-59" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Type) <span class="sc">%&gt;%</span></span>
-<span id="cb14-60"><a href="#cb14-60" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">mean_TI =</span> <span class="fu">mean</span>(Total.Interactions))</span>
-<span id="cb14-61"><a href="#cb14-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-62"><a href="#cb14-62" aria-hidden="true" tabindex="-1"></a><span class="co"># En utilisant le paramètre n=n() dans la fonction</span></span>
-<span id="cb14-63"><a href="#cb14-63" aria-hidden="true" tabindex="-1"></a><span class="co"># summarize(), nous pouvons également compter le nombre</span></span>
-<span id="cb14-64"><a href="#cb14-64" aria-hidden="true" tabindex="-1"></a><span class="co"># d'observations dans chaque catégorie :</span></span>
-<span id="cb14-65"><a href="#cb14-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-66"><a href="#cb14-66" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
-<span id="cb14-67"><a href="#cb14-67" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Type) <span class="sc">%&gt;%</span></span>
-<span id="cb14-68"><a href="#cb14-68" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>(), <span class="at">mean_TI =</span> <span class="fu">mean</span>(Total.Interactions))</span>
-<span id="cb14-69"><a href="#cb14-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-70"><a href="#cb14-70" aria-hidden="true" tabindex="-1"></a><span class="co"># Utilisons plusieurs verbes dplyr pour trouver les 10</span></span>
-<span id="cb14-71"><a href="#cb14-71" aria-hidden="true" tabindex="-1"></a><span class="co"># comptes qui apparaissent le plus fréquemment dans nos</span></span>
-<span id="cb14-72"><a href="#cb14-72" aria-hidden="true" tabindex="-1"></a><span class="co"># ensembles de données de posts Instagram. Nous résumons</span></span>
-<span id="cb14-73"><a href="#cb14-73" aria-hidden="true" tabindex="-1"></a><span class="co"># également leur nombre moyen de followers et</span></span>
-<span id="cb14-74"><a href="#cb14-74" aria-hidden="true" tabindex="-1"></a><span class="co"># d'interactions.</span></span>
-<span id="cb14-75"><a href="#cb14-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-76"><a href="#cb14-76" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
-<span id="cb14-77"><a href="#cb14-77" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Account) <span class="sc">%&gt;%</span></span>
-<span id="cb14-78"><a href="#cb14-78" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>(), <span class="at">mean_Followers =</span> <span class="fu">mean</span>(Followers.at.Observation),</span>
-<span id="cb14-79"><a href="#cb14-79" aria-hidden="true" tabindex="-1"></a>        <span class="at">mean_TI =</span> <span class="fu">mean</span>(Total.Interactions)) <span class="sc">%&gt;%</span></span>
-<span id="cb14-80"><a href="#cb14-80" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(n)) <span class="sc">%&gt;%</span></span>
-<span id="cb14-81"><a href="#cb14-81" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="dv">10</span>)</span>
-<span id="cb14-82"><a href="#cb14-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-83"><a href="#cb14-83" aria-hidden="true" tabindex="-1"></a><span class="co"># Utilisons plusieurs verbes dplyr pour comparer les Likes</span></span>
-<span id="cb14-84"><a href="#cb14-84" aria-hidden="true" tabindex="-1"></a><span class="co"># et Comments des posts de Ronaldo et Messi :</span></span>
-<span id="cb14-85"><a href="#cb14-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-86"><a href="#cb14-86" aria-hidden="true" tabindex="-1"></a>igposts <span class="sc">%&gt;%</span></span>
-<span id="cb14-87"><a href="#cb14-87" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Account) <span class="sc">%&gt;%</span></span>
-<span id="cb14-88"><a href="#cb14-88" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(Account <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Cristiano Ronaldo"</span>, <span class="st">"Leo Messi"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb14-89"><a href="#cb14-89" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>(), <span class="at">mean_Followers =</span> <span class="fu">mean</span>(Followers.at.Observation),</span>
-<span id="cb14-90"><a href="#cb14-90" aria-hidden="true" tabindex="-1"></a>        <span class="at">mean_Likes =</span> <span class="fu">mean</span>(Likes), <span class="at">mean_Comments =</span> <span class="fu">mean</span>(Comments))</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># summarize() : fonction qui réduit une ou plusieurs</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># colonnes en une seule ligne, notamment pour résumer des</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># données</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Nous pouvons, par exemple, résumer la somme totale de</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Total.Interactions dans notre jeu de données. Ce nombre</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># est assez impressionnant et constitue une caractéristique</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co"># importante de notre ensemble de données.</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">sum_TI =</span> <span class="fu">sum</span>(Total.Interactions))</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Nous pouvons aussi calculer les moyennes des interactions</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="co"># et de followers de tous les comptes qui ont publié les</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="co"># posts :</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">mean_TI =</span> <span class="fu">mean</span>(Total.Interactions), <span class="at">mean_Followers =</span> <span class="fu">mean</span>(Followers.at.Observation))</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a><span class="do">###############################################################################</span></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a><span class="co"># count() : fonction qui compte le nombre d'observations</span></span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a><span class="co"># d'une ou plusieurs catégories</span></span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Compter l'occurrence des types de posts Instagram (Photo</span></span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a><span class="co"># et Album, dans ce cas) dans notre jeu de données :</span></span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">count</span>(Type)</span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Compter l'occurrence des différents comptes dans notre</span></span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a><span class="co"># jeu de données :</span></span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a>    <span class="fu">count</span>(Account)</span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Compter l'occurrence des différents comptes dans notre</span></span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a><span class="co"># jeu de données en les triant par cette occurrence de</span></span>
+<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a><span class="co"># manière décroissante (avec arrange(-n)) :</span></span>
+<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
+<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a>    <span class="fu">count</span>(Account) <span class="sc">%&gt;%</span></span>
+<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(<span class="sc">-</span>n) <span class="sc">%&gt;%</span></span>
+<span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="dv">10</span>)</span>
+<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a><span class="do">###############################################################################</span></span>
+<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a><span class="co"># group_by() : fonction qui regroupe des données selon une</span></span>
+<span id="cb12-53"><a href="#cb12-53" aria-hidden="true" tabindex="-1"></a><span class="co"># ou plusieurs catégories</span></span>
+<span id="cb12-54"><a href="#cb12-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-55"><a href="#cb12-55" aria-hidden="true" tabindex="-1"></a><span class="co"># Regroupement par type de post et comparaison du nombre</span></span>
+<span id="cb12-56"><a href="#cb12-56" aria-hidden="true" tabindex="-1"></a><span class="co"># moyen d'interactions par type de post :</span></span>
+<span id="cb12-57"><a href="#cb12-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-58"><a href="#cb12-58" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
+<span id="cb12-59"><a href="#cb12-59" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Type) <span class="sc">%&gt;%</span></span>
+<span id="cb12-60"><a href="#cb12-60" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">mean_TI =</span> <span class="fu">mean</span>(Total.Interactions))</span>
+<span id="cb12-61"><a href="#cb12-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-62"><a href="#cb12-62" aria-hidden="true" tabindex="-1"></a><span class="co"># Avec n = n() dans la fonction summarize(), nous pouvons</span></span>
+<span id="cb12-63"><a href="#cb12-63" aria-hidden="true" tabindex="-1"></a><span class="co"># également compter le nombre d'observations dans chaque</span></span>
+<span id="cb12-64"><a href="#cb12-64" aria-hidden="true" tabindex="-1"></a><span class="co"># catégorie :</span></span>
+<span id="cb12-65"><a href="#cb12-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-66"><a href="#cb12-66" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
+<span id="cb12-67"><a href="#cb12-67" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Type) <span class="sc">%&gt;%</span></span>
+<span id="cb12-68"><a href="#cb12-68" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>(), <span class="at">mean_TI =</span> <span class="fu">mean</span>(Total.Interactions))</span>
+<span id="cb12-69"><a href="#cb12-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-70"><a href="#cb12-70" aria-hidden="true" tabindex="-1"></a><span class="co"># Utilisons plusieurs verbes dplyr pour trouver les 10</span></span>
+<span id="cb12-71"><a href="#cb12-71" aria-hidden="true" tabindex="-1"></a><span class="co"># comptes qui apparaissent le plus fréquemment dans notre</span></span>
+<span id="cb12-72"><a href="#cb12-72" aria-hidden="true" tabindex="-1"></a><span class="co"># jeu de données de posts Instagram. Nous résumons</span></span>
+<span id="cb12-73"><a href="#cb12-73" aria-hidden="true" tabindex="-1"></a><span class="co"># également leur nombre moyen de followers et</span></span>
+<span id="cb12-74"><a href="#cb12-74" aria-hidden="true" tabindex="-1"></a><span class="co"># d'interactions.</span></span>
+<span id="cb12-75"><a href="#cb12-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-76"><a href="#cb12-76" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
+<span id="cb12-77"><a href="#cb12-77" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Account) <span class="sc">%&gt;%</span></span>
+<span id="cb12-78"><a href="#cb12-78" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>(), <span class="at">mean_Followers =</span> <span class="fu">mean</span>(Followers.at.Observation),</span>
+<span id="cb12-79"><a href="#cb12-79" aria-hidden="true" tabindex="-1"></a>        <span class="at">mean_TI =</span> <span class="fu">mean</span>(Total.Interactions)) <span class="sc">%&gt;%</span></span>
+<span id="cb12-80"><a href="#cb12-80" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(n)) <span class="sc">%&gt;%</span></span>
+<span id="cb12-81"><a href="#cb12-81" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="dv">10</span>)</span>
+<span id="cb12-82"><a href="#cb12-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-83"><a href="#cb12-83" aria-hidden="true" tabindex="-1"></a><span class="co"># Utilisons plusieurs verbes dplyr pour comparer les Likes</span></span>
+<span id="cb12-84"><a href="#cb12-84" aria-hidden="true" tabindex="-1"></a><span class="co"># et Comments des posts de Ronaldo et Messi :</span></span>
+<span id="cb12-85"><a href="#cb12-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-86"><a href="#cb12-86" aria-hidden="true" tabindex="-1"></a>igposts <span class="sc">%&gt;%</span></span>
+<span id="cb12-87"><a href="#cb12-87" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Account) <span class="sc">%&gt;%</span></span>
+<span id="cb12-88"><a href="#cb12-88" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(Account <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Cristiano Ronaldo"</span>, <span class="st">"Leo Messi"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb12-89"><a href="#cb12-89" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>(), <span class="at">mean_Followers =</span> <span class="fu">mean</span>(Followers.at.Observation),</span>
+<span id="cb12-90"><a href="#cb12-90" aria-hidden="true" tabindex="-1"></a>        <span class="at">mean_Likes =</span> <span class="fu">mean</span>(Likes), <span class="at">mean_Comments =</span> <span class="fu">mean</span>(Comments))</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<div class="callout callout-style-default callout-important callout-titled" title="En bref">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>En bref
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><code>read.csv()</code> importe un fichier CSV ; vérifiez toujours le résultat avec <code>str()</code>.</li>
+<li>Une variable qui représente des catégories se convertit en facteur avec <code>as.factor()</code>.</li>
+<li>Le pipe transmet le résultat de gauche comme premier argument de la fonction de droite&nbsp;: <code>x %&gt;% f()</code> équivaut à <code>f(x)</code>.</li>
+<li><code>select()</code> et <code>mutate()</code> agissent sur les colonnes, <code>filter()</code> et <code>arrange()</code> sur les lignes ; <code>summarize()</code>, <code>count()</code> et <code>group_by()</code> résument les données, au besoin par groupe.</li>
+<li>Sans <code>&lt;-</code>, un verbe de <code>dplyr</code> affiche un résultat mais ne modifie pas le tableau.</li>
+</ul>
+</div>
+</div>
+<p>Le chapitre 8 vous propose une série d’exercices pour pratiquer ces verbes sur <code>mtcars</code>, <code>diamonds</code>, <code>iris</code> et <code>igposts</code>.</p>
 </section>
 <section id="devoir-pour-session-8-et-infos-questionnaire" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="devoir-pour-session-8-et-infos-questionnaire">À faire avant de continuer</h2>
@@ -808,42 +877,43 @@ Nguyen, Laetitia, 19<br>
 <li>Si les exercices vous posent problème, refaites le code des chapitres précédents et assurez-vous de comprendre chaque étape.</li>
 </ul>
 </section>
-<section id="exercices" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="exercices">Exercices</h2>
-<p>Choisissez <em>Vrai</em> ou <em>Faux</em>, cochez une réponse ou tapez un nombre : la couleur indique tout de suite si votre réponse est correcte. Cliquez sur <strong>Explication</strong> pour voir la correction.</p>
+<section id="testez-vous" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="testez-vous">Testez-vous</h2>
+<p><span id="exercices"></span></p>
+<p>Choisissez <em>Vrai</em> ou <em>Faux</em>, cochez une réponse ou tapez un nombre&nbsp;: la couleur indique tout de suite si votre réponse est correcte. Cliquez sur <strong>Explication</strong> pour voir la correction.</p>
 <section id="q1" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q1">Question 7.1</h3>
 <p>Quel compte (<code>User.Name</code>) a publié le post de <code>igposts.csv</code> ayant reçu le plus de <code>Total.Interactions</code>&nbsp;?</p>
-<p>Réponse : <input class="webex-solveme nospaces ignorecase" size="9" data-answer="[&quot;leomessi&quot;,&quot;Leo Messi&quot;]"></p>
+<p>Réponse&nbsp;: <input class="webex-solveme nospaces ignorecase" size="9" data-answer="[&quot;leomessi&quot;,&quot;Leo Messi&quot;]"></p>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<p>Triez <code>igposts</code> par <code>Total.Interactions</code> décroissant&nbsp;: le premier post est celui de leomessi (22 626 965 interactions). Ouvrez son URL pour voir de quoi il s’agit&nbsp;: <a href="https://www.instagram.com/p/CpLxnFlNJZn/" class="uri">https://www.instagram.com/p/CpLxnFlNJZn/</a></p>
+<p>Triez <code>igposts</code> par <code>Total.Interactions</code> décroissant&nbsp;: le premier post est celui de leomessi (22&nbsp;626&nbsp;965 interactions). Ouvrez son URL pour voir de quoi il s’agit&nbsp;: <a href="https://www.instagram.com/p/CpLxnFlNJZn/" class="uri">https://www.instagram.com/p/CpLxnFlNJZn/</a></p>
 </div>
 </section>
 <section id="q2" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q2">Question 7.2</h3>
-<p>Quel est le rôle principal de l’opérateur <code>%&gt;%</code> dans <code>dplyr</code> ?</p>
-<div id="radio_IFQFJYGRHY" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_IFQFJYGRHY" value=""> <span>Importer des données.</span></label><label><input type="radio" autocomplete="off" name="radio_IFQFJYGRHY" value=""> <span>Assigner des variables.</span></label><label><input type="radio" autocomplete="off" name="radio_IFQFJYGRHY" value="answer"> <span>Créer des séquences de fonctions pour simplifier le code.</span></label><label><input type="radio" autocomplete="off" name="radio_IFQFJYGRHY" value=""> <span>Convertir des types de données.</span></label><label><input type="radio" autocomplete="off" name="radio_IFQFJYGRHY" value=""> <span>Aucune des autres réponses n’est correcte.</span></label>
+<p>Quel est le rôle principal de l’opérateur <code>%&gt;%</code> dans <code>dplyr</code> ?</p>
+<div id="radio_IQVYWJROOI" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_IQVYWJROOI" value=""> <span>Importer des données.</span></label><label><input type="radio" autocomplete="off" name="radio_IQVYWJROOI" value=""> <span>Affecter une valeur à un objet.</span></label><label><input type="radio" autocomplete="off" name="radio_IQVYWJROOI" value="answer"> <span>Créer des séquences de fonctions pour simplifier le code.</span></label><label><input type="radio" autocomplete="off" name="radio_IQVYWJROOI" value=""> <span>Convertir des types de données.</span></label><label><input type="radio" autocomplete="off" name="radio_IQVYWJROOI" value=""> <span>Aucune des autres réponses n’est correcte.</span></label>
 </div>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<p>Le <em>pipe</em> <code>%&gt;%</code> transmet le résultat d’une fonction comme premier argument de la suivante. On enchaîne ainsi les étapes de gauche à droite au lieu d’imbriquer les fonctions : <code>x %&gt;% f() %&gt;% g()</code> équivaut à <code>g(f(x))</code>.</p>
+<p>Le <em>pipe</em> <code>%&gt;%</code> transmet le résultat d’une fonction comme premier argument de la suivante. On enchaîne ainsi les étapes de gauche à droite au lieu d’imbriquer les fonctions&nbsp;: <code>x %&gt;% f() %&gt;% g()</code> équivaut à <code>g(f(x))</code>.</p>
 </div>
 </section>
 <section id="q32" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q32">Question 7.3</h3>
-<p>Exécutez le code R suivant et jugez chaque proposition :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(diamonds)</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(clarity) <span class="sc">%&gt;%</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>(), <span class="at">prix_moyen =</span> <span class="fu">mean</span>(price))</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Exécutez le code suivant, puis jugez chaque proposition&nbsp;:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(diamonds)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(clarity) <span class="sc">%&gt;%</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>(), <span class="at">prix_moyen =</span> <span class="fu">mean</span>(price))</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <ol type="a">
 <li><p>La sortie du code indique les prix moyens en USD des diamants pour chaque type de pureté dans le jeu de données <code>diamonds</code>. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>En moyenne, les diamants du type de pureté le plus élevé coûtent 1790 USD. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
@@ -855,17 +925,17 @@ Explication
 <button>
 Explication
 </button>
-<p>a), d) et e) <code>group_by()</code> crée un groupe par pureté ; <code>summarize()</code> calcule ensuite, pour chaque groupe, le nombre de diamants (<code>n()</code>) et le prix moyen.</p>
-<p>b) 1790 est le <strong>nombre</strong> de diamants de pureté maximale (IF) ; leur prix moyen est d’environ 2865 USD.</p>
-<p>c) Les effectifs varient de 741 (I1) à 13 065 (SI1).</p>
+<p>a), d) et e) <code>group_by()</code> crée un groupe par pureté ; <code>summarize()</code> calcule ensuite, pour chaque groupe, le nombre de diamants (<code>n()</code>) et le prix moyen.</p>
+<p>b) 1790 est le <strong>nombre</strong> de diamants de pureté maximale (IF) ; leur prix moyen est d’environ 2865 USD.</p>
+<p>c) Les effectifs varient de 741 (I1) à 13&nbsp;065 (SI1).</p>
 </div>
 </section>
 <section id="q33" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q33">Question 7.4</h3>
-<p>Exécutez le code R suivant et jugez chaque proposition :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(mpg)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Exécutez le code suivant, puis jugez chaque proposition&nbsp;:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(mpg)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <ol type="a">
 <li><p>La fonction <code>arrange(mpg)</code> trie les voitures de <code>mtcars</code> par valeurs <code>mpg</code> croissantes. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>La fonction <code>arrange(mpg)</code> trie les voitures de <code>mtcars</code> par valeurs <code>mpg</code> décroissantes. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
@@ -877,37 +947,37 @@ Explication
 <button>
 Explication
 </button>
-<p>a) et b) <code>arrange()</code> trie par ordre croissant ; pour l’ordre décroissant, on écrit <code>arrange(desc(mpg))</code>.</p>
-<p>d) Sans affectation (<code>&lt;-</code>), le résultat est seulement affiché : <code>mtcars</code> ne change pas.</p>
-<p>e) La Cadillac Fleetwood apparaît en <strong>premier</strong> : c’est l’une des voitures les moins efficaces (10,4 mpg).</p>
+<p>a) et b) <code>arrange()</code> trie par ordre croissant ; pour l’ordre décroissant, on écrit <code>arrange(desc(mpg))</code>.</p>
+<p>d) Sans affectation (<code>&lt;-</code>), le résultat est seulement affiché&nbsp;: <code>mtcars</code> ne change pas.</p>
+<p>e) La Cadillac Fleetwood apparaît en <strong>premier</strong>&nbsp;: c’est l’une des voitures les moins efficaces (10,4 mpg).</p>
 </div>
 </section>
 <section id="q34" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q34">Question 7.5</h3>
-<p>Exécutez le code R suivant et jugez chaque proposition. La fonction <code>rnorm()</code> simule des valeurs aléatoires qui se rapprochent d’une loi normale ; on suppose ici qu’il s’agit de tailles de femmes en Suisse (en cm).</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>taille_f <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">500</span>, <span class="at">mean =</span> <span class="fl">164.7</span>, <span class="at">sd =</span> <span class="fl">5.6</span>) <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>()</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>taille_f <span class="sc">%&gt;%</span> <span class="fu">count</span>(taille_f <span class="sc">&lt;=</span> <span class="dv">160</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Exécutez le code suivant, puis jugez chaque proposition. La fonction <code>rnorm()</code> simule des valeurs aléatoires qui se rapprochent d’une loi normale ; on suppose ici qu’il s’agit de tailles de femmes en Suisse (en cm).</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>taille_f <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">500</span>, <span class="at">mean =</span> <span class="fl">164.7</span>, <span class="at">sd =</span> <span class="fl">5.6</span>) <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>()</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>taille_f <span class="sc">%&gt;%</span> <span class="fu">count</span>(taille_f <span class="sc">&lt;=</span> <span class="dv">160</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <ol type="a">
 <li><p>La fonction <code>count(taille_f &lt;= 160)</code> compte le nombre de valeurs inférieures ou égales à 160 (femmes de 160 cm ou moins) ainsi que celles supérieures à 160 (femmes de plus de 160 cm). <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>En général, la fonction <code>count()</code> de <code>dplyr</code> est utile pour compter le nombre d’observations d’un jeu de données qui correspondent à certains critères. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
-<li><p>Si vous exécutez le code plusieurs fois de suite, vous obtiendrez toujours un résultat légèrement différent, car la fonction <code>rnorm()</code> génère des valeurs « aléatoires ». <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
-<li><p><code>taille_f</code> est un objet de type <em>data frame</em> dans RStudio. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>Si vous exécutez le code plusieurs fois de suite, vous obtiendrez toujours un résultat légèrement différent, car la fonction <code>rnorm()</code> génère des valeurs « aléatoires ». <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p><code>taille_f</code> est un tableau de données (<em>data frame</em>). <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p><code>taille_f</code> comporte 100 lignes (observations). <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
 </ol>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<p>a) et b) Le critère <code>taille_f &lt;= 160</code> vaut <code>TRUE</code> ou <code>FALSE</code> ; <code>count()</code> compte les lignes de chaque groupe.</p>
+<p>a) et b) Le critère <code>taille_f &lt;= 160</code> vaut <code>TRUE</code> ou <code>FALSE</code> ; <code>count()</code> compte les lignes de chaque groupe.</p>
 <p>c) Chaque appel à <code>rnorm()</code> tire de nouvelles valeurs (sauf si l’on fixe <code>set.seed()</code>).</p>
-<p>d) <code>as.data.frame()</code> transforme le vecteur en data frame.</p>
+<p>d) <code>as.data.frame()</code> transforme le vecteur en tableau de données.</p>
 <p>e) <code>rnorm(500, ...)</code> crée 500 valeurs, donc 500 lignes, pas 100.</p>
 </div>
 </section>
 <section id="q36" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q36">Question 7.6</h3>
-<p>Ouvrez le post Instagram suivant, qui fait partie de <code>igposts.csv</code>, et jugez chaque proposition : <a href="https://www.instagram.com/p/CpHHbGWunhI/" class="uri">https://www.instagram.com/p/CpHHbGWunhI/</a></p>
+<p>Ouvrez le post Instagram suivant, qui fait partie de <code>igposts.csv</code>, et jugez chaque proposition&nbsp;: <a href="https://www.instagram.com/p/CpHHbGWunhI/" class="uri">https://www.instagram.com/p/CpHHbGWunhI/</a></p>
 <ol type="a">
 <li><p>Le post a été publié par le compte Instagram dont le <code>User.Name</code> est <strong>zendaya</strong>. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Il s’agit d’un post Instagram de type <strong>Album</strong>. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
@@ -919,7 +989,7 @@ Explication
 <button>
 Explication
 </button>
-<p>On peut aussi chercher le post dans les données : <code>igposts %&gt;% filter(grepl("CpHHbGWunhI", URL)) %&gt;% select(User.Name, Type, Reposts)</code>. Le post vient de <strong>zendaya</strong>, il est de type <strong>Album</strong> et compte 284 <code>Reposts</code>.</p>
+<p>On peut aussi chercher le post dans les données&nbsp;: <code>igposts %&gt;% filter(grepl("CpHHbGWunhI", URL)) %&gt;% select(User.Name, Type, Reposts)</code>. Le post vient de <strong>zendaya</strong>, il est de type <strong>Album</strong> et compte 284 <code>Reposts</code>.</p>
 <p>e) Zendaya est américaine.</p>
 </div>
 </section>
@@ -931,12 +1001,12 @@ Explication
 <button>
 Explication
 </button>
-<p>CSV signifie <em>comma-separated values</em> : chaque ligne du fichier est une observation, et les valeurs sont séparées par des virgules.</p>
+<p>CSV signifie <em>comma-separated values</em>&nbsp;: chaque ligne du fichier est une observation, et les valeurs sont séparées par des virgules.</p>
 </div>
 </section>
 <section id="q98" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q98">Question 7.8</h3>
-<p>La fonction <code>as.factor()</code> peut être utilisée pour transformer des variables textuelles et numériques en facteurs.</p>
+<p>La fonction <code>as.factor()</code> peut être utilisée pour transformer des vecteurs de type caractère ou numérique en facteurs.</p>
 <p><select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p>
 <div class="webex-solution">
 <button>
@@ -964,7 +1034,7 @@ Explication
 <button>
 Explication
 </button>
-<p>Si le séparateur décimal est mal indiqué, les nombres sont lus comme du texte. L’argument <code>dec</code> de <code>read.csv()</code> le précise ; <code>read.csv2()</code> est prévu pour les fichiers avec virgule décimale et point-virgule comme séparateur.</p>
+<p>Si le séparateur décimal est mal indiqué, les nombres sont lus comme du texte. L’argument <code>dec</code> de <code>read.csv()</code> le précise ; <code>read.csv2()</code> est prévu pour les fichiers avec virgule décimale et point-virgule comme séparateur.</p>
 </div>
 </section>
 <section id="q108" class="level3 unnumbered">
@@ -975,7 +1045,7 @@ Explication
 <button>
 Explication
 </button>
-<p>Les métriques ont été relevées le 5 octobre 2026 sur les pages Instagram publiques : elles reflètent l’état des posts à cette date, pas en 2023.</p>
+<p>Les métriques ont été relevées le 5 octobre 2026 sur les pages Instagram publiques&nbsp;: elles reflètent l’état des posts à cette date, pas en 2023.</p>
 </div>
 </section>
 <section id="q109" class="level3 unnumbered">
@@ -986,19 +1056,19 @@ Explication
 <button>
 Explication
 </button>
-<p>L’unité n’est pas le compte Instagram : chaque ligne de <code>igposts</code> est une observation associant un <strong>post</strong> à un compte qui l’a publié ou co-publié. Le fichier contient 84 lignes correspondant à 82 posts distincts provenant de 33 comptes. Un même compte apparaît donc sur plusieurs lignes.</p>
+<p>L’unité n’est pas le compte Instagram&nbsp;: chaque ligne de <code>igposts</code> est une observation associant un <strong>post</strong> à un compte qui l’a publié ou co-publié. Le fichier contient 84 lignes correspondant à 82 posts distincts provenant de 33 comptes. Un même compte apparaît donc sur plusieurs lignes.</p>
 </div>
 </section>
 <section id="q111" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q111">Question 7.13</h3>
 <p>Dans le code R suivant, l’argument <code>na.strings = "#N/A"</code> indique à R comment les valeurs manquantes sont désignées dans le fichier CSV importé.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>donnees <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"donnees.csv"</span>, <span class="at">encoding =</span> <span class="st">"UTF-8"</span>, <span class="at">na.strings =</span> <span class="st">"#N/A"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>donnees <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"donnees.csv"</span>, <span class="at">encoding =</span> <span class="st">"UTF-8"</span>, <span class="at">na.strings =</span> <span class="st">"#N/A"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p><select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<p>Toutes les cellules contenant <code>#N/A</code> sont lues comme <code>NA</code>, la valeur manquante de R. Sans cet argument, une colonne numérique contenant <code>#N/A</code> serait lue comme du texte. (Le fichier <code>igposts.csv</code> du cours n’a pas de valeurs manquantes : la valeur par défaut, <code>na.strings = "NA"</code>, suffit.)</p>
+<p>Toutes les cellules contenant <code>#N/A</code> sont lues comme <code>NA</code>, la valeur manquante de R. Sans cet argument, une colonne numérique contenant <code>#N/A</code> serait lue comme du texte. (Le fichier <code>igposts.csv</code> du livre n’a pas de valeurs manquantes&nbsp;: la valeur par défaut, <code>na.strings = "NA"</code>, suffit.)</p>
 </div>
 
 
@@ -1621,8 +1691,8 @@ window.onload = function() {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../sessions/session-08.html" class="pagination-link" aria-label="Manipuler des données&nbsp;: exercices">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Manipuler des données&nbsp;: exercices</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../sessions/session-08.html" class="pagination-link" aria-label="Manipuler des données : pratique guidée">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Manipuler des données&nbsp;: pratique guidée</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1633,7 +1703,7 @@ window.onload = function() {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>Textes et exercices : <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr">CC BY-NC-SA 4.0</a> · Code : MIT · Éléments de tiers : voir <a href="../apropos.html">À propos</a></p>
+<p>Textes et exercices&nbsp;: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr">CC BY-NC-SA 4.0</a> · Code&nbsp;: MIT · Éléments de tiers&nbsp;: voir <a href="../apropos.html">À propos</a></p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

@@ -79,7 +79,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-8b9bfa8f06f8d75c827c202792a57b06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-683640b15476b5c31180ef45b94f76af.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -177,13 +177,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sessions/session-04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Paquets, jeux de données et premiers graphiques</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Packages, jeux de données et premiers graphiques</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sessions/session-05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualiser des données avec ggplot2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualiser des données avec <code>ggplot2</code></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -201,7 +201,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sessions/session-08.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Manipuler des données&nbsp;: exercices</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Manipuler des données&nbsp;: pratique guidée</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -263,6 +263,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../lexique.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Lexique</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Références</span></a>
   </div>
@@ -305,33 +311,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Dans le cours, le <strong>Problem Set 4</strong> était un test sur Moodle portant sur les chapitres 10 à 12. Les questions ci-dessous en reprennent le contenu, avec la correction et une explication pour chaque réponse.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout callout-style-default callout-important callout-titled" title="Objectifs d'apprentissage">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Résultats de l’édition 2025 du cours
+<span class="screen-reader-only">Important</span>Objectifs d’apprentissage
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Vérifier que vous savez décrire des données avec <code>dplyr</code> et <code>ggplot2</code>.</li>
+<li>Vérifier que vous savez choisir, réaliser et interpréter un test t, une ANOVA ou une régression linéaire.</li>
+<li>Repérer, grâce aux explications, les notions à revoir.</li>
+</ul>
+</div>
+</div>
+<p>Ce dernier chapitre de révision reprend les chapitres 10 à 12. Les questions mêlent calculs dans R et interprétation&nbsp;: lisez attentivement les sorties de <code>t.test()</code>, <code>aov()</code> et <code>summary()</code>.</p>
+<p>Dans le cours, le <strong>Problem Set 4</strong> était un test sur Moodle portant sur les chapitres 10 à 12. Les questions ci-dessous en reprennent le contenu, avec la correction et une explication pour chaque réponse.</p>
+<div class="callout callout-style-default callout-caution callout-titled" title="Contexte : résultats de l'édition 2025 du cours">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Mise en garde</span>Contexte&nbsp;: résultats de l’édition 2025 du cours
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>56 étudiant·es ont passé ce test (20 points au maximum, 10 pour réussir). La moyenne était de 11,0 points et 70&nbsp;% des étudiant·es l’ont réussi.</p>
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.2.1     ✔ readr     2.2.0
-✔ forcats   1.0.1     ✔ stringr   1.6.0
-✔ ggplot2   4.0.3     ✔ tibble    3.3.1
-✔ lubridate 1.9.5     ✔ tidyr     1.3.2
-✔ purrr     1.2.2     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-</div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -343,15 +355,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-important callout-titled" title="En bref">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>En bref
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Si la différence entre statistique descriptive et inférentielle reste floue, relisez le début des chapitres <a href="../sessions/session-10.html">10</a> et <a href="../sessions/session-11.html">11</a>.</li>
+<li>Pour l’interprétation de la valeur p, relisez « Exemple 1&nbsp;: test t à un échantillon » au <a href="../sessions/session-11.html#exemple-1-test-t-à-un-échantillon">chapitre 11</a>.</li>
+<li>Pour les coefficients et le R², relisez « La régression linéaire avec <code>lm()</code> » au <a href="../sessions/session-12.html#la-régression-linéaire-avec-lm">chapitre 12</a>.</li>
+</ul>
+</div>
+</div>
+<p>Le dernier chapitre propose des pistes pour continuer à progresser avec R.</p>
 <section id="exercices-de-révision" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="exercices-de-révision">Exercices de révision</h2>
-<p>Ces questions reprennent le <strong>Problem Set 4</strong>. Choisissez <em>Vrai</em> ou <em>Faux</em>, cochez une réponse ou tapez un nombre : la couleur indique tout de suite si votre réponse est correcte. Cliquez sur <strong>Explication</strong> pour voir la correction.</p>
+<p>Ces questions reprennent le <strong>Problem Set 4</strong>.</p>
+<p>Choisissez <em>Vrai</em> ou <em>Faux</em>, cochez une réponse ou tapez un nombre&nbsp;: la couleur indique tout de suite si votre réponse est correcte. Cliquez sur <strong>Explication</strong> pour voir la correction.</p>
 <section id="q44" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q44">Question 13.1</h3>
-<p>Quels types de visualisation sont bien adaptés pour afficher la relation entre deux variables numériques ?</p>
+<p>Quels types de visualisation sont bien adaptés pour afficher la relation entre deux variables numériques ?</p>
 <ol type="a">
 <li><p>Histogramme <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
-<li><p>Diagramme à barres <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>Diagramme en barres <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
 <li><p>Boîte à moustaches <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
 <li><p>Nuage de points <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 </ol>
@@ -359,15 +390,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <button>
 Explication
 </button>
-<p>Le nuage de points place une variable numérique sur chaque axe. L’histogramme montre la distribution d’<strong>une</strong> variable numérique ; le diagramme à barres compte des catégories ; la boîte à moustaches compare une variable numérique entre catégories.</p>
+<p>Le nuage de points place une variable numérique sur chaque axe. L’histogramme montre la distribution d’<strong>une</strong> variable numérique ; le diagramme en barres compte des catégories ; la boîte à moustaches compare une variable numérique entre catégories.</p>
 </div>
 </section>
 <section id="q37" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q37">Question 13.2</h3>
-<p>Jugez chaque affirmation concernant les <strong>statistiques descriptives</strong> :</p>
+<p>Jugez chaque proposition concernant la <strong>statistique descriptive</strong>&nbsp;:</p>
 <ol type="a">
 <li><p>L’objectif des statistiques descriptives est principalement d’analyser les relations causales entre les variables. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
-<li><p>La partie descriptive d’une analyse statistique fournit généralement des indications telles que la taille de l’échantillon (n), les fréquences des variables catégorielles et les moyennes des variables numériques. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>La partie descriptive d’une analyse statistique fournit généralement des indications telles que la taille de l’échantillon (n), les effectifs des variables catégorielles et les moyennes des variables numériques. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Les tests d’hypothèse, par exemple avec un test t, sont une étape courante des statistiques descriptives. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
 <li><p>Les statistiques descriptives précèdent souvent les statistiques inférentielles dans une analyse de données quantitatives en sciences sociales. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Certaines visualisations de données, comme les histogrammes, se prêtent bien à la présentation de statistiques descriptives. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
@@ -381,11 +412,11 @@ Explication
 </section>
 <section id="q40" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q40">Question 13.3</h3>
-<p>Jugez chaque proposition concernant l’histogramme suivant (source des données : questionnaire du cours) :</p>
+<p>Jugez chaque proposition concernant l’histogramme suivant (données&nbsp;: <code>reponses_socio.csv</code>)&nbsp;:</p>
 <p><img src="session-13_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 <ol type="a">
 <li><p>L’histogramme montre que le nombre de frères et sœurs (variable <code>fraterie</code>) suit une loi normale. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
-<li><p>L’histogramme montre que la plupart des étudiant·es de la classe ont grandi dans des constellations familiales traditionnelles. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>L’histogramme montre que la plupart des étudiant·es du jeu de données ont grandi dans des constellations familiales traditionnelles. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
 <li><p>L’histogramme montre qu’il y a plus d’étudiant·es qui ont 3 frères et sœurs que d’étudiant·es qui sont enfants uniques. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>La constellation la plus fréquente est celle des étudiant·es ayant un seul frère ou une seule sœur. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Une personne ayant participé au questionnaire a indiqué qu’elle avait 7 frères et sœurs. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
@@ -398,43 +429,43 @@ Explication
 <p>b) Un histogramme du nombre de frères et sœurs ne dit rien sur la forme des familles.</p>
 <p>c) 7 étudiant·es ont 3 frères et sœurs, contre 5 enfants uniques.</p>
 <p>d) La barre la plus haute est celle d’un frère ou d’une sœur (33 étudiant·es).</p>
-<p>e) Personne n’indique 7 frères et sœurs : le maximum est de 5. Vérifiez avec <code>table(reponses_socio$fraterie)</code>.</p>
+<p>e) Personne n’indique 7 frères et sœurs&nbsp;: le maximum est de 5. Vérifiez avec <code>table(reponses_socio$fraterie)</code>.</p>
 </div>
 </section>
 <section id="q76" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q76">Question 13.4</h3>
-<p>Dans le jeu de données <code>reponses_socio.csv</code>, combien de minutes les étudiant·es <strong>possédant un passeport suisse</strong> mettent-ils en moyenne pour se rendre à l’université ? Arrondissez à la minute.</p>
-<p>Réponse : <input class="webex-solveme nospaces" size="4" data-answer="[&quot;34&quot;]"></p>
+<p>Dans le jeu de données <code>reponses_socio.csv</code>, combien de minutes les étudiant·es <strong>possédant un passeport suisse</strong> mettent-ils en moyenne pour se rendre à l’université ? Arrondissez à la minute.</p>
+<p>Réponse&nbsp;: <input class="webex-solveme nospaces" size="4" data-answer="[&quot;34&quot;]"></p>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>reponses_socio <span class="sc">%&gt;%</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(suisse) <span class="sc">%&gt;%</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">trajet_moyen =</span> <span class="fu">mean</span>(trajet))</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>reponses_socio <span class="sc">%&gt;%</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(suisse) <span class="sc">%&gt;%</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">trajet_moyen =</span> <span class="fu">mean</span>(trajet))</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Pour <code>suisse == "Oui"</code>, la moyenne vaut 33,52 minutes, soit 34 une fois arrondie.</p>
 </div>
 </section>
 <section id="q83" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q83">Question 13.5</h3>
-<p>Dans le jeu de données <code>reponses_socio.csv</code>, quel <strong>genre</strong> a le <strong>trajet moyen</strong> le plus court pour se rendre à l’université ? (Tapez le genre exactement comme il figure dans les données.)</p>
-<p>Réponse : <input class="webex-solveme nospaces ignorecase" size="5" data-answer="[&quot;Homme&quot;]"></p>
+<p>Dans le jeu de données <code>reponses_socio.csv</code>, quel <strong>genre</strong> a le <strong>trajet moyen</strong> le plus court pour se rendre à l’université ? (Tapez le genre exactement comme il figure dans les données.)</p>
+<p>Réponse&nbsp;: <input class="webex-solveme nospaces ignorecase" size="5" data-answer="[&quot;Homme&quot;]"></p>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>reponses_socio <span class="sc">%&gt;%</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(genre) <span class="sc">%&gt;%</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">trajet_moyen =</span> <span class="fu">mean</span>(trajet)) <span class="sc">%&gt;%</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(trajet_moyen)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<p><code>arrange()</code> trie par ordre croissant : la première ligne, <code>Homme</code> (20,6 minutes), a le trajet moyen le plus court.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>reponses_socio <span class="sc">%&gt;%</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(genre) <span class="sc">%&gt;%</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">trajet_moyen =</span> <span class="fu">mean</span>(trajet)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(trajet_moyen)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>arrange()</code> trie par ordre croissant&nbsp;: la première ligne, <code>Homme</code> (20,6 minutes), a le trajet moyen le plus court.</p>
 </div>
 </section>
 <section id="q113" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q113">Question 13.6</h3>
-<p>Le code suivant fournit des statistiques descriptives du jeu de données <code>mtcars</code> :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mtcars)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Le code suivant fournit des statistiques descriptives du jeu de données <code>mtcars</code>&nbsp;:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mtcars)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p><select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p>
 <div class="webex-solution">
 <button>
@@ -451,10 +482,10 @@ Explication
 <button>
 Explication
 </button>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>reponses_socio <span class="sc">%&gt;%</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(suisse) <span class="sc">%&gt;%</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">trajet_moyen =</span> <span class="fu">mean</span>(trajet))</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Les étudiant·es sans passeport suisse mettent en moyenne 21,5 minutes, contre 33,5 pour les Suisses·ses. Attention : le groupe sans passeport suisse ne compte que 10 personnes. Pour savoir si une telle différence est due au hasard, il faudrait un test (session 11).</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>reponses_socio <span class="sc">%&gt;%</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(suisse) <span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">trajet_moyen =</span> <span class="fu">mean</span>(trajet))</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Les étudiant·es sans passeport suisse mettent en moyenne 21,5 minutes, contre 33,5 pour les titulaires d’un passeport suisse. Attention&nbsp;: le groupe sans passeport suisse ne compte que 10 personnes. Pour savoir si une telle différence est due au hasard, il faudrait un test (chapitre 11).</p>
 </div>
 </section>
 <section id="q117" class="level3 unnumbered">
@@ -465,25 +496,25 @@ Explication
 <button>
 Explication
 </button>
-<p>Effectifs, moyennes et graphiques montrent souvent déjà les principales tendances ; les statistiques inférentielles testent ensuite si elles se généralisent à la population.</p>
+<p>Effectifs, moyennes et graphiques montrent souvent déjà les principales tendances ; les statistiques inférentielles testent ensuite si elles se généralisent à la population.</p>
 </div>
 </section>
 <section id="q3" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q3">Question 13.9</h3>
-<p>Vous avez effectué un test t à un échantillon et obtenu une statistique t de 4.0869 avec 49 degrés de liberté et une valeur p de 0.0001618. Quelle conclusion pouvez-vous en tirer au niveau de signification de 5 % ?</p>
-<div id="radio_CWHRNRORRK" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_CWHRNRORRK" value=""> <span>Ne pas rejeter l’hypothèse nulle (H0).</span></label><label><input type="radio" autocomplete="off" name="radio_CWHRNRORRK" value="answer"> <span>Rejeter l’hypothèse nulle (H0).</span></label><label><input type="radio" autocomplete="off" name="radio_CWHRNRORRK" value=""> <span>Il n’y a pas assez d’informations pour conclure.</span></label><label><input type="radio" autocomplete="off" name="radio_CWHRNRORRK" value=""> <span>Augmenter la taille de l’échantillon.</span></label><label><input type="radio" autocomplete="off" name="radio_CWHRNRORRK" value=""> <span>Aucune des autres réponses n’est correcte.</span></label>
+<p>Vous avez effectué un test t à un échantillon et obtenu une statistique t de 4,0869 avec 49 degrés de liberté et une valeur p de 0,0001618. Quelle conclusion pouvez-vous en tirer au seuil de signification de 5 % ?</p>
+<div id="radio_LBHQCXTHMB" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_LBHQCXTHMB" value=""> <span>Ne pas rejeter l’hypothèse nulle (H0).</span></label><label><input type="radio" autocomplete="off" name="radio_LBHQCXTHMB" value="answer"> <span>Rejeter l’hypothèse nulle (H0).</span></label><label><input type="radio" autocomplete="off" name="radio_LBHQCXTHMB" value=""> <span>Il n’y a pas assez d’informations pour conclure.</span></label><label><input type="radio" autocomplete="off" name="radio_LBHQCXTHMB" value=""> <span>Augmenter la taille de l’échantillon.</span></label><label><input type="radio" autocomplete="off" name="radio_LBHQCXTHMB" value=""> <span>Aucune des autres réponses n’est correcte.</span></label>
 </div>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<p>La valeur p (0.00016) est bien inférieure au seuil de 0.05 : on rejette H0. La moyenne de l’échantillon diffère significativement de la valeur testée.</p>
+<p>La valeur p (0,00016) est bien inférieure au seuil de 0,05&nbsp;: on rejette H0. La moyenne de l’échantillon diffère significativement de la valeur testée.</p>
 </div>
 </section>
 <section id="q38" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q38">Question 13.10</h3>
-<p>Lesquelles des hypothèses suivantes pourraient être testées dans un <strong>test t à deux échantillons</strong> ?</p>
+<p>Lesquelles des hypothèses suivantes pourraient être testées dans un <strong>test t à deux échantillons</strong> ?</p>
 <ol type="a">
 <li><p>Les deux échantillons proviennent de populations avec la même moyenne. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Les deux échantillons proviennent de populations avec des moyennes différentes. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
@@ -495,16 +526,16 @@ Explication
 <button>
 Explication
 </button>
-<p>Le test t à deux échantillons compare <strong>deux moyennes</strong> : H0 « les moyennes sont égales » (a) contre H1 « elles diffèrent » (b). Il ne teste ni la taille des populations ni les variances. Pour comparer trois groupes, on utilise une ANOVA.</p>
+<p>Le test t à deux échantillons compare <strong>deux moyennes</strong>&nbsp;: H0 « les moyennes sont égales » (a) contre H1 « elles diffèrent » (b). Il ne teste ni la taille des populations ni les variances. Pour comparer trois groupes, on utilise une ANOVA.</p>
 </div>
 </section>
 <section id="q41" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q41">Question 13.11</h3>
-<p>Jugez chaque proposition relative aux <strong>statistiques inférentielles</strong> :</p>
+<p>Jugez chaque proposition relative aux <strong>statistiques inférentielles</strong>&nbsp;:</p>
 <ol type="a">
 <li><p>Les statistiques inférentielles permettent de tirer des conclusions sur une population entière en se basant sur l’analyse d’un échantillon représentatif de cette population. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Si deux variables quantitatives, par exemple y et x, sont significativement corrélées, il existe toujours une relation de cause à effet entre ces deux variables. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
-<li><p>L’échantillonnage aléatoire est une méthode de sélection au hasard d’un sous-groupe de participants dans une population, où chaque membre a une chance égale d’être choisi, offrant ainsi une représentation fiable de la population entière. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>L’échantillonnage aléatoire est une méthode de sélection au hasard d’un sous-groupe de participant·es dans une population, où chaque membre a une chance égale d’être choisi, offrant ainsi une représentation fiable de la population entière. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Un échantillon de 100 femmes suisses d’une taille moyenne de 180 cm est représentatif de la distribution de taille des femmes en Suisse. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
 <li><p>Les tests t, l’ANOVA et la régression linéaire peuvent être des techniques utiles dans une analyse de statistiques inférentielles. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 </ol>
@@ -512,20 +543,20 @@ Explication
 <button>
 Explication
 </button>
-<p>b) Corrélation n’est pas causalité : une troisième variable ou le hasard peuvent expliquer une corrélation.</p>
-<p>d) La taille moyenne des femmes en Suisse est d’environ 165 cm : un échantillon dont la moyenne est de 180 cm n’est manifestement pas représentatif.</p>
+<p>b) Corrélation n’est pas causalité&nbsp;: une troisième variable ou le hasard peuvent expliquer une corrélation.</p>
+<p>d) La taille moyenne des femmes en Suisse est d’environ 165 cm&nbsp;: un échantillon dont la moyenne est de 180 cm n’est manifestement pas représentatif.</p>
 </div>
 </section>
 <section id="q42" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q42">Question 13.12</h3>
-<p>Supposons que nous fassions un test t pour savoir si la taille moyenne de 100 joueuses de la WNBA sélectionnées au hasard diffère de celle de 100 hommes néerlandais sélectionnés au hasard. Le code suivant simule les deux échantillons et effectue le test. Exécutez-le et jugez chaque affirmation.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2026</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>wnba <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="at">mean =</span> <span class="fl">184.5</span>, <span class="at">sd =</span> <span class="fl">6.5</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>pays_bas <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="at">mean =</span> <span class="fl">183.8</span>, <span class="at">sd =</span> <span class="fl">7.1</span>)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(wnba, pays_bas)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Supposons que nous fassions un test t pour savoir si la taille moyenne de 100 joueuses de la WNBA sélectionnées au hasard diffère de celle de 100 hommes néerlandais sélectionnés au hasard. Le code suivant simule les deux échantillons et effectue le test. Exécutez-le, puis jugez chaque proposition.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2026</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>wnba <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="at">mean =</span> <span class="fl">184.5</span>, <span class="at">sd =</span> <span class="fl">6.5</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>pays_bas <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="at">mean =</span> <span class="fl">183.8</span>, <span class="at">sd =</span> <span class="fl">7.1</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(wnba, pays_bas)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <ol type="a">
 <li><p>Dans l’échantillon simulé, la joueuse de basket-ball moyenne mesure 183,86 cm. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
-<li><p>La valeur p du test indique que la différence entre les tailles moyennes est statistiquement significative au niveau de 5 %. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>La valeur p du test indique que la différence entre les tailles moyennes est statistiquement significative au seuil de 5 %. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
 <li><p>L’hypothèse nulle du test t est que les moyennes des deux populations (joueuses de la WNBA et hommes néerlandais) sont égales. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Le test t indique que les hommes néerlandais sont significativement plus grands que les joueuses de basket-ball de la WNBA. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
 <li><p>Les résultats du test t indiquent que, dans les échantillons simulés, il n’y a pas de différence significative entre les tailles moyennes des joueuses de basket et des hommes néerlandais. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
@@ -534,22 +565,22 @@ Explication
 <button>
 Explication
 </button>
-<p>a) Sous <em>sample estimates</em>, <code>mean of x</code> (les joueuses) vaut 183,86 cm ; <code>mean of y</code> (les hommes néerlandais) vaut 184,66 cm.</p>
-<p>b), d) et e) La valeur p (0,40) est supérieure à 0,05 : on ne rejette pas H0. Dans l’échantillon, les hommes néerlandais sont un peu plus grands, mais cet écart de 0,8 cm n’est pas significatif ; l’intervalle de confiance à 95 % (de −2,66 à 1,06 cm) contient 0.</p>
-<p>c) Les hypothèses portent sur les populations : H0 postule que les deux moyennes sont égales (μ₁ = μ₂), H1 qu’elles diffèrent.</p>
+<p>a) Sous <code>sample estimates</code>, <code>mean of x</code> (les joueuses) vaut 183,86 cm ; <code>mean of y</code> (les hommes néerlandais) vaut 184,66 cm.</p>
+<p>b), d) et e) La valeur p (0,40) est supérieure à 0,05&nbsp;: on ne rejette pas H0. Dans l’échantillon, les hommes néerlandais sont un peu plus grands, mais cet écart de 0,8 cm n’est pas significatif ; l’intervalle de confiance à 95 % (de −2,66 à 1,06 cm) contient 0.</p>
+<p>c) Les hypothèses portent sur les populations&nbsp;: H0 postule que les deux moyennes sont égales (μ₁ = μ₂), H1 qu’elles diffèrent.</p>
 </div>
 </section>
 <section id="q43" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q43">Question 13.13</h3>
-<p>Que signifie une valeur p inférieure à 0,05 dans le contexte d’un test statistique ?</p>
-<div id="radio_SOLEQNGYAU" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_SOLEQNGYAU" value=""> <span>Il y a une probabilité de 5 % que l’hypothèse nulle soit vraie.</span></label><label><input type="radio" autocomplete="off" name="radio_SOLEQNGYAU" value=""> <span>Il y a moins de 5 % de chances que les résultats observés soient dus au hasard.</span></label><label><input type="radio" autocomplete="off" name="radio_SOLEQNGYAU" value=""> <span>La probabilité que l’hypothèse nulle soit vraie est supérieure à 95 %.</span></label><label><input type="radio" autocomplete="off" name="radio_SOLEQNGYAU" value=""> <span>Les données ne suivent pas une loi normale.</span></label><label><input type="radio" autocomplete="off" name="radio_SOLEQNGYAU" value="answer"> <span>Toutes les autres réponses sont incorrectes.</span></label>
+<p>Que signifie une valeur p inférieure à 0,05 dans le contexte d’un test statistique ?</p>
+<div id="radio_NIJPISLWTN" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_NIJPISLWTN" value=""> <span>Il y a une probabilité de 5 % que l’hypothèse nulle soit vraie.</span></label><label><input type="radio" autocomplete="off" name="radio_NIJPISLWTN" value=""> <span>Il y a moins de 5 % de chances que les résultats observés soient dus au hasard.</span></label><label><input type="radio" autocomplete="off" name="radio_NIJPISLWTN" value=""> <span>La probabilité que l’hypothèse nulle soit vraie est supérieure à 95 %.</span></label><label><input type="radio" autocomplete="off" name="radio_NIJPISLWTN" value=""> <span>Les données ne suivent pas une loi normale.</span></label><label><input type="radio" autocomplete="off" name="radio_NIJPISLWTN" value="answer"> <span>Aucune des autres réponses n’est correcte.</span></label>
 </div>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<p>La valeur p est la probabilité d’observer des résultats au moins aussi extrêmes que ceux de l’échantillon <strong>si l’hypothèse nulle était vraie</strong>. Elle se calcule en supposant H0 vraie : ce n’est donc ni la probabilité que H0 soit vraie (a, c), ni la probabilité que les résultats soient « dus au hasard » (b). Cette dernière lecture est très répandue, mais elle inverse la condition : elle décrit P(H0 | données) au lieu de P(données | H0). La valeur p ne dit rien non plus sur la normalité des données (d).</p>
+<p>La valeur p est la probabilité d’observer des résultats au moins aussi extrêmes que ceux de l’échantillon <strong>si l’hypothèse nulle était vraie</strong>. Elle se calcule en supposant H0 vraie&nbsp;: ce n’est donc ni la probabilité que H0 soit vraie (a, c), ni la probabilité que les résultats soient « dus au hasard » (b). Cette dernière lecture est très répandue, mais elle inverse la condition&nbsp;: elle décrit P(H0 | données) au lieu de P(données | H0). La valeur p ne dit rien non plus sur la normalité des données (d).</p>
 </div>
 </section>
 <section id="q112" class="level3 unnumbered">
@@ -560,19 +591,19 @@ Explication
 <button>
 Explication
 </button>
-<p>L’erreur standard diminue quand la taille de l’échantillon augmente : avec de très grands échantillons, même une petite différence donne une valeur p très faible. « Significatif » ne veut donc pas dire « important ».</p>
+<p>L’erreur type diminue quand la taille de l’échantillon augmente&nbsp;: avec de très grands échantillons, même une petite différence donne une valeur p très faible. « Significatif » ne veut donc pas dire « important ».</p>
 </div>
 </section>
 <section id="q23" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q23">Question 13.15</h3>
-<p>Jugez chaque proposition concernant le graphique suivant :</p>
+<p>Jugez chaque proposition concernant le graphique suivant&nbsp;:</p>
 <p><img src="session-13_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid" width="672"></p>
 <ol type="a">
-<li><p>La ligne noire épaisse au milieu des boxplots indique la longueur moyenne des nageoires pour chaque espèce de manchots. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>La ligne noire épaisse au milieu des boîtes à moustaches indique la longueur moyenne des nageoires pour chaque espèce de manchots. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
 <li><p>Au moins un manchot Adélie de l’échantillon a une nageoire plus longue qu’au moins un manchot papou (Gentoo). <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
-<li><p>Les boxplots nous indiquent qu’il existe des différences statistiquement significatives dans la longueur des nageoires entre les trois espèces de manchots. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
-<li><p>Sur la seule base des boxplots, nous ne pouvons pas savoir si les différences de longueur des nageoires des différentes espèces de manchots sont statistiquement significatives (nous pourrions faire une ANOVA pour le savoir). <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
-<li><p>Les boxplots indiquent qu’il y a deux valeurs extrêmes (<em>outliers</em>) dans l’ensemble de données. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>Les boîtes à moustaches nous indiquent qu’il existe des différences statistiquement significatives dans la longueur des nageoires entre les trois espèces de manchots. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>Sur la seule base des boîtes à moustaches, nous ne pouvons pas savoir si les différences de longueur des nageoires des différentes espèces de manchots sont statistiquement significatives (nous pourrions faire une ANOVA pour le savoir). <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>Les boîtes à moustaches indiquent qu’il y a deux valeurs extrêmes (angl. <em>outliers</em>) dans le jeu de données. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 </ol>
 <div class="webex-solution">
 <button>
@@ -580,55 +611,55 @@ Explication
 </button>
 <p>a) La ligne du milieu est la <strong>médiane</strong>, pas la moyenne.</p>
 <p>b) La nageoire la plus longue chez les manchots Adélie (210 mm) dépasse la plus courte chez les manchots papous (203 mm).</p>
-<p>c) et d) Un graphique ne teste rien : il faut un test (ici une ANOVA) pour conclure à une différence significative.</p>
+<p>c) et d) Un graphique ne teste rien&nbsp;: il faut un test (ici une ANOVA) pour conclure à une différence significative.</p>
 <p>e) Les deux points isolés appartiennent aux Adélie (172 mm et 210 mm).</p>
 </div>
 </section>
 <section id="q39" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q39">Question 13.16</h3>
-<p>Exécutez le code suivant et jugez chaque proposition :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>modele_1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span> mpg <span class="sc">~</span> wt <span class="sc">+</span> qsec <span class="sc">+</span> am, <span class="at">data =</span> mtcars)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modele_1)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Exécutez le code suivant, puis jugez chaque proposition&nbsp;:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>modele_1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span> mpg <span class="sc">~</span> wt <span class="sc">+</span> qsec <span class="sc">+</span> am, <span class="at">data =</span> mtcars)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modele_1)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <ol type="a">
 <li><p>Ce modèle de régression pourrait être représenté visuellement par une ligne droite passant par un nuage de points. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
-<li><p><code>mpg</code> est la variable dépendante. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
-<li><p><code>wt</code>, <code>qsec</code> et <code>am</code> sont les variables indépendantes. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
-<li><p>Toutes les variables x de <code>modele_1</code> sont significatives au niveau de 5 %. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p><code>mpg</code> est la variable à expliquer. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p><code>wt</code>, <code>qsec</code> et <code>am</code> sont les variables explicatives. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>Toutes les variables x de <code>modele_1</code> sont significatives au seuil de 5 %. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 </ol>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<p>a) Avec trois variables indépendantes, le modèle ne se résume pas à une droite dans un nuage de points à deux dimensions.</p>
-<p>b) et c) Dans <code>y ~ x1 + x2 + x3</code>, la variable à gauche du <code>~</code> est la variable dépendante.</p>
+<p>a) Avec trois variables explicatives, le modèle ne se résume pas à une droite dans un nuage de points à deux dimensions.</p>
+<p>b) et c) Dans <code>y ~ x1 + x2 + x3</code>, la variable à gauche du <code>~</code> est la variable à expliquer.</p>
 <p>d) Les valeurs p de <code>wt</code> (&lt; 0,001), <code>qsec</code> (&lt; 0,001) et <code>am</code> (0,047) sont toutes inférieures à 0,05.</p>
 </div>
 </section>
 <section id="q74" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q74">Question 13.17</h3>
-<p>Quel est le poids moyen en grammes des manchots du jeu de données <code>penguins</code> (paquet <code>palmerpenguins</code>) ? Arrondissez au gramme.</p>
-<p>Réponse : <input class="webex-solveme nospaces" size="4" data-answer="[&quot;4202&quot;]"></p>
+<p>Quel est le poids moyen en grammes des manchots du jeu de données <code>penguins</code> (package <code>palmerpenguins</code>) ? Arrondissez au gramme.</p>
+<p>Réponse&nbsp;: <input class="webex-solveme nospaces" size="4" data-answer="[&quot;4202&quot;]"></p>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(penguins<span class="sc">$</span>body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)   <span class="co"># 4201.754</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Deux manchots n’ont pas de poids (<code>NA</code>) : sans <code>na.rm = TRUE</code>, le résultat est <code>NA</code>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(penguins<span class="sc">$</span>body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)   <span class="co"># 4201.754</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Deux manchots n’ont pas de poids (<code>NA</code>)&nbsp;: sans <code>na.rm = TRUE</code>, le résultat est <code>NA</code>.</p>
 </div>
 </section>
 <section id="q75" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q75">Question 13.18</h3>
-<p>Quel est le poids moyen en grammes des manchots <strong>femelles</strong> du jeu de données <code>penguins</code> ? Arrondissez au gramme.</p>
-<p>Réponse : <input class="webex-solveme nospaces" size="4" data-answer="[&quot;3862&quot;]"></p>
+<p>Quel est le poids moyen en grammes des manchots <strong>femelles</strong> du jeu de données <code>penguins</code> ? Arrondissez au gramme.</p>
+<p>Réponse&nbsp;: <input class="webex-solveme nospaces" size="4" data-answer="[&quot;3862&quot;]"></p>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(sex <span class="sc">==</span> <span class="st">"female"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">poids_moyen =</span> <span class="fu">mean</span>(body_mass_g))   <span class="co"># 3862.273</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(sex <span class="sc">==</span> <span class="st">"female"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">poids_moyen =</span> <span class="fu">mean</span>(body_mass_g))   <span class="co"># 3862.273</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="q114" class="level3 unnumbered">
@@ -644,13 +675,13 @@ Explication
 </section>
 <section id="q115" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q115">Question 13.20</h3>
-<p>Le <strong>R carré</strong> d’un modèle de régression linéaire indique le pourcentage de la variabilité de la variable dépendante (y) qui peut être expliquée par la variabilité des variables indépendantes (x1, x2, etc.).</p>
+<p>Le <strong>R²</strong> d’un modèle de régression linéaire indique le pourcentage de la variabilité de la variable à expliquer (y) qui peut être expliquée par la variabilité des variables explicatives (x1, x2, etc.).</p>
 <p><select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<p>Un R² de 0,75 signifie que le modèle explique 75 % de la variance de y. On le lit dans <code>summary(modele)</code> (<em>Multiple R-squared</em>).</p>
+<p>Un R² de 0,75 signifie que le modèle explique 75 % de la variance de y. On le lit dans <code>summary(modele)</code> (<code>Multiple R-squared</code>).</p>
 </div>
 
 
@@ -1285,7 +1316,7 @@ window.onload = function() {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>Textes et exercices : <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr">CC BY-NC-SA 4.0</a> · Code : MIT · Éléments de tiers : voir <a href="../apropos.html">À propos</a></p>
+<p>Textes et exercices&nbsp;: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr">CC BY-NC-SA 4.0</a> · Code&nbsp;: MIT · Éléments de tiers&nbsp;: voir <a href="../apropos.html">À propos</a></p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

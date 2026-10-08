@@ -79,7 +79,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-8b9bfa8f06f8d75c827c202792a57b06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-683640b15476b5c31180ef45b94f76af.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -177,13 +177,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sessions/session-04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Paquets, jeux de données et premiers graphiques</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Packages, jeux de données et premiers graphiques</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sessions/session-05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualiser des données avec ggplot2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualiser des données avec <code>ggplot2</code></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -201,7 +201,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sessions/session-08.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Manipuler des données&nbsp;: exercices</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Manipuler des données&nbsp;: pratique guidée</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -263,6 +263,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../lexique.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Lexique</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Références</span></a>
   </div>
@@ -279,9 +285,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table des matières</h2>
    
   <ul class="collapse">
-  <li><a href="#analyse-des-réponses-au-questionnaire-1ère-partie-stats-déscriptives" id="toc-analyse-des-réponses-au-questionnaire-1ère-partie-stats-déscriptives" class="nav-link active" data-scroll-target="#analyse-des-réponses-au-questionnaire-1ère-partie-stats-déscriptives"><span class="header-section-number">10.1</span> Analyse des réponses au questionnaire, 1re partie (stats descriptives)</a></li>
+  <li><a href="#analyse-des-réponses-au-questionnaire-1ère-partie-stats-déscriptives" id="toc-analyse-des-réponses-au-questionnaire-1ère-partie-stats-déscriptives" class="nav-link active" data-scroll-target="#analyse-des-réponses-au-questionnaire-1ère-partie-stats-déscriptives"><span class="header-section-number">10.1</span> Analyse des réponses au questionnaire</a></li>
   <li><a href="#la-fonction-write.csv" id="toc-la-fonction-write.csv" class="nav-link" data-scroll-target="#la-fonction-write.csv"><span class="header-section-number">10.2</span> La fonction <code>write.csv()</code></a></li>
-  <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices">Exercices</a></li>
+  <li><a href="#testez-vous" id="toc-testez-vous" class="nav-link" data-scroll-target="#testez-vous">Testez-vous</a></li>
   </ul>
 </nav>
     </div>
@@ -307,97 +313,95 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><strong>Sujet : La statistique descriptive</strong></p>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-default callout-important callout-titled" title="Objectifs d'apprentissage">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>À noter
+<span class="screen-reader-only">Important</span>Objectifs d’apprentissage
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Distinguer la statistique descriptive de la statistique inférentielle.</li>
+<li>Résumer une variable numérique (moyenne, médiane, écart-type) et une variable catégorielle (effectifs, proportions).</li>
+<li>Combiner <code>dplyr</code> et <code>ggplot2</code> pour décrire des données réelles, au besoin par groupe.</li>
+<li>Enregistrer un tableau de données dans un fichier CSV avec <code>write.csv()</code>.</li>
+</ul>
+</div>
+</div>
+<p>Vous savez maintenant importer, transformer et représenter des données. Ce chapitre réunit ces outils pour une première analyse complète&nbsp;: la description des réponses à un questionnaire. La statistique descriptive est presque toujours la première étape d’une analyse, avant tout test.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Définition : statistique descriptive">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Définition&nbsp;: statistique descriptive
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>La <strong>statistique descriptive</strong> est généralement la première étape d’une analyse statistique. Elle aide à comprendre le jeu de données et ses caractéristiques à un niveau descriptif.</p>
 <p>La statistique descriptive <strong>résume</strong> les données de l’échantillon. La statistique <strong>inférentielle</strong> permet ensuite de généraliser de l’échantillon à la population (avec une marge d’incertitude). Établir une <strong>relation de cause à effet</strong> demande en plus un dispositif adapté, par exemple une expérience randomisée.</p>
-<p>Les mesures suivantes font souvent partie des statistiques descriptives (souvent appelés <em>summary statistics</em> en anglais) et sont utilisées pour une première analyse des variables de type numérique d’un jeu de données.</p>
+<p>Les mesures suivantes font souvent partie des statistiques descriptives (angl. <em>summary statistics</em>) et sont utilisées pour une première analyse des variables de type numérique d’un jeu de données.</p>
 <ul>
 <li><p>La taille de l’échantillon (nombre d’observations <em>n</em>)</p></li>
 <li><p>Les mesures de tendance centrale (moyenne, médiane, mode)</p></li>
 <li><p>Les mesures de dispersion (étendue, écart interquartile, variance, écart-type)</p></li>
 <li><p>Les mesures de forme (asymétrie, <em>kurtosis</em>)</p></li>
-<li><p>Les mesure de position (percentiles, quartiles)</p></li>
+<li><p>Les mesures de position (percentiles, quartiles)</p></li>
 </ul>
 <p>Ces mesures permettent d’obtenir une première idée de la structure d’un jeu de données. Elles permettent également d’identifier des valeurs extrêmes (angl. <em>outliers</em>) qui peuvent jouer un rôle important dans un jeu de données.</p>
-<p>Des mesures concernant les <strong>variables catégorielles</strong> peuvent également faire partie d’une analyse déscriptive, notamment :</p>
+<p>Des mesures concernant les <strong>variables catégorielles</strong> peuvent également faire partie d’une analyse descriptive, notamment&nbsp;:</p>
 <ul>
-<li>La fréquence de chaque catégorie (p.&nbsp;ex. combien de participant·es à un questionnaire sont des femmes ?)</li>
-<li>La répartition des différentes catégories (p.&nbsp;ex. quel est le pourcentage de femmes dans l’échantillon ?)</li>
+<li>L’effectif de chaque catégorie (p.&nbsp;ex. combien de participant·es à un questionnaire sont des femmes ?)</li>
+<li>La répartition des différentes catégories (p.&nbsp;ex. quel est le pourcentage de femmes dans l’échantillon ?)</li>
 </ul>
 </div>
 </div>
-<p>Dans la mise en œuvre d’une analyse statistique, par exemple dans un travail scientifique, les statistiques descriptives sont souvent présentées sous deux formats :</p>
+<p>Dans la mise en œuvre d’une analyse statistique, par exemple dans un travail scientifique, les statistiques descriptives sont souvent présentées sous deux formats&nbsp;:</p>
 <ul>
 <li><p>des <strong>tableaux</strong> pour les mesures telles que la taille de l’échantillon, les moyennes, etc. Souvent aussi pour différentes catégories, p.&nbsp;ex. hommes et femmes.</p></li>
-<li><p>des <strong>graphiques</strong> pour la visualisation de distributions, par exemple des histogrammes, et des répartitions de variables catégorielles, par exemple par le biais de diagrammes à barres.</p></li>
+<li><p>des <strong>graphiques</strong> pour la visualisation de distributions, par exemple des histogrammes, et des répartitions de variables catégorielles, par exemple par le biais de diagrammes en barres.</p></li>
 </ul>
-<p>Lorsque l’on veut représenter des statistiques descriptives dans R, il est souvent utile de combiner les deux paquets R <code>dplyr</code> et <code>ggplot2</code>. C’est une bonne nouvelle, car nous avons déjà examiné les principaux codes R nécessaires pour utiliser ces deux paquets dans ce cours.</p>
-<p>Pour nous entraîner à nouveau, cette fois avec nos propres données, nous allons procéder ci-dessous à une analyse descriptive des réponses au questionnaire rempli par les étudiant·es du cours&nbsp;!</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
+<p>Lorsque l’on veut représenter des statistiques descriptives dans R, il est souvent utile de combiner les deux packages <code>dplyr</code> et <code>ggplot2</code>. Vous connaissez déjà l’essentiel de ces deux packages (chapitres 4 à 8).</p>
+<p>Nous allons maintenant les appliquer à une analyse descriptive des réponses à un questionnaire rempli par des étudiant·es en sciences de la communication.</p>
+<div class="callout callout-style-default callout-caution callout-titled" title="Contexte : des données synthétiques">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Données synthétiques
+<span class="screen-reader-only">Mise en garde</span>Contexte&nbsp;: des données synthétiques
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Le fichier <code>reponses_socio.csv</code> utilisé sur ce site est <strong>synthétique</strong> : ses données ont été simulées à partir du questionnaire d’une classe, et il ne contient <strong>aucune personne réelle</strong>. Il a les mêmes variables que le questionnaire, avec des distributions et des relations semblables. Pour protéger les participant·es, les valeurs rares ont été regroupées (p.&nbsp;ex. « Autre canton »). Les résultats ci-dessous peuvent donc différer de ceux présentés en cours.</p>
+<p>Le fichier <code>reponses_socio.csv</code> utilisé dans ce livre est <strong>synthétique</strong>&nbsp;: ses données ont été simulées à partir du questionnaire d’une classe, et il ne contient <strong>aucune personne réelle</strong>. Il a les mêmes variables que le questionnaire, avec des distributions et des relations semblables. Pour protéger les participant·es, les valeurs rares ont été regroupées (p.&nbsp;ex. « Autre canton »). Les résultats peuvent donc différer légèrement de ceux des données originales.</p>
 </div>
 </div>
-<p>Vous verrez donc par la suite comment ce que nous avons appris jusqu’à présent dans le cours peut être combiné de manière utile.</p>
+</div>
 <section id="analyse-des-réponses-au-questionnaire-1ère-partie-stats-déscriptives" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="analyse-des-réponses-au-questionnaire-1ère-partie-stats-déscriptives"><span class="header-section-number">10.1</span> Analyse des réponses au questionnaire, 1re partie (stats descriptives)</h2>
-<p>Veuillez ouvrir un nouveau script R et charger les paquets <code>tidyverse</code> et <code>ggthemes</code>. Téléchargez ensuite le fichier <a href="../data/reponses_socio.csv"><code>reponses_socio.csv</code></a> dans votre répertoire de travail, ou lisez-le directement depuis le site comme dans le code ci-dessous.</p>
-<p>Si vous importez le fichier avec <em>Import Dataset → From Text (base)…</em>, utilisez les paramètres suivants :</p>
-<ul>
-<li><em>Name</em> : <code>reponses_socio</code></li>
-<li><em>Encoding</em> : <code>UTF-8</code></li>
-<li><em>Heading</em> : <code>Yes</code></li>
-<li><em>Row names</em> : <code>Automatic</code></li>
-<li><em>Separator</em> : <code>Comma</code> ; <em>Decimal</em> : <code>Period</code> ; <em>Quote</em> : <code>Double (")</code></li>
-<li><em>na.strings</em> : <code>NA</code></li>
-<li><em>Strings as factors</em> : coché</li>
-</ul>
+<h2 data-number="10.1" class="anchored" data-anchor-id="analyse-des-réponses-au-questionnaire-1ère-partie-stats-déscriptives"><span class="header-section-number">10.1</span> Analyse des réponses au questionnaire</h2>
+<p>Ouvrez votre projet RStudio et un nouveau script, puis chargez les packages <code>tidyverse</code> et <code>ggthemes</code>. Importez le fichier <a href="../data/reponses_socio.csv"><code>reponses_socio.csv</code></a> comme <code>igposts.csv</code> au <a href="../sessions/session-07.html#lire-des-données-auf-format-csv-dans-rstudio">chapitre 7</a>, ou lisez-le directement depuis le site comme dans le code ci-dessous. Une seule différence&nbsp;: ajoutez l’argument <code>stringsAsFactors = TRUE</code> (case <strong>Strings as factors</strong> de la fenêtre d’importation), qui convertit les colonnes de texte en facteurs.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Script session 10</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Script du chapitre 10</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.2.1     ✔ readr     2.2.0
-✔ forcats   1.0.1     ✔ stringr   1.6.0
-✔ ggplot2   4.0.3     ✔ tibble    3.3.1
-✔ lubridate 1.9.5     ✔ tidyr     1.3.2
-✔ purrr     1.2.2     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># vous devez modifier les fonctions setwd() et read.csv()</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># pour correspondre à votre ordinateur (ou lire le fichier</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># directement depuis le site du cours, comme ici) :</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># setwd('~/Documents/exercices_methodes_2')</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>reponses_socio <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://julesaberlin.github.io/intro-a-R/data/reponses_socio.csv"</span>,</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">encoding =</span> <span class="st">"UTF-8"</span>, <span class="at">stringsAsFactors =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Contrôle, si ça a marché</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(reponses_socio)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Lecture depuis le site du livre ; si le fichier est dans</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># le dossier de votre projet :</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># read.csv('reponses_socio.csv', encoding = 'UTF-8',</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># stringsAsFactors = TRUE)</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>reponses_socio <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://julesaberlin.github.io/intro-a-R/data/reponses_socio.csv"</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">encoding =</span> <span class="st">"UTF-8"</span>, <span class="at">stringsAsFactors =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Contrôle, si ça a marché</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(reponses_socio)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>'data.frame':   74 obs. of  10 variables:
  $ naissance : int  2003 2002 2002 2001 2001 2002 2002 2003 2003 2001 ...
@@ -411,9 +415,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  $ note_ecole: num  4.8 4.4 NA 5 4.3 6 4.2 5.3 4.5 5 ...
  $ note_uni  : num  5 4 4 5.5 4.7 4.9 5.3 4.8 4.7 5.2 ...</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Une formidable fonction pour analyser les stats</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># déscriptives : summary()</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(reponses_socio)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Une formidable fonction pour obtenir des statistiques</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># descriptives : summary()</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(reponses_socio)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   naissance      genre    permis   suisse              origine  
  Min.   :1996   Autre: 6   Non:21   Non:10   Autre continent: 8  
@@ -440,115 +444,131 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  Max.   :5.500  
                 </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Abordons maintenant quelques questions plus spécifiques</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># auxquelles nous pouvons répondre à l'aide de statistiques</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># descriptives</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Trajet pour arriver à l'université</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># *****************************************</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># histogramme très basique</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> reponses_socio, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> trajet)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">10</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Abordons maintenant quelques questions plus spécifiques auxquelles nous pouvons répondre à l’aide de statistiques descriptives.</p>
+<section id="temps-de-trajet" class="level3">
+<h3 class="anchored" data-anchor-id="temps-de-trajet">Temps de trajet</h3>
+<p>La variable <code>trajet</code> indique combien de minutes les étudiant·es mettent pour se rendre à l’université. Un histogramme montre sa distribution.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Trajet pour arriver à l'université</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># *****************************************</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># histogramme très basique</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> reponses_socio, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> trajet)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">10</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="session-10_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="session-10_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plus sophistiqué</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> reponses_socio, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> trajet)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">10</span>,</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"steelblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Trajets en minutes des étudiant·es pour arriver à l'UniFR"</span>,</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Questionnaire avec n = 74 participant·es"</span>, <span class="at">x =</span> <span class="st">"Trajet en minutes"</span>,</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Fréquence"</span>) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plus sophistiqué</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> reponses_socio, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> trajet)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">10</span>,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"steelblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Trajets en minutes des étudiant·es pour arriver à l'université"</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Questionnaire avec n = 74 participant·es"</span>, <span class="at">x =</span> <span class="st">"Trajet en minutes"</span>,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Effectif"</span>) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="session-10_files/figure-html/unnamed-chunk-2-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="session-10_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. histogramme des années de naissance</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># *****************************************</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> reponses_socio, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> naissance)) <span class="sc">+</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, <span class="at">fill =</span> <span class="st">"lightgreen"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Années de naissance"</span>, <span class="at">subtitle =</span> <span class="st">"n = 74 répondants à un questionnaire"</span>,</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">x =</span> <span class="st">"Année de naissance"</span>, <span class="at">y =</span> <span class="st">"Fréquence"</span>) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="année-de-naissance" class="level3">
+<h3 class="anchored" data-anchor-id="année-de-naissance">Année de naissance</h3>
+<p>La variable <code>naissance</code> contient l’année de naissance. Chaque barre de l’histogramme correspond à une année.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. histogramme des années de naissance</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># *****************************************</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> reponses_socio, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> naissance)) <span class="sc">+</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, <span class="at">fill =</span> <span class="st">"lightgreen"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="dv">1996</span><span class="sc">:</span><span class="dv">2005</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Années de naissance"</span>,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"n = 74 personnes interrogées"</span>, <span class="at">x =</span> <span class="st">"Année de naissance"</span>,</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Effectif"</span>) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="session-10_files/figure-html/unnamed-chunk-2-3.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="session-10_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. diagramme à barres des genres</span></span>
+</div>
+</section>
+<section id="genre" class="level3">
+<h3 class="anchored" data-anchor-id="genre">Genre</h3>
+<p>La variable catégorielle <code>genre</code> se résume par les effectifs de chaque catégorie, représentés par un diagramme en barres.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. diagramme en barres des genres</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># *****************************************</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> reponses_socio, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> genre, <span class="at">fill =</span> genre)) <span class="sc">+</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="session-10_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># graphique plus sophistiqué</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># changer d'abord l'ordre des catégories (commençant avec</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># la plus fréquente)</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>ordre <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Femme"</span>, <span class="st">"Homme"</span>, <span class="st">"Autre"</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Puis combiner dplyr avec ggplot2 :</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>reponses_socio <span class="sc">%&gt;%</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(genre) <span class="sc">%&gt;%</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">genre =</span> <span class="fu">factor</span>(genre, <span class="at">levels =</span> ordre)) <span class="sc">%&gt;%</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(genre) <span class="sc">%&gt;%</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> genre, <span class="at">fill =</span> genre)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Répartition des genres"</span>, <span class="at">subtitle =</span> <span class="st">"n = 74 personnes interrogées"</span>,</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">x =</span> <span class="st">"Genre"</span>, <span class="at">y =</span> <span class="st">"Effectif"</span>) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="session-10_files/figure-html/unnamed-chunk-5-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="notes" class="level3">
+<h3 class="anchored" data-anchor-id="notes">Notes</h3>
+<p>Les variables <code>note_ecole</code> et <code>note_uni</code> contiennent la note obtenue à l’école et la note à l’université. Nous calculons leurs moyennes, par genre, puis examinons leur relation dans un nuage de points.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Moyennes des notes</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># *****************************************</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> reponses_socio, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> genre, <span class="at">fill =</span> genre)) <span class="sc">+</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="session-10_files/figure-html/unnamed-chunk-2-4.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># graphique plus sophistiquée</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># changer d'abord l'ordre des catégories (commençant avec</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># la plus fréquente)</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>ordre <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Femme"</span>, <span class="st">"Homme"</span>, <span class="st">"Autre"</span>)</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Puis combiner dplyr avec ggplot2 !</span></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>reponses_socio <span class="sc">%&gt;%</span></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(genre) <span class="sc">%&gt;%</span></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">genre =</span> <span class="fu">factor</span>(genre, <span class="at">levels =</span> ordre)) <span class="sc">%&gt;%</span></span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(genre) <span class="sc">%&gt;%</span></span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> genre, <span class="at">fill =</span> genre)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Répartition des genres"</span>, <span class="at">subtitle =</span> <span class="st">"n = 74 répondants à un questionnaire"</span>,</span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">x =</span> <span class="st">"Genre"</span>, <span class="at">y =</span> <span class="st">"Fréquence"</span>, <span class="at">legend =</span> <span class="st">""</span>) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Ignoring unknown labels:
-• legend : ""</code></pre>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="session-10_files/figure-html/unnamed-chunk-2-5.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Moyennes des notes</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># *****************************************</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(reponses_socio<span class="sc">$</span>note_ecole, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(reponses_socio<span class="sc">$</span>note_ecole, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4.811429</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(reponses_socio<span class="sc">$</span>note_uni, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(reponses_socio<span class="sc">$</span>note_uni, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4.862162</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(reponses_socio<span class="sc">$</span>note_uni, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(reponses_socio<span class="sc">$</span>note_uni, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(reponses_socio<span class="sc">$</span>note_ecole, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(reponses_socio<span class="sc">$</span>note_ecole, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4.2</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># On exclut les réponses sans note (valeurs manquantes, NA)</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ; sans ce filtre, mean() renverrait NA pour les groupes</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co"># concernés</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>reponses_socio <span class="sc">%&gt;%</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(note_ecole, note_uni, genre) <span class="sc">%&gt;%</span></span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(genre) <span class="sc">%&gt;%</span></span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(note_ecole), <span class="sc">!</span><span class="fu">is.na</span>(note_uni)) <span class="sc">%&gt;%</span></span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>(), <span class="at">note_ecole_moyenne =</span> <span class="fu">mean</span>(note_ecole),</span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">note_uni_moyenne =</span> <span class="fu">mean</span>(note_uni))</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># On exclut les réponses sans note (valeurs manquantes, NA)</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ; sans ce filtre, mean() renverrait NA pour les groupes</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co"># concernés</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>reponses_socio <span class="sc">%&gt;%</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(note_ecole, note_uni, genre) <span class="sc">%&gt;%</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(genre) <span class="sc">%&gt;%</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(note_ecole), <span class="sc">!</span><span class="fu">is.na</span>(note_uni)) <span class="sc">%&gt;%</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>(), <span class="at">note_ecole_moyenne =</span> <span class="fu">mean</span>(note_ecole),</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">note_uni_moyenne =</span> <span class="fu">mean</span>(note_uni), <span class="at">.groups =</span> <span class="st">"drop"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 4
   genre     n note_ecole_moyenne note_uni_moyenne
@@ -557,55 +577,52 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 2 Femme    50               4.94             4.94
 3 Homme    16               4.52             4.75</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualisation de la relation entre note_ecole et note_uni</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co"># (la note d'école vient avant la note à l'université :</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co"># elle va sur l'axe x)</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>reponses_socio <span class="sc">%&gt;%</span></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(note_ecole, note_uni) <span class="sc">%&gt;%</span></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(note_ecole), <span class="sc">!</span><span class="fu">is.na</span>(note_uni)) <span class="sc">%&gt;%</span></span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> note_ecole, <span class="at">y =</span> note_uni)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
-</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualisation de la relation entre note_ecole et note_uni</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co"># (la note d'école vient avant la note à l'université :</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co"># elle va sur l'axe x)</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>reponses_socio <span class="sc">%&gt;%</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(note_ecole, note_uni) <span class="sc">%&gt;%</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(note_ecole), <span class="sc">!</span><span class="fu">is.na</span>(note_uni)) <span class="sc">%&gt;%</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> note_ecole, <span class="at">y =</span> note_uni)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">formula =</span> y <span class="sc">~</span> x) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Note à l'école et note à l'université"</span>,</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Réponses avec les deux notes (n = 70)"</span>, <span class="at">x =</span> <span class="st">"Note à l'école"</span>,</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Note à l'université"</span>) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="session-10_files/figure-html/unnamed-chunk-2-6.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="session-10_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Permis de conduire</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co"># *****************************************</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(reponses_socio<span class="sc">$</span>permis)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="permis-de-conduire" class="level3">
+<h3 class="anchored" data-anchor-id="permis-de-conduire">Permis de conduire</h3>
+<p>La variable <code>permis</code> indique si la personne a le permis de conduire. Nous comptons les effectifs, aussi selon la nationalité (<code>suisse</code>).</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Permis de conduire</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># *****************************************</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># table() compte les effectifs de chaque modalité</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(reponses_socio<span class="sc">$</span>permis)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Non Oui 
  21  52 </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(reponses_socio<span class="sc">$</span>suisse)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(reponses_socio<span class="sc">$</span>suisse)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Non Oui 
  10  64 </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>reponses_socio <span class="sc">%&gt;%</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(permis, suisse) <span class="sc">%&gt;%</span></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(permis)) <span class="sc">%&gt;%</span></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(suisse, permis) <span class="sc">%&gt;%</span></span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>())</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`summarise()` has regrouped the output.
-ℹ Summaries were computed grouped by suisse and permis.
-ℹ Output is grouped by suisse.
-ℹ Use `summarise(.groups = "drop_last")` to silence this message.
-ℹ Use `summarise(.by = c(suisse, permis))` for per-operation grouping
-  (`?dplyr::dplyr_by`) instead.</code></pre>
-</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>reponses_socio <span class="sc">%&gt;%</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(permis, suisse) <span class="sc">%&gt;%</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(permis)) <span class="sc">%&gt;%</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(suisse, permis) <span class="sc">%&gt;%</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>(), <span class="at">.groups =</span> <span class="st">"drop"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 3
-# Groups:   suisse [2]
   suisse permis     n
   &lt;fct&gt;  &lt;fct&gt;  &lt;int&gt;
 1 Non    Non        2
@@ -615,29 +632,30 @@ Non Oui
 </div>
 </div>
 </section>
+</section>
 <section id="la-fonction-write.csv" class="level2" data-number="10.2">
 <h2 data-number="10.2" class="anchored" data-anchor-id="la-fonction-write.csv"><span class="header-section-number">10.2</span> La fonction <code>write.csv()</code></h2>
-<p>Avec R, vous ne pouvez pas seulement lire des données au format CSV (entrée de données ; avec des fonctions telles que <code>read.csv()</code>), mais vous pouvez également créer des fichiers CSV à partir de votre session en cours (sortie de données), notamment avec la fonction <code>write.csv()</code> !</p>
-<p>La syntaxe de la fonction nécessite comme arguments le nom du data frame que vous voulez sauvegarder comme CSV ainsi que le chemin du fichier sur votre ordinateur qui inclut le nom que vous voulez donner au fichier CSV : <code>write.csv(nom_df, "chemin_du_fichier/nom_du_ficher.csv")</code></p>
+<p>Avec R, vous ne pouvez pas seulement lire des données au format CSV (entrée de données ; avec des fonctions telles que <code>read.csv()</code>), mais vous pouvez également créer des fichiers CSV à partir de votre session en cours (sortie de données), notamment avec la fonction <code>write.csv()</code>.</p>
+<p>La fonction prend comme arguments le tableau de données à enregistrer et le nom du fichier CSV, éventuellement précédé d’un chemin relatif au dossier du projet&nbsp;: <code>write.csv(nom_df, "nom_du_fichier.csv", row.names = FALSE)</code>. L’argument <code>row.names = FALSE</code> empêche R d’ajouter au fichier une colonne supplémentaire, sans nom, avec les numéros des lignes.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Voici un exemple avec du code (recréons le tableau avec</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co"># les animaux de Ice Age !)</span></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>name <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Manny"</span>, <span class="st">"Sid"</span>, <span class="st">"Diego"</span>, <span class="st">"Ellie"</span>, <span class="st">"Peaches"</span>, <span class="st">"Scrat"</span>,</span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Rudy"</span>, <span class="st">"Buck"</span>)</span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>species <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"mammoth"</span>, <span class="st">"sloth"</span>, <span class="st">"sabertooth"</span>, <span class="st">"mammoth"</span>, <span class="st">"mammoth"</span>,</span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"squirrel"</span>, <span class="st">"dinosaur"</span>, <span class="st">"weasel"</span>)</span>
-<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>female <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>)</span>
-<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">20</span>, <span class="dv">35</span>, <span class="dv">25</span>, <span class="dv">7</span>, <span class="dv">4</span>, <span class="dv">100</span>, <span class="dv">28</span>)</span>
-<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>weight <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5000</span>, <span class="dv">80</span>, <span class="dv">400</span>, <span class="dv">4000</span>, <span class="dv">1000</span>, <span class="dv">1</span>, <span class="dv">10000</span>, <span class="dv">3</span>)</span>
-<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>ice_age_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(name, species, female, age, weight)</span>
-<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(ice_age_df)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exemple : recréons le tableau des animaux de L'Âge de</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co"># glace (chapitre 2)</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>name <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Manny"</span>, <span class="st">"Sid"</span>, <span class="st">"Diego"</span>, <span class="st">"Ellie"</span>, <span class="st">"Peaches"</span>, <span class="st">"Scrat"</span>,</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Rudy"</span>, <span class="st">"Buck"</span>)</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>species <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"mammoth"</span>, <span class="st">"sloth"</span>, <span class="st">"sabertooth"</span>, <span class="st">"mammoth"</span>, <span class="st">"mammoth"</span>,</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"squirrel"</span>, <span class="st">"dinosaur"</span>, <span class="st">"weasel"</span>)</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>female <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>)</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">20</span>, <span class="dv">35</span>, <span class="dv">25</span>, <span class="dv">7</span>, <span class="dv">4</span>, <span class="dv">100</span>, <span class="dv">28</span>)</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>weight <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5000</span>, <span class="dv">80</span>, <span class="dv">400</span>, <span class="dv">4000</span>, <span class="dv">1000</span>, <span class="dv">1</span>, <span class="dv">10000</span>, <span class="dv">3</span>)</span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>ice_age_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(name, species, female, age, weight)</span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(ice_age_df)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     name    species female age weight
 1   Manny    mammoth  FALSE  30   5000
@@ -649,26 +667,47 @@ Non Oui
 7    Rudy   dinosaur  FALSE 100  10000
 8    Buck     weasel  FALSE  28      3</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Maintenant, notre but est de créer un ficher CSV qui</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="co"># contient les données du data frame ice_age_df</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Maintenant, notre but est de créer un fichier CSV qui</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="co"># contient les données du tableau de données ice_age_df</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Il faut adapter le chemin du fichier suivant pour qu'il</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="co"># marche sur votre ordinateur :</span></span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(ice_age_df, <span class="at">file =</span> <span class="st">"~/Documents/exercices_methodes_2/ice_age_df.csv"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Enregistre le fichier dans le répertoire de travail (le</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="co"># dossier du projet) :</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(ice_age_df, <span class="st">"ice_age_df.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>Si tout a bien marché, vous devrez maintenant avoir un fichier CSV, nommé <code>ice_age_df.csv</code> dans votre répertoire de travail !</p>
+<p>Si tout a bien marché, vous devriez maintenant avoir un fichier CSV, nommé <code>ice_age_df.csv</code> dans votre répertoire de travail.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="En bref">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>En bref
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>La statistique descriptive résume l’échantillon ; seule, elle ne permet ni de généraliser à la population ni de conclure à une relation de cause à effet.</li>
+<li>Pour une variable numérique&nbsp;: n, moyenne, médiane, écart-type, minimum et maximum, et un histogramme.</li>
+<li>Pour une variable catégorielle&nbsp;: effectifs et proportions (<code>table()</code>, <code>count()</code>), et un diagramme en barres.</li>
+<li><code>group_by()</code> suivi de <code>summarize()</code> décrit une variable par groupe ; pensez aux valeurs manquantes (<code>na.rm = TRUE</code>).</li>
+<li><code>write.csv()</code> enregistre un tableau de données dans un fichier CSV.</li>
+</ul>
+</div>
+</div>
+<p>Les différences observées dans l’échantillon existent-elles aussi dans la population ? Le chapitre 11 aborde cette question avec le test t.</p>
 </section>
-<section id="exercices" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="exercices">Exercices</h2>
-<p>Choisissez <em>Vrai</em> ou <em>Faux</em>, cochez une réponse ou tapez un nombre : la couleur indique tout de suite si votre réponse est correcte. Cliquez sur <strong>Explication</strong> pour voir la correction.</p>
+<section id="testez-vous" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="testez-vous">Testez-vous</h2>
+<p><span id="exercices"></span></p>
+<p>Choisissez <em>Vrai</em> ou <em>Faux</em>, cochez une réponse ou tapez un nombre&nbsp;: la couleur indique tout de suite si votre réponse est correcte. Cliquez sur <strong>Explication</strong> pour voir la correction.</p>
 <section id="q37" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q37">Question 10.1</h3>
-<p>Jugez chaque affirmation concernant les <strong>statistiques descriptives</strong> :</p>
+<p>Jugez chaque proposition concernant la <strong>statistique descriptive</strong>&nbsp;:</p>
 <ol type="a">
 <li><p>L’objectif des statistiques descriptives est principalement d’analyser les relations causales entre les variables. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
-<li><p>La partie descriptive d’une analyse statistique fournit généralement des indications telles que la taille de l’échantillon (n), les fréquences des variables catégorielles et les moyennes des variables numériques. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>La partie descriptive d’une analyse statistique fournit généralement des indications telles que la taille de l’échantillon (n), les effectifs des variables catégorielles et les moyennes des variables numériques. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Les tests d’hypothèse, par exemple avec un test t, sont une étape courante des statistiques descriptives. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
 <li><p>Les statistiques descriptives précèdent souvent les statistiques inférentielles dans une analyse de données quantitatives en sciences sociales. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Certaines visualisations de données, comme les histogrammes, se prêtent bien à la présentation de statistiques descriptives. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
@@ -682,11 +721,11 @@ Explication
 </section>
 <section id="q40" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q40">Question 10.2</h3>
-<p>Jugez chaque proposition concernant l’histogramme suivant (source des données : questionnaire du cours) :</p>
-<p><img src="session-10_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+<p>Jugez chaque proposition concernant l’histogramme suivant (données&nbsp;: <code>reponses_socio.csv</code>)&nbsp;:</p>
+<p><img src="session-10_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
 <ol type="a">
 <li><p>L’histogramme montre que le nombre de frères et sœurs (variable <code>fraterie</code>) suit une loi normale. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
-<li><p>L’histogramme montre que la plupart des étudiant·es de la classe ont grandi dans des constellations familiales traditionnelles. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>L’histogramme montre que la plupart des étudiant·es du jeu de données ont grandi dans des constellations familiales traditionnelles. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
 <li><p>L’histogramme montre qu’il y a plus d’étudiant·es qui ont 3 frères et sœurs que d’étudiant·es qui sont enfants uniques. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>La constellation la plus fréquente est celle des étudiant·es ayant un seul frère ou une seule sœur. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Une personne ayant participé au questionnaire a indiqué qu’elle avait 7 frères et sœurs. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
@@ -699,35 +738,35 @@ Explication
 <p>b) Un histogramme du nombre de frères et sœurs ne dit rien sur la forme des familles.</p>
 <p>c) 7 étudiant·es ont 3 frères et sœurs, contre 5 enfants uniques.</p>
 <p>d) La barre la plus haute est celle d’un frère ou d’une sœur (33 étudiant·es).</p>
-<p>e) Personne n’indique 7 frères et sœurs : le maximum est de 5. Vérifiez avec <code>table(reponses_socio$fraterie)</code>.</p>
+<p>e) Personne n’indique 7 frères et sœurs&nbsp;: le maximum est de 5. Vérifiez avec <code>table(reponses_socio$fraterie)</code>.</p>
 </div>
 </section>
 <section id="q70" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q70">Question 10.3</h3>
-<p>Importez le jeu de données <code>reponses_socio.csv</code> dans RStudio. Combien d’<strong>observations</strong> contient-il ?</p>
-<p>Réponse : <input class="webex-solveme nospaces" size="4" data-answer="[&quot;74&quot;]"></p>
+<p>Importez le jeu de données <code>reponses_socio.csv</code> dans RStudio. Combien d’<strong>observations</strong> contient-il ?</p>
+<p>Réponse&nbsp;: <input class="webex-solveme nospaces" size="4" data-answer="[&quot;74&quot;]"></p>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<p><code>nrow(reponses_socio)</code> ou <code>dim(reponses_socio)</code> : le nombre de lignes correspond au nombre d’observations.</p>
+<p><code>nrow(reponses_socio)</code> ou <code>dim(reponses_socio)</code>&nbsp;: le nombre de lignes correspond au nombre d’observations.</p>
 </div>
 </section>
 <section id="q71" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q71">Question 10.4</h3>
-<p>Importez le jeu de données <code>reponses_socio.csv</code> dans RStudio. Combien de <strong>variables</strong> contient-il ?</p>
-<p>Réponse : <input class="webex-solveme nospaces" size="4" data-answer="[&quot;10&quot;]"></p>
+<p>Importez le jeu de données <code>reponses_socio.csv</code> dans RStudio. Combien de <strong>variables</strong> contient-il ?</p>
+<p>Réponse&nbsp;: <input class="webex-solveme nospaces" size="4" data-answer="[&quot;10&quot;]"></p>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<p><code>ncol(reponses_socio)</code> ou <code>dim(reponses_socio)</code> : le nombre de colonnes correspond au nombre de variables (<code>naissance</code>, <code>genre</code>, <code>permis</code>, <code>suisse</code>, <code>origine</code>, <code>fraterie</code>, <code>domicile</code>, <code>trajet</code>, <code>note_ecole</code>, <code>note_uni</code>).</p>
+<p><code>ncol(reponses_socio)</code> ou <code>dim(reponses_socio)</code>&nbsp;: le nombre de colonnes correspond au nombre de variables (<code>naissance</code>, <code>genre</code>, <code>permis</code>, <code>suisse</code>, <code>origine</code>, <code>fraterie</code>, <code>domicile</code>, <code>trajet</code>, <code>note_ecole</code>, <code>note_uni</code>).</p>
 </div>
 </section>
 <section id="q72" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q72">Question 10.5</h3>
-<p>Importez le jeu de données <code>reponses_socio.csv</code> dans RStudio. Pour la variable <code>genre</code> : combien de <strong>femmes</strong> y a-t-il dans ce jeu de données ?</p>
-<p>Réponse : <input class="webex-solveme nospaces" size="4" data-answer="[&quot;51&quot;]"></p>
+<p>Importez le jeu de données <code>reponses_socio.csv</code> dans RStudio. Pour la variable <code>genre</code>&nbsp;: combien de <strong>femmes</strong> y a-t-il dans ce jeu de données ?</p>
+<p>Réponse&nbsp;: <input class="webex-solveme nospaces" size="4" data-answer="[&quot;51&quot;]"></p>
 <div class="webex-solution">
 <button>
 Explication
@@ -737,8 +776,8 @@ Explication
 </section>
 <section id="q73" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q73">Question 10.6</h3>
-<p>Importez le jeu de données <code>reponses_socio.csv</code> dans RStudio. Pour la variable <code>genre</code> : combien d’<strong>hommes</strong> y a-t-il dans ce jeu de données ?</p>
-<p>Réponse : <input class="webex-solveme nospaces" size="4" data-answer="[&quot;17&quot;]"></p>
+<p>Importez le jeu de données <code>reponses_socio.csv</code> dans RStudio. Pour la variable <code>genre</code>&nbsp;: combien d’<strong>hommes</strong> y a-t-il dans ce jeu de données ?</p>
+<p>Réponse&nbsp;: <input class="webex-solveme nospaces" size="4" data-answer="[&quot;17&quot;]"></p>
 <div class="webex-solution">
 <button>
 Explication
@@ -748,49 +787,49 @@ Explication
 </section>
 <section id="q76" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q76">Question 10.7</h3>
-<p>Dans le jeu de données <code>reponses_socio.csv</code>, combien de minutes les étudiant·es <strong>possédant un passeport suisse</strong> mettent-ils en moyenne pour se rendre à l’université ? Arrondissez à la minute.</p>
-<p>Réponse : <input class="webex-solveme nospaces" size="4" data-answer="[&quot;34&quot;]"></p>
+<p>Dans le jeu de données <code>reponses_socio.csv</code>, combien de minutes les étudiant·es <strong>possédant un passeport suisse</strong> mettent-ils en moyenne pour se rendre à l’université ? Arrondissez à la minute.</p>
+<p>Réponse&nbsp;: <input class="webex-solveme nospaces" size="4" data-answer="[&quot;34&quot;]"></p>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>reponses_socio <span class="sc">%&gt;%</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(suisse) <span class="sc">%&gt;%</span></span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">trajet_moyen =</span> <span class="fu">mean</span>(trajet))</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>reponses_socio <span class="sc">%&gt;%</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(suisse) <span class="sc">%&gt;%</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">trajet_moyen =</span> <span class="fu">mean</span>(trajet))</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Pour <code>suisse == "Oui"</code>, la moyenne vaut 33,52 minutes, soit 34 une fois arrondie.</p>
 </div>
 </section>
 <section id="q83" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q83">Question 10.8</h3>
-<p>Dans le jeu de données <code>reponses_socio.csv</code>, quel <strong>genre</strong> a le <strong>trajet moyen</strong> le plus court pour se rendre à l’université ? (Tapez le genre exactement comme il figure dans les données.)</p>
-<p>Réponse : <input class="webex-solveme nospaces ignorecase" size="5" data-answer="[&quot;Homme&quot;]"></p>
+<p>Dans le jeu de données <code>reponses_socio.csv</code>, quel <strong>genre</strong> a le <strong>trajet moyen</strong> le plus court pour se rendre à l’université ? (Tapez le genre exactement comme il figure dans les données.)</p>
+<p>Réponse&nbsp;: <input class="webex-solveme nospaces ignorecase" size="5" data-answer="[&quot;Homme&quot;]"></p>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>reponses_socio <span class="sc">%&gt;%</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(genre) <span class="sc">%&gt;%</span></span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">trajet_moyen =</span> <span class="fu">mean</span>(trajet)) <span class="sc">%&gt;%</span></span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(trajet_moyen)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<p><code>arrange()</code> trie par ordre croissant : la première ligne, <code>Homme</code> (20,6 minutes), a le trajet moyen le plus court.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>reponses_socio <span class="sc">%&gt;%</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(genre) <span class="sc">%&gt;%</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">trajet_moyen =</span> <span class="fu">mean</span>(trajet)) <span class="sc">%&gt;%</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(trajet_moyen)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>arrange()</code> trie par ordre croissant&nbsp;: la première ligne, <code>Homme</code> (20,6 minutes), a le trajet moyen le plus court.</p>
 </div>
 </section>
 <section id="q89" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q89">Question 10.9</h3>
-<p>En général, je peux enregistrer les données issues de ma session R sur mon ordinateur (par exemple, un data frame que j’ai créé) sous la forme de fichiers CSV.</p>
+<p>En général, on peut enregistrer sous forme de fichier CSV des données créées dans une session R (p.&nbsp;ex. un tableau de données).</p>
 <p><select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<p>La fonction <code>write.csv()</code> écrit un data frame dans un fichier CSV, p.&nbsp;ex. <code>write.csv(ice_age_df, "ice_age_df.csv")</code>.</p>
+<p>La fonction <code>write.csv()</code> écrit un tableau de données dans un fichier CSV, p.&nbsp;ex. <code>write.csv(ice_age_df, "ice_age_df.csv")</code>.</p>
 </div>
 </section>
 <section id="q113" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q113">Question 10.10</h3>
-<p>Le code suivant fournit des statistiques descriptives du jeu de données <code>mtcars</code> :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mtcars)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Le code suivant fournit des statistiques descriptives du jeu de données <code>mtcars</code>&nbsp;:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mtcars)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p><select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p>
 <div class="webex-solution">
 <button>
@@ -807,10 +846,10 @@ Explication
 <button>
 Explication
 </button>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>reponses_socio <span class="sc">%&gt;%</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(suisse) <span class="sc">%&gt;%</span></span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">trajet_moyen =</span> <span class="fu">mean</span>(trajet))</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Les étudiant·es sans passeport suisse mettent en moyenne 21,5 minutes, contre 33,5 pour les Suisses·ses. Attention : le groupe sans passeport suisse ne compte que 10 personnes. Pour savoir si une telle différence est due au hasard, il faudrait un test (session 11).</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>reponses_socio <span class="sc">%&gt;%</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(suisse) <span class="sc">%&gt;%</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">trajet_moyen =</span> <span class="fu">mean</span>(trajet))</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Les étudiant·es sans passeport suisse mettent en moyenne 21,5 minutes, contre 33,5 pour les titulaires d’un passeport suisse. Attention&nbsp;: le groupe sans passeport suisse ne compte que 10 personnes. Pour savoir si une telle différence est due au hasard, il faudrait un test (chapitre 11).</p>
 </div>
 </section>
 <section id="q117" class="level3 unnumbered">
@@ -821,7 +860,7 @@ Explication
 <button>
 Explication
 </button>
-<p>Effectifs, moyennes et graphiques montrent souvent déjà les principales tendances ; les statistiques inférentielles testent ensuite si elles se généralisent à la population.</p>
+<p>Effectifs, moyennes et graphiques montrent souvent déjà les principales tendances ; les statistiques inférentielles testent ensuite si elles se généralisent à la population.</p>
 </div>
 
 
@@ -1456,7 +1495,7 @@ window.onload = function() {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>Textes et exercices : <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr">CC BY-NC-SA 4.0</a> · Code : MIT · Éléments de tiers : voir <a href="../apropos.html">À propos</a></p>
+<p>Textes et exercices&nbsp;: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr">CC BY-NC-SA 4.0</a> · Code&nbsp;: MIT · Éléments de tiers&nbsp;: voir <a href="../apropos.html">À propos</a></p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

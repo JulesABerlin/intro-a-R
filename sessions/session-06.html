@@ -79,7 +79,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-8b9bfa8f06f8d75c827c202792a57b06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-683640b15476b5c31180ef45b94f76af.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -177,13 +177,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sessions/session-04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Paquets, jeux de données et premiers graphiques</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Packages, jeux de données et premiers graphiques</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sessions/session-05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualiser des données avec ggplot2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualiser des données avec <code>ggplot2</code></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -201,7 +201,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sessions/session-08.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Manipuler des données&nbsp;: exercices</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Manipuler des données&nbsp;: pratique guidée</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -263,6 +263,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../lexique.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Lexique</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Références</span></a>
   </div>
@@ -305,18 +311,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Dans le cours, le <strong>Problem Set 2</strong> était un test de 30 minutes sur Moodle portant sur les chapitres 4 et 5. Les questions ci-dessous en reprennent le contenu, avec la correction et une explication pour chaque réponse.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout callout-style-default callout-important callout-titled" title="Objectifs d'apprentissage">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Résultats de l’édition 2025 du cours
+<span class="screen-reader-only">Important</span>Objectifs d’apprentissage
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Vérifier que vous savez installer et charger un package et explorer un jeu de données d’exemple.</li>
+<li>Vérifier que vous savez construire et lire les quatre graphiques des chapitres 4 et 5.</li>
+<li>Repérer, grâce aux explications, les notions à revoir.</li>
+</ul>
+</div>
+</div>
+<p>Ce chapitre reprend les chapitres 4 et 5 sous forme de questions. Beaucoup d’entre elles vous demandent de lire un graphique&nbsp;: décrivez d’abord ce que vous voyez, puis vérifiez avec le code.</p>
+<p>Dans le cours, le <strong>Problem Set 2</strong> était un test sur Moodle portant sur les chapitres 4 et 5. Les questions ci-dessous en reprennent le contenu, avec la correction et une explication pour chaque réponse.</p>
+<div class="callout callout-style-default callout-caution callout-titled" title="Contexte : résultats de l'édition 2025 du cours">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Mise en garde</span>Contexte&nbsp;: résultats de l’édition 2025 du cours
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>65 étudiant·es ont passé ce test (20 points au maximum, 10 pour réussir). La moyenne était de 12,8 points et 86&nbsp;% des étudiant·es l’ont réussi.</p>
 <div class="cell">
@@ -331,16 +355,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-important callout-titled" title="En bref">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>En bref
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Si vous hésitez entre <code>install.packages()</code> et <code>library()</code>, relisez « Les packages R » au <a href="../sessions/session-04.html#les-paquets-r">chapitre 4</a>.</li>
+<li>Si vous confondez esthétiques, géométries et thèmes, relisez l’introduction à <code>ggplot2</code> au <a href="../sessions/session-04.html#introduction-aux-visualisations-avec-ggplot2">chapitre 4</a>.</li>
+<li>Si la lecture d’un histogramme ou d’une boîte à moustaches vous pose problème, relisez les sections correspondantes du <a href="../sessions/session-05.html#les-histogrammes">chapitre 5</a>.</li>
+</ul>
+</div>
+</div>
+<p>Au chapitre 7, vous importerez votre premier fichier de données et apprendrez à le transformer avec <code>dplyr</code>.</p>
 <section id="exercices-de-révision" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="exercices-de-révision">Exercices de révision</h2>
-<p>Ces questions reprennent le <strong>Problem Set 2</strong>. Choisissez <em>Vrai</em> ou <em>Faux</em>, cochez une réponse ou tapez un nombre : la couleur indique tout de suite si votre réponse est correcte. Cliquez sur <strong>Explication</strong> pour voir la correction.</p>
+<p>Ces questions reprennent le <strong>Problem Set 2</strong>.</p>
+<p>Choisissez <em>Vrai</em> ou <em>Faux</em>, cochez une réponse ou tapez un nombre&nbsp;: la couleur indique tout de suite si votre réponse est correcte. Cliquez sur <strong>Explication</strong> pour voir la correction.</p>
 <section id="q7" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q7">Question 6.1</h3>
-<p>Jugez chaque proposition :</p>
+<p>Jugez chaque proposition&nbsp;:</p>
 <ol type="a">
-<li><p>Le paquet <code>ggplot2</code> est inclus dans <code>tidyverse</code>. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
-<li><p>Le paquet <code>ggplot</code> est à utiliser pour faire des graphiques avec une variable, tandis que le paquet <code>ggplot2</code> est utile pour voir graphiquement la corrélation entre deux variables. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
-<li><p>Le responsable de <code>ggplot2</code> (qui maintient le paquet) est Thomas Lin Pedersen. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>Le package <code>ggplot2</code> est inclus dans le tidyverse. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>Le package <code>ggplot</code> est à utiliser pour faire des graphiques avec une variable, tandis que le package <code>ggplot2</code> est utile pour voir graphiquement la corrélation entre deux variables. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>Le responsable de <code>ggplot2</code> (qui maintient le package) est Thomas Lin Pedersen. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p><code>ggplot2</code> est très utile pour modifier des données. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
 <li><p><code>ggplot2</code> construit des graphiques de manière incrémentale, en travaillant avec des couches. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 </ol>
@@ -348,16 +391,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <button>
 Explication
 </button>
-<p>a) <code>ggplot2</code> fait partie des paquets chargés par <code>library(tidyverse)</code>.</p>
-<p>b) Il n’existe pas de paquet <code>ggplot</code> distinct : <code>ggplot()</code> est la fonction principale de <code>ggplot2</code>.</p>
+<p>a) <code>ggplot2</code> fait partie des packages chargés par <code>library(tidyverse)</code>.</p>
+<p>b) Il n’existe pas de package <code>ggplot</code> distinct&nbsp;: <code>ggplot()</code> est la fonction principale de <code>ggplot2</code>.</p>
 <p>c) <code>packageDescription("ggplot2")$Maintainer</code> l’indique.</p>
-<p>d) Pour modifier des données, on utilise <code>dplyr</code> ; <code>ggplot2</code> sert à les visualiser.</p>
+<p>d) Pour modifier des données, on utilise <code>dplyr</code> ; <code>ggplot2</code> sert à les visualiser.</p>
 <p>e) On ajoute les couches les unes aux autres avec <code>+</code>.</p>
 </div>
 </section>
 <section id="q24" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q24">Question 6.2</h3>
-<p>Jugez chaque proposition concernant le graphique suivant :</p>
+<p>Jugez chaque proposition concernant le graphique suivant&nbsp;:</p>
 <p><img src="session-06_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 <ol type="a">
 <li><p>Le graphique montre différents niveaux de qualité de la couleur des diamants. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
@@ -371,34 +414,34 @@ Explication
 Explication
 </button>
 <p>a) Les couleurs du graphique représentent la <strong>pureté</strong> (<code>clarity</code>), pas la couleur des diamants (<code>color</code>).</p>
-<p>b) et c) Le nuage de points s’incurve vers le haut : le prix augmente plus vite que le carat.</p>
-<p>d) Pour un même carat, les points des puretés élevées se situent plus haut. Parmi les diamants d’environ 1 carat, le prix médian passe de 2 808 USD (I1) à 9 764 USD (IF).</p>
-<p>e) Le diamant le plus lourd (5,01 carats) coûte 18 018 USD, alors que le plus cher coûte 18 823 USD.</p>
+<p>b) et c) Le nuage de points s’incurve vers le haut&nbsp;: le prix augmente plus vite que le carat.</p>
+<p>d) Pour un même carat, les points des puretés élevées se situent plus haut. Parmi les diamants d’environ 1 carat, le prix médian passe de 2808 USD (I1) à 9764 USD (IF).</p>
+<p>e) Le diamant le plus lourd (5,01 carats) coûte 18&nbsp;018 USD, alors que le plus cher coûte 18&nbsp;823 USD.</p>
 </div>
 </section>
 <section id="q25" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q25">Question 6.3</h3>
-<p>Jugez chaque proposition concernant les couches d’un graphique <code>ggplot2</code> (<em>Data</em>, <em>Aesthetics</em>, <em>Geometries</em>, <em>Facets</em>, <em>Statistics</em>, <em>Coordinates</em>, <em>Theme</em>) :</p>
+<p>Jugez chaque proposition concernant les composants d’un graphique <code>ggplot2</code> (données, esthétiques, géométries, facettes, statistiques, coordonnées, thème)&nbsp;:</p>
 <ol type="a">
-<li><p>Pour créer un graphique ggplot2, il faut toujours définir les paramètres de toutes les couches les unes après les autres. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
-<li><p>La couche <em>Geometries</em> définit le type de graphique (par ex. nuage de points, diagramme à barres, boîtes à moustaches, etc.). <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
-<li><p>En général, on construit un graphique ggplot2 par couches en commençant par la couche <em>Data</em>. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
-<li><p>La couche <em>Aesthetics</em> définit le design du graphique (par exemple, elle permet de générer le graphique dans le design du Wall Street Journal ou du magazine The Economist). <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
-<li><p>Les couches <em>Facets</em>, <em>Statistics</em>, <em>Coordinates</em> et <em>Theme</em> ne doivent pas obligatoirement être spécifiées dans le code, car R utilise pour celles-ci des paramètres standard prédéfinis. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>Pour créer un graphique <code>ggplot2</code>, il faut toujours définir tous les composants, les uns après les autres. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>Les géométries définissent le type de graphique (p.&nbsp;ex. nuage de points, diagramme en barres, boîte à moustaches). <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>En général, on construit un graphique <code>ggplot2</code> en commençant par les données. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>Les esthétiques définissent l’apparence générale du graphique (p.&nbsp;ex. le style du Wall Street Journal ou du magazine The Economist). <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>Les facettes, les statistiques, les coordonnées et le thème ne doivent pas obligatoirement être spécifiés dans le code, car R utilise pour eux des valeurs par défaut. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 </ol>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<p>a) et e) Seules <em>Data</em>, <em>Aesthetics</em> et <em>Geometries</em> sont nécessaires ; les autres couches ont des valeurs par défaut.</p>
-<p>c) On commence par <code>ggplot(data = ...)</code>, puis on ajoute les couches.</p>
-<p>d) <em>Aesthetics</em> (<code>aes()</code>) relie les variables aux axes, couleurs, tailles, etc. Le style « WSJ » ou « Economist » relève de la couche <em>Theme</em> (p.&nbsp;ex. <code>theme_wsj()</code> du paquet <code>ggthemes</code>).</p>
+<p>a) et e) Seuls les données, les esthétiques et au moins une géométrie sont nécessaires ; les autres composants ont des valeurs par défaut.</p>
+<p>c) On commence par <code>ggplot(data = ...)</code>, puis on ajoute les autres éléments avec <code>+</code>. Chaque géométrie ajoute une couche.</p>
+<p>d) Les esthétiques (<code>aes()</code>) relient les variables aux axes, couleurs, tailles, etc. Le style « WSJ » ou « Economist » relève du thème (p.&nbsp;ex. <code>theme_wsj()</code> du package <code>ggthemes</code>).</p>
 </div>
 </section>
 <section id="q54" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q54">Question 6.4</h3>
-<p>Quel est le prix en USD du diamant le moins cher du jeu de données <code>diamonds</code> ? (Donnez seulement la valeur numérique.)</p>
-<p>Réponse : <input class="webex-solveme nospaces" size="4" data-answer="[&quot;326&quot;]"></p>
+<p>Quel est le prix en USD du diamant le moins cher du jeu de données <code>diamonds</code> ? (Donnez seulement la valeur numérique.)</p>
+<p>Réponse&nbsp;: <input class="webex-solveme nospaces" size="4" data-answer="[&quot;326&quot;]"></p>
 <div class="webex-solution">
 <button>
 Explication
@@ -408,8 +451,8 @@ Explication
 </section>
 <section id="q57" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q57">Question 6.5</h3>
-<p>Quelle est la longueur du pétale le plus court du jeu de données <code>iris</code> ? (Donnez seulement la valeur numérique.)</p>
-<p>Réponse : <input class="webex-solveme nospaces" data-tol="0.001" size="4" data-answer="[&quot;1&quot;]"></p>
+<p>Quelle est la longueur du pétale le plus court du jeu de données <code>iris</code> ? (Donnez seulement la valeur numérique.)</p>
+<p>Réponse&nbsp;: <input class="webex-solveme nospaces" data-tol="0.001" size="4" data-answer="[&quot;1&quot;]"></p>
 <div class="webex-solution">
 <button>
 Explication
@@ -419,36 +462,36 @@ Explication
 </section>
 <section id="q61" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q61">Question 6.6</h3>
-<p>Combien de chevaux-vapeur (<em>gross horsepower</em>, variable <code>hp</code>) a la Chrysler Imperial dans le jeu de données <code>mtcars</code> ?</p>
-<p>Réponse : <input class="webex-solveme nospaces" size="4" data-answer="[&quot;230&quot;]"></p>
+<p>Combien de chevaux-vapeur (<em>gross horsepower</em>, variable <code>hp</code>) a la Chrysler Imperial dans le jeu de données <code>mtcars</code> ?</p>
+<p>Réponse&nbsp;: <input class="webex-solveme nospaces" size="4" data-answer="[&quot;230&quot;]"></p>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<p>Les noms des voitures sont les noms de lignes de <code>mtcars</code> :</p>
+<p>Les noms des voitures sont les noms de lignes de <code>mtcars</code>&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>mtcars[<span class="st">"Chrysler Imperial"</span>, <span class="st">"hp"</span>]</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="q102" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q102">Question 6.7</h3>
-<p><code>ggplot2</code> est un paquet R qui fait partie du <code>tidyverse</code>.</p>
+<p><code>ggplot2</code> est un package R qui fait partie du tidyverse.</p>
 <p><select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<p><code>tidyverse::tidyverse_packages()</code> liste les paquets du tidyverse ; <code>ggplot2</code> en fait partie.</p>
+<p><code>tidyverse::tidyverse_packages()</code> liste les packages du tidyverse ; <code>ggplot2</code> en fait partie.</p>
 </div>
 </section>
 <section id="q26" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q26">Question 6.8</h3>
-<p>Jugez chaque proposition concernant l’histogramme suivant des points obtenus au Problem Set 1 :</p>
+<p>Jugez chaque proposition concernant l’histogramme suivant des points obtenus à un test du cours d’origine (fichier <code>distribution_ps_1.csv</code>)&nbsp;:</p>
 <p><img src="session-06_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid" width="672"></p>
 <ol type="a">
-<li><p>Les étudiant·es ont obtenu le plus fréquemment 13 points dans le Problem Set 1. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
-<li><p>Le graphique montre qu’en médiane, 16 points ont été obtenus dans le Problem Set 1. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
-<li><p>Le graphique montre qu’en moyenne, 16 points ont été obtenus dans le Problem Set 1. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
-<li><p>L’histogramme montre que la distribution des points dans le Problem Set 1 suit une loi normale centrée réduite. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>Les étudiant·es ont obtenu le plus fréquemment 13 points à ce test. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>Le graphique montre qu’en médiane, 16 points ont été obtenus à ce test. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>Le graphique montre qu’en moyenne, 16 points ont été obtenus à ce test. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>L’histogramme montre que la distribution des points à ce test suit une loi normale centrée réduite. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
 </ol>
 <div class="webex-solution">
 <button>
@@ -456,12 +499,12 @@ Explication
 </button>
 <p>a) La barre la plus haute est à 14 points (le mode).</p>
 <p>b) et c) Un histogramme ne montre ni la médiane ni la moyenne exactes. Ici, la médiane vaut 14 et la moyenne 14,2.</p>
-<p>d) Une loi normale <em>centrée réduite</em> a une moyenne de 0 et un écart-type de 1 : ce n’est pas le cas de points compris entre 8 et 20.</p>
+<p>d) Une loi normale <em>centrée réduite</em> a une moyenne de 0 et un écart-type de 1&nbsp;: ce n’est pas le cas de points compris entre 8 et 20.</p>
 </div>
 </section>
 <section id="q27" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q27">Question 6.9</h3>
-<p>Comment peut-on ajuster la <strong>largeur des intervalles</strong> dans un histogramme créé avec <code>ggplot2</code> ?</p>
+<p>Comment peut-on ajuster la <strong>largeur des intervalles</strong> dans un histogramme créé avec <code>ggplot2</code> ?</p>
 <ol type="a">
 <li><p>En utilisant l’argument <code>bins</code>. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>En ajustant l’argument <code>width</code>. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
@@ -472,12 +515,12 @@ Explication
 <button>
 Explication
 </button>
-<p><code>binwidth</code> fixe directement la largeur de chaque barre ; <code>bins</code> fixe le <strong>nombre</strong> de barres, ce qui change aussi leur largeur. <code>geom_histogram()</code> n’a pas d’argument <code>interval</code>.</p>
+<p><code>binwidth</code> fixe directement la largeur de chaque barre ; <code>bins</code> fixe le <strong>nombre</strong> de barres, ce qui change aussi leur largeur. <code>geom_histogram()</code> n’a pas d’argument <code>interval</code>.</p>
 </div>
 </section>
 <section id="q28" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q28">Question 6.10</h3>
-<p>Jugez chaque proposition concernant le graphique suivant, créé avec le jeu de données <code>mpg</code> (inclus dans le paquet <code>ggplot2</code>) :</p>
+<p>Jugez chaque proposition concernant le graphique suivant, créé avec le jeu de données <code>mpg</code> (inclus dans le package <code>ggplot2</code>)&nbsp;:</p>
 <p><img src="session-06_files/figure-html/unnamed-chunk-3-3.png" class="img-fluid" width="672"></p>
 <ol type="a">
 <li><p>La ligne de régression indique que la corrélation entre la taille du moteur et l’efficacité du carburant est négative. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
@@ -490,21 +533,21 @@ Explication
 <button>
 Explication
 </button>
-<p>a) et e) La droite descend : plus la cylindrée (<code>displ</code>) est grande, moins on parcourt de miles par gallon (<code>hwy</code>).</p>
+<p>a) et e) La droite descend&nbsp;: plus la cylindrée (<code>displ</code>) est grande, moins on parcourt de miles par gallon (<code>hwy</code>).</p>
 <p>b) Les données viennent de <code>mpg</code>, pas de <code>mtcars</code>.</p>
 <p>c) C’est la description de <code>?mpg</code>.</p>
-<p>d) L’axe des x montre la cylindrée (<code>displ</code>, en litres) ; les miles par gallon sont sur l’axe des y.</p>
+<p>d) L’axe des x montre la cylindrée (<code>displ</code>, en litres) ; les miles par gallon sont sur l’axe des y.</p>
 </div>
 </section>
 <section id="q29" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q29">Question 6.11</h3>
-<p>Exécutez le code R suivant et jugez chaque proposition :</p>
+<p>Exécutez le code suivant, puis jugez chaque proposition&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(mpg, wt)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(g)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <ol type="a">
-<li><p><code>g</code> est un objet stocké dans le volet <em>Environment</em> de RStudio. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p><code>g</code> est un objet stocké dans le volet <strong>Environment</strong> de RStudio. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Le graphique <code>g</code> affiche une relation entre le poids des voitures (<code>wt</code>) et leur efficacité énergétique (<code>mpg</code>, miles par gallon). <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Le code produit un histogramme. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
 <li><p>Chaque point dans le graphique représente une voiture du jeu de données <code>mtcars</code>. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
@@ -517,12 +560,12 @@ Explication
 <p>a) L’affectation <code>&lt;-</code> stocke le graphique dans l’objet <code>g</code>.</p>
 <p>c) <code>geom_point()</code> produit un <strong>nuage de points</strong>, pas un histogramme.</p>
 <p>d) Chaque ligne de <code>mtcars</code> (une voiture) donne un point.</p>
-<p>e) Les voitures lourdes parcourent moins de miles par gallon : <code>cor(mtcars$mpg, mtcars$wt)</code> vaut −0,87.</p>
+<p>e) Les voitures lourdes parcourent moins de miles par gallon&nbsp;: <code>cor(mtcars$mpg, mtcars$wt)</code> vaut −0,87.</p>
 </div>
 </section>
 <section id="q30" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q30">Question 6.12</h3>
-<p>Exécutez le code R suivant et jugez chaque proposition :</p>
+<p>Exécutez le code suivant, puis jugez chaque proposition&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Transformations :</span></span>
@@ -533,7 +576,7 @@ Explication
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribution of cylinders and gears in mtcars"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <ol type="a">
-<li><p>Ce code produit un diagramme à barres représentant le nombre de voitures par nombre de cylindres. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>Ce code produit un diagramme en barres représentant le nombre de voitures par nombre de cylindres. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>La couleur des barres est déterminée par le nombre de vitesses (<code>gear</code>). <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Les cylindres et les vitesses sont transformés en variables de type facteur. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Le graphique montre qu’il n’y a pas de voitures avec 8 cylindres et 4 vitesses dans <code>mtcars</code>. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
@@ -552,12 +595,12 @@ Explication
 </section>
 <section id="q31" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q31">Question 6.13</h3>
-<p>Exécutez le code R suivant et jugez chaque proposition :</p>
+<p>Exécutez le code suivant, puis jugez chaque proposition&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">1000</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <ol type="a">
-<li><p>Ce code génère 1000 valeurs « aléatoires » qui se rapprochent d’une loi normale centrée réduite (<em>standard normal distribution</em>). <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>Ce code génère 1000 valeurs « aléatoires » qui se rapprochent d’une loi normale centrée réduite (angl. <em>standard normal distribution</em>). <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Ce code génère un message d’erreur, car il y a des arguments manquants dans la fonction <code>rnorm()</code>. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
-<li><p>Ce code génère 1000 valeurs « aléatoires » qui se rapprochent d’une loi normale avec une moyenne = 1 et un écart-type = 0. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>Ce code génère 1000 valeurs « aléatoires » qui se rapprochent d’une loi normale avec une moyenne = 1 et un écart-type = 0. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
 <li><p>Ce code génère des valeurs numériques positives et négatives. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Toutes les lois normales ont le même écart-type. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
 </ol>
@@ -565,8 +608,8 @@ Explication
 <button>
 Explication
 </button>
-<p>Sans autres arguments, <code>rnorm()</code> utilise <code>mean = 0</code> et <code>sd = 1</code> : c’est la loi normale centrée réduite, qui produit des valeurs positives et négatives autour de 0.</p>
-<p>e) L’écart-type est un paramètre de la loi : il varie d’une loi normale à l’autre.</p>
+<p>Sans autres arguments, <code>rnorm()</code> utilise <code>mean = 0</code> et <code>sd = 1</code>&nbsp;: c’est la loi normale centrée réduite, qui produit des valeurs positives et négatives autour de 0.</p>
+<p>e) L’écart-type est un paramètre de la loi&nbsp;: il varie d’une loi normale à l’autre.</p>
 </div>
 </section>
 <section id="q97" class="level3 unnumbered">
@@ -577,36 +620,36 @@ Explication
 <button>
 Explication
 </button>
-<p>Les graphiques sont un outil central de l’analyse exploratoire : ils révèlent la forme des distributions, les tendances et les valeurs aberrantes.</p>
+<p>Les graphiques sont un outil central de l’analyse exploratoire&nbsp;: ils révèlent la forme des distributions, les tendances et les valeurs aberrantes.</p>
 </div>
 </section>
 <section id="q99" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q99">Question 6.15</h3>
-<p>Un boxplot peut être utilisé pour visualiser la distribution, la moyenne, les déciles et les valeurs extrêmes d’un ensemble de données.</p>
+<p>Une boîte à moustaches peut être utilisée pour visualiser la distribution, la moyenne, les déciles et les valeurs extrêmes d’une variable.</p>
 <p><select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<p>Un boxplot montre la <strong>médiane</strong> et les <strong>quartiles</strong> (plus les moustaches et les valeurs extrêmes), pas la moyenne ni les déciles.</p>
+<p>Une boîte à moustaches montre la <strong>médiane</strong> et les <strong>quartiles</strong> (plus les moustaches et les valeurs extrêmes), pas la moyenne ni les déciles.</p>
 </div>
 </section>
 <section id="q100" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q100">Question 6.16</h3>
-<p>Le code suivant crée un histogramme qui indique une loi normale :</p>
+<p>Le code suivant crée un histogramme qui indique une loi normale&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> diamonds, <span class="fu">aes</span>(<span class="at">x =</span> price)) <span class="sc">+</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">600</span>, <span class="at">fill =</span> <span class="st">"steelblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Histogramme des prix dans le jeu de données diamonds"</span>,</span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"n = 53 940 observations"</span>,</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Prix en USD"</span>, <span class="at">y =</span> <span class="st">"Fréquence"</span>) <span class="sc">+</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Prix en USD"</span>, <span class="at">y =</span> <span class="st">"Effectif"</span>) <span class="sc">+</span></span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p><select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<p>La distribution des prix est fortement asymétrique à droite : beaucoup de diamants bon marché, peu de diamants très chers. La moyenne (3933 USD) dépasse d’ailleurs nettement la médiane (2401 USD).</p>
+<p>La distribution des prix est fortement asymétrique à droite&nbsp;: beaucoup de diamants bon marché, peu de diamants très chers. La moyenne (3933 USD) dépasse d’ailleurs nettement la médiane (2401 USD).</p>
 </div>
 </section>
 <section id="q101" class="level3 unnumbered">
@@ -632,34 +675,9 @@ Explication
 <p>Avec un million de valeurs, l’histogramme prend presque parfaitement la forme en cloche de la loi normale. Avec seulement quelques dizaines de valeurs, il serait beaucoup plus irrégulier.</p>
 </div>
 </section>
-<section id="q32" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="q32">Question 6.19</h3>
-<p>Exécutez le code R suivant et jugez chaque proposition :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(diamonds)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(clarity) <span class="sc">%&gt;%</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>(), <span class="at">prix_moyen =</span> <span class="fu">mean</span>(price))</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<ol type="a">
-<li><p>La sortie du code indique les prix moyens en USD des diamants pour chaque type de pureté dans le jeu de données <code>diamonds</code>. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
-<li><p>En moyenne, les diamants du type de pureté le plus élevé coûtent 1790 USD. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
-<li><p>Il y a le même nombre de diamants pour chaque type de pureté dans le jeu de données <code>diamonds</code>. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
-<li><p>L’argument <code>n = n()</code> dans la fonction <code>summarize()</code> nous permet de compter le nombre d’observations dans chaque catégorie. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
-<li><p>La fonction <code>group_by(clarity)</code> regroupe les diamants par type de pureté dans le résultat. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
-</ol>
-<div class="webex-solution">
-<button>
-Explication
-</button>
-<p>a), d) et e) <code>group_by()</code> crée un groupe par pureté ; <code>summarize()</code> calcule ensuite, pour chaque groupe, le nombre de diamants (<code>n()</code>) et le prix moyen.</p>
-<p>b) 1790 est le <strong>nombre</strong> de diamants de pureté maximale (IF) ; leur prix moyen est d’environ 2865 USD.</p>
-<p>c) Les effectifs varient de 741 (I1) à 13 065 (SI1).</p>
-</div>
-</section>
 <section id="q98" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="q98">Question 6.20</h3>
-<p>La fonction <code>as.factor()</code> peut être utilisée pour transformer des variables textuelles et numériques en facteurs.</p>
+<h3 class="unnumbered anchored" data-anchor-id="q98">Question 6.19</h3>
+<p>La fonction <code>as.factor()</code> peut être utilisée pour transformer des vecteurs de type caractère ou numérique en facteurs.</p>
 <p><select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p>
 <div class="webex-solution">
 <button>
@@ -1283,8 +1301,8 @@ window.onload = function() {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../sessions/session-05.html" class="pagination-link" aria-label="Visualiser des données avec ggplot2">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualiser des données avec ggplot2</span></span>
+      <a href="../sessions/session-05.html" class="pagination-link" aria-label="Visualiser des données avec `ggplot2`">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualiser des données avec <code>ggplot2</code></span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
@@ -1300,7 +1318,7 @@ window.onload = function() {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>Textes et exercices : <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr">CC BY-NC-SA 4.0</a> · Code : MIT · Éléments de tiers : voir <a href="../apropos.html">À propos</a></p>
+<p>Textes et exercices&nbsp;: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr">CC BY-NC-SA 4.0</a> · Code&nbsp;: MIT · Éléments de tiers&nbsp;: voir <a href="../apropos.html">À propos</a></p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

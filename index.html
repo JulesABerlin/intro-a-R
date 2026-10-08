@@ -79,7 +79,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-8b9bfa8f06f8d75c827c202792a57b06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-683640b15476b5c31180ef45b94f76af.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -177,13 +177,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sessions/session-04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Paquets, jeux de données et premiers graphiques</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Packages, jeux de données et premiers graphiques</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sessions/session-05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualiser des données avec ggplot2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualiser des données avec <code>ggplot2</code></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -201,7 +201,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sessions/session-08.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Manipuler des données&nbsp;: exercices</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Manipuler des données&nbsp;: pratique guidée</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -259,6 +259,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="./corriges.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Corrigés</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lexique.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Lexique</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -339,28 +345,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1 class="unnumbered">Bienvenue</h1>
 <p>Ce site propose une introduction pas à pas au langage R pour l’analyse de données en sciences sociales, et en particulier en sciences de la communication. Chaque chapitre combine des explications, du code à exécuter dans RStudio et des exercices interactifs avec corrections.</p>
 <p><a href="intro-a-R.pdf" class="btn btn-primary btn-lg" role="button">📄 Télécharger le livre en PDF (avec corrigés en annexe)</a></p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Origine de ce site
-</div>
-</div>
-<div class="callout-body-container callout-body">
 <p>Ce matériel a été développé pour le cours <strong>Exercices Méthodes II</strong> du Bachelor en sciences de la communication de l’Université de Fribourg, que j’ai enseigné de 2023 à 2025. Il s’adresse à toute personne qui souhaite apprendre R à son rythme.</p>
-</div>
-</div>
 <section id="comment-utiliser-ce-site" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="comment-utiliser-ce-site">Comment utiliser ce site</h2>
 <ul>
 <li>Suivez les chapitres dans l’ordre&nbsp;: chacun s’appuie sur les précédents.</li>
 <li>Exécutez vous-même le code dans RStudio et modifiez-le&nbsp;: on apprend R en l’utilisant.</li>
-<li>Testez-vous avec les exercices à la fin de chaque chapitre. Les chapitres « Révision » reprennent les tests du cours.</li>
-<li>Sur ce site, les exercices sont interactifs ; dans la version PDF, les réponses se trouvent dans l’annexe « Corrigés ».</li>
+<li>Testez-vous avec la section « Testez-vous » à la fin de chaque chapitre. Les chapitres « Révision » reprennent les tests du cours d’origine.</li>
+<li>Sur ce site, les exercices sont interactifs ; dans la version PDF, les réponses se trouvent dans l’annexe « Corrigés ».</li>
+<li>Les termes de R et de statistique sont définis dans l’annexe <a href="./lexique.html">« Lexique »</a>.</li>
 </ul>
-<p>Les jeux de données utilisés dans le cours se trouvent dans le dossier <a href="https://github.com/julesaberlin/intro-a-R/tree/main/data"><code>data/</code></a> et peuvent être lus directement depuis le site, par exemple :</p>
+<p>Les jeux de données utilisés dans ce livre se trouvent dans le dossier <a href="https://github.com/julesaberlin/intro-a-R/tree/main/data"><code>data/</code></a> et peuvent être lus directement depuis le site, par exemple&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>igposts <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://julesaberlin.github.io/intro-a-R/data/igposts.csv"</span>,</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">encoding =</span> <span class="st">"UTF-8"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Merci à Franck Bleu, tuteur en méthodes quantitatives, pour sa contribution aux exercices&nbsp;; voir <a href="./apropos.html">À propos</a>.</p>
@@ -1005,7 +1000,7 @@ window.onload = function() {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>Textes et exercices : <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr">CC BY-NC-SA 4.0</a> · Code : MIT · Éléments de tiers : voir <a href="./apropos.html">À propos</a></p>
+<p>Textes et exercices&nbsp;: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr">CC BY-NC-SA 4.0</a> · Code&nbsp;: MIT · Éléments de tiers&nbsp;: voir <a href="./apropos.html">À propos</a></p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

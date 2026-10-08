@@ -79,7 +79,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-8b9bfa8f06f8d75c827c202792a57b06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-683640b15476b5c31180ef45b94f76af.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -177,13 +177,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sessions/session-04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Paquets, jeux de données et premiers graphiques</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Packages, jeux de données et premiers graphiques</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sessions/session-05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualiser des données avec ggplot2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualiser des données avec <code>ggplot2</code></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -201,7 +201,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sessions/session-08.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Manipuler des données&nbsp;: exercices</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Manipuler des données&nbsp;: pratique guidée</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -263,6 +263,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../lexique.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Lexique</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Références</span></a>
   </div>
@@ -306,18 +312,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Dans le cours, le <strong>Problem Set 1</strong> était un test de 30 minutes sur Moodle portant sur les chapitres 1 et 2. Les questions ci-dessous en reprennent le contenu, avec la correction et une explication pour chaque réponse.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout callout-style-default callout-important callout-titled" title="Objectifs d'apprentissage">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Résultats de l’édition 2025 du cours
+<span class="screen-reader-only">Important</span>Objectifs d’apprentissage
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Vérifier que vous maîtrisez les notions des chapitres 1 et 2&nbsp;: objets, types, vecteurs, matrices, tableaux de données et facteurs.</li>
+<li>Repérer, grâce aux explications, les notions à revoir.</li>
+<li>S’exercer sur des problèmes plus ouverts avec les questions avancées (facultatif).</li>
+</ul>
+</div>
+</div>
+<p>Ce chapitre ne présente pas de nouvelle notion&nbsp;: il reprend les chapitres 1 et 2 sous forme de questions. Répondez sans relire les chapitres, puis lisez l’explication de chaque réponse, surtout lorsque vous vous êtes trompé·e.</p>
+<p>Dans le cours, le <strong>Problem Set 1</strong> était un test sur Moodle portant sur les chapitres 1 et 2. Les questions ci-dessous en reprennent le contenu, avec la correction et une explication pour chaque réponse.</p>
+<div class="callout callout-style-default callout-caution callout-titled" title="Contexte : résultats de l'édition 2025 du cours">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Mise en garde</span>Contexte&nbsp;: résultats de l’édition 2025 du cours
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>62 étudiant·es ont passé ce test (20 points au maximum, 10 pour réussir). La moyenne était de 14,2 points et 95&nbsp;% des étudiant·es l’ont réussi.</p>
 <div class="cell">
@@ -332,19 +356,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-important callout-titled" title="En bref">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>En bref
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Si les types de données ou les vecteurs vous posent problème, relisez la fin du <a href="../sessions/session-01.html#les-différents-types-de-variable-numériques-textuelles-et-logique">chapitre 1</a>.</li>
+<li>Si l’extraction avec <code>[ ]</code> ou <code>$</code> vous pose problème, relisez « Les matrices » et « Les tableaux de données » au <a href="../sessions/session-02.html#les-matrices">chapitre 2</a>.</li>
+<li>Si les facteurs restent flous, relisez « Les facteurs » au <a href="../sessions/session-02.html#les-facteurs">chapitre 2</a>.</li>
+<li>Les questions avancées présentent des fonctions utiles (<code>seq()</code>, <code>rep()</code>, <code>all.equal()</code>, l’argument <code>na.rm</code>) que vous retrouverez plus loin.</li>
+</ul>
+</div>
+</div>
+<p>Au chapitre 4, vous installerez vos premiers packages et créerez vos premiers graphiques.</p>
 <section id="exercices-de-révision" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="exercices-de-révision">Exercices de révision</h2>
-<p>Ces questions reprennent le <strong>Problem Set 1</strong>. Choisissez <em>Vrai</em> ou <em>Faux</em>, cochez une réponse ou tapez un nombre : la couleur indique tout de suite si votre réponse est correcte. Cliquez sur <strong>Explication</strong> pour voir la correction.</p>
+<p>Ces questions reprennent le <strong>Problem Set 1</strong>.</p>
+<p>Choisissez <em>Vrai</em> ou <em>Faux</em>, cochez une réponse ou tapez un nombre&nbsp;: la couleur indique tout de suite si votre réponse est correcte. Cliquez sur <strong>Explication</strong> pour voir la correction.</p>
 <section id="q17" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q17">Question 3.1</h3>
-<p>Exécutez le code suivant et jugez chaque proposition :</p>
+<p>Exécutez le code suivant, puis jugez chaque proposition&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="st">"079 123 45 67"</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(n)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(n)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <ol type="a">
 <li><p>Le code crée un objet numérique avec 10 éléments. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
-<li><p><code>n</code> est une variable de type textuel. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
-<li><p><code>n</code> est une variable avec un élément. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p><code>n</code> est un objet de type caractère (<code>character</code>). <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p><code>n</code> est un objet à un seul élément. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Si l’on a créé correctement <code>n</code> comme décrit ci-dessus et que l’on exécute <code>n * 2</code>, on obtient un message d’erreur. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Dans R, il n’est jamais utile de stocker des numéros sous forme de texte. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
 </ol>
@@ -353,12 +397,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 Explication
 </button>
 <p>Les guillemets font de <code>n</code> une chaîne de caractères à <strong>un</strong> élément. Une opération arithmétique sur du texte (<code>n * 2</code>) produit une erreur.</p>
-<p>e) Stocker des numéros de téléphone, codes postaux ou identifiants en texte est souvent utile : on ne calcule pas avec eux, et les zéros initiaux sont conservés.</p>
+<p>e) Stocker des numéros de téléphone, codes postaux ou identifiants en texte est souvent utile&nbsp;: on ne calcule pas avec eux, et les zéros initiaux sont conservés.</p>
 </div>
 </section>
 <section id="q22" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q22">Question 3.2</h3>
-<p>Exécutez le code R suivant et jugez chaque proposition :</p>
+<p>Exécutez le code suivant, puis jugez chaque proposition&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">15</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(a)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <ol type="a">
@@ -372,26 +416,26 @@ Explication
 <button>
 Explication
 </button>
-<p><code>print(a)</code> affiche le contenu de l’objet <code>a</code> dans la console. En session interactive, taper simplement <code>a</code> a le même effet. <code>a</code> est un vecteur (pas une fonction), et <code>c()</code> est la fonction de concaténation qui le crée : aucun objet nommé <code>c</code> n’est créé.</p>
+<p><code>print(a)</code> affiche le contenu de l’objet <code>a</code> dans la console. En session interactive, taper simplement <code>a</code> a le même effet. <code>a</code> est un vecteur (pas une fonction), et <code>c()</code> est la fonction de concaténation qui le crée&nbsp;: aucun objet nommé <code>c</code> n’est créé.</p>
 </div>
 </section>
 <section id="q46" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q46">Question 3.3</h3>
-<p>Exécutez le code R suivant et jugez chaque proposition :</p>
+<p>Exécutez le code suivant, puis jugez chaque proposition&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">22</span>, <span class="dv">8</span>, <span class="sc">-</span><span class="dv">5</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(a)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(a)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <ol type="a">
 <li><p><code>a</code> est un vecteur. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p><code>a</code> est un objet R de type numérique. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
-<li><p>Le code crée un objet dans le volet <em>Environment</em> de RStudio. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>Le code crée un objet dans le volet <strong>Environment</strong> de RStudio. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Le code utilise la fonction de concaténation <code>c()</code>. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 </ol>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<p>Toutes les propositions sont correctes : <code>c()</code> crée un vecteur numérique (<code>class(a)</code> renvoie <code>"numeric"</code>), et l’affectation <code>&lt;-</code> le place dans l’environnement.</p>
+<p>Toutes les propositions sont correctes&nbsp;: <code>c()</code> crée un vecteur numérique (<code>class(a)</code> renvoie <code>"numeric"</code>), et l’affectation <code>&lt;-</code> le place dans l’environnement.</p>
 </div>
 </section>
 <section id="q85" class="level3 unnumbered">
@@ -407,7 +451,7 @@ Explication
 </section>
 <section id="q86" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q86">Question 3.5</h3>
-<p>Le <code>#</code> permet d’insérer des commentaires dans le script, sans que cela ait des conséquences sur mon codage.</p>
+<p>Le <code>#</code> permet d’insérer des commentaires dans un script, sans effet sur l’exécution du code.</p>
 <p><select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p>
 <div class="webex-solution">
 <button>
@@ -418,32 +462,32 @@ Explication
 </section>
 <section id="q94" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q94">Question 3.6</h3>
-<p>Le code suivant crée une variable textuelle lorsqu’il est exécuté :</p>
+<p>Le code suivant crée un objet de type caractère (une chaîne de caractères) lorsqu’il est exécuté&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>monstre <span class="ot">&lt;-</span> <span class="st">"vampire"</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p><select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<p>Les guillemets font de <code>"vampire"</code> une chaîne de caractères : <code>class(monstre)</code> renvoie <code>"character"</code>.</p>
+<p>Les guillemets font de <code>"vampire"</code> une chaîne de caractères&nbsp;: <code>class(monstre)</code> renvoie <code>"character"</code>.</p>
 </div>
 </section>
 <section id="q96" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q96">Question 3.7</h3>
-<p>Dans R, l’opérateur d’affectation (<code>&lt;-</code>) peut être utilisé pour créer des objets, tels que des variables à un élément, des vecteurs, des matrices et des data frames.</p>
+<p>Dans R, l’opérateur d’affectation (<code>&lt;-</code>) peut être utilisé pour créer des objets, tels que des objets à un seul élément, des vecteurs, des matrices et des tableaux de données.</p>
 <p><select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<p><code>&lt;-</code> assigne n’importe quel objet R à un nom : scalaire, vecteur, matrice, data frame, liste, etc.</p>
+<p><code>&lt;-</code> assigne n’importe quel objet R à un nom&nbsp;: scalaire, vecteur, matrice, tableau de données, liste, etc.</p>
 </div>
 </section>
 <section id="q118" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q118">Question 3.8</h3>
 <p>Dans quel volet de RStudio écrivez-vous et enregistrez-vous votre script R&nbsp;?</p>
-<div id="radio_VUUAGVWSDM" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_VUUAGVWSDM" value="answer"> <span>Source</span></label><label><input type="radio" autocomplete="off" name="radio_VUUAGVWSDM" value=""> <span>Console</span></label><label><input type="radio" autocomplete="off" name="radio_VUUAGVWSDM" value=""> <span>Environnement</span></label><label><input type="radio" autocomplete="off" name="radio_VUUAGVWSDM" value=""> <span>Output</span></label>
+<div id="radio_IRBXRUYYPX" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_IRBXRUYYPX" value="answer"> <span>Source</span></label><label><input type="radio" autocomplete="off" name="radio_IRBXRUYYPX" value=""> <span>Console</span></label><label><input type="radio" autocomplete="off" name="radio_IRBXRUYYPX" value=""> <span>Environment</span></label><label><input type="radio" autocomplete="off" name="radio_IRBXRUYYPX" value=""> <span>Output</span></label>
 </div>
 <div class="webex-solution">
 <button>
@@ -465,7 +509,7 @@ Explication
 </section>
 <section id="q8" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q8">Question 3.10</h3>
-<p>Exécutez le code R suivant et jugez chaque proposition :</p>
+<p>Exécutez le code suivant, puis jugez chaque proposition&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>name    <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Manny"</span>, <span class="st">"Sid"</span>, <span class="st">"Diego"</span>, <span class="st">"Ellie"</span>, <span class="st">"Peaches"</span>, <span class="st">"Scrat"</span>, <span class="st">"Rudy"</span>, <span class="st">"Buck"</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>species <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"mammoth"</span>, <span class="st">"sloth"</span>, <span class="st">"sabertooth"</span>, <span class="st">"mammoth"</span>, <span class="st">"mammoth"</span>, <span class="st">"squirrel"</span>, <span class="st">"dinosaur"</span>, <span class="st">"weasel"</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>female  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>)</span>
@@ -475,7 +519,7 @@ Explication
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>ice_age_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(name, species, female, age, weight)</span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>ice_age_df</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <ol type="a">
-<li><p>La colonne <code>female</code> (fr. « femelle ») du jeu de données <code>ice_age_df</code> est de type logique (<em>logical</em>). <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>La colonne <code>female</code> (« femelle ») du jeu de données <code>ice_age_df</code> est de type logique (<code>logical</code>). <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Les unités statistiques du jeu de données <code>ice_age_df</code> sont les noms, les espèces, le genre (femelle), le poids et l’âge des animaux de l’ère glaciaire. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
 <li><p>L’unité statistique du jeu de données <code>ice_age_df</code> est un animal de l’âge de glace, avec n = 8 observations. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Le jeu de données <code>ice_age_df</code> contient des informations sur trois mammouths différents. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
@@ -488,13 +532,13 @@ Explication
 <p>a) <code>female</code> est créé à partir d’un vecteur de <code>TRUE</code>/<code>FALSE</code>, donc de type logique.</p>
 <p>b) Ce sont les <strong>variables</strong> (colonnes), pas les unités statistiques.</p>
 <p>c) Chaque ligne correspond à un animal, soit 8 observations.</p>
-<p>d) « mammoth » apparaît trois fois dans <code>species</code> (Manny, Ellie, Peaches).</p>
+<p>d) « mammoth » apparaît trois fois dans <code>species</code> (Manny, Ellie, Peaches).</p>
 <p>e) Buck est une belette (<em>weasel</em>) de 3 kg. C’est Scrat, l’écureuil, qui pèse 1 kg.</p>
 </div>
 </section>
 <section id="q9" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q9">Question 3.11</h3>
-<p>Exécutez le code R suivant et jugez chaque proposition :</p>
+<p>Exécutez le code suivant, puis jugez chaque proposition&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>name    <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Manny"</span>, <span class="st">"Sid"</span>, <span class="st">"Diego"</span>, <span class="st">"Ellie"</span>, <span class="st">"Peaches"</span>, <span class="st">"Scrat"</span>, <span class="st">"Rudy"</span>, <span class="st">"Buck"</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>species <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"mammoth"</span>, <span class="st">"sloth"</span>, <span class="st">"sabertooth"</span>, <span class="st">"mammoth"</span>, <span class="st">"mammoth"</span>, <span class="st">"squirrel"</span>, <span class="st">"dinosaur"</span>, <span class="st">"weasel"</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>female  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>)</span>
@@ -507,22 +551,22 @@ Explication
 <li><p>Le code <code>ice_age_df$name</code> affiche les éléments de la colonne <code>name</code> du jeu de données <code>ice_age_df</code>. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Le code <code>ice_age_df[, 2]</code> affiche les éléments de la deuxième colonne de <code>ice_age_df</code>. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Les dimensions du jeu de données <code>ice_age_df</code> sont 8 × 5 (8 lignes et 5 colonnes). <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
-<li><p>L’objet <code>ice_age_df</code> est de type matrice (<em>matrix</em>). <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>L’objet <code>ice_age_df</code> est une matrice (<code>matrix</code>). <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
 <li><p>Le code <code>mean(ice_age_df$age)</code> calcule la moyenne de la colonne <code>age</code> du jeu de données <code>ice_age_df</code>. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 </ol>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<p>a) et e) Le <code>$</code> extrait une colonne par son nom ; <code>mean()</code> en calcule la moyenne.</p>
+<p>a) et e) Le <code>$</code> extrait une colonne par son nom ; <code>mean()</code> en calcule la moyenne.</p>
 <p>b) Dans <code>[lignes, colonnes]</code>, laisser les lignes vides sélectionne toutes les lignes de la 2ᵉ colonne.</p>
 <p>c) <code>dim(ice_age_df)</code> renvoie <code>8 5</code>.</p>
-<p>d) <code>class(ice_age_df)</code> renvoie <code>"data.frame"</code> : contrairement à une matrice, un data frame peut contenir des colonnes de types différents.</p>
+<p>d) <code>class(ice_age_df)</code> renvoie <code>"data.frame"</code>&nbsp;: contrairement à une matrice, un tableau de données peut contenir des colonnes de types différents.</p>
 </div>
 </section>
 <section id="q11" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q11">Question 3.12</h3>
-<p>Exécutez le code R suivant et jugez chaque proposition :</p>
+<p>Exécutez le code suivant, puis jugez chaque proposition&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">25</span>), <span class="at">nrow =</span> <span class="dv">5</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(m1)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <ol type="a">
@@ -541,27 +585,27 @@ Explication
 </section>
 <section id="q45" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q45">Question 3.13</h3>
-<p>Jugez chaque proposition concernant les fonctions R <code>setwd()</code> et <code>getwd()</code> :</p>
+<p>Jugez chaque proposition concernant les fonctions R <code>setwd()</code> et <code>getwd()</code>&nbsp;:</p>
 <ol type="a">
-<li><p>Avec la fonction <code>setwd()</code>, je peux définir un dossier sur mon ordinateur à partir duquel R lit et extrait des données. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>Avec la fonction <code>setwd()</code>, on peut définir le dossier de l’ordinateur dans lequel R lit et enregistre les fichiers. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Les chemins d’accès aux dossiers que l’on doit spécifier comme arguments dans <code>setwd()</code> diffèrent généralement entre différents ordinateurs. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Vous ne pouvez pas utiliser R si vous ne spécifiez pas votre répertoire de travail. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
-<li><p>Toutes les variables, matrices, jeux de données, etc. que je crée dans une session R sont enregistrés sous forme de fichiers dans mon répertoire de travail. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>Tous les objets (vecteurs, matrices, tableaux de données, etc.) créés dans une session R sont automatiquement enregistrés sous forme de fichiers dans le répertoire de travail. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
 <li><p>Vous pouvez afficher votre répertoire de travail actuel dans une session R avec la fonction <code>getwd()</code>. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 </ol>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<p>c) R a toujours un répertoire de travail par défaut : on peut l’utiliser sans appeler <code>setwd()</code>.</p>
-<p>d) Les objets vivent en mémoire (volet <em>Environment</em>). Ils ne sont écrits sur le disque que si on les exporte explicitement (p.&nbsp;ex. avec <code>write.csv()</code> ou <code>save()</code>).</p>
+<p>c) R a toujours un répertoire de travail par défaut&nbsp;: on peut l’utiliser sans appeler <code>setwd()</code>.</p>
+<p>d) Les objets vivent en mémoire (volet <strong>Environment</strong>). Ils ne sont écrits sur le disque que si on les exporte explicitement (p.&nbsp;ex. avec <code>write.csv()</code> ou <code>save()</code>).</p>
 </div>
 </section>
 <section id="q48" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q48">Question 3.14</h3>
-<p><code>length()</code> est une fonction de R qui permet de compter le nombre d’éléments d’un vecteur. Utilisez-la pour calculer la longueur du vecteur <code>v2</code> créé avec le code suivant :</p>
+<p><code>length()</code> est une fonction de R qui permet de compter le nombre d’éléments d’un vecteur. Utilisez-la pour calculer la longueur du vecteur <code>v2</code> créé avec le code suivant&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>v2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">log10</span>(<span class="dv">100</span>)<span class="sc">:</span><span class="dv">501</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Réponse : <input class="webex-solveme nospaces" size="4" data-answer="[&quot;500&quot;]"></p>
+<p>Réponse&nbsp;: <input class="webex-solveme nospaces" size="4" data-answer="[&quot;500&quot;]"></p>
 <div class="webex-solution">
 <button>
 Explication
@@ -572,7 +616,7 @@ Explication
 <section id="q50" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q50">Question 3.15</h3>
 <p>Calculez la valeur médiane d’un vecteur composé de nombres entiers consécutifs compris entre −66 et 702.</p>
-<p>Réponse : <input class="webex-solveme nospaces" size="4" data-answer="[&quot;318&quot;]"></p>
+<p>Réponse&nbsp;: <input class="webex-solveme nospaces" size="4" data-answer="[&quot;318&quot;]"></p>
 <div class="webex-solution">
 <button>
 Explication
@@ -583,9 +627,9 @@ Explication
 </section>
 <section id="q77" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q77">Question 3.16</h3>
-<p>Exécutez le code R suivant pour créer <code>v1</code>. Ensuite, avec votre propre code, calculez la variance de <code>v1</code>.</p>
+<p>Exécutez le code suivant pour créer <code>v1</code>. Ensuite, avec votre propre code, calculez la variance de <code>v1</code>.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">104</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Réponse : <input class="webex-solveme nospaces" size="4" data-answer="[&quot;910&quot;]"></p>
+<p>Réponse&nbsp;: <input class="webex-solveme nospaces" size="4" data-answer="[&quot;910&quot;]"></p>
 <div class="webex-solution">
 <button>
 Explication
@@ -596,24 +640,24 @@ Explication
 </section>
 <section id="q87" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q87">Question 3.17</h3>
-<p>En statistique et en méthodes quantitatives en sciences sociales, c’est une convention de présenter les données dans des tableaux avec les unités statistiques (observations, cas, participants, etc.) en lignes et les variables en colonnes.</p>
+<p>En statistique et en méthodes quantitatives en sciences sociales, c’est une convention de présenter les données dans des tableaux avec les unités statistiques (personnes, documents, cas, etc.) en lignes et les variables en colonnes.</p>
 <p><select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<p>C’est la convention des données « tidy » : une ligne par observation, une colonne par variable.</p>
+<p>C’est la convention des données « tidy »&nbsp;: une ligne par observation, une colonne par variable.</p>
 </div>
 </section>
 <section id="q91" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q91">Question 3.18</h3>
-<p>La variable <em>genre</em>, par exemple pour les participant·es à une enquête, est généralement utilisée comme facteur hiérarchique (ordonné) dans R.</p>
+<p>La variable <em>genre</em>, par exemple pour les participant·es à une enquête, est généralement utilisée comme facteur ordonné dans R.</p>
 <p><select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<p>Le genre est une variable <strong>nominale</strong> : ses modalités n’ont pas d’ordre. On l’encode donc comme facteur simple, pas comme facteur ordonné.</p>
+<p>Le genre est une variable <strong>nominale</strong>&nbsp;: ses modalités n’ont pas d’ordre. On l’encode donc comme facteur simple, pas comme facteur ordonné.</p>
 </div>
 </section>
 <section id="q122" class="level3 unnumbered">
@@ -624,7 +668,7 @@ Explication
 <button>
 Explication
 </button>
-<p>Les modalités « petit », « moyen », « grand » sont des catégories qui ont un ordre naturel : il s’agit donc d’une variable ordinale (dans R, un facteur ordonné).</p>
+<p>Les modalités « petit », « moyen », « grand » sont des catégories qui ont un ordre naturel&nbsp;: il s’agit donc d’une variable ordinale (dans R, un facteur ordonné).</p>
 </div>
 </section>
 <section id="q123" class="level3 unnumbered">
@@ -635,7 +679,7 @@ Explication
 <button>
 Explication
 </button>
-<p>C’est l’inverse : les observations sont en <strong>lignes</strong>, les variables en colonnes.</p>
+<p>C’est l’inverse&nbsp;: les observations sont en <strong>lignes</strong>, les variables en colonnes.</p>
 </div>
 </section>
 </section>
@@ -644,8 +688,8 @@ Explication
 <p>Ces questions ouvertes n’ont pas de correction automatique. Essayez d’abord dans RStudio, puis comparez avec la solution proposée.</p>
 <section id="question-a1" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="question-a1">Question 3.A1</h3>
-<p>Écrivez une expression R vectorisée pour calculer la somme des nombres pairs de 1 à 100. Quel résultat obtenez-vous ?</p>
-<p>Résultat : <input class="webex-solveme nospaces" size="6" data-answer="[&quot;2550&quot;]"></p>
+<p>Écrivez une expression R vectorisée pour calculer la somme des nombres pairs de 1 à 100. Quel résultat obtenez-vous ?</p>
+<p>Résultat&nbsp;: <input class="webex-solveme nospaces" size="6" data-answer="[&quot;2550&quot;]"></p>
 <div class="webex-solution">
 <button>
 Solution
@@ -661,8 +705,8 @@ Solution
 <h3 class="unnumbered anchored" data-anchor-id="question-a2">Question 3.A2</h3>
 <p>On considère <code>v &lt;- seq(from = 0, to = 1, length.out = 11)</code>.</p>
 <ol type="1">
-<li>Que renvoie <code>v[5]</code> ? <input class="webex-solveme nospaces" data-tol="0.001" size="3" data-answer="[&quot;0.4&quot;,&quot;.4&quot;]"></li>
-<li><code>v</code> est-il identique à <code>c(0, 0.1, 0.2, ..., 1)</code> ? Comparez avec <code>identical()</code> et <code>all.equal()</code>.</li>
+<li>Que renvoie <code>v[5]</code> ? <input class="webex-solveme nospaces" data-tol="0.001" size="3" data-answer="[&quot;0.4&quot;,&quot;.4&quot;]"></li>
+<li><code>v</code> est-il identique à <code>c(0, 0.1, 0.2, ..., 1)</code> ? Comparez avec <code>identical()</code> et <code>all.equal()</code>.</li>
 </ol>
 <div class="webex-solution">
 <button>
@@ -674,7 +718,7 @@ Solution
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">all.equal</span>(v, w)            <span class="co"># TRUE</span></span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">identical</span>(v, w)            <span class="co"># FALSE</span></span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>v <span class="sc">==</span> w                     <span class="co"># quelques FALSE</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Les valeurs sont « les mêmes » à l’œil, mais certains nombres décimaux comme 0,3 ne peuvent pas être représentés exactement en binaire. <code>seq()</code> les calcule (0 + 3 × 0,1), alors que <code>c()</code> reprend les littéraux : de minuscules écarts d’arrondi apparaissent. Pour comparer des nombres décimaux, utilisez <code>all.equal()</code> plutôt que <code>==</code> ou <code>identical()</code>.</p>
+<p>Les valeurs sont « les mêmes » à l’œil, mais certains nombres décimaux comme 0,3 ne peuvent pas être représentés exactement en binaire. <code>seq()</code> les calcule (0 + 3 × 0,1), alors que <code>c()</code> reprend les littéraux&nbsp;: de minuscules écarts d’arrondi apparaissent. Pour comparer des nombres décimaux, utilisez <code>all.equal()</code> plutôt que <code>==</code> ou <code>identical()</code>.</p>
 </div>
 </section>
 <section id="question-a3" class="level3 unnumbered">
@@ -694,8 +738,8 @@ Solution
 </section>
 <section id="question-a4" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="question-a4">Question 3.A4</h3>
-<p>Construisez un data frame <code>df</code> avec une colonne <code>A</code> contenant les nombres de 1 à 5 et une colonne <code>B</code> contenant leurs carrés. Quelle commande renvoie l’élément de la 4ᵉ ligne et de la 2ᵉ colonne, et quelle est sa valeur ?</p>
-<p>Valeur : <input class="webex-solveme nospaces" size="4" data-answer="[&quot;16&quot;]"></p>
+<p>Construisez un tableau de données <code>df</code> avec une colonne <code>A</code> contenant les nombres de 1 à 5 et une colonne <code>B</code> contenant leurs carrés. Quelle commande renvoie l’élément de la 4ᵉ ligne et de la 2ᵉ colonne, et quelle est sa valeur ?</p>
+<p>Valeur&nbsp;: <input class="webex-solveme nospaces" size="4" data-answer="[&quot;16&quot;]"></p>
 <div class="webex-solution">
 <button>
 Solution
@@ -712,7 +756,7 @@ Solution
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"S"</span>, <span class="st">"M"</span>, <span class="st">"L"</span>))</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <ol type="1">
 <li>Convertissez <code>tailles</code> en numérique (S → 1, M → 2, L → 3).</li>
-<li>Quel piège faut-il connaître avec <code>as.numeric()</code> appliqué à un facteur ?</li>
+<li>Quel piège faut-il connaître avec <code>as.numeric()</code> appliqué à un facteur ?</li>
 </ol>
 <div class="webex-solution">
 <button>
@@ -720,7 +764,7 @@ Solution
 </button>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(tailles)   <span class="co"># 1 2 3 2 1</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p><code>as.numeric()</code> renvoie les <strong>codes internes</strong> du facteur, c’est-à-dire la position de chaque modalité dans <code>levels</code>. Ici, c’est exactement ce que l’on veut, car les niveaux sont dans l’ordre S, M, L.</p>
-<p>Le piège : si les niveaux ne sont pas dans l’ordre voulu, ou si le facteur contient des <strong>nombres stockés comme texte</strong>, le résultat est trompeur :</p>
+<p>Le piège&nbsp;: si les niveaux ne sont pas dans l’ordre voulu, ou si le facteur contient des <strong>nombres stockés comme texte</strong>, le résultat est trompeur&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"10"</span>, <span class="st">"5"</span>, <span class="st">"20"</span>))</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(f)                  <span class="co"># 1 3 2  (codes, pas les valeurs !)</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(<span class="fu">as.character</span>(f))    <span class="co"># 10 5 20</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
@@ -747,7 +791,7 @@ Solution
 </section>
 <section id="question-a7" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="question-a7">Question 3.A7</h3>
-<p>Quelle est la différence entre <code>class()</code> et <code>typeof()</code> ? Donnez un exemple.</p>
+<p>Quelle est la différence entre <code>class()</code> et <code>typeof()</code> ? Donnez un exemple.</p>
 <div class="webex-solution">
 <button>
 Solution
@@ -755,7 +799,7 @@ Solution
 <p><code>class()</code> renvoie la classe de l’objet, c’est-à-dire la façon dont R et les fonctions le <em>traitent</em>. <code>typeof()</code> renvoie le type de stockage interne.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(df)    <span class="co"># "data.frame"</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(df)   <span class="co"># "list"   (un data frame est une liste de colonnes)</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(df)   <span class="co"># "list"   (un tableau de données est une liste de colonnes)</span></span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>))</span>
 <span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(f)     <span class="co"># "factor"</span></span>
@@ -767,7 +811,7 @@ Solution
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="cn">NA</span>, <span class="dv">8</span>, <span class="dv">10</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <ol type="1">
 <li>Calculez la variance de <code>x</code> en ignorant la valeur manquante. <input class="webex-solveme nospaces" data-tol="0.01" size="5" data-answer="[&quot;13.33&quot;]"></li>
-<li>Quel est le rôle de l’argument <code>na.rm</code> ?</li>
+<li>Quel est le rôle de l’argument <code>na.rm</code> ?</li>
 </ol>
 <div class="webex-solution">
 <button>
@@ -775,7 +819,7 @@ Solution
 </button>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(x)                <span class="co"># NA</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)  <span class="co"># 13.33333</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Par défaut, toute valeur <code>NA</code> « contamine » le résultat. <code>na.rm = TRUE</code> (<em>NA remove</em>) demande à la fonction d’écarter les valeurs manquantes avant le calcul. Le même argument existe pour <code>mean()</code>, <code>sum()</code>, <code>sd()</code>, <code>median()</code>, etc.</p>
+<p>Par défaut, toute valeur <code>NA</code> « contamine » le résultat. <code>na.rm = TRUE</code> (<em>NA remove</em>) demande à la fonction d’écarter les valeurs manquantes avant le calcul. Le même argument existe pour <code>mean()</code>, <code>sum()</code>, <code>sd()</code>, <code>median()</code>, etc.</p>
 </div>
 </section>
 <section id="question-a9" class="level3 unnumbered">
@@ -793,7 +837,7 @@ Solution
 </section>
 <section id="question-a10" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="question-a10">Question 3.A10</h3>
-<p>Soit un data frame <code>df</code> avec une colonne numérique <code>X</code>. Ajoutez en base R une colonne <code>Y</code> qui contient les valeurs standardisées de <code>X</code>, soit <code>Y = (X − moyenne(X)) / écart-type(X)</code>.</p>
+<p>Soit un tableau de données <code>df</code> avec une colonne numérique <code>X</code>. Ajoutez en base R une colonne <code>Y</code> qui contient les valeurs standardisées de <code>X</code>, soit <code>Y = (X − moyenne(X)) / écart-type(X)</code>.</p>
 <div class="webex-solution">
 <button>
 Solution
@@ -1425,8 +1469,8 @@ window.onload = function() {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../sessions/session-04.html" class="pagination-link" aria-label="Paquets, jeux de données et premiers graphiques">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Paquets, jeux de données et premiers graphiques</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../sessions/session-04.html" class="pagination-link" aria-label="Packages, jeux de données et premiers graphiques">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Packages, jeux de données et premiers graphiques</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1437,7 +1481,7 @@ window.onload = function() {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>Textes et exercices : <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr">CC BY-NC-SA 4.0</a> · Code : MIT · Éléments de tiers : voir <a href="../apropos.html">À propos</a></p>
+<p>Textes et exercices&nbsp;: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr">CC BY-NC-SA 4.0</a> · Code&nbsp;: MIT · Éléments de tiers&nbsp;: voir <a href="../apropos.html">À propos</a></p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

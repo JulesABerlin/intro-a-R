@@ -99,7 +99,7 @@ div.csl-indent {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-8b9bfa8f06f8d75c827c202792a57b06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-683640b15476b5c31180ef45b94f76af.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -141,7 +141,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sessions/session-05.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualiser des données avec ggplot2</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sessions/session-05.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualiser des données avec <code>ggplot2</code></span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Recherche" onclick="window.quartoOpenSearch();">
@@ -197,13 +197,13 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sessions/session-04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Paquets, jeux de données et premiers graphiques</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Packages, jeux de données et premiers graphiques</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sessions/session-05.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualiser des données avec ggplot2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualiser des données avec <code>ggplot2</code></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -221,7 +221,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sessions/session-08.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Manipuler des données&nbsp;: exercices</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Manipuler des données&nbsp;: pratique guidée</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -283,6 +283,12 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../lexique.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Lexique</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Références</span></a>
   </div>
@@ -299,12 +305,12 @@ div.csl-indent {
     <h2 id="toc-title">Table des matières</h2>
    
   <ul class="collapse">
-  <li><a href="#les-nuages-de-points-angl.-scatter-plots" id="toc-les-nuages-de-points-angl.-scatter-plots" class="nav-link active" data-scroll-target="#les-nuages-de-points-angl.-scatter-plots"><span class="header-section-number">5.1</span> Les nuages de points (angl. <em>scatter plots</em>)</a></li>
-  <li><a href="#les-diagrammes-à-barres" id="toc-les-diagrammes-à-barres" class="nav-link" data-scroll-target="#les-diagrammes-à-barres"><span class="header-section-number">5.2</span> Les diagrammes à barres</a></li>
+  <li><a href="#les-nuages-de-points-angl.-scatter-plots" id="toc-les-nuages-de-points-angl.-scatter-plots" class="nav-link active" data-scroll-target="#les-nuages-de-points-angl.-scatter-plots"><span class="header-section-number">5.1</span> Les nuages de points</a></li>
+  <li><a href="#les-diagrammes-à-barres" id="toc-les-diagrammes-à-barres" class="nav-link" data-scroll-target="#les-diagrammes-à-barres"><span class="header-section-number">5.2</span> Les diagrammes en barres</a></li>
   <li><a href="#les-histogrammes" id="toc-les-histogrammes" class="nav-link" data-scroll-target="#les-histogrammes"><span class="header-section-number">5.3</span> Les histogrammes</a></li>
-  <li><a href="#les-boîtes-à-moustaches-angl.-boxplots" id="toc-les-boîtes-à-moustaches-angl.-boxplots" class="nav-link" data-scroll-target="#les-boîtes-à-moustaches-angl.-boxplots"><span class="header-section-number">5.4</span> Les boîtes à moustaches (angl. <em>boxplots</em>)</a></li>
+  <li><a href="#les-boîtes-à-moustaches-angl.-boxplots" id="toc-les-boîtes-à-moustaches-angl.-boxplots" class="nav-link" data-scroll-target="#les-boîtes-à-moustaches-angl.-boxplots"><span class="header-section-number">5.4</span> Les boîtes à moustaches</a></li>
   <li><a href="#devoir-pour-session-6-problem-set-2" id="toc-devoir-pour-session-6-problem-set-2" class="nav-link" data-scroll-target="#devoir-pour-session-6-problem-set-2">À faire avant de continuer</a></li>
-  <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices">Exercices</a></li>
+  <li><a href="#testez-vous" id="toc-testez-vous" class="nav-link" data-scroll-target="#testez-vous">Testez-vous</a></li>
   </ul>
 </nav>
     </div>
@@ -313,7 +319,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualiser des données avec ggplot2</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualiser des données avec <code>ggplot2</code></span></h1>
 </div>
 
 
@@ -330,44 +336,56 @@ div.csl-indent {
 </header>
 
 
-<p>La session 5 a pour but d’approfondir les techniques de visualisation de données avec le paquet <code>ggplot2</code>, notamment la création des types de graphique suivants :</p>
-<ol type="1">
-<li>Les nuages de points (angl. <em>scatter plots</em>)</li>
-<li>Les diagrammes à barres (angl. <em>bar plots</em>)</li>
-<li>Les histogrammes (angl. <em>histograms</em>)</li>
-<li>Les boîtes à moustaches (angl. <em>box plots</em>)</li>
-</ol>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># N'oubliez pas de charger les paquets tidyverse et</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ggthemes !  Exécutez le code suivant pour le faire :</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<section id="les-nuages-de-points-angl.-scatter-plots" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="les-nuages-de-points-angl.-scatter-plots"><span class="header-section-number">5.1</span> Les nuages de points (angl. <em>scatter plots</em>)</h2>
-<p>Commençons par le <strong>nuage de points</strong>, que nous avons déjà vu lors de la dernière session, lorsque nous avons visualisé la relation entre les carats et les prix dans le jeu de données <code>diamonds</code>.</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-default callout-important callout-titled" title="Objectifs d'apprentissage">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>À noter
+<span class="screen-reader-only">Important</span>Objectifs d’apprentissage
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Un <strong>nuage de points</strong> (aussi appelé diagramme de dispersion) est utilisé dans <code>ggplot2</code> pour représenter les valeurs de <strong>deux variables numériques différentes</strong> par des points, avec une variable sur l’axe des X et l’autre sur l’axe des Y.</p>
+<ul>
+<li>Choisir un graphique adapté au type de la ou des variables à représenter.</li>
+<li>Créer un nuage de points, un diagramme en barres, un histogramme et une boîte à moustaches avec <code>ggplot2</code>.</li>
+<li>Personnaliser un graphique&nbsp;: couleurs (<code>color</code>, <code>fill</code>), transparence, titres et thème.</li>
+<li>Simuler des données avec <code>rnorm()</code> et rendre la simulation reproductible avec <code>set.seed()</code>.</li>
+</ul>
+</div>
+</div>
+<p>Au <a href="../sessions/session-04.html#introduction-aux-visualisations-avec-ggplot2">chapitre 4</a>, vous avez construit un premier nuage de points avec <code>ggplot2</code>. Ce chapitre présente les quatre graphiques les plus utilisés en analyse de données (angl. <em>scatter plot</em>, <em>bar chart</em>, <em>histogram</em>, <em>boxplot</em>), et ce que chacun permet de voir&nbsp;: une relation, une répartition, une distribution ou une comparaison entre groupes.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Chargez les packages tidyverse et ggthemes (voir le</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># chapitre 4) :</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<section id="les-nuages-de-points-angl.-scatter-plots" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="les-nuages-de-points-angl.-scatter-plots"><span class="header-section-number">5.1</span> Les nuages de points</h2>
+<p>Commençons par le <strong>nuage de points</strong>, que nous avons déjà vu au chapitre 4 pour représenter la relation entre le poids en carats et le prix des diamants.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Définition : nuage de points">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Définition&nbsp;: nuage de points
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Un <strong>nuage de points</strong> (angl. <em>scatter plot</em>) est utilisé dans <code>ggplot2</code> pour représenter les valeurs de <strong>deux variables numériques différentes</strong> par des points, avec une variable sur l’axe des X et l’autre sur l’axe des Y.</p>
 <p>Ce type de graphique est idéal pour l’analyse exploratoire de données, permettant d’observer les relations entre les variables, de détecter des tendances, des regroupements, des valeurs extrêmes (angl. <em>outliers</em>) ou de vérifier des hypothèses de corrélation.</p>
-<p>Dans la fonction <code>ggplot()</code>, un scatter plot est créé avec la couche géométrique <code>geom_point()</code>.</p>
+<p>Avec <code>ggplot2</code>, un nuage de points se crée avec la géométrie <code>geom_point()</code>.</p>
 </div>
 </div>
 <p>Créons un nuage de points avec le jeu de données <code>iris</code>, en comparant les longueurs et les largeurs des sépales des iris (les variables <code>Sepal.Length</code> et <code>Sepal.Width</code>).</p>
-<p>Notez que, dans le code suivant, nous ne créons pas directement un graphique <code>ggplot</code> mais nous stockons le graphique comme un objet dans l’environnement, nommé <code>p1</code>, que nous pouvons ensuite afficher avec la fonction <code>print()</code>. Nous verrons dans un instant pourquoi cette pratique est utile.</p>
+<p>Notez que, dans le code suivant, nous ne créons pas directement un graphique <code>ggplot</code> mais nous stockons le graphique comme un objet dans l’environnement, nommé <code>np1</code>, que nous pouvons ensuite afficher avec la fonction <code>print()</code>. Nous verrons dans un instant pourquoi cette pratique est utile.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># nuage de points basique pour comparer la longueur et la</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># largeur des sépales des iris</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>np1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> iris, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, <span class="at">y =</span> Sepal.Width)) <span class="sc">+</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Sepal length and width in the iris dataset"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Longueur et largeur des sépales des iris"</span>)</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(np1)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
@@ -378,9 +396,9 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>Nous pouvons ajouter des couches à l’objet <code>np1</code> sans l’écraser, p.&nbsp;ex. une ligne de régression linéaire avec <code>geom_smooth(method = lm)</code> :</p>
+<p>Nous pouvons ajouter des couches à l’objet <code>np1</code> sans l’écraser, p.&nbsp;ex. une ligne de régression linéaire avec <code>geom_smooth(method = lm)</code>&nbsp;:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>np1 <span class="sc">+</span> <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>np1 <span class="sc">+</span> <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">formula =</span> y <span class="sc">~</span> x)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -389,13 +407,13 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>Que nous indique la ligne de régression ? En principe, elle indique une correlation légèrement négative entre les variables <code>Sepal.Length</code> et <code>Sepal.Width</code> ! (la zone grise autour de la ligne bleue est l’intervalle de confiance à 95 % de la droite de régression).</p>
-<p>Cela signifie que les iris dont les sépales sont plus longs ont tendance à avoir des sépales un peu moins larges ! Gardez cette constatation à l’esprit pour les étapes de codage suivantes.</p>
+<p>Que nous indique la ligne de régression ? En principe, elle indique une corrélation légèrement négative (deux variables sont <strong>corrélées</strong> si elles varient ensemble&nbsp;: positivement si elles augmentent ensemble, négativement si l’une diminue quand l’autre augmente) entre les variables <code>Sepal.Length</code> et <code>Sepal.Width</code> (la zone grise autour de la ligne bleue est l’intervalle de confiance à 95 % de la droite de régression ; la régression linéaire est présentée au <a href="../sessions/session-12.html#la-régression-linéaire-avec-lm">chapitre 12</a>).</p>
+<p>Cela signifie que les iris dont les sépales sont plus longs ont tendance à avoir des sépales un peu moins larges. Gardez cette constatation à l’esprit pour les étapes de codage suivantes.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ecrasons np1 en changeant un peu le code. Découvrez</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># vous-même ce qui a changé dans le code !</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>np1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, <span class="at">y =</span> Sepal.Width, <span class="at">color =</span> Species)) <span class="sc">+</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Sepal length and width in the iris dataset"</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Écrasons np1 en changeant un peu le code. Repérez ce qui</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># a changé dans le code.</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>np1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, <span class="at">y =</span> Sepal.Width, <span class="at">color =</span> Species,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">shape =</span> Species)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Longueur et largeur des sépales des iris"</span>)</span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(np1)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
@@ -406,10 +424,10 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>Vous pouvez voir dans le graphique que nous pouvons maintenant différencier les trois espèces d’iris. La dispersion des points semble moins aléatoire, ce qui permet de voir des groupes de points appartenant à l’une ou l’autre espèce (angl. <em>cluster</em>).</p>
-<p>Maintenant, ajoutons à nouveau une couche <code>geom_smooth()</code> à l’objet <code>np1</code> !</p>
+<p>Vous pouvez voir dans le graphique que nous pouvons maintenant différencier les trois espèces d’iris, par la couleur et par la forme des points (la forme aide aussi les personnes qui distinguent mal les couleurs). La dispersion des points semble moins aléatoire, ce qui permet de voir des groupes de points appartenant à l’une ou l’autre espèce (angl. <em>cluster</em>).</p>
+<p>Maintenant, ajoutons à nouveau une couche <code>geom_smooth()</code> à l’objet <code>np1</code>&nbsp;:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>np1 <span class="sc">+</span> <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>np1 <span class="sc">+</span> <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">formula =</span> y <span class="sc">~</span> x)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -418,28 +436,28 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>Les trois lignes de régression (une pour chaque type d’iris) montrent maintenant un tout autre résultat : en effet, la corrélation entre <code>Sepal.Length</code> et <code>Sepal.Width</code> est clairement positive.</p>
-<p>Ce renversement s’appelle le <strong>paradoxe de Simpson</strong> : une tendance globale peut s’inverser lorsqu’on tient compte d’une variable de groupe (ici l’espèce).</p>
+<p>Les trois lignes de régression (une pour chaque type d’iris) montrent maintenant un tout autre résultat&nbsp;: en effet, la corrélation entre <code>Sepal.Length</code> et <code>Sepal.Width</code> est clairement positive.</p>
+<p>Ce renversement s’appelle le <strong>paradoxe de Simpson</strong>&nbsp;: une tendance globale peut s’inverser lorsqu’on tient compte d’une variable de groupe (ici l’espèce).</p>
 <p>Cette constatation est un exemple d’analyse exploratoire des données, rendue possible par les possibilités de visualisation de <code>ggplot2</code>.</p>
 </section>
 <section id="les-diagrammes-à-barres" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="les-diagrammes-à-barres"><span class="header-section-number">5.2</span> Les diagrammes à barres</h2>
-<div class="callout callout-style-default callout-note callout-titled">
+<h2 data-number="5.2" class="anchored" data-anchor-id="les-diagrammes-à-barres"><span class="header-section-number">5.2</span> Les diagrammes en barres</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Définition : diagramme en barres">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>À noter
+<span class="screen-reader-only">Note</span>Définition&nbsp;: diagramme en barres
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Les <strong>diagrammes à barres</strong> dans R avec <code>ggplot2</code> sont utilisés pour représenter visuellement des <strong>données catégorielles</strong>, permettant de comparer des quantités entre différentes catégories.</p>
-<p>On les utilise donc souvent pour montrer la fréquence ou la proportion d’observations dans chaque catégorie, ce qui les rend utiles pour analyser des tendances ou des différences au sein de données catégorielles.</p>
-<p>Dans la fonction <code>ggplot()</code>, un diagramme à barres est créé avec la couche géométrique <code>geom_bar()</code>.</p>
+<p>Les <strong>diagrammes en barres</strong> dans R avec <code>ggplot2</code> sont utilisés pour représenter visuellement des <strong>données catégorielles</strong>, permettant de comparer des quantités entre différentes catégories.</p>
+<p>On les utilise donc souvent pour montrer l’effectif ou la proportion d’observations dans chaque catégorie, ce qui les rend utiles pour analyser des tendances ou des différences au sein de données catégorielles.</p>
+<p>Avec <code>ggplot2</code>, un diagramme en barres se crée avec la géométrie <code>geom_bar()</code>.</p>
 </div>
 </div>
-<p>Par exemple, nous pouvons utiliser le code simple suivant pour comparer la fréquence des différentes tailles (angl. <code>cut</code>) dans le jeu de données <code>diamonds</code>. Cette-fois ci, nous sauvegardons et nommons le graphique <code>db1</code>.</p>
+<p>Par exemple, nous pouvons utiliser le code simple suivant pour comparer les effectifs des différentes qualités de taille (<code>cut</code>) dans le jeu de données <code>diamonds</code>. Cette fois-ci, nous sauvegardons et nommons le graphique <code>db1</code>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>db1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> diamonds, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> cut)) <span class="sc">+</span> <span class="fu">geom_bar</span>()</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -452,14 +470,14 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>Améliorons le graphique avec des paramètres et des couches supplémentaires de la fonction <code>ggplot()</code> (Notez que nous allons simplement écraser l’objet <code>db1</code> créé précédemment avec une nouvelle version de <code>db1</code> !) :</p>
+<p>Améliorons le graphique avec des arguments et des éléments supplémentaires (Notez que nous allons simplement écraser l’objet <code>db1</code> créé précédemment avec une nouvelle version de <code>db1</code> !)&nbsp;:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>db1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> diamonds, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> cut, <span class="at">fill =</span> cut)) <span class="sc">+</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Frequency of cut quality types in the diamonds dataset"</span>,</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"n = 53,940 diamonds"</span>, <span class="at">x =</span> <span class="st">"Cut Quality"</span>, <span class="at">y =</span> <span class="st">"Count"</span>) <span class="sc">+</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Effectifs des qualités de taille des diamants"</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"n = 53 940 diamants"</span>, <span class="at">x =</span> <span class="st">"Qualité de la taille"</span>,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Effectif"</span>) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(db1)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
@@ -470,63 +488,60 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>Que nous dit le graphique ? Il est intéressant de constater que dans le jeu de données <code>diamonds</code>, le niveau de qualité le plus élevé de la taille, à savoir <code>ideal</code>, est également le plus fréquent.</p>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Mise en garde</span>Attention
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
-<div class="callout-body-container callout-body">
-<p>Dans la fonction <code>ggplot()</code>, il y a une différence si vous voulez ajouter de la couleur aux points (qui ont mathématiquement zéro dimension) ou aux surfaces (qui ont deux dimensions), comme dans les diagrammes à barres.</p>
-<p>Si vous voulez ajouter de la couleur à une surface, vous devez utiliser l’argument <code>fill = "xyz"</code>. L’argument <code>color = "xyz"</code> que nous avons utilisé pour ajouter de la couleur aux nuages de points ne fera qu’ajouter de la couleur à la ligne autour de la surface !</p>
-</div>
-</div>
-</div>
-<section id="cest-maintenant-à-vous-de-jouer" class="level3">
-<h3 class="anchored" data-anchor-id="cest-maintenant-à-vous-de-jouer">C’est maintenant à vous de jouer !</h3>
-<p>Reprenez le code que nous avons utilisé pour créer <code>db1</code> et modifiez-le pour créer un nouvel objet,<code>db2</code>, qui visualise la fréquence des types de qualité de couleur (<code>color</code>) dans le jeu de données <code>diamonds</code> sous la forme d’un diagramme à barres !</p>
-</section>
-</section>
-<section id="les-histogrammes" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="les-histogrammes"><span class="header-section-number">5.3</span> Les histogrammes</h2>
-<div class="callout callout-style-default callout-note callout-titled">
+<p>Que nous dit le graphique ? Il est intéressant de constater que dans le jeu de données <code>diamonds</code>, le niveau de qualité le plus élevé de la taille, à savoir <code>ideal</code>, est également le plus fréquent.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Attention">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>À noter
+<span class="screen-reader-only">Avertissement</span>Attention
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Dans la fonction <code>ggplot()</code>, il y a une différence si vous voulez ajouter de la couleur aux points (qui ont mathématiquement zéro dimension) ou aux surfaces (qui ont deux dimensions), comme dans les diagrammes en barres.</p>
+<p>Si vous voulez ajouter de la couleur à une surface, vous devez utiliser l’argument <code>fill = "xyz"</code>. L’argument <code>color = "xyz"</code> que nous avons utilisé pour ajouter de la couleur aux nuages de points ne fera que colorer le contour de la surface.</p>
+</div>
+</div>
+<section id="cest-maintenant-à-vous-de-jouer" class="level3">
+<h3 class="anchored" data-anchor-id="cest-maintenant-à-vous-de-jouer">À vous de jouer</h3>
+<p>Reprenez le code que nous avons utilisé pour créer <code>db1</code> et modifiez-le pour créer un nouvel objet, <code>db2</code>, qui représente les effectifs des qualités de couleur (<code>color</code>) dans le jeu de données <code>diamonds</code> sous la forme d’un diagramme en barres.</p>
+</section>
+</section>
+<section id="les-histogrammes" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="les-histogrammes"><span class="header-section-number">5.3</span> Les histogrammes</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Définition : histogramme">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Définition&nbsp;: histogramme
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Un <strong>histogramme</strong> est un type de graphique utilisé pour représenter <strong>la distribution</strong> d’<strong>une variable numérique</strong> à travers des barres.</p>
-<p>Un “histogramme sépare les valeurs possibles des données en classes ou groupes. Pour chaque groupe, on construit un rectangle dont la base correspond aux valeurs de ce groupe et la hauteur correspond au nombre d’observations dans le groupe.</p>
+<p>« Un histogramme sépare les valeurs possibles des données en classes ou groupes. Pour chaque groupe, on construit un rectangle dont la base correspond aux valeurs de ce groupe et la hauteur correspond au nombre d’observations dans le groupe.</p>
 <p>L’histogramme a une apparence semblable au graphique à barres verticales, mais il n’y a pas d’écart entre les barres.</p>
-<p>En règle générale, l’histogramme possède des barres d’une largeur égale” (Source : <a href="https://www150.statcan.gc.ca/n1/edu/power-pouvoir/ch9/histo/5214822-fra.htm">Statistique Canada, 2021).</a></p>
-<p>L’histogramme est particulièrement utile pour :</p>
+<p>En règle générale, l’histogramme possède des barres d’une largeur égale. » <span class="citation" data-cites="statcan2021">(<a href="../references.html#ref-statcan2021" role="doc-biblioref">Statistique Canada, 2021</a>)</span></p>
+<p>L’histogramme est particulièrement utile pour&nbsp;:</p>
 <ul>
-<li><strong>Analyser la distribution</strong> : Comprendre si les données sont normalement distribuées, asymétriques (angl. <em>skewness</em>), ou si elles ont des queues plus ou moins épaisses que la loi normale (<em>kurtosis</em>).</li>
-<li><strong>Détecter les valeurs extrêmes</strong> : Identifier les données qui s’écartent du reste de l’ensemble des données de manière signifiante.</li>
-<li><strong>Comparer des distributions</strong> : Observer comment différentes sous-populations se comparent les unes aux autres en termes de distribution de données.</li>
+<li><strong>Analyser la distribution</strong>&nbsp;: Comprendre si les données sont normalement distribuées, asymétriques (angl. <em>skewness</em>), ou si elles ont des queues plus ou moins épaisses que la loi normale (<em>kurtosis</em>).</li>
+<li><strong>Détecter les valeurs extrêmes</strong>&nbsp;: Identifier les données qui s’écartent nettement du reste des données.</li>
+<li><strong>Comparer des distributions</strong>&nbsp;: Observer comment différentes sous-populations se comparent les unes aux autres en termes de distribution de données.</li>
 </ul>
-<p>Avec <code>ggplot2</code> en R, créer un histogramme se fait avec la couche géométrique <code>geom_histogram()</code>. Par défaut, <code>geom_histogram()</code> découpe les données en 30 intervalles (angl. <em>bins</em>) et affiche un message invitant à choisir une meilleure valeur. On peut fixer la largeur des intervalles avec l’argument <code>binwidth</code> (p.&nbsp;ex. <code>geom_histogram(binwidth = 30)</code>) ou leur nombre avec <code>bins</code>.</p>
+<p>Avec <code>ggplot2</code>, on crée un histogramme avec la géométrie <code>geom_histogram()</code>. Par défaut, <code>geom_histogram()</code> découpe les données en 30 intervalles (angl. <em>bins</em>) et affiche un message invitant à choisir une meilleure valeur. On peut fixer la largeur des intervalles avec l’argument <code>binwidth</code> (p.&nbsp;ex. <code>geom_histogram(binwidth = 30)</code>) ou leur nombre avec <code>bins</code>.</p>
 </div>
 </div>
-<p>Avant de créer un histogramme avec le code R, introduisons d’abord une nouvelle fonction : <code>rnorm()</code>. Elle peut être utilisée pour créer des valeurs aléatoires qui suivent une <strong>loi normale</strong> (angl. <em>normal distribution</em>).</p>
-<p>Les arguments que nous pouvons entrer dans la fonction sont :</p>
+<p>Avant de créer un histogramme avec le code R, introduisons d’abord une nouvelle fonction&nbsp;: <code>rnorm()</code>. Elle peut être utilisée pour créer des valeurs aléatoires qui suivent une <strong>loi normale</strong> (angl. <em>normal distribution</em>).</p>
+<p>Les arguments que nous pouvons entrer dans la fonction sont&nbsp;:</p>
 <ul>
 <li><p>le nombre <code>n</code> de valeurs aléatoires que nous voulons créer</p></li>
 <li><p>la moyenne <code>mean</code> de la distribution des valeurs aléatoires</p></li>
 <li><p>l’écart-type <code>sd</code> de la distribution des valeurs aléatoires</p></li>
 </ul>
 <p>Notez que par défaut, la fonction utilise <code>mean = 0</code> et <code>sd = 1</code>, ce qui correspond à une <strong>loi normale centrée réduite</strong> (angl. <em>standard normal distribution</em>).</p>
-<p>Utilisez aussi <code>?rnorm()</code> pour accéder à plus d’infos.</p>
+<p>Consultez aussi <code>?rnorm</code> pour plus d’informations.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Astuce">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -537,16 +552,16 @@ div.csl-indent {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>La fonction <code>set.seed()</code> dans R est utilisée pour définir la graine (seed en anglais) du générateur de nombres aléatoires. La graine est un nombre entier qui sert de point de départ pour le générateur de nombres aléatoires.</p>
+<p>La fonction <code>set.seed()</code> dans R est utilisée pour définir la graine (angl. <em>seed</em>) du générateur de nombres aléatoires. La graine est un nombre entier qui sert de point de départ pour le générateur de nombres aléatoires.</p>
 <p>En définissant une graine spécifique, par exemple avec <code>set.seed(123)</code>, vous garantissez que la séquence de nombres aléatoires générée par la suite avec des fonctions telles que <code>rnorm()</code>, sera la même à chaque fois que vous exécuterez le code, ce qui est utile pour la reproductibilité des résultats.</p>
 </div>
 </div>
 <p>Dans le code R suivant, nous utilisons <code>rnorm()</code> pour simuler les distributions des tailles des hommes et des femmes en Suisse.</p>
-<p>D’après l’Enquête suisse sur la santé 2017 <span class="citation" data-cites="muller2022">(<a href="../references.html#ref-muller2022" role="doc-biblioref">Müller et al., 2022</a>)</span>, les femmes mesurent en moyenne 164,6 cm (écart-type 6,5 cm) et les hommes 177,0 cm (écart-type 7,1 cm). Dans la suite, nous utilisons des valeurs proches : une moyenne de 164.7 cm pour les femmes et de 177.4 cm pour les hommes, avec des écarts-types un peu plus petits de 5.6 cm et de 6.1 cm.</p>
+<p>D’après l’Enquête suisse sur la santé 2017 <span class="citation" data-cites="muller2022">(<a href="../references.html#ref-muller2022" role="doc-biblioref">Müller et al., 2022</a>)</span>, les femmes mesurent en moyenne 164,6 cm (écart-type 6,5 cm) et les hommes 177,0 cm (écart-type 7,1 cm). Dans la suite, nous utilisons des valeurs proches&nbsp;: une moyenne de 164,7 cm pour les femmes et de 177,4 cm pour les hommes, avec des écarts-types un peu plus petits de 5,6 cm et de 6,1 cm.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulation de tailles de femmes en Suisse Créer 500</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># valeurs aléatoires de taille (moyenne = 164.7 et</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># écart-type = 5.6) avec la fonction rnorm().</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># valeurs aléatoires de taille (moyenne = 164,7 et</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># écart-type = 5,6) avec la fonction rnorm().</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>taille_f <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">500</span>, <span class="at">mean =</span> <span class="fl">164.7</span>, <span class="at">sd =</span> <span class="fl">5.6</span>)</span>
@@ -555,11 +570,12 @@ div.csl-indent {
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 161.5613 163.4110 173.4288 165.0948 165.4240 174.3044</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># stocker taille_f comme objet de type 'data.frame'</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>taille_f <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(taille_f)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># visualiser taille_f avec un histogramme basique</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> taille_f, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> taille_f)) <span class="sc">+</span> <span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ggplot() a besoin d'un tableau de données :</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># as.data.frame() convertit le vecteur</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>taille_f <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(taille_f)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># visualiser taille_f avec un histogramme basique</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> taille_f, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> taille_f)) <span class="sc">+</span> <span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -567,7 +583,7 @@ div.csl-indent {
 </figure>
 </div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># jouer avec le paramètre 'binwidth' de l'histogramme qui</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># jouer avec l'argument 'binwidth' de l'histogramme qui</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># définit l'intervalle de la base de ses barres</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> taille_f, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> taille_f)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">10</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
@@ -606,11 +622,11 @@ div.csl-indent {
 </figure>
 </div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajouter des couches supplémentaires pour améliorer la</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># visualisation p. ex. des titres</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajouter des titres et un thème pour améliorer la</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># visualisation</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>hist1 <span class="ot">&lt;-</span> hist1 <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Histogramme des tailles de femmes en Suisse"</span>,</span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Simulation basée sur 500 observations"</span>, <span class="at">x =</span> <span class="st">"Taille en cm"</span>,</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Fréquence"</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>()</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Effectif"</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>()</span>
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(hist1)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
@@ -631,7 +647,7 @@ div.csl-indent {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Un élément clé des visualisations de données est la <strong>couleur</strong>. R connaît 657 noms de couleurs : la fonction <code>colors()</code> les liste, et vous pouvez utiliser chacun de ces noms dans ggplot2 (p.&nbsp;ex. <code>fill = "steelblue"</code>). Pour un aperçu visuel, voir <em>Colors in R</em> <span class="citation" data-cites="brown_colors">(<a href="../references.html#ref-brown_colors" role="doc-biblioref">Brown, 2021</a>)</span>.</p>
+<p>Un élément clé des visualisations de données est la <strong>couleur</strong>. R connaît 657 noms de couleurs&nbsp;: la fonction <code>colors()</code> les liste, et vous pouvez utiliser chacun de ces noms dans <code>ggplot2</code> (p.&nbsp;ex. <code>fill = "steelblue"</code>). Pour un aperçu visuel, voir <em>Colors in R</em> <span class="citation" data-cites="brown_colors">(<a href="../references.html#ref-brown_colors" role="doc-biblioref">Brown, 2021</a>)</span>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">colors</span>(), <span class="dv">20</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -645,32 +661,32 @@ div.csl-indent {
 </div>
 </div>
 <section id="cest-maintenant-à-vous-de-jouer-1" class="level3">
-<h3 class="anchored" data-anchor-id="cest-maintenant-à-vous-de-jouer-1">C’est maintenant à vous de jouer !</h3>
-<p>Reprenez le code que nous avons utilisé pour créer <code>taille_f</code> et <code>hist1</code> et modifiez-le pour créer une nouvelle simulation de taille d’hommes, <code>taille_h</code>, et un nouvel histogramme qui montre sa distribution, <code>hist2</code>. Jouez avec les paramètres <code>binwidth</code> et la couleur de votre visualisation. Pour cette tâche, vous pouvez supposer que les hommes en Suisse ont une taille moyenne (<code>mean</code>) de 177,4 cm avec un écart-type (<code>sd</code>) de 6,1 cm.</p>
+<h3 class="anchored" data-anchor-id="cest-maintenant-à-vous-de-jouer-1">À vous de jouer</h3>
+<p>Reprenez le code que nous avons utilisé pour créer <code>taille_f</code> et <code>hist1</code> et modifiez-le pour créer une nouvelle simulation de taille d’hommes, <code>taille_h</code>, et un nouvel histogramme qui montre sa distribution, <code>hist2</code>. Jouez avec l’argument <code>binwidth</code> et la couleur de votre visualisation. Pour cette tâche, vous pouvez supposer que les hommes en Suisse ont une taille moyenne (<code>mean</code>) de 177,4 cm avec un écart-type (<code>sd</code>) de 6,1 cm.</p>
 </section>
 </section>
 <section id="les-boîtes-à-moustaches-angl.-boxplots" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="les-boîtes-à-moustaches-angl.-boxplots"><span class="header-section-number">5.4</span> Les boîtes à moustaches (angl. <em>boxplots</em>)</h2>
-<div class="callout callout-style-default callout-note callout-titled">
+<h2 data-number="5.4" class="anchored" data-anchor-id="les-boîtes-à-moustaches-angl.-boxplots"><span class="header-section-number">5.4</span> Les boîtes à moustaches</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Définition : boîte à moustaches">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>À noter
+<span class="screen-reader-only">Note</span>Définition&nbsp;: boîte à moustaches
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Les <strong>boîtes à moustaches</strong>, ou <strong>boxplots</strong>, sont un type de graphique pour représenter la distribution d’un ensemble de données à travers cinq mesures clés :</p>
+<p>Les <strong>boîtes à moustaches</strong> (angl. <em>boxplots</em>) représentent la distribution d’une variable numérique à l’aide de cinq valeurs clés&nbsp;:</p>
 <ol type="1">
 <li>l’extrémité de la moustache inférieure</li>
-<li>le premier quartile (Q1 ; début de la boîte)</li>
-<li>la médiane (Q2 ; ligne qui “coupe la boîte en deux”)</li>
-<li>le troisième quartile (Q3 ; fin de la boîte) et</li>
+<li>le premier quartile (Q1 ; début de la boîte)</li>
+<li>la médiane (Q2 ; ligne qui « coupe la boîte en deux »)</li>
+<li>le troisième quartile (Q3 ; fin de la boîte) et</li>
 <li>l’extrémité de la moustache supérieure.</li>
 </ol>
-<p>Les moustaches s’étendent jusqu’aux valeurs les plus extrêmes situées à moins de 1,5 × l’écart interquartile de la boîte ; les valeurs au-delà sont dessinées comme des points (valeurs extrêmes potentielles). Les moustaches correspondent donc au minimum et au maximum seulement s’il n’y a pas de valeurs extrêmes.</p>
-<p>Ces diagrammes permettent d’identifier rapidement la médiane, l’étendue interquartile (angl. <em>interquartile range</em> = <em>IQR</em>) et les valeurs extrêmes potentielles. Ils sont particulièrement utiles pour comparer les distributions entre plusieurs groupes ou variables.</p>
+<p>Les moustaches s’étendent jusqu’aux valeurs les plus extrêmes situées à moins de 1,5 × l’écart interquartile de la boîte ; les valeurs au-delà sont dessinées comme des points (valeurs extrêmes potentielles). Les moustaches correspondent donc au minimum et au maximum seulement s’il n’y a pas de valeurs extrêmes.</p>
+<p>Ces diagrammes permettent d’identifier rapidement la médiane, l’écart interquartile (angl. <em>interquartile range</em>, IQR) et les valeurs extrêmes potentielles. Ils sont particulièrement utiles pour comparer les distributions entre plusieurs groupes ou variables.</p>
 </div>
 </div>
 <div class="cell">
@@ -682,8 +698,8 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>Le dataset <code>mtcars</code> en R, qui contient des données sur les caractéristiques de différents modèles de voitures, peut être utilisé pour illustrer l’utilisation de boxplots.</p>
-<p>Par exemple, pour visualiser la distribution de l’efficacité énergétique (<code>mpg</code>, miles par gallon) des voitures en fonction du nombre de cylindres (<code>cyl</code>), on peut utiliser le code suivant :</p>
+<p>Le jeu de données <code>mtcars</code>, qui contient des données sur les caractéristiques de différents modèles de voitures, peut être utilisé pour illustrer l’utilisation des boîtes à moustaches.</p>
+<p>Par exemple, pour visualiser la distribution de l’efficacité énergétique (<code>mpg</code>, miles par gallon) des voitures en fonction du nombre de cylindres (<code>cyl</code>), on peut utiliser le code suivant&nbsp;:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Avant de créer le boxplot, vérifions d'abord la structure</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># de mtcars :</span></span>
@@ -704,15 +720,15 @@ div.csl-indent {
 </div>
 </div>
 <p>Nous pouvons constater que la colonne <code>cyl</code> (cylindre) est stockée au format numérique.</p>
-<p>C’est un problème, car nous voulons comparer l’efficacité énergétique (<code>mpg</code>) des voitures à 4, 6 ou 8 cylindres. Nous devons traiter chacune d’entre elles comme un sous-groupe distinct. Comment faire ?</p>
+<p>C’est un problème, car nous voulons comparer l’efficacité énergétique (<code>mpg</code>) des voitures à 4, 6 ou 8 cylindres. Nous devons traiter chacune d’entre elles comme un sous-groupe distinct. Comment faire ?</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Transformons donc cyl en facteur</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Transformons donc cyl en facteur (voir le chapitre 2)</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>mtcars<span class="sc">$</span>cyl <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(mtcars<span class="sc">$</span>cyl)</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Et maintenant nous pouvons construire notre boxplot</span></span>
 <span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>box1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> mtcars, <span class="fu">aes</span>(<span class="at">x =</span> cyl, <span class="at">y =</span> mpg, <span class="at">fill =</span> cyl)) <span class="sc">+</span></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Miles par gallon (mpg) selon le nombre de cylindres dans mtcars"</span>,</span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Nombre de cylindres"</span>, <span class="at">y =</span> <span class="st">"Miles per gallon (mpg)"</span>)</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Consommation (mpg) selon le nombre de cylindres"</span>,</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Nombre de cylindres"</span>, <span class="at">y =</span> <span class="st">"Miles par gallon (mpg)"</span>)</span>
 <span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(box1)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
@@ -722,41 +738,62 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>Ce code génère un boxplot, <code>box1</code>, pour chaque groupe de cylindres dans le dataset <code>mtcars</code>, permettant de comparer facilement l’efficacité énergétique (<code>mpg</code>) entre les voitures avec des nombres de cylindres différents.</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<p>Ce code crée un graphique, <code>box1</code>, avec une boîte à moustaches par groupe de cylindres du jeu de données <code>mtcars</code>, permettant de comparer facilement l’efficacité énergétique (<code>mpg</code>) entre les voitures avec des nombres de cylindres différents.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Astuce">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>À noter
+<span class="screen-reader-only">Astuce</span>Astuce
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Le paramètre <code>alpha = 0.2</code> à l’intérieur de <code>geom_boxplot()</code> rend les boxplots transparents. En général, <code>alpha</code> peut être compris entre 0 (totalement transparent) et 1 (non transparent). C’est un paramètre supplémentaire qui permet de personnaliser votre graphique <code>ggplot2</code>.</p>
+<p>L’argument <code>alpha = 0.2</code> de <code>geom_boxplot()</code> rend les boîtes transparentes. En général, <code>alpha</code> peut être compris entre 0 (totalement transparent) et 1 (non transparent). C’est un argument supplémentaire qui permet de personnaliser votre graphique <code>ggplot2</code>.</p>
 </div>
 </div>
-<p>On voit dans le graphique des boxplots que dans <code>mtcars</code>, les voitures avec des moteurs ayant plus de cylindres ont aussi tendance à être moins efficaces en termes de consommation de carburant. Il existe toutefois quelques intersections entre les groupes. C’est-à-dire qu’il y a des voitures à 8 cylindres qui sont relativement efficaces en termes de consommation de carburant, surpassant quelques voitures à 6 cylindres, par exemple.</p>
+<p>Le graphique montre que dans <code>mtcars</code>, les voitures avec des moteurs ayant plus de cylindres ont aussi tendance à être moins efficaces en termes de consommation de carburant. Il existe toutefois quelques intersections entre les groupes. C’est-à-dire qu’il y a des voitures à 8 cylindres qui sont relativement efficaces en termes de consommation de carburant, surpassant quelques voitures à 6 cylindres, par exemple.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="En bref">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>En bref
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Nuage de points&nbsp;: deux variables numériques ; diagramme en barres&nbsp;: une variable catégorielle ; histogramme&nbsp;: la distribution d’une variable numérique ; boîte à moustaches&nbsp;: une variable numérique comparée entre groupes.</li>
+<li><code>color</code> colore les points et les contours, <code>fill</code> remplit les surfaces.</li>
+<li>La largeur des intervalles (<code>binwidth</code>) change beaucoup l’aspect d’un histogramme&nbsp;: essayez plusieurs valeurs.</li>
+<li>Une tendance d’ensemble peut s’inverser quand on distingue des groupes (paradoxe de Simpson)&nbsp;: regardez aussi vos données par sous-groupe.</li>
+<li><code>rnorm()</code> simule des valeurs suivant une loi normale ; <code>set.seed()</code> rend la simulation reproductible.</li>
+</ul>
+</div>
+</div>
+<p>Le chapitre « Révision 2 » vous permet de tester vos connaissances sur les graphiques avant de passer à la manipulation de données.</p>
 </section>
 <section id="devoir-pour-session-6-problem-set-2" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="devoir-pour-session-6-problem-set-2">À faire avant de continuer</h2>
 <ul>
 <li>Refaites les graphiques de ce chapitre et modifiez leurs paramètres (couleurs, <code>binwidth</code>, titres) pour voir ce qui change.</li>
-<li>Révisez les chapitres 4 et 5, puis testez-vous avec le chapitre « Révision 2 ».</li>
+<li>Révisez les chapitres 4 et 5, puis testez-vous avec le chapitre « Révision 2 ».</li>
 </ul>
 </section>
-<section id="exercices" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="exercices">Exercices</h2>
-<p>Choisissez <em>Vrai</em> ou <em>Faux</em>, cochez une réponse ou tapez un nombre : la couleur indique tout de suite si votre réponse est correcte. Cliquez sur <strong>Explication</strong> pour voir la correction.</p>
+<section id="testez-vous" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="testez-vous">Testez-vous</h2>
+<p><span id="exercices"></span></p>
+<p>Choisissez <em>Vrai</em> ou <em>Faux</em>, cochez une réponse ou tapez un nombre&nbsp;: la couleur indique tout de suite si votre réponse est correcte. Cliquez sur <strong>Explication</strong> pour voir la correction.</p>
 <section id="q26" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q26">Question 5.1</h3>
-<p>Jugez chaque proposition concernant l’histogramme suivant des points obtenus au Problem Set 1 :</p>
+<p>Jugez chaque proposition concernant l’histogramme suivant des points obtenus à un test du cours d’origine (fichier <code>distribution_ps_1.csv</code>)&nbsp;:</p>
 <p><img src="session-05_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
 <ol type="a">
-<li><p>Les étudiant·es ont obtenu le plus fréquemment 13 points dans le Problem Set 1. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
-<li><p>Le graphique montre qu’en médiane, 16 points ont été obtenus dans le Problem Set 1. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
-<li><p>Le graphique montre qu’en moyenne, 16 points ont été obtenus dans le Problem Set 1. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
-<li><p>L’histogramme montre que la distribution des points dans le Problem Set 1 suit une loi normale centrée réduite. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>Les étudiant·es ont obtenu le plus fréquemment 13 points à ce test. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>Le graphique montre qu’en médiane, 16 points ont été obtenus à ce test. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>Le graphique montre qu’en moyenne, 16 points ont été obtenus à ce test. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>L’histogramme montre que la distribution des points à ce test suit une loi normale centrée réduite. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
 </ol>
 <div class="webex-solution">
 <button>
@@ -764,12 +801,12 @@ Explication
 </button>
 <p>a) La barre la plus haute est à 14 points (le mode).</p>
 <p>b) et c) Un histogramme ne montre ni la médiane ni la moyenne exactes. Ici, la médiane vaut 14 et la moyenne 14,2.</p>
-<p>d) Une loi normale <em>centrée réduite</em> a une moyenne de 0 et un écart-type de 1 : ce n’est pas le cas de points compris entre 8 et 20.</p>
+<p>d) Une loi normale <em>centrée réduite</em> a une moyenne de 0 et un écart-type de 1&nbsp;: ce n’est pas le cas de points compris entre 8 et 20.</p>
 </div>
 </section>
 <section id="q27" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q27">Question 5.2</h3>
-<p>Comment peut-on ajuster la <strong>largeur des intervalles</strong> dans un histogramme créé avec <code>ggplot2</code> ?</p>
+<p>Comment peut-on ajuster la <strong>largeur des intervalles</strong> dans un histogramme créé avec <code>ggplot2</code> ?</p>
 <ol type="a">
 <li><p>En utilisant l’argument <code>bins</code>. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>En ajustant l’argument <code>width</code>. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
@@ -780,12 +817,12 @@ Explication
 <button>
 Explication
 </button>
-<p><code>binwidth</code> fixe directement la largeur de chaque barre ; <code>bins</code> fixe le <strong>nombre</strong> de barres, ce qui change aussi leur largeur. <code>geom_histogram()</code> n’a pas d’argument <code>interval</code>.</p>
+<p><code>binwidth</code> fixe directement la largeur de chaque barre ; <code>bins</code> fixe le <strong>nombre</strong> de barres, ce qui change aussi leur largeur. <code>geom_histogram()</code> n’a pas d’argument <code>interval</code>.</p>
 </div>
 </section>
 <section id="q28" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q28">Question 5.3</h3>
-<p>Jugez chaque proposition concernant le graphique suivant, créé avec le jeu de données <code>mpg</code> (inclus dans le paquet <code>ggplot2</code>) :</p>
+<p>Jugez chaque proposition concernant le graphique suivant, créé avec le jeu de données <code>mpg</code> (inclus dans le package <code>ggplot2</code>)&nbsp;:</p>
 <p><img src="session-05_files/figure-html/unnamed-chunk-14-2.png" class="img-fluid" width="672"></p>
 <ol type="a">
 <li><p>La ligne de régression indique que la corrélation entre la taille du moteur et l’efficacité du carburant est négative. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
@@ -798,21 +835,21 @@ Explication
 <button>
 Explication
 </button>
-<p>a) et e) La droite descend : plus la cylindrée (<code>displ</code>) est grande, moins on parcourt de miles par gallon (<code>hwy</code>).</p>
+<p>a) et e) La droite descend&nbsp;: plus la cylindrée (<code>displ</code>) est grande, moins on parcourt de miles par gallon (<code>hwy</code>).</p>
 <p>b) Les données viennent de <code>mpg</code>, pas de <code>mtcars</code>.</p>
 <p>c) C’est la description de <code>?mpg</code>.</p>
-<p>d) L’axe des x montre la cylindrée (<code>displ</code>, en litres) ; les miles par gallon sont sur l’axe des y.</p>
+<p>d) L’axe des x montre la cylindrée (<code>displ</code>, en litres) ; les miles par gallon sont sur l’axe des y.</p>
 </div>
 </section>
 <section id="q29" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q29">Question 5.4</h3>
-<p>Exécutez le code R suivant et jugez chaque proposition :</p>
+<p>Exécutez le code suivant, puis jugez chaque proposition&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(mpg, wt)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(g)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <ol type="a">
-<li><p><code>g</code> est un objet stocké dans le volet <em>Environment</em> de RStudio. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p><code>g</code> est un objet stocké dans le volet <strong>Environment</strong> de RStudio. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Le graphique <code>g</code> affiche une relation entre le poids des voitures (<code>wt</code>) et leur efficacité énergétique (<code>mpg</code>, miles par gallon). <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Le code produit un histogramme. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
 <li><p>Chaque point dans le graphique représente une voiture du jeu de données <code>mtcars</code>. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
@@ -825,12 +862,12 @@ Explication
 <p>a) L’affectation <code>&lt;-</code> stocke le graphique dans l’objet <code>g</code>.</p>
 <p>c) <code>geom_point()</code> produit un <strong>nuage de points</strong>, pas un histogramme.</p>
 <p>d) Chaque ligne de <code>mtcars</code> (une voiture) donne un point.</p>
-<p>e) Les voitures lourdes parcourent moins de miles par gallon : <code>cor(mtcars$mpg, mtcars$wt)</code> vaut −0,87.</p>
+<p>e) Les voitures lourdes parcourent moins de miles par gallon&nbsp;: <code>cor(mtcars$mpg, mtcars$wt)</code> vaut −0,87.</p>
 </div>
 </section>
 <section id="q30" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q30">Question 5.5</h3>
-<p>Exécutez le code R suivant et jugez chaque proposition :</p>
+<p>Exécutez le code suivant, puis jugez chaque proposition&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Transformations :</span></span>
@@ -841,7 +878,7 @@ Explication
 <span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
 <span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribution of cylinders and gears in mtcars"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <ol type="a">
-<li><p>Ce code produit un diagramme à barres représentant le nombre de voitures par nombre de cylindres. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>Ce code produit un diagramme en barres représentant le nombre de voitures par nombre de cylindres. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>La couleur des barres est déterminée par le nombre de vitesses (<code>gear</code>). <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Les cylindres et les vitesses sont transformés en variables de type facteur. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Le graphique montre qu’il n’y a pas de voitures avec 8 cylindres et 4 vitesses dans <code>mtcars</code>. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
@@ -860,12 +897,12 @@ Explication
 </section>
 <section id="q31" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q31">Question 5.6</h3>
-<p>Exécutez le code R suivant et jugez chaque proposition :</p>
+<p>Exécutez le code suivant, puis jugez chaque proposition&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">1000</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <ol type="a">
-<li><p>Ce code génère 1000 valeurs « aléatoires » qui se rapprochent d’une loi normale centrée réduite (<em>standard normal distribution</em>). <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
+<li><p>Ce code génère 1000 valeurs « aléatoires » qui se rapprochent d’une loi normale centrée réduite (angl. <em>standard normal distribution</em>). <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Ce code génère un message d’erreur, car il y a des arguments manquants dans la fonction <code>rnorm()</code>. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
-<li><p>Ce code génère 1000 valeurs « aléatoires » qui se rapprochent d’une loi normale avec une moyenne = 1 et un écart-type = 0. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>Ce code génère 1000 valeurs « aléatoires » qui se rapprochent d’une loi normale avec une moyenne = 1 et un écart-type = 0. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
 <li><p>Ce code génère des valeurs numériques positives et négatives. <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 <li><p>Toutes les lois normales ont le même écart-type. <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
 </ol>
@@ -873,16 +910,16 @@ Explication
 <button>
 Explication
 </button>
-<p>Sans autres arguments, <code>rnorm()</code> utilise <code>mean = 0</code> et <code>sd = 1</code> : c’est la loi normale centrée réduite, qui produit des valeurs positives et négatives autour de 0.</p>
-<p>e) L’écart-type est un paramètre de la loi : il varie d’une loi normale à l’autre.</p>
+<p>Sans autres arguments, <code>rnorm()</code> utilise <code>mean = 0</code> et <code>sd = 1</code>&nbsp;: c’est la loi normale centrée réduite, qui produit des valeurs positives et négatives autour de 0.</p>
+<p>e) L’écart-type est un paramètre de la loi&nbsp;: il varie d’une loi normale à l’autre.</p>
 </div>
 </section>
 <section id="q44" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q44">Question 5.7</h3>
-<p>Quels types de visualisation sont bien adaptés pour afficher la relation entre deux variables numériques ?</p>
+<p>Quels types de visualisation sont bien adaptés pour afficher la relation entre deux variables numériques ?</p>
 <ol type="a">
 <li><p>Histogramme <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
-<li><p>Diagramme à barres <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
+<li><p>Diagramme en barres <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
 <li><p>Boîte à moustaches <select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p></li>
 <li><p>Nuage de points <select class="webex-select"><option value="blank"></option><option value="answer">Vrai</option><option value="">Faux</option></select></p></li>
 </ol>
@@ -890,7 +927,7 @@ Explication
 <button>
 Explication
 </button>
-<p>Le nuage de points place une variable numérique sur chaque axe. L’histogramme montre la distribution d’<strong>une</strong> variable numérique ; le diagramme à barres compte des catégories ; la boîte à moustaches compare une variable numérique entre catégories.</p>
+<p>Le nuage de points place une variable numérique sur chaque axe. L’histogramme montre la distribution d’<strong>une</strong> variable numérique ; le diagramme en barres compte des catégories ; la boîte à moustaches compare une variable numérique entre catégories.</p>
 </div>
 </section>
 <section id="q97" class="level3 unnumbered">
@@ -901,36 +938,36 @@ Explication
 <button>
 Explication
 </button>
-<p>Les graphiques sont un outil central de l’analyse exploratoire : ils révèlent la forme des distributions, les tendances et les valeurs aberrantes.</p>
+<p>Les graphiques sont un outil central de l’analyse exploratoire&nbsp;: ils révèlent la forme des distributions, les tendances et les valeurs aberrantes.</p>
 </div>
 </section>
 <section id="q99" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q99">Question 5.9</h3>
-<p>Un boxplot peut être utilisé pour visualiser la distribution, la moyenne, les déciles et les valeurs extrêmes d’un ensemble de données.</p>
+<p>Une boîte à moustaches peut être utilisée pour visualiser la distribution, la moyenne, les déciles et les valeurs extrêmes d’une variable.</p>
 <p><select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<p>Un boxplot montre la <strong>médiane</strong> et les <strong>quartiles</strong> (plus les moustaches et les valeurs extrêmes), pas la moyenne ni les déciles.</p>
+<p>Une boîte à moustaches montre la <strong>médiane</strong> et les <strong>quartiles</strong> (plus les moustaches et les valeurs extrêmes), pas la moyenne ni les déciles.</p>
 </div>
 </section>
 <section id="q100" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="q100">Question 5.10</h3>
-<p>Le code suivant crée un histogramme qui indique une loi normale :</p>
+<p>Le code suivant crée un histogramme qui indique une loi normale&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> diamonds, <span class="fu">aes</span>(<span class="at">x =</span> price)) <span class="sc">+</span></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">600</span>, <span class="at">fill =</span> <span class="st">"steelblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Histogramme des prix dans le jeu de données diamonds"</span>,</span>
 <span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"n = 53 940 observations"</span>,</span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Prix en USD"</span>, <span class="at">y =</span> <span class="st">"Fréquence"</span>) <span class="sc">+</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Prix en USD"</span>, <span class="at">y =</span> <span class="st">"Effectif"</span>) <span class="sc">+</span></span>
 <span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p><select class="webex-select"><option value="blank"></option><option value="">Vrai</option><option value="answer">Faux</option></select></p>
 <div class="webex-solution">
 <button>
 Explication
 </button>
-<p>La distribution des prix est fortement asymétrique à droite : beaucoup de diamants bon marché, peu de diamants très chers. La moyenne (3933 USD) dépasse d’ailleurs nettement la médiane (2401 USD).</p>
+<p>La distribution des prix est fortement asymétrique à droite&nbsp;: beaucoup de diamants bon marché, peu de diamants très chers. La moyenne (3933 USD) dépasse d’ailleurs nettement la médiane (2401 USD).</p>
 </div>
 </section>
 <section id="q101" class="level3 unnumbered">
@@ -963,6 +1000,9 @@ Brown, K. W. (2021, 23 janvier). <em>Colors in <span>R</span></em>. RPubs. <a hr
 </div>
 <div id="ref-muller2022" class="csl-entry" role="listitem">
 Müller, S.-M., Floris, J., Rohrmann, S., Staub, K., &amp; Matthes, K. L. (2022). Body height among adult male and female <span>Swiss</span> <span>Health</span> <span>Survey</span> participants in 2017: Trends by birth years and associations with self-reported health status and life satisfaction. <em>Preventive Medicine Reports</em>, <em>29</em>, 101980. <a href="https://doi.org/10.1016/j.pmedr.2022.101980">https://doi.org/10.1016/j.pmedr.2022.101980</a>
+</div>
+<div id="ref-statcan2021" class="csl-entry" role="listitem">
+Statistique Canada. (2021, 2 septembre). <em>Histogramme</em>. Les statistiques : le pouvoir des données ! <a href="https://www150.statcan.gc.ca/n1/edu/power-pouvoir/ch9/histo/5214822-fra.htm">https://www150.statcan.gc.ca/n1/edu/power-pouvoir/ch9/histo/5214822-fra.htm</a>
 </div>
 </div>
 </section>
@@ -1579,8 +1619,8 @@ window.onload = function() {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../sessions/session-04.html" class="pagination-link" aria-label="Paquets, jeux de données et premiers graphiques">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Paquets, jeux de données et premiers graphiques</span></span>
+      <a href="../sessions/session-04.html" class="pagination-link" aria-label="Packages, jeux de données et premiers graphiques">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Packages, jeux de données et premiers graphiques</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
@@ -1596,7 +1636,7 @@ window.onload = function() {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>Textes et exercices : <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr">CC BY-NC-SA 4.0</a> · Code : MIT · Éléments de tiers : voir <a href="../apropos.html">À propos</a></p>
+<p>Textes et exercices&nbsp;: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr">CC BY-NC-SA 4.0</a> · Code&nbsp;: MIT · Éléments de tiers&nbsp;: voir <a href="../apropos.html">À propos</a></p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

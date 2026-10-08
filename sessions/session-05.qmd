@@ -492,7 +492,9 @@ les graphiques avant de passer à la manipulation de données.
 -   Révisez les chapitres 4 et 5, puis testez-vous avec le chapitre
     « Révision 2 ».
 
-## Exercices {.unnumbered}
+## Testez-vous {.unnumbered}
+
+[]{#exercices}
 
 {{< include ../include/_consignes-exercices.qmd >}}
 

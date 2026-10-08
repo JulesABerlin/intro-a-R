@@ -544,7 +544,9 @@ vérifier que ces bases sont acquises.
 -   Testez-vous avec les exercices ci-dessous, puis avec le chapitre
     « Révision 1 ».
 
-## Exercices {.unnumbered}
+## Testez-vous {.unnumbered}
+
+[]{#exercices}
 
 {{< include ../include/_consignes-exercices.qmd >}}
 

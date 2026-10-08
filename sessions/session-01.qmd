@@ -400,7 +400,9 @@ tableau : la forme sous laquelle on analyse presque toutes les données.
 -   Essayez de résoudre vous-même les éventuels messages d'erreur en
     adaptant le code.
 
-## Exercices {.unnumbered}
+## Testez-vous {.unnumbered}
+
+[]{#exercices}
 
 {{< include ../include/_consignes-exercices.qmd >}}
 

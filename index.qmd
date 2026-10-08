@@ -19,8 +19,9 @@ apprendre R à son rythme.
 -   Suivez les chapitres dans l'ordre : chacun s'appuie sur les précédents.
 -   Exécutez vous-même le code dans RStudio et modifiez-le : on apprend R
     en l'utilisant.
--   Testez-vous avec les exercices à la fin de chaque chapitre. Les
-    chapitres « Révision » reprennent les tests du cours d'origine.
+-   Testez-vous avec la section « Testez-vous » à la fin de chaque
+    chapitre. Les chapitres « Révision » reprennent les tests du cours
+    d'origine.
 -   Sur ce site, les exercices sont interactifs ; dans la version PDF, les
     réponses se trouvent dans l'annexe « Corrigés ».
 -   Les termes de R et de statistique sont définis dans l'annexe

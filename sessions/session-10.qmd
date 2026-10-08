@@ -122,10 +122,20 @@ str(reponses_socio)
 
 # Une formidable fonction pour obtenir des statistiques descriptives : summary()
 summary(reponses_socio)
+```
 
-# Abordons maintenant quelques questions plus spécifiques auxquelles nous pouvons répondre à l'aide de statistiques descriptives
+Abordons maintenant quelques questions plus spécifiques auxquelles nous
+pouvons répondre à l'aide de statistiques descriptives.
 
+### Temps de trajet
 
+La variable `trajet` indique combien de minutes les étudiant·es mettent
+pour se rendre à l'université. Un histogramme montre sa distribution.
+
+```{r}
+#| echo: true
+#| output: true
+#| warning: false
 # 1. Trajet pour arriver à l'université
 #*****************************************
 
@@ -145,8 +155,17 @@ ggplot(data = reponses_socio,
        x = "Trajet en minutes",
        y = "Effectif") +
   theme_minimal()
+```
 
+### Année de naissance
 
+La variable `naissance` contient l'année de naissance. Chaque barre de
+l'histogramme correspond à une année.
+
+```{r}
+#| echo: true
+#| output: true
+#| warning: false
 # 2. histogramme des années de naissance
 #*****************************************
 
@@ -159,8 +178,17 @@ ggplot(data = reponses_socio,
        x = "Année de naissance",
        y = "Effectif")+
   theme_minimal()
+```
 
+### Genre
 
+La variable catégorielle `genre` se résume par les effectifs de chaque
+catégorie, représentés par un diagramme en barres.
+
+```{r}
+#| echo: true
+#| output: true
+#| warning: false
 # 3. diagramme en barres des genres
 #*****************************************
 
@@ -187,8 +215,18 @@ ggplot(aes(x=genre, fill=genre)) +
        x = "Genre",
        y = "Effectif") +
   theme_minimal()
+```
 
+### Notes
 
+Les variables `note_ecole` et `note_uni` contiennent la note obtenue à
+l'école et la note à l'université. Nous calculons leurs moyennes, par
+genre, puis examinons leur relation dans un nuage de points.
+
+```{r}
+#| echo: true
+#| output: true
+#| warning: false
 # 4. Moyennes des notes
 #*****************************************
 
@@ -224,8 +262,17 @@ ggplot(aes(x=note_ecole, y=note_uni)) +
        x = "Note à l'école",
        y = "Note à l'université") +
   theme_minimal()
+```
 
+### Permis de conduire
 
+La variable `permis` indique si la personne a le permis de conduire.
+Nous comptons les effectifs, aussi selon la nationalité (`suisse`).
+
+```{r}
+#| echo: true
+#| output: true
+#| warning: false
 # 5. Permis de conduire
 #*****************************************
 
@@ -305,7 +352,9 @@ Si tout a bien marché, vous devriez maintenant avoir un fichier CSV, nommé
 Les différences observées dans l'échantillon existent-elles aussi dans
 la population ? Le chapitre 11 aborde cette question avec le test t.
 
-## Exercices {.unnumbered}
+## Testez-vous {.unnumbered}
+
+[]{#exercices}
 
 {{< include ../include/_consignes-exercices.qmd >}}
 

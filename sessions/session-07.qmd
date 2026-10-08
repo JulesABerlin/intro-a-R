@@ -527,7 +527,9 @@ verbes sur `mtcars`, `diamonds`, `iris` et `igposts`.
 -   Si les exercices vous posent problème, refaites le code des chapitres
     précédents et assurez-vous de comprendre chaque étape.
 
-## Exercices {.unnumbered}
+## Testez-vous {.unnumbered}
+
+[]{#exercices}
 
 {{< include ../include/_consignes-exercices.qmd >}}
 

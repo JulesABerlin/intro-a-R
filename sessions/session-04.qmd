@@ -433,7 +433,9 @@ nuage de points, diagramme en barres, histogramme et boîte à moustaches.
     d'expliquer comment il est structuré (nombre d'observations n, unité
     statistique, variables, origine des données, etc).
 
-## Exercices {.unnumbered}
+## Testez-vous {.unnumbered}
+
+[]{#exercices}
 
 {{< include ../include/_consignes-exercices.qmd >}}
 

@@ -676,7 +676,9 @@ beaucoup sont très pertinents pour les sciences sociales et pour vos
 Le chapitre « Révision 4 » reprend les chapitres 10 à 12 et clôt la
 partie statistique du livre.
 
-## Exercices {.unnumbered}
+## Testez-vous {.unnumbered}
+
+[]{#exercices}
 
 {{< include ../include/_consignes-exercices.qmd >}}
 

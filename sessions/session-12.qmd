@@ -631,9 +631,10 @@ par(mfrow = c(2, 2))
 plot(stepwise_model)
 ```
 
-Dans cet exemple, les graphiques ne montrent pas de violation majeure
-évidente ; avec seulement 32 voitures, cette évaluation visuelle reste
-toutefois approximative.
+La courbe Scale-Location monte nettement : la variance des résidus
+semble augmenter avec les valeurs ajustées (hétéroscédasticité possible).
+Avec seulement 32 voitures, cette évaluation visuelle reste toutefois
+approximative.
 :::
 
 ### Ressources pour aller plus loin

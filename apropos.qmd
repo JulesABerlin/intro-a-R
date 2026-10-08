@@ -2,7 +2,7 @@
 
 ## Auteur et contact
 
-Ce site accompagne le cours **Exercices Méthodes II** du Bachelor en
+Ce livre accompagne le cours **Exercices Méthodes II** du Bachelor en
 sciences de la communication de l'[Université de Fribourg](https://www.unifr.ch),
 où Julian Maitra a enseigné ces exercices de 2023 à 2025.
 
@@ -17,7 +17,7 @@ en ouvrant une *issue* sur [GitHub](https://github.com/julesaberlin/intro-a-R/is
 
 ## Licences
 
--   **Textes, exercices, explications et figures** produites pour ce site :
+-   **Textes, exercices, explications et figures** produites pour ce cours :
     [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr).
     Vous pouvez les partager et les adapter à des fins non commerciales, en
     citant l'auteur et en partageant vos adaptations sous la même licence.
@@ -82,7 +82,7 @@ trouve dans les [Références](references.qmd).
 
 ## Cookies et suivi
 
-Ce site ne dépose **aucun cookie** et n'utilise **aucun outil de mesure
+Le site web du livre ne dépose **aucun cookie** et n'utilise **aucun outil de mesure
 d'audience** ni de suivi. Il est hébergé par GitHub Pages ; GitHub peut
 enregistrer l'adresse IP des visiteurs (voir la
 [déclaration de confidentialité de GitHub](https://docs.github.com/fr/site-policy/privacy-policies/github-general-privacy-statement)).
@@ -104,7 +104,7 @@ Je remercie chaleureusement **Franck Bleu**, tuteur en méthodes
 quantitatives à l'Université de Fribourg (semestre de printemps 2025),
 qui a contribué à l'élaboration et à la relecture des questions à choix
 multiples des Problem Sets. Ces questions sont devenues les exercices
-interactifs de ce site. Il a aussi accompagné les étudiant·es dans leur
+de ce livre. Il a aussi accompagné les étudiant·es dans leur
 apprentissage de R.
 
 Je remercie également les étudiant·es des Exercices Méthodes II de

@@ -2,6 +2,11 @@
 
 knitr::opts_chunk$set(tidy.opts = list(width.cutoff = 60), tidy = TRUE)
 
+# Pas de messages (p. ex. au chargement de tidyverse) dans le livre.
+# `execute: message: false` dans _quarto.yml ne suffit pas : Quarto ne transmet
+# pas cette option globale à knitr (il reprend la valeur de `warning`).
+knitr::opts_chunk$set(message = FALSE)
+
 # Version PDF : les sorties de la console ne doivent pas dépasser la largeur
 # de la page (les tibbles et data frames larges passent à la ligne).
 pdf <- knitr::is_latex_output()

@@ -70,6 +70,7 @@ filters:
 
 execute:
   freeze: auto
+  message: false
 
 format:
   html:
@@ -89,6 +90,6 @@ format:
     toc: true
     toc-depth: 2
     number-sections: true
-    number-depth: 2
+    number-depth: 1
     fig-pos: "H"
     include-in-header: include/pdf-header.tex

@@ -1,4 +1,4 @@
-# Manipuler des données : exercices
+# Manipuler des données : pratique guidée
 
 ```{r}
 #| include: false
@@ -17,9 +17,14 @@ library(tidyverse) # chargé par les étudiant·es (voir la consigne ci-dessous)
 
 Au [chapitre 7](session-07.qmd#manipuler-les-données-avec-dplyr), vous
 avez découvert les verbes de `dplyr`. Ce chapitre est entièrement
-pratique : dix-neuf exercices vous demandent de répondre à des questions
-concrètes sur des jeux de données que vous connaissez déjà. Essayez
+pratique : quinze exercices, regroupés en trois blocs, vous demandent de
+répondre à des questions concrètes sur des jeux de données que vous
+connaissez déjà. Essayez
 chaque exercice dans votre propre script avant d'afficher la solution.
+
+## Préparation {#préparez-vous-pour-lexercice}
+
+[]{#exercices-avec-solutions}
 
 Les exercices suivants se composent d'une question et d'une solution
 modèle sous forme de code R. Notez qu'en programmation R, il y a souvent
@@ -32,10 +37,6 @@ solution modèle. Comparez ensuite votre propre code avec celui de la
 solution modèle.
 :::
 
-## Exercices avec solutions
-
-### Préparation {#préparez-vous-pour-lexercice}
-
 -   Ouvrez votre projet RStudio et créez un nouveau script R.
 
 -   Nommez-le `script_chapitre_8` et enregistrez-le dans le dossier du
@@ -43,7 +44,9 @@ solution modèle.
 
 -   Chargez le package tidyverse avec `library(tidyverse)`.
 
-### Exercice 1 : mtcars I {#mtcars-i}
+## Manipulations de base
+
+### Exercice 1 — Sélectionner des colonnes {#mtcars-i}
 
 -   Affichez la structure de `mtcars` avec `str(mtcars)`.
 -   Sélectionnez ensuite les colonnes `mpg` et `cyl` de `mtcars` avec
@@ -62,7 +65,7 @@ mtcars %>%
 
 `r unhide()`
 
-### Exercice 2 : mtcars II {#mtcars-ii}
+### Exercice 2 — Filtrer des observations {#mtcars-ii}
 
 -   Filtrez `mtcars` pour `mpg >= 25`.
 
@@ -82,7 +85,7 @@ mtcars %>%
 
 `r unhide()`
 
-### Exercice 3 : mtcars III {#mtcars-iii}
+### Exercice 3 — Trier un tableau {#mtcars-iii}
 
 -   Triez `mtcars` par `mpg` dans l'ordre décroissant et affichez les
     dix premières lignes.
@@ -99,7 +102,7 @@ mtcars %>%
 
 `r unhide()`
 
-### Exercice 4 : mtcars IV {#mtcars-iv}
+### Exercice 4 — Créer une variable {#mtcars-iv}
 
 -   Créez une nouvelle variable (colonne) dans mtcars, nommée `mpg_wt`,
     définie comme le nombre de `mpg` par unité de poids (`wt`).
@@ -131,7 +134,9 @@ mtcars_v2 %>%
 
 `r unhide()`
 
-### Exercice 5 : diamonds I {#diamonds-i}
+## Résumer et comparer des groupes
+
+### Exercice 5 — Compter selon une condition {#diamonds-i}
 
 -   Affichez encore une fois `str(diamonds)`.
 -   Utilisez des verbes `dplyr` pour compter le nombre de diamants dans
@@ -143,20 +148,21 @@ mtcars_v2 %>%
 #| echo: true
 #| output: true
 diamonds %>% 
-  count(carat > 3 )
-
-# Solution alternative : 
-
-diamonds %>% 
   filter(carat > 3) %>% 
   count()
 
 # Le critère carat > 3 s'applique à 32 diamants dans diamonds.
+
+# Solution alternative : count() compte ici deux groupes, FALSE et TRUE ;
+# la ligne TRUE donne la réponse.
+
+diamonds %>% 
+  count(carat > 3)
 ```
 
 `r unhide()`
 
-### Exercice 6 : diamonds II {#diamonds-ii}
+### Exercice 6 — Calculer une moyenne {#diamonds-ii}
 
 -   Calculez le prix moyen en USD des diamants dans `diamonds`.
 
@@ -175,7 +181,7 @@ mean(diamonds$price)
 
 `r unhide()`
 
-### Exercice 7 : diamonds III {#diamonds-iii}
+### Exercice 7 — Comparer des groupes {#diamonds-iii}
 
 -   Calculez le prix moyen en USD des diamants des différentes
     catégories de pureté (`clarity`) dans `diamonds`.
@@ -205,7 +211,7 @@ exemple de **variable confondante**.
 
 `r unhide()`
 
-### Exercice 8 : mtcars V {#mtcars-v}
+### Exercice 8 — Résumer par groupe {#mtcars-v}
 
 -   Regroupez mtcars par `gear`, puis, à l'aide de `summarize()`,
     calculez `n`, la médiane et la variance de mpg.
@@ -224,9 +230,9 @@ mtcars %>%
 
 `r unhide()`
 
-### Exercice 9 : iris I {#iris-i}
+### Exercice 9 — Enchaîner select(), mutate(), group_by() et summarize() {#iris-i}
 
--   Sélectionner `Petal.Length`, `Petal.Width`, et `Species` dans
+-   Sélectionnez `Petal.Length`, `Petal.Width`, et `Species` dans
     `iris`.
 -   Ensuite, utilisez `mutate()` pour créer une nouvelle colonne,
     appelée `Petal.Surface`, qui est le produit de `Petal.Length` et
@@ -252,7 +258,7 @@ iris %>%
 
 `r unhide()`
 
-### Exercice 10 : diamonds IV {#diamonds-iv}
+### Exercice 10 — Construire un indicateur : prix par carat {#diamonds-iv}
 
 -   Utilisez les verbes de `dplyr` pour calculer la moyenne des prix en
     USD par carat dans `diamonds`.
@@ -281,7 +287,9 @@ petits (0,70 carat) que les *Premium* (0,89 carat).
 
 `r unhide()`
 
-### Exercice 11 : igposts I {#igposts-i}
+## Application intégrée : posts Instagram
+
+### Exercice 11 — Importer igposts {#igposts-i}
 
 -   Chargez le jeu de données `igposts` du
     [chapitre 7](session-07.qmd#lire-des-données-auf-format-csv-dans-rstudio).
@@ -315,7 +323,7 @@ str(igposts)
 
 `r unhide()`
 
-### Exercice 12 : igposts II {#igposts-ii}
+### Exercice 12 — Compter les posts par compte {#igposts-ii}
 
 -   Utilisez `dplyr` pour trouver le nombre `n` de posts Instagram
     regroupés par compte des influenceurs dans `igposts`.
@@ -335,7 +343,7 @@ igposts %>%
 
 `r unhide()`
 
-### Exercice 13 : igposts III {#igposts-iii}
+### Exercice 13 — Comparer l'engagement moyen par compte {#igposts-iii}
 
 -   Utilisez `dplyr` pour calculer le nombre moyen de `Likes`,
     `Comments` et `Reposts` par compte (`Account`) des influenceurs dans
@@ -357,19 +365,30 @@ igposts %>%
 
 `r unhide()`
 
-### Exercice 14 : igposts IV {#igposts-iv}
+### Exercice 14 — Trouver les posts les plus populaires {#igposts-iv}
 
--   Utilisez `dplyr` pour afficher les variables `Account`, `Likes` et
-    `URL` des 5 posts dans `igposts` qui ont reçu le plus de `Likes`.
--   Allez voir l'URL du post avec le plus de `Likes` : De quoi s'agit-il
-    ?
+[]{#igposts-v}
+[]{#igposts-vi}
 
-`r hide("Solution")`
+Pour chacune des trois mesures ci-dessous, utilisez `dplyr` pour
+afficher le compte (`Account`), la mesure et l'`URL` des 5 posts de
+`igposts` qui ont obtenu les valeurs les plus élevées, puis allez voir
+l'URL du premier post.
+
+**a) `Likes`**
+
+-   Affichez les variables `Account`, `Likes` et `URL` des 5 posts qui
+    ont reçu le plus de `Likes`.
+-   Allez voir l'URL du post avec le plus de `Likes` : de quoi
+    s'agit-il ?
+
+`r hide("Solution a)")`
 
 ```{r}
 #| echo: true
 #| output: true
 #| warning: false
+# a) Likes
 igposts %>% 
   select(Account, Likes, URL) %>% 
   arrange(desc(Likes)) %>% 
@@ -383,18 +402,19 @@ igposts %>%
 [URL Instagram du post de Leo
 Messi](https://www.instagram.com/p/CpLxnFlNJZn/)
 
-### Exercice 15 : igposts V {#igposts-v}
+**b) `Comments`**
 
--   Faites la même chose que dans la question 14, mais maintenant pour
-    les `Comments` au lieu des `Likes`.
--   Allez voir l'URL du post avec le plus de `Comments` : De quoi
+-   Faites la même chose qu'en a), mais pour les `Comments` au lieu des
+    `Likes`.
+-   Allez voir l'URL du post avec le plus de `Comments` : de quoi
     s'agit-il ?
 
-`r hide("Solution")`
+`r hide("Solution b)")`
 
 ```{r}
 #| echo: true
 #| output: true
+# b) Comments
 igposts %>% 
   select(Account, Comments, URL) %>% 
   arrange(desc(Comments)) %>% 
@@ -408,19 +428,20 @@ igposts %>%
 [URL du post Instagram de Selena
 Gomez](https://www.instagram.com/p/Co_P7YgrrFO/)
 
-### Exercice 16 : igposts VI {#igposts-vi}
+**c) `Reposts`**
 
--   Faites la même chose que dans les exercices 14 et 15, mais
-    maintenant pour les `Reposts` (nombre de reposts relevé le 5 octobre
-    2026 ; fonction introduite par Instagram en 2025).
--   Allez voir l'URL du post avec le plus de `Reposts` : De quoi
+-   Faites la même chose qu'en a) et b), mais pour les `Reposts`
+    (nombre de reposts relevé le 5 octobre 2026 ; fonction introduite
+    par Instagram en 2025).
+-   Allez voir l'URL du post avec le plus de `Reposts` : de quoi
     s'agit-il ?
 
-`r hide("Solution")`
+`r hide("Solution c)")`
 
 ```{r}
 #| echo: true
 #| output: true
+# c) Reposts
 igposts %>% 
   select(Account, Reposts, URL) %>% 
   arrange(desc(Reposts)) %>% 
@@ -434,20 +455,25 @@ igposts %>%
 [URL du post Instagram de
 SUGA](https://www.instagram.com/p/Copd1XvJT78/)
 
-### Exercice 17 : igposts VII {#igposts-vii}
+### Exercice 15 — Rapporter l'engagement au nombre de followers {#igposts-vii}
 
--   Utilisez `dplyr` pour créer une nouvelle colonne :
-    `Likes_par_Follower` (définie comme `Likes` divisé par
-    `Followers.at.Observation`). Les followers ont été relevés le 5
-    octobre 2026 : ce ratio compare les posts à la taille actuelle des
-    comptes, ce n'est pas un taux d'engagement au moment de la
-    publication.
--   Trouvez maintenant le post avec le plus grand nombre de
-    `Likes_par_Follower` et naviguez jusqu'à son URL : que montre-t-il ?
+[]{#igposts-viii}
+[]{#igposts-ix}
 
-`r hide("Solution")`
+Pour chacune des trois mesures ci-dessous, utilisez `dplyr` pour créer
+une nouvelle colonne qui divise la mesure par
+`Followers.at.Observation`, puis trouvez le post avec la plus grande
+valeur et naviguez jusqu'à son URL : que montre-t-il ? Les followers
+ont été relevés le 5 octobre 2026 : ces ratios comparent les posts à la
+taille actuelle des comptes, ce ne sont pas des taux d'engagement au
+moment de la publication.
+
+**a) `Likes_par_Follower`** (`Likes` divisé par `Followers.at.Observation`)
+
+`r hide("Solution a)")`
 
 ```{r}
+# a) Likes_par_Follower
 igposts %>% 
   mutate(Likes_par_Follower = Likes/Followers.at.Observation) %>% select(Account, Likes_par_Follower, URL) %>% 
   arrange(desc(Likes_par_Follower)) %>% 
@@ -461,16 +487,14 @@ igposts %>%
 [URL du post Instagram de Anastasia
 Karanikolaou](https://www.instagram.com/p/CoptMRoJtUD/)
 
-### Exercice 18 : igposts VIII {#igposts-viii}
+**b) `Comments_par_Follower`** (`Comments` divisé par `Followers.at.Observation`)
 
--   Faites la même chose qu'à la question 17, mais cette fois créez la
-    variable `Comments_par_Follower`.
-
-`r hide("Solution")`
+`r hide("Solution b)")`
 
 ```{r}
 #| echo: true
 #| output: true
+# b) Comments_par_Follower
 igposts %>% 
   mutate(Comments_par_Follower = Comments/Followers.at.Observation) %>% select(Account, Comments_par_Follower, URL) %>% 
   arrange(desc(Comments_par_Follower)) %>% 
@@ -484,22 +508,20 @@ igposts %>%
 [URL du post Instagram de
 KIARA](https://www.instagram.com/p/CoXmBSLvj7A/)
 
-### Exercice 19 : igposts IX {#igposts-ix}
+**c) `Reposts_par_Follower`** (`Reposts` divisé par `Followers.at.Observation`)
 
--   Faites la même chose que dans les exercices 17 et 18, mais cette
-    fois pour `Reposts_par_Follower`.
-
-`r hide("Solution")`
+`r hide("Solution c)")`
 
 ```{r}
 #| echo: true
 #| output: true
+# c) Reposts_par_Follower
 igposts %>% 
   mutate(Reposts_par_Follower = Reposts/Followers.at.Observation) %>% select(Account, Reposts_par_Follower, URL) %>% 
   arrange(desc(Reposts_par_Follower)) %>% 
   head(5)
 
-#Le post Instagram qui a reçu le plus de Reposts par follower est la même photo de SUGA (agustd) qu'à l'exercice 16.
+#Le post Instagram qui a reçu le plus de Reposts par follower est la même photo de SUGA (agustd) qu'à l'exercice 14 c).
 ```
 
 `r unhide()`
@@ -522,7 +544,9 @@ SUGA](https://www.instagram.com/p/Copd1XvJT78/)
 Le chapitre « Révision 3 » vous permet de vérifier vos acquis sur
 l'importation et la manipulation de données.
 
-## Exercices {.unnumbered}
+## Testez-vous {.unnumbered}
+
+[]{#exercices}
 
 {{< include ../include/_consignes-exercices.qmd >}}
 

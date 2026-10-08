@@ -17,9 +17,9 @@ source("_common.R")
 Les jeux de données d'exemple des chapitres 4 et 5 étaient prêts à
 l'emploi. Les données réelles arrivent sous forme de fichiers qu'il faut
 importer, vérifier et souvent transformer avant de pouvoir les analyser.
-Ce chapitre vous montre comment, à partir d'un échantillon de posts
-Instagram, avec le package `dplyr` (prononcé « dee-ply-er » en anglais)
-du tidyverse.
+Ce chapitre montre comment importer puis transformer un fichier réel avec
+`dplyr` (prononcé « dee-ply-er » en anglais), un package du tidyverse,
+en prenant comme exemple un échantillon de posts Instagram.
 
 ## Lire des données au format CSV dans RStudio {#lire-des-données-auf-format-csv-dans-rstudio}
 
@@ -39,8 +39,8 @@ publication. Voir [À propos](../apropos.qmd#données) pour les détails.
 
 ::: {.callout-note title="Définition : fichier CSV"}
 Un fichier de type **CSV** (angl. *comma-separated values*) est un format
-textuel simple pour sauvegarder des données en forme de tableau, c'est à
-dire avec des valeurs organisées en lignes et en colonnes et séparées par
+textuel simple pour sauvegarder des données en forme de tableau, c'est-à-dire
+avec des valeurs organisées en lignes et en colonnes et séparées par
 des virgules.
 
 Le format CSV présente l'avantage d'être assez léger et compatible avec
@@ -157,13 +157,13 @@ manuellement pour le comprendre davantage (comme nous l'avons fait avec
 `mtcars`, etc.).
 
 ::: {.callout-warning title="Attention"}
--   N'enregistrez pas un fichier CSV après l'avoir ouvert dans Excel
-    (ou un autre tableur) : Excel peut modifier les dates, les zéros
-    initiaux, le séparateur ou l'encodage, ce qui entraîne ensuite des
-    erreurs dans R.
+-   Vous pouvez consulter un fichier CSV dans Excel (ou un autre
+    tableur), mais ne l'enregistrez pas et ne l'exportez pas à nouveau :
+    le tableur peut alors modifier le séparateur, l'encodage, les dates
+    et les zéros initiaux, ce qui entraîne ensuite des erreurs dans R.
 
 -   Vous devriez enregistrer le fichier CSV directement dans votre
-    répertoire de travail sans l'ouvrir, puis l'importer dans RStudio à
+    répertoire de travail, puis l'importer dans RStudio à
     l'aide du menu interactif.
 
 -   Vous devriez également éviter d'ouvrir le fichier CSV avec des
@@ -319,7 +319,7 @@ Essayons maintenant d'appliquer tout cela avec du code et les données
 
 igposts %>% select(Account, Type, Followers.at.Observation, Total.Interactions)
 
-# Avec les deux points dans la fonction select(), vous pouvez sélectionner plusieurs colonnes successives. Notez que cette fois-ci, nous affichons que les six premières lignes avec la fonction head() :
+# Avec les deux points dans la fonction select(), vous pouvez sélectionner plusieurs colonnes successives. Notez que cette fois-ci, nous n'affichons que les six premières lignes avec la fonction head() :
 
 igposts %>% 
   select(Account:Reposts) %>% 
@@ -458,7 +458,7 @@ df1 %>%
 df1 %>% 
   count(Account)
 
-# Compter l'occurrence des différents comptes dans notre jeu de données en les triant par cette occurence de manière décroissante (avec arrange(-n)) :
+# Compter l'occurrence des différents comptes dans notre jeu de données en les triant par cette occurrence de manière décroissante (avec arrange(-n)) :
 
 df1 %>% 
   count(Account) %>% 
@@ -527,7 +527,9 @@ verbes sur `mtcars`, `diamonds`, `iris` et `igposts`.
 -   Si les exercices vous posent problème, refaites le code des chapitres
     précédents et assurez-vous de comprendre chaque étape.
 
-## Exercices {.unnumbered}
+## Testez-vous {.unnumbered}
+
+[]{#exercices}
 
 {{< include ../include/_consignes-exercices.qmd >}}
 

@@ -65,6 +65,7 @@ raw_data/
 
 # Internal review notes (audit, fact-check): kept locally, not published
 /review/
+review/*.pdf
 
 # macOS Finder metadata
 .DS_Store

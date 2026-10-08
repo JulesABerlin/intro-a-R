@@ -29,18 +29,11 @@ La moyenne était de 13,1 points et 91 % des étudiant·es l'ont réussi.
 #| echo: false
 #| output: true
 #| warning: false
-# script pour faire un histogramme des points obtenus dans le Problem Set 3
-# cours : Exercices Méthodes II
-# auteur : Julian Maitra
+# Histogramme des points obtenus dans le Problem Set 3
 
 library(ggplot2)
 
-# Adaptez le code suivant pour votre répertoire de travail :
-
-# setwd("~/Documents/exercices_methodes_2")
-
-# Enregistrez le fichier CSV distribution_ps_3 dans votre répertoire de travail, 
-# puis importez les données dans R (modifiez le code suivant selon votre ordinateur) :
+# Lecture depuis le site du livre (ou depuis le dossier de votre projet RStudio) :
 
 distribution_ps_3 <- read.csv("https://julesaberlin.github.io/intro-a-R/data/distribution_ps_3.csv", encoding="UTF-8")
 

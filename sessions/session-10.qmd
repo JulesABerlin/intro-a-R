@@ -45,7 +45,7 @@ données.
 
 -   Les mesures de forme (asymétrie, *kurtosis*)
 
--   Les mesure de position (percentiles, quartiles)
+-   Les mesures de position (percentiles, quartiles)
 
 Ces mesures permettent d'obtenir une première idée de la structure d'un
 jeu de données. Elles permettent également d'identifier des valeurs
@@ -82,7 +82,7 @@ réponses à un questionnaire rempli par des étudiant·es en sciences de la
 communication.
 
 ::: {.callout-caution title="Contexte : des données synthétiques" collapse="true"}
-Le fichier `reponses_socio.csv` utilisé sur ce site est **synthétique** : ses
+Le fichier `reponses_socio.csv` utilisé dans ce livre est **synthétique** : ses
 données ont été simulées à partir du questionnaire d'une classe, et il ne
 contient **aucune personne réelle**. Il a les mêmes variables que le
 questionnaire, avec des distributions et des relations semblables. Pour
@@ -122,10 +122,20 @@ str(reponses_socio)
 
 # Une formidable fonction pour obtenir des statistiques descriptives : summary()
 summary(reponses_socio)
+```
 
-# Abordons maintenant quelques questions plus spécifiques auxquelles nous pouvons répondre à l'aide de statistiques descriptives
+Abordons maintenant quelques questions plus spécifiques auxquelles nous
+pouvons répondre à l'aide de statistiques descriptives.
 
+### Temps de trajet
 
+La variable `trajet` indique combien de minutes les étudiant·es mettent
+pour se rendre à l'université. Un histogramme montre sa distribution.
+
+```{r}
+#| echo: true
+#| output: true
+#| warning: false
 # 1. Trajet pour arriver à l'université
 #*****************************************
 
@@ -145,21 +155,40 @@ ggplot(data = reponses_socio,
        x = "Trajet en minutes",
        y = "Effectif") +
   theme_minimal()
+```
 
+### Année de naissance
 
+La variable `naissance` contient l'année de naissance. Chaque barre de
+l'histogramme correspond à une année.
+
+```{r}
+#| echo: true
+#| output: true
+#| warning: false
 # 2. histogramme des années de naissance
 #*****************************************
 
 ggplot(data = reponses_socio,
        mapping = aes(x=naissance)) +
   geom_histogram(binwidth = 1, fill = "lightgreen", color = "black") +
+  scale_x_continuous(breaks = 1996:2005) +
   labs(title = "Années de naissance",
        subtitle = "n = 74 personnes interrogées",
        x = "Année de naissance",
        y = "Effectif")+
   theme_minimal()
+```
 
+### Genre
 
+La variable catégorielle `genre` se résume par les effectifs de chaque
+catégorie, représentés par un diagramme en barres.
+
+```{r}
+#| echo: true
+#| output: true
+#| warning: false
 # 3. diagramme en barres des genres
 #*****************************************
 
@@ -172,7 +201,7 @@ ggplot(data = reponses_socio,
 
 # changer d'abord l'ordre des catégories (commençant avec la plus fréquente)
 
-ordre = c("Femme", "Homme", "Autre")
+ordre <- c("Femme", "Homme", "Autre")
 
 # Puis combiner dplyr avec ggplot2 :
 reponses_socio %>% 
@@ -184,11 +213,20 @@ ggplot(aes(x=genre, fill=genre)) +
   labs(title = "Répartition des genres",
        subtitle = "n = 74 personnes interrogées",
        x = "Genre",
-       y = "Effectif",
-       legend = "") +
+       y = "Effectif") +
   theme_minimal()
+```
 
+### Notes
 
+Les variables `note_ecole` et `note_uni` contiennent la note obtenue à
+l'école et la note à l'université. Nous calculons leurs moyennes, par
+genre, puis examinons leur relation dans un nuage de points.
+
+```{r}
+#| echo: true
+#| output: true
+#| warning: false
 # 4. Moyennes des notes
 #*****************************************
 
@@ -208,7 +246,7 @@ reponses_socio %>%
   filter(!is.na(note_ecole),
          !is.na(note_uni)) %>% 
   summarize(n = n(), note_ecole_moyenne = mean(note_ecole),
-            note_uni_moyenne = mean(note_uni))
+            note_uni_moyenne = mean(note_uni), .groups = "drop")
 
 # Visualisation de la relation entre note_ecole et note_uni
 # (la note d'école vient avant la note à l'université : elle va sur l'axe x)
@@ -218,9 +256,23 @@ reponses_socio %>%
          !is.na(note_uni)) %>% 
 ggplot(aes(x=note_ecole, y=note_uni)) +
          geom_point() +
-  geom_smooth(method = "lm")
+  geom_smooth(method = "lm", formula = y ~ x) +
+  labs(title = "Note à l'école et note à l'université",
+       subtitle = "Réponses avec les deux notes (n = 70)",
+       x = "Note à l'école",
+       y = "Note à l'université") +
+  theme_minimal()
+```
 
+### Permis de conduire
 
+La variable `permis` indique si la personne a le permis de conduire.
+Nous comptons les effectifs, aussi selon la nationalité (`suisse`).
+
+```{r}
+#| echo: true
+#| output: true
+#| warning: false
 # 5. Permis de conduire
 #*****************************************
 
@@ -233,7 +285,7 @@ reponses_socio %>%
   select(permis, suisse) %>% 
   filter(!is.na(permis)) %>% 
   group_by(suisse,permis) %>% 
-  summarize(n = n())
+  summarize(n = n(), .groups = "drop")
 ```
 
 ## La fonction `write.csv()`
@@ -245,7 +297,9 @@ en cours (sortie de données), notamment avec la fonction `write.csv()`.
 
 La fonction prend comme arguments le tableau de données à enregistrer
 et le nom du fichier CSV, éventuellement précédé d'un chemin relatif au
-dossier du projet : `write.csv(nom_df, "nom_du_fichier.csv")`.
+dossier du projet : `write.csv(nom_df, "nom_du_fichier.csv", row.names = FALSE)`.
+L'argument `row.names = FALSE` empêche R d'ajouter au fichier une
+colonne supplémentaire, sans nom, avec les numéros des lignes.
 
 ```{r}
 # Exemple : recréons le tableau des animaux de L'Âge de glace (chapitre 2)
@@ -276,7 +330,7 @@ print(ice_age_df)
 #| eval: false
 # Enregistre le fichier dans le répertoire de travail (le dossier du projet) :
 
-write.csv(ice_age_df, file = "ice_age_df.csv")
+write.csv(ice_age_df, "ice_age_df.csv", row.names = FALSE)
 ```
 
 Si tout a bien marché, vous devriez maintenant avoir un fichier CSV, nommé
@@ -298,7 +352,9 @@ Si tout a bien marché, vous devriez maintenant avoir un fichier CSV, nommé
 Les différences observées dans l'échantillon existent-elles aussi dans
 la population ? Le chapitre 11 aborde cette question avec le test t.
 
-## Exercices {.unnumbered}
+## Testez-vous {.unnumbered}
+
+[]{#exercices}
 
 {{< include ../include/_consignes-exercices.qmd >}}
 

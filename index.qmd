@@ -1,9 +1,18 @@
 # Bienvenue {.unnumbered}
 
+::: {.content-visible when-format="html"}
 Ce site propose une introduction pas à pas au langage R pour l'analyse de
 données en sciences sociales, et en particulier en sciences de la
 communication. Chaque chapitre combine des explications, du code à
 exécuter dans RStudio et des exercices interactifs avec corrections.
+:::
+
+::: {.content-visible unless-format="html"}
+Ce livre propose une introduction pas à pas au langage R pour l'analyse de
+données en sciences sociales, et en particulier en sciences de la
+communication. Chaque chapitre combine des explications, du code à
+exécuter dans RStudio et des exercices avec corrigés.
+:::
 
 ::: {.content-visible when-format="html"}
 [📄 Télécharger le livre en PDF (avec corrigés en annexe)](intro-a-R.pdf){.btn .btn-primary .btn-lg role="button"}
@@ -14,17 +23,35 @@ Bachelor en sciences de la communication de l'Université de Fribourg, que
 j'ai enseigné de 2023 à 2025. Il s'adresse à toute personne qui souhaite
 apprendre R à son rythme.
 
+::: {.content-visible when-format="html"}
 ## Comment utiliser ce site {.unnumbered}
 
 -   Suivez les chapitres dans l'ordre : chacun s'appuie sur les précédents.
 -   Exécutez vous-même le code dans RStudio et modifiez-le : on apprend R
     en l'utilisant.
--   Testez-vous avec les exercices à la fin de chaque chapitre. Les
-    chapitres « Révision » reprennent les tests du cours d'origine.
+-   Testez-vous avec la section « Testez-vous » à la fin de chaque
+    chapitre. Les chapitres « Révision » reprennent les tests du cours
+    d'origine.
 -   Sur ce site, les exercices sont interactifs ; dans la version PDF, les
     réponses se trouvent dans l'annexe « Corrigés ».
 -   Les termes de R et de statistique sont définis dans l'annexe
     [« Lexique »](lexique.qmd).
+:::
+
+::: {.content-visible unless-format="html"}
+## Comment utiliser ce livre {.unnumbered}
+
+-   Suivez les chapitres dans l'ordre : chacun s'appuie sur les précédents.
+-   Exécutez vous-même le code dans RStudio et modifiez-le : on apprend R
+    en l'utilisant.
+-   Testez-vous avec la section « Testez-vous » à la fin de chaque
+    chapitre. Les chapitres « Révision » reprennent les tests du cours
+    d'origine.
+-   Les réponses aux exercices se trouvent dans l'annexe « Corrigés » ; la
+    version en ligne propose des exercices interactifs.
+-   Les termes de R et de statistique sont définis dans l'annexe
+    [« Lexique »](lexique.qmd).
+:::
 
 Les jeux de données utilisés dans ce livre se trouvent dans le dossier
 [`data/`](https://github.com/julesaberlin/intro-a-R/tree/main/data) et

@@ -47,7 +47,7 @@ sur notre échantillon. Les résultats obtenus nous permettent de rejeter
 ou non l'hypothèse nulle (en général « pas de différence » ou « pas
 d'effet », voir plus bas), et de généraliser prudemment les conclusions à
 la population entière. Ceci nous permet de contribuer à la création de
-nouvelles connaissances dans notre domaine de recherche
+nouvelles connaissances dans notre domaine de recherche.
 
 ## Le test t
 
@@ -246,7 +246,7 @@ Pour une même différence réelle, un **échantillon plus grand** donne
 donc au test plus de puissance, c'est-à-dire plus de chances de détecter
 cette différence.
 
-### Exercice 1
+### À vous de jouer 1 {#exercice-1}
 
 Selon l'étude [World Internet Project de l'Université de
 Zurich](https://doi.org/10.5167/uzh-251581) [@latzer2023], qui a évalué les données
@@ -323,7 +323,7 @@ par rapport à la variabilité. Essayez d'autres graines : avec
 simulation à l'autre. Avec `n = 20` ou `n = 100`, le test détecte la
 différence de manière beaucoup plus fiable.
 
-### Exercice 2
+### À vous de jouer 2 {#exercice-2}
 
 Supposons maintenant qu'un avion en provenance d'Amérique atterrisse à
 Genève-Cointrin. Il transporte une sélection de 24 joueuses de la
@@ -396,7 +396,9 @@ Le test t compare au plus deux moyennes. Le chapitre 12 étend ce
 raisonnement à plusieurs groupes avec l'ANOVA, puis à des variables
 explicatives numériques avec la régression linéaire.
 
-## Exercices {.unnumbered}
+## Testez-vous {.unnumbered}
+
+[]{#exercices}
 
 {{< include ../include/_consignes-exercices.qmd >}}
 

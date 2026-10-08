@@ -71,7 +71,7 @@ effets fixes et pour effectuer des analyses de variance.
 
 ### Exemple 1 : ANOVA avec le jeu de données `palmerpenguins`
 
-![Logo du package [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/index.html). Illustration : Allison Horst, [CC0](https://creativecommons.org/publicdomain/zero/1.0/).](../images/palmerpenguins.png){width="200" fig-alt="Logo hexagonal du paquet palmerpenguins avec trois manchots"}
+![Logo du package [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/index.html). Illustration : Allison Horst, [CC0](https://creativecommons.org/publicdomain/zero/1.0/).](../images/palmerpenguins.png){width="200" fig-alt="Logo hexagonal du package palmerpenguins avec trois manchots"}
 
 Pour cet exemple, il faut installer le package `palmerpenguins`
 [@horst2020].
@@ -110,10 +110,12 @@ et le sexe des manchots.
         espèce de manchots (Adelie, Chinstrap et Gentoo) chaque
         observation de `flipper_length_mm` appartient.
 
+Le jeu de données compte 344 manchots, dont 2 sans longueur de nageoire
+mesurée : l'analyse porte donc sur 342 manchots.
+
 ```{r}
 #| echo: true
 #| output: true
-#| warning: false
 
 library(tidyverse)
 library(palmerpenguins)
@@ -121,26 +123,33 @@ library(palmerpenguins)
 # Explorez d'abord un peu la structure du jeu de données
 str(penguins)
 
-# Visualisez les distributions de flipper length avec des boxplots
-ggplot(penguins, aes(x = species, y = flipper_length_mm)) +
-  geom_boxplot()
+# Deux manchots n'ont pas de longueur de nageoire mesurée : on les retire.
+penguins_nageoires <- penguins %>%
+  filter(!is.na(flipper_length_mm))
+nrow(penguins_nageoires)  # 342
 
-# Comme alternative, vous pouvez aussi créez un histogramme plus avancé pour comparer flipper length par espèce
-ggplot(data = penguins, aes(x = flipper_length_mm)) +
-  geom_histogram(aes(fill = species), color = "black", alpha = 0.5, position = "identity", bins = 30) +
+# Visualisez les distributions de flipper length avec des boxplots
+ggplot(penguins_nageoires, aes(x = species, y = flipper_length_mm)) +
+  geom_boxplot() +
+  labs(x = "Espèce", y = "Longueur des nageoires (mm)")
+
+# Comme alternative, vous pouvez aussi créer un histogramme par espèce (un panneau par espèce, avec le même axe x)
+ggplot(data = penguins_nageoires, aes(x = flipper_length_mm, fill = species)) +
+  geom_histogram(color = "black", binwidth = 3, show.legend = FALSE) +
+  facet_wrap(~ species, ncol = 1) +
   scale_fill_manual(values = c("darkorange","darkorchid","cyan4")) +
   theme_minimal() +
   labs(title = "Longueur des nageoires selon l'espèce de manchot",
-       subtitle = "n = 344 ; source : package palmerpenguins",
-       x = "Longueur des nageoires (mm)", y = "Effectif", fill = "Espèce")
+       subtitle = "n = 342 ; source : package palmerpenguins",
+       x = "Longueur des nageoires (mm)", y = "Effectif")
 
 # Calculs des variances de flipper length avec dplyr par espèce de manchot, pour vérifier la condition de variances similaires entre groupes :
-penguins %>% 
+penguins_nageoires %>% 
   group_by(species) %>% 
-  summarize(var_fl = var(flipper_length_mm, na.rm = TRUE))
+  summarize(var_fl = var(flipper_length_mm))
 
 # ANOVA avec aov()
-anova_1 <- aov(flipper_length_mm ~ species, data = penguins)
+anova_1 <- aov(flipper_length_mm ~ species, data = penguins_nageoires)
 summary(anova_1)
 
 # à noter, avec TukeyHSD() nous pouvons vérifier davantage les différences entre chaque paire d'espèces :
@@ -153,20 +162,18 @@ TukeyHSD(anova_1)
 
 ### Explications théoriques de la régression linéaire
 
-Dans le monde réel, nous supposons souvent qu'il existe des **relations
-de cause à effet**.
+Dans des données réelles, on observe souvent une **association** entre
+deux variables : elles varient ensemble.
 
--   Par exemple, nous pouvons supposer que les personnes ayant un niveau
-    d'éducation élevé ont des salaires plus élevés. Il s'agit bien sûr
-    d'une généralisation et il se peut qu'elle ne soit vraie qu'en
-    moyenne (il se peut que certaines personnes ayant un très faible
-    niveau d'éducation aient des salaires très élevés et vice versa).
-    Néanmoins, malgré quelques exceptions à la règle, nous pouvons
-    raisonnablement supposer qu'en moyenne, une telle relation de cause
-    à effet entre le niveau d'éducation et le salaire existe.
+-   Par exemple, les personnes ayant un niveau d'éducation élevé ont en
+    moyenne des salaires plus élevés. Il s'agit bien sûr d'une tendance
+    moyenne : certaines personnes ayant un très faible niveau
+    d'éducation ont des salaires très élevés, et vice versa. Il existe
+    néanmoins, en moyenne, une association entre le niveau d'éducation
+    et le salaire.
 
-La question suivante est donc de savoir quelle est l'ampleur d'un tel
-effet et s'il est possible de le quantifier.
+La question suivante est donc de savoir quelle est l'ampleur de cette
+association et s'il est possible de la quantifier.
 
 -   Est-il possible, par exemple, de prédire une augmentation moyenne du
     salaire en % pour chaque année d'études supplémentaire ? Répondre à
@@ -174,9 +181,8 @@ effet et s'il est possible de le quantifier.
 
 -   Si l'éducation est importante, un certain nombre d'autres facteurs
     peuvent également influencer le salaire d'une personne, tels que
-    l'âge, le sexe, l'origine, la classe sociale, l'intelligence, les
-    capacités de communication, la résistance au stress et peut-être
-    même la taille, l'attrait physique et l'attitude politique. Si ces
+    l'âge, le sexe, l'origine sociale, l'expérience professionnelle, le
+    secteur d'activité. Si ces
     autres facteurs ont également une influence sur le salaire, comment
     déterminer l'impact fractionnel du niveau d'éducation ?
 
@@ -185,7 +191,7 @@ ces autres facteurs peuvent ne pas être disponibles ou être difficiles à
 mesurer.
 
 -   Et même si tous ces facteurs pouvaient être observés et contrôlés,
-    la relation entre le niveau d'éducation et le salaire sera toujours
+    la relation entre le niveau d'éducation et le salaire serait toujours
     soumise à un certain degré de hasard. Peut-être y a-t-il d'autres
     facteurs inconnus, ou peut-être y a-t-il simplement une fluctuation
     inexplicable du niveau de salaire entre tous les individus, même
@@ -256,7 +262,7 @@ Comprendre (et aussi quantifier) cette déviation du modèle de régression
 par rapport aux valeurs observées est également une étape importante de
 toute analyse de régression, comme nous le verrons par la suite.
 
-Au niveau technique, l'objectif de la régression linéaire est de
+Sur le plan technique, l'objectif de la régression linéaire est de
 spécifier une équation mathématique, appelée **modèle de régression**,
 qui quantifie la relation entre les variables y et x sur la base d'un
 ensemble d'observations.
@@ -325,7 +331,7 @@ données `mtcars` : `lm(mpg ~ wt, data = mtcars)`
     les lois de la physique nous apprennent que l'accélération et le
     déplacement d'objets plus lourds nécessitent une force et une
     énergie plus importantes. Par conséquent, nous supposons que les
-    voitures plus lourdes consomment généralement plus d'énergie en
+    voitures plus lourdes consomment généralement plus d'énergie sous
     forme de carburant que les voitures plus légères.
 
 ```{r}
@@ -420,8 +426,11 @@ régression linéaire dans R, nous pouvons afficher quatre graphiques
 de diagnostic :
 
 ```{r}
+#| fig-width: 7
+#| fig-height: 7
+#| out-width: "100%"
 # Cette commande fait en sorte que les graphes de diagnostic soient tous affichés en même temps, sur un panneau 2 X 2 :
-par(mfrow=c(2,2)) 
+par(mfrow = c(2, 2))
 
 # Afficher ensuite les graphiques de diagnostic :
 plot(modele_1)
@@ -466,8 +475,10 @@ plot(modele_1)
 
 En examinant ces graphiques de diagnostic, nous pouvons évaluer si les
 conditions d'application de la régression linéaire sont remplies :
-l'indépendance des résidus, l'homoscédasticité, la linéarité et la
-normalité des résidus.
+l'homoscédasticité, la linéarité et la normalité des résidus.
+L'indépendance des observations dépend surtout du plan d'échantillonnage
+et de la structure des données ; ces quatre graphiques ne permettent pas
+de la vérifier directement.
 
 Si les graphiques de diagnostic montrent que ces conditions ne sont pas
 remplies, cela peut indiquer que le modèle n'est pas adéquat et
@@ -501,6 +512,9 @@ avec des moteurs plus puissants, parcourent **moins de miles par
 gallon** que les voitures avec moins de `hp`.
 
 ```{r}
+#| fig-width: 7
+#| fig-height: 7
+#| out-width: "100%"
 # Ajuster un modèle de régression linéaire multiple avec mpg comme variable à expliquer et wt et hp comme variables explicatives
 modele_2 <- lm(mpg ~ wt + hp, data = mtcars)
 
@@ -508,7 +522,7 @@ modele_2 <- lm(mpg ~ wt + hp, data = mtcars)
 summary(modele_2)
 
 # Afficher les graphiques de diagnostic
-par(mfrow=c(2,2))
+par(mfrow = c(2, 2))
 plot(modele_2)
 ```
 
@@ -537,7 +551,12 @@ elle ne sert pas à comparer des modèles.
 Une question est alors : **comment choisir le meilleur modèle de
 régression ?**
 
-### Exemple 4 : la sélection pas à pas avec `mtcars` {#exemple-3-la-régression-par-étape-avec-mtcars}
+En sciences sociales, les variables d'un modèle devraient être choisies
+pour des raisons théoriques ; la sélection automatique présentée
+ci-dessous ne l'est qu'à titre d'information.
+
+::: {.callout-caution title="Pour aller plus loin : la sélection automatique de variables" collapse="true"}
+[]{#exemple-3-la-régression-par-étape-avec-mtcars}
 
 Une solution possible est la **sélection pas à pas** (angl.
 *stepwise selection*) : le choix des variables explicatives est effectué
@@ -578,7 +597,7 @@ full_model <- lm(mpg ~ ., data = mtcars)
 summary(full_model)
 
 # step() part du modèle complet ; à chaque étape, il peut retirer une variable (sélection descendante) ou en réintroduire une (sélection ascendante), selon l'AIC (direction = "both")
-stepwise_model <- step(full_model, direction = "both")
+stepwise_model <- step(full_model, direction = "both", trace = 0)
 ```
 
 Voici comment la sélection pas à pas choisit le modèle retenu :
@@ -598,18 +617,25 @@ statistique F et les valeurs p pour les variables explicatives.
 summary(stepwise_model)
 ```
 
-#### Graphiques de diagnostic
+**Graphiques de diagnostic**
 
 Après avoir choisi un modèle, il est
-utile de vérifier les graphiques des résidus pour contrôler les conditions
-d'application : homoscédasticité, normalité et indépendance des résidus.
+utile de vérifier les graphiques des résidus pour contrôler
+l'homoscédasticité, la normalité des résidus et la linéarité.
 
 ```{r}
-par(mfrow=c(2,2))
+#| fig-width: 7
+#| fig-height: 7
+#| out-width: "100%"
+par(mfrow = c(2, 2))
 plot(stepwise_model)
 ```
 
-Les graphiques de diagnostic sont acceptables pour notre modèle.
+La courbe Scale-Location monte nettement : la variance des résidus
+semble augmenter avec les valeurs ajustées (hétéroscédasticité possible).
+Avec seulement 32 voitures, cette évaluation visuelle reste toutefois
+approximative.
+:::
 
 ### Ressources pour aller plus loin
 
@@ -651,7 +677,9 @@ beaucoup sont très pertinents pour les sciences sociales et pour vos
 Le chapitre « Révision 4 » reprend les chapitres 10 à 12 et clôt la
 partie statistique du livre.
 
-## Exercices {.unnumbered}
+## Testez-vous {.unnumbered}
+
+[]{#exercices}
 
 {{< include ../include/_consignes-exercices.qmd >}}
 

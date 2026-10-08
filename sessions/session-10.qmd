@@ -45,7 +45,7 @@ données.
 
 -   Les mesures de forme (asymétrie, *kurtosis*)
 
--   Les mesure de position (percentiles, quartiles)
+-   Les mesures de position (percentiles, quartiles)
 
 Ces mesures permettent d'obtenir une première idée de la structure d'un
 jeu de données. Elles permettent également d'identifier des valeurs
@@ -153,6 +153,7 @@ ggplot(data = reponses_socio,
 ggplot(data = reponses_socio,
        mapping = aes(x=naissance)) +
   geom_histogram(binwidth = 1, fill = "lightgreen", color = "black") +
+  scale_x_continuous(breaks = 1996:2005) +
   labs(title = "Années de naissance",
        subtitle = "n = 74 personnes interrogées",
        x = "Année de naissance",
@@ -172,7 +173,7 @@ ggplot(data = reponses_socio,
 
 # changer d'abord l'ordre des catégories (commençant avec la plus fréquente)
 
-ordre = c("Femme", "Homme", "Autre")
+ordre <- c("Femme", "Homme", "Autre")
 
 # Puis combiner dplyr avec ggplot2 :
 reponses_socio %>% 
@@ -184,8 +185,7 @@ ggplot(aes(x=genre, fill=genre)) +
   labs(title = "Répartition des genres",
        subtitle = "n = 74 personnes interrogées",
        x = "Genre",
-       y = "Effectif",
-       legend = "") +
+       y = "Effectif") +
   theme_minimal()
 
 
@@ -208,7 +208,7 @@ reponses_socio %>%
   filter(!is.na(note_ecole),
          !is.na(note_uni)) %>% 
   summarize(n = n(), note_ecole_moyenne = mean(note_ecole),
-            note_uni_moyenne = mean(note_uni))
+            note_uni_moyenne = mean(note_uni), .groups = "drop")
 
 # Visualisation de la relation entre note_ecole et note_uni
 # (la note d'école vient avant la note à l'université : elle va sur l'axe x)
@@ -218,7 +218,12 @@ reponses_socio %>%
          !is.na(note_uni)) %>% 
 ggplot(aes(x=note_ecole, y=note_uni)) +
          geom_point() +
-  geom_smooth(method = "lm")
+  geom_smooth(method = "lm", formula = y ~ x) +
+  labs(title = "Note à l'école et note à l'université",
+       subtitle = "Réponses avec les deux notes (n = 70)",
+       x = "Note à l'école",
+       y = "Note à l'université") +
+  theme_minimal()
 
 
 # 5. Permis de conduire
@@ -233,7 +238,7 @@ reponses_socio %>%
   select(permis, suisse) %>% 
   filter(!is.na(permis)) %>% 
   group_by(suisse,permis) %>% 
-  summarize(n = n())
+  summarize(n = n(), .groups = "drop")
 ```
 
 ## La fonction `write.csv()`
@@ -245,7 +250,9 @@ en cours (sortie de données), notamment avec la fonction `write.csv()`.
 
 La fonction prend comme arguments le tableau de données à enregistrer
 et le nom du fichier CSV, éventuellement précédé d'un chemin relatif au
-dossier du projet : `write.csv(nom_df, "nom_du_fichier.csv")`.
+dossier du projet : `write.csv(nom_df, "nom_du_fichier.csv", row.names = FALSE)`.
+L'argument `row.names = FALSE` empêche R d'ajouter au fichier une
+colonne supplémentaire, sans nom, avec les numéros des lignes.
 
 ```{r}
 # Exemple : recréons le tableau des animaux de L'Âge de glace (chapitre 2)
@@ -276,7 +283,7 @@ print(ice_age_df)
 #| eval: false
 # Enregistre le fichier dans le répertoire de travail (le dossier du projet) :
 
-write.csv(ice_age_df, file = "ice_age_df.csv")
+write.csv(ice_age_df, "ice_age_df.csv", row.names = FALSE)
 ```
 
 Si tout a bien marché, vous devriez maintenant avoir un fichier CSV, nommé

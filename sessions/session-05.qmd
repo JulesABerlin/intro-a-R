@@ -76,7 +76,7 @@ une ligne de régression linéaire avec `geom_smooth(method = lm)` :
 
 ```{r}
 #| warning: false
-np1 + geom_smooth(method = lm)
+np1 + geom_smooth(method = lm, formula = y ~ x)
 ```
 
 Que nous indique la ligne de régression ? En principe, elle indique une
@@ -113,7 +113,7 @@ Maintenant, ajoutons à nouveau une couche `geom_smooth()` à l'objet
 
 ```{r}
 #| warning: false
-np1 + geom_smooth(method = lm)
+np1 + geom_smooth(method = lm, formula = y ~ x)
 ```
 
 Les trois lignes de régression (une pour chaque type d'iris) montrent
@@ -444,7 +444,7 @@ mtcars$cyl <- as.factor(mtcars$cyl)
 box1 <- ggplot(data = mtcars, 
           aes(x=cyl, y=mpg, fill = cyl)) + 
             geom_boxplot(alpha=0.2) + 
-              labs(title = "Miles par gallon (mpg) selon le nombre de cylindres dans mtcars", x = "Nombre de cylindres", y = "Miles par gallon (mpg)")
+              labs(title = "Consommation (mpg) selon le nombre de cylindres", x = "Nombre de cylindres", y = "Miles par gallon (mpg)")
 print(box1)
   
 ```
